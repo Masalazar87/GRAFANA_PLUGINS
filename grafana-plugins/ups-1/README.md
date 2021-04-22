@@ -1,44 +1,46 @@
-# Grafana Panel Plugin Template
+# Indices
+dc_gye_ups_gw3a_data
+dc_gye_ups_gw3a_data
 
-[![Build](https://github.com/grafana/grafana-starter-panel/workflows/CI/badge.svg)](https://github.com/grafana/grafana-starter-panel/actions?query=workflow%3A%22CI%22)
+# Equipos
+# SISTEMA 1
+UPS-1-1A
+UPS-1-2A
+UPS-1-3A
+UPS-1-4A
+UPS-1-5A
+UPS-1-6A
+UPS-CHI-1A
+UPS-OFFICES-1A
 
-This template is a starting point for building Grafana Panel Plugins in Grafana 7.0+
+# SISTEMA 2
+UPS-2-1A
+UPS-2-2A
+UPS-2-3A
+UPS-2-4A
+UPS-2-5A
+UPS-2-6A
+UPS-CHI-2A
+UPS-NOC-2A
+UPS-SAT-2A
 
-## What is Grafana Panel Plugin?
 
-Panels are the building blocks of Grafana. They allow you to visualize data in different ways. While Grafana has several types of panels already built-in, you can also build your own panel, to add support for other visualizations.
+# Variables de UPS
+DATA.INPUT_VOLTAGE_MAX.VALUE
+DATA.OUTPUT_VOLTAGE.VALUE
+DATA.BATTERY_VOLTAGE.VALUE
+DATA.INVERTER_ON_OFF.VALUE
+DATA.ESTIMATED_MINUTES_REMAINING.VALUE
+DATA.ESTIMATED_CHARGE_REMAINING.VALUE
+DATA.INPUT_VOLTAGE_MIN.VALUE
+DATA.OUTPUT_CURRENT.VALUE
+DATA.OUTPUT_POWER.VALUE
+DATA.OUTPUT_PERCENT_LOAD.VALUE
+DATA.OUTPUT_PERCENT_LOAD_2.VALUE
+DATA.OUTPUT_PERCENT_LOAD_3.VALUE
+DATA.ALARMS_PRESENT.VALUE
+DATA.BYPASS_ON_OFF.VALUE
+DATA.RECTIFIER_ON_OFF.VALUE
 
-For more information about panels, refer to the documentation on [Panels](https://grafana.com/docs/grafana/latest/features/panels/panels/)
-
-## Getting started
-
-1. Install dependencies
-
-   ```bash
-   yarn install
-   ```
-
-2. Build plugin in development mode or run in watch mode
-
-   ```bash
-   yarn dev
-   ```
-
-   or
-
-   ```bash
-   yarn watch
-   ```
-
-3. Build plugin in production mode
-
-   ```bash
-   yarn build
-   ```
-
-## Learn more
-
-- [Build a panel plugin tutorial](https://grafana.com/tutorials/build-a-panel-plugin)
-- [Grafana documentation](https://grafana.com/docs/)
-- [Grafana Tutorials](https://grafana.com/tutorials/) - Grafana Tutorials are step-by-step guides that help you make the most of Grafana
-- [Grafana UI Library](https://developers.grafana.com/ui) - UI components to help you build interfaces using Grafana Design System
+# Forma de pegar en el campo Campos del dataSource para elastic
+DATA.INPUT_VOLTAGE_MAX.VALUE,DATA.OUTPUT_VOLTAGE.VALUE,DATA.BATTERY_VOLTAGE.VALUE,DATA.INVERTER_ON_OFF.VALUE,DATA.ESTIMATED_MINUTES_REMAINING.VALUE,DATA.ESTIMATED_CHARGE_REMAINING.VALUE,DATA.INPUT_VOLTAGE_MIN.VALUE,DATA.OUTPUT_CURRENT.VALUE,DATA.OUTPUT_POWER.VALUE,DATA.OUTPUT_PERCENT_LOAD.VALUE,DATA.OUTPUT_PERCENT_LOAD_2.VALUE,DATA.OUTPUT_PERCENT_LOAD_3.VALUE,DATA.ALARMS_PRESENT.VALUE,DATA.BYPASS_ON_OFF.VALUE,DATA.RECTIFIER_ON_OFF.VALUE

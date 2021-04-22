@@ -32,6 +32,7 @@ type Alarmas ={
 type Principal ={
   Estado: string;
   Estado_class: string;
+  Botón: string;
   InVolmax: number;
   OutVolt: number;
   VBateria: number;
