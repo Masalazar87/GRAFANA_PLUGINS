@@ -18,7 +18,7 @@ const dataUps = (data: PanelData, options: SimpleOptions): DataUps => {
     ?.lastNotNull;
     let INVERTER_ON_OFF = data.series.find(({ name }) => name?.includes('DATA.INVERTER_ON_OFF.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
-    let ESTIMATED_MINUTES = data.series.find(({ name }) => name?.includes('DATA.ESTIMATED_MINUTES.VALUE'))?.fields[1].state?.calcs
+    let ESTIMATED_MINUTES_REMAINING = data.series.find(({ name }) => name?.includes('DATA.ESTIMATED_MINUTES_REMAINING.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let ESTIMATED_CHARGE_REMAINING  = data.series.find(({ name }) => name?.includes('DATA.ESTIMATED_CHARGE_REMAINING.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
@@ -60,7 +60,7 @@ let ups: DataUps ={
         VBateria: 0,
     },
     Alarmas: {
-        Presente: estadoStyles.sinConexion,
+        Presente: modoControlStyles.SinConexion,
         Inversor: modoControlStyles.SinConexion,
         Bypass: modoControlStyles.SinConexion,
         Rectificador: modoControlStyles.SinConexion
@@ -86,7 +86,7 @@ let VBateria = BATTERY_VOLTAGE / 10;
 if (BATTERY_VOLTAGE !== undefined) {
    ups.Principal.VBateria = ups.Parametros.VBateria = Number.parseFloat(VBateria?.toFixed(2));
 }
-ups.Parametros.MinEstimados = Number.parseFloat(ESTIMATED_MINUTES?.toFixed(2));
+ups.Parametros.MinEstimados = Number.parseFloat(ESTIMATED_MINUTES_REMAINING?.toFixed(2));
 ups.Parametros.CargaEstimada = Number.parseFloat(ESTIMATED_CHARGE_REMAINING?.toFixed(2));
 ups.Parametros.InVoltmin = Number.parseFloat(INPUT_VOLTAGE_MIN?.toFixed(2)); 
 ups.Parametros.CorrienteOut = Number.parseFloat(OUTPUT_CURRENT?.toFixed(2)); 
