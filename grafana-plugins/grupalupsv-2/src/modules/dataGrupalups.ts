@@ -4,7 +4,7 @@ import { SimpleOptions } from 'types';
 import { DataGrupalups } from 'components/variables';
 import modoControlStyles from 'styles/modoControlStyles';
 import alarmsStyles from 'styles/alarmsStyles';
-//import estadoStyles from 'styles/estadoStyles';
+import estadoStyles from 'styles/estadoStyles';
 
 const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups => {  
     console.log('data: ', data);
@@ -81,9 +81,9 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
 
     //ALARMAS
     grupalups.Alarmas.Alarma = ALARMS_PRESENT === 1? alarmsStyles.on : alarmsStyles.off;
-    grupalups.Alarmas.Bypass = BYPASS_ON_OFF === 1? alarmsStyles.on : alarmsStyles.off;
-    grupalups.Alarmas.Inverter = INVERTER_ON_OFF === 1? modoControlStyles.On : modoControlStyles.SinConexion;
-    grupalups.Alarmas.Rectifier = RECTIFIER_ON_OFF === 1? modoControlStyles.On : modoControlStyles.SinConexion;
+    grupalups.Alarmas.Bypass = BYPASS_ON_OFF === 1? alarmsStyles.off : alarmsStyles.on;
+    grupalups.Alarmas.Inverter = INVERTER_ON_OFF === 1? modoControlStyles.On : estadoStyles.alarma;
+    grupalups.Alarmas.Rectifier = RECTIFIER_ON_OFF === 1? modoControlStyles.On : estadoStyles.alarma;
     grupalups.Alarmas.Alerta = ALARMS_PRESENT === 1? alarmsStyles.on : alarmsStyles.off;
     grupalups.Alarmas.Habilitado = INVERTER_ON_OFF === 1? alarmsStyles.on : alarmsStyles.off;
 
