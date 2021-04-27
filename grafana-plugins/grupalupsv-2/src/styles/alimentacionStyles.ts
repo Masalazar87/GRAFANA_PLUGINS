@@ -3,14 +3,11 @@ import { css } from 'emotion';
 
 const getStyles = stylesFactory(() => {
   return {
-    SinConexion: css`
-    fill: #999;
+    on: css`
+    stroke: green;
     `,
-    On: css`
-      fill: green;
-    `,
-    Off: css`
-      fill: yellow;
+    off: css`
+    stroke: #999;
     `,
   };
 });

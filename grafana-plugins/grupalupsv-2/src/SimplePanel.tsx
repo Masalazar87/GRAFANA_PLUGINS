@@ -6,7 +6,7 @@ import { css, cx } from 'emotion';
 import { stylesFactory } from '@grafana/ui';
 import Grupalups from './components/grupalups';
 
-//import { DataUps } from 'components/variables';
+
 import dataGrupalups from 'modules/dataGrupalups';
 
 interface Props extends PanelProps<SimpleOptions> {}
@@ -34,6 +34,8 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
         DatosGenerales={grupalups.DatosGenerales}
         Parametros={grupalups.Parametros}
         Alarmas={grupalups.Alarmas}
+        Conexion={grupalups.Conexion}
+        Animacion={grupalups.Animacion}
       />
     </div>
   );

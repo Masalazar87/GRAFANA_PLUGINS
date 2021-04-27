@@ -27,18 +27,49 @@ type Alarmas = {
     Habilitado: string;
 };
 
+type Conexion = {
+    Entrada: string;
+    Rectificador: string;
+    Inversor: string;
+    Bypass: string;
+    Bateria: string;
+};
+
+type Animacion = {
+  Entrada: string;
+  Rectificador: string;
+  Inversor: string;
+  Bypass: string;
+  Salida: string;
+  Bateria25: string;
+  Bateria50: string;
+  Bateria75: string;
+  Bateria100: string;
+  Carga25: string;
+  Carga50: string;
+  Carga75: string;
+  Carga100: string;
+  Cargador1: string;
+  Cargador2: string;
+};
+
 export interface DataGrupalups {
     DatosGenerales: DatosGenerales;
     Parametros: Parametros;
     Alarmas: Alarmas;
+    Conexion: Conexion;
+    Animacion: Animacion;
 }
 
-export const Variables = ({ DatosGenerales, Parametros, Alarmas }: DataGrupalups) => {
+export const Variables = ({ DatosGenerales, Parametros, Alarmas, Conexion, Animacion }: DataGrupalups) => {
 return (
   <g id="layer4">
-  <g id="g3896" fill="none" strokeWidth={0.591} stroke="#0ceef8">
-    <path id="path3200" d="M43.712 43.585h55.757" />
-    <path id="path3202" d="M108.01 43.51h3.828v8.765" />
+  <g id="g3896" 
+    fill="none" 
+    strokeWidth={0.591} 
+    stroke="#0ceef8">
+    <path id="path3200" d="M43.712 43.585h55.757" className ={Conexion.Bypass} />
+    <path id="path3202" d="M108.01 43.51h3.828v8.765" className ={Conexion.Bypass} />
   </g>
   <text
     id="nom"
@@ -482,6 +513,7 @@ return (
     transform="matrix(.38967 0 0 .51457 13.32 31.872)"
     d="M8.706 1.679l7.253 12.56H1.454z"
     fill="none"
+    className = {Alarmas.Rectifier}
     opacity={0.999}
     paintOrder="markers fill stroke"
     strokeLinecap="square"
@@ -543,7 +575,7 @@ return (
     id="ups1_1b_batt_charge_4"
     transform="matrix(1.2538 0 0 1.862 16.375 -373.56)"
     fill="none"
-    className = {Alarmas.Alarma}
+    className={Animacion.Bateria100}
     filter="url(#filter1671)"
     strokeWidth={0.17184}
     stroke="#0ceef8"
@@ -553,6 +585,7 @@ return (
     id="ups1_1b_batt_charge_3"
     transform="matrix(1.2538 0 0 1.862 16.375 -373.23)"
     fill="#168698"
+    className={Animacion.Bateria75}
     filter="url(#filter1671)"
     strokeWidth={0.17184}
     stroke="#0ceef8"
@@ -562,6 +595,7 @@ return (
     id="ups1_1b_batt_charge_2"
     transform="matrix(1.2538 0 0 1.862 16.375 -372.9)"
     fill="#168698"
+    className={Animacion.Bateria50}
     filter="url(#filter1671)"
     strokeWidth={0.17184}
     stroke="#0ceef8"
@@ -571,6 +605,7 @@ return (
     id="ups1_1b_batt_charge_1"
     transform="matrix(1.2538 0 0 1.862 16.375 -373.56)"
     fill="#168698"
+    className={Animacion.Bateria25}
     filter="url(#filter1671)"
     strokeWidth={0.17184}
     stroke="#0ceef8"
@@ -581,6 +616,7 @@ return (
     transform="matrix(1.2538 0 0 1.862 62.816 -373.56)"
     fill="none"
     filter="url(#filter1671)"
+    className = {Animacion.Carga100}
     strokeWidth={0.17184}
     stroke="#0ceef8"
     d="M25.248 233.79H29.8307V234.914H25.248z"
@@ -590,6 +626,7 @@ return (
     transform="matrix(1.2538 0 0 1.862 62.816 -373.23)"
     fill="none"
     filter="url(#filter1671)"
+    className = {Animacion.Carga75}
     strokeWidth={0.17184}
     stroke="#0ceef8"
     d="M25.248 235.38H29.8307V236.504H25.248z"
@@ -599,6 +636,7 @@ return (
     transform="matrix(1.2538 0 0 1.862 62.816 -372.9)"
     fill="none"
     filter="url(#filter1671)"
+    className = {Animacion.Carga50}
     strokeWidth={0.17184}
     stroke="#0ceef8"
     d="M25.248 236.97H29.8307V238.094H25.248z"
@@ -607,6 +645,7 @@ return (
     id="ups1_1b_load1_1"
     transform="matrix(1.2538 0 0 1.862 62.816 -373.56)"
     filter="url(#filter1671)"
+    className ={Animacion.Carga25}
     strokeWidth={0.17184}
     stroke="#0ceef8"
     d="M25.248 239.09H29.8307V240.214H25.248z"
@@ -616,6 +655,7 @@ return (
     transform="matrix(1.2538 0 0 1.862 77.412 -373.56)"
     fill="none"
     filter="url(#filter1671)"
+    className ={Animacion.Carga100}
     strokeWidth={0.17184}
     stroke="#0ceef8"
     d="M25.248 233.79H29.8307V234.914H25.248z"
@@ -625,6 +665,7 @@ return (
     transform="matrix(1.2538 0 0 1.862 77.412 -373.23)"
     fill="none"
     filter="url(#filter1671)"
+    className ={Animacion.Carga75}
     strokeWidth={0.17184}
     stroke="#0ceef8"
     d="M25.248 235.38H29.8307V236.504H25.248z"
@@ -634,6 +675,7 @@ return (
     transform="matrix(1.2538 0 0 1.862 77.412 -372.9)"
     fill="none"
     filter="url(#filter1671)"
+    className ={Animacion.Carga50}
     strokeWidth={0.17184}
     stroke="#0ceef8"
     d="M25.248 236.97H29.8307V238.094H25.248z"
@@ -643,6 +685,7 @@ return (
     transform="matrix(1.2538 0 0 1.862 77.412 -373.56)"
     fill="#168498"
     filter="url(#filter1671)"
+    className ={Animacion.Carga25}
     strokeWidth={0.17184}
     stroke="#0ceef8"
     d="M25.248 239.09H29.8307V240.214H25.248z"
@@ -652,6 +695,7 @@ return (
     transform="matrix(1.2538 0 0 1.862 91.345 -373.56)"
     fill="none"
     filter="url(#filter1671)"
+    className ={Animacion.Carga100}
     strokeWidth={0.17184}
     stroke="#0ceef8"
     d="M25.248 233.79H29.8307V234.914H25.248z"
@@ -661,6 +705,7 @@ return (
     transform="matrix(1.2538 0 0 1.862 91.345 -373.23)"
     fill="none"
     filter="url(#filter1671)"
+    className ={Animacion.Carga75}
     strokeWidth={0.17184}
     stroke="#0ceef8"
     d="M25.248 235.38H29.8307V236.504H25.248z"
@@ -670,6 +715,7 @@ return (
     transform="matrix(1.2538 0 0 1.862 91.345 -372.9)"
     fill="none"
     filter="url(#filter1671)"
+    className ={Animacion.Carga50}
     strokeWidth={0.17184}
     stroke="#0ceef8"
     d="M25.248 236.97H29.8307V238.094H25.248z"
@@ -679,6 +725,7 @@ return (
     transform="matrix(1.2538 0 0 1.862 91.345 -373.56)"
     fill="#168498"
     filter="url(#filter1671)"
+    className ={Animacion.Carga25}
     strokeWidth={0.17184}
     stroke="#0ceef8"
     d="M25.248 239.09H29.8307V240.214H25.248z"
@@ -716,17 +763,18 @@ return (
       }}
       fill="#fff"
       fontFamily="BankGothic Lt BT"
-      fontSize="7.0556px"
+      fontSize="6.0556px"
       strokeOpacity={0.53395}
       strokeWidth={0.776}
     >
-      {"general electric"}
+      {DatosGenerales.Marca}
     </tspan>
   </text>
   <path
     id="path1617"
     d="M43.368 52.601h21.164"
     fill="none"
+    className = {Conexion.Entrada}
     strokeWidth={0.9}
     stroke="#0ceef8"
   />
@@ -735,6 +783,7 @@ return (
     d="M53.952 52.599l-3.324 1.919V50.68z"
     fillOpacity={0.99667}
     fill="#009898"
+    className = {Animacion.Entrada}
     opacity={0.999}
     paintOrder="markers fill stroke"
     strokeLinecap="square"
@@ -745,6 +794,7 @@ return (
     id="path1617-6-1"
     d="M95.805 52.668h34.123"
     fill="none"
+    className = {Conexion.Inversor}
     strokeWidth={0.9}
     stroke="#0ceef8"
   />
@@ -753,6 +803,7 @@ return (
     d="M106.096 52.599l-3.324 1.919V50.68z"
     fillOpacity={0.99667}
     fill="#009898"
+    className = {Animacion.Inversor}
     opacity={0.999}
     paintOrder="markers fill stroke"
     strokeLinecap="square"
@@ -764,6 +815,7 @@ return (
     d="M119.136 52.599l-3.324 1.919V50.68z"
     fillOpacity={0.99667}
     fill="#009898"
+    className = {Animacion.Inversor}
     opacity={0.999}
     paintOrder="markers fill stroke"
     strokeLinecap="square"
@@ -775,6 +827,7 @@ return (
     d="M133.376 52.599l-3.324 1.919V50.68z"
     fillOpacity={0.99667}
     fill="#009898"
+    className={Animacion.Salida}
     opacity={0.999}
     paintOrder="markers fill stroke"
     strokeLinecap="square"
@@ -785,6 +838,7 @@ return (
     id="path12231"
     d="M106.89 37.189H88.297v6.348H43.711"
     fill="none"
+    className = {Conexion.Entrada}
     strokeWidth={0.55}
     stroke="#0bedf9"
   />
@@ -792,6 +846,7 @@ return (
     id="path12233"
     d="M110.53 37.189h14.299v14.9"
     fill="none"
+    className={Conexion.Bypass}
     strokeWidth={0.55}
     stroke="#0decf8"
   />
@@ -799,8 +854,8 @@ return (
     id="path11248-7-6-4-7"
     d="M124.85 46.939l-1.919-3.324h3.838z"
     fillOpacity={0.99667}
-    opacity={0.999}
-    className = {Alarmas.Bypass}
+    opacity={0.99}
+    className = {Animacion.Bypass}
     paintOrder="markers fill stroke"
     strokeLinecap="square"
     strokeWidth={0.4442}
@@ -810,7 +865,7 @@ return (
     id="path11248-7-6-8-8"
     d="M120.196 37.259l-3.324 1.919V35.34z"
     fillOpacity={0.99667}
-    className = {Alarmas.Bypass}
+    className = {Animacion.Bypass}
     opacity={0.999}
     paintOrder="markers fill stroke"
     strokeLinecap="square"
@@ -822,6 +877,7 @@ return (
     d="M53.95 43.449l-3.323 1.919V41.53z"
     fillOpacity={0.99667}
     fill="#009898"
+    className = {Animacion.Entrada}
     opacity={0.999}
     paintOrder="markers fill stroke"
     strokeLinecap="square"
@@ -848,6 +904,7 @@ return (
     id="path1607"
     d="M101.27 41.915h5.204v3.22h-4.77l-.432-.172z"
     fill="#099"
+    className = {Alarmas.Bypass}
     strokeWidth=".32924px"
     stroke="#0ceef8"
   />
@@ -855,6 +912,7 @@ return (
     id="path1649"
     d="M75.131 68.218h9.757"
     fill="none"
+    className = {Conexion.Rectificador}
     strokeWidth={0.82751}
     stroke="#0ceef8"
   />
@@ -862,6 +920,7 @@ return (
     id="path1651"
     d="M77.083 69.828h5.962"
     fill="none"
+    className = {Conexion.Rectificador}
     strokeWidth={0.82751}
     stroke="#0ceef8"
   />
@@ -869,6 +928,7 @@ return (
     id="path1653"
     d="M75.24 71.438h9.431"
     fill="none"
+    className = {Conexion.Rectificador}
     strokeWidth={0.82751}
     stroke="#0ceef8"
   />
@@ -876,6 +936,7 @@ return (
     id="path1655"
     d="M76.866 73.048h6.18"
     fill="none"
+    className = {Conexion.Rectificador}
     strokeWidth={0.82751}
     stroke="#0ceef8"
   />
@@ -883,6 +944,7 @@ return (
     id="path1643"
     d="M79.816 52.279v15.939"
     fill="none"
+    className = {Conexion.Rectificador}
     strokeWidth=".32924px"
     stroke="#0ceef8"
   />
@@ -890,7 +952,7 @@ return (
     id="path11248-7-6-4-7-1"
     d="M79.803 60.6l-1.919-3.324h3.838z"
     fillOpacity={0.99667}
-    //className = {Alarmas.Bypass}
+    className = {Animacion.Cargador1}
     opacity={0.999}
     paintOrder="markers fill stroke"
     strokeLinecap="square"
@@ -902,6 +964,7 @@ return (
     d="M79.803 62.541l1.919 3.324h-3.838z"
     fillOpacity={0.99667}
     fill="#009898"
+    className = {Animacion.Cargador2}
     opacity={0.999}
     paintOrder="markers fill stroke"
     strokeLinecap="square"
@@ -912,6 +975,7 @@ return (
     id="path1617-6"
     d="M73.261 52.515h13.835"
     fill="none"
+    className = {Conexion.Rectificador}
     strokeWidth={0.9}
     stroke="#0ceef8"
   />
