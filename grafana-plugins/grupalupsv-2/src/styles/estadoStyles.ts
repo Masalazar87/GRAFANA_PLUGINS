@@ -11,6 +11,9 @@ const getStyles = stylesFactory(() => {
     sinConexion: css`
       fill: #999;
     `,
+    sinConexion2: css`
+      stroke: #999;
+    `,
     alarma: css`
       fill: orange;
       animation: ${parpadeo} 1s ease infinite;
@@ -18,6 +21,17 @@ const getStyles = stylesFactory(() => {
     ok: css`
       fill: green;
     `,
+    alarma1: css`
+      stroke: orange;
+      animation: ${parpadeo} 1s ease infinite;
+    `,
+    ok1: css`
+      stroke: green;
+      animation: ${parpadeo} 1s ease infinite;
+    `,
+    off: css`
+      opacity:0;
+      `,
   };
 });
 

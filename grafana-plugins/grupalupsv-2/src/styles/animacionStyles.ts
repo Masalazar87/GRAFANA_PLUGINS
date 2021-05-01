@@ -8,6 +8,10 @@ const parpadeo = keyframes`
 
 const getStyles = stylesFactory(() => {
   return {
+    onbatery: css`
+    fill: orange;
+    animation: ${parpadeo} 1s ease infinite;
+    `,
     on: css`
     fill: green;
     animation: ${parpadeo} 1s ease infinite;

@@ -100,8 +100,9 @@ ups.Alarmas.Presente = ALARMS_PRESENT === 1? alarmsStyles.on : alarmsStyles.off;
 ups.Alarmas.Bypass = BYPASS_ON_OFF === 1? alarmsStyles.on : alarmsStyles.off;
 ups.Alarmas.Inversor = INVERTER_ON_OFF === 1? modoControlStyles.On : modoControlStyles.SinConexion;
 ups.Alarmas.Rectificador = RECTIFIER_ON_OFF === 1? modoControlStyles.On : modoControlStyles.SinConexion;
-ups.Principal.Estado_class = INVERTER_ON_OFF === 1? estadoStyles.ok : estadoStyles.sinConexion;
+ups.Principal.Estado_class = INVERTER_ON_OFF === 1? estadoStyles.ok1 : estadoStyles.sinConexion;
 ups.Principal.Botón = INVERTER_ON_OFF === 1? modoControlStyles.On : estadoStyles.sinConexion;
+
 
     console.log(ups);
 

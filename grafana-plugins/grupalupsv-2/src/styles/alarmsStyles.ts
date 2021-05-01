@@ -15,6 +15,13 @@ const getStyles = stylesFactory(() => {
       fill: yellow;
       animation: ${parpadeo} 1s ease infinite;
     `,
+    off1: css`
+      stroke: #999;
+    `,
+    on1: css`
+      stroke: yellow;
+      animation: ${parpadeo} 1s ease infinite;
+    `,
   };
 });
 

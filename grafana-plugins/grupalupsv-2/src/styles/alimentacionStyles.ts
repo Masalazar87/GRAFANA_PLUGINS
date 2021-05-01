@@ -9,6 +9,15 @@ const getStyles = stylesFactory(() => {
     off: css`
     stroke: #999;
     `,
+    open: css`
+    opacity: 0;
+    `,
+    close: css`
+    stroke: green;
+    `,
+    onbattery: css`
+    stroke: red;
+    `,
   };
 });
 

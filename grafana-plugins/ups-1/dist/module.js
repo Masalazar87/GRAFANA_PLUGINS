@@ -1128,9 +1128,9 @@ var dataUps = function dataUps(data, options) {
     var name = _a.name;
     return name === null || name === void 0 ? void 0 : name.includes('DATA.INVERTER_ON_OFF.VALUE');
   })) === null || _k === void 0 ? void 0 : _k.fields[1].state) === null || _l === void 0 ? void 0 : _l.calcs) === null || _m === void 0 ? void 0 : _m.lastNotNull;
-  var ESTIMATED_MINUTES = (_q = (_p = (_o = data.series.find(function (_a) {
+  var ESTIMATED_MINUTES_REMAINING = (_q = (_p = (_o = data.series.find(function (_a) {
     var name = _a.name;
-    return name === null || name === void 0 ? void 0 : name.includes('DATA.ESTIMATED_MINUTES.VALUE');
+    return name === null || name === void 0 ? void 0 : name.includes('DATA.ESTIMATED_MINUTES_REMAINING.VALUE');
   })) === null || _o === void 0 ? void 0 : _o.fields[1].state) === null || _p === void 0 ? void 0 : _p.calcs) === null || _q === void 0 ? void 0 : _q.lastNotNull;
   var ESTIMATED_CHARGE_REMAINING = (_t = (_s = (_r = data.series.find(function (_a) {
     var name = _a.name;
@@ -1190,7 +1190,7 @@ var dataUps = function dataUps(data, options) {
       VBateria: 0
     },
     Alarmas: {
-      Presente: styles_estadoStyles__WEBPACK_IMPORTED_MODULE_2__["default"].sinConexion,
+      Presente: styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].SinConexion,
       Inversor: styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].SinConexion,
       Bypass: styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].SinConexion,
       Rectificador: styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].SinConexion
@@ -1217,7 +1217,7 @@ var dataUps = function dataUps(data, options) {
     ups.Principal.VBateria = ups.Parametros.VBateria = Number.parseFloat(VBateria === null || VBateria === void 0 ? void 0 : VBateria.toFixed(2));
   }
 
-  ups.Parametros.MinEstimados = Number.parseFloat(ESTIMATED_MINUTES === null || ESTIMATED_MINUTES === void 0 ? void 0 : ESTIMATED_MINUTES.toFixed(2));
+  ups.Parametros.MinEstimados = Number.parseFloat(ESTIMATED_MINUTES_REMAINING === null || ESTIMATED_MINUTES_REMAINING === void 0 ? void 0 : ESTIMATED_MINUTES_REMAINING.toFixed(2));
   ups.Parametros.CargaEstimada = Number.parseFloat(ESTIMATED_CHARGE_REMAINING === null || ESTIMATED_CHARGE_REMAINING === void 0 ? void 0 : ESTIMATED_CHARGE_REMAINING.toFixed(2));
   ups.Parametros.InVoltmin = Number.parseFloat(INPUT_VOLTAGE_MIN === null || INPUT_VOLTAGE_MIN === void 0 ? void 0 : INPUT_VOLTAGE_MIN.toFixed(2));
   ups.Parametros.CorrienteOut = Number.parseFloat(OUTPUT_CURRENT === null || OUTPUT_CURRENT === void 0 ? void 0 : OUTPUT_CURRENT.toFixed(2));
@@ -1230,7 +1230,7 @@ var dataUps = function dataUps(data, options) {
   ups.Alarmas.Bypass = BYPASS_ON_OFF === 1 ? styles_alarmsStyles__WEBPACK_IMPORTED_MODULE_1__["default"].on : styles_alarmsStyles__WEBPACK_IMPORTED_MODULE_1__["default"].off;
   ups.Alarmas.Inversor = INVERTER_ON_OFF === 1 ? styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].On : styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].SinConexion;
   ups.Alarmas.Rectificador = RECTIFIER_ON_OFF === 1 ? styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].On : styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].SinConexion;
-  ups.Principal.Estado_class = INVERTER_ON_OFF === 1 ? styles_estadoStyles__WEBPACK_IMPORTED_MODULE_2__["default"].ok : styles_estadoStyles__WEBPACK_IMPORTED_MODULE_2__["default"].sinConexion;
+  ups.Principal.Estado_class = INVERTER_ON_OFF === 1 ? styles_estadoStyles__WEBPACK_IMPORTED_MODULE_2__["default"].ok1 : styles_estadoStyles__WEBPACK_IMPORTED_MODULE_2__["default"].sinConexion;
   ups.Principal.Botón = INVERTER_ON_OFF === 1 ? styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].On : styles_estadoStyles__WEBPACK_IMPORTED_MODULE_2__["default"].sinConexion;
   console.log(ups);
   return ups;
@@ -1292,7 +1292,7 @@ var getStyles = Object(_grafana_ui__WEBPACK_IMPORTED_MODULE_1__["stylesFactory"]
   return {
     sinConexion: Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])(templateObject_2 || (templateObject_2 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"])(["\n      fill: #999;\n    "], ["\n      fill: #999;\n    "]))),
     alarma: Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])(templateObject_3 || (templateObject_3 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"])(["\n      fill: red;\n      animation: ", " 1s ease infinite;\n    "], ["\n      fill: red;\n      animation: ", " 1s ease infinite;\n    "])), parpadeo),
-    ok: Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])(templateObject_4 || (templateObject_4 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"])(["\n      fill: url(#linearGradient4474);\n    "], ["\n      fill: url(#linearGradient4474);\n    "])))
+    ok1: Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])(templateObject_4 || (templateObject_4 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"])(["\n      stroke: url(#linearGradient4474); \n    "], ["\n      stroke: url(#linearGradient4474); \n    "])))
   };
 });
 var styles = getStyles();
