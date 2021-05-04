@@ -4,7 +4,7 @@
   "name": "grupalchiller",
   "id": "telconet-grupalchiller",
   "info": {
-    "description": "monitoreo grupal de chillers",
+    "description": "Monitoreo grupal de chillers",
     "author": {
       "name": "Mario",
       "url": ""
@@ -26,7 +26,7 @@
     ],
     "screenshots": [],
     "version": "1.0.0",
-    "updated": "2021-05-03"
+    "updated": "2021-05-04"
   },
   "dependencies": {
     "grafanaDependency": ">=7.0.0",
