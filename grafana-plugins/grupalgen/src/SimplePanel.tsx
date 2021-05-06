@@ -10,11 +10,11 @@ import dataGrupalgen from 'modules/dataGrupalgen';
 
 interface Props extends PanelProps<SimpleOptions> {}
 
-export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) => {
+export const SimplePanel: React.FC<Props> = ({ options, data, replaceVariables, width, height }) => {
   //const theme = useTheme();
   const styles = getStyles();
 
-  let grupalgen = dataGrupalgen(data,options);
+  let grupalgen = dataGrupalgen(data,options,replaceVariables);
 
   return (
     <div

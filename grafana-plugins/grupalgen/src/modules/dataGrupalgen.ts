@@ -1,13 +1,14 @@
-import { PanelData } from '@grafana/data';
+import { PanelData, InterpolateFunction } from '@grafana/data';
 import { SimpleOptions } from 'types';
 
 import { DataGrupalgen } from 'components/variables';
 import modoControlStyles from 'styles/modoControlStyles';
 //import Grupalgen from 'components/grupalgen';
 
-const dataGrupalgen = (data: PanelData, options: SimpleOptions): DataGrupalgen => {  
+const dataGrupalgen = (data: PanelData, options: SimpleOptions, replaceVariables: InterpolateFunction): DataGrupalgen => {  
     console.log('data: ', data);
     console.log('options: ', options);
+    console.log(replaceVariables);
 
     let OFF_MODE = data.series.find(({ name }) => name?.includes('DATA.OFF_MODE.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
@@ -77,6 +78,11 @@ let grupalgen: DataGrupalgen ={
         Generacion: modoControlStyles.SinConexion,
     },
   }
+
+//INTERPOLACION DE VARIABLES
+let variableNombre = replaceVariables('$EQUIPO')
+grupalgen.DatosGenerales.Nombre = variableNombre ! == '$NOMBRE' ?  variableNombre: options.nombre
+
 
 //CALCULOS
 

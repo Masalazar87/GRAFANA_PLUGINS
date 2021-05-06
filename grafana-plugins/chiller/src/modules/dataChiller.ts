@@ -98,7 +98,7 @@ const dataChiller = (data: PanelData, options: SimpleOptions): DataChiller => {
     //Alarmas
     chiller.Alarmas.AlarmaGeneral = CHILL_ALARM === 1? alarmsStyles.on : alarmsStyles.off;
     chiller.Principal.Estado = CHILL_RUN === 1? 'ENCENDIDO' : 'APAGADO';
-    chiller.Principal.Estado_class = CHILL_RUN === 1? estadoStyles.ok: estadoStyles.alarma;
+    chiller.Principal.Estado_class = CHILL_RUN === 1? estadoStyles.ok: estadoStyles.sinConexion;
     chiller.Principal.Botón = CHILL_RUN === 1? modoControlStyles.On: modoControlStyles.SinConexion;
     chiller.Compresor1.EstadoComp = SYS1_COMP_RUN_ST === 1? modoControlStyles.On : modoControlStyles.SinConexion;
     chiller.Compresor2.EstadoComp = SYS2_COMP_RUN_ST === 1? modoControlStyles.On: modoControlStyles.SinConexion;
