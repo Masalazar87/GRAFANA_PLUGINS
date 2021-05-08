@@ -19,6 +19,7 @@ type Indicacdores = {
     ActivaF1: string;
     ActivaF2: string;
     ModbusST: string;
+    Estado: string;
 };
 
 export interface DataGrupalats {
@@ -158,7 +159,7 @@ return (
 />
 <ellipse
   id="ats3b_modbus_st"
-  cx={23.135}
+  cx={19.96}
   cy={18.746}
   rx={3.902}
   ry={3.5366}
@@ -170,7 +171,7 @@ return (
 />
 <ellipse
   id="path2610-3-6-9-2"
-  transform="matrix(1.2686 0 0 1.0731 -76.072 -15.753)"
+  transform="matrix(1.2686 0 0 1.0731 -79.247 -15.753)"
   cx={78.266}
   cy={31.379}
   rx={2.3671}
@@ -412,6 +413,31 @@ return (
     {Parametros.TotalFallas}
   </tspan>
 </text>
+<ellipse
+    id="ats3b_modbus_st-1"
+    cx={34.58}
+    cy={18.746}
+    rx={3.902}
+    ry={3.5366}
+    fillRule="evenodd"
+    fill="#1ad371"
+    className = {Indicadores.Estado}
+    opacity={0.899}
+    paintOrder="markers stroke fill"
+    />
+    <ellipse
+    id="path2610-3-6-9-2-1"
+    transform="matrix(1.2686 0 0 1.0731 -64.627 -15.753)"
+    cx={78.266}
+    cy={31.379}
+    rx={2.3671}
+    ry={1.9181}
+    fillRule="evenodd"
+    fill="#fff"
+    filter="url(#filter3102-5-0-6)"
+    opacity={0.35}
+    paintOrder="markers stroke fill"
+    />
 </g>
 )
 }

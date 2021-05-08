@@ -2,9 +2,10 @@ import React from 'react';
 import { PanelProps } from '@grafana/data';
 import { SimpleOptions } from 'types';
 import { css, cx } from 'emotion';
-import Grupalats from 'components/gruaplats';
 //import { stylesFactory, useTheme } from '@grafana/ui';
 import { stylesFactory } from '@grafana/ui';
+import Grupalats from 'components/gruaplats';
+
 
 import dataGrupalats from 'modules/dataGrupalats';
 
