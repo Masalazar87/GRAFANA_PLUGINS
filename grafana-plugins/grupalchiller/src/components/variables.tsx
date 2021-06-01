@@ -53,7 +53,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="4.5861px"
       letterSpacing={0}
       opacity={0.899}
@@ -71,7 +71,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="4.5861px"
         strokeWidth={0.22758}
       >
@@ -92,7 +92,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="4.5861px"
       letterSpacing={0}
       opacity={0.899}
@@ -110,7 +110,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="4.5861px"
         strokeWidth={0.22758}
       >
@@ -131,7 +131,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="4.5861px"
       letterSpacing={0}
       opacity={0.896}
@@ -149,7 +149,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="4.5861px"
         strokeWidth={0.22758}
       >
@@ -170,7 +170,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -188,7 +188,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
@@ -209,7 +209,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -227,7 +227,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
@@ -248,7 +248,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -266,7 +266,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
@@ -287,7 +287,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -305,7 +305,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
@@ -326,7 +326,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -344,7 +344,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
@@ -365,7 +365,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -383,7 +383,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
@@ -404,7 +404,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -422,7 +422,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
@@ -443,7 +443,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -461,7 +461,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
@@ -482,7 +482,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -500,7 +500,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
@@ -521,7 +521,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Franklin Gothic Medium"
+      fontFamily="Sans-serif"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -539,7 +539,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Franklin Gothic Medium"
+        fontFamily="Sans-serif"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
@@ -658,7 +658,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="BankGothic Md BT"
+      fontFamily="Sans-serif"
       fontSize="7.188px"
       letterSpacing={0}
       opacity={0.899}
@@ -676,7 +676,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="BankGothic Md BT"
+        fontFamily="Sans-serif"
         fontSize="7.188px"
         strokeWidth={0.22758}
       >

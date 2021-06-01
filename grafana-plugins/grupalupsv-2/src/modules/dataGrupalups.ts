@@ -5,7 +5,7 @@ import { DataGrupalups } from 'components/variables';
 import modoControlStyles from 'styles/modoControlStyles';
 import alarmsStyles from 'styles/alarmsStyles';
 import estadoStyles from 'styles/estadoStyles';
-import alimentacionStyles from 'styles/alimentacionStyles';
+import conexionesStyles from 'styles/conexionesStyles';
 import animacionStyles from 'styles/animacionStyles';
 import bateriaStyles from 'styles/bateriaStyles'
 
@@ -83,7 +83,7 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
             Bypass: modoControlStyles.SinConexion,
             Alerta: modoControlStyles.SinConexion,
             Habilitado: modoControlStyles.SinConexion,
-            PanelRectifier: modoControlStyles.SinConexion,
+            PanelRectifier: estadoStyles.sinConexion2
         },
         Conexion: {
             Entrada: modoControlStyles.SinConexion,
@@ -128,24 +128,27 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
 
     //ALARMAS
     grupalups.Alarmas.Alarma = ALARMS_PRESENT === 1? alarmsStyles.on : alarmsStyles.off;
+    grupalups.Alarmas.Alerta = ALARMS_PRESENT === 1? alarmsStyles.on1 : alarmsStyles.off1;
+    grupalups.Alarmas.Estado = (RECTIFIER_ON_OFF && INVERTER_ON_OFF) === 1? modoControlStyles.On : estadoStyles.alarma;
+    //grupalups.Alarmas.PanelRectifier = RECTIFIER_ON_OFF === 1? estadoStyles.sinConexion2 : estadoStyles.alarma1;
+
+    //ESTADOS
     grupalups.Alarmas.Bypass = BYPASS_ON_OFF === 1? alarmsStyles.on : alarmsStyles.off;
     grupalups.Alarmas.Inverter = INVERTER_ON_OFF === 1? estadoStyles.ok : estadoStyles.off;
     grupalups.Alarmas.Rectifier = RECTIFIER_ON_OFF === 1? estadoStyles.ok : estadoStyles.off;
-    grupalups.Alarmas.Alerta = ALARMS_PRESENT === 1? alarmsStyles.on1 : alarmsStyles.off1;
     grupalups.Alarmas.Habilitado = (INPUT_VOLTAGE_MAX && RECTIFIER_ON_OFF && INVERTER_ON_OFF) === 1? estadoStyles.ok1 : estadoStyles.sinConexion2;
-    grupalups.Alarmas.Estado = (RECTIFIER_ON_OFF && INVERTER_ON_OFF) === 1? modoControlStyles.On : estadoStyles.alarma;
-    grupalups.Alarmas.PanelRectifier = RECTIFIER_ON_OFF === 1? estadoStyles.sinConexion2 : estadoStyles.alarma1;
+
 
     //CONEXIONES
-    grupalups.Conexion.Entrada = INPUT_VOLTAGE_MAX > 0? alimentacionStyles.on : alimentacionStyles.off;
-    grupalups.Conexion.Rectificador = RECTIFIER_ON_OFF === 1? alimentacionStyles.on : alimentacionStyles.off;
-    grupalups.Conexion.Inversor = INVERTER_ON_OFF === 1? alimentacionStyles.on : alimentacionStyles.off;
-    grupalups.Conexion.Salida = OUTPUT_VOLTAGE > 0? alimentacionStyles.on : alimentacionStyles.off;
-    grupalups.Conexion.Bypass = BYPASS_ON_OFF === 1? alimentacionStyles.on : alimentacionStyles.off;
-    grupalups.Conexion.Bateria = (RECTIFIER_ON_OFF && INVERTER_ON_OFF) === 1? alimentacionStyles.on : alimentacionStyles.onbattery;
-    grupalups.Conexion.Q4 = (RECTIFIER_ON_OFF) === 1? alimentacionStyles.close : alimentacionStyles.off;
-    grupalups.Conexion.Q4on = (RECTIFIER_ON_OFF) === 1? alimentacionStyles.on : alimentacionStyles.open;
-    grupalups.Conexion.Q4off= (RECTIFIER_ON_OFF) === 1? alimentacionStyles.open : alimentacionStyles.off;
+    grupalups.Conexion.Entrada = INPUT_VOLTAGE_MAX > 0? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Rectificador = RECTIFIER_ON_OFF === 1? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Inversor = INVERTER_ON_OFF === 1? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Salida = OUTPUT_VOLTAGE > 0? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Bypass = BYPASS_ON_OFF === 1? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Bateria = BATTERY_STATUS === 1? conexionesStyles.onbattery : conexionesStyles.off;
+    grupalups.Conexion.Q4 = (RECTIFIER_ON_OFF) === 1? conexionesStyles.close : conexionesStyles.off;
+    grupalups.Conexion.Q4on = (RECTIFIER_ON_OFF) === 1? conexionesStyles.on : conexionesStyles.open;
+    grupalups.Conexion.Q4off= (RECTIFIER_ON_OFF) === 1? conexionesStyles.open : conexionesStyles.off;
     
     //ANIMACION FLECHAS
     grupalups.Animacion.Entrada = INPUT_VOLTAGE_MAX > 0? animacionStyles.on : animacionStyles.off;
@@ -153,7 +156,7 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     grupalups.Animacion.Bypass = BYPASS_ON_OFF === 1? animacionStyles.on : animacionStyles.off;
     grupalups.Animacion.Salida = OUTPUT_VOLTAGE > 0? animacionStyles.on : animacionStyles.off;
     grupalups.Animacion.CargadorOn = (RECTIFIER_ON_OFF && INVERTER_ON_OFF) ===1? animacionStyles.on : animacionStyles.off;
-    grupalups.Animacion.CargadorOff = (BATTERY_STATUS) ===1? animacionStyles.on : animacionStyles.off;
+    grupalups.Animacion.CargadorOff = (BATTERY_STATUS) === 1? animacionStyles.on : animacionStyles.off;
    
     
     //CALCULOS
