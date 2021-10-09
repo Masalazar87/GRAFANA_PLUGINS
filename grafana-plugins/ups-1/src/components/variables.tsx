@@ -1,4 +1,6 @@
+//import { VariableType } from '@grafana/data';
 import React from 'react';
+
 
 type DatosGenerales = {
   Nombre: string;
@@ -40,7 +42,7 @@ type Principal ={
 
 export interface DataUps {
 DatosGenerales: DatosGenerales;
-Parametros: Parametros;
+Parametros: Parametros; 
 Alarmas: Alarmas;
 Principal: Principal;
 }
@@ -48,7 +50,7 @@ Principal: Principal;
 //export interface DataUps {
 //  Data: Ups
 //}
-export const Variables = ({ DatosGenerales, Parametros, Alarmas, Principal }: DataUps) => {
+export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: DataUps) => {
   return (
     <g id="layer2">
       <path
@@ -133,7 +135,7 @@ export const Variables = ({ DatosGenerales, Parametros, Alarmas, Principal }: Da
           fontSize="11.289px"
           strokeWidth={0.36412}
         >
-          { DatosGenerales.Nombre }
+          { DatosGenerales.Nombre } 
         </tspan>
       </text>
       <text

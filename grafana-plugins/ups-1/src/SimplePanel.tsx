@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { PanelProps } from '@grafana/data';
 import { SimpleOptions } from 'types';
 import { css, cx } from 'emotion';
@@ -11,7 +11,7 @@ import dataUps from 'modules/dataUps';
 
 interface Props extends PanelProps<SimpleOptions> {}
 
-export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) => {
+export const SimplePanel: React.FC<Props> = ({options, data, width, height }) => {
   //const theme = useTheme();
   const styles = getStyles();
 
@@ -19,7 +19,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
   //console.log("options: ", options)
 
   let ups = dataUps(data, options);
-    
+      
   return (
     <div
       className={cx(

@@ -425,6 +425,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Variables", function() { return Variables; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+//import { VariableType } from '@grafana/data';
  //export interface DataUps {
 //  Data: Ups
 //}
@@ -1111,7 +1112,8 @@ var dataUps = function dataUps(data, options) {
   var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20;
 
   console.log('data: ', data);
-  console.log('options: ', options);
+  console.log('options: ', options); //console.log('VariableType: ',VariableType);
+
   var INPUT_VOLTAGE_MAX = (_c = (_b = (_a = data.series.find(function (_a) {
     var name = _a.name;
     return name === null || name === void 0 ? void 0 : name.includes('DATA.INPUT_VOLTAGE_MAX.VALUE');
@@ -1175,10 +1177,10 @@ var dataUps = function dataUps(data, options) {
   var ups = {
     DatosGenerales: {
       Nombre: options.nombre,
-      Fase: options.fase,
-      Sistema: options.sistema,
-      Marca: options.marca,
-      Modelo: options.modelo,
+      Fase: 'A',
+      Sistema: '1&2',
+      Marca: 'GENERAL ELECTRIC',
+      Modelo: 'SG-200KVA',
       Ubicacion: options.ubicacion
     },
     Principal: {
@@ -1219,12 +1221,18 @@ var dataUps = function dataUps(data, options) {
 
   ups.Parametros.MinEstimados = Number.parseFloat(ESTIMATED_MINUTES_REMAINING === null || ESTIMATED_MINUTES_REMAINING === void 0 ? void 0 : ESTIMATED_MINUTES_REMAINING.toFixed(2));
   ups.Parametros.CargaEstimada = Number.parseFloat(ESTIMATED_CHARGE_REMAINING === null || ESTIMATED_CHARGE_REMAINING === void 0 ? void 0 : ESTIMATED_CHARGE_REMAINING.toFixed(2));
-  ups.Parametros.InVoltmin = Number.parseFloat(INPUT_VOLTAGE_MIN === null || INPUT_VOLTAGE_MIN === void 0 ? void 0 : INPUT_VOLTAGE_MIN.toFixed(2));
-  ups.Parametros.CorrienteOut = Number.parseFloat(OUTPUT_CURRENT === null || OUTPUT_CURRENT === void 0 ? void 0 : OUTPUT_CURRENT.toFixed(2));
+  ups.Parametros.InVoltmin = Number.parseFloat(INPUT_VOLTAGE_MIN === null || INPUT_VOLTAGE_MIN === void 0 ? void 0 : INPUT_VOLTAGE_MIN.toFixed(2)); //ups.Parametros.CorrienteOut = Number.parseFloat(OUTPUT_CURRENT?.toFixed(2)); 
+
   ups.Parametros.PotenciaOut = Number.parseFloat(OUTPUT_POWER === null || OUTPUT_POWER === void 0 ? void 0 : OUTPUT_POWER.toFixed(2));
   ups.Parametros.PorcenCarga1 = Number.parseFloat(OUTPUT_PERCENT_LOAD === null || OUTPUT_PERCENT_LOAD === void 0 ? void 0 : OUTPUT_PERCENT_LOAD.toFixed(2));
   ups.Parametros.PorcenCarga2 = Number.parseFloat(OUTPUT_PERCENT_LOAD_2 === null || OUTPUT_PERCENT_LOAD_2 === void 0 ? void 0 : OUTPUT_PERCENT_LOAD_2.toFixed(2));
-  ups.Parametros.PorcenCarga3 = Number.parseFloat(OUTPUT_PERCENT_LOAD_3 === null || OUTPUT_PERCENT_LOAD_3 === void 0 ? void 0 : OUTPUT_PERCENT_LOAD_3.toFixed(2)); //ALARMAS
+  ups.Parametros.PorcenCarga3 = Number.parseFloat(OUTPUT_PERCENT_LOAD_3 === null || OUTPUT_PERCENT_LOAD_3 === void 0 ? void 0 : OUTPUT_PERCENT_LOAD_3.toFixed(2));
+  var CorrienteOut = OUTPUT_CURRENT / 10;
+
+  if (OUTPUT_CURRENT !== undefined) {
+    ups.Parametros.CorrienteOut = Number.parseFloat(CorrienteOut === null || CorrienteOut === void 0 ? void 0 : CorrienteOut.toFixed(2));
+  } //ALARMAS
+
 
   ups.Alarmas.Presente = ALARMS_PRESENT === 1 ? styles_alarmsStyles__WEBPACK_IMPORTED_MODULE_1__["default"].on : styles_alarmsStyles__WEBPACK_IMPORTED_MODULE_1__["default"].off;
   ups.Alarmas.Bypass = BYPASS_ON_OFF === 1 ? styles_alarmsStyles__WEBPACK_IMPORTED_MODULE_1__["default"].on : styles_alarmsStyles__WEBPACK_IMPORTED_MODULE_1__["default"].off;

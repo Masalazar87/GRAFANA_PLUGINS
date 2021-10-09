@@ -1,3 +1,4 @@
+
 export interface SimpleOptions {
   nombre: string;
   fase: string;
@@ -6,3 +7,4 @@ export interface SimpleOptions {
   modelo: string;
   ubicacion: string;
 }
+  

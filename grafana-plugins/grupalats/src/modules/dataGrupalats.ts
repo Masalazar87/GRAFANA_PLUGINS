@@ -33,7 +33,7 @@ const dataGrupalats = (data: PanelData, options: SimpleOptions): DataGrupalats =
 let grupalats: DataGrupalats = {
     DatosGenerales:{
         Nombre: options.nombre,
-        Marca: options.marca, 
+        Marca: 'GENERAL ELECTRIC', 
     },
     Parametros:{
         Fuente1: '',
@@ -64,8 +64,8 @@ let grupalats: DataGrupalats = {
     grupalats.Indicadores.PresenciaF2 = F2_AVAIL === 1? indicadoresStyles.on1 : indicadoresStyles.off;
     grupalats.Indicadores.ActivaF1 = F1_POSIC === 1? indicadoresStyles.on : indicadoresStyles.off;
     grupalats.Indicadores.ActivaF2 = F2_POSIC === 1? indicadoresStyles.on1 : indicadoresStyles.off;
-    grupalats.Indicadores.ModbusST = MODBUS_ST === 1? indicadoresStyles.on : indicadoresStyles.off;
-    grupalats.Indicadores.Estado = NOT_IN_AUTO === 0? indicadoresStyles.on2 : indicadoresStyles.off;
+    grupalats.Indicadores.ModbusST = MODBUS_ST === 0? indicadoresStyles.on : indicadoresStyles.on2;
+    grupalats.Indicadores.Estado = NOT_IN_AUTO === 0? indicadoresStyles.on : indicadoresStyles.off;
 
 
     console.log(grupalats);

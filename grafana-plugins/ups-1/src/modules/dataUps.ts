@@ -1,14 +1,18 @@
 import { PanelData } from '@grafana/data';
 import { SimpleOptions } from 'types';
+//import { VariableType } from '@grafana/data';
+
 
 import { DataUps } from 'components/variables';
 import modoControlStyles from 'styles/modoControlStyles';
 import alarmsStyles from 'styles/alarmsStyles';
 import estadoStyles from 'styles/estadoStyles';
 
-const dataUps = (data: PanelData, options: SimpleOptions): DataUps => {  
+
+const dataUps = (data: PanelData, options:SimpleOptions): DataUps => {  
     console.log('data: ', data);
     console.log('options: ', options);
+    //console.log('VariableType: ',VariableType);
 
     let INPUT_VOLTAGE_MAX = data.series.find(({ name }) => name?.includes('DATA.INPUT_VOLTAGE_MAX.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
@@ -40,16 +44,17 @@ const dataUps = (data: PanelData, options: SimpleOptions): DataUps => {
     ?.lastNotNull;
     let RECTIFIER_ON_OFF  = data.series.find(({ name }) => name?.includes('DATA.RECTIFIER_ON_OFF'))?.fields[1].state?.calcs
     ?.lastNotNull;
-    
+        
    
 let ups: DataUps ={
     DatosGenerales: {
         Nombre: options.nombre,
-        Fase: options.fase,
-        Sistema: options.sistema,
-        Marca: options.marca,
-        Modelo: options.modelo,
-        Ubicacion: options.ubicacion, 
+        Fase: 'A',
+        Sistema: '1&2',
+        Marca: 'GENERAL ELECTRIC',
+        Modelo: 'SG-200KVA',
+        Ubicacion: options.ubicacion,
+
     },
     Principal: {
         Estado: '',
@@ -89,11 +94,15 @@ if (BATTERY_VOLTAGE !== undefined) {
 ups.Parametros.MinEstimados = Number.parseFloat(ESTIMATED_MINUTES_REMAINING?.toFixed(2));
 ups.Parametros.CargaEstimada = Number.parseFloat(ESTIMATED_CHARGE_REMAINING?.toFixed(2));
 ups.Parametros.InVoltmin = Number.parseFloat(INPUT_VOLTAGE_MIN?.toFixed(2)); 
-ups.Parametros.CorrienteOut = Number.parseFloat(OUTPUT_CURRENT?.toFixed(2)); 
+//ups.Parametros.CorrienteOut = Number.parseFloat(OUTPUT_CURRENT?.toFixed(2)); 
 ups.Parametros.PotenciaOut = Number.parseFloat(OUTPUT_POWER?.toFixed(2)); 
 ups.Parametros.PorcenCarga1 = Number.parseFloat(OUTPUT_PERCENT_LOAD?.toFixed(2)); 
 ups.Parametros.PorcenCarga2 = Number.parseFloat(OUTPUT_PERCENT_LOAD_2?.toFixed(2)); 
 ups.Parametros.PorcenCarga3 = Number.parseFloat(OUTPUT_PERCENT_LOAD_3?.toFixed(2)); 
+let CorrienteOut = OUTPUT_CURRENT / 10;
+if (OUTPUT_CURRENT !== undefined) {
+   ups.Parametros.CorrienteOut = Number.parseFloat(CorrienteOut?.toFixed(2));
+}
 
 //ALARMAS
 ups.Alarmas.Presente = ALARMS_PRESENT === 1? alarmsStyles.on : alarmsStyles.off;

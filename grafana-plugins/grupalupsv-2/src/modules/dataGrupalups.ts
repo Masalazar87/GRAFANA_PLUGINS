@@ -7,28 +7,28 @@ import alarmsStyles from 'styles/alarmsStyles';
 import estadoStyles from 'styles/estadoStyles';
 import conexionesStyles from 'styles/conexionesStyles';
 import animacionStyles from 'styles/animacionStyles';
-import bateriaStyles from 'styles/bateriaStyles'
+import bateriaStyles from 'styles/bateriaStyles';
 
 const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups => {  
     console.log('data: ', data);
     console.log('options: ', options);
 
     //VOLTAJES
-    let INPUT_VOLTAGE_MAX = data.series.find(({ name }) => name?.includes('DATA.INPUT_VOLTAGE_MAX.VALUE'))?.fields[1].state?.calcs
+    let INPUT_VOLTAGE_MAX = data.series .find(({ name }) => name?.includes('DATA.INPUT_VOLTAGE_MAX.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
-    //let INPUT_VOLTAGE = data.series.find(({ name }) => name?.includes('DATA.INPUT_VOLTAGE.VALUE'))?.fields[1].state?.calcs
-    //?.lastNotNull;
-    //let INPUT_VOLTAGE_2 = data.series.find(({ name }) => name?.includes('DATA.INPUT_VOLTAGE_2.VALUE'))?.fields[1].state?.calcs
-    //?.lastNotNull;
-    //let INPUT_VOLTAGE_3 = data.series.find(({ name }) => name?.includes('DATA.INPUT_VOLTAGE_3.VALUE'))?.fields[1].state?.calcs
-    //?.lastNotNull;
+    let INPUT_VOLTAGE = data.series.find(({ name }) => name?.includes('DATA.INPUT_VOLTAGE.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+    let INPUT_VOLTAGE_2 = data.series.find(({ name }) => name?.includes('DATA.INPUT_VOLTAGE_2.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+    let INPUT_VOLTAGE_3 = data.series.find(({ name }) => name?.includes('DATA.INPUT_VOLTAGE_3.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
     
     let OUTPUT_VOLTAGE = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_VOLTAGE.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
-    //let OUTPUT_VOLTAGE_2 = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_VOLTAGE_2.VALUE'))?.fields[1].state?.calcs
-    //?.lastNotNull;
-    //let OUTPUT_VOLTAGE_3 = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_VOLTAGE_3.VALUE'))?.fields[1].state?.calcs
-    //?.lastNotNull;
+    let OUTPUT_VOLTAGE_2 = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_VOLTAGE_2.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+    let OUTPUT_VOLTAGE_3 = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_VOLTAGE_3.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
 
     let BATTERY_VOLTAGE = data.series.find(({ name }) => name?.includes('DATA.BATTERY_VOLTAGE.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
@@ -42,6 +42,11 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     //?.lastNotNull;
     let OUTPUT_CURRENT = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_CURRENT.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
+    let OUTPUT_CURRENT_2 = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_CURRENT_2.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+    let OUTPUT_CURRENT_3 = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_CURRENT_3.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+
     let OUTPUT_POWER = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_POWER.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let OUTPUT_PERCENT_LOAD = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_PERCENT_LOAD.VALUE'))?.fields[1].state?.calcs
@@ -116,10 +121,10 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     }
 
     //PARAMETROS
-    grupalups.Parametros.Voltin = Number.parseFloat(INPUT_VOLTAGE_MAX?.toFixed(2));
-    grupalups.Parametros.Voltout = Number.parseFloat(OUTPUT_VOLTAGE?.toFixed(2));
+   //grupalups.Parametros.Voltin = Number.parseFloat(INPUT_VOLTAGE_MAX?.toFixed(2));
+   //grupalups.Parametros.Voltout = Number.parseFloat(OUTPUT_VOLTAGE?.toFixed(2));
+   //grupalups.Parametros.Outcurr = Number.parseFloat(OUTPUT_CURRENT?.toFixed(2));
     grupalups.Parametros.Vbateria = Number.parseFloat(BATTERY_VOLTAGE?.toFixed(2));
-    grupalups.Parametros.Outcurr = Number.parseFloat(OUTPUT_CURRENT?.toFixed(2));
     grupalups.Parametros.Outpow = Number.parseFloat(OUTPUT_POWER?.toFixed(2));
     grupalups.Parametros.Load1 = Number.parseFloat(OUTPUT_PERCENT_LOAD?.toFixed(2));
     grupalups.Parametros.Load2 = Number.parseFloat(OUTPUT_PERCENT_LOAD_2?.toFixed(2));
@@ -160,17 +165,17 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
    
     
     //CALCULOS
-    //let Voltin = INPUT_VOLTAGE + INPUT_VOLTAGE_2 + INPUT_VOLTAGE_3) / 30;
-    //if (INPUT_VOLTAGE !== undefined && INPUT_VOLTAGE_2 !== undefined && INPUT_VOLTAGE_3 !== undefined) {
-        //grupalups.Parametros.Voltin = Number.parseFloat(Voltin.toFixed(2));
-    //}
-    //let Voltout = (OUTPUT_VOLTAGE + OUTPUT_VOLTAGE_2 + OUTPUT_VOLTAGE_3) / 3;
-    //if (OUTPUT_VOLTAGE !== undefined && OUTPUT_VOLTAGE_2 !== undefined && OUTPUT_VOLTAGE_3 !== undefined) {
-      //  grupalups.Parametros.Voltout = Number.parseFloat(Voltout.toFixed(2));
-    //}
+    let Voltin = (INPUT_VOLTAGE + INPUT_VOLTAGE_2 + INPUT_VOLTAGE_3) / 3;
+    if (INPUT_VOLTAGE !== undefined && INPUT_VOLTAGE_2 !== undefined && INPUT_VOLTAGE_3 !== undefined) {
+        grupalups.Parametros.Voltin = Number.parseFloat(Voltin.toFixed(2));
+    }
+    let Voltout = (OUTPUT_VOLTAGE + OUTPUT_VOLTAGE_2 + OUTPUT_VOLTAGE_3) / 3;
+    if (OUTPUT_VOLTAGE !== undefined && OUTPUT_VOLTAGE_2 !== undefined && OUTPUT_VOLTAGE_3 !== undefined) {
+        grupalups.Parametros.Voltout = Number.parseFloat(Voltout.toFixed(2));
+    }
     
-    let Outcurr = OUTPUT_CURRENT / 10;
-    if (OUTPUT_CURRENT !== undefined) {
+    let Outcurr = (OUTPUT_CURRENT + OUTPUT_CURRENT_2 + OUTPUT_CURRENT_3) / 30;
+    if (OUTPUT_CURRENT !== undefined && OUTPUT_CURRENT_2 !== undefined && OUTPUT_CURRENT_3 !== undefined) {
     grupalups.Parametros.Outcurr = Number.parseFloat(Outcurr?.toFixed(2)); 
     }
 
@@ -181,10 +186,10 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     grupalups.Animacion.Bateria25 = Vbateria <= 109?  bateriaStyles.sinconexion : bateriaStyles.full;
     grupalups.Animacion.Bateria50 = Vbateria <= 218? bateriaStyles.sinconexion : bateriaStyles.full;
     grupalups.Animacion.Bateria75 = Vbateria <= 327? bateriaStyles.sinconexion : bateriaStyles.full;
-    grupalups.Animacion.Bateria100 = Vbateria <= 435 ? bateriaStyles.sinconexion : bateriaStyles.full;
+    grupalups.Animacion.Bateria100 = Vbateria <= 435? bateriaStyles.sinconexion : bateriaStyles.full;
 
     
-    //grupalups.Conexion.Bateria = RECTIFIER_ON_OFF ===1? animacionStyles.on : animacionStyles.off;
+    grupalups.Conexion.Bateria = RECTIFIER_ON_OFF ===1? conexionesStyles.on : conexionesStyles.off;
     }
 
     grupalups.Animacion.Carga25 = OUTPUT_PERCENT_LOAD >= 1? bateriaStyles.on : bateriaStyles.sinconexion;
@@ -195,7 +200,5 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     console.log(grupalups);
 
     return grupalups;
-
-};
-
+}
 export default dataGrupalups;
