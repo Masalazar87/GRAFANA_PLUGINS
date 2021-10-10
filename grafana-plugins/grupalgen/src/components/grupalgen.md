@@ -373,41 +373,6 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
         wordSpacing={0}
       >
         <text
-          id="batt-62-9-0"
-          transform="scale(1.0817 .92445)"
-          x={75.640152}
-          y={68.189484}
-          style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantNumeric: "normal",
-            lineHeight: 1.25
-          }}
-          xmlSpace="preserve"
-          fill="#fff"
-          fontSize="3.5278px"
-          strokeWidth={0.17543}
-        >
-          <tspan
-            id="tspan2348-2-5-2-2"
-            x={75.640152}
-            y={68.189484}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fill="#fff"
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5278px"
-            strokeWidth={0.17543}
-          >
-            {"%"}
-          </tspan>
-        </text>
-        <text
           id="text2336-0"
           transform="scale(1.0154 .98487)"
           x={30.713636}
@@ -421,67 +386,19 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontSize="3.5277px"
+          fontSize="4.2333px"
           strokeWidth={0.16437}
         >
-          <tspan
-            id="tspan5399"
-            x={30.713636}
-            y={40.281296}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
-          >
+          <tspan id="tspan5399" x={30.713636} y={40.281296}>
             {"TEMP"}
           </tspan>
-          <tspan
-            id="tspan5401"
-            x={30.713636}
-            y={45.57296}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
-          >
+          <tspan id="tspan5401" x={30.713636} y={45.57296}>
             {"P. OIL"}
           </tspan>
-          <tspan
-            id="tspan5403"
-            x={30.713636}
-            y={50.86462}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
-          >
+          <tspan id="tspan5403" x={30.713636} y={50.86462}>
             {"V. BATT."}
           </tspan>
-          <tspan
-            id="tspan5405"
-            x={30.713636}
-            y={56.156281}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
-          >
+          <tspan id="tspan5405" x={30.713636} y={56.156281}>
             {"LV. OIL"}
           </tspan>
         </text>
@@ -491,15 +408,15 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           x={58.840343}
           y={48.244568}
           style={{
+            fontFeatureSettings: "normal",
             fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
             fontVariantLigatures: "normal",
             fontVariantNumeric: "normal",
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontSize="3.5279px"
+          fontSize="4.4108px"
           strokeWidth={0.17543}
         >
           <tspan
@@ -507,14 +424,14 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             x={58.840343}
             y={48.244568}
             style={{
+              fontFeatureSettings: "normal",
               fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
             fontFamily="Franklin Gothic Medium"
-            fontSize="3.5279px"
+            fontSize="4.4108px"
             strokeWidth={0.17543}
           >
             {"PSI"}
@@ -526,15 +443,15 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           x={59.154785}
           y={53.971989}
           style={{
+            fontFeatureSettings: "normal",
             fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
             fontVariantLigatures: "normal",
             fontVariantNumeric: "normal",
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontSize="3.5279px"
+          fontSize="4.4108px"
           strokeWidth={0.17543}
         >
           <tspan
@@ -542,14 +459,14 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             x={59.154785}
             y={53.971989}
             style={{
+              fontFeatureSettings: "normal",
               fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
             fontFamily="Franklin Gothic Medium"
-            fontSize="3.5279px"
+            fontSize="4.4108px"
             strokeWidth={0.17543}
           >
             {"V"}
@@ -561,15 +478,15 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           x={59.023407}
           y={59.77264}
           style={{
+            fontFeatureSettings: "normal",
             fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
             fontVariantLigatures: "normal",
             fontVariantNumeric: "normal",
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontSize="3.5279px"
+          fontSize="4.4108px"
           strokeWidth={0.17543}
         >
           <tspan
@@ -577,14 +494,14 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             x={59.023407}
             y={59.77264}
             style={{
+              fontFeatureSettings: "normal",
               fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
             fontFamily="Franklin Gothic Medium"
-            fontSize="3.5279px"
+            fontSize="4.4108px"
             strokeWidth={0.17543}
           >
             {"%"}
@@ -596,15 +513,15 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           x={105.86536}
           y={42.562145}
           style={{
+            fontFeatureSettings: "normal",
             fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
             fontVariantLigatures: "normal",
             fontVariantNumeric: "normal",
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontSize="3.5279px"
+          fontSize="4.4108px"
           strokeWidth={0.17543}
         >
           <tspan
@@ -612,14 +529,14 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             x={105.86536}
             y={42.562145}
             style={{
+              fontFeatureSettings: "normal",
               fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
             fontFamily="Franklin Gothic Medium"
-            fontSize="3.5279px"
+            fontSize="4.4108px"
             strokeWidth={0.17543}
           >
             {"V"}
@@ -631,15 +548,15 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           x={105.85891}
           y={48.199142}
           style={{
+            fontFeatureSettings: "normal",
             fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
             fontVariantLigatures: "normal",
             fontVariantNumeric: "normal",
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontSize="3.5279px"
+          fontSize="4.4108px"
           strokeWidth={0.17543}
         >
           <tspan
@@ -647,14 +564,14 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             x={105.85891}
             y={48.199142}
             style={{
+              fontFeatureSettings: "normal",
               fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
             fontFamily="Franklin Gothic Medium"
-            fontSize="3.5279px"
+            fontSize="4.4108px"
             strokeWidth={0.17543}
           >
             {"A"}
@@ -666,15 +583,15 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           x={105.5509}
           y={53.972443}
           style={{
+            fontFeatureSettings: "normal",
             fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
             fontVariantLigatures: "normal",
             fontVariantNumeric: "normal",
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontSize="3.5279px"
+          fontSize="4.4108px"
           strokeWidth={0.17543}
         >
           <tspan
@@ -682,14 +599,14 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             x={105.5509}
             y={53.972443}
             style={{
+              fontFeatureSettings: "normal",
               fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
             fontFamily="Franklin Gothic Medium"
-            fontSize="3.5279px"
+            fontSize="4.4108px"
             strokeWidth={0.17543}
           >
             {"KVA"}
@@ -701,15 +618,15 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           x={37.087029}
           y={37.312878}
           style={{
+            fontFeatureSettings: "normal",
             fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
             fontVariantLigatures: "normal",
             fontVariantNumeric: "normal",
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
           fill="#fe7f22"
-          fontSize="4.5862px"
+          fontSize="5.2917px"
           strokeWidth={0.17543}
         >
           <tspan
@@ -718,14 +635,14 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             y={37.312878}
             dy={0}
             style={{
+              fontFeatureSettings: "normal",
               fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
               fontVariantNumeric: "normal"
             }}
             fill="#fe7f22"
             fontFamily="Franklin Gothic Medium"
-            fontSize="4.5862px"
+            fontSize="5.2917px"
             strokeWidth={0.17543}
           >
             {"MOTOR"}
@@ -737,15 +654,15 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           x={74.910912}
           y={37.074947}
           style={{
+            fontFeatureSettings: "normal",
             fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
             fontVariantLigatures: "normal",
             fontVariantNumeric: "normal",
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
           fill="#fe7f22"
-          fontSize="4.5862px"
+          fontSize="5.3908px"
           strokeWidth={0.17543}
         >
           <tspan
@@ -753,14 +670,14 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             x={74.910912}
             y={37.074947}
             style={{
+              fontFeatureSettings: "normal",
               fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
               fontVariantNumeric: "normal"
             }}
             fill="#fe7f22"
             fontFamily="Franklin Gothic Medium"
-            fontSize="4.5862px"
+            fontSize="5.3908px"
             strokeWidth={0.17543}
           >
             {"ALTERNADOR"}
@@ -880,15 +797,15 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           x={58.456982}
           y={42.486988}
           style={{
+            fontFeatureSettings: "normal",
             fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
             fontVariantLigatures: "normal",
             fontVariantNumeric: "normal",
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontSize="3.5279px"
+          fontSize="4.4108px"
           strokeWidth={0.17543}
         >
           <tspan
@@ -896,27 +813,27 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             x={58.456982}
             y={42.486988}
             style={{
+              fontFeatureSettings: "normal",
               fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
             fontFamily="Franklin Gothic Medium"
-            fontSize="3.5279px"
+            fontSize="4.4108px"
             strokeWidth={0.17543}
           >
             <tspan
               id="tspan2342-4-0"
               style={{
+                fontFeatureSettings: "normal",
                 fontVariantCaps: "normal",
-                fontVariantEastAsian: "normal",
                 fontVariantLigatures: "normal",
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
               fontFamily="Franklin Gothic Medium"
-              fontSize="3.5279px"
+              fontSize="4.4108px"
               strokeWidth={0.17543}
             >
               {"\xB0"}
@@ -937,67 +854,19 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontSize="3.5277px"
+          fontSize="4.2333px"
           strokeWidth={0.16437}
         >
-          <tspan
-            id="tspan5434"
-            x={47.13699}
-            y={39.946346}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
-          >
+          <tspan id="tspan5434" x={47.13699} y={39.946346}>
             {":"}
           </tspan>
-          <tspan
-            id="tspan5436"
-            x={47.13699}
-            y={45.238007}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
-          >
+          <tspan id="tspan5436" x={47.13699} y={45.238007}>
             {":"}
           </tspan>
-          <tspan
-            id="tspan5438"
-            x={47.13699}
-            y={50.529671}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
-          >
+          <tspan id="tspan5438" x={47.13699} y={50.529671}>
             {":"}
           </tspan>
-          <tspan
-            id="tspan5440"
-            x={47.13699}
-            y={55.821335}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
-          >
+          <tspan id="tspan5440" x={47.13699} y={55.821335}>
             {":"}
           </tspan>
         </text>
@@ -1015,21 +884,13 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontSize="3.5277px"
+          fontSize="4.2333px"
           strokeWidth={0.16437}
         >
           <tspan
             id="tspan5399-7"
             x={76.39798}
             y={40.324757}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
             strokeWidth={0.16437}
           >
             {"VOL. L-L "}
@@ -1038,14 +899,6 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             id="tspan5401-1"
             x={76.39798}
             y={45.616417}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
             strokeWidth={0.16437}
           >
             {"I. PROM"}
@@ -1054,14 +907,6 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             id="tspan5403-7"
             x={76.39798}
             y={50.908081}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
             strokeWidth={0.16437}
           >
             {"POTENCIA"}
@@ -1070,14 +915,6 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             id="tspan5405-4"
             x={76.39798}
             y={56.199745}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
             strokeWidth={0.16437}
           >
             {"ENERGIA"}
@@ -1097,21 +934,13 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontSize="3.5277px"
+          fontSize="4.2333px"
           strokeWidth={0.16437}
         >
           <tspan
             id="tspan5434-7"
             x={95.569832}
             y={39.946178}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
             strokeWidth={0.16437}
           >
             {":"}
@@ -1120,14 +949,6 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             id="tspan5436-0"
             x={95.569832}
             y={45.237839}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
             strokeWidth={0.16437}
           >
             {":"}
@@ -1136,14 +957,6 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             id="tspan5438-5"
             x={95.569832}
             y={50.529503}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
             strokeWidth={0.16437}
           >
             {":"}
@@ -1152,91 +965,13 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             id="tspan5440-4"
             x={95.569832}
             y={55.821167}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5277px"
             strokeWidth={0.16437}
           >
             {":"}
           </tspan>
         </text>
-        <text
-          id="text2294-3-3"
-          transform="scale(1.0817 .92445)"
-          x={28.308786}
-          y={68.481956}
-          style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantNumeric: "normal",
-            lineHeight: 1.25
-          }}
-          xmlSpace="preserve"
-          fill="#fe7f22"
-          fontSize="4.5861px"
-          strokeWidth={0.17543}
-        >
-          <tspan
-            id="tspan2292-3-2"
-            x={28.308786}
-            y={68.481956}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fill="#fe7f22"
-            fontFamily="Franklin Gothic Medium"
-            fontSize="4.5861px"
-            strokeWidth={0.17543}
-          >
-            {"COMBUSTIBLE:"}
-          </tspan>
-        </text>
-        <text
-          id="batt-62-8-8-7-0"
-          transform="scale(1.0817 .92445)"
-          x={105.49818}
-          y={59.821064}
-          style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantNumeric: "normal",
-            lineHeight: 1.25
-          }}
-          xmlSpace="preserve"
-          fill="#fff"
-          fontSize="3.5278px"
-          strokeWidth={0.17543}
-        >
-          <tspan
-            id="tspan2348-2-5-5-9-0-4"
-            x={105.49818}
-            y={59.821064}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fill="#fff"
-            fontFamily="Franklin Gothic Medium"
-            fontSize="3.5278px"
-            strokeWidth={0.17543}
-          >
-            {"KW/h"}
-          </tspan>
-        </text>
       </g>
-      <g id="layer6">
+     <g id="layer6">
         <image
           id="image4492"
           transform="matrix(-.72064 0 0 .72064 -13.66 2.854)"
@@ -1562,7 +1297,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
         />
         <path
           id="path2160-3"
-          d="M45.342 84.66a2.759 2.759 0 00-.03-.366l-.011-.072.046-.041-.023.017-.024.017-.007-.035a1.437 1.437 0 00-.056-.197.436.436 0 00-.1-.147 2.35 2.35 0 01-.444-.698c0-.008-.015-.05-.031-.092s-.038-.113-.049-.155a.484.484 0 00-.067-.173.6.6 0 00-.316-.235.78.78 0 00-.307-.05.648.648 0 01-.163-.015c-.049-.01-.066-.017-.087-.033-.024-.018-.024-.018-.006-.002l.02.018-.049-.02c-.11-.043-.189-.11-.21-.175-.003-.014-.003-.014.009-.007.008.005.008.004-.003-.005-.012-.01-.014-.019-.014-.048 0-.1.08-.198.218-.26.138-.065.375-.094.6-.077.148.012.329.048.477.094l.074.024.006-2.362.017-.04a.356.356 0 01.111-.145.455.455 0 01.175-.088.566.566 0 01.372.03.57.57 0 01.091.06c.044.035.06.054.082.088.049.08.047.054.047.55 0 .243.002.442.003.442l.05-.02a.42.42 0 01.14-.038l.057-.005c.031-.004.13.01.174.023a.46.46 0 01.214.141c.023.03.054.088.059.114.005.023.012.026.033.013a.463.463 0 01.244-.054.443.443 0 01.39.193.312.312 0 01.046.124c0 .008.003.014.004.014a.202.202 0 00.037-.015c.06-.028.12-.04.203-.039a.46.46 0 01.112.01c.146.036.258.128.295.244.01.034.034.335.045.579l.007.133c.004.05.004.051-.008.044-.012-.007-.012-.007 0 .003.008.01.01.034.017.176.019.455 0 .906-.051 1.183-.036.196-.067.29-.138.42-.11.2-.177.48-.218.912-.005.055-.01.118-.01.14v.04l-.189-.002.002-.048c.008-.204.05-.505.095-.697a1.714 1.714 0 01.19-.482c.004-.01.01-.017.014-.016.003.002.004.001.002-.003a.314.314 0 01.018-.076c.097-.31.129-.897.088-1.614a.24.24 0 01.001-.074.406.406 0 01-.011-.097 5.006 5.006 0 00-.04-.494.22.22 0 00-.134-.118.231.231 0 00-.086-.012.19.19 0 00-.097.015.22.22 0 00-.117.094l-.02.034-.004.296c-.002.198-.006.3-.01.309a.718.718 0 01-.093.078l-.086.065-.003-.507c-.003-.57 0-.526-.052-.581a.285.285 0 00-.247-.079.265.265 0 00-.188.119l-.016.028-.004.398c-.002.22-.006.41-.008.422-.013.064-.037.08-.128.085l-.062.004v-.136c0-.101.002-.137.008-.143.006-.005.006-.006 0-.004-.005.003-.008-.09-.01-.427l-.001-.43-.02-.031a1.841 1.841 0 01-.021-.036c-.001-.003.004-.001.01.005.008.005.015.009.015.007a.131.131 0 00-.021-.018c-.011-.008-.017-.01-.012-.006.013.014.005.011-.013-.005-.008-.008-.01-.012-.006-.01.016.006-.002-.008-.02-.016a.297.297 0 00-.165-.04c-.065 0-.07 0-.113.018a.253.253 0 00-.126.111l-.015.03v.507c-.001.278-.003.523-.005.543-.006.071-.033.09-.134.097l-.056.004v-1.761l.048.035-.024-.02-.024-.02-.004-.515-.024-.04a.244.244 0 00-.13-.1.229.229 0 00-.106-.014.242.242 0 00-.098.012c-.102.037-.164.113-.164.2v.034l-.018-.013-.018-.012.018.015.018.016v1.829l-.042-.03.042.036v.234c-.001.217-.007.408-.014.413a2.02 2.02 0 01-.141-.053 1.833 1.833 0 00-.716-.15.918.918 0 00-.377.06.24.24 0 00-.095.065c-.024.025-.035.06-.027.084.008.024.053.056.108.078.075.03.118.036.248.039a.974.974 0 01.654.249.653.653 0 01.184.348c.012.048.035.118.05.155a.528.528 0 01.03.079c0 .03.13.274.202.375.023.033.023.033.005.02-.01-.007-.007-.002.008.011a.263.263 0 01.038.041c.023.036.102.132.16.192a.654.654 0 01.161.333c-.002.005 0 .008.002.007.01-.005.038.156.055.298.009.082.022.3.022.371v.032h-.19l-.004-.134zm1.945-.16c.004-.005.006-.009.005-.009-.002 0-.007.004-.011.008-.004.004-.007.008-.005.008s.007-.004.011-.008zm.035-.029c.007-.005.01-.01.009-.01-.002 0-.009.004-.015.01-.007.005-.01.01-.008.01s.008-.004.014-.01zm.052-.041c.006-.005.01-.01.008-.01a.053.053 0 00-.015.01c-.006.005-.01.01-.008.01a.053.053 0 00.015-.01zm-1.998-.27l.019-.018c-.002 0-.013.008-.025.018s-.02.018-.019.018a.122.122 0 00.025-.018zm.051-.041l.019-.018a.122.122 0 00-.025.018l-.019.018a.122.122 0 00.025-.018zm2.22-.462l-.012-.009c-.01-.006-.01-.006-.002.002.008.009.014.011.014.007zm-2.608-.188a.13.13 0 00-.021-.016.13.13 0 00.037.031c.002 0-.005-.007-.016-.015zm-1.4-1.112l-.015-.012-.015-.01.013.012c.011.01.016.014.016.01zm-.052-.041l-.015-.012-.014-.01.012.012c.012.01.017.013.017.01zm4.107-.024c.007-.005.01-.01.009-.01a.053.053 0 00-.015.01c-.007.005-.01.01-.008.01a.053.053 0 00.014-.01zm-4.14-.001l-.023-.02-.024-.017.022.019c.02.018.026.021.026.018zm4.192-.04c.006-.005.01-.01.008-.01s-.008.004-.015.01c-.006.005-.01.01-.008.01a.053.053 0 00.015-.01zm-4.255-.012a.13.13 0 00-.018-.014l-.018-.013.016.014c.015.014.02.017.02.013zm4.306-.03c.006-.004.01-.01.008-.01a.053.053 0 00-.014.01c-.007.006-.01.011-.009.011a.053.053 0 00.015-.01zm-.042-.32s-.006-.006-.014-.011l-.015-.01.013.011c.011.011.016.014.016.01zm-.051-.04c0-.002-.007-.007-.014-.012l-.015-.01.012.011c.012.011.017.014.017.01zm-.045-.037l-.018-.014-.017-.012.015.014c.015.013.02.016.02.012zm-1.398-.283a.13.13 0 00.025-.023.206.206 0 00-.031.023.135.135 0 00-.026.023c.003 0 .017-.01.032-.023zm-1.302-.802c.005-.004.007-.008.005-.008s-.006.004-.01.008c-.005.004-.007.008-.006.008.002 0 .007-.004.011-.008zm1.276-.046a.13.13 0 00-.017-.014l-.018-.012.016.014c.014.013.02.016.02.012zm-.186-.149l-.014-.012-.014-.01.012.012c.011.011.017.014.017.01zm-.05-.041l-.015-.012-.015-.01.013.012c.011.01.016.014.016.01zm-.052-.041l-.015-.012-.014-.01.012.012c.012.01.017.014.017.01zm-.41-.186c.011-.01.02-.018.018-.018a.122.122 0 00-.025.018l-.019.018a.12.12 0 00.025-.018zm.115-.05c0-.001-.005-.006-.011-.01-.01-.006-.01-.006-.002.002.008.01.013.012.013.007zm-.026-.021l-.014-.012c-.015-.01-.015-.01-.003.001.006.006.009.013.006.015-.003.002 0 .003.003 0 .005-.001.008-.004.008-.004zm.023-.019c.006-.005.01-.01.008-.01a.053.053 0 00-.015.01c-.006.005-.01.01-.008.01a.053.053 0 00.015-.01zm-.061-.012l-.015-.011-.014-.01.012.011c.012.011.017.014.017.01zm.09-.01c.004-.005.006-.009.005-.009-.003 0-.008.004-.012.008s-.006.008-.005.008c.003 0 .008-.004.012-.008zm-.757-.524l-.015-.012-.014-.01.012.012c.012.01.017.013.017.01zm-.039-.031l-.01-.01c-.01-.005-.011-.005-.003.003.009.009.014.01.014.007z"
+          d="M45.342 84.66a2.759 2.759 0 00-.03-.366l-.011-.072.046-.041-.023.017-.024.017-.007-.035a1.437 1.437 0 00-.056-.197.436.436 0 00-.1-.147 2.35 2.35 0 01-.444-.698c0-.008-.015-.05-.031-.092s-.038-.113-.049-.155a.484.484 0 00-.067-.173.6.6 0 00-.316-.235.78.78 0 00-.307-.05.648.648 0 01-.163-.015c-.049-.01-.066-.017-.087-.033-.024-.018-.024-.018-.006-.002l.02.018-.049-.02c-.11-.043-.189-.11-.21-.175-.003-.014-.003-.014.009-.007.008.005.008.004-.003-.005-.012-.01-.014-.019-.014-.048 0-.1.08-.198.218-.26.138-.065.375-.094.6-.077.148.012.329.048.477.094l.074.024.003-1.181.003-1.18.017-.042a.356.356 0 01.111-.144.455.455 0 01.175-.088.566.566 0 01.372.03.57.57 0 01.091.06c.044.035.06.054.082.088.049.08.047.054.047.55 0 .243.002.442.003.442l.05-.02a.42.42 0 01.14-.038l.057-.005c.031-.004.13.01.174.023a.46.46 0 01.214.141c.023.03.054.088.059.114.005.023.012.026.033.013a.463.463 0 01.244-.054.443.443 0 01.39.193.312.312 0 01.046.124c0 .008.003.014.004.014a.202.202 0 00.037-.015c.06-.028.12-.04.203-.039a.46.46 0 01.112.01c.146.036.258.128.295.244.01.034.034.335.045.579l.007.133c.004.05.004.051-.008.044-.012-.007-.012-.007 0 .003.008.01.01.034.017.176.019.455 0 .906-.051 1.183-.036.196-.067.29-.138.42-.11.2-.177.48-.218.912-.005.055-.01.118-.01.14v.04l-.189-.002.002-.048c.008-.204.05-.505.095-.697a1.714 1.714 0 01.19-.482c.004-.01.01-.017.014-.016.003.002.004.001.002-.003a.314.314 0 01.018-.076c.097-.31.129-.897.088-1.614a.24.24 0 01.001-.074.406.406 0 01-.011-.097 5.006 5.006 0 00-.04-.494.22.22 0 00-.134-.118.231.231 0 00-.086-.012.19.19 0 00-.097.015.22.22 0 00-.117.094l-.02.034-.004.296c-.002.198-.006.3-.01.309a.718.718 0 01-.093.078l-.086.065-.003-.507c-.003-.57 0-.526-.052-.581a.285.285 0 00-.247-.079.265.265 0 00-.188.119l-.016.028-.004.398c-.002.22-.006.41-.008.422-.013.064-.037.08-.128.085l-.062.004v-.136c0-.101.002-.137.008-.143.006-.005.006-.006 0-.004-.005.003-.008-.09-.01-.427l-.001-.43-.02-.031a1.841 1.841 0 01-.021-.036c-.001-.003.004-.001.01.005.008.005.015.009.015.007a.131.131 0 00-.021-.018c-.011-.008-.017-.01-.012-.006.013.014.005.011-.013-.005-.008-.008-.01-.012-.006-.01.016.006-.002-.008-.02-.016a.297.297 0 00-.165-.04c-.065 0-.07 0-.113.018a.253.253 0 00-.126.111l-.015.03v.507c-.001.278-.003.523-.005.543-.006.071-.033.09-.134.097l-.056.004v-1.761l.048.035-.024-.02-.024-.02-.004-.515-.024-.04a.244.244 0 00-.13-.1.229.229 0 00-.106-.014.242.242 0 00-.098.012c-.102.037-.164.113-.164.2v.034l-.018-.013-.018-.012.018.015.018.016v1.829l-.042-.03.042.036v.234c-.001.217-.007.408-.014.413a2.02 2.02 0 01-.141-.053 1.833 1.833 0 00-.716-.15.918.918 0 00-.377.06.24.24 0 00-.095.065c-.024.025-.035.06-.027.084.008.024.053.056.108.078.075.03.118.036.248.039a.974.974 0 01.654.249.653.653 0 01.184.348c.012.048.035.118.05.155a.528.528 0 01.03.079c0 .03.13.274.202.375.023.033.023.033.005.02-.01-.007-.007-.002.008.011a.263.263 0 01.038.041c.023.036.102.132.16.192a.654.654 0 01.161.333c-.002.005 0 .008.002.007.01-.005.038.156.055.298.009.082.022.3.022.371v.032h-.19l-.004-.134zm1.945-.16c.004-.005.006-.009.005-.009-.002 0-.007.004-.011.008-.004.004-.007.008-.005.008s.007-.004.011-.008zm.035-.029c.007-.005.01-.01.009-.01-.002 0-.009.004-.015.01-.007.005-.01.01-.008.01s.008-.004.014-.01zm.052-.041c.006-.005.01-.01.008-.01a.053.053 0 00-.015.01c-.006.005-.01.01-.008.01a.053.053 0 00.015-.01zm-1.998-.27l.019-.018c-.002 0-.013.008-.025.018s-.02.018-.019.018a.122.122 0 00.025-.018zm.051-.041l.019-.018a.122.122 0 00-.025.018l-.019.018a.122.122 0 00.025-.018zm2.22-.462l-.012-.009c-.01-.006-.01-.006-.002.002.008.009.014.011.014.007zm-2.608-.188a.13.13 0 00-.021-.016.13.13 0 00.037.031c.002 0-.005-.007-.016-.015zm-1.4-1.112l-.015-.012-.015-.01.013.012c.011.01.016.014.016.01zm-.052-.041l-.015-.012-.014-.01.012.012c.012.01.017.013.017.01zm4.107-.024c.007-.005.01-.01.009-.01a.053.053 0 00-.015.01c-.007.005-.01.01-.008.01a.053.053 0 00.014-.01zm-4.14-.001l-.023-.02-.024-.017.022.019c.02.018.026.021.026.018zm4.192-.04c.006-.005.01-.01.008-.01s-.008.004-.015.01c-.006.005-.01.01-.008.01a.053.053 0 00.015-.01zm-4.255-.012a.13.13 0 00-.018-.014l-.018-.013.016.014c.015.014.02.017.02.013zm4.306-.03c.006-.004.01-.01.008-.01a.053.053 0 00-.014.01c-.007.006-.01.011-.009.011a.053.053 0 00.015-.01zm-.042-.32s-.006-.006-.014-.011l-.015-.01.013.011c.011.011.016.014.016.01zm-.051-.04c0-.002-.007-.007-.014-.012l-.015-.01.012.011c.012.011.017.014.017.01zm-.045-.037l-.018-.014-.017-.012.015.014c.015.013.02.016.02.012zm-1.398-.283a.13.13 0 00.025-.023.206.206 0 00-.031.023.135.135 0 00-.026.023c.003 0 .017-.01.032-.023zm-1.302-.802c.005-.004.007-.008.005-.008s-.006.004-.01.008c-.005.004-.007.008-.006.008.002 0 .007-.004.011-.008zm1.276-.046a.13.13 0 00-.017-.014l-.018-.012.016.014c.014.013.02.016.02.012zm-.186-.149l-.014-.012-.014-.01.012.012c.011.011.017.014.017.01zm-.05-.041l-.015-.012-.015-.01.013.012c.011.01.016.014.016.01zm-.052-.041l-.015-.012-.014-.01.012.012c.012.01.017.014.017.01zm-.41-.186c.011-.01.02-.018.018-.018a.122.122 0 00-.025.018l-.019.018a.12.12 0 00.025-.018zm.115-.05c0-.001-.005-.006-.011-.01-.01-.006-.01-.006-.002.002.008.01.013.012.013.007zm-.026-.021l-.014-.012c-.015-.01-.015-.01-.003.001.006.006.009.013.006.015-.003.002 0 .003.003 0 .005-.001.008-.004.008-.004zm.023-.019c.006-.005.01-.01.008-.01a.053.053 0 00-.015.01c-.006.005-.01.01-.008.01a.053.053 0 00.015-.01zm-.061-.012l-.015-.011-.014-.01.012.011c.012.011.017.014.017.01zm.09-.01c.004-.005.006-.009.005-.009-.003 0-.008.004-.012.008s-.006.008-.005.008c.003 0 .008-.004.012-.008zm-.757-.524l-.015-.012-.014-.01.012.012c.012.01.017.013.017.01zm-.039-.031l-.01-.01c-.01-.005-.011-.005-.003.003.009.009.014.01.014.007z"
           fill="#fff"
           strokeWidth={0.0053264}
         />
@@ -1844,8 +1579,8 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
         />
         <g
           id="g4055"
-          transform="matrix(.77402 0 0 .54463 -15.266 8.513)"
-          strokeWidth={1.11}
+          transform="matrix(.77402 0 0 .46814 -15.266 10.962)"
+          strokeWidth={1.1972}
           fill="#152c4e"
           stroke="#0eeef6"
         >
@@ -1856,7 +1591,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             clipPath="url(#clipPath4142-0)"
             filter="url(#filter21611-1-8-5-2)"
             opacity={0.75}
-            strokeWidth={1.3824}
+            strokeWidth={1.491}
           />
           <path
             id="path21615-1-2-0-3-9"
@@ -1865,7 +1600,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             clipPath="url(#clipPath4142-0-8)"
             filter="url(#filter21611-1-8-5-2-3)"
             opacity={0.75}
-            strokeWidth={1.3828}
+            strokeWidth={1.4915}
           />
           <path
             id="path21615-1-2-0-3-4"
@@ -1874,7 +1609,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             clipPath="url(#clipPath4142-0-81)"
             filter="url(#filter21611-1-8-5-2-1)"
             opacity={0.75}
-            strokeWidth={1.0358}
+            strokeWidth={1.1172}
           />
           <path
             id="path21615-1-2-0-3-5"
@@ -1883,7 +1618,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             clipPath="url(#clipPath4142-0-2)"
             filter="url(#filter21611-1-8-5-2-6)"
             opacity={0.75}
-            strokeWidth={1.0358}
+            strokeWidth={1.1172}
           />
         </g>
         <g
@@ -1975,7 +1710,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           strokeLinecap="square"
           strokeWidth={0.6075}
           stroke="#167f97"
-          d="M28.203 27.77H123.793V66.031H28.203z"
+          d="M28.203 27.77H123.793V60.128H28.203z"
         />
         <path
           id="path5057"
@@ -1984,7 +1719,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
         />
         <path
           id="path5059"
-          d="M123.7 65.669v-2.222h-22.455l-1.946 2.066z"
+          d="M123.7 60.091v-1.91h-22.455l-1.946 1.776z"
           fill="#138c9f"
         />
       </g>

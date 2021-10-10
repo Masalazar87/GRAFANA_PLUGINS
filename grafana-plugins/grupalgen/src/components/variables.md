@@ -10,7 +10,6 @@ type Motor = {
     PresOil: number;
     Vbatt: number;
     LvOil: number;
-    LvFuel: number;
 };
 
 type Alternador = {
@@ -55,24 +54,12 @@ return (
   xmlSpace="preserve"
   fill="#fff"
   fontFamily="Franklin Gothic Medium"
-  fontSize="3.5279px"
+  fontSize="4.4108px"
   letterSpacing={0}
   strokeWidth={0.17543}
   wordSpacing={0}
 >
-  <tspan
-    id="tspan5498"
-    x={47.91304}
-    y={48.307976}
-    style={{
-      fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.5279px"
-  >
+  <tspan id="tspan5498" x={47.91304} y={48.307976}>
     {Motor.PresOil}
   </tspan>
 </text>
@@ -91,24 +78,12 @@ return (
   xmlSpace="preserve"
   fill="#fff"
   fontFamily="Franklin Gothic Medium"
-  fontSize="3.5279px"
+  fontSize="4.4108px"
   letterSpacing={0}
   strokeWidth={0.17543}
   wordSpacing={0}
 >
-  <tspan
-    id="tspan5496"
-    x={47.91304}
-    y={42.606998}
-    style={{
-      fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.5279px"
-  >
+  <tspan id="tspan5496" x={47.91304} y={42.606998}>
     {Motor.Temp}
   </tspan>
 </text>
@@ -127,24 +102,12 @@ return (
   xmlSpace="preserve"
   fill="#fff"
   fontFamily="Franklin Gothic Medium"
-  fontSize="3.5279px"
+  fontSize="4.4108px"
   letterSpacing={0}
   strokeWidth={0.17543}
   wordSpacing={0}
 >
-  <tspan
-    id="tspan5500"
-    x={47.91304}
-    y={54.008957}
-    style={{
-      fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.5279px"
-  >
+  <tspan id="tspan5500" x={47.91304} y={54.008957}>
     {Motor.Vbatt}
   </tspan>
 </text>
@@ -163,24 +126,12 @@ return (
   xmlSpace="preserve"
   fill="#fff"
   fontFamily="Franklin Gothic Medium"
-  fontSize="3.5279px"
+  fontSize="4.4108px"
   letterSpacing={0}
   strokeWidth={0.17543}
   wordSpacing={0}
 >
-  <tspan
-    id="tspan5502"
-    x={47.91304}
-    y={59.709934}
-    style={{
-      fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.5279px"
-  >
+  <tspan id="tspan5502" x={47.91304} y={59.709934}>
     {Motor.LvOil}
   </tspan>
 </text>
@@ -190,8 +141,8 @@ return (
   x={93.529434}
   y={42.759216}
   style={{
+    fontFeatureSettings: "normal",
     fontVariantCaps: "normal",
-    fontVariantEastAsian: "normal",
     fontVariantLigatures: "normal",
     fontVariantNumeric: "normal",
     lineHeight: 1.25
@@ -199,7 +150,7 @@ return (
   xmlSpace="preserve"
   fill="#fff"
   fontFamily="Franklin Gothic Medium"
-  fontSize="3.5279px"
+  fontSize="4.6352px"
   letterSpacing={0}
   strokeWidth={0.17543}
   wordSpacing={0}
@@ -209,14 +160,14 @@ return (
     x={93.529434}
     y={42.759216}
     style={{
+      fontFeatureSettings: "normal",
       fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
       fontVariantLigatures: "normal",
       fontVariantNumeric: "normal"
     }}
     fill="#fff"
     fontFamily="Franklin Gothic Medium"
-    fontSize="3.5279px"
+    fontSize="4.6352px"
     strokeWidth={0.17543}
   >
     {Alternador.VLL}
@@ -228,8 +179,8 @@ return (
   x={93.529434}
   y={48.460037}
   style={{
+    fontFeatureSettings: "normal",
     fontVariantCaps: "normal",
-    fontVariantEastAsian: "normal",
     fontVariantLigatures: "normal",
     fontVariantNumeric: "normal",
     lineHeight: 1.25
@@ -237,7 +188,7 @@ return (
   xmlSpace="preserve"
   fill="#fff"
   fontFamily="Franklin Gothic Medium"
-  fontSize="3.5279px"
+  fontSize="4.6352px"
   letterSpacing={0}
   strokeWidth={0.17543}
   wordSpacing={0}
@@ -247,54 +198,17 @@ return (
     x={93.529434}
     y={48.460037}
     style={{
+      fontFeatureSettings: "normal",
       fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
       fontVariantLigatures: "normal",
       fontVariantNumeric: "normal"
     }}
     fill="#fff"
     fontFamily="Franklin Gothic Medium"
-    fontSize="3.5279px"
+    fontSize="4.6352px"
     strokeWidth={0.17543}
   >
     {Alternador.Iprom}
-  </tspan>
-</text>
-<text
-  id="gen4_temp-2"
-  transform="scale(1.0817 .92445)"
-  x={65.380791}
-  y={68.408592}
-  style={{
-    fontVariantCaps: "normal",
-    fontVariantEastAsian: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.5278px"
-  letterSpacing={0}
-  strokeWidth={0.17543}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan5496-2"
-    x={65.380791}
-    y={68.408592}
-    style={{
-      fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.5278px"
-    strokeWidth={0.17543}
-  >
-    {Motor.LvFuel}
   </tspan>
 </text>
 <text
@@ -303,8 +217,8 @@ return (
   x={93.529434}
   y={54.160862}
   style={{
+    fontFeatureSettings: "normal",
     fontVariantCaps: "normal",
-    fontVariantEastAsian: "normal",
     fontVariantLigatures: "normal",
     fontVariantNumeric: "normal",
     lineHeight: 1.25
@@ -312,7 +226,7 @@ return (
   xmlSpace="preserve"
   fill="#fff"
   fontFamily="Franklin Gothic Medium"
-  fontSize="3.5279px"
+  fontSize="4.6352px"
   letterSpacing={0}
   strokeWidth={0.17543}
   wordSpacing={0}
@@ -322,14 +236,14 @@ return (
     x={93.529434}
     y={54.160862}
     style={{
+      fontFeatureSettings: "normal",
       fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
       fontVariantLigatures: "normal",
       fontVariantNumeric: "normal"
     }}
     fill="#fff"
     fontFamily="Franklin Gothic Medium"
-    fontSize="3.5279px"
+    fontSize="4.6352px"
     strokeWidth={0.17543}
   >
     {Alternador.Pot}
@@ -341,8 +255,8 @@ return (
   x={93.529434}
   y={59.861683}
   style={{
+    fontFeatureSettings: "normal",
     fontVariantCaps: "normal",
-    fontVariantEastAsian: "normal",
     fontVariantLigatures: "normal",
     fontVariantNumeric: "normal",
     lineHeight: 1.25
@@ -350,7 +264,7 @@ return (
   xmlSpace="preserve"
   fill="#fff"
   fontFamily="Franklin Gothic Medium"
-  fontSize="3.5279px"
+  fontSize="4.6352px"
   letterSpacing={0}
   strokeWidth={0.17543}
   wordSpacing={0}
@@ -360,14 +274,14 @@ return (
     x={93.529434}
     y={59.861683}
     style={{
+      fontFeatureSettings: "normal",
       fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
       fontVariantLigatures: "normal",
       fontVariantNumeric: "normal"
     }}
     fill="#fff"
     fontFamily="Franklin Gothic Medium"
-    fontSize="3.5279px"
+    fontSize="4.6352px"
     strokeWidth={0.17543}
   >
     {Alternador.Energy}

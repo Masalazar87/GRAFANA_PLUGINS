@@ -1,4 +1,4 @@
-//import { VariableType } from '@grafana/data';
+
 import React from 'react';
 
 
@@ -80,7 +80,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           y={27.098461}
           fill="#000"
           fontFamily="Franklin Gothic Medium"
-          fontSize="11.289px"
+          fontSize="10.289px"
           strokeWidth={0.36412}
         >
           { DatosGenerales.Nombre }
@@ -132,7 +132,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           y={27.49506}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
-          fontSize="11.289px"
+          fontSize="10.289px"
           strokeWidth={0.36412}
         >
           { DatosGenerales.Nombre } 

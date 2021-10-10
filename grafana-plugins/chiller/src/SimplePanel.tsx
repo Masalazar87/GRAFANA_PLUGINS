@@ -11,14 +11,14 @@ import dataChiller from 'modules/dataChiller';
 
 interface Props extends PanelProps<SimpleOptions> {}
 
-export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) => {
+export const SimplePanel: React.FC<Props> = ({ options, data, width, height,replaceVariables }) => {
   // const theme = useTheme();
   const styles = getStyles();
 
   //console.log("data: ", data)
   //console.log("options: ", options)
   
-  let chiller = dataChiller(data, options);
+  let chiller = dataChiller(data, options, replaceVariables);
 
   
 

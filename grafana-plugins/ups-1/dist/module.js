@@ -371,12 +371,13 @@ var SimplePanel = function SimplePanel(_a) {
   var options = _a.options,
       data = _a.data,
       width = _a.width,
-      height = _a.height; //const theme = useTheme();
+      height = _a.height,
+      replaceVariables = _a.replaceVariables; //const theme = useTheme();
 
   var styles = getStyles(); //console.log("data: ", data)
   //console.log("options: ", options)
 
-  var ups = Object(modules_dataUps__WEBPACK_IMPORTED_MODULE_5__["default"])(data, options);
+  var ups = Object(modules_dataUps__WEBPACK_IMPORTED_MODULE_5__["default"])(data, options, replaceVariables);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: Object(emotion__WEBPACK_IMPORTED_MODULE_2__["cx"])(styles.wrapper, Object(emotion__WEBPACK_IMPORTED_MODULE_2__["css"])(templateObject_1 || (templateObject_1 = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"])(["\n          width: ", "px;\n          height: ", "px;\n        "], ["\n          width: ", "px;\n          height: ", "px;\n        "])), width, height))
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_ups1__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -425,7 +426,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Variables", function() { return Variables; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-//import { VariableType } from '@grafana/data';
  //export interface DataUps {
 //  Data: Ups
 //}
@@ -464,7 +464,7 @@ var Variables = function Variables(_a) {
     y: 27.098461,
     fill: "#000",
     fontFamily: "Franklin Gothic Medium",
-    fontSize: "11.289px",
+    fontSize: "10.289px",
     strokeWidth: 0.36412
   }, DatosGenerales.Nombre)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("text", {
     id: "volt",
@@ -510,7 +510,7 @@ var Variables = function Variables(_a) {
     y: 27.49506,
     fill: "#fff",
     fontFamily: "Franklin Gothic Medium",
-    fontSize: "11.289px",
+    fontSize: "10.289px",
     strokeWidth: 0.36412
   }, DatosGenerales.Nombre)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("text", {
     id: "vol_batt",
@@ -1063,11 +1063,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var plugin = new _grafana_data__WEBPACK_IMPORTED_MODULE_0__["PanelPlugin"](_SimplePanel__WEBPACK_IMPORTED_MODULE_1__["SimplePanel"]).setPanelOptions(function (builder) {
-  return builder.addTextInput({
-    path: 'nombre',
-    name: 'ID EQUIPO',
-    description: 'Nombre del ups'
-  }).addTextInput({
+  return builder //.addTextInput({
+  //path: 'nombre',
+  //name: 'ID EQUIPO',
+  //description: 'Nombre del ups',
+  //})  
+  .addTextInput({
     path: 'fase',
     name: 'FASE',
     description: 'Fase en donde está el ups'
@@ -1108,12 +1109,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var dataUps = function dataUps(data, options) {
+var dataUps = function dataUps(data, options, replaceVariables) {
   var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20;
 
   console.log('data: ', data);
-  console.log('options: ', options); //console.log('VariableType: ',VariableType);
-
+  console.log('options: ', options);
+  console.log(replaceVariables);
   var INPUT_VOLTAGE_MAX = (_c = (_b = (_a = data.series.find(function (_a) {
     var name = _a.name;
     return name === null || name === void 0 ? void 0 : name.includes('DATA.INPUT_VOLTAGE_MAX.VALUE');
@@ -1176,12 +1177,12 @@ var dataUps = function dataUps(data, options) {
   })) === null || _18 === void 0 ? void 0 : _18.fields[1].state) === null || _19 === void 0 ? void 0 : _19.calcs) === null || _20 === void 0 ? void 0 : _20.lastNotNull;
   var ups = {
     DatosGenerales: {
-      Nombre: options.nombre,
+      Nombre: '',
       Fase: 'A',
       Sistema: '1&2',
       Marca: 'GENERAL ELECTRIC',
       Modelo: 'SG-200KVA',
-      Ubicacion: options.ubicacion
+      Ubicacion: 'CUARTOS UPS SIST. 1&2'
     },
     Principal: {
       Estado: '',
@@ -1209,7 +1210,10 @@ var dataUps = function dataUps(data, options) {
       PorcenCarga2: 0,
       PorcenCarga3: 0
     }
-  };
+  }; //INTERPOLACION DE VARIABLES
+
+  var variableNombre = replaceVariables('$EQUIPO');
+  ups.DatosGenerales.Nombre = variableNombre !== '' ? variableNombre : options.nombre;
   ups.Principal.InVolmax = ups.Parametros.InVoltmax = Number.parseFloat(INPUT_VOLTAGE_MAX === null || INPUT_VOLTAGE_MAX === void 0 ? void 0 : INPUT_VOLTAGE_MAX.toFixed(2));
   ups.Principal.OutVolt = Number.parseFloat(OUTPUT_VOLTAGE === null || OUTPUT_VOLTAGE === void 0 ? void 0 : OUTPUT_VOLTAGE.toFixed(2));
   ups.Principal.Estado = INVERTER_ON_OFF === 1 ? 'ENCENDIDO' : 'APAGADO';

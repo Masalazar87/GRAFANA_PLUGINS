@@ -11,14 +11,14 @@ import dataUps from 'modules/dataUps';
 
 interface Props extends PanelProps<SimpleOptions> {}
 
-export const SimplePanel: React.FC<Props> = ({options, data, width, height }) => {
+export const SimplePanel: React.FC<Props> = ({options, data, width, height, replaceVariables }) => {
   //const theme = useTheme();
   const styles = getStyles();
 
   //console.log("data: ", data)
   //console.log("options: ", options)
 
-  let ups = dataUps(data, options);
+  let ups = dataUps(data, options, replaceVariables);
       
   return (
     <div

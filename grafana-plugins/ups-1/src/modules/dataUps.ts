@@ -1,18 +1,16 @@
-import { PanelData } from '@grafana/data';
 import { SimpleOptions } from 'types';
-//import { VariableType } from '@grafana/data';
-
-
+import { PanelData, InterpolateFunction} from '@grafana/data';
 import { DataUps } from 'components/variables';
 import modoControlStyles from 'styles/modoControlStyles';
 import alarmsStyles from 'styles/alarmsStyles';
 import estadoStyles from 'styles/estadoStyles';
 
 
-const dataUps = (data: PanelData, options:SimpleOptions): DataUps => {  
+const dataUps = (data: PanelData, options:SimpleOptions, replaceVariables:InterpolateFunction): DataUps => {  
     console.log('data: ', data);
     console.log('options: ', options);
-    //console.log('VariableType: ',VariableType);
+    console.log(replaceVariables);
+       
 
     let INPUT_VOLTAGE_MAX = data.series.find(({ name }) => name?.includes('DATA.INPUT_VOLTAGE_MAX.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
@@ -48,12 +46,12 @@ const dataUps = (data: PanelData, options:SimpleOptions): DataUps => {
    
 let ups: DataUps ={
     DatosGenerales: {
-        Nombre: options.nombre,
+        Nombre: '',
         Fase: 'A',
         Sistema: '1&2',
         Marca: 'GENERAL ELECTRIC',
         Modelo: 'SG-200KVA',
-        Ubicacion: options.ubicacion,
+        Ubicacion: 'CUARTOS UPS SIST. 1&2',
 
     },
     Principal: {
@@ -84,6 +82,12 @@ let ups: DataUps ={
     },
 }
 
+//INTERPOLACION DE VARIABLES
+
+let variableNombre = replaceVariables('$EQUIPO')
+ups.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
+
+
 ups.Principal.InVolmax = ups.Parametros.InVoltmax = Number.parseFloat(INPUT_VOLTAGE_MAX?.toFixed(2));
 ups.Principal.OutVolt = Number.parseFloat(OUTPUT_VOLTAGE?.toFixed(2));
 ups.Principal.Estado = INVERTER_ON_OFF === 1? 'ENCENDIDO' : 'APAGADO';
@@ -113,7 +117,7 @@ ups.Principal.Estado_class = INVERTER_ON_OFF === 1? estadoStyles.ok1 : estadoSty
 ups.Principal.Botón = INVERTER_ON_OFF === 1? modoControlStyles.On : estadoStyles.sinConexion;
 
 
-    console.log(ups);
+   console.log(ups);
 
     return ups;
 

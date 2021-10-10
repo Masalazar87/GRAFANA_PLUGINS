@@ -1,4 +1,4 @@
-import { PanelData } from '@grafana/data';
+import { PanelData,InterpolateFunction } from '@grafana/data';
 import { SimpleOptions } from 'types';
 
 import { DataChiller } from 'components/variables';
@@ -6,9 +6,11 @@ import modoControlStyles from 'styles/modoControlStyles';
 import alarmsStyles from 'styles/alarmsStyles';
 import estadoStyles from 'styles/estadoStyles';
 
-const dataChiller = (data: PanelData, options: SimpleOptions): DataChiller => {  
+
+const dataChiller = (data: PanelData, options: SimpleOptions, replaceVariables:InterpolateFunction): DataChiller => {  
     console.log('data: ', data);
     console.log('options: ', options);
+    console.log(replaceVariables);
 
     let LEAVE_CHILL_TEMP = data.series.find(({ name }) => name?.includes('DATA.LEAVE_CHILL_TEMP.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
@@ -47,12 +49,12 @@ const dataChiller = (data: PanelData, options: SimpleOptions): DataChiller => {
     
     let chiller: DataChiller ={
         DatosGenerales: {
-            Nombre: options.nombre,
-            Fase: options.fase,
-            Sistema: options.sistema,
-            Marca: options.marca,
-            Modelo: options.modelo,
-            Ubicacion: options.ubicacion, 
+            Nombre: '',
+            Fase: 'A',
+            Sistema: '1&2',
+            Marca: 'YORK',
+            Modelo: 'YVAA0263',
+            Ubicacion: 'EXTERIORES', 
         },
         Principal: {
             Estado: '',
@@ -82,6 +84,11 @@ const dataChiller = (data: PanelData, options: SimpleOptions): DataChiller => {
             CodAlarmaS2: '',
         },
     }
+
+    //INTERPOLACION DE VARIABLES
+
+    let variableNombre = replaceVariables('$EQUIPO')
+    chiller.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
 
     chiller.Principal.TemperaturaSuministro = Number.parseFloat(LEAVE_CHILL_TEMP?.toFixed(2));
     chiller.Principal.TemperaturaRetorno = Number.parseFloat(RET_CHILL_TEMP?.toFixed(2));

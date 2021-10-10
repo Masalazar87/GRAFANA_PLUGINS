@@ -9,9 +9,9 @@ export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel).setPanelOption
       name: 'ID EQUIPO',
       description: 'Nombre del generador',
     })
-    .addTextInput({
-      path: 'marca',
-      name: 'MARCA',
-      description: 'Marca del generador',
-    });
+    //.addTextInput({
+     // path: 'marca',
+      //name: 'MARCA',
+      //description: 'Marca del generador',
+    //});
 });
