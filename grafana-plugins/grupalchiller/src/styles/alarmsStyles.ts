@@ -12,6 +12,9 @@ const getStyles = stylesFactory(() => {
       fill: #999;
     `,
     on: css`
+      fill: green;
+    `,
+    on1: css`
       fill: red;
       animation: ${parpadeo} 1s ease infinite;
     `,

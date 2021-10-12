@@ -605,6 +605,7 @@ return (
       fill="#4d4d4d"
       opacity={0.899}
       paintOrder="markers stroke fill"
+      className = {Indicadores.Orden}
     />
     <ellipse
       id="path2610-3-6-6-5-8-83-1"

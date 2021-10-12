@@ -90,8 +90,8 @@ grupalchiller.Compresor2.HFunc = Number.parseFloat(SYS2_TOTAL_RUN_HOURS?.toFixed
 
 grupalchiller.Indicadores.Señal = CHILL_RUN === 1? alarmsStyles.on : alarmsStyles.off;
 //grupalchiller.Indicadores.Switch = 
-//grupalchiller.Indicadores.Orden =
-grupalchiller.Indicadores.Alarma =  CHILL_ALARM === 1? alarmsStyles.on : alarmsStyles.off;
+grupalchiller.Indicadores.Orden = grupalchiller.Indicadores.Señal
+grupalchiller.Indicadores.Alarma =  CHILL_ALARM === 1? alarmsStyles.on1 : alarmsStyles.off;
 
     console.log(grupalchiller);
 

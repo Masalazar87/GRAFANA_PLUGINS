@@ -404,7 +404,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             fontSize="3.5278px"
             strokeWidth={0.17543}
           >
-            {"%"}
+            {""}
           </tspan>
         </text>
         <text
@@ -482,7 +482,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             fontFamily="Franklin Gothic Medium"
             fontSize="3.5277px"
           >
-            {"LV. OIL"}
+            {"FUEL"}
           </tspan>
         </text>
         <text
@@ -1197,7 +1197,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             fontSize="4.5861px"
             strokeWidth={0.17543}
           >
-            {"COMBUSTIBLE:"}
+            {""}
           </tspan>
         </text>
         <text

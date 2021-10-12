@@ -9,7 +9,7 @@ type Motor = {
     Temp: number;
     PresOil: number;
     Vbatt: number;
-    LvOil: number;
+    //LvOil: number;
     LvFuel: number;
 };
 
@@ -28,6 +28,7 @@ type Indicadores ={
     Manual: string;
     Auto: string;
     Generacion: string;
+    Generacion2: string;
 };
 
 export interface DataGrupalgen {
@@ -181,7 +182,7 @@ return (
     fontFamily="Franklin Gothic Medium"
     fontSize="3.5279px"
   >
-    {Motor.LvOil}
+    {Motor.LvFuel}
   </tspan>
 </text>
 <text
@@ -257,7 +258,7 @@ return (
     fontSize="3.5279px"
     strokeWidth={0.17543}
   >
-    {Alternador.Iprom}
+  {Alternador.Iprom}
   </tspan>
 </text>
 <text
@@ -294,7 +295,7 @@ return (
     fontSize="3.5278px"
     strokeWidth={0.17543}
   >
-    {Motor.LvFuel}
+    {""}
   </tspan>
 </text>
 <text
@@ -486,6 +487,27 @@ return (
     fill="url(#linearGradient4152)"
   />
 </g>
+<g
+  id="led5"
+  transform="matrix(.39267 0 0 .36499 -141.2 9.385)"
+  strokeWidth={0.9277}
+>
+  <ellipse
+    id="ellipse2272-2"
+    cx={701.5}
+    cy={160.6}
+    rx={4.185}
+    ry={3.8495}
+    fill="#1aea77"
+    className = {Indicadores.Generacion2}
+  />
+  <path
+    id="path2274-8"
+    transform="translate(306.94 -230.46) scale(.26458)"
+    d="M779.21 1505.7c-2.74 0-5.475.7-7.818 1.994-2.115 1.168-3.833 2.861-5.102 4.793 3.437 1.628 8.034 2.616 12.707 2.62 4.817 0 9.55-1.056 13.018-2.774-1.278-1.89-2.987-3.544-5.08-4.684-2.321-1.264-5.02-1.945-7.725-1.949z"
+    fill="url(#linearGradient4152)"
+  />
+</g>
 <ellipse
   id="led4"
   cx={92.743}
@@ -552,6 +574,19 @@ return (
   opacity={0.389}
   paintOrder="markers stroke fill"
 />
+<ellipse
+  id="gen4_gen"
+  transform="matrix(.49883 0 0 .35398 12.852 65.154)"
+  cx={243.266}
+  cy={6.579}
+  rx={2.3671}
+  ry={1.9181}
+  fillRule="evenodd"
+  fill="#fff"
+  filter="url(#filter3102-29-7-0)"
+  opacity={0.389}
+  paintOrder="markers stroke fill"
+  />
 <ellipse
   id="gen4_auto"
   transform="matrix(.49883 0 0 .35398 53.608 65.154)"
