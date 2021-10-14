@@ -844,9 +844,9 @@ return (
           id="path12233"
           d="M110.53 37.189h14.299v14.9"
           fill="none"
-          className = {Conexion.Bypass}
+          //className = {Conexion.Bypass}
           strokeWidth={0.55}
-          stroke="#0decf8"
+          stroke="#999"
         />
         <path
           id="path11248-7-6-4-7"
@@ -859,16 +859,16 @@ return (
           strokeWidth={0.4442}
           stroke="#0bf0f7"
         />
-        <path
-          id="path11248-7-6-8-8"
-          d="M120.196 37.259l-3.324 1.919V35.34z"
-          fillOpacity={0.99667}
-          className = {Animacion.Bypass}
-          opacity={0.999}
-          paintOrder="markers fill stroke"
-          strokeLinecap="square"
-          strokeWidth={0.44417668000000005}
-          stroke="#0bf0f7"
+        //<path
+          //id="path11248-7-6-8-8"
+          //d="M120.196 37.259l-3.324 1.919V35.34z"
+          //fillOpacity={0.99667}
+          //className = {Animacion.Bypass}
+          //opacity={0.999}
+          //paintOrder="markers fill stroke"
+          //strokeLinecap="square"
+          //strokeWidth={0.44417668000000005}
+          //stroke="#0bf0f7"
         />
         <path
           id="path3200"
@@ -967,15 +967,15 @@ return (
         />
         <path
           id="path11248-8"
-          d="M79.803 62.541l1.919 3.324h-3.838z"
-          fillOpacity={0.99667}
-          fill="#009898"
+          d="M79.803 60.541l1.919 3.324h-3.838z"
+          fillOpacity={0}//{0.99667}
+          fill=""//#009898"
           className = {Animacion.CargadorOff}
           opacity={0.999}
           paintOrder="markers fill stroke"
           strokeLinecap="square"
           strokeWidth={0.4442}
-          stroke="#0bf0f7"
+          stroke=""//"#0bf0f7"
         />
         <path
           id="path1617-6"

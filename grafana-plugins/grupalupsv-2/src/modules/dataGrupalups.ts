@@ -59,6 +59,9 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     ?.lastNotNull;
     let BYPASS_ON_OFF = data.series.find(({ name }) => name?.includes('DATA.BYPASS_ON_OFF.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
+    let BYPASS_POWER = data.series.find(({ name }) => name?.includes('DATA.BYPASS_POWER.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+
     let RECTIFIER_ON_OFF = data.series.find(({ name }) => name?.includes('DATA.RECTIFIER_ON_OFF.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let BATTERY_STATUS =  data.series.find(({ name }) => name?.includes('DATA.BATTERY_STATUS.VALUE'))?.fields[1].state?.calcs
@@ -134,11 +137,11 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     //ALARMAS
     grupalups.Alarmas.Alarma = ALARMS_PRESENT === 1? alarmsStyles.on : alarmsStyles.off;
     grupalups.Alarmas.Alerta = ALARMS_PRESENT === 1? alarmsStyles.on1 : alarmsStyles.off1;
-    grupalups.Alarmas.Estado = (RECTIFIER_ON_OFF && INVERTER_ON_OFF) === 1? modoControlStyles.On : estadoStyles.alarma;
+    grupalups.Alarmas.Estado = (RECTIFIER_ON_OFF && INVERTER_ON_OFF) === 1? modoControlStyles.On : estadoStyles.sinConexion;
     //grupalups.Alarmas.PanelRectifier = RECTIFIER_ON_OFF === 1? estadoStyles.sinConexion2 : estadoStyles.alarma1;
 
     //ESTADOS
-    grupalups.Alarmas.Bypass = BYPASS_ON_OFF === 1? alarmsStyles.on : alarmsStyles.off;
+    grupalups.Alarmas.Bypass = (BYPASS_POWER && BYPASS_ON_OFF)=== 1? alarmsStyles.on : alarmsStyles.off;
     grupalups.Alarmas.Inverter = INVERTER_ON_OFF === 1? estadoStyles.ok : estadoStyles.off;
     grupalups.Alarmas.Rectifier = RECTIFIER_ON_OFF === 1? estadoStyles.ok : estadoStyles.off;
     grupalups.Alarmas.Habilitado = (INPUT_VOLTAGE_MAX && RECTIFIER_ON_OFF && INVERTER_ON_OFF) === 1? estadoStyles.ok1 : estadoStyles.sinConexion2;
@@ -149,11 +152,13 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     grupalups.Conexion.Rectificador = RECTIFIER_ON_OFF === 1? conexionesStyles.on : conexionesStyles.off;
     grupalups.Conexion.Inversor = INVERTER_ON_OFF === 1? conexionesStyles.on : conexionesStyles.off;
     grupalups.Conexion.Salida = OUTPUT_VOLTAGE > 0? conexionesStyles.on : conexionesStyles.off;
-    grupalups.Conexion.Bypass = BYPASS_ON_OFF === 1? conexionesStyles.on : conexionesStyles.off;
-    grupalups.Conexion.Bateria = BATTERY_STATUS === 1? conexionesStyles.onbattery : conexionesStyles.off;
+    grupalups.Conexion.Bypass = (BYPASS_ON_OFF) === 1? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Bateria = BATTERY_STATUS === 0? conexionesStyles.off : conexionesStyles.on;
+    
     grupalups.Conexion.Q4 = (RECTIFIER_ON_OFF) === 1? conexionesStyles.close : conexionesStyles.off;
     grupalups.Conexion.Q4on = (RECTIFIER_ON_OFF) === 1? conexionesStyles.on : conexionesStyles.open;
     grupalups.Conexion.Q4off= (RECTIFIER_ON_OFF) === 1? conexionesStyles.open : conexionesStyles.off;
+    
     
     //ANIMACION FLECHAS
     grupalups.Animacion.Entrada = INPUT_VOLTAGE_MAX > 0? animacionStyles.on : animacionStyles.off;
@@ -161,7 +166,7 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     grupalups.Animacion.Bypass = BYPASS_ON_OFF === 1? animacionStyles.on : animacionStyles.off;
     grupalups.Animacion.Salida = OUTPUT_VOLTAGE > 0? animacionStyles.on : animacionStyles.off;
     grupalups.Animacion.CargadorOn = (RECTIFIER_ON_OFF && INVERTER_ON_OFF) ===1? animacionStyles.on : animacionStyles.off;
-    grupalups.Animacion.CargadorOff = (BATTERY_STATUS) === 1? animacionStyles.on : animacionStyles.off;
+    //grupalups.Animacion.CargadorOff = (BATTERY_STATUS) === 1? animacionStyles.on1 : animacionStyles.off;
    
     
     //CALCULOS
@@ -188,8 +193,7 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     grupalups.Animacion.Bateria75 = Vbateria <= 327? bateriaStyles.sinconexion : bateriaStyles.full;
     grupalups.Animacion.Bateria100 = Vbateria <= 435? bateriaStyles.sinconexion : bateriaStyles.full;
 
-    
-    grupalups.Conexion.Bateria = RECTIFIER_ON_OFF ===1? conexionesStyles.on : conexionesStyles.off;
+
     }
 
     grupalups.Animacion.Carga25 = OUTPUT_PERCENT_LOAD >= 1? bateriaStyles.on : bateriaStyles.sinconexion;

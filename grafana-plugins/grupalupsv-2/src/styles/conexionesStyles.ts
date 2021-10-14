@@ -1,5 +1,10 @@
 import { stylesFactory } from '@grafana/ui';
-import { css } from 'emotion';
+import { css, keyframes } from 'emotion';
+
+const parpadeo = keyframes`
+  0% { opacity: 1.0; };
+  100% { opacity: 0.0; };
+`;
 
 const getStyles = stylesFactory(() => {
   return {
@@ -16,7 +21,7 @@ const getStyles = stylesFactory(() => {
     stroke: green;
     `,
     onbattery: css`
-    stroke: green;
+    stroke: red;animation: ${parpadeo} 1s ease infinite;
     `,
   };
 });
