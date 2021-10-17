@@ -17,7 +17,9 @@ const getStyles = stylesFactory(() => {
     `,
     on1: css`
       fill: green;
-      animation: ${parpadeo} 1s ease infinite;
+    `,
+    on2: css`
+      fill: url(#linearGradient4474);
     `,
   };
 });

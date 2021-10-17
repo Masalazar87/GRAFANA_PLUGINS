@@ -27,8 +27,12 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height,repl
     <Pdi
     DatosGenerales={pdi.DatosGenerales}
     Estado={pdi.Estado}
-    Panel1={pdi.Panel1}
-    Panel2={pdi.Panel2}
+    Panel1_kva = {pdi.Panel1_kva}
+    Panel1_kwh = {pdi.Panel1_kwh}
+    Panel1_Amps = {pdi.Panel1_Amps}
+    Panel2_kva = {pdi.Panel2_kva}
+    Panel2_kwh = {pdi.Panel2_kwh}
+    Panel2_Amps = {pdi.Panel2_Amps}
     />
     </div>
   );
