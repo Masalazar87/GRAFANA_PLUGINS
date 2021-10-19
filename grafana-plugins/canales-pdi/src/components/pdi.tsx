@@ -2524,12 +2524,12 @@ return (
           <g id="layer9" fillRule="evenodd" fill="#0f0" strokeWidth={0.28066}>
             <path
               id="rect11272"
-              opacity={0.06}
+              opacity={0.02}
               d="M11.403 30.875H101.653V174.295H11.403z"
             />
             <path
               id="rect961"
-              opacity={0.06}
+              opacity={0.02}
               d="M111.42 30.875H201.67000000000002V174.295H111.42z"
             />
           </g>

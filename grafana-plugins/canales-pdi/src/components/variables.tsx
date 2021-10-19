@@ -1,4 +1,3 @@
-import { panelChangeView } from '@grafana/data/types/panelEvents';
 import React from 'react'
 
 type DatosGenerales = {
@@ -34,19 +33,28 @@ type Panel1_Amps ={
   CH36:number; CH37:number; CH38:number; CH39:number; CH40:number; CH41:number; CH42:number;
 };
 type Panel2_kva ={
-  CH1: number;
-  CH2: number;
-  CH3: number;
+  CH1:number; CH2:number; CH3:number; CH4:number; CH5:number; CH6:number; CH7:number;
+  CH8:number; CH9:number; CH10:number; CH11:number; CH12:number; CH13:number; CH14:number;
+  CH15:number; CH16:number; CH17:number; CH18:number; CH19:number; CH20:number; CH21:number;
+  CH22:number; CH23:number; CH24:number; CH25:number; CH26:number; CH27:number; CH28:number;
+  CH29:number; CH30:number; CH31:number; CH32:number; CH33:number; CH34:number; CH35:number;
+  CH36:number; CH37:number; CH38:number; CH39:number; CH40:number; CH41:number; CH42:number;
 };
 type Panel2_kwh ={
-  CH1: number;
-  CH2: number;
-  CH3: number;
+  CH1:number; CH2:number; CH3:number; CH4:number; CH5:number; CH6:number; CH7:number;
+  CH8:number; CH9:number; CH10:number; CH11:number; CH12:number; CH13:number; CH14:number;
+  CH15:number; CH16:number; CH17:number; CH18:number; CH19:number; CH20:number; CH21:number;
+  CH22:number; CH23:number; CH24:number; CH25:number; CH26:number; CH27:number; CH28:number;
+  CH29:number; CH30:number; CH31:number; CH32:number; CH33:number; CH34:number; CH35:number;
+  CH36:number; CH37:number; CH38:number; CH39:number; CH40:number; CH41:number; CH42:number;
 };
 type Panel2_Amps ={
-  CH1: number;
-  CH2: number;
-  CH3: number;
+  CH1:number; CH2:number; CH3:number; CH4:number; CH5:number; CH6:number; CH7:number;
+  CH8:number; CH9:number; CH10:number; CH11:number; CH12:number; CH13:number; CH14:number;
+  CH15:number; CH16:number; CH17:number; CH18:number; CH19:number; CH20:number; CH21:number;
+  CH22:number; CH23:number; CH24:number; CH25:number; CH26:number; CH27:number; CH28:number;
+  CH29:number; CH30:number; CH31:number; CH32:number; CH33:number; CH34:number; CH35:number;
+  CH36:number; CH37:number; CH38:number; CH39:number; CH40:number; CH41:number; CH42:number;
 };
 
 
@@ -296,7 +304,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH19}
                 </tspan>
               </text>
               <text
@@ -328,7 +336,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH28}
                 </tspan>
               </text>
               <text
@@ -424,7 +432,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH25}
                 </tspan>
               </text>
               <text
@@ -456,7 +464,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH35}
                 </tspan>
               </text>
               <text
@@ -488,7 +496,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH41}
                 </tspan>
               </text>
               <text
@@ -552,7 +560,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH40}
                 </tspan>
               </text>
               <text
@@ -584,7 +592,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH31}
                 </tspan>
               </text>
               <text
@@ -616,7 +624,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH38}
                 </tspan>
               </text>
               <text
@@ -648,7 +656,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH42}
                 </tspan>
               </text>
               <text
@@ -680,7 +688,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH23}
                 </tspan>
               </text>
               <text
@@ -712,7 +720,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH36}
                 </tspan>
               </text>
               <text
@@ -744,7 +752,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH26}
                 </tspan>
               </text>
               <text
@@ -808,7 +816,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH34}
                 </tspan>
               </text>
               <text
@@ -840,7 +848,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH24}
                 </tspan>
               </text>
               <text
@@ -872,7 +880,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH33}
                 </tspan>
               </text>
               <text
@@ -904,7 +912,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH18}
                 </tspan>
               </text>
               <text
@@ -936,7 +944,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH29}
                 </tspan>
               </text>
               <text
@@ -968,7 +976,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH27}
                 </tspan>
               </text>
               <text
@@ -1000,7 +1008,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH37}
                 </tspan>
               </text>
               <text
@@ -1032,7 +1040,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH39}
                 </tspan>
               </text>
               <text
@@ -1096,7 +1104,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH21}
                 </tspan>
               </text>
               <text
@@ -1256,7 +1264,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH16}
                 </tspan>
               </text>
               <text
@@ -1288,7 +1296,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH17}
                 </tspan>
               </text>
               <text
@@ -1320,7 +1328,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH20}
                 </tspan>
               </text>
               <text
@@ -1352,7 +1360,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH22}
                 </tspan>
               </text>
               <text
@@ -1384,7 +1392,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH30}
                 </tspan>
               </text>
               <text
@@ -1416,7 +1424,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_Amps.CH32}
                 </tspan>
               </text>
             </g>
@@ -1651,7 +1659,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH19}
                 </tspan>
               </text>
               <text
@@ -1683,7 +1691,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH28}
                 </tspan>
               </text>
               <text
@@ -1779,7 +1787,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH25}
                 </tspan>
               </text>
               <text
@@ -1811,7 +1819,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH35}
                 </tspan>
               </text>
               <text
@@ -1843,7 +1851,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH41}
                 </tspan>
               </text>
               <text
@@ -1907,7 +1915,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH40}
                 </tspan>
               </text>
               <text
@@ -1939,7 +1947,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH31}
                 </tspan>
               </text>
               <text
@@ -1971,7 +1979,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH38}
                 </tspan>
               </text>
               <text
@@ -2003,7 +2011,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH42}
                 </tspan>
               </text>
               <text
@@ -2035,7 +2043,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH23}
                 </tspan>
               </text>
               <text
@@ -2067,7 +2075,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH36}
                 </tspan>
               </text>
               <text
@@ -2099,7 +2107,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH26}
                 </tspan>
               </text>
               <text
@@ -2163,7 +2171,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH34}
                 </tspan>
               </text>
               <text
@@ -2195,7 +2203,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH24}
                 </tspan>
               </text>
               <text
@@ -2227,7 +2235,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH33}
                 </tspan>
               </text>
               <text
@@ -2259,7 +2267,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH18}
                 </tspan>
               </text>
               <text
@@ -2291,7 +2299,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH29}
                 </tspan>
               </text>
               <text
@@ -2323,7 +2331,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH27}
                 </tspan>
               </text>
               <text
@@ -2355,7 +2363,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH37}
                 </tspan>
               </text>
               <text
@@ -2387,7 +2395,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH39}
                 </tspan>
               </text>
               <text
@@ -2451,7 +2459,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH21}
                 </tspan>
               </text>
               <text
@@ -2611,7 +2619,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH16}
                 </tspan>
               </text>
               <text
@@ -2643,7 +2651,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH17}
                 </tspan>
               </text>
               <text
@@ -2675,7 +2683,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH20}
                 </tspan>
               </text>
               <text
@@ -2707,7 +2715,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH22}
                 </tspan>
               </text>
               <text
@@ -2739,7 +2747,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH30}
                 </tspan>
               </text>
               <text
@@ -2771,7 +2779,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kva.CH32}
                 </tspan>
               </text>
             </g>
@@ -3007,7 +3015,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH19}
                 </tspan>
               </text>
               <text
@@ -3039,7 +3047,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH28}
                 </tspan>
               </text>
               <text
@@ -3135,7 +3143,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH25}
                 </tspan>
               </text>
               <text
@@ -3167,7 +3175,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH35}
                 </tspan>
               </text>
               <text
@@ -3199,7 +3207,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH41}
                 </tspan>
               </text>
               <text
@@ -3263,7 +3271,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH40}
                 </tspan>
               </text>
               <text
@@ -3295,7 +3303,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH31}
                 </tspan>
               </text>
               <text
@@ -3327,7 +3335,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH38}
                 </tspan>
               </text>
               <text
@@ -3359,7 +3367,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH42}
                 </tspan>
               </text>
               <text
@@ -3391,7 +3399,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH23}
                 </tspan>
               </text>
               <text
@@ -3423,7 +3431,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH36}
                 </tspan>
               </text>
               <text
@@ -3455,7 +3463,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH26}
                 </tspan>
               </text>
               <text
@@ -3519,7 +3527,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH34}
                 </tspan>
               </text>
               <text
@@ -3551,7 +3559,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH24}
                 </tspan>
               </text>
               <text
@@ -3583,7 +3591,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH33}
                 </tspan>
               </text>
               <text
@@ -3615,7 +3623,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH18}
                 </tspan>
               </text>
               <text
@@ -3647,7 +3655,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH29}
                 </tspan>
               </text>
               <text
@@ -3679,7 +3687,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH27}
                 </tspan>
               </text>
               <text
@@ -3711,7 +3719,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH37}
                 </tspan>
               </text>
               <text
@@ -3743,7 +3751,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH39}
                 </tspan>
               </text>
               <text
@@ -3807,7 +3815,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH21}
                 </tspan>
               </text>
               <text
@@ -3967,7 +3975,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH16}
                 </tspan>
               </text>
               <text
@@ -3999,7 +4007,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH17}
                 </tspan>
               </text>
               <text
@@ -4031,7 +4039,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH20}
                 </tspan>
               </text>
               <text
@@ -4063,7 +4071,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH22}
                 </tspan>
               </text>
               <text
@@ -4095,7 +4103,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH30}
                 </tspan>
               </text>
               <text
@@ -4127,7 +4135,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel1_kwh.CH32}
                 </tspan>
               </text>
             </g>
@@ -4170,7 +4178,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH9}
                 </tspan>
               </text>
               <text
@@ -4234,7 +4242,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {Panel2_kva.CH2}
+                  {Panel2_Amps.CH2}
                 </tspan>
               </text>
               <text
@@ -4266,7 +4274,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH5}
                 </tspan>
               </text>
               <text
@@ -4298,7 +4306,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH7}
                 </tspan>
               </text>
               <text
@@ -4330,7 +4338,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH6}
                 </tspan>
               </text>
               <text
@@ -4362,7 +4370,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH19}
                 </tspan>
               </text>
               <text
@@ -4394,7 +4402,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH28}
                 </tspan>
               </text>
               <text
@@ -4458,7 +4466,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH4}
                 </tspan>
               </text>
               <text
@@ -4490,7 +4498,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH25}
                 </tspan>
               </text>
               <text
@@ -4522,7 +4530,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH35}
                 </tspan>
               </text>
               <text
@@ -4554,7 +4562,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH41}
                 </tspan>
               </text>
               <text
@@ -4586,7 +4594,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH8}
                 </tspan>
               </text>
               <text
@@ -4618,7 +4626,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH40}
                 </tspan>
               </text>
               <text
@@ -4650,7 +4658,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH31}
                 </tspan>
               </text>
               <text
@@ -4682,7 +4690,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH38}
                 </tspan>
               </text>
               <text
@@ -4714,7 +4722,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH42}
                 </tspan>
               </text>
               <text
@@ -4746,7 +4754,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH23}
                 </tspan>
               </text>
               <text
@@ -4778,7 +4786,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH36}
                 </tspan>
               </text>
               <text
@@ -4810,7 +4818,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH26}
                 </tspan>
               </text>
               <text
@@ -4842,7 +4850,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH14}
                 </tspan>
               </text>
               <text
@@ -4874,7 +4882,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH34}
                 </tspan>
               </text>
               <text
@@ -4906,7 +4914,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH24}
                 </tspan>
               </text>
               <text
@@ -4938,7 +4946,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH33}
                 </tspan>
               </text>
               <text
@@ -4970,7 +4978,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH18}
                 </tspan>
               </text>
               <text
@@ -5002,7 +5010,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH29}
                 </tspan>
               </text>
               <text
@@ -5034,7 +5042,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH27}
                 </tspan>
               </text>
               <text
@@ -5066,7 +5074,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH37}
                 </tspan>
               </text>
               <text
@@ -5098,7 +5106,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH39}
                 </tspan>
               </text>
               <text
@@ -5130,7 +5138,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH11}
                 </tspan>
               </text>
               <text
@@ -5162,7 +5170,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH21}
                 </tspan>
               </text>
               <text
@@ -5194,7 +5202,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH13}
                 </tspan>
               </text>
               <text
@@ -5226,7 +5234,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH12}
                 </tspan>
               </text>
               <text
@@ -5258,7 +5266,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH10}
                 </tspan>
               </text>
               <text
@@ -5290,7 +5298,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH15}
                 </tspan>
               </text>
               <text
@@ -5322,7 +5330,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH16}
                 </tspan>
               </text>
               <text
@@ -5354,7 +5362,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH17}
                 </tspan>
               </text>
               <text
@@ -5386,7 +5394,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH20}
                 </tspan>
               </text>
               <text
@@ -5418,7 +5426,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH22}
                 </tspan>
               </text>
               <text
@@ -5450,7 +5458,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH30}
                 </tspan>
               </text>
               <text
@@ -5482,7 +5490,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_Amps.CH32}
                 </tspan>
               </text>
             </g>
@@ -5525,7 +5533,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH9}
                 </tspan>
               </text>
               <text
@@ -5621,7 +5629,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH5}
                 </tspan>
               </text>
               <text
@@ -5653,7 +5661,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH7}
                 </tspan>
               </text>
               <text
@@ -5685,7 +5693,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH6}
                 </tspan>
               </text>
               <text
@@ -5717,7 +5725,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH19}
                 </tspan>
               </text>
               <text
@@ -5749,7 +5757,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH28}
                 </tspan>
               </text>
               <text
@@ -5813,7 +5821,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH4}
                 </tspan>
               </text>
               <text
@@ -5845,7 +5853,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH25}
                 </tspan>
               </text>
               <text
@@ -5877,7 +5885,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH35}
                 </tspan>
               </text>
               <text
@@ -5909,7 +5917,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH41}
                 </tspan>
               </text>
               <text
@@ -5941,7 +5949,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH8}
                 </tspan>
               </text>
               <text
@@ -5973,7 +5981,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH40}
                 </tspan>
               </text>
               <text
@@ -6005,7 +6013,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH31}
                 </tspan>
               </text>
               <text
@@ -6037,7 +6045,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH38}
                 </tspan>
               </text>
               <text
@@ -6069,7 +6077,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH42}
                 </tspan>
               </text>
               <text
@@ -6101,7 +6109,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH23}
                 </tspan>
               </text>
               <text
@@ -6133,7 +6141,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH36}
                 </tspan>
               </text>
               <text
@@ -6165,7 +6173,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH26}
                 </tspan>
               </text>
               <text
@@ -6197,7 +6205,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH14}
                 </tspan>
               </text>
               <text
@@ -6229,7 +6237,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH34}
                 </tspan>
               </text>
               <text
@@ -6261,7 +6269,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH24}
                 </tspan>
               </text>
               <text
@@ -6293,7 +6301,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH33}
                 </tspan>
               </text>
               <text
@@ -6325,7 +6333,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH18}
                 </tspan>
               </text>
               <text
@@ -6357,7 +6365,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH29}
                 </tspan>
               </text>
               <text
@@ -6389,7 +6397,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH27}
                 </tspan>
               </text>
               <text
@@ -6421,7 +6429,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH37}
                 </tspan>
               </text>
               <text
@@ -6453,7 +6461,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH39}
                 </tspan>
               </text>
               <text
@@ -6485,7 +6493,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {Panel1_kva.CH11}
+                  {Panel2_kva.CH11}
                 </tspan>
               </text>
               <text
@@ -6517,7 +6525,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH21}
                 </tspan>
               </text>
               <text
@@ -6549,7 +6557,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH13}
                 </tspan>
               </text>
               <text
@@ -6581,7 +6589,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {Panel1_kva.CH12}
+                  {Panel2_kva.CH12}
                 </tspan>
               </text>
               <text
@@ -6613,7 +6621,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH10}
                 </tspan>
               </text>
               <text
@@ -6645,7 +6653,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH15}
                 </tspan>
               </text>
               <text
@@ -6677,7 +6685,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH16}
                 </tspan>
               </text>
               <text
@@ -6709,7 +6717,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH17}
                 </tspan>
               </text>
               <text
@@ -6741,7 +6749,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH20}
                 </tspan>
               </text>
               <text
@@ -6773,7 +6781,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH22}
                 </tspan>
               </text>
               <text
@@ -6805,7 +6813,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH30}
                 </tspan>
               </text>
               <text
@@ -6837,7 +6845,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kva.CH32}
                 </tspan>
               </text>
             </g>
@@ -6880,7 +6888,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH9}
                 </tspan>
               </text>
               <text
@@ -6976,7 +6984,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH5}
                 </tspan>
               </text>
               <text
@@ -7008,7 +7016,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH7}
                 </tspan>
               </text>
               <text
@@ -7040,7 +7048,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH6}
                 </tspan>
               </text>
               <text
@@ -7072,7 +7080,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH19}
                 </tspan>
               </text>
               <text
@@ -7104,7 +7112,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH28}
                 </tspan>
               </text>
               <text
@@ -7168,7 +7176,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH4}
                 </tspan>
               </text>
               <text
@@ -7200,7 +7208,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH25}
                 </tspan>
               </text>
               <text
@@ -7232,7 +7240,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH35}
                 </tspan>
               </text>
               <text
@@ -7264,7 +7272,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH41}
                 </tspan>
               </text>
               <text
@@ -7296,7 +7304,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH8}
                 </tspan>
               </text>
               <text
@@ -7328,7 +7336,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH40}
                 </tspan>
               </text>
               <text
@@ -7360,7 +7368,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH31}
                 </tspan>
               </text>
               <text
@@ -7392,7 +7400,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH38}
                 </tspan>
               </text>
               <text
@@ -7424,7 +7432,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH42}
                 </tspan>
               </text>
               <text
@@ -7456,7 +7464,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"HOLA"}
+                  {Panel2_kwh.CH23}
                 </tspan>
               </text>
               <text
@@ -7488,7 +7496,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH36}
                 </tspan>
               </text>
               <text
@@ -7520,7 +7528,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH26}
                 </tspan>
               </text>
               <text
@@ -7552,7 +7560,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH14}
                 </tspan>
               </text>
               <text
@@ -7584,7 +7592,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH34}
                 </tspan>
               </text>
               <text
@@ -7616,7 +7624,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH24}
                 </tspan>
               </text>
               <text
@@ -7648,7 +7656,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH33}
                 </tspan>
               </text>
               <text
@@ -7680,7 +7688,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH18}
                 </tspan>
               </text>
               <text
@@ -7712,7 +7720,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH29}
                 </tspan>
               </text>
               <text
@@ -7744,7 +7752,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH27}
                 </tspan>
               </text>
               <text
@@ -7776,7 +7784,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH37}
                 </tspan>
               </text>
               <text
@@ -7808,7 +7816,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH39}
                 </tspan>
               </text>
               <text
@@ -7840,7 +7848,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH11}
                 </tspan>
               </text>
               <text
@@ -7872,7 +7880,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH21}
                 </tspan>
               </text>
               <text
@@ -7904,7 +7912,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH13}
                 </tspan>
               </text>
               <text
@@ -7936,7 +7944,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH12}
                 </tspan>
               </text>
               <text
@@ -7968,7 +7976,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH10}
                 </tspan>
               </text>
               <text
@@ -8000,7 +8008,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH15}
                 </tspan>
               </text>
               <text
@@ -8032,7 +8040,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH16}
                 </tspan>
               </text>
               <text
@@ -8064,7 +8072,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH17}
                 </tspan>
               </text>
               <text
@@ -8096,7 +8104,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH20}
                 </tspan>
               </text>
               <text
@@ -8128,7 +8136,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH22}
                 </tspan>
               </text>
               <text
@@ -8160,7 +8168,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH30}
                 </tspan>
               </text>
               <text
@@ -8192,7 +8200,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
-                  {"000"}
+                  {Panel2_kwh.CH32}
                 </tspan>
               </text>
             </g>
@@ -8206,6 +8214,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
               fill="#343434"
               opacity={0.899}
               paintOrder="markers stroke fill"
+              className={Estado.Alarma}
             />
             <ellipse
               id="pdu5_out_vol"
