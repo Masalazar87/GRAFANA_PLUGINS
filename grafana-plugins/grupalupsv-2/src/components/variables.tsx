@@ -99,7 +99,7 @@ return (
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontFamily="BankGothic Lt BT"
+          fontFamily="Franklin Gothic Medium"
           fontSize="5.2917px"
           letterSpacing={0}
           opacity={0.899}
@@ -109,7 +109,7 @@ return (
           <tspan
             id="tspan17708-4-7-9"
             x={41.173149}
-            y={4.2400885}
+            y={4.3400885}
             dy="0 0 0 0 0 0 0 0"
             style={{
               fontVariantCaps: "normal",
@@ -118,8 +118,8 @@ return (
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="BankGothic Lt BT"
-            fontSize="5.2917px"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2917px"
             strokeWidth={0.32006}
           >
             {DatosGenerales.Nombre}
@@ -166,7 +166,7 @@ return (
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontFamily="BankGothic Lt BT"
+          fontFamily="Franklin Gothic Medium"
           fontSize="3.8806px"
           fontStretch="semi-expanded"
           letterSpacing={0}
@@ -175,7 +175,7 @@ return (
         >
           <tspan
             id="tspan15154"
-            x={133.46773}
+            x={131.46773}
             y={40.103359}
             style={{
               fontVariantCaps: "normal",
@@ -184,7 +184,7 @@ return (
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="BankGothic Lt BT"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8806px"
             fontStretch="semi-expanded"
             strokeWidth={0.24358}
@@ -206,7 +206,7 @@ return (
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontFamily="BankGothic Lt BT"
+          fontFamily="Franklin Gothic Medium"
           fontSize="3.8806px"
           fontStretch="semi-expanded"
           letterSpacing={0}
@@ -215,7 +215,7 @@ return (
         >
           <tspan
             id="tspan15158"
-            x={133.46773}
+            x={131.46773}
             y={50.624111}
             style={{
               fontVariantCaps: "normal",
@@ -224,7 +224,7 @@ return (
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="BankGothic Lt BT"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8806px"
             fontStretch="semi-expanded"
             strokeWidth={0.24358}
@@ -246,7 +246,7 @@ return (
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontFamily="BankGothic Lt BT"
+          fontFamily="Franklin Gothic Medium"
           fontSize="3.8806px"
           fontStretch="semi-expanded"
           letterSpacing={0}
@@ -255,7 +255,7 @@ return (
         >
           <tspan
             id="tspan15162"
-            x={135.86368}
+            x={133.86368}
             y={68.764359}
             style={{
               fontVariantCaps: "normal",
@@ -264,7 +264,7 @@ return (
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="BankGothic Lt BT"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8806px"
             fontStretch="semi-expanded"
             strokeWidth={0.24358}
@@ -286,7 +286,7 @@ return (
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontFamily="BankGothic Lt BT"
+          fontFamily="Franklin Gothic Medium"
           fontSize="3.8806px"
           fontStretch="semi-expanded"
           letterSpacing={0}
@@ -295,7 +295,7 @@ return (
         >
           <tspan
             id="tspan15166"
-            x={135.86368}
+            x={133.86368}
             y={79.746925}
             style={{
               fontVariantCaps: "normal",
@@ -304,7 +304,7 @@ return (
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="BankGothic Lt BT"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8806px"
             fontStretch="semi-expanded"
             strokeWidth={0.24358}
@@ -351,7 +351,7 @@ return (
           }}
           xmlSpace="preserve"
           fill="#f9f9f9"
-          fontFamily="BankGothic Lt BT"
+          fontFamily="Franklin Gothic Medium"
           fontSize="2.4694px"
           fontStretch="semi-expanded"
           letterSpacing={0}
@@ -370,7 +370,7 @@ return (
               fontVariantNumeric: "normal"
             }}
             fill="#f9f9f9"
-            fontFamily="BankGothic Lt BT"
+            fontFamily="Franklin Gothic Medium"
             fontSize="2.4694px"
             fontStretch="semi-expanded"
             strokeWidth={0.05281}
@@ -393,7 +393,7 @@ return (
           }}
           xmlSpace="preserve"
           fill="#f9f9f9"
-          fontFamily="BankGothic Lt BT"
+          fontFamily="Franklin Gothic Medium"
           fontSize="3.5278px"
           fontStretch="semi-expanded"
           letterSpacing={0}
@@ -412,7 +412,7 @@ return (
               fontVariantNumeric: "normal"
             }}
             fill="#f9f9f9"
-            fontFamily="BankGothic Lt BT"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.5278px"
             fontStretch="semi-expanded"
             strokeWidth={0.068936}
@@ -457,7 +457,7 @@ return (
           id="ups1_1b_out_percent_load2"
           transform="scale(.82663 1.2097)"
           x={132.76939}
-          y={66.422234}
+          y={66.456306}
           style={{
             fontFeatureSettings: "normal",
             fontVariantCaps: "normal",
@@ -477,7 +477,7 @@ return (
           <tspan
             id="tspan5836-0-1-8"
             x={132.76939}
-            y={66.422234}
+            y={66.456306}
             fill="#f9f9f9"
             strokeWidth={0.05281}
             stroke="#f8f9f9"
@@ -766,7 +766,7 @@ return (
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontFamily="BankGothic Lt BT"
+          fontFamily="Franklin Gothic Medium"
           fontSize="7.0556px"
           letterSpacing={0}
           strokeOpacity={0.53395}
@@ -784,12 +784,12 @@ return (
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="BankGothic Lt BT"
+            fontFamily="Franklin Gothic Medium"
             fontSize="7.0556px"
             strokeOpacity={0.53395}
             strokeWidth={0.776}
           >
-            {"general electric"}
+            {"GENERAL ELECTRIC"}
           </tspan>
         </text>
         <path

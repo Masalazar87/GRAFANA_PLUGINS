@@ -5500,7 +5500,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
             <g
               id="layer1"
               transform="scale(.72268 1.3837)"
-              fontFamily="BankGothic Lt BT"
+              fontFamily="Franklin Gothic Medium"
               letterSpacing={0}
               strokeWidth={0.32006}
               wordSpacing={0}
@@ -5532,11 +5532,11 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="BankGothic Lt BT"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8806px"
                   strokeWidth={0.32006}
                 >
-                  {"estado"}
+                  {"ESTADO"}
                 </tspan>
               </text>
               <text
@@ -5565,11 +5565,11 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="BankGothic Lt BT"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8806px"
                   strokeWidth={0.32006}
                 >
-                  {"alarma"}
+                  {"ALARMA"}
                 </tspan>
               </text>
               <text
@@ -5589,7 +5589,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.894}
               >
                 <tspan id="tspan2041" x={27.287346} y={25.348669}>
-                  {"rectificador"}
+                  {"RECTIFICADOR"}
                 </tspan>
               </text>
               <text
@@ -5609,7 +5609,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.894}
               >
                 <tspan id="tspan2061" x={33.378654} y={40.175869}>
-                  {"alerta"}
+                  {"ALERTA"}
                 </tspan>
               </text>
               <text
@@ -5629,7 +5629,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.894}
               >
                 <tspan id="tspan2089" x={30.572281} y={56.082443}>
-                  {"habilitado"}
+                  {"HABILITADO"}
                 </tspan>
               </text>
               <text
@@ -5678,7 +5678,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                     fontVariantLigatures: "normal",
                     fontVariantNumeric: "normal"
                   }}
-                  fontFamily="BankGothic Lt BT"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8806px"
                   strokeWidth={0.32006}
                 >
@@ -5711,7 +5711,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                     fontVariantLigatures: "normal",
                     fontVariantNumeric: "normal"
                   }}
-                  fontFamily="BankGothic Lt BT"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8806px"
                   strokeWidth={0.32006}
                 >
@@ -5756,7 +5756,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.894}
               >
                 <tspan id="tspan2247" x={113.61099} y={58.042175}>
-                  {"carga"}
+                  {"CARGA"}
                 </tspan>
               </text>
               <text
@@ -5832,7 +5832,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
               <text
                 id="texto_1-3-8-8-3"
                 x={137.08752}
-                y={57.971821}
+                y={58.271821}
                 style={{
                   fontVariantCaps: "normal",
                   fontVariantEastAsian: "normal",
@@ -5848,7 +5848,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 <tspan
                   id="tspan2177-0"
                   x={137.08752}
-                  y={57.971821}
+                  y={58.271821}
                   strokeWidth={0.32006}
                 >
                   {"%"}
@@ -5857,7 +5857,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
               <text
                 id="texto_1-3-8-8-3-2"
                 x={156.91914}
-                y={57.971821}
+                y={58.271821}
                 style={{
                   fontVariantCaps: "normal",
                   fontVariantEastAsian: "normal",
@@ -5873,7 +5873,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 <tspan
                   id="tspan2177-0-5"
                   x={156.91914}
-                  y={57.971821}
+                  y={58.271821}
                   strokeWidth={0.32006}
                 >
                   {"%"}
@@ -5882,7 +5882,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
               <text
                 id="texto_1-3-8-8-3-5"
                 x={175.9202}
-                y={57.971821}
+                y={58.271821}
                 style={{
                   fontVariantCaps: "normal",
                   fontVariantEastAsian: "normal",
@@ -5898,7 +5898,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 <tspan
                   id="tspan2177-0-1"
                   x={175.9202}
-                  y={57.971821}
+                  y={58.271821}
                   strokeWidth={0.32006}
                 >
                   {"%"}
@@ -6001,7 +6001,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.894}
               >
                 <tspan id="tspan2177" x={74.705193} y={58.392914}>
-                  {"v"}
+                  {"V"}
                 </tspan>
               </text>
               <text
@@ -6022,7 +6022,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.894}
               >
                 <tspan id="tspan2197" x={80.24781} y={58.114521}>
-                  {"t:"}
+                  {"T:"}
                 </tspan>
               </text>
               <text
@@ -6063,7 +6063,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.894}
               >
                 <tspan id="tspan2129" x={62.947441} y={43.643738}>
-                  {"bater\xEDa"}
+                  {"BATERIA"}
                 </tspan>
               </text>
               <text
@@ -6083,7 +6083,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.894}
               >
                 <tspan id="tspan2157" x={66.877136} y={56.545254}>
-                  {"batt"}
+                  {"BATT"}
                 </tspan>
               </text>
               <text
@@ -6103,7 +6103,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.891}
               >
                 <tspan id="tspan2581" x={73.964325} y={36.695263}>
-                  {"rectifier"}
+                  {"RECTIFIER"}
                 </tspan>
               </text>
               <text
@@ -6123,7 +6123,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.891}
               >
                 <tspan id="tspan2601" x={105.67503} y={36.694988}>
-                  {"inverter"}
+                  {"INVERTER"}
                 </tspan>
               </text>
               <text
@@ -6148,7 +6148,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                   y={25.417646}
                   strokeWidth={0.32006}
                 >
-                  {"bypass"}
+                  {"BYPASS"}
                 </tspan>
               </text>
             </g>

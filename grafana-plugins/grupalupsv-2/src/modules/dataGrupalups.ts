@@ -49,6 +49,10 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
 
     let OUTPUT_POWER = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_POWER.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
+    let OUTPUT_POWER_2 = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_POWER_2.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+    let OUTPUT_POWER_3 = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_POWER_3.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
     let OUTPUT_PERCENT_LOAD = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_PERCENT_LOAD.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let OUTPUT_PERCENT_LOAD_2 = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_PERCENT_LOAD_2.VALUE'))?.fields[1].state?.calcs
@@ -128,7 +132,6 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
    //grupalups.Parametros.Voltout = Number.parseFloat(OUTPUT_VOLTAGE?.toFixed(2));
    //grupalups.Parametros.Outcurr = Number.parseFloat(OUTPUT_CURRENT?.toFixed(2));
     grupalups.Parametros.Vbateria = Number.parseFloat(BATTERY_VOLTAGE?.toFixed(2));
-    grupalups.Parametros.Outpow = Number.parseFloat(OUTPUT_POWER?.toFixed(2));
     grupalups.Parametros.Load1 = Number.parseFloat(OUTPUT_PERCENT_LOAD?.toFixed(2));
     grupalups.Parametros.Load2 = Number.parseFloat(OUTPUT_PERCENT_LOAD_2?.toFixed(2));
     grupalups.Parametros.Load3 = Number.parseFloat(OUTPUT_PERCENT_LOAD_3?.toFixed(2));
@@ -182,6 +185,11 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     let Outcurr = (OUTPUT_CURRENT + OUTPUT_CURRENT_2 + OUTPUT_CURRENT_3) / 30;
     if (OUTPUT_CURRENT !== undefined && OUTPUT_CURRENT_2 !== undefined && OUTPUT_CURRENT_3 !== undefined) {
     grupalups.Parametros.Outcurr = Number.parseFloat(Outcurr?.toFixed(2)); 
+    }
+
+    let Outpow = (OUTPUT_POWER + OUTPUT_POWER_2 + OUTPUT_POWER_3) / 3;
+    if (OUTPUT_POWER !== undefined && OUTPUT_POWER_2 !== undefined && OUTPUT_POWER_3 !== undefined) {
+    grupalups.Parametros.Outpow = Number.parseFloat(Outpow?.toFixed(2)); 
     }
 
     let Vbateria = BATTERY_VOLTAGE / 10;
