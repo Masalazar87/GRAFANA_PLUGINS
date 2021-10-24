@@ -199,14 +199,14 @@ const Grupalats = ({DatosGenerales, Parametros, Indicadores}: DataGrupalats) => 
                 <path
                   id="rect818-4-5"
                   fillRule="evenodd"
-                  fill="url(#linearGradient701-6-2-2)"
+                  fill="black"//"url(#linearGradient701-6-2-2)"
                   paintOrder="markers stroke fill"
                   strokeWidth={1.7366}
                   d="M80.369 300.08H590.749V584.5H80.369z"
                 />
               </g>
             </g>
-          </g>
+          </g>  
         </g>
         <g id="layer6">
           <image

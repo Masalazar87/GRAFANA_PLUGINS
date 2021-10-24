@@ -6,6 +6,9 @@ const getStyles = stylesFactory(() => {
     SinConexion: css`
     fill: #999;
     `,
+    SinConexion2: css`
+    stroke: #999;
+    `,
     On: css`
       fill: green;
     `,

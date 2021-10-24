@@ -466,7 +466,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
                     <path
                       id="rect818"
                       fillRule="evenodd"
-                      fill="url(#linearGradient701)"
+                      fill="black"//"url(#linearGradient701)"
                       paintOrder="markers stroke fill"
                       d="M80.369 300.08H590.749V584.5H80.369z"
                     />
@@ -1703,7 +1703,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan9357"
+          id="tspan9357"//vol
           x={41.819931}
           y={59.689613}
           fill="#fff"
@@ -1712,7 +1712,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontWeight={700}
           strokeWidth={0.26458}
         >
-          {"V"}
+          {""}
         </tspan>
       </text>
       <text
@@ -1750,7 +1750,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan373"
+          id="tspan373"//vol
           x={229.37163}
           y={60.521523}
           fill="#fff"
@@ -1759,7 +1759,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontWeight={700}
           strokeWidth={0.26458}
         >
-          {"V"}
+          {""}
         </tspan>
       </text>
       <text
@@ -1774,7 +1774,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan2995"
+          id="tspan2995"//vol
           x={228.84242}
           y={140.42557}
           fill="#fff"
@@ -1783,7 +1783,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontWeight={700}
           strokeWidth={0.26458}
         >
-          {"V"}
+          {""}
         </tspan>
       </text>
       <text
@@ -2190,7 +2190,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan403"
+          id="tspan403"//amp
           x={594.67987}
           y={96.244156}
           fill="#fff"
@@ -2198,7 +2198,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          {"A"}
+          {""}
         </tspan>
       </text>
       <text
@@ -2214,7 +2214,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan409"
+          id="tspan409"//%
           x={594.52002}
           y={111.29671}
           fill="#fff"
@@ -2222,7 +2222,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          {"%"}
+          {""}
         </tspan>
       </text>
       <text
@@ -2238,7 +2238,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan415"
+          id="tspan415"//KW
           x={594.28577}
           y={103.77042}
           fill="#fff"
@@ -2246,7 +2246,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          {"KW"}
+          {""}
         </tspan>
       </text>
       <text
@@ -2262,7 +2262,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan421"
+          id="tspan421"//vol
           x={594.68811}
           y={88.2836}
           fill="#fff"
@@ -2270,7 +2270,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          {"V"}
+          {""}
         </tspan>
       </text>
       <text
@@ -2286,7 +2286,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan427"
+          id="tspan427"//vol
           x={594.68811}
           y={80.815132}
           fill="#fff"
@@ -2294,7 +2294,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          {"V"}
+          {""}
         </tspan>
       </text>
       <text
@@ -2310,7 +2310,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan433"
+          id="tspan433"//vol
           x={594.68811}
           y={57.367966}
           fill="#fff"
@@ -2318,7 +2318,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          {"V"}
+          {""}
         </tspan>
       </text>
       <text
@@ -2334,7 +2334,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan439"
+          id="tspan439"//min
           x={594.28577}
           y={65.270515}
           fill="#fff"
@@ -2342,7 +2342,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          {"Min"}
+          {""}
         </tspan>
       </text>
       <text
@@ -2358,7 +2358,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan445"
+          id="tspan445"//%
           x={594.52002}
           y={73.230957}
           fill="#fff"
@@ -2366,7 +2366,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          {"%"}
+          {""}
         </tspan>
       </text>
       <text
@@ -2382,7 +2382,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan451"
+          id="tspan451"//%
           x={594.52002}
           y={118.98079}
           fill="#fff"
@@ -2390,7 +2390,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          {"%"}
+          {""}
         </tspan>
       </text>
       <text
@@ -2406,7 +2406,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
         strokeWidth={0.26458}
       >
         <tspan
-          id="tspan457"
+          id="tspan457"//%
           x={594.52002}
           y={126.79501}
           fill="#fff"
@@ -2414,7 +2414,7 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          {"%"}
+          {""}
         </tspan>
       </text>
     </g>

@@ -24,6 +24,10 @@ const getStyles = stylesFactory(() => {
       fill: yellow;
       animation: ${parpadeo} 1s ease infinite;
     `,
+    On5: css`
+      fill: green;
+      animation: ${parpadeo} 1s ease infinite;
+    `,
   };
 });
 

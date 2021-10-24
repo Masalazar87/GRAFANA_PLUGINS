@@ -110,7 +110,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontWeight={700}
           strokeWidth={0.28918}
         >
-          { Principal.InVolmax }
+          { Principal.InVolmax }V
         </tspan>
       </text>
       <text
@@ -162,7 +162,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontWeight={700}
           strokeWidth={0.28917}
         >
-          { Principal.VBateria }
+          { Principal.VBateria }V
         </tspan>
       </text>
       <text
@@ -189,7 +189,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontWeight={700}
           strokeWidth={0.28918}
         >
-          { Principal.OutVolt }
+          { Principal.OutVolt }V
         </tspan>
       </text>
       <g id="st2" transform="translate(-1.433 3.249)" fill="#0f0">
@@ -254,7 +254,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan3614"
-          x={329.26636}
+          x={325.26636}
           y={42.683838}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -280,7 +280,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan3614-0"
-          x={329.26636}
+          x={325.26636}
           y={50.872742}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -306,7 +306,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan3618-1"
-          x={329.26636}
+          x={325.26636}
           y={59.336174}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -331,7 +331,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan3618-6"
-          x={329.26636}
+          x={325.26636}
           y={67.46769}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -356,7 +356,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan3614-8"
-          x={329.26636}
+          x={325.26636}
           y={76.097076}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -389,7 +389,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          { Parametros.CorrienteOut }
+          { Parametros.CorrienteOut }A
         </tspan>
       </text>
       <text
@@ -415,7 +415,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          { Parametros.PorcenCarga1 }
+          { Parametros.PorcenCarga1 }%
         </tspan>
       </text>
       <text
@@ -441,7 +441,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          { Parametros.PotenciaOut }
+          { Parametros.PotenciaOut }KW
         </tspan>
       </text>
       <text
@@ -467,7 +467,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          { Parametros.InVoltmax }
+          { Parametros.InVoltmax }V
         </tspan>
       </text>
       <text
@@ -493,7 +493,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          { Parametros.InVoltmin }
+          { Parametros.InVoltmin }V
         </tspan>
       </text>
       <text
@@ -519,7 +519,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          { Parametros.VBateria }
+          { Parametros.VBateria }V
         </tspan>
       </text>
       <text
@@ -545,7 +545,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          { Parametros.MinEstimados }
+          { Parametros.MinEstimados }min
         </tspan>
       </text>
       <text
@@ -571,7 +571,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          { Parametros.CargaEstimada }
+          { Parametros.CargaEstimada }%
         </tspan>
       </text>
       <text
@@ -597,7 +597,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          { Parametros.PorcenCarga2 }
+          { Parametros.PorcenCarga2 }%
         </tspan>
       </text>
       <text
@@ -623,7 +623,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
           fontSize="5.6444px"
           strokeWidth={0.26458}
         >
-          { Parametros.PorcenCarga3 }
+          { Parametros.PorcenCarga3 }%
         </tspan>
       </text>
       <g

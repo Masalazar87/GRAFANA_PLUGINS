@@ -488,7 +488,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
                 <path
                   id="rect818-4"
                   fillRule="evenodd"
-                  fill="url(#linearGradient701)"
+                  fill="black"//"url(#linearGradient701)"
                   paintOrder="markers stroke fill"
                   d="M80.369 300.08H590.749V584.5H80.369z"
                 />
@@ -996,7 +996,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
           </tspan>
         </text>
         <text
-          id="temp_sum-5"
+          id="temp_sum-5"//°C
           transform="scale(1.0508 .95161)"
           x={41.305565}
           y={50.897282}
@@ -1015,11 +1015,11 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
           strokeWidth={0.28918}
         >
           <tspan id="tspan1354" x={41.305565} y={50.897282}>
-            {"\xB0C"}
+            {""}
           </tspan>
         </text>
         <text
-          id="temp_sum-5-5"
+          id="temp_sum-5-5"//°C
           transform="scale(1.0508 .95161)"
           x={212.9017}
           y={58.357067}
@@ -1043,7 +1043,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
             y={58.357067}
             strokeWidth={0.28918}
           >
-            {"\xB0C"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1087,7 +1087,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
           strokeWidth={0.47057}
         >
           <tspan
-            id="tspan11013-9"
+            id="tspan11013-9"//°C
             x={493.0639}
             y={65.721703}
             fill="#fff"
@@ -1095,7 +1095,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            {"\xB0C"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1111,7 +1111,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
           strokeWidth={0.47057}
         >
           <tspan
-            id="tspan11029-4"
+            id="tspan11029-4"//HORAS
             x={496.43747}
             y={93.123329}
             fill="#fff"
@@ -1119,7 +1119,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            {"H"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1135,7 +1135,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
           strokeWidth={0.47057}
         >
           <tspan
-            id="tspan11045-8"
+            id="tspan11045-8"//HORAS
             x={496.43747}
             y={156.73224}
             fill="#fff"
@@ -1143,7 +1143,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            {"H"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1159,7 +1159,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
           strokeWidth={0.47057}
         >
           <tspan
-            id="tspan11033-2"
+            id="tspan11033-2"//°C
             x={493.18793}
             y={129.47676}
             fill="#fff"
@@ -1167,7 +1167,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            {"\xB0C"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1211,7 +1211,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
           strokeWidth={0.26458}
         >
           <tspan
-            id="tspan4525"
+            id="tspan4525"//AMP
             x={229.79343}
             y={138.2471}
             style={{
@@ -1225,7 +1225,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
             fontSize="9.8778px"
             strokeWidth={0.26458}
           >
-            {"A"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1241,7 +1241,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
           strokeWidth={0.47057}
         >
           <tspan
-            id="tspan11033-2-3"
+            id="tspan11033-2-3"//BAR
             x={489.44519}
             y={138.62379}
             fill="#fff"
@@ -1249,7 +1249,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            {"BAR"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1265,7 +1265,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
           strokeWidth={0.47057}
         >
           <tspan
-            id="tspan11033-2-3-2"
+            id="tspan11033-2-3-2"//BAR
             x={489.44519}
             y={146.95631}
             fill="#fff"
@@ -1273,7 +1273,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            {"BAR"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1289,7 +1289,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
           strokeWidth={0.47057}
         >
           <tspan
-            id="tspan11033-2-3-9"
+            id="tspan11033-2-3-9"//BAR
             x={489.44519}
             y={74.614174}
             fill="#fff"
@@ -1297,7 +1297,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            {"BAR"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1313,7 +1313,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
           strokeWidth={0.47057}
         >
           <tspan
-            id="tspan11033-2-3-9-3"
+            id="tspan11033-2-3-9-3"//BAR
             x={489.44519}
             y={83.477715}
             fill="#fff"
@@ -1321,7 +1321,7 @@ const Chiller = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Principal }: 
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            {"BAR"}
+            {""}
           </tspan>
         </text>
       </g>

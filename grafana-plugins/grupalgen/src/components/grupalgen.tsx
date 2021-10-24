@@ -357,7 +357,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
                 <path
                   id="rect818-4-5"
                   fillRule="evenodd"
-                  fill="url(#linearGradient701-6-2-2)"
+                  fill="black"//"url(#linearGradient701-6-2-2)"
                   paintOrder="markers stroke fill"
                   d="M80.369 300.08H590.749V584.5H80.369z"
                 />
@@ -503,7 +503,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           strokeWidth={0.17543}
         >
           <tspan
-            id="tspan2338-0-5"
+            id="tspan2338-0-5"//PSI
             x={58.840343}
             y={48.244568}
             style={{
@@ -517,7 +517,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             fontSize="3.5279px"
             strokeWidth={0.17543}
           >
-            {"PSI"}
+            {""}
           </tspan>
         </text>
         <text
@@ -538,7 +538,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           strokeWidth={0.17543}
         >
           <tspan
-            id="tspan2348-2-5"
+            id="tspan2348-2-5"//V
             x={59.154785}
             y={53.971989}
             style={{
@@ -552,7 +552,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             fontSize="3.5279px"
             strokeWidth={0.17543}
           >
-            {"V"}
+            {""}
           </tspan>
         </text>
         <text
@@ -573,7 +573,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           strokeWidth={0.17543}
         >
           <tspan
-            id="tspan2348-2-5-2"
+            id="tspan2348-2-5-2"//%
             x={59.023407}
             y={59.77264}
             style={{
@@ -587,7 +587,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             fontSize="3.5279px"
             strokeWidth={0.17543}
           >
-            {"%"}
+            {""}
           </tspan>
         </text>
         <text
@@ -608,7 +608,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           strokeWidth={0.17543}
         >
           <tspan
-            id="tspan2348-2-5-5"
+            id="tspan2348-2-5-5"//V
             x={105.86536}
             y={42.562145}
             style={{
@@ -622,7 +622,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             fontSize="3.5279px"
             strokeWidth={0.17543}
           >
-            {"V"}
+            {""}
           </tspan>
         </text>
         <text
@@ -643,7 +643,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           strokeWidth={0.17543}
         >
           <tspan
-            id="tspan2348-2-5-5-9"
+            id="tspan2348-2-5-5-9"//A
             x={105.85891}
             y={48.199142}
             style={{
@@ -657,7 +657,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             fontSize="3.5279px"
             strokeWidth={0.17543}
           >
-            {"A"}
+            {""}
           </tspan>
         </text>
         <text
@@ -678,7 +678,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           strokeWidth={0.17543}
         >
           <tspan
-            id="tspan2348-2-5-5-9-0"
+            id="tspan2348-2-5-5-9-0"//KVA
             x={105.5509}
             y={53.972443}
             style={{
@@ -692,7 +692,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             fontSize="3.5279px"
             strokeWidth={0.17543}
           >
-            {"KVA"}
+            {""}
           </tspan>
         </text>
         <text
@@ -907,7 +907,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             strokeWidth={0.17543}
           >
             <tspan
-              id="tspan2342-4-0"
+              id="tspan2342-4-0" //°C
               style={{
                 fontVariantCaps: "normal",
                 fontVariantEastAsian: "normal",
@@ -919,7 +919,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
               fontSize="3.5279px"
               strokeWidth={0.17543}
             >
-              {"\xB0"}
+              {""}
             </tspan>
           </tspan>
         </text>
@@ -1218,9 +1218,9 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
           strokeWidth={0.17543}
         >
           <tspan
-            id="tspan2348-2-5-5-9-0-4"
-            x={105.49818}
-            y={59.821064}
+            id="tspan2348-2-5-5-9-0-4"//ENERGY
+            x={93.49818} //105
+            y={63.821064} //59
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -1232,7 +1232,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
             fontSize="3.5278px"
             strokeWidth={0.17543}
           >
-            {"KW/h"}
+            {""}
           </tspan>
         </text>
       </g>
@@ -1252,12 +1252,7 @@ const Grupalgen = ({DatosGenerales, Motor, Alternador,Indicadores}: DataGrupalge
         />
       </g>
       <g id="layer7">
-        <path
-          id="path1781-2-3-3"
-          d="M15.869 8.275h45.497l5.755-5.753-46.865.182z"
-          fill="#357a8f"
-          opacity={0.40215}
-        />
+        
         <path
           id="path21615"
           transform="matrix(13.925 0 0 .46095 -695.61 -93.071)"

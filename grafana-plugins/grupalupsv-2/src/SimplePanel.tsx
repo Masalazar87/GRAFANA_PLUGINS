@@ -33,6 +33,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
       <Grupalups
         DatosGenerales={grupalups.DatosGenerales}
         Parametros={grupalups.Parametros}
+        Estados={grupalups.Estados}
         Alarmas={grupalups.Alarmas}
         Conexion={grupalups.Conexion}
         Animacion={grupalups.Animacion}

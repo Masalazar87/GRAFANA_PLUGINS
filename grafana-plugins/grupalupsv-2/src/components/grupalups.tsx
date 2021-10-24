@@ -1,7 +1,7 @@
 import React from 'react'
 import { Variables, DataGrupalups } from './variables';
 
-const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: DataGrupalups) => {
+const Grupalups = ({DatosGenerales, Parametros, Estados, Alarmas, Conexion, Animacion}: DataGrupalups) => {
     return (
       <svg
             id="svg8853"
@@ -493,7 +493,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                       <path
                         id="rect818-4-5"
                         fillRule="evenodd"
-                        fill="url(#linearGradient701-6-2)"
+                        fill="black"//"url(#linearGradient701-6-2)"
                         paintOrder="markers stroke fill"
                         d="M80.369 300.08H590.749V584.5H80.369z"
                       />
@@ -5649,7 +5649,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.893}
               >
                 <tspan id="tspan2473" x={215.59425} y={27.958017}>
-                  {"V"}
+                {""}
                 </tspan>
               </text>
               <text
@@ -5682,7 +5682,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                   fontSize="3.8806px"
                   strokeWidth={0.32006}
                 >
-                  {"V"}
+                  {""}
                 </tspan>
               </text>
               <text
@@ -5715,7 +5715,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                   fontSize="3.8806px"
                   strokeWidth={0.32006}
                 >
-                  {"A"}
+                  {""}
                 </tspan>
               </text>
               <text
@@ -5735,7 +5735,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.893}
               >
                 <tspan id="tspan2519" x={215.59743} y={56.108704}>
-                  {"W"}
+                {""}
                 </tspan>
               </text>
               <text
@@ -5775,14 +5775,14 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 fontSize="2.8222px"
                 opacity={0.893}
               >
-                <tspan id="tspan2267" x={129.314} y={55.453766}>
+                <tspan id="tspan2267" x={130.314} y={55.653766}>
                   {"LOAD 1"}
                 </tspan>
               </text>
               <text
                 id="texto_1-3-8-8-8-8-6-4-6"
                 x={148.85791}
-                y={55.442482}
+                y={57.442482}
                 style={{
                   fontVariantCaps: "normal",
                   fontVariantEastAsian: "normal",
@@ -5797,8 +5797,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
               >
                 <tspan
                   id="tspan2267-6"
-                  x={148.85791}
-                  y={55.442482}
+                  x={150.55791} y={55.653766}
                   strokeWidth={0.32006}
                 >
                   {"LOAD 2"}
@@ -5807,7 +5806,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
               <text
                 id="texto_1-3-8-8-8-8-6-4-5"
                 x={168.21182}
-                y={55.442482}
+                y={57.442482}
                 style={{
                   fontVariantCaps: "normal",
                   fontVariantEastAsian: "normal",
@@ -5822,8 +5821,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
               >
                 <tspan
                   id="tspan2267-8"
-                  x={168.21182}
-                  y={55.442482}
+                  x={170.01182} y={55.653766}
                   strokeWidth={0.32006}
                 >
                   {"LOAD 3"}
@@ -5851,7 +5849,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                   y={58.271821}
                   strokeWidth={0.32006}
                 >
-                  {"%"}
+                  {""}
                 </tspan>
               </text>
               <text
@@ -5876,7 +5874,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                   y={58.271821}
                   strokeWidth={0.32006}
                 >
-                  {"%"}
+                  {""}
                 </tspan>
               </text>
               <text
@@ -5901,7 +5899,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                   y={58.271821}
                   strokeWidth={0.32006}
                 >
-                  {"%"}
+                  {""}
                 </tspan>
               </text>
               <text
@@ -6001,7 +5999,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 opacity={0.894}
               >
                 <tspan id="tspan2177" x={74.705193} y={58.392914}>
-                  {"V"}
+                {""}
                 </tspan>
               </text>
               <text
@@ -6021,7 +6019,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 fontStretch="semi-expanded"
                 opacity={0.894}
               >
-                <tspan id="tspan2197" x={80.24781} y={58.114521}>
+                <tspan id="tspan2197" x={80.24781} y={58.354521}>
                   {"T:"}
                 </tspan>
               </text>
@@ -6042,8 +6040,8 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 fontStretch="semi-expanded"
                 opacity={0.894}
               >
-                <tspan id="tspan2227" x={94.828064} y={58.114517}>
-                  {"min"}
+                <tspan id="tspan2227" x={94.828064} y={58.114517}> 
+                {""}
                 </tspan>
               </text>
               <text
@@ -6079,7 +6077,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
                 }}
                 xmlSpace="preserve"
                 fill="#fff"
-                fontSize="2.8222px"
+                fontSize="2.0222px"
                 opacity={0.894}
               >
                 <tspan id="tspan2157" x={66.877136} y={56.545254}>
@@ -6155,6 +6153,7 @@ const Grupalups = ({DatosGenerales, Parametros, Alarmas, Conexion, Animacion}: D
             <Variables
               DatosGenerales= {DatosGenerales}
               Parametros= {Parametros}
+              Estados= {Estados}
               Alarmas= {Alarmas}
               Conexion= {Conexion}
               Animacion= {Animacion}

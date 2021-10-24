@@ -3656,7 +3656,7 @@ return (
               strokeWidth={0.68745}
             >
               <tspan id="tspan341-1" x={33.673992} y={31.219856}>
-                {"BRANCH CIRCUIT MONITOR - PANEL 2"}
+                {"BRANCH CIRCUIT MONITOR - PANEL 50"}
               </tspan>
             </text>
             <text

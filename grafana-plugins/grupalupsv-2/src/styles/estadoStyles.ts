@@ -26,7 +26,7 @@ const getStyles = stylesFactory(() => {
       animation: ${parpadeo} 1s ease infinite;
     `,
     ok1: css`
-      stroke: green;
+      stroke: red;
       animation: ${parpadeo} 1s ease infinite;
     `,
     off: css`

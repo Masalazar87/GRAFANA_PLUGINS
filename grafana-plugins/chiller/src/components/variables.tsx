@@ -198,7 +198,7 @@ export const Variables = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Prin
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            { Compresor1.TemperaturaAceite}
+            { Compresor1.TemperaturaAceite} °C
           </tspan>
         </text>
         <text
@@ -224,7 +224,7 @@ export const Variables = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Prin
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            { Compresor1.PresionSuccion }
+            { Compresor1.PresionSuccion } BAR
           </tspan>
         </text>
         <text
@@ -250,7 +250,7 @@ export const Variables = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Prin
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            { Compresor1.PresionDescarga }
+            { Compresor1.PresionDescarga } BAR
           </tspan>
         </text>
         <text
@@ -276,7 +276,7 @@ export const Variables = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Prin
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            { Compresor1.HorasFunc }
+            { Compresor1.HorasFunc } H
           </tspan>
         </text>
         <text
@@ -302,7 +302,7 @@ export const Variables = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Prin
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            { Compresor2.TemperaturaAceite }
+            { Compresor2.TemperaturaAceite } °C
           </tspan>
         </text>
         <text
@@ -328,7 +328,7 @@ export const Variables = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Prin
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            { Compresor2.PresionSuccion }
+            { Compresor2.PresionSuccion } BAR
           </tspan>
         </text>
         <text
@@ -354,7 +354,7 @@ export const Variables = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Prin
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            { Compresor2.PresionDescarga }
+            { Compresor2.PresionDescarga } BAR
           </tspan>
         </text>
         <text
@@ -380,7 +380,7 @@ export const Variables = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Prin
             fontSize="5.6444px"
             strokeWidth={0.47057}
           >
-            { Compresor2.HorasFunc }
+            { Compresor2.HorasFunc } H
           </tspan>
         </text>
         <ellipse
@@ -430,7 +430,7 @@ export const Variables = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Prin
           wordSpacing={0}
         >
           <tspan id="tspan1328" x={22.56381} y={50.691143}>
-            { Principal.TemperaturaSuministro }
+            { Principal.TemperaturaSuministro } °C
           </tspan>
         </text>
         <text
@@ -455,7 +455,7 @@ export const Variables = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Prin
           wordSpacing={0}
         >
           <tspan id="tspan1352" x={211.39882} y={50.691143}>
-            { Principal.TemperaturaRetorno }
+            { Principal.TemperaturaRetorno } °C
           </tspan>
         </text>
         <text
@@ -480,7 +480,7 @@ export const Variables = ({ DatosGenerales,Compresor1, Compresor2, Alarmas, Prin
           wordSpacing={0}
         >
           <tspan id="tspan1384" x={209.29778} y={132.56357}>
-            { Principal.Corriente }
+            { Principal.Corriente } A
           </tspan>
         </text>
         <text

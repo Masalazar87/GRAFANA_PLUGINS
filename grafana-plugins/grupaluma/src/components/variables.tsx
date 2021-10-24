@@ -163,7 +163,7 @@ return (
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {Parametros.TempSum}
+            {Parametros.TempSum} °C
           </tspan>
         </text>
         <text
@@ -201,7 +201,7 @@ return (
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {Parametros.TempRet}
+            {Parametros.TempRet} °C
           </tspan>
         </text>
         <text
@@ -239,7 +239,7 @@ return (
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {Parametros.TempRoom}
+            {Parametros.TempRoom} °C
           </tspan>
         </text>
         <text
@@ -277,7 +277,7 @@ return (
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {Parametros.HumRel}
+            {Parametros.HumRel} %
           </tspan>
         </text>
         <text
@@ -429,7 +429,7 @@ return (
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {Parametros.HorasFunc}
+            {Parametros.HorasFunc} H
           </tspan>
         </text>
         <text
@@ -505,7 +505,7 @@ return (
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {Parametros.PorcFuncFan}
+            {Parametros.PorcFuncFan} %
           </tspan>
         </text>
       </g>

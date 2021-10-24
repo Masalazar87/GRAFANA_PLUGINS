@@ -21,7 +21,8 @@ const getStyles = stylesFactory(() => {
     stroke: green;
     `,
     onbattery: css`
-    stroke: red;animation: ${parpadeo} 1s ease infinite;
+    stroke: red;
+    animation: ${parpadeo} 1s ease infinite;
     `,
   };
 });

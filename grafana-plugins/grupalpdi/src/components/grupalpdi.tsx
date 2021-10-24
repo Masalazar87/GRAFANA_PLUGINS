@@ -581,7 +581,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
           }}
           xmlSpace="preserve"
           fill="#fff"
-          fontFamily="Century"
+          fontFamily="Franklin Gothic Medium"
           fontSize="8.4496px"
           letterSpacing={0}
           strokeWidth={0.046044}
@@ -599,7 +599,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               lineHeight: 0
             }}
             fill="#fff"
-            fontFamily="Century"
+            fontFamily="Franklin Gothic Medium"
             fontSize="8.4496px"
             strokeWidth={0.046044}
           >
@@ -620,7 +620,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
           }}
           xmlSpace="preserve"
           fill="#000"
-          fontFamily="Century"
+          fontFamily="Franklin Gothic Medium"
           fontSize="1.9663px"
           letterSpacing={0}
           strokeWidth={0.051101}
@@ -637,7 +637,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Century"
+            fontFamily="Franklin Gothic Medium"
             fontSize="2.1176px"
             strokeWidth={0.051101}
           >
@@ -659,7 +659,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
           xmlSpace="preserve"
           fill="#999"
           filter="url(#filter875)"
-          fontFamily="Century"
+          fontFamily="Franklin Gothic Medium"
           fontSize="5.5567px"
           letterSpacing={0}
           strokeWidth={0.14441}
@@ -676,7 +676,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#999"
-            fontFamily="Century"
+            fontFamily="Franklin Gothic Medium"
             fontSize="5.9841px"
             strokeWidth={0.14441}
           >
@@ -686,7 +686,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
       </g>
       <g
         id="layer3"
-        fontFamily="Franklin Gothic Medium Cond"
+        fontFamily="Franklin Gothic Medium"
         fontStretch="condensed"
         letterSpacing={0}
         wordSpacing={0}
@@ -720,7 +720,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="2.2921px"
             fontStretch="condensed"
             strokeWidth={0.17191}
@@ -757,7 +757,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="2.2921px"
             fontStretch="condensed"
             strokeWidth={0.17191}
@@ -793,7 +793,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#bf9900"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="4.5842px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -811,7 +811,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#bf9900"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="4.5842px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -847,7 +847,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#bf9900"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="4.5842px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -861,7 +861,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#bf9900"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="4.5842px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -898,7 +898,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#bf9900"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="4.5842px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -934,7 +934,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#bf9900"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="4.5842px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -948,7 +948,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#bf9900"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="4.5842px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -985,7 +985,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#bf9900"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="4.5842px"
             fontStretch="condensed"
             strokeWidth={0.67988}
@@ -999,7 +999,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#bf9900"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="4.5842px"
               fontStretch="condensed"
               strokeWidth={0.67988}
@@ -1036,7 +1036,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#bf9900"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="4.5842px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1072,7 +1072,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#bf9900"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="4.5842px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1086,7 +1086,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#bf9900"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="4.5842px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1105,7 +1105,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#bf9900"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="4.5842px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1119,7 +1119,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#bf9900"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="4.5842px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1156,7 +1156,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1170,7 +1170,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1207,7 +1207,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1221,7 +1221,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1258,7 +1258,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1272,7 +1272,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1309,7 +1309,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1323,7 +1323,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1360,7 +1360,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1374,7 +1374,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1411,7 +1411,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1425,7 +1425,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1462,7 +1462,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1476,7 +1476,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1513,7 +1513,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1527,7 +1527,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1564,7 +1564,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1600,7 +1600,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1636,7 +1636,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1672,7 +1672,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1708,7 +1708,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1744,7 +1744,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1758,7 +1758,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1795,7 +1795,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1831,7 +1831,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1845,7 +1845,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1882,7 +1882,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1896,7 +1896,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1933,7 +1933,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1947,7 +1947,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -1984,7 +1984,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -1998,7 +1998,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -2035,7 +2035,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2049,7 +2049,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -2086,7 +2086,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2100,7 +2100,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -2140,7 +2140,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#0cf"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -2172,7 +2172,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#0cf"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -2204,7 +2204,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#0cf"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -2236,7 +2236,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#0cf"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -2268,7 +2268,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#0cf"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -2300,7 +2300,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#0cf"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -2337,7 +2337,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#0cf"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2373,7 +2373,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#0cf"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2409,7 +2409,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#0cf"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2445,7 +2445,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#0cf"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2481,7 +2481,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#0cf"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2517,7 +2517,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#0cf"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2553,7 +2553,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#0cf"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2589,7 +2589,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#0cf"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2625,7 +2625,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#0cf"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2661,7 +2661,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#0cf"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2697,7 +2697,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#0cf"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2733,7 +2733,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#0cf"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2769,7 +2769,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2783,7 +2783,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -2820,7 +2820,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2834,7 +2834,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -2871,7 +2871,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2885,7 +2885,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
                 fontVariantNumeric: "normal"
               }}
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8966px"
               fontStretch="condensed"
               strokeWidth={0.68745}
@@ -2922,7 +2922,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2958,7 +2958,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}
@@ -2994,7 +2994,7 @@ const Grupalpdi = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, In
               fontVariantNumeric: "normal"
             }}
             fill="#fff"
-            fontFamily="Franklin Gothic Medium Cond"
+            fontFamily="Franklin Gothic Medium"
             fontSize="3.8966px"
             fontStretch="condensed"
             strokeWidth={0.68745}

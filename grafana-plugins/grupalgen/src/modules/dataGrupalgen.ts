@@ -86,6 +86,7 @@ let grupalgen: DataGrupalgen ={
         
     Indicadores: {
         Estado: modoControlStyles.SinConexion,
+        Encendido: '',
         Alarma: modoControlStyles.SinConexion,
         Mant: modoControlStyles.SinConexion,
         Stop: modoControlStyles.SinConexion,
@@ -127,15 +128,15 @@ let Pot = TOT_VA / 1000;
   
 
 //INDICADORES
-  grupalgen.Indicadores.Estado = MODBUS_ST === 0? modoControlStyles.SinConexion : modoControlStyles.On;
+  grupalgen.Indicadores.Estado = MODBUS_ST === 1? modoControlStyles.SinConexion : modoControlStyles.On;
   grupalgen.Indicadores.Alarma = WARNING_ST === 1? modoControlStyles.On3 : modoControlStyles.SinConexion;
   grupalgen.Indicadores.Mant = ES_SHUTD_ALM === 1? modoControlStyles.On3 : modoControlStyles.SinConexion;
   grupalgen.Indicadores.Stop = STOP_MODE === 1? modoControlStyles.On2 : modoControlStyles.SinConexion;
   grupalgen.Indicadores.Manual = MANUAL_MODE === 1? modoControlStyles.On2 : modoControlStyles.SinConexion;
   grupalgen.Indicadores.Auto = AUTO_MODE === 1? modoControlStyles.On2 : modoControlStyles.SinConexion;
-  grupalgen.Indicadores.Generacion2 = VLL >= 427? modoControlStyles.On : modoControlStyles.SinConexion;
+  grupalgen.Indicadores.Generacion2 = VLL >= 420? modoControlStyles.On : modoControlStyles.SinConexion;
   grupalgen.Indicadores.Generacion = Iprom >= 10? modoControlStyles.On : modoControlStyles.SinConexion;
-
+  grupalgen.Indicadores.Encendido = VLL >= 420? modoControlStyles.On5 : modoControlStyles.SinConexion;
 
 console.log(grupalgen);
 

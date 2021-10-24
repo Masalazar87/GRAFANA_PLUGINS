@@ -1218,7 +1218,7 @@ return (
   strokeWidth={0.17191}
   wordSpacing={0}
 >
-  <tspan id="tspan4467" x={18.051054} y={5.1763539}>
+  <tspan id="tspan4467" x={20.051054} y={5.1763539}>
     {DatosGenerales.Nombre}
   </tspan>
 </text>

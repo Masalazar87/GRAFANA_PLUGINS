@@ -10,12 +10,12 @@ const getStyles = stylesFactory(() => {
   return {
     onbatery: css`
     fill: orange;
-    animation: ${parpadeo} 1s ease infinite;
+    //animation: ${parpadeo} 1s ease infinite;
     `,
     on: css`
     fill: green;
-    animation: ${parpadeo} 1s ease infinite;
-    `,
+    //animation: ${parpadeo} 1s ease infinite;
+     `,
     on1: css`
     fill: red;
     animation: ${parpadeo} 1s ease infinite;

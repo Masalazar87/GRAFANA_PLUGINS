@@ -22,8 +22,9 @@ type Alternador = {
 
 type Indicadores ={
     Estado: string;
+    Encendido: string;
     Alarma: string;
-    Mant:   string;
+    Mant: string;
     Stop: string;
     Manual: string;
     Auto: string;
@@ -41,6 +42,13 @@ export interface DataGrupalgen {
 export const Variables = ({ DatosGenerales, Motor, Alternador, Indicadores}: DataGrupalgen) =>{
 return (
 <g id="layer5">
+<path
+          id="path1781-2-3-3"
+          d="M15.869 8.275h45.497l5.755-5.753-46.865.182z"
+          fill="357a8f"
+          opacity={0.40215}
+          className={Indicadores.Encendido}
+        />
 <text
   id="gen4_poil"
   transform="scale(1.0817 .92443)"
@@ -74,7 +82,7 @@ return (
     fontFamily="Franklin Gothic Medium"
     fontSize="3.5279px"
   >
-    {Motor.PresOil}
+    {Motor.PresOil} PSI
   </tspan>
 </text>
 <text
@@ -110,7 +118,7 @@ return (
     fontFamily="Franklin Gothic Medium"
     fontSize="3.5279px"
   >
-    {Motor.Temp}
+    {Motor.Temp} °C
   </tspan>
 </text>
 <text
@@ -146,7 +154,7 @@ return (
     fontFamily="Franklin Gothic Medium"
     fontSize="3.5279px"
   >
-    {Motor.Vbatt}
+    {Motor.Vbatt} VDC
   </tspan>
 </text>
 <text
@@ -182,7 +190,7 @@ return (
     fontFamily="Franklin Gothic Medium"
     fontSize="3.5279px"
   >
-    {Motor.LvFuel}
+    {Motor.LvFuel} %
   </tspan>
 </text>
 <text
@@ -220,7 +228,7 @@ return (
     fontSize="3.5279px"
     strokeWidth={0.17543}
   >
-    {Alternador.VLL}
+    {Alternador.VLL} VAC
   </tspan>
 </text>
 <text
@@ -258,7 +266,7 @@ return (
     fontSize="3.5279px"
     strokeWidth={0.17543}
   >
-  {Alternador.Iprom}
+  {Alternador.Iprom} A
   </tspan>
 </text>
 <text
@@ -333,7 +341,7 @@ return (
     fontSize="3.5279px"
     strokeWidth={0.17543}
   >
-    {Alternador.Pot}
+    {Alternador.Pot} KVA
   </tspan>
 </text>
 <text
@@ -371,7 +379,7 @@ return (
     fontSize="3.5279px"
     strokeWidth={0.17543}
   >
-    {Alternador.Energy}
+    {Alternador.Energy} KW/H
   </tspan>
 </text>
 <ellipse

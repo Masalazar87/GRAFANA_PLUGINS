@@ -230,7 +230,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
               <path
                 id="rect818-4-5"
                 fillRule="evenodd"
-                fill="url(#linearGradient701-6-2-2)"
+                fill="black"//"url(#linearGradient701-6-2-2)"
                 paintOrder="markers stroke fill"
                 d="M80.369 300.08H590.749V584.5H80.369z"
               />
@@ -1753,7 +1753,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
           strokeWidth={0.44381}
         >
           <tspan
-            id="tspan1256-80-45-7-5-0-68"
+            id="tspan1256-80-45-7-5-0-68"//°C
             x={126.69505}
             y={42.506519}
             style={{
@@ -1767,7 +1767,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {"\xB0"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1788,7 +1788,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
           strokeWidth={0.44381}
         >
           <tspan
-            id="tspan1256-80-45-7-5-0-8-2"
+            id="tspan1256-80-45-7-5-0-8-2"//°C
             x={126.69505}
             y={53.335377}
             style={{
@@ -1802,7 +1802,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {"\xB0"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1823,7 +1823,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
           strokeWidth={0.44381}
         >
           <tspan
-            id="tspan1256-80-45-7-5-0-6-9"
+            id="tspan1256-80-45-7-5-0-6-9"//°C
             x={126.69505}
             y={64.163528}
             style={{
@@ -1837,7 +1837,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {"\xB0"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1858,7 +1858,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
           strokeWidth={0.44381}
         >
           <tspan
-            id="tspan1256-80-45-7-5-0-6-1-3"
+            id="tspan1256-80-45-7-5-0-6-1-3"//%
             x={127.37459}
             y={74.953629}
             style={{
@@ -1872,7 +1872,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {"%"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1893,7 +1893,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
           strokeWidth={0.44381}
         >
           <tspan
-            id="tspan1256-80-45-7-5-0-6-1-0-8"
+            id="tspan1256-80-45-7-5-0-6-1-0-8"//%
             x={226.57436}
             y={42.467762}
             style={{
@@ -1907,7 +1907,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {"%"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1928,7 +1928,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
           strokeWidth={0.44381}
         >
           <tspan
-            id="tspan1256-80-45-7-5-0-6-1-0-5-3"
+            id="tspan1256-80-45-7-5-0-6-1-0-5-3"//%
             x={226.57436}
             y={53.296616}
             style={{
@@ -1942,7 +1942,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {"%"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1963,7 +1963,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
           strokeWidth={0.44381}
         >
           <tspan
-            id="tspan1256-80-45-7-5-0-6-1-0-7-9"
+            id="tspan1256-80-45-7-5-0-6-1-0-7-9"//%
             x={226.57436}
             y={85.782486}
             style={{
@@ -1977,7 +1977,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {"%"}
+            {""}
           </tspan>
         </text>
         <text
@@ -1998,7 +1998,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
           strokeWidth={0.44381}
         >
           <tspan
-            id="tspan1256-80-45-7-5-0-6-1-0-1-8"
+            id="tspan1256-80-45-7-5-0-6-1-0-1-8"//HORAS
             x={226.35472}
             y={64.091888}
             style={{
@@ -2012,7 +2012,7 @@ const Grupaluma = ({DatosGenerales, Parametros, Indicadores }: DataGrupaluma) =>
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {"H"}
+            {""}
           </tspan>
         </text>
       </g>

@@ -53,7 +53,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="4.5861px"
       letterSpacing={0}
       opacity={0.899}
@@ -71,11 +71,11 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="4.5861px"
         strokeWidth={0.22758}
       >
-        {DatosGenerales.TempSuministro}
+        {DatosGenerales.TempSuministro} °C
       </tspan>
     </text>
     <text
@@ -92,7 +92,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="4.5861px"
       letterSpacing={0}
       opacity={0.899}
@@ -110,11 +110,11 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="4.5861px"
         strokeWidth={0.22758}
       >
-        {DatosGenerales.TempRetorno}
+        {DatosGenerales.TempRetorno} °C
       </tspan>
     </text>
     <text
@@ -131,7 +131,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="4.5861px"
       letterSpacing={0}
       opacity={0.896}
@@ -149,11 +149,11 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="4.5861px"
         strokeWidth={0.22758}
       >
-        {DatosGenerales.Corriente}
+        {DatosGenerales.Corriente} A
       </tspan>
     </text>
     <text
@@ -170,7 +170,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -188,7 +188,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
@@ -209,7 +209,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -227,11 +227,11 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
-        {Compresor1.TempAceite}
+        {Compresor1.TempAceite} °C
       </tspan>
     </text>
     <text
@@ -248,7 +248,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -257,7 +257,7 @@ return (
     >
       <tspan
         id="tspan4006-3-7-1-0-1-3"
-        x={67.932755}
+        x={64.932755}
         y={112.38426}
         style={{
           fontVariantCaps: "normal",
@@ -266,11 +266,11 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
-        {Compresor1.PSuccion}
+        {Compresor1.PSuccion} BAR
       </tspan>
     </text>
     <text
@@ -287,7 +287,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -296,7 +296,7 @@ return (
     >
       <tspan
         id="tspan4006-3-7-1-0-1-9"
-        x={67.932755}
+        x={64.932755}
         y={119.24271}
         style={{
           fontVariantCaps: "normal",
@@ -305,11 +305,11 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
-        {Compresor1.PDescarga}
+        {Compresor1.PDescarga} BAR
       </tspan>
     </text>
     <text
@@ -326,7 +326,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -344,11 +344,11 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
-        {Compresor1.HFunc}
+        {Compresor1.HFunc} H
       </tspan>
     </text>
     <text
@@ -365,7 +365,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -383,7 +383,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
@@ -404,7 +404,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -422,11 +422,11 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
-        {Compresor2.TempAceite}
+        {Compresor2.TempAceite} °C
       </tspan>
     </text>
     <text
@@ -443,7 +443,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -452,7 +452,7 @@ return (
     >
       <tspan
         id="tspan4006-3-7-1-0-1-3-3"
-        x={109.46382}
+        x={106.46382}
         y={112.38422}
         style={{
           fontVariantCaps: "normal",
@@ -461,11 +461,11 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
-        {Compresor2.PSuccion}
+        {Compresor2.PSuccion} BAR
       </tspan>
     </text>
     <text
@@ -482,7 +482,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -491,7 +491,7 @@ return (
     >
       <tspan
         id="tspan4006-3-7-1-0-1-9-7"
-        x={109.46382}
+        x={106.46382}
         y={119.24265}
         style={{
           fontVariantCaps: "normal",
@@ -500,11 +500,11 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
-        {Compresor2.PDescarga}
+        {Compresor2.PDescarga} BAR
       </tspan>
     </text>
     <text
@@ -521,7 +521,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="3.8806px"
       letterSpacing={0}
       opacity={0.899}
@@ -539,11 +539,11 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="3.8806px"
         strokeWidth={0.22758}
       >
-        {Compresor2.HFunc}
+        {Compresor2.HFunc} H
       </tspan>
     </text>
     <ellipse
@@ -659,7 +659,7 @@ return (
       }}
       xmlSpace="preserve"
       fill="#fff"
-      fontFamily="Sans-serif"
+      fontFamily="Franklin Gothic Medium"
       fontSize="7.188px"
       letterSpacing={0}
       opacity={0.899}
@@ -677,7 +677,7 @@ return (
           fontVariantNumeric: "normal"
         }}
         fill="#fff"
-        fontFamily="Sans-serif"
+        fontFamily="Franklin Gothic Medium"
         fontSize="7.188px"
         strokeWidth={0.22758}
       >

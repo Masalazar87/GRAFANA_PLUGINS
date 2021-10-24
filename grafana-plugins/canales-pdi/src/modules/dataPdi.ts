@@ -423,8 +423,9 @@ let pdi: DataPdi = {
 
 
 //INTERPOLACION DE VARIABLES
-let variableNombre = replaceVariables('$EQUIPO')
-pdi.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
+let variableNombre1 = replaceVariables('$EQUIPO')
+pdi.DatosGenerales.Nombre = variableNombre1 !==''? variableNombre1: options.nombre
+
 
 //DATOS P1 POTENCIA KVA----------------------------------
 pdi.Panel1_kva.CH1 = Number.parseFloat(KVA_1_CH1?.toFixed(2));
