@@ -77,7 +77,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
               id="layer2"
               transform="scale(.84482 1.1837)"
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8807px"
               letterSpacing={0}
               strokeWidth={0.68746}
@@ -108,7 +108,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -140,7 +140,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -172,7 +172,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -204,7 +204,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -236,7 +236,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -268,7 +268,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -300,7 +300,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -332,7 +332,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -364,7 +364,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -396,7 +396,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -428,7 +428,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -460,7 +460,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -492,7 +492,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -524,7 +524,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -556,7 +556,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -588,7 +588,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -620,7 +620,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -652,7 +652,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -684,7 +684,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -716,7 +716,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -748,7 +748,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -780,7 +780,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -812,7 +812,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -844,7 +844,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -876,7 +876,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -908,7 +908,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -940,7 +940,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -972,7 +972,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1004,7 +1004,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1036,7 +1036,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1068,7 +1068,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1100,7 +1100,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1132,7 +1132,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1164,7 +1164,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1196,7 +1196,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1228,7 +1228,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1260,7 +1260,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1292,7 +1292,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1324,7 +1324,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1356,7 +1356,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1388,7 +1388,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1420,7 +1420,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1432,7 +1432,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
               id="layer2-6-3"
               transform="translate(12) scale(.84482 1.1837)"
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8807px"
               letterSpacing={0}
               strokeWidth={0.68746}
@@ -1463,7 +1463,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1495,7 +1495,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1527,7 +1527,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1559,7 +1559,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1591,7 +1591,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1623,7 +1623,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1655,7 +1655,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1687,7 +1687,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1719,7 +1719,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1751,7 +1751,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1783,7 +1783,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1815,7 +1815,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1847,7 +1847,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1879,7 +1879,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1911,7 +1911,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1943,7 +1943,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -1975,7 +1975,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2007,7 +2007,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2039,7 +2039,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2071,7 +2071,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2103,7 +2103,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2135,7 +2135,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2167,7 +2167,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2199,7 +2199,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2231,7 +2231,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2263,7 +2263,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2295,7 +2295,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2327,7 +2327,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2359,7 +2359,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2391,7 +2391,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2423,7 +2423,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2455,7 +2455,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2487,7 +2487,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2519,7 +2519,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2551,7 +2551,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2583,7 +2583,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2615,7 +2615,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2647,7 +2647,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2679,7 +2679,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2711,7 +2711,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2743,7 +2743,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2775,7 +2775,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2787,7 +2787,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
               id="layer2-6-3-5"
               transform="translate(24 -.042) scale(.84482 1.1837)"
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8807px"
               letterSpacing={0}
               strokeWidth={0.68746}
@@ -2818,7 +2818,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2851,7 +2851,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2883,7 +2883,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2915,7 +2915,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2947,7 +2947,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -2979,7 +2979,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3011,7 +3011,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3043,7 +3043,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3075,7 +3075,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3107,7 +3107,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3139,7 +3139,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3171,7 +3171,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3203,7 +3203,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3235,7 +3235,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3267,7 +3267,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3299,7 +3299,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3331,7 +3331,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3363,7 +3363,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3395,7 +3395,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3427,7 +3427,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3459,7 +3459,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3491,7 +3491,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3523,7 +3523,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3555,7 +3555,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3587,7 +3587,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3619,7 +3619,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3651,7 +3651,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3683,7 +3683,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3715,7 +3715,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3747,7 +3747,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3779,7 +3779,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3811,7 +3811,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3843,7 +3843,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3875,7 +3875,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3907,7 +3907,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3939,7 +3939,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -3971,7 +3971,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4003,7 +4003,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4035,7 +4035,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4067,7 +4067,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4099,7 +4099,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4131,7 +4131,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4143,7 +4143,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
               id="layer2-8"
               transform="translate(97) scale(.84482 1.1837)"
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8807px"
               letterSpacing={0}
               strokeWidth={0.68746}
@@ -4174,7 +4174,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4206,7 +4206,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4238,7 +4238,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4270,7 +4270,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4302,7 +4302,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4334,7 +4334,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4366,7 +4366,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4398,7 +4398,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4430,7 +4430,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4462,7 +4462,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4494,7 +4494,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4526,7 +4526,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4558,7 +4558,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4590,7 +4590,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4622,7 +4622,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4654,7 +4654,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4686,7 +4686,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4718,7 +4718,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4750,7 +4750,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4782,7 +4782,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4814,7 +4814,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4846,7 +4846,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4878,7 +4878,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4910,7 +4910,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4942,7 +4942,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -4974,7 +4974,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5006,7 +5006,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5038,7 +5038,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5070,7 +5070,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5102,7 +5102,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5134,7 +5134,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5166,7 +5166,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5198,7 +5198,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5230,7 +5230,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5262,7 +5262,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5294,7 +5294,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5326,7 +5326,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5358,7 +5358,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5390,7 +5390,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5422,7 +5422,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5454,7 +5454,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5486,7 +5486,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5498,7 +5498,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
               id="layer2-6-3-58"
               transform="translate(109) scale(.84482 1.1837)"
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8807px"
               letterSpacing={0}
               strokeWidth={0.68746}
@@ -5529,7 +5529,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5561,7 +5561,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5593,7 +5593,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5625,7 +5625,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5657,7 +5657,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5689,7 +5689,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5721,7 +5721,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5753,7 +5753,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5785,7 +5785,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5817,7 +5817,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5849,7 +5849,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5881,7 +5881,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5913,7 +5913,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5945,7 +5945,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -5977,7 +5977,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6009,7 +6009,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6041,7 +6041,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6073,7 +6073,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6105,7 +6105,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6137,7 +6137,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6169,7 +6169,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6201,7 +6201,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6233,7 +6233,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6265,7 +6265,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6297,7 +6297,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6329,7 +6329,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6361,7 +6361,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6393,7 +6393,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6425,7 +6425,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6457,7 +6457,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6489,7 +6489,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6521,7 +6521,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6553,7 +6553,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6585,7 +6585,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6617,7 +6617,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6649,7 +6649,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6681,7 +6681,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6713,7 +6713,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6745,7 +6745,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6777,7 +6777,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6809,7 +6809,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6841,7 +6841,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6853,7 +6853,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
               id="layer2-6-3-5-9"
               transform="translate(121 -.042) scale(.84482 1.1837)"
               fill="#fff"
-              fontFamily="Franklin Gothic Medium Cond"
+              fontFamily="Franklin Gothic Medium"
               fontSize="3.8807px"
               letterSpacing={0}
               strokeWidth={0.68746}
@@ -6884,7 +6884,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6916,7 +6916,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6948,7 +6948,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -6980,7 +6980,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7012,7 +7012,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7044,7 +7044,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7076,7 +7076,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7108,7 +7108,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7140,7 +7140,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7172,7 +7172,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7204,7 +7204,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7236,7 +7236,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7268,7 +7268,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7300,7 +7300,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7332,7 +7332,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7364,7 +7364,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7396,7 +7396,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7428,7 +7428,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7460,7 +7460,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7492,7 +7492,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7524,7 +7524,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7556,7 +7556,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7588,7 +7588,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7620,7 +7620,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7652,7 +7652,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7684,7 +7684,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7716,7 +7716,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7748,7 +7748,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7780,7 +7780,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7812,7 +7812,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7844,7 +7844,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7876,7 +7876,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7908,7 +7908,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7940,7 +7940,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -7972,7 +7972,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -8004,7 +8004,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -8036,7 +8036,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -8068,7 +8068,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -8100,7 +8100,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -8132,7 +8132,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -8164,7 +8164,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
@@ -8196,7 +8196,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                     fontVariantNumeric: "normal"
                   }}
                   fill="#fff"
-                  fontFamily="Franklin Gothic Medium Cond"
+                  fontFamily="Franklin Gothic Medium"
                   fontSize="3.8807px"
                   strokeWidth={0.68746}
                 >
