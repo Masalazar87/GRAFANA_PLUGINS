@@ -369,7 +369,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       <text
         id="out_cur"
         transform="scale(.82041 1.2189)"
-        x={574.50806}
+        x={574.3493}
         y={95.938545}
         style={{ lineHeight: 1.25 }}
         xmlSpace="preserve"
@@ -382,7 +382,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan15409"
-          x={574.50806}
+          x={574.3493}
           y={95.938545}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -395,7 +395,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       <text
         id="load"
         transform="scale(.82041 1.2189)"
-        x={577.81805}
+        x={574.3493}
         y={111.36677}
         style={{ lineHeight: 1.25 }}
         xmlSpace="preserve"
@@ -408,7 +408,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan6736"
-          x={577.81805}
+          x={574.3493}
           y={111.36677}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -421,7 +421,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       <text
         id="out_pow"
         transform="scale(.82041 1.2189)"
-        x={564.3493}
+        x={574.3493}
         y={103.65266}
         style={{ lineHeight: 1.25 }}
         xmlSpace="preserve"
@@ -434,7 +434,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan6736-3"
-          x={564.3493}
+          x={574.3493}
           y={103.65266}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -447,7 +447,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       <text
         id="volt_max"
         transform="scale(.82041 1.2189)"
-        x={574.50806}
+        x={574.3493}
         y={88.224426}
         style={{ lineHeight: 1.25 }}
         xmlSpace="preserve"
@@ -460,7 +460,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan15409-5"
-          x={574.50806}
+          x={574.3493}
           y={88.224426}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -473,7 +473,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       <text
         id="volt_min"
         transform="scale(.82041 1.2189)"
-        x={574.50806}
+        x={574.3493}
         y={80.510307}
         style={{ lineHeight: 1.25 }}
         xmlSpace="preserve"
@@ -486,7 +486,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan15409-5-4"
-          x={574.50806}
+          x={574.3493}
           y={80.510307}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -499,7 +499,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       <text
         id="batt_volt"
         transform="scale(.82041 1.2189)"
-        x={574.50806}
+        x={574.3493}
         y={57.802101}
         style={{ lineHeight: 1.25 }}
         xmlSpace="preserve"
@@ -512,7 +512,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan15409-5-4-2"
-          x={574.50806}
+          x={574.3493}
           y={57.802101}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -525,7 +525,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       <text
         id="min"
         transform="scale(.82041 1.2189)"
-        x={574.50806}
+        x={574.3493}
         y={65.082085}
         style={{ lineHeight: 1.25 }}
         xmlSpace="preserve"
@@ -538,7 +538,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan1765"
-          x={574.50806}
+          x={574.3493}
           y={65.082085}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -551,7 +551,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       <text
         id="carga"
         transform="scale(.82041 1.2189)"
-        x={574.47772}
+        x={574.3493}
         y={72.796196}
         style={{ lineHeight: 1.25 }}
         xmlSpace="preserve"
@@ -564,7 +564,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan1765-8"
-          x={574.47772}
+          x={574.3493}
           y={72.796196}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -577,7 +577,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       <text
         id="load2"
         transform="scale(.82041 1.2189)"
-        x={577.81805}
+        x={574.3493}
         y={119.08089}
         style={{ lineHeight: 1.25 }}
         xmlSpace="preserve"
@@ -590,7 +590,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan6736-8"
-          x={577.81805}
+          x={574.3493}
           y={119.08089}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
@@ -603,7 +603,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       <text
         id="load3"
         transform="scale(.82041 1.2189)"
-        x={577.81805}
+        x={574.3493}
         y={126.79501}
         style={{ lineHeight: 1.25 }}
         xmlSpace="preserve"
@@ -616,7 +616,7 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
       >
         <tspan
           id="tspan6957"
-          x={577.81805}
+          x={574.3493}
           y={126.79501}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"

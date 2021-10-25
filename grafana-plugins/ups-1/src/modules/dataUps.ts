@@ -28,7 +28,15 @@ const dataUps = (data: PanelData, options:SimpleOptions, replaceVariables:Interp
     ?.lastNotNull;
     let OUTPUT_CURRENT  = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_CURRENT.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
+    let OUTPUT_CURRENT_2  = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_CURRENT_2.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+    let OUTPUT_CURRENT_3  = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_CURRENT_3.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
     let OUTPUT_POWER  = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_POWER.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+    let OUTPUT_POWER_2  = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_POWER_2.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+    let OUTPUT_POWER_3  = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_POWER_3.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let OUTPUT_PERCENT_LOAD  = data.series.find(({ name }) => name?.includes('DATA.OUTPUT_PERCENT_LOAD.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
@@ -87,25 +95,29 @@ let ups: DataUps ={
 let variableNombre = replaceVariables('$EQUIPO')
 ups.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
 
-
+//PARAMETROS
 ups.Principal.InVolmax = ups.Parametros.InVoltmax = Number.parseFloat(INPUT_VOLTAGE_MAX?.toFixed(2));
 ups.Principal.OutVolt = Number.parseFloat(OUTPUT_VOLTAGE?.toFixed(2));
 ups.Principal.Estado = INVERTER_ON_OFF === 1? 'ENCENDIDO' : 'APAGADO';
-let VBateria = BATTERY_VOLTAGE / 10;
-if (BATTERY_VOLTAGE !== undefined) {
-   ups.Principal.VBateria = ups.Parametros.VBateria = Number.parseFloat(VBateria?.toFixed(2));
-}
 ups.Parametros.MinEstimados = Number.parseFloat(ESTIMATED_MINUTES_REMAINING?.toFixed(2));
 ups.Parametros.CargaEstimada = Number.parseFloat(ESTIMATED_CHARGE_REMAINING?.toFixed(2));
 ups.Parametros.InVoltmin = Number.parseFloat(INPUT_VOLTAGE_MIN?.toFixed(2)); 
-//ups.Parametros.CorrienteOut = Number.parseFloat(OUTPUT_CURRENT?.toFixed(2)); 
-ups.Parametros.PotenciaOut = Number.parseFloat(OUTPUT_POWER?.toFixed(2)); 
 ups.Parametros.PorcenCarga1 = Number.parseFloat(OUTPUT_PERCENT_LOAD?.toFixed(2)); 
 ups.Parametros.PorcenCarga2 = Number.parseFloat(OUTPUT_PERCENT_LOAD_2?.toFixed(2)); 
 ups.Parametros.PorcenCarga3 = Number.parseFloat(OUTPUT_PERCENT_LOAD_3?.toFixed(2)); 
-let CorrienteOut = OUTPUT_CURRENT / 10;
+
+//CALCULOS
+let CorrienteOut = (OUTPUT_CURRENT + OUTPUT_CURRENT_2 + OUTPUT_CURRENT_3) / 30;
 if (OUTPUT_CURRENT !== undefined) {
    ups.Parametros.CorrienteOut = Number.parseFloat(CorrienteOut?.toFixed(2));
+}
+let PotenciaOut = (OUTPUT_POWER + OUTPUT_POWER_2 + OUTPUT_POWER_3)/3000;
+if (OUTPUT_CURRENT !== undefined) {
+   ups.Parametros.PotenciaOut = Number.parseFloat(PotenciaOut?.toFixed(2));
+}
+let VBateria = BATTERY_VOLTAGE / 10;
+if (BATTERY_VOLTAGE !== undefined) {
+   ups.Principal.VBateria = ups.Parametros.VBateria = Number.parseFloat(VBateria?.toFixed(2));
 }
 
 //ALARMAS
@@ -116,12 +128,8 @@ ups.Alarmas.Rectificador = RECTIFIER_ON_OFF === 1? modoControlStyles.On : modoCo
 ups.Principal.Estado_class = INVERTER_ON_OFF === 1? estadoStyles.ok1 : estadoStyles.sinConexion;
 ups.Principal.Botón = INVERTER_ON_OFF === 1? modoControlStyles.On : estadoStyles.sinConexion;
 
-
-   console.log(ups);
-
-    return ups;
-
+console.log(ups);
+return ups;
 };
 
 export default dataUps;
-
