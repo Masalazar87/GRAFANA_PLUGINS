@@ -8,45 +8,38 @@ type ParametrosIn = {
     VinRS : number;
     VinST : number;
     VinTR : number;
-    IoR : number;
-    IoS : number;
-    IoT : number;
-    PotR: number;
-    PotS: number;
-    PotT: number;
-    FPR : number;
-    FPS : number;
-    FPT : number;
+    VinRn : number;
+    VinSn : number;
+    VinTn : number;
 };
 
-type ParametrosP1 = {
+type ParametrosOut = {
     VoutRS : number;
     VoutST : number;
     VoutTR : number;
+    VoutRn : number;
+    VoutSn : number;
+    VoutTn : number;
     IoutR : number;
     IoutS : number;
     IoutT : number;
+    IoutProm: number;
     PotR: number;
     PotS: number;
     PotT: number;
+    PotTotal: number;
+    KvaR: number;
+    KvaS: number;
+    KvaT: number;
+    KVAprom: number;
     FPR : number;
     FPS : number;
     FPT : number;
-};
-
-type ParametrosP2 = {
-    VoutRS : number;
-    VoutST : number;
-    VoutTR : number;
-    IoutR : number;
-    IoutS : number;
-    IoutT : number;
-    PotR: number;
-    PotS: number;
-    PotT: number;
-    FPR : number;
-    FPS : number;
-    FPT : number;
+    FPprom: number;
+    KWH: number;
+    KWHR: number;
+    KWHS: number;
+    KWHT: number;
 };
 
 type Indicadores = {
@@ -57,1532 +50,1312 @@ type Indicadores = {
 export interface DataGrupalpdi {
     DatosGenerales: DatosGenerales;
     ParametrosIn: ParametrosIn;
-    ParametrosP1: ParametrosP1;
-    ParametrosP2: ParametrosP2;
+    ParametrosOut: ParametrosOut;
     Indicadores: Indicadores;
 
 }
 
-export const Variables = ({DatosGenerales, ParametrosIn, ParametrosP1, ParametrosP2, Indicadores}: DataGrupalpdi)=> {
+export const Variables = ({DatosGenerales, ParametrosIn, ParametrosOut, Indicadores}: DataGrupalpdi)=> {
 
 return (
 <g id="layer4">
-<text
-  id="pdu5_vin_ab"
-  transform="scale(.84484 1.1837)"
-  x={54.276978}
-  y={37.056614}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2520-8-5-02"
-    x={54.276978}
-    y={37.056614}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosIn.VinRS}
-  </tspan>
-</text>
-<text
-  id="pdu5_vin_bc"
-  transform="scale(.84484 1.1837)"
-  x={54.276978}
-  y={41.47823}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2528-3-4-41"
-    x={54.276978}
-    y={41.47823}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosIn.VinST}
-  </tspan>
-</text>
-<text
-  id="pdu5_vin_ac"
-  transform="scale(.84484 1.1837)"
-  x={54.276978}
-  y={45.927429}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2534-6-0-7"
-    x={54.276978}
-    y={45.927429}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosIn.VinTR}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_vbc"
-  transform="scale(.84484 1.1837)"
-  x={54.19136}
-  y={57.013802}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2548-7-5-5"
-    x={54.19136}
-    y={57.013802}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP1.VoutST}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_vab"
-  transform="scale(.84484 1.1837)"
-  x={54.19136}
-  y={52.550804}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2554-3-8-2"
-    x={54.19136}
-    y={52.550804}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP1.VoutRS}
-  </tspan>
-</text>
-<text
-  id="pdu5_p2_vab"
-  transform="scale(.84484 1.1837)"
-  x={54.19136}
-  y={67.993629}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2560-4-77-6"
-    x={54.19136}
-    y={67.993629}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP2.VoutRS}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_vac"
-  transform="scale(.84484 1.1837)"
-  x={54.19136}
-  y={61.421619}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2566-2-9-8"
-    x={54.19136}
-    y={61.421619}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP1.VoutTR}
-  </tspan>
-</text>
-<text
-  id="pdu5_p2_vbc"
-  transform="scale(.84484 1.1837)"
-  x={54.19136}
-  y={72.401566}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2572-8-5-3"
-    x={54.19136}
-    y={72.401566}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP2.VoutST}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_curra"
-  transform="scale(.84484 1.1837)"
-  x={75.369705}
-  y={52.499435}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2598-9-9-1"
-    x={75.369705}
-    y={52.499435}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP1.IoutR}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_currb"
-  transform="scale(.84484 1.1837)"
-  x={75.369705}
-  y={56.959579}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2606-0-76-9"
-    x={75.369705}
-    y={56.959579}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP1.IoutS}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_currc"
-  transform="scale(.84484 1.1837)"
-  x={75.508598}
-  y={61.421619}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2612-3-3-6"
-    x={75.508598}
-    y={61.421619}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP1.IoutT}
-  </tspan>
-</text>
-<text
-  id="pdu5_p2_curra"
-  transform="scale(.84484 1.1837)"
-  x={75.369705}
-  y={67.993629}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2618-0-3-4"
-    x={75.369705}
-    y={67.993629}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP2.IoutR}
-  </tspan>
-</text>
-<text
-  id="pdu5_p2_currb"
-  transform="scale(.84484 1.1837)"
-  x={75.369705}
-  y={72.431038}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2624-6-5-7"
-    x={75.369705}
-    y={72.431038}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP2.IoutS}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_kwa"
-  transform="scale(.84484 1.1837)"
-  x={99.042839}
-  y={52.499435}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2660-2-6-3"
-    x={99.042839}
-    y={52.499435}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP1.PotR}
-  </tspan>
-</text>
-<text
-  id="pdu5_p2_kwa"
-  transform="scale(.84484 1.1837)"
-  x={99.042839}
-  y={67.993629}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2666-1-9-9"
-    x={99.042839}
-    y={67.993629}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP2.PotR}
-  </tspan>
-</text>
-<text
-  id="pdu5_p2_kwb"
-  transform="scale(.84484 1.1837)"
-  x={99.042839}
-  y={72.431038}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2678-1-9-78"
-    x={99.042839}
-    y={72.431038}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP2.PotS}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_kwc"
-  transform="scale(.84484 1.1837)"
-  x={99.042839}
-  y={61.370251}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2684-2-6-0"
-    x={99.042839}
-    y={61.370251}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP1.PotT}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_kwb"
-  transform="scale(.84484 1.1837)"
-  x={99.042839}
-  y={56.808327}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2690-5-3-6"
-    x={99.042839}
-    y={56.808327}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP1.PotS}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_fpb"
-  transform="scale(.84484 1.1837)"
-  x={122.86819}
-  y={56.861603}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2702-5-9-01"
-    x={122.86819}
-    y={56.861603}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP1.FPS}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_fpc"
-  transform="scale(.84484 1.1837)"
-  x={122.86819}
-  y={61.421619}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2708-6-5-1"
-    x={122.86819}
-    y={61.421619}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP1.FPT}
-  </tspan>
-</text>
-<text
-  id="pdu5_p2_fpb"
-  transform="scale(.84484 1.1837)"
-  x={122.86819}
-  y={72.429031}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2726-2-47-1"
-    x={122.86819}
-    y={72.429031}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP2.FPS}
-  </tspan>
-</text>
-<text
-  id="pdu5_p2_fpa"
-  transform="scale(.84484 1.1837)"
-  x={122.86819}
-  y={67.993629}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2732-4-09-3"
-    x={122.86819}
-    y={67.993629}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP2.FPR}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_fpa"
-  transform="scale(.84484 1.1837)"
-  x={122.86819}
-  y={52.550804}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2738-5-3-76"
-    x={122.86819}
-    y={52.550804}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP1.FPR}
-  </tspan>
-</text>
-<text
-  id="pdu5_p2_vac"
-  transform="scale(.84484 1.1837)"
-  x={54.19136}
-  y={76.864677}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2540-7-0-8"
-    x={54.19136}
-    y={76.864677}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP2.VoutTR}
-  </tspan>
-</text>
-<text
-  id="pdu5_p2_currc"
-  transform="scale(.84484 1.1837)"
-  x={75.369705}
-  y={76.864647}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2630-2-7-7"
-    x={75.369705}
-    y={76.864647}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP2.IoutT}
-  </tspan>
-</text>
-<text
-  id="pdu5_p2_kwc"
-  transform="scale(.84484 1.1837)"
-  x={99.042839}
-  y={76.864647}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2672-8-9-7"
-    x={99.042839}
-    y={76.864647}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP2.PotT}
-  </tspan>
-</text>
-<text
-  id="pdu5_p2_fpc"
-  transform="scale(.84484 1.1837)"
-  x={122.86819}
-  y={76.864441}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2714-3-2-2"
-    x={122.86819}
-    y={76.864441}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosP2.FPT}
-  </tspan>
-</text>
-<ellipse
-  id="pdu5_out_vol"
-  cx={22.495}
-  cy={15.84}
-  rx={3.8884}
-  ry={3.7825}
-  fillRule="evenodd"
-  fill="#1ad372"
-  className = {Indicadores.ModbusST}
-  opacity={0.899}
-  paintOrder="markers stroke fill"
-/>
-<ellipse
-  id="path2610-3-6-99"
-  transform="matrix(.99057 0 0 .57524 -55.091 -4.367)"
-  cx={78.266}
-  cy={31.379}
-  rx={2.3671}
-  ry={1.9181}
-  fillRule="evenodd"
-  fill="#fff"
-  filter="url(#filter3102-29)"
-  opacity={0.36022}
-  paintOrder="markers stroke fill"
-/>
-<ellipse
-  id="pdu_1b_f3_alarm"
-  cx={35.811}
-  cy={17.189}
-  rx={2.6248}
-  ry={2.6585}
-  fillRule="evenodd"
-  fill="#343434"
-  className = {Indicadores.Alarma}
-  opacity={0.899}
-  paintOrder="markers stroke fill"
-/>
-<ellipse
-  id="path2610-3-6-9-2"
-  transform="matrix(.58569 0 0 .34746 -9.974 4.74)"
-  cx={78.266}
-  cy={31.379}
-  rx={2.3671}
-  ry={1.9181}
-  fillRule="evenodd"
-  fill="#fff"
-  filter="url(#filter3102-5-0)"
-  opacity={0.16667}
-  paintOrder="markers stroke fill"
-/>
-<text
-  id="pdu_1b_f3_out_ab_vol"
-  transform="scale(.92768 1.078)"
-  x={18.051054}
-  y={5.1763539}
-  style={{
-    fontVariantCaps: "normal",
-    fontVariantEastAsian: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="5.4298px"
-  letterSpacing={0}
-  opacity={0.899}
-  strokeWidth={0.17191}
-  wordSpacing={0}
->
-  <tspan id="tspan4467" x={20.051054} y={5.1763539}>
-    {DatosGenerales.Nombre}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_curra-2"
-  transform="scale(.84484 1.1837)"
-  x={75.311005}
-  y={37.460186}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2598-9-9-1-8"
-    x={75.311005}
-    y={37.460186}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosIn.IoR}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_currb-0"
-  transform="scale(.84484 1.1837)"
-  x={75.311005}
-  y={41.403706}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2606-0-76-9-5"
-    x={75.311005}
-    y={41.403706}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosIn.IoS}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_currc-3"
-  transform="scale(.84484 1.1837)"
-  x={75.449898}
-  y={45.349133}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2612-3-3-6-4"
-    x={75.449898}
-    y={45.349133}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosIn.IoT}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_kwa-4"
-  transform="scale(.84484 1.1837)"
-  x={98.984131}
-  y={37.460186}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2660-2-6-3-9"
-    x={98.984131}
-    y={37.460186}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosIn.PotR}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_kwc-7"
-  transform="scale(.84484 1.1837)"
-  x={98.984131}
-  y={45.29776}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2684-2-6-0-6"
-    x={98.984131}
-    y={45.29776}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosIn.PotT}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_kwb-8"
-  transform="scale(.84484 1.1837)"
-  x={98.984131}
-  y={41.377068}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2690-5-3-6-5"
-    x={98.984131}
-    y={41.377068}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosIn.PotS}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_fpb-1"
-  transform="scale(.84484 1.1837)"
-  x={122.80947}
-  y={41.430344}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2702-5-9-01-8"
-    x={122.80947}
-    y={41.430344}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosIn.FPS}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_fpc-1"
-  transform="scale(.84484 1.1837)"
-  x={122.80947}
-  y={45.349133}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2708-6-5-1-5"
-    x={122.80947}
-    y={45.349133}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosIn.FPT}
-  </tspan>
-</text>
-<text
-  id="pdu5_p1_fpa-1"
-  transform="scale(.84484 1.1837)"
-  x={122.80947}
-  y={37.511551}
-  style={{
-    fontFeatureSettings: "normal",
-    fontVariantCaps: "normal",
-    fontVariantLigatures: "normal",
-    fontVariantNumeric: "normal",
-    lineHeight: 1.25
-  }}
-  xmlSpace="preserve"
-  fill="#fff"
-  fontFamily="Franklin Gothic Medium"
-  fontSize="3.8966px"
-  fontStretch="condensed"
-  letterSpacing={0}
-  strokeWidth={0.68745}
-  wordSpacing={0}
->
-  <tspan
-    id="tspan2738-5-3-76-0"
-    x={122.80947}
-    y={37.511551}
-    style={{
-      fontFeatureSettings: "normal",
-      fontVariantCaps: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal"
-    }}
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="3.8966px"
-    fontStretch="condensed"
-    strokeWidth={0.68745}
-  >
-    {ParametrosIn.FPR}
-  </tspan>
-</text>
-</g>
-)
+        <text
+          id="pdu5_vin_ab"
+          transform="scale(.84482 1.1837)"
+          x={38.390591}
+          y={37.793015}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2520-8-5-02"
+            x={36.390591}
+            y={37.793015}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosIn.VinRS} V
+          </tspan>
+        </text>
+        <text
+          id="pdu5_vin_bc"
+          transform="scale(.84482 1.1837)"
+          x={38.390591}
+          y={41.822411}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2528-3-4-41"
+            x={36.390591}
+            y={41.822411}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosIn.VinST} V
+          </tspan>
+        </text>
+        <text
+          id="pdu5_vin_ac"
+          transform="scale(.84482 1.1837)"
+          x={38.390591}
+          y={45.871704}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2534-6-0-7"
+            x={36.390591}
+            y={45.871704}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosIn.VinTR} V
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_vbc"
+          transform="scale(.84482 1.1837)"
+          x={50.572445}
+          y={62.360023}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2548-7-5-5"
+            x={50.572445}
+            y={62.360023}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.PotR} KW
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_vab"
+          transform="scale(.84482 1.1837)"
+          x={50.572445}
+          y={57.418636}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2554-3-8-2"
+            x={50.572445}
+            y={57.418636}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.IoutR} A
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p2_vab"
+          transform="scale(.84482 1.1837)"
+          x={50.572445}
+          y={72.203018}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2560-4-77-6"
+            x={50.572445}
+            y={72.203018}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.FPR}
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_vac"
+          transform="scale(.84482 1.1837)"
+          x={50.572445}
+          y={67.26162}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2566-2-9-8"
+            x={50.572445}
+            y={67.26162}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.KvaR} KVA
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p2_vbc"
+          transform="scale(.84482 1.1837)"
+          x={50.572445}
+          y={77.104607}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2572-8-5-3"
+            x={50.572445}
+            y={77.104607}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.KWH} KW/H
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_curra"
+          transform="scale(.84482 1.1837)"
+          x={72.39283}
+          y={57.418636}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2598-9-9-1"
+            x={72.39283}
+            y={57.418636}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.IoutS} A
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_currb"
+          transform="scale(.84482 1.1837)"
+          x={72.39283}
+          y={62.320236}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2606-0-76-9"
+            x={72.39283}
+            y={62.320236}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.PotS} KW
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_currc"
+          transform="scale(.84482 1.1837)"
+          x={72.531731}
+          y={67.2351}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2612-3-3-6"
+            x={72.531731}
+            y={67.2351}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.KvaS} KVA
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p2_curra"
+          transform="scale(.84482 1.1837)"
+          x={72.39283}
+          y={72.163216}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2618-0-3-4"
+            x={72.39283}
+            y={72.163216}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.FPS}
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p2_currb"
+          transform="scale(.84482 1.1837)"
+          x={72.39283}
+          y={77.104607}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2624-6-5-7"
+            x={72.39283}
+            y={77.104607}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+          {""}
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_kwa"
+          transform="scale(.84482 1.1837)"
+          x={95.255081}
+          y={57.418636}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2660-2-6-3"
+            x={95.255081}
+            y={57.418636}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.IoutT} A
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p2_kwa"
+          transform="scale(.84482 1.1837)"
+          x={95.255081}
+          y={72.163216}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2666-1-9-9"
+            x={95.255081}
+            y={72.163216}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.FPT}
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p2_kwb"
+          transform="scale(.84482 1.1837)"
+          x={95.255081}
+          y={77.104607}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2678-1-9-78"
+            x={95.255081}
+            y={77.104607}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {""}
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_kwc"
+          transform="scale(.84482 1.1837)"
+          x={95.255081}
+          y={67.261627}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2684-2-6-0"
+            x={95.255081}
+            y={67.261627}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.KvaT} KVA
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_kwb"
+          transform="scale(.84482 1.1837)"
+          x={95.255081}
+          y={62.320236}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2690-5-3-6"
+            x={95.255081}
+            y={62.320236}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.PotT} KW
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_fpb"
+          transform="scale(.84482 1.1837)"
+          x={116.67458}
+          y={62.326859}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2702-5-9-01"
+            x={116.67458}
+            y={62.326859}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.PotTotal} KW
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_fpc"
+          transform="scale(.84482 1.1837)"
+          x={116.67458}
+          y={67.24836}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2708-6-5-1"
+            x={116.67458}
+            y={67.24836}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.KVAprom} KVA
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p2_fpb"
+          transform="scale(.84482 1.1837)"
+          x={116.67458}
+          y={77.091347}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2726-2-47-1"
+            x={116.67458}
+            y={77.091347}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {""}
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p2_fpa"
+          transform="scale(.84482 1.1837)"
+          x={116.67458}
+          y={72.169861}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2732-4-09-3"
+            x={116.67458}
+            y={72.169861}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.FPprom}
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_fpa"
+          transform="scale(.84482 1.1837)"
+          x={116.67458}
+          y={57.405369}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2738-5-3-76"
+            x={116.67458}
+            y={57.405369}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.IoutProm} A
+          </tspan>
+        </text>
+        <ellipse
+          id="pdu5_out_vol"
+          cx={22.495}
+          cy={15.84}
+          rx={3.8884}
+          ry={3.7825}
+          fillRule="evenodd"
+          fill="#1ad372"
+          className={Indicadores.ModbusST}
+          opacity={0.899}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="path2610-3-6-99"
+          transform="matrix(.99057 0 0 .57524 -55.091 -4.367)"
+          cx={78.266}
+          cy={31.379}
+          rx={2.3671}
+          ry={1.9181}
+          fillRule="evenodd"
+          fill="#fff"
+          filter="url(#filter3102-29)"
+          opacity={0.36022}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="pdu_1b_f3_alarm"
+          cx={35.811}
+          cy={17.189}
+          rx={2.6248}
+          ry={2.6585}
+          fillRule="evenodd"
+          fill="#343434"
+          className={Indicadores.Alarma}
+          opacity={0.899}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="path2610-3-6-9-2"
+          transform="matrix(.58569 0 0 .34746 -9.974 4.74)"
+          cx={78.266}
+          cy={31.379}
+          rx={2.3671}
+          ry={1.9181}
+          fillRule="evenodd"
+          fill="#fff"
+          filter="url(#filter3102-5-0)"
+          opacity={0.16667}
+          paintOrder="markers stroke fill"
+        />
+        <text
+          id="pdu_1b_f3_out_ab_vol"
+          transform="scale(.92766 1.078)"
+          x={19.762699}
+          y={5.176455}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="5.4299px"
+          letterSpacing={0}
+          opacity={0.899}
+          strokeWidth={0.17191}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan4467"
+            x={19.762699}
+            y={5.176455}
+            strokeWidth={0.17191}
+          >
+            {DatosGenerales.Nombre}
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_kwa-4"
+          transform="scale(.84482 1.1837)"
+          x={97.447342}
+          y={37.793015}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2660-2-6-3-9"
+            x={95.447342}
+            y={37.793015}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.VoutRS} V
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_kwc-7"
+          transform="scale(.84482 1.1837)"
+          x={97.447342}
+          y={45.871704}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2684-2-6-0-6"
+            x={95.447342}
+            y={45.871704}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.VoutTR} V
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_kwb-8"
+          transform="scale(.84482 1.1837)"
+          x={97.447342}
+          y={41.812466}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2690-5-3-6-5"
+            x={95.447342}
+            y={41.812466}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.VoutST} V
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_fpb-1"
+          transform="scale(.84482 1.1837)"
+          x={119.67994}
+          y={41.819096}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2702-5-9-01-8"
+            x={119.67994}
+            y={41.819096}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.VoutSn} V
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_fpc-1"
+          transform="scale(.84482 1.1837)"
+          x={119.67994}
+          y={45.85844}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2708-6-5-1-5"
+            x={119.67994}
+            y={45.85844}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.VoutTn} V
+          </tspan>
+        </text>
+        <text
+          id="pdu5_p1_fpa-1"
+          transform="scale(.84482 1.1837)"
+          x={119.67994}
+          y={37.779751}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2738-5-3-76-0"
+            x={119.67994}
+            y={37.779751}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosOut.VoutRn} V
+          </tspan>
+        </text>
+        <text
+          id="pdu5_vin_ab-4"
+          transform="scale(.84482 1.1837)"
+          x={60.375526}
+          y={37.686764}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2520-8-5-02-4"
+            x={60.375526}
+            y={37.686764}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosIn.VinRn} V
+          </tspan>
+        </text>
+        <text
+          id="pdu5_vin_bc-7"
+          transform="scale(.84482 1.1837)"
+          x={60.375526}
+          y={41.71616}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2528-3-4-41-8"
+            x={60.375526}
+            y={41.71616}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosIn.VinSn} V
+          </tspan>
+        </text>
+        <text
+          id="pdu5_vin_ac-0"
+          transform="scale(.84482 1.1837)"
+          x={60.375526}
+          y={45.765453}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.8805px"
+          letterSpacing={0}
+          strokeWidth={0.68746}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan2534-6-0-7-9"
+            x={60.375526}
+            y={45.765453}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.8805px"
+            strokeWidth={0.68746}
+          >
+            {ParametrosIn.VinTn} V
+          </tspan>
+        </text>
+      </g>
+  )
 }
 

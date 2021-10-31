@@ -30,8 +30,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
       <Grupalpdi
       DatosGenerales={grupalpdi.DatosGenerales}
       ParametrosIn={grupalpdi.ParametrosIn}
-      ParametrosP1={grupalpdi.ParametrosP1}
-      ParametrosP2={grupalpdi.ParametrosP2}
+      ParametrosOut={grupalpdi.ParametrosOut}
       Indicadores={grupalpdi.Indicadores}
       />
     </div>
