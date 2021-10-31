@@ -10,11 +10,14 @@ type Parametros = {
     TempRoom: number;
     HumRel: number;
     EstadoValv: string;
-    OpenValvSum: number;
     OpernValvRet: number;
     HorasFunc: number;
     EstadoFan: string;
     PorcFuncFan: number;
+};
+
+type Valvulas ={
+  Sumin: string;
 };
 
 type Indicadores = {
@@ -26,10 +29,11 @@ type Indicadores = {
 export interface DataGrupaluma {
     DatosGenerales: DatosGenerales;
     Parametros: Parametros;
+    Valvulas: Valvulas;
     Indicadores: Indicadores;
 }
 
-export const Variables = ({ DatosGenerales, Parametros, Indicadores }: DataGrupaluma) => {
+export const Variables = ({ DatosGenerales, Parametros, Valvulas, Indicadores }: DataGrupaluma) => {
 return (
 <g id="layer4">
         <ellipse
@@ -353,7 +357,24 @@ return (
             fontSize="5.2917px"
             strokeWidth={0.44381}
           >
-            {Parametros.OpenValvSum}
+            {Valvulas.Sumin}
+          </tspan>
+          <tspan
+            id="tspan1256-80-8-2-5-2-2-1"
+            x={205.26299}
+            y={54.48843}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="5.2917px"
+            strokeWidth={0.44381}
+          >
+            {Valvulas.Sumin}
           </tspan>
         </text>
         <text
@@ -379,7 +400,45 @@ return (
           <tspan
             id="tspan1256-80-3-86-0-5-7-3"
             x={205.26299}
-            y={53.317116}
+            y={48.262848}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="5.2917px"
+            strokeWidth={0.44381}
+          >
+            {Parametros.OpernValvRet}
+          </tspan>
+        </text>
+        <text
+          id="uma5_aper_valret"
+          transform="scale(.70565 1.4171)"
+          x={205.26299}
+          y={53.317116}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="5.2917px"
+          letterSpacing={0}
+          strokeWidth={0.44381}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan1256-80-3-86-0-5-7-3-1"
+            x={205.26299}
+            y={60.48843}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -417,7 +476,7 @@ return (
           <tspan
             id="tspan1256-80-3-8-7-7-7-7-6"
             x={205.12346}
-            y={64.163887}
+            y={69.14579}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -455,7 +514,7 @@ return (
           <tspan
             id="tspan1256-80-3-8-4-51-4-8-3-2"
             x={205.28366}
-            y={74.97448}
+            y={76.97448}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",

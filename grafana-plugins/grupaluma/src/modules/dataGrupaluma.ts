@@ -48,6 +48,14 @@ const dataGrupaluma = (data: PanelData, options: SimpleOptions): DataGrupaluma =
     //?.lastNotNull;
     //let SMOKE_FIRE_ALARM = data.series.find(({ name }) => name?.includes('DATA.SMOKE_FIRE_ALARM.VALUE'))?.fields[1].state?.calcs
     //?.lastNotNull;
+
+    //VALVULAS
+    let SUM_S = data.series.find(({ name }) => name?.includes('DATA.SUM_S.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+    //let SUM2_S = data.series.find(({ name }) => name?.includes('DATA.SUM2_S.VALUE'))?.fields[1].state?.calcs
+    //?.lastNotNull;
+    //let SUM3_S = data.series.find(({ name }) => name?.includes('DATA.SUM3_S.VALUE'))?.fields[1].state?.calcs
+    //?.lastNotNull;
     
               
 let grupaluma: DataGrupaluma = {
@@ -60,11 +68,13 @@ let grupaluma: DataGrupaluma = {
         TempRoom: 0,
         HumRel: 0,
         EstadoValv: '',
-        OpenValvSum: 0,
         OpernValvRet: 0,
         HorasFunc: 0,
         EstadoFan: '',
         PorcFuncFan: 0,
+    },
+    Valvulas: {
+        Sumin:'',
     },
     Indicadores:{
         Estado: estadosStyles.off,
@@ -81,7 +91,9 @@ let grupaluma: DataGrupaluma = {
     grupaluma.Parametros.HorasFunc = Number.parseFloat(UNIT_RUN_ALARM?.toFixed(2));
     grupaluma.Parametros.EstadoFan = SYS_ON === 1? 'ON' : 'OFF';
     grupaluma.Parametros.PorcFuncFan = Number.parseFloat(COLD_WAT_VALV?.toFixed(2));
-    grupaluma.Parametros.OpenValvSum = Number.parseFloat(COLD_WAT_VALV?.toFixed(2));
+    grupaluma.Valvulas.Sumin = SUM_S ===1? 'ON' : 'OFF';
+    
+
 
     //ESTADOS Y ALARMAS
     grupaluma.Indicadores.Estado = SYS_ON ===1? estadosStyles.on : estadosStyles.off;

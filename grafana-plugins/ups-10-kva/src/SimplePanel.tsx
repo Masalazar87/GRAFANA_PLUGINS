@@ -1,19 +1,25 @@
-import React from 'react';
+import React from 'react'
 import { PanelProps } from '@grafana/data';
 import { SimpleOptions } from 'types';
 import { css, cx } from 'emotion';
+//import { stylesFactory, useTheme } from '@grafana/ui';
 import { stylesFactory } from '@grafana/ui';
-import Grupaluma from './components/grupaluma';
-import dataGrupaluma from 'modules/dataGrupaluma';
+import Ups from './components/ups10kva';
+
+//import { DataUps } from 'components/variables';
+import dataUps from 'modules/dataUps';
 
 interface Props extends PanelProps<SimpleOptions> {}
 
-export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) => {
+export const SimplePanel: React.FC<Props> = ({options, data, width, height, replaceVariables }) => {
   //const theme = useTheme();
   const styles = getStyles();
 
-  let grupaluma = dataGrupaluma(data, options);
+  //console.log("data: ", data)
+  //console.log("options: ", options)
 
+  let ups = dataUps(data, options, replaceVariables);
+      
   return (
     <div
       className={cx(
@@ -24,16 +30,16 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
         `
       )}
     >
-      <Grupaluma
-        DatosGenerales = {grupaluma.DatosGenerales}
-        Parametros = {grupaluma.Parametros}
-        Valvulas={grupaluma.Valvulas}
-        Indicadores ={grupaluma.Indicadores}
+      <Ups
+        Parametros={ups.Parametros}
+        Principal={ups.Principal}
+        DatosGenerales={ups.DatosGenerales}
+        Alarmas={ups.Alarmas}    
       />
     </div>
   );
 };
-
+     
 const getStyles = stylesFactory(() => {
   return {
     wrapper: css`

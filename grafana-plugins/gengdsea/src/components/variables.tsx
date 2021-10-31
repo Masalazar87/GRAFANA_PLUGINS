@@ -20,6 +20,7 @@ type Alternador = {
     kwprom: number;
     kvaprom: number;
     Energy: number;
+    FP: number;
 };
 
 type Indicadores ={
@@ -86,7 +87,7 @@ return (
       fontSize="3.175px"
       strokeWidth={0.17543}
     >
-      {Motor.PresOil}
+      {Motor.PresOil} PSI
     </tspan>
   </text>
   <text
@@ -124,7 +125,7 @@ return (
       fontSize="3.175px"
       strokeWidth={0.17543}
     >
-      {Motor.Temp}
+      {Motor.Temp} °C
     </tspan>
   </text>
   <text
@@ -153,7 +154,7 @@ return (
       y={51.339809}
       strokeWidth={0.17543}
     >
-      {Motor.ChargeVolt}
+      {Motor.ChargeVolt} VDC
     </tspan>
   </text>
   <text
@@ -191,7 +192,7 @@ return (
       fontSize="3.175px"
       strokeWidth={0.17543}
     >
-      {Motor.Vbatt}
+      {Motor.Vbatt} VDC
     </tspan>
   </text>
   <text
@@ -229,7 +230,7 @@ return (
       fontSize="3.175px"
       strokeWidth={0.17543}
     >
-      {Alternador.VLLprom}
+      {Alternador.VLLprom} VAC
     </tspan>
   </text>
   <text
@@ -267,7 +268,7 @@ return (
       fontSize="3.175px"
       strokeWidth={0.17543}
     >
-      {Alternador.Illprom}
+      {Alternador.Illprom} A
     </tspan>
   </text>
   <text
@@ -305,7 +306,7 @@ return (
       fontSize="3.175px"
       strokeWidth={0.17543}
     >
-      {Alternador.kwprom}
+      {Alternador.kwprom} KW
     </tspan>
   </text>
   <text
@@ -343,7 +344,7 @@ return (
       fontSize="3.175px"
       strokeWidth={0.17543}
     >
-      {Alternador.kvaprom}
+      {Alternador.kvaprom} KVA
     </tspan>
   </text>
   <ellipse
@@ -657,7 +658,7 @@ return (
       fontSize="4.0356px"
       strokeWidth={0.22298}
     >
-      {Motor.OperHours}H
+      {Motor.OperHours} H
     </tspan>
   </text>
   <text
@@ -695,7 +696,7 @@ return (
       fontSize="4.0356px"
       strokeWidth={0.22298}
     >
-      {Motor.LvFuel}
+      {Motor.LvFuel} %
     </tspan>
   </text>
   <text
@@ -733,7 +734,24 @@ return (
       fontSize="4.0356px"
       strokeWidth={0.22298}
     >
-      {Alternador.Energy}
+      {Alternador.Energy} KW/H
+    </tspan>
+    <tspan
+      id="tspan2372-8-5-1"
+      x={117.54137}
+      y={80.650856}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal"
+      }}
+      fill="#000"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="4.0356px"
+      strokeWidth={0.22298}
+    >
+      {Alternador.FP}
     </tspan>
   </text>
 </g>

@@ -56,6 +56,11 @@ const dataGrupalgen = (data: PanelData, options: SimpleOptions, replaceVariables
     ?.lastNotNull;
     let KW_HOURS = data.series.find(({ name }) => name?.includes('DATA.KW_HOURS.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
+    //let PF_AVG = data.series.find(({ name }) => name?.includes('DATA.PF_AVG.VALUE'))?.fields[1].state?.calcs
+    //?.lastNotNull;
+    let AVG_PF = data.series.find(({ name }) => name?.includes('DATA.AVG_PF.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+
     
     //Parámetros
     let COOL_TEMP = data.series.find(({ name }) => name?.includes('DATA.COOL_TEMP.VALUE'))?.fields[1].state?.calcs
@@ -90,6 +95,7 @@ let grupalgen: DataGrupalgen ={
         kwprom: 0,
         kvaprom: 0,
         Energy: 0,
+        FP: 0,
     },   
     Indicadores: {
         Estado: '',
@@ -121,7 +127,8 @@ grupalgen.DatosGenerales.Nombre = variableNombre ! == '$NOMBRE' ?  variableNombr
   grupalgen.Alternador.Illprom = Number.parseFloat(CUR_AVG?.toFixed(2))
   grupalgen.Alternador.kvaprom = Number.parseFloat(TOT_VA?.toFixed(2))
   grupalgen.Alternador.kwprom = Number.parseFloat(TOT_WATTS?.toFixed(2))
-    
+  //grupalgen.Alternador.FP = Number.parseFloat(PF_AVG?.toFixed(2))
+  grupalgen.Alternador.FP = Number.parseFloat(AVG_PF?.toFixed(2))
 
 //INDICADORES
   grupalgen.Indicadores.Stop = CONTROL_MODE === 0? modoControlStyles.On2 : modoControlStyles.SinConexion;
