@@ -41,8 +41,8 @@ const dataGrupalpdi = (data: PanelData, options: SimpleOptions): DataGrupalpdi =
     ?.lastNotNull;
     let OUT1_TOTAL_KVA = data.series.find(({ name }) => name?.includes('DATA.OUT1_TOTAL_KVA.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
-    let KW = data.series.find(({ name }) => name?.includes('DATA.KW.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    //let KW = data.series.find(({ name }) => name?.includes('DATA.KW.VALUE'))?.fields[1].state?.calcs
+    //?.lastNotNull;
     //let COMM_ALM = data.series.find(({ name }) => name?.includes('DATA.COMM_ALM.VALUE'))?.fields[1].state?.calcs
     //?.lastNotNull;
     //let DOOR_OPEN_ALM = data.series.find(({ name }) => name?.includes('DATA.DOOR_OPEN_ALMMM_ALM.VALUE'))?.fields[1].state?.calcs
@@ -69,8 +69,8 @@ const dataGrupalpdi = (data: PanelData, options: SimpleOptions): DataGrupalpdi =
     //?.lastNotNull;
     //let MV = data.series.find(({ name }) => name?.includes('DATA.MV.VALUE'))?.fields[1].state?.calcs
     //?.lastNotNull;
-    //let NEUT_CUR = data.series.find(({ name }) => name?.includes('DATA.NEUT_CUR.VALUE'))?.fields[1].state?.calcs
-    //?.lastNotNull;       
+    let NEUT_CUR = data.series.find(({ name }) => name?.includes('DATA.NEUT_CUR.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;       
     //let KWH = data.series.find(({ name }) => name?.includes('DATA.KWH.VALUE'))?.fields[1].state?.calcs
     //?.lastNotNull;
 
@@ -114,6 +114,7 @@ let grupalpdi: DataGrupalpdi = {
         KWHR: 0,
         KWHS: 0,
         KWHT: 0,
+        INEUTRO: 0,
     },
     Indicadores : {
         ModbusST : indicadoresStyles.off,
@@ -140,12 +141,13 @@ grupalpdi.ParametrosOut.VoutTR = Number.parseFloat(OUT1_CA_VOL?.toFixed(2));
 grupalpdi.ParametrosOut.IoutR = Number.parseFloat(OUT1_A_CUR?.toFixed(2));
 grupalpdi.ParametrosOut.IoutS = Number.parseFloat(OUT1_B_CUR?.toFixed(2));
 grupalpdi.ParametrosOut.IoutT = Number.parseFloat(OUT1_C_CUR?.toFixed(2));
+grupalpdi.ParametrosOut.INEUTRO = Number.parseFloat(NEUT_CUR?.toFixed(2));
 
 //FACTOR DE POTENCIA Y ENERGÍA
 grupalpdi.ParametrosOut.FPR = Number.parseFloat(OUT1_A_COS_FI?.toFixed(2));
 grupalpdi.ParametrosOut.FPS = Number.parseFloat(OUT1_B_COS_FI?.toFixed(2));
 grupalpdi.ParametrosOut.FPT = Number.parseFloat(OUT1_C_COS_FI?.toFixed(2));
-grupalpdi.ParametrosOut.PotTotal = Number.parseFloat(KW?.toFixed(2));
+//grupalpdi.ParametrosOut.PotTotal = Number.parseFloat(KW?.toFixed(2));
 grupalpdi.ParametrosOut.KWH = Number.parseFloat(OUT1_KWH?.toFixed(2));
 grupalpdi.ParametrosOut.KVAprom = Number.parseFloat(OUT1_TOTAL_KVA?.toFixed(2));
 
