@@ -108,12 +108,12 @@ ups.Parametros.PorcenCarga3 = Number.parseFloat(OUTPUT_PERCENT_LOAD_3?.toFixed(2
 
 //CALCULOS
 let CorrienteOut = (OUTPUT_CURRENT + OUTPUT_CURRENT_2 + OUTPUT_CURRENT_3) / 30;
-if (OUTPUT_CURRENT !== undefined) {
+if (OUTPUT_CURRENT !== undefined && OUTPUT_CURRENT_2 !== undefined && OUTPUT_CURRENT_3 !== undefined) {
    ups.Parametros.CorrienteOut = Number.parseFloat(CorrienteOut?.toFixed(2));
 }
 let PotenciaOut = (OUTPUT_POWER + OUTPUT_POWER_2 + OUTPUT_POWER_3)/3000;
-if (OUTPUT_CURRENT !== undefined) {
-   ups.Parametros.PotenciaOut = Number.parseFloat(PotenciaOut?.toFixed(2));
+if (OUTPUT_POWER !== undefined && OUTPUT_POWER_2 !== undefined && OUTPUT_POWER_3 !== undefined) {
+    ups.Parametros.PotenciaOut = Number.parseFloat(PotenciaOut?.toFixed(2));
 }
 let VBateria = BATTERY_VOLTAGE / 10;
 if (BATTERY_VOLTAGE !== undefined) {

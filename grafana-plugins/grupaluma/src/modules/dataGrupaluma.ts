@@ -1,12 +1,13 @@
-import { PanelData } from '@grafana/data';
+import { PanelData, InterpolateFunction } from '@grafana/data';
 import { SimpleOptions } from 'types';
 
 import { DataGrupaluma } from 'components/variables';
 import estadosStyles from 'styles/estadosStyles';
 
-const dataGrupaluma = (data: PanelData, options: SimpleOptions): DataGrupaluma => {  
+const dataGrupaluma = (data: PanelData, options: SimpleOptions, replaceVariables:InterpolateFunction): DataGrupaluma => {  
     console.log('data: ', data);
     console.log('options: ', options);
+    console.log(replaceVariables);
 
     //variables de parametros
     let COLD_WAT_VALV = data.series.find(({ name }) => name?.includes('DATA.COLD_WAT_VALV.VALUE'))?.fields[1].state?.calcs
@@ -50,8 +51,8 @@ const dataGrupaluma = (data: PanelData, options: SimpleOptions): DataGrupaluma =
     //?.lastNotNull;
 
     //VALVULAS
-    let SUM_S = data.series.find(({ name }) => name?.includes('DATA.SUM_S.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    //let SUM1_S = data.series.find(({ name }) => name?.includes('DATA.SUM1_S.VALUE'))?.fields[1].state?.calcs
+    //?.lastNotNull;
     //let SUM2_S = data.series.find(({ name }) => name?.includes('DATA.SUM2_S.VALUE'))?.fields[1].state?.calcs
     //?.lastNotNull;
     //let SUM3_S = data.series.find(({ name }) => name?.includes('DATA.SUM3_S.VALUE'))?.fields[1].state?.calcs
@@ -82,7 +83,11 @@ let grupaluma: DataGrupaluma = {
         Mant: estadosStyles.off,
     },
 }
+    //INTERPOLACION DE VARIABLES
 
+    //let variableNombre = replaceVariables('$EQUIPO')
+    //grupaluma.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
+ 
     grupaluma.Parametros.TempSum = Number.parseFloat(DELI_AIR_TEMP?.toFixed(2));
     grupaluma.Parametros.TempRet = Number.parseFloat(ROOM_TEMP?.toFixed(2));
     grupaluma.Parametros.TempRoom = Number.parseFloat(ROOM_TEMP?.toFixed(2));
@@ -91,10 +96,11 @@ let grupaluma: DataGrupaluma = {
     grupaluma.Parametros.HorasFunc = Number.parseFloat(UNIT_RUN_ALARM?.toFixed(2));
     grupaluma.Parametros.EstadoFan = SYS_ON === 1? 'ON' : 'OFF';
     grupaluma.Parametros.PorcFuncFan = Number.parseFloat(COLD_WAT_VALV?.toFixed(2));
-    grupaluma.Valvulas.Sumin = SUM_S ===1? 'ON' : 'OFF';
-    
+    //grupaluma.Valvulas.Sumin = SUM1_S ===1? 'ON' : 'OFF1';
+    //grupaluma.Valvulas.Sumin = SUM2_S ===1? 'ON' : 'OFF2';
+    //grupaluma.Valvulas.Sumin = SUM3_S ===1? 'ON' : 'OFF3';
 
-
+  
     //ESTADOS Y ALARMAS
     grupaluma.Indicadores.Estado = SYS_ON ===1? estadosStyles.on : estadosStyles.off;
     grupaluma.Indicadores.Alarma = UNIT_ALARM ===1? estadosStyles.alarma : estadosStyles.off; 

@@ -15,89 +15,89 @@ let MODBUS_ST = data.series.find(({ name }) => name?.includes('DATA.MODBUS_ST.VA
 
 //------------------------------------POTENCIA KVA P1------------------------------//
 let KVA_1_CH1 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH1.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH2 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH2.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH3 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH3.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH4 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH4.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH5 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH5.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH6 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH6.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH7 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH7.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH8 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH8.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH9 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH9.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH10 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH10.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH11 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH11.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH12 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH12.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH13 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH13.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH14 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH14.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH15 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH15.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH16 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH16.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH17 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH17.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH18 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH18.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH19 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH19.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH20 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH20.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH21 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH21.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH22 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH22.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH23 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH23.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH24 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH24.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH25 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH25.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH26 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH26.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH27 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH27.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH28 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH28.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH29 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH29.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH30 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH30.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH31 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH31.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH32 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH32.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH33 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH33.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH34 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH34.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH35 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH35.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH36 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH36.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH37 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH37.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH38 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH38.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH39 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH39.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH40 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH40.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH41 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH41.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_1_CH42 = data.series.find(({ name }) => name?.includes('DATA.KVA_1.CH42.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 
  //------------------------------------ENERGIA KW/H P1 ------------------------------//
 let KWH_1_CH1 = data.series.find(({ name }) => name?.includes('DATA.KWH_1.CH1.VALUE'))?.fields[1].state?.calcs
@@ -187,89 +187,89 @@ let KWH_1_CH42 = data.series.find(({ name }) => name?.includes('DATA.KWH_1.CH42.
 
 //------------------------------------POTENCIA KVA P2------------------------------//
 let KVA_2_CH1 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH1.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH2 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH2.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH3 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH3.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH4 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH4.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH5 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH5.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH6 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH6.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH7 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH7.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH8 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH8.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH9 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH9.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH10 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH10.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH11 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH11.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH12 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH12.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH13 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH13.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH14 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH14.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH15 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH15.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH16 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH16.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH17 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH17.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH18 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH18.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH19 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH19.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH20 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH20.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH21 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH21.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH22 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH22.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH23 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH23.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH24 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH24.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH25 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH25.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH26 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH26.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH27 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH27.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH28 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH28.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH29 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH29.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH30 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH30.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH31 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH31.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH32 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH32.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH33 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH33.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH34 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH34.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH35 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH35.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH36 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH36.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH37 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH37.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH38 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH38.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/100;
 let KVA_2_CH39 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH39.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH40 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH40.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH41 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH41.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 let KVA_2_CH42 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH42.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull/10;
 
 
  //------------------------------------ENERGIA KW/H P2 ------------------------------//
@@ -362,9 +362,9 @@ let KVA_2_CH42 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH42.
  //let IN1_AB_VOL = data.series.find(({ name }) => name?.includes('DATA.IN1_AB_VOL.VALUE'))?.fields[1].state?.calcs?.lastNotNull
  //let IN1_BC_VOL = data.series.find(({ name }) => name?.includes('DATA.IN1_BC_VOL.VALUE'))?.fields[1].state?.calcs?.lastNotNull
  //let IN1_CA_VOL= data.series.find(({ name }) => name?.includes('DATA.IN1_CA_VOL.VALUE'))?.fields[1].state?.calcs?.lastNotNull
- let OUT1_AB_VOL= data.series.find(({ name }) => name?.includes('DATA.OUT1_AB_VOL.VALUE'))?.fields[1].state?.calcs?.lastNotNull
- let OUT1_BC_VOL = data.series.find(({ name }) => name?.includes('DATA.OUT1_BC_VOL.VALUE'))?.fields[1].state?.calcs?.lastNotNull
- let OUT1_CA_VOL = data.series.find(({ name }) => name?.includes('DATA.OUT1_CA_VOL.VALUE'))?.fields[1].state?.calcs?.lastNotNull
+ let OUT1_AB_VOL= data.series.find(({ name }) => name?.includes('DATA.OUT1_AB_VOL.VALUE'))?.fields[1].state?.calcs?.lastNotNull/10;
+ let OUT1_BC_VOL = data.series.find(({ name }) => name?.includes('DATA.OUT1_BC_VOL.VALUE'))?.fields[1].state?.calcs?.lastNotNull/10;
+ let OUT1_CA_VOL = data.series.find(({ name }) => name?.includes('DATA.OUT1_CA_VOL.VALUE'))?.fields[1].state?.calcs?.lastNotNull/10;
  //let OUT1_A_CUR = data.series.find(({ name }) => name?.includes('DATA.OUT1_A_CUR.VALUE'))?.fields[1].state?.calcs?.lastNotNull
  //let OUT1_B_CUR = data.series.find(({ name }) => name?.includes('DATA.OUT1_B_CUR.VALUE'))?.fields[1].state?.calcs?.lastNotNull
  //let OUT1_C_CUR = data.series.find(({ name }) => name?.includes('DATA.OUT1_C_CUR.VALUE'))?.fields[1].state?.calcs?.lastNotNull

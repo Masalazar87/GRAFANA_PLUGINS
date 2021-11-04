@@ -8,29 +8,28 @@ const dataGrupalpdi = (data: PanelData, options: SimpleOptions): DataGrupalpdi =
     console.log('data: ', data);
     console.log('options: ', options);
 
-
     let MODBUS_ST = data.series.find(({ name }) => name?.includes('DATA.MODBUS_ST.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let GEN_ALARM = data.series.find(({ name }) => name?.includes('DATA.GEN_ALARM.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let IN1_AB_VOL = data.series.find(({ name }) => name?.includes('DATA.IN1_AB_VOL.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
     let IN1_BC_VOL = data.series.find(({ name }) => name?.includes('DATA.IN1_BC_VOL.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
     let IN1_CA_VOL = data.series.find(({ name }) => name?.includes('DATA.IN1_CA_VOL.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
     let OUT1_AB_VOL = data.series.find(({ name }) => name?.includes('DATA.OUT1_AB_VOL.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
     let OUT1_BC_VOL = data.series.find(({ name }) => name?.includes('DATA.OUT1_BC_VOL.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
     let OUT1_CA_VOL = data.series.find(({ name }) => name?.includes('DATA.OUT1_CA_VOL.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
     let OUT1_A_CUR = data.series.find(({ name }) => name?.includes('DATA.OUT1_A_CUR.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
     let OUT1_B_CUR = data.series.find(({ name }) => name?.includes('DATA.OUT1_B_CUR.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
     let OUT1_C_CUR = data.series.find(({ name }) => name?.includes('DATA.OUT1_C_CUR.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
     let OUT1_A_COS_FI = data.series.find(({ name }) => name?.includes('DATA.OUT1_A_COS_FI.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let OUT1_B_COS_FI = data.series.find(({ name }) => name?.includes('DATA.OUT1_B_COS_FI.VALUE'))?.fields[1].state?.calcs
@@ -40,7 +39,9 @@ const dataGrupalpdi = (data: PanelData, options: SimpleOptions): DataGrupalpdi =
     let OUT1_KWH = data.series.find(({ name }) => name?.includes('DATA.OUT1_KWH.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let OUT1_TOTAL_KVA = data.series.find(({ name }) => name?.includes('DATA.OUT1_TOTAL_KVA.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
+    let NEUT_CUR = data.series.find(({ name }) => name?.includes('DATA.NEUT_CUR.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull/10; 
     //let KW = data.series.find(({ name }) => name?.includes('DATA.KW.VALUE'))?.fields[1].state?.calcs
     //?.lastNotNull;
     //let COMM_ALM = data.series.find(({ name }) => name?.includes('DATA.COMM_ALM.VALUE'))?.fields[1].state?.calcs
@@ -68,9 +69,7 @@ const dataGrupalpdi = (data: PanelData, options: SimpleOptions): DataGrupalpdi =
     //let MC = data.series.find(({ name }) => name?.includes('DATA.MC.VALUE'))?.fields[1].state?.calcs
     //?.lastNotNull;
     //let MV = data.series.find(({ name }) => name?.includes('DATA.MV.VALUE'))?.fields[1].state?.calcs
-    //?.lastNotNull;
-    let NEUT_CUR = data.series.find(({ name }) => name?.includes('DATA.NEUT_CUR.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;       
+    //?.lastNotNull;      
     //let KWH = data.series.find(({ name }) => name?.includes('DATA.KWH.VALUE'))?.fields[1].state?.calcs
     //?.lastNotNull;
 
@@ -184,32 +183,32 @@ let VoutTn = (OUT1_CA_VOL) / 1.732;
 if (OUT1_CA_VOL !== undefined) {
    grupalpdi.ParametrosOut.VoutTn = Number.parseFloat(VoutTn?.toFixed(2));
 }
-let PotR = (OUT1_AB_VOL * OUT1_A_CUR * OUT1_A_COS_FI) * 1.732 / 1000
-if (OUT1_AB_VOL !== undefined && OUT1_A_CUR !== undefined && OUT1_A_COS_FI !== undefined) {
+let PotR = (VoutRn * OUT1_A_CUR * OUT1_A_COS_FI) / 1000
+if (VoutRn !== undefined && OUT1_A_CUR !== undefined && OUT1_A_COS_FI !== undefined) {
    grupalpdi.ParametrosOut.PotR = Number.parseFloat(PotR?.toFixed(2));
 }
-let PotS = (OUT1_BC_VOL * OUT1_B_CUR * OUT1_B_COS_FI) * 1.732 / 1000
-if (OUT1_BC_VOL !== undefined && OUT1_B_CUR !== undefined && OUT1_B_COS_FI !== undefined) {
+let PotS = (VoutSn * OUT1_B_CUR * OUT1_B_COS_FI) / 1000
+if (VoutRn !== undefined && OUT1_B_CUR !== undefined && OUT1_B_COS_FI !== undefined) {
    grupalpdi.ParametrosOut.PotS = Number.parseFloat(PotS?.toFixed(2));
 }
-let PotT = (OUT1_CA_VOL * OUT1_C_CUR * OUT1_C_COS_FI) * 1.732 / 1000
-if (OUT1_CA_VOL !== undefined && OUT1_C_CUR !== undefined && OUT1_C_COS_FI !== undefined) {
+let PotT = (VoutTn * OUT1_C_CUR * OUT1_C_COS_FI) / 1000
+if (VoutTn !== undefined && OUT1_C_CUR !== undefined && OUT1_C_COS_FI !== undefined) {
    grupalpdi.ParametrosOut.PotT = Number.parseFloat(PotT?.toFixed(2));
 }
 
-let PotTotal = (PotR + PotS + PotT) / 3 
+let PotTotal = (PotR + PotS + PotT)
    grupalpdi.ParametrosOut.PotTotal = Number.parseFloat(PotTotal?.toFixed(2));
 
-let KvaR = (OUT1_AB_VOL * OUT1_A_CUR) * 1.732 / 1000
-if (OUT1_AB_VOL !== undefined && OUT1_A_CUR !== undefined) {
+let KvaR = (VoutRn * OUT1_A_CUR) / 1000
+if (VoutRn !== undefined && OUT1_A_CUR !== undefined) {
    grupalpdi.ParametrosOut.KvaR = Number.parseFloat(KvaR?.toFixed(2));
 }
-let KvaS = (OUT1_BC_VOL * OUT1_B_CUR) * 1.732 / 1000
-if (OUT1_BC_VOL !== undefined && OUT1_B_CUR !== undefined) {
+let KvaS = (VoutSn * OUT1_B_CUR) / 1000
+if (VoutSn !== undefined && OUT1_B_CUR !== undefined) {
    grupalpdi.ParametrosOut.KvaS = Number.parseFloat(KvaS?.toFixed(2));
 }
-let KvaT = (OUT1_CA_VOL * OUT1_C_CUR) * 1.732 / 1000
-if (OUT1_CA_VOL !== undefined && OUT1_C_CUR !== undefined) {
+let KvaT = (VoutTn * OUT1_C_CUR) / 1000
+if (VoutTn !== undefined && OUT1_C_CUR !== undefined) {
    grupalpdi.ParametrosOut.KvaT = Number.parseFloat(KvaT?.toFixed(2));
 }
 

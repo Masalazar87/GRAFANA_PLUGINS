@@ -917,7 +917,7 @@ return (
     wordSpacing={0}
   >
     <tspan
-      id="tspan2738-5-3-76"
+      id="tspan2738-5-3-76" //{ParametrosOut.IoutProm} A
       x={116.67458}
       y={56.927864}
       style={{
@@ -931,7 +931,7 @@ return (
       fontSize="2.5222px"
       strokeWidth={0.68746}
     >
-      {ParametrosOut.IoutProm} A
+      {""}
     </tspan>
   </text>
   <ellipse
