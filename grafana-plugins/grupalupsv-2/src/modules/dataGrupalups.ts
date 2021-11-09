@@ -165,12 +165,12 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     grupalups.Alarmas.Habilitado = INPUT_VOLTAGE_MAX > 0? alarmsStyles.on2 : estadoStyles.sinConexion2;
     
     //CONEXIONES
-    grupalups.Conexion.Entrada = INPUT_VOLTAGE_MAX > 0? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Entrada = INPUT_VOLTAGE_MAX >=1? conexionesStyles.on : conexionesStyles.off;
     grupalups.Conexion.Rectificador = RECTIFIER_ON_OFF == 1? conexionesStyles.on : conexionesStyles.open;
     grupalups.Conexion.Inversor = INVERTER_ON_OFF == 1? conexionesStyles.on : conexionesStyles.off;
     grupalups.Conexion.Salida = OUTPUT_VOLTAGE > 0? conexionesStyles.on : conexionesStyles.off;
     grupalups.Conexion.Bypass = (BYPASS_ON_OFF) == 1? conexionesStyles.on : conexionesStyles.off;
-    grupalups.Conexion.Bateria = BATTERY_STATUS ==1? conexionesStyles.onbattery : conexionesStyles.off;
+    grupalups.Conexion.Bateria = BATTERY_STATUS == 1? conexionesStyles.onbattery : conexionesStyles.off;
        
     //ANIMACION FLECHAS
     grupalups.Animacion.Entrada = INPUT_VOLTAGE_MAX > 0? animacionStyles.on : animacionStyles.off;

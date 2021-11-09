@@ -28,6 +28,8 @@ export const SimplePanel: React.FC<Props> = ({ options, data, replaceVariables, 
       <Clima
         Principales={clima.Principales}
         Estados={clima.Estados}
+        Alarmas={clima.Alarmas}
+        Tuberias={clima.Tuberias}
       />
     </div>
   );

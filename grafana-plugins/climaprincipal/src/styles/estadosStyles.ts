@@ -14,9 +14,13 @@ const getStyles = stylesFactory(() => {
     alarma: css`
       fill: red;
       animation: ${parpadeo} 1s ease infinite;
+      opacity: {0};
     `,
     ok: css`
-      fill:  url(#linearGradient4474);
+      fill: #2fc43b;
+    `,
+    on: css`
+      fill: #0066FF;
     `,
   };
 });
