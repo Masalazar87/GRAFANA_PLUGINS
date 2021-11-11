@@ -1,20 +1,39 @@
 import React from 'react';
 
-type Principales = {
-    TsuminEa1: number; TretEa1: number;
-    TsuminEa2: number; TretEa2: number;
+type ParametrosSIS1 = {
     TsuminEa3: number; TretEa3: number;
     TsuminEa4: number; TretEa4: number;
+    TsuminS1: number; TretS1: number; 
+    LoadB2_3: number; LoadB2_4: number;
+    TempSumPrimS1: number; TempSumSecS1: number; TempTanqueS1: number; TempRetS1: number;
+    VinUPSCHI_01A: number; VoutUPSCHI_01A: number;
+};
+type ParametrosSIS2 = {
+    TsuminEa1: number; TretEa1: number;
+    TsuminEa2: number; TretEa2: number;
     TsuminS2: number; TretS2: number; 
     LoadB2_1: number; LoadB2_2: number;
-    LoadB2_3: number; LoadB2_4: number;
-    TempSumPrim: number; TempSumSec: number; TempTanque: number; TempRet: number;
+    TempSumPrimS2: number; TempSumSecS2: number; TempTanqueS2: number; TempRetS2: number;
+    VinUPSCHI_02A: number; VoutUPSCHI_02A: number;
 };
-type Estados = {
-    Chiller_1_ea_1: string;
-    Chiller_1_ea_2: string;
+type EstadosSIS1 = {
     Chiller_1_ea_3: string;
     Chiller_1_ea_4: string;
+    Bomba_1_b1_4: string;
+    Bomba_1_b1_5: string;
+    Bomba_1_b1_6: string;
+    Bomba_1_b2_3: string;
+    Bomba_1_b2_4: string;
+    S1UMA1: string; S1UMA2: string; S1UMA3: string; S1UMA4: string; S1UMA5: string; S1UMA6: string;
+    S1UMA7: string; S1UMA8: string; S1UMA9: string; S1UMA10: string; S1UMA11: string; S1UMA12: string;
+    R1UMA1: string; R1UMA2: string; R1UMA3: string; R1UMA4: string; R1UMA5: string; R1UMA6: string;
+    R1UMA7: string; R1UMA8: string; R1UMA9: string; R1UMA10: string; R1UMA11: string; R1UMA12: string;
+    VAux1S1: string;
+    VAux2S1: string;
+};
+type EstadosSIS2 = {
+    Chiller_1_ea_1: string;
+    Chiller_1_ea_2: string;
     Bomba_1_b1_1: string;
     Bomba_1_b1_2: string;
     Bomba_1_b1_3: string;
@@ -27,30 +46,43 @@ type Estados = {
     VAux1S2: string;
     VAux2S2: string;
 };
-type Alarmas = {
+type AlarmasSIS1 = {
+  B1_4: string;
+  B1_5: string;
+  B1_6: string;
+  B2_3: string;
+  B2_4: string;
+};
+type AlarmasSIS2 = {
   B1_1: string;
   B1_2: string;
   B1_3: string;
   B2_1: string;
   B2_2: string;
-}
+};
 type Tuberias = {
   B1_1: string;  B1_2: string;  B1_3: string;  B2_1: string;  B2_2: string;
-  EA1: string; EA2: string; EA3: string; EA4: string;
-}
+  VAux1S2: string; VAux2S2: string;
+  B1_4: string;  B1_5: string;  B1_6: string;  B2_3: string;  B2_4: string;
+  VAux1S1: string; VAux2S1: string;
+
+};
 export interface DataClima {
-    Principales: Principales;
-    Estados: Estados;
-    Alarmas: Alarmas;
+    ParametrosSIS1: ParametrosSIS1;
+    ParametrosSIS2: ParametrosSIS2;
+    EstadosSIS1: EstadosSIS1;
+    EstadosSIS2: EstadosSIS2;
+    AlarmasSIS1: AlarmasSIS1;
+    AlarmasSIS2: AlarmasSIS2;
     Tuberias: Tuberias;
 };
 
-export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima) =>{
+export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, EstadosSIS2, AlarmasSIS1, AlarmasSIS2, Tuberias}: DataClima) =>{
   return (
     <g id="layer5">
     <path
       id="t9-2"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M28.805 118.72H42.044V121.7493H28.805z"
@@ -68,7 +100,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     />
     <path
       id="t9"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M27.536 52.918H41.969V55.9473H27.536z"
@@ -87,7 +119,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-2-9"
       transform="scale(-1 1)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M-480.88 118.72H-467.544V121.7493H-480.88z"
@@ -106,9 +138,8 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-63"
       transform="scale(-1 1)"
-      fill="#999"
-      opacity={0.768}
-      className={Tuberias.EA2}
+      fill="#0066FF"
+      opacity={0.768} 
       paintOrder="markers fill stroke"
       d="M-482.06 52.917H-467.492V55.9463H-482.06z"
     />
@@ -138,7 +169,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="5.0142px"
+      fontSize="5px"
       letterSpacing={0}
       strokeWidth={0.69426}
       wordSpacing={0}
@@ -155,7 +186,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="5.0142px"
+        fontSize="5px"
         strokeWidth={0.69426}
       >
         <tspan
@@ -168,10 +199,10 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           }}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
-          fontSize="5.0142px"
+          fontSize="5px"
           strokeWidth={0.69426}
         >
-          {"6.8"}
+          {ParametrosSIS1.TretEa3} °C
         </tspan>
       </tspan>
     </text>
@@ -190,7 +221,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="5.0145px"
+      fontSize="5px"
       letterSpacing={0}
       strokeWidth={0.64276}
       wordSpacing={0}
@@ -207,7 +238,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="5.0145px"
+        fontSize="5px"
         strokeWidth={0.64276}
       >
         <tspan
@@ -220,10 +251,10 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           }}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
-          fontSize="5.0145px"
+          fontSize="5px"
           strokeWidth={0.64276}
         >
-          {"11.59"}
+          {ParametrosSIS1.TsuminEa3} °C
         </tspan>
       </tspan>
     </text>
@@ -242,7 +273,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#00aad4"
       fontFamily="Franklin Gothic Medium"
-      fontSize="7.5317px"
+      fontSize="7.5px"
       letterSpacing={0}
       strokeWidth={0.24491}
       wordSpacing={0}
@@ -260,11 +291,11 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="7.5317px"
+        fontSize="7.5px"
         strokeWidth={0.24491}
         textAnchor="middle"
       >
-        {"425"}
+        {ParametrosSIS1.VinUPSCHI_01A}
       </tspan>
     </text>
     <text
@@ -282,7 +313,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#00aad4"
       fontFamily="Franklin Gothic Medium"
-      fontSize="7.532px"
+      fontSize="7.5px"
       letterSpacing={0}
       strokeWidth={0.24492}
       wordSpacing={0}
@@ -300,11 +331,11 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="7.532px"
+        fontSize="7.5px"
         strokeWidth={0.24492}
         textAnchor="middle"
       >
-        {"415"}
+        {ParametrosSIS1.VoutUPSCHI_01A}
       </tspan>
     </text>
     <text
@@ -322,7 +353,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#00aad4"
       fontFamily="Franklin Gothic Medium"
-      fontSize="7.5317px"
+      fontSize="7.5px"
       letterSpacing={0}
       strokeWidth={0.24491}
       wordSpacing={0}
@@ -340,7 +371,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="7.5317px"
+        fontSize="7.5px"
         strokeWidth={0.24491}
         textAnchor="middle"
       >
@@ -362,7 +393,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="6.6795px"
+      fontSize="6.6794px"
       letterSpacing={0}
       strokeWidth={0.24818}
       wordSpacing={0}
@@ -379,10 +410,10 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="6.6795px"
+        fontSize="6.6794px"
         strokeWidth={0.24818}
       >
-        {Principales.TsuminS2}
+        {ParametrosSIS2.TsuminS2}
       </tspan>
     </text>
     <text
@@ -438,7 +469,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#00aad4"
       fontFamily="Franklin Gothic Medium"
-      fontSize="7.5317px"
+      fontSize="7.5px"
       letterSpacing={0}
       strokeWidth={0.24491}
       wordSpacing={0}
@@ -456,7 +487,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="7.5317px"
+        fontSize="7.5px"
         strokeWidth={0.24491}
         textAnchor="middle"
       >
@@ -478,7 +509,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#00aad4"
       fontFamily="Franklin Gothic Medium"
-      fontSize="7.532px"
+      fontSize="7.5px"
       letterSpacing={0}
       strokeWidth={0.24492}
       wordSpacing={0}
@@ -496,11 +527,11 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="7.532px"
+        fontSize="7.5px"
         strokeWidth={0.24492}
         textAnchor="middle"
       >
-        {"415"}
+        {ParametrosSIS2.VoutUPSCHI_02A}
       </tspan>
     </text>
     <text
@@ -518,7 +549,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#00aad4"
       fontFamily="Franklin Gothic Medium"
-      fontSize="7.5317px"
+      fontSize="7.5px"
       letterSpacing={0}
       strokeWidth={0.24491}
       wordSpacing={0}
@@ -536,11 +567,11 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="7.5317px"
+        fontSize="7.5px"
         strokeWidth={0.24491}
         textAnchor="middle"
       >
-        {"425"}
+        {ParametrosSIS2.VinUPSCHI_02A}
       </tspan>
     </text>
     <text
@@ -558,7 +589,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="6.6795px"
+      fontSize="6.6794px"
       letterSpacing={0}
       strokeWidth={0.24818}
       wordSpacing={0}
@@ -575,7 +606,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="6.6795px"
+        fontSize="6.6794px"
         strokeWidth={0.24818}
       >
         {"11.5"}
@@ -616,7 +647,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         fontSize="6.6794px"
         strokeWidth={0.18559}
       >
-        {Principales.TretS2}
+        {ParametrosSIS2.TretS2}
       </tspan>
     </text>
     <text
@@ -634,7 +665,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="5.0134px"
+      fontSize="5px"
       letterSpacing={0}
       strokeWidth={0.69426}
       wordSpacing={0}
@@ -651,7 +682,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="5.0134px"
+        fontSize="5px"
         strokeWidth={0.69426}
       >
         <tspan
@@ -664,10 +695,10 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           }}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
-          fontSize="5.0134px"
+          fontSize="5px"
           strokeWidth={0.69426}
         >
-          {Principales.TretEa1} °C
+          {ParametrosSIS2.TretEa1} °C
         </tspan>
       </tspan>
     </text>
@@ -686,7 +717,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="5.0136px"
+      fontSize="5px"
       letterSpacing={0}
       strokeWidth={0.64276}
       wordSpacing={0}
@@ -703,7 +734,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="5.0136px"
+        fontSize="5px"
         strokeWidth={0.64276}
       >
         <tspan
@@ -716,10 +747,10 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           }}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
-          fontSize="5.0136px"
+          fontSize="5px"
           strokeWidth={0.64276}
         >
-          {Principales.TsuminEa1} °C
+          {ParametrosSIS2.TsuminEa1} °C
         </tspan>
       </tspan>
     </text>
@@ -738,7 +769,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="5.0134px"
+      fontSize="5px"
       letterSpacing={0}
       strokeWidth={0.69426}
       wordSpacing={0}
@@ -755,7 +786,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="5.0134px"
+        fontSize="5px"
         strokeWidth={0.69426}
       >
         <tspan
@@ -768,10 +799,10 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           }}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
-          fontSize="5.0134px"
+          fontSize="5px"
           strokeWidth={0.69426}
         >
-          {Principales.TretEa2} °C
+          {ParametrosSIS2.TretEa2} °C
         </tspan>
       </tspan>
     </text>
@@ -790,7 +821,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="5.0136px"
+      fontSize="5px"
       letterSpacing={0}
       strokeWidth={0.64276}
       wordSpacing={0}
@@ -807,7 +838,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="5.0136px"
+        fontSize="5px"
         strokeWidth={0.64276}
       >
         <tspan
@@ -820,10 +851,10 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           }}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
-          fontSize="5.0136px"
+          fontSize="5px"
           strokeWidth={0.64276}
         >
-          {Principales.TsuminEa2} °C
+          {ParametrosSIS2.TsuminEa2} °C
         </tspan>
       </tspan>
     </text>
@@ -842,7 +873,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="5.0142px"
+      fontSize="5px"
       letterSpacing={0}
       strokeWidth={0.69426}
       wordSpacing={0}
@@ -859,7 +890,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="5.0142px"
+        fontSize="5px"
         strokeWidth={0.69426}
       >
         <tspan
@@ -872,10 +903,10 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           }}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
-          fontSize="5.0142px"
+          fontSize="5px"
           strokeWidth={0.69426}
         >
-          {"6.8"}
+          {ParametrosSIS1.TretEa4} °C
         </tspan>
       </tspan>
     </text>
@@ -894,7 +925,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       xmlSpace="preserve"
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="5.0145px"
+      fontSize="5px"
       letterSpacing={0}
       strokeWidth={0.64276}
       wordSpacing={0}
@@ -911,7 +942,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         }}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
-        fontSize="5.0145px"
+        fontSize="5px"
         strokeWidth={0.64276}
       >
         <tspan
@@ -924,11 +955,11 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           }}
           fill="#fff"
           fontFamily="Franklin Gothic Medium"
-          fontSize="5.0145px"
+          fontSize="5px"
           strokeWidth={0.64276}
         >
-          {"11.59"}
-        </tspan>
+          {ParametrosSIS1.TsuminEa4} °C
+        </tspan> 
       </tspan>
     </text>
     <text
@@ -979,7 +1010,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           fontSize="3.175px"
           strokeWidth={0.69426}
         >
-          {Principales.TempRet} °C
+          {ParametrosSIS2.TempRetS2} °C
         </tspan>
       </tspan>
     </text>
@@ -1031,7 +1062,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           fontSize="3.175px"
           strokeWidth={0.69426}
         >
-          {Principales.TempTanque} °C
+          {ParametrosSIS2.TempTanqueS2} °C
         </tspan>
       </tspan>
     </text>
@@ -1083,7 +1114,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           fontSize="3.175px"
           strokeWidth={0.69426}
         >
-          {Principales.TempSumSec} °C
+          {ParametrosSIS2.TempSumSecS2} °C
         </tspan>
       </tspan>
     </text>
@@ -1135,7 +1166,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           fontSize="3.175px"
           strokeWidth={0.69426}
         >
-          {"6.8"}
+          {ParametrosSIS1.TempRetS1}
         </tspan>
       </tspan>
     </text>
@@ -1187,7 +1218,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           fontSize="3.175px"
           strokeWidth={0.69426}
         >
-          {"6.8"}
+          {ParametrosSIS1.TempTanqueS1} °C
         </tspan>
       </tspan>
     </text>
@@ -1239,7 +1270,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           fontSize="3.175px"
           strokeWidth={0.69426}
         >
-          {"6.8"}
+          {ParametrosSIS1.TempSumSecS1} °C
         </tspan>
       </tspan>
     </text>
@@ -1291,7 +1322,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           fontSize="3.175px"
           strokeWidth={0.69426}
         >
-          {Principales.TempSumPrim} °C
+          {ParametrosSIS2.TempSumPrimS2} °C
         </tspan>
       </tspan>
     </text>
@@ -1343,7 +1374,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           fontSize="3.175px"
           strokeWidth={0.69426}
         >
-          {"6.8"}
+          {ParametrosSIS1.TempSumPrimS1} °C
         </tspan>
       </tspan>
     </text>
@@ -1457,7 +1488,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t10-8-9-0-8-7"
       d="M136.84 175.67v3.263h-2.749c-.376-.01-.533.21-.587.536l.013.65h-3.136v-5.766h3.136l-.007.567c0 .199.208.628.615.743z"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -1472,7 +1503,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-6-5-7-3-5"
       fillOpacity={0.99608}
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M137.23 175.91H170.993V178.9393H137.23z"
@@ -1498,7 +1529,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t10"
       d="M85.349 64.237h3.193l.003-2.809c-.01-.385.206-.544.525-.6l.636.013v-3.205h-5.643v3.205l.555-.007c.195 0 .615.213.728.629z"
       fillOpacity={0.99608}
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -1506,6 +1537,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       transform="rotate(-90)"
       fill="#999"
       opacity={0.768}
+      className={Tuberias.VAux1S1}
       paintOrder="markers fill stroke"
       d="M-89.505 85.464H-64.655V88.4283H-89.505z"
     />
@@ -1524,7 +1556,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t10-1"
       d="M85.349 121.53h3.193l.003 2.809c-.01.385.206.544.525.6l.636-.013v3.205h-5.643v-3.205l.555.007c.195 0 .615-.213.727-.629z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -1541,6 +1573,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       fillOpacity={0.99608}
       fill="#999"
       opacity={0.768}
+      className={Tuberias.B1_6}
       paintOrder="markers fill stroke"
       d="M90.241 57.679H110.712V60.7083H90.241z"
     />
@@ -1560,6 +1593,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       transform="rotate(-90)"
       fill="#999"
       opacity={0.768}
+      className={Tuberias.VAux2S1}
       paintOrder="markers fill stroke"
       d="M-120.99 85.464H-96.13999999999999V88.4283H-120.99z"
     />
@@ -1615,7 +1649,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-9-7"
       transform="rotate(-90)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M-117.11 22.087H-58.382V25.0513H-117.11z"
@@ -1670,7 +1704,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-9-3-5-0"
       transform="rotate(-90)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M-174.13 130.49H-170.4146V133.45430000000002H-174.13z"
@@ -1723,7 +1757,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-9-7-5"
       transform="rotate(-90)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M-159.4 22.088H-123.49100000000001V25.052300000000002H-159.4z"
@@ -1780,7 +1814,8 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-5"
       d="M111.11 60.837c1.402.312 1.949.955 1.908 1.965l3.37-.006-.013-1.965c-.213-1.818-2.176-3.656-5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#999"
+      className={Tuberias.B1_6}
       opacity={0.768}
     />
     <path
@@ -1797,6 +1832,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       fillOpacity={0.99608}
       fill="#999"
       opacity={0.768}
+      className={Tuberias.B1_5}
       paintOrder="markers fill stroke"
       d="M92.207 91.186H110.749V94.21530000000001H92.207z"
     />
@@ -1815,8 +1851,9 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-5-7"
       d="M111.11 94.307c1.402.312 1.949.955 1.908 1.965l3.37-.006-.013-1.965c-.213-1.818-2.176-3.656-5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#999"
       opacity={0.768}
+      className={Tuberias.B1_5}
     />
     <path
       id="path7547-40-0-35-2-55-5"
@@ -1832,6 +1869,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       fillOpacity={0.99608}
       fill="#999"
       opacity={0.768}
+      className={Tuberias.B1_4}
       paintOrder="markers fill stroke"
       d="M90.24 125.14H110.711V128.1693H90.24z"
     />
@@ -1850,8 +1888,9 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-5-7-5"
       d="M111.11 128.25c1.402.312 1.949.955 1.908 1.965l3.37-.006-.013-1.965c-.213-1.818-2.176-3.656-5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#999"
       opacity={0.768}
+      className={Tuberias.B1_4}
     />
     <path
       id="path7547-40-0-35-2-55-5-6"
@@ -1868,6 +1907,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       fillOpacity={0.99608}
       fill="#999"
       opacity={0.768}
+      className={Tuberias.B2_3}
       paintOrder="markers fill stroke"
       d="M-127.75 165.12H-94.09V168.1493H-127.75z"
     />
@@ -1886,7 +1926,8 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-5-7-5-2"
       d="M93.714 168.24c-1.402.312-1.949.955-1.908 1.965l-3.37-.006.013-1.965c.213-1.818 2.176-3.656 5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#999"
+      className={Tuberias.B2_3}
       opacity={0.768}
     />
     <path
@@ -1920,7 +1961,8 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-5-7-5-2-4"
       d="M93.714 189.44c-1.402.312-1.949.955-1.908 1.965l-3.37-.006.013-1.965c.213-1.818 2.176-3.656 5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#999"
+      className={Tuberias.B2_4}
       opacity={0.768}
     />
     <path
@@ -1938,6 +1980,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       fillOpacity={0.99608}
       fill="#999"
       opacity={0.768}
+      className={Tuberias.B2_4}
       paintOrder="markers fill stroke"
       d="M-127.75 186.29H-94.09V189.3193H-127.75z"
     />
@@ -1955,7 +1998,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-9-3-5-0-6"
       transform="rotate(-90)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M-184.01 130.49H-180.2946V133.45430000000002H-184.01z"
@@ -1993,6 +2036,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t10-8"
       d="M91.85 94.374v-3.263l-2.749-.004c-.376.01-.532-.21-.587-.536l.013-.65h-3.136v5.766h3.136l-.007-.567c0-.199.208-.628.615-.743z"
       fill="#999"
+      className={Tuberias.B1_5}
       opacity={0.768}
     />
     <path
@@ -2037,7 +2081,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t10-8-5"
       d="M28.487 121.87v-3.263l-2.749-.004c-.376.01-.532-.21-.587-.536l.013-.65h-3.136v5.766h3.136l-.007-.567c0-.199.208-.628.615-.743z"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -2053,7 +2097,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-0"
       d="M27.203 56.074c-1.402.312-1.949.955-1.908 1.965l-3.37-.006.013-1.965c.213-1.818 2.176-3.656 5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -2069,7 +2113,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-8"
       d="M128.3 168.24c1.402.312 1.949.955 1.908 1.965l3.37-.006-.013-1.965c-.213-1.818-2.176-3.656-5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -2121,7 +2165,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="path8045-0-4-1-16"
       transform="matrix(0 -.88221 1.0016 0 -29.05 271.28)"
       d="M120.63 51.343h5.06v1.125c-1.94.545-2.017 3.1-2.015 4.69h-1.038c-.151-1.568-.298-4.266-2.007-4.515z"
-      fill="#999"
+      fill="#0066FF"
       filter="url(#filter8115-2-1-4-1)"
       opacity={0.3}
     />
@@ -2144,7 +2188,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-8-1"
       d="M128.3 186.18c1.402-.312 1.949-.955 1.908-1.965l3.37.006-.013 1.965c-.213 1.818-2.176 3.656-5.263 3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -2287,7 +2331,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t10-8-9-0-8-7-6"
       d="M372.76 175.67v3.263h2.749c.376-.01.533.21.587.536l-.013.65h3.136v-5.766h-3.136l.007.567c0 .199-.208.628-.615.743z"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -2303,7 +2347,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t9-6-5-7-3-5-42"
       transform="scale(-1 1)"
       fillOpacity={0.99608}
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M-372.36 175.91H-338.59700000000004V178.9393H-372.36z"
@@ -2329,15 +2373,15 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t10-3"
       d="M424.25 64.236h-3.193l-.003-2.809c.01-.384-.206-.544-.525-.6l-.636.013v-3.204h5.643v3.204l-.555-.007c-.195 0-.615.213-.728.629z"
       fillOpacity={0.99608}
-      fill="#999"
-      className={Tuberias.B1_3}
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
       id="t9-9-1"
       transform="matrix(0 -1 -1 0 0 0)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
+      className={Tuberias.VAux1S2}
       paintOrder="markers fill stroke"
       d="M-89.504 -424.13H-64.654V-421.1657H-89.504z"
     />
@@ -2356,8 +2400,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t10-1-0"
       d="M424.25 121.53h-3.193l-.003 2.809c.01.385-.206.544-.525.6l-.636-.013v3.205h5.643v-3.205l-.555.007c-.195 0-.615-.213-.728-.629z"
       fillOpacity={0.99608}
-      fill="gray"
-      className={Tuberias.B1_1}
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -2373,7 +2416,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t9-6-59"
       transform="scale(-1 1)"
       fillOpacity={0.99608}
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       className={Tuberias.B1_3}
       paintOrder="markers fill stroke"
@@ -2393,8 +2436,9 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-9-6-3"
       transform="matrix(0 -1 -1 0 0 0)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
+      className={Tuberias.VAux2S2}
       paintOrder="markers fill stroke"
       d="M-120.99 -424.13H-96.13999999999999V-421.1657H-120.99z"
     />
@@ -2450,7 +2494,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-9-7-2"
       transform="matrix(0 -1 -1 0 0 0)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M-117.2 -487.51H-58.329V-484.5457H-117.2z"
@@ -2507,7 +2551,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-9-3-5-0-9"
       transform="matrix(0 -1 -1 0 0 0)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M-174.13 -379.1H-170.4146V-376.13570000000004H-174.13z"
@@ -2560,7 +2604,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-9-7-5-0"
       transform="matrix(0 -1 -1 0 0 0)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M-159.4 -487.51H-123.391V-484.5457H-159.4z"
@@ -2618,7 +2662,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-5-3"
       d="M398.48 60.836c-1.402.312-1.949.955-1.908 1.965l-3.37-.006.013-1.965c.213-1.818 2.176-3.656 5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#0066FF"
       className={Tuberias.B1_3}
       opacity={0.768}
     />
@@ -2635,7 +2679,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t9-6-1-7"
       transform="scale(-1 1)"
       fillOpacity={0.99608}
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       className={Tuberias.B1_2}
       paintOrder="markers fill stroke"
@@ -2656,7 +2700,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-5-7-4"
       d="M398.48 94.306c-1.402.312-1.949.955-1.908 1.965l-3.37-.006.013-1.965c.213-1.818 2.176-3.656 5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#0066FF"
       className={Tuberias.B1_2}
       opacity={0.768}
     />
@@ -2673,7 +2717,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t9-6-1-3-4"
       transform="scale(-1 1)"
       fillOpacity={0.99608}
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       className={Tuberias.B1_1}
       paintOrder="markers fill stroke"
@@ -2694,7 +2738,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-5-7-5-3"
       d="M398.48 128.25c-1.402.312-1.949.955-1.908 1.965l-3.37-.006.013-1.965c.213-1.818 2.176-3.656 5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#0066FF"
       className={Tuberias.B1_1}
       opacity={0.768}
     />
@@ -2712,6 +2756,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       fillOpacity={0.99608}
       fill="#999"
       opacity={0.768}
+      className={Tuberias.B2_1}
       paintOrder="markers fill stroke"
       d="M381.84 165.12H415.5V168.1493H381.84z"
     />
@@ -2730,7 +2775,8 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-5-7-5-2-2"
       d="M415.88 168.24c1.402.312 1.949.955 1.908 1.965l3.37-.006-.013-1.965c-.213-1.818-2.176-3.656-5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#0999"
+      className={Tuberias.B2_1}
       opacity={0.768}
     />
     <path
@@ -2765,7 +2811,8 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-5-7-5-2-4-2"
       d="M415.88 189.44c1.402.312 1.949.955 1.908 1.965l3.37-.006-.013-1.965c-.213-1.818-2.176-3.656-5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#999"
+      className={Tuberias.B2_2}
       opacity={0.768}
     />
     <path
@@ -2782,6 +2829,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       fillOpacity={0.99608}
       fill="#999"
       opacity={0.768}
+      className={Tuberias.B2_2}
       paintOrder="markers fill stroke"
       d="M381.84 186.29H415.5V189.3193H381.84z"
     />
@@ -2799,7 +2847,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-9-3-5-0-6-2"
       transform="matrix(0 -1 -1 0 0 0)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M-184.01 -379.1H-180.2946V-376.13570000000004H-184.01z"
@@ -2836,7 +2884,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t10-8-2"
       d="M417.74 94.373V91.11l2.749-.004c.376.01.532-.21.587-.536l-.013-.65h3.136v5.766h-3.136l.007-.567c0-.199-.208-.628-.615-.743z"
-      fill="#999"
+      fill="#0066FF"
       className={Tuberias.B1_2}
       opacity={0.768}
     />
@@ -2882,7 +2930,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t10-8-5-5"
       d="M481.11 121.87v-3.263l2.749-.004c.376.01.532-.21.587-.536l-.013-.65h3.136v5.766h-3.136l.007-.567c0-.199-.208-.628-.615-.743z"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -2898,7 +2946,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-0-72"
       d="M482.39 56.074c1.402.312 1.949.955 1.908 1.965l3.37-.006-.013-1.965c-.213-1.818-2.176-3.656-5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -2914,7 +2962,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-8-0"
       d="M381.29 168.24c-1.402.312-1.949.955-1.908 1.965l-3.37-.006.013-1.965c.213-1.818 2.176-3.656 5.263-3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -2966,7 +3014,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="path8045-0-4-1-16-1"
       transform="matrix(0 -.88221 -1.0016 0 538.64 271.28)"
       d="M120.63 51.343h5.06v1.125c-1.94.545-2.017 3.1-2.015 4.69h-1.038c-.151-1.568-.298-4.266-2.007-4.515z"
-      fill="#999"
+      fill="#0066FF"
       filter="url(#filter8115-2-1-4-1-2)"
       opacity={0.3}
     />
@@ -2989,7 +3037,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       id="t12-8-1-0"
       d="M381.29 186.18c-1.402-.312-1.949-.955-1.908-1.965l-3.37.006.013 1.965c.213 1.818 2.176 3.656 5.263 3.18z"
       fillOpacity={0.99608}
-      fill="gray"
+      fill="#0066FF"
       opacity={0.768}
     />
     <path
@@ -3043,7 +3091,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       rx={2.0789}
       ry={2.1244}
       fill="#2fc43b"
-      className={Estados.Bomba_1_b2_1}
+      className={EstadosSIS2.Bomba_1_b2_1}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3060,6 +3108,18 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       strokeWidth={1.1257}
     />
     <ellipse
+      id="st_2_b1_3_-2-1" //alarma1-b2-1
+      transform="scale(-1 1)"
+      cx={-398.18}
+      cy={180.54}
+      rx={2.0789}
+      ry={2.1244}
+      fill="#2fc43b"
+      opacity={0}
+      className={AlarmasSIS2.B2_1}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
       id="st_2_b1_4_-9"
       transform="scale(-1 1)"
       cx={-398.18}
@@ -3067,7 +3127,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       rx={2.0789}
       ry={2.1244}
       fill="#2fc43b"
-      className={Estados.Bomba_1_b2_2}
+      className={EstadosSIS2.Bomba_1_b2_2}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3084,6 +3144,18 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       strokeWidth={1.1257}
     />
     <ellipse
+      id="st_2_b1_4_-9-1" //alarma 1-b2-2
+      transform="scale(-1 1)"
+      cx={-398.18}
+      cy={201.71}
+      rx={2.0789}
+      ry={2.1244}
+      fill="#2fc43b"
+      opacity={0}
+      className={AlarmasSIS2.B2_2}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
       id="st_1_b1_6_-3"
       transform="scale(-1 1)"
       cx={-408.29}
@@ -3091,7 +3163,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       rx={2.0789}
       ry={2.1244}
       fill="#2fc43b"
-      className={Estados.Bomba_1_b1_3}
+      className={EstadosSIS2.Bomba_1_b1_3}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3116,7 +3188,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       ry={2.1244}
       fill="#2fc43b"
       opacity={0}
-      className={Alarmas.B1_3}
+      className={AlarmasSIS2.B1_3}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3127,7 +3199,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       rx={2.0789}
       ry={2.1244}
       fill="#2fc43b"
-      className={Estados.Bomba_1_b1_2}
+      className={EstadosSIS2.Bomba_1_b1_2}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3152,7 +3224,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       ry={2.1244}
       fill="#2fc43b"
       opacity={0}
-      className={Estados.Bomba_1_b1_2}
+      className={AlarmasSIS2.B1_2}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3163,7 +3235,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       rx={2.0789}
       ry={2.1244}
       fill="#2fc43b"
-      className={Estados.Bomba_1_b1_1}
+      className={EstadosSIS2.Bomba_1_b1_1}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3188,7 +3260,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       ry={2.1244}
       fill="#2fc43b"
       opacity={0}
-      className={Estados.Bomba_1_b1_1}
+      className={AlarmasSIS2.B1_1}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3199,7 +3271,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       rx={3.23}
       ry={3.3008}
       fill="#2fc43b"
-      className={Estados.Chiller_1_ea_1}
+      className={EstadosSIS2.Chiller_1_ea_1}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3210,7 +3282,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       rx={3.23}
       ry={3.3008}
       fill="#2fc43b"
-      className={Estados.Chiller_1_ea_2}
+      className={EstadosSIS2.Chiller_1_ea_2}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3245,6 +3317,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={89.998}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.R1UMA11}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3265,6 +3338,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={81.37}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.S1UMA11}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3285,6 +3359,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={114.65}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.R1UMA10}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3305,6 +3380,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={106.02}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.S1UMA10}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3325,6 +3401,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={139.29}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.R1UMA9}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3345,6 +3422,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={130.67}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.S1UMA9}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3365,6 +3443,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={163.94}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.R1UMA8}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3385,6 +3464,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={155.31}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.S1UMA8}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3405,6 +3485,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={188.59}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.R1UMA7}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3425,6 +3506,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={179.96}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.S1UMA7}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3445,6 +3527,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={65.351}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.R1UMA12}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3465,6 +3548,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={56.722}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.S1UMA12}
       paintOrder="markers stroke fill"
     />
     <circle
@@ -3473,6 +3557,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={89.998}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.R1UMA2}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3493,6 +3578,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={81.37}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.S1UMA2}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3513,6 +3599,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={114.65}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.R1UMA3}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3533,6 +3620,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={106.02}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.S1UMA3}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3553,6 +3641,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={139.29}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.R1UMA4}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3573,6 +3662,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={130.67}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.S1UMA4}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3593,6 +3683,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={163.94}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.R1UMA5}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3613,6 +3704,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={155.31}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.S1UMA5}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3633,6 +3725,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={188.59}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.R1UMA6}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3653,6 +3746,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={179.96}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.S1UMA6}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3673,6 +3767,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={65.351}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.R1UMA1}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3693,6 +3788,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={56.722}
       r={2.3656}
       fill="#2fc43b"
+      className={EstadosSIS1.S1UMA1}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3713,7 +3809,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={81.369}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.S2UMA11}
+      className={EstadosSIS2.S2UMA11}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3734,7 +3830,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={89.998}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.R2UMA11}
+      className={EstadosSIS2.R2UMA11}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3755,7 +3851,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={106.02}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.S2UMA10}
+      className={EstadosSIS2.S2UMA10}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3776,7 +3872,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={114.65}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.R2UMA10}
+      className={EstadosSIS2.R2UMA10}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3797,7 +3893,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={130.67}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.S2UMA9}
+      className={EstadosSIS2.S2UMA9}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3818,7 +3914,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={139.29}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.R2UMA9}
+      className={EstadosSIS2.R2UMA9}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3839,7 +3935,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={155.31}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.S2UMA8}
+      className={EstadosSIS2.S2UMA8}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3860,7 +3956,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={163.94}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.R2UMA8}
+      className={EstadosSIS2.R2UMA8}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3881,7 +3977,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={179.96}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.S2UMA7}
+      className={EstadosSIS2.S2UMA7}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3902,7 +3998,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={188.59}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.R2UMA7}
+      className={EstadosSIS2.R2UMA7}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3923,7 +4019,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={56.722}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.S2UMA12}
+      className={EstadosSIS2.S2UMA12}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3944,7 +4040,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={65.351}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.R2UMA12}
+      className={EstadosSIS2.R2UMA12}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3965,7 +4061,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={81.369}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.S2UMA2}
+      className={EstadosSIS2.S2UMA2}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3986,7 +4082,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={89.998}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.R2UMA2}
+      className={EstadosSIS2.R2UMA2}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4007,7 +4103,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={106.02}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.S2UMA3}
+      className={EstadosSIS2.S2UMA3}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4028,7 +4124,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={114.65}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.R2UMA3}
+      className={EstadosSIS2.R2UMA3}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4049,7 +4145,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={130.67}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.S2UMA4}
+      className={EstadosSIS2.S2UMA4}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4070,7 +4166,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={139.29}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.R2UMA4}
+      className={EstadosSIS2.R2UMA4}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4091,7 +4187,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={155.31}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.S2UMA5}
+      className={EstadosSIS2.S2UMA5}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4112,7 +4208,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={163.94}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.R2UMA5}
+      className={EstadosSIS2.R2UMA5}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4133,7 +4229,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={179.96}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.S2UMA6}
+      className={EstadosSIS2.S2UMA6}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4154,7 +4250,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={188.59}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.R2UMA6}
+      className={EstadosSIS2.R2UMA6}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4175,7 +4271,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={56.722}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.S2UMA1}
+      className={EstadosSIS2.S2UMA1}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4196,7 +4292,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       cy={65.351}
       r={2.3656}
       fill="#2fc43b"
-      className={Estados.R2UMA1}
+      className={EstadosSIS2.R2UMA1}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4218,6 +4314,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       rx={2.0789}
       ry={2.1244}
       fill="#2fc43b"
+      className={EstadosSIS1.Bomba_1_b2_3}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4234,12 +4331,23 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       strokeWidth={1.1257}
     />
     <ellipse
+      id="st_2_b1_3_1"//alarma 1-b2-3
+      cx={111.41}
+      cy={180.55}
+      rx={2.0789}
+      ry={2.1244}
+      fill="#2fc43b"
+      className={AlarmasSIS1.B2_3}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
       id="st_2_b1_4_"
       cx={111.41}
       cy={201.71}
       rx={2.0789}
       ry={2.1244}
       fill="#2fc43b"
+      className={EstadosSIS1.Bomba_1_b2_4}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4256,12 +4364,23 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       strokeWidth={1.1257}
     />
     <ellipse
+      id="st_2_b1_4_1"//alarma 1-b2-4
+      cx={111.41}
+      cy={201.71}
+      rx={2.0789}
+      ry={2.1244}
+      fill="#2fc43b"
+      className={AlarmasSIS1.B2_4}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
       id="st_1_b1_6_"
       cx={101.3}
       cy={78.292}
       rx={2.0789}
       ry={2.1244}
       fill="#2fc43b"
+      className={EstadosSIS1.Bomba_1_b1_6}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4278,12 +4397,24 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       strokeWidth={1.1257}
     />
     <ellipse
+      id="st_1_b1_6_1"//alarma1-b1-6
+      cx={101.3}
+      cy={78.292}
+      rx={2.0789}
+      ry={2.1244}
+      fill="#2fc43b"
+      opacity={0}
+      className={AlarmasSIS1.B1_6}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
       id="st_1_b1_5_"
       cx={101.3}
       cy={111.45}
       rx={2.0789}
       ry={2.1244}
       fill="#2fc43b"
+      className={EstadosSIS1.Bomba_1_b1_5}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4300,12 +4431,23 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       strokeWidth={1.1257}
     />
     <ellipse
+      id="st_1_b1_5_1" //alarma 1-b1-5
+      cx={101.3}
+      cy={111.45}
+      rx={2.0789}
+      ry={2.1244}
+      fill="#2fc43b"
+      className={AlarmasSIS1.B1_5}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
       id="st_1_b1_4_"
       cx={101.3}
       cy={145.41}
       rx={2.0789}
       ry={2.1244}
       fill="#2fc43b"
+      className={EstadosSIS1.Bomba_1_b1_4}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4322,12 +4464,23 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       strokeWidth={1.1257}
     />
     <ellipse
+      id="st_1_b1_4_1" //alarma 1-b1-4
+      cx={101.3}
+      cy={145.41}
+      rx={2.0789}
+      ry={2.1244}
+      fill="#2fc43b"
+      className={AlarmasSIS1.B1_4}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
       id="st_chill2"
       cx={76.45}
       cy={134.02}
       rx={3.23}
       ry={3.3008}
       fill="#2fc43b"
+      className={EstadosSIS1.Chiller_1_ea_4}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4337,6 +4490,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
       rx={3.23}
       ry={3.3008}
       fill="#2fc43b"
+      className={EstadosSIS1.Chiller_1_ea_3}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4397,6 +4551,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         <path
           id="path1282-7"
           d="M71.658 8.442a1 1 0 01.764.355l1.231 1.459a.84.84 0 01.088.371V43.01c0 .918-.744 1.662-1.662 1.662H27.127a1.662 1.662 0 01-1.662-1.662V10.627c0-.129.03-.256.088-.371l1.231-1.459a1 1 0 01.764-.355z"
+          className={EstadosSIS1.VAux1S1}
         />
         <path
           id="path1284-23"
@@ -4545,6 +4700,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         <path
           id="path1282-5-0"
           d="M71.658 8.442a1 1 0 01.764.355l1.231 1.459a.84.84 0 01.088.371V43.01c0 .918-.744 1.662-1.662 1.662H27.127a1.662 1.662 0 01-1.662-1.662V10.627c0-.129.03-.256.088-.371l1.231-1.459a1 1 0 01.764-.355z"
+          className={EstadosSIS1.VAux2S1}
         />
         <path
           id="path1284-2-9"
@@ -4693,7 +4849,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         <path
           id="path1282-7-7"
           d="M71.658 8.442a1 1 0 01.764.355l1.231 1.459a.84.84 0 01.088.371V43.01c0 .918-.744 1.662-1.662 1.662H27.127a1.662 1.662 0 01-1.662-1.662V10.627c0-.129.03-.256.088-.371l1.231-1.459a1 1 0 01.764-.355z"
-          className={Estados.VAux1S2}
+          className={EstadosSIS2.VAux1S2}
         />
         <path
           id="path1284-23-6"
@@ -4842,7 +4998,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
         <path
           id="path1282-5-0-2"
           d="M71.658 8.442a1 1 0 01.764.355l1.231 1.459a.84.84 0 01.088.371V43.01c0 .918-.744 1.662-1.662 1.662H27.127a1.662 1.662 0 01-1.662-1.662V10.627c0-.129.03-.256.088-.371l1.231-1.459a1 1 0 01.764-.355z"
-          className={Estados.VAux2S2}
+          className={EstadosSIS2.VAux2S2}
         />
         <path
           id="path1284-2-9-3"
@@ -5016,7 +5172,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           fontSize="3.175px"
           strokeWidth={0.69426}
         >
-          {Principales.LoadB2_1} %
+          {ParametrosSIS2.LoadB2_1} %
         </tspan>
       </tspan>
     </text>
@@ -5068,7 +5224,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           fontSize="3.175px"
           strokeWidth={0.69426}
         >
-          {Principales.LoadB2_2} %
+          {ParametrosSIS2.LoadB2_2} %
         </tspan>
       </tspan>
     </text>
@@ -5120,7 +5276,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           fontSize="3.175px"
           strokeWidth={0.69426}
         >
-          {"6.8"}
+          {ParametrosSIS1.LoadB2_3} %
         </tspan>
       </tspan>
     </text>
@@ -5172,16 +5328,15 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
           fontSize="3.175px"
           strokeWidth={0.69426}
         >
-          {"6.8"}
+          {ParametrosSIS1.LoadB2_4} %
         </tspan>
       </tspan>
     </text>
     <path
       id="t9-63-8"
       transform="scale(-1 1)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
-      className={Tuberias.EA2}
       paintOrder="markers fill stroke"
       d="M-438.45 57.636H-425.86699999999996V60.6653H-438.45z"
     />
@@ -5199,7 +5354,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     <path
       id="t9-2-9-0"
       transform="scale(-1 1)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M-438.87 125.06H-425.83V128.0893H-438.87z"
@@ -5217,7 +5372,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     />
     <path
       id="t9-0"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M70.933 57.812H83.763V60.8413H70.933z"
@@ -5235,7 +5390,7 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     />
     <path
       id="t9-2-6"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       paintOrder="markers fill stroke"
       d="M70.915 125.11H83.763V128.1393H70.915z"
@@ -5253,4 +5408,4 @@ export const Variables = ({ Principales, Estados, Alarmas, Tuberias}: DataClima)
     />
   </g> 
     )
-}
+} 

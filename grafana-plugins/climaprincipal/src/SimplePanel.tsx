@@ -26,9 +26,12 @@ export const SimplePanel: React.FC<Props> = ({ options, data, replaceVariables, 
       )}
     >
       <Clima
-        Principales={clima.Principales}
-        Estados={clima.Estados}
-        Alarmas={clima.Alarmas}
+        ParametrosSIS1={clima.ParametrosSIS1}
+        ParametrosSIS2={clima.ParametrosSIS2}
+        EstadosSIS1={clima.EstadosSIS1}
+        EstadosSIS2={clima.EstadosSIS2}
+        AlarmasSIS1={clima.AlarmasSIS1}
+        AlarmasSIS2={clima.AlarmasSIS2}
         Tuberias={clima.Tuberias}
       />
     </div>
