@@ -149,15 +149,15 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     grupalups.Parametros.Tiempo = Number.parseFloat(ESTIMATED_MINUTES_REMAINING?.toFixed(2));
 
     //ESTADOS
-    grupalups.Estados.Estado = INPUT_VOLTAGE_MAX > 0? estadoStyles.ok : estadoStyles.sinConexion;
-    grupalups.Estados.Rectifier = RECTIFIER_ON_OFF ==1? estadoStyles.ok : estadoStyles.off;
-    grupalups.Estados.Inverter = INVERTER_ON_OFF ==1? estadoStyles.ok : estadoStyles.off;
-    grupalups.Estados.Battery = BATTERY_STATUS ==1? estadoStyles.ok1 : estadoStyles.sinConexion2;
-    grupalups.Estados.Bypass = (BYPASS_ON_OFF ==1 && BYPASS_POWER ==1)? estadoStyles.alarma : estadoStyles.off;
+    grupalups.Estados.Estado = INPUT_VOLTAGE_MAX > 420? estadoStyles.ok : estadoStyles.sinConexion;
+    grupalups.Estados.Rectifier = RECTIFIER_ON_OFF ===1? estadoStyles.ok : estadoStyles.off;
+    grupalups.Estados.Inverter = INVERTER_ON_OFF ===1? estadoStyles.ok : estadoStyles.off;
+    grupalups.Estados.Battery = BATTERY_STATUS ===1? estadoStyles.ok1 : estadoStyles.sinConexion2;
+    grupalups.Estados.Bypass = (BYPASS_ON_OFF ===1 && BYPASS_POWER ===1)? estadoStyles.alarma : estadoStyles.off;
     
     //ALARMAS
-    grupalups.Alarmas.Rectifier = (RECTIFIER_ON_OFF ==2 && INVERTER_ON_OFF ==1)? alarmsStyles.on1 : estadoStyles.sinConexion2;
-    grupalups.Alarmas.Rectifierbox = (RECTIFIER_ON_OFF ==2 && INVERTER_ON_OFF ==1)? alarmsStyles.on : alarmsStyles.off2;
+    grupalups.Alarmas.Rectifier = (RECTIFIER_ON_OFF ===2 && INVERTER_ON_OFF ===1)? alarmsStyles.on1 : estadoStyles.sinConexion2;
+    grupalups.Alarmas.Rectifierbox = (RECTIFIER_ON_OFF ===2 && INVERTER_ON_OFF ===1)? alarmsStyles.on : alarmsStyles.off2;
     //grupalups.Alarmas.Battery = (BATTERY_STATUS ==1 && RECTIFIER_ON_OFF ==2 && INVERTER_ON_OFF ==1)? alarmsStyles.on3 : alarmsStyles.off1;
     //grupalups.Alarmas.Bypass = (BYPASS_POWER)
     grupalups.Alarmas.Alarma = ALARMS_PRESENT === 1? alarmsStyles.on : alarmsStyles.off;
@@ -165,20 +165,20 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     grupalups.Alarmas.Habilitado = INPUT_VOLTAGE_MAX > 0? alarmsStyles.on2 : estadoStyles.sinConexion2;
     
     //CONEXIONES
-    grupalups.Conexion.Entrada = INPUT_VOLTAGE_MAX >=1? conexionesStyles.on : conexionesStyles.off;
-    grupalups.Conexion.Rectificador = RECTIFIER_ON_OFF == 1? conexionesStyles.on : conexionesStyles.open;
-    grupalups.Conexion.Inversor = INVERTER_ON_OFF == 1? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Entrada = INPUT_VOLTAGE_MAX >420? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Rectificador = RECTIFIER_ON_OFF === 1? conexionesStyles.on : conexionesStyles.open;
+    grupalups.Conexion.Inversor = INVERTER_ON_OFF === 1? conexionesStyles.on : conexionesStyles.off;
     grupalups.Conexion.Salida = OUTPUT_VOLTAGE > 0? conexionesStyles.on : conexionesStyles.off;
-    grupalups.Conexion.Bypass = (BYPASS_ON_OFF) == 1? conexionesStyles.on : conexionesStyles.off;
-    grupalups.Conexion.Bateria = BATTERY_STATUS == 1? conexionesStyles.onbattery : conexionesStyles.off;
+    grupalups.Conexion.Bypass = (BYPASS_ON_OFF) === 1? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Bateria = BATTERY_STATUS === 1? conexionesStyles.onbattery : conexionesStyles.off;
        
     //ANIMACION FLECHAS
-    grupalups.Animacion.Entrada = INPUT_VOLTAGE_MAX > 0? animacionStyles.on : animacionStyles.off;
+    grupalups.Animacion.Entrada = INPUT_VOLTAGE_MAX >420? animacionStyles.on : animacionStyles.off;
     grupalups.Animacion.Inversor = INVERTER_ON_OFF === 1? animacionStyles.on : animacionStyles.off;
     grupalups.Animacion.Bypass = BYPASS_ON_OFF === 1? animacionStyles.on : animacionStyles.off;
     grupalups.Animacion.Salida = OUTPUT_VOLTAGE > 0? animacionStyles.on : animacionStyles.off;
-    grupalups.Animacion.CargadorOn = (RECTIFIER_ON_OFF ==1 && INVERTER_ON_OFF ==1)? animacionStyles.on : animacionStyles.off;
-    grupalups.Animacion.CargadorOff = (BATTERY_STATUS ==1 && RECTIFIER_ON_OFF ==2 && INVERTER_ON_OFF ==1)? animacionStyles.on1 : animacionStyles.off;
+    grupalups.Animacion.CargadorOn = (RECTIFIER_ON_OFF ===1 && INVERTER_ON_OFF ===1)? animacionStyles.on : animacionStyles.off;
+    grupalups.Animacion.CargadorOff = (BATTERY_STATUS ===1 && RECTIFIER_ON_OFF ===2 && INVERTER_ON_OFF ===1)? animacionStyles.on1 : animacionStyles.off;
        
     //CALCULOS
     let Voltin = (INPUT_VOLTAGE + INPUT_VOLTAGE_2 + INPUT_VOLTAGE_3) / 3;
@@ -203,9 +203,9 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
 
 
     //Q4
-    grupalups.Conexion.Q4 = (Voltout >=1||RECTIFIER_ON_OFF==1)? conexionesStyles.on: conexionesStyles.off;
+    grupalups.Conexion.Q4 = (Voltout >=1||RECTIFIER_ON_OFF===1)? conexionesStyles.on: conexionesStyles.off;
     //grupalups.Conexion.Q4on = (RECTIFIER_ON_OFF) ==1? conexionesStyles.open : conexionesStyles.off;
-    grupalups.Conexion.Q4off= (Voltout >=1||RECTIFIER_ON_OFF==1)? conexionesStyles.open : conexionesStyles.off;
+    grupalups.Conexion.Q4off= (Voltout >=1||RECTIFIER_ON_OFF===1)? conexionesStyles.open : conexionesStyles.off;
             
     grupalups.Animacion.Bateria25 = Vbateria <= 109?  bateriaStyles.sinconexion : bateriaStyles.full;
     grupalups.Animacion.Bateria50 = Vbateria <= 218? bateriaStyles.sinconexion : bateriaStyles.full;

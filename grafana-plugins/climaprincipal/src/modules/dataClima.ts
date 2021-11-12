@@ -9,6 +9,11 @@ const dataClima = (data: PanelData, options: SimpleOptions, replaceVariables: In
     console.log('options: ', options);
     console.log(replaceVariables);
 
+//ESTADO DEL SISTEMA
+let SYS_EN = data.series.find(({ name }) => name?.includes('DATA.SYS_EN.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+
+
 //SENSORES DE TEMPERATURA SIST.2
 let TEMP_S_PRI = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_PRI.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
@@ -185,6 +190,7 @@ let clima: DataClima ={
         VinUPSCHI_02A: 0, VoutUPSCHI_02A: 0,
     },
     EstadosSIS1:{
+        SIS1habilitado: '',
         Chiller_1_ea_3: '',
         Chiller_1_ea_4: '',
         Bomba_1_b1_4: '',
@@ -200,6 +206,7 @@ let clima: DataClima ={
         VAux2S1: '',
     },
     EstadosSIS2:{
+        SIS2habilitado: '',
         Chiller_1_ea_1: '',
         Chiller_1_ea_2: '',
         Bomba_1_b1_1: '',
@@ -235,6 +242,10 @@ let clima: DataClima ={
         VAux1S1: '', VAux2S1: '',
     },
 }
+
+//Estado del sistema
+//clima.EstadosSIS1.SIS1habilitado = SYS_EN === 1? estadosStyles.ok : estadosStyles.sinConexion;
+clima.EstadosSIS2.SIS2habilitado = SYS_EN === 1? estadosStyles.enable : '';
 
 //Parámetros Chillers Sistema 2
 clima.ParametrosSIS2.TsuminEa2 = Number.parseFloat(TEMPSUM_CHILL2?.toFixed(2));

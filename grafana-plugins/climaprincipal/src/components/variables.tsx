@@ -17,6 +17,7 @@ type ParametrosSIS2 = {
     VinUPSCHI_02A: number; VoutUPSCHI_02A: number;
 };
 type EstadosSIS1 = {
+    SIS1habilitado: string;
     Chiller_1_ea_3: string;
     Chiller_1_ea_4: string;
     Bomba_1_b1_4: string;
@@ -32,6 +33,7 @@ type EstadosSIS1 = {
     VAux2S1: string;
 };
 type EstadosSIS2 = {
+    SIS2habilitado: string;
     Chiller_1_ea_1: string;
     Chiller_1_ea_2: string;
     Bomba_1_b1_1: string;
@@ -1379,21 +1381,26 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       </tspan>
     </text>
     <path
-      id="rect4837"
-      fillRule="evenodd"
-      fill="url(#linearGradient4860)"
-      opacity={0.25}
-      paintOrder="markers stroke fill"
-      d="M75.079 3.578H122.69299999999998V18.358H75.079z"
-    />
-    <path
-      id="rect4837-4"
-      fillRule="evenodd"
-      fill="url(#linearGradient12354)"
-      opacity={0.25}
-      paintOrder="markers stroke fill"
-      d="M383.45 3.5781H431.06399999999996V18.3581H383.45z"
-    />
+          id="rect4837"
+          display="inline"
+          opacity={0.25}
+          fill="url(#linearGradient4860)"
+          fillRule="evenodd"
+          strokeWidth={1.00001}
+          paintOrder="markers stroke fill"
+          d="M75.079323 3.5780339H122.69373300000001V18.3581609H75.079323z"
+        />
+        <path
+          id="rect4837-4"
+          display="inline"
+          opacity={0.25}
+          fill="url(#linearGradient12354)"
+          fillRule="evenodd"
+          strokeWidth={1.00001}
+          paintOrder="markers stroke fill"
+          className={EstadosSIS2.SIS2habilitado}
+          d="M383.45294 3.5781178H431.06735000000003V18.3582448H383.45294z"
+        />
     <path
       id="t9-2-8-2"
       fill="#06f"

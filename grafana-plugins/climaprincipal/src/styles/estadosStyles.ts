@@ -22,6 +22,9 @@ const getStyles = stylesFactory(() => {
     on: css`
       fill: #0066FF;
     `,
+    enable: css`
+      fill: #00FF00;;
+    `,
   };
 });
 
