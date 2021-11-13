@@ -6,7 +6,7 @@ type ParametrosSIS1 = {
     TsuminS1: number; TretS1: number; 
     LoadB2_3: number; LoadB2_4: number;
     TempSumPrimS1: number; TempSumSecS1: number; TempTanqueS1: number; TempRetS1: number;
-    VinUPSCHI_01A: number; VoutUPSCHI_01A: number;
+    VinUPSCHI_01A: number; VoutUPSCHI_01A: number; PotUPSCHI_01A: number;
 };
 type ParametrosSIS2 = {
     TsuminEa1: number; TretEa1: number;
@@ -14,7 +14,7 @@ type ParametrosSIS2 = {
     TsuminS2: number; TretS2: number; 
     LoadB2_1: number; LoadB2_2: number;
     TempSumPrimS2: number; TempSumSecS2: number; TempTanqueS2: number; TempRetS2: number;
-    VinUPSCHI_02A: number; VoutUPSCHI_02A: number;
+    VinUPSCHI_02A: number; VoutUPSCHI_02A: number; PotUPSCHI_02A: number;
 };
 type EstadosSIS1 = {
     SIS1habilitado: string;
@@ -158,9 +158,9 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     />
     <text
       id="tret_chill1"
-      transform="scale(1.063 .94071)"
-      x={46.321911}
-      y={46.187717}
+      transform="scale(.98412 1.0161)"
+      x={49.904591}
+      y={43.160446}
       style={{
         fontVariantCaps: "normal",
         fontVariantEastAsian: "normal",
@@ -178,8 +178,8 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     >
       <tspan
         id="tspan884-5-9-8-1"
-        x={46.321911}
-        y={46.187717}
+        x={49.904591}
+        y={43.160446}
         style={{
           fontVariantCaps: "normal",
           fontVariantEastAsian: "normal",
@@ -377,7 +377,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
         strokeWidth={0.24491}
         textAnchor="middle"
       >
-        {"22.8"}
+        {ParametrosSIS1.PotUPSCHI_01A}
       </tspan>
     </text>
     <text
@@ -415,7 +415,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
         fontSize="6.6794px"
         strokeWidth={0.24818}
       >
-        {ParametrosSIS2.TsuminS2}
+        {ParametrosSIS1.TsuminS1}
       </tspan>
     </text>
     <text
@@ -453,7 +453,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
         fontSize="6.6794px"
         strokeWidth={0.18559}
       >
-        {"24.9"}
+        {ParametrosSIS1.TempRetS1}
       </tspan>
     </text>
     <text
@@ -493,7 +493,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
         strokeWidth={0.24491}
         textAnchor="middle"
       >
-        {"22.8"}
+        {ParametrosSIS2.PotUPSCHI_02A}
       </tspan>
     </text>
     <text
@@ -611,7 +611,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
         fontSize="6.6794px"
         strokeWidth={0.24818}
       >
-        {"11.5"}
+        {ParametrosSIS2.TsuminS2}
       </tspan>
     </text>
     <text
@@ -654,9 +654,9 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     </text>
     <text
       id="tret_chill4"
-      transform="scale(1.0629 .94079)"
-      x={438.49417}
-      y={116.79928}
+      transform="scale(.98412 1.0161)"
+      x={473.51965}
+      y={108.80931}
       style={{
         fontVariantCaps: "normal",
         fontVariantEastAsian: "normal",
@@ -669,13 +669,13 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       fontFamily="Franklin Gothic Medium"
       fontSize="5px"
       letterSpacing={0}
-      strokeWidth={0.69426}
+      strokeWidth={0.64276}
       wordSpacing={0}
     >
       <tspan
         id="tspan884-5-9-8-1-7-1"
-        x={438.49417}
-        y={116.79928}
+        x={473.51965}
+        y={108.80931}
         style={{
           fontVariantCaps: "normal",
           fontVariantEastAsian: "normal",
@@ -706,9 +706,9 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     </text>
     <text
       id="tsum_chill4"
-      transform="scale(.98404 1.0162)"
+      transform="scale(.98412 1.0161)"
       x={473.51965}
-      y={103.47877}
+      y={103.48772}
       style={{
         fontVariantCaps: "normal",
         fontVariantEastAsian: "normal",
@@ -727,7 +727,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       <tspan
         id="tspan884-5-9-8-8-0-4"
         x={473.51965}
-        y={103.47877}
+        y={103.48772}
         style={{
           fontVariantCaps: "normal",
           fontVariantEastAsian: "normal",
@@ -758,9 +758,9 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     </text>
     <text
       id="tret_chill3"
-      transform="scale(1.0629 .94079)"
-      x={438.49417}
-      y={46.18359}
+      transform="scale(.98412 1.0161)"
+      x={473.51965}
+      y={43.160446}
       style={{
         fontVariantCaps: "normal",
         fontVariantEastAsian: "normal",
@@ -773,13 +773,13 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       fontFamily="Franklin Gothic Medium"
       fontSize="5px"
       letterSpacing={0}
-      strokeWidth={0.69426}
+      strokeWidth={0.64276}
       wordSpacing={0}
     >
       <tspan
         id="tspan884-5-9-8-1-1"
-        x={438.49417}
-        y={46.18359}
+        x={473.51965}
+        y={43.160446}
         style={{
           fontVariantCaps: "normal",
           fontVariantEastAsian: "normal",
@@ -810,9 +810,9 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     </text>
     <text
       id="tsum_chill3"
-      transform="scale(.98404 1.0162)"
+      transform="scale(.98412 1.0161)"
       x={473.51965}
-      y={38.104527}
+      y={38.107994}
       style={{
         fontVariantCaps: "normal",
         fontVariantEastAsian: "normal",
@@ -831,7 +831,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       <tspan
         id="tspan884-5-9-8-8-5"
         x={473.51965}
-        y={38.104527}
+        y={38.107994}
         style={{
           fontVariantCaps: "normal",
           fontVariantEastAsian: "normal",
@@ -862,9 +862,9 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     </text>
     <text
       id="tret_chill2"
-      transform="scale(1.063 .94071)"
-      x={46.321911}
-      y={116.80931}
+      transform="scale(.98412 1.0161)"
+      x={49.904591}
+      y={108.80931}
       style={{
         fontVariantCaps: "normal",
         fontVariantEastAsian: "normal",
@@ -882,8 +882,8 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     >
       <tspan
         id="tspan884-5-9-8-1-7"
-        x={46.321911}
-        y={116.80931}
+        x={49.904591}
+        y={108.80931}
         style={{
           fontVariantCaps: "normal",
           fontVariantEastAsian: "normal",
@@ -1380,27 +1380,6 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
         </tspan>
       </tspan>
     </text>
-    <path
-          id="rect4837"
-          display="inline"
-          opacity={0.25}
-          fill="url(#linearGradient4860)"
-          fillRule="evenodd"
-          strokeWidth={1.00001}
-          paintOrder="markers stroke fill"
-          d="M75.079323 3.5780339H122.69373300000001V18.3581609H75.079323z"
-        />
-        <path
-          id="rect4837-4"
-          display="inline"
-          opacity={0.25}
-          fill="url(#linearGradient12354)"
-          fillRule="evenodd"
-          strokeWidth={1.00001}
-          paintOrder="markers stroke fill"
-          className={EstadosSIS2.SIS2habilitado}
-          d="M383.45294 3.5781178H431.06735000000003V18.3582448H383.45294z"
-        />
     <path
       id="t9-2-8-2"
       fill="#06f"
@@ -5413,6 +5392,139 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       strokeWidth={2.0872}
       d="M44.979 41.691H74.461V44.336800000000004H44.979z"
     />
-  </g> 
-    )
-} 
+    <path
+      id="estado_eq"
+      fillRule="evenodd"
+      fill="url(#linearGradient4474)"
+      strokeWidth={0.26218}
+      className={EstadosSIS2.SIS2habilitado}
+      d="M383.45 3.5781H431.06399999999996V18.3581H383.45z"
+    />
+    <path
+      id="estado_eq-7"
+      fillRule="evenodd"
+      fill="url(#linearGradient4474-6)"
+      strokeWidth={0.26218}
+      className={EstadosSIS1.SIS1habilitado}
+      d="M75.079 3.578H122.69299999999998V18.358H75.079z"
+    />
+    <text
+      id="text886-0-85-6-1-08-7-6"
+      transform="scale(1.1427 .87513)"
+      x={341.96982}
+      y={14.176965}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.8965px"
+      letterSpacing={0}
+      strokeWidth={0.43534}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan7940-2-8"
+        x={341.96982}
+        y={14.176965}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.8965px"
+        strokeWidth={0.43534}
+      >
+        <tspan
+          id="tspan5255-7"
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal"
+          }}
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="5.8965px"
+          strokeWidth={0.43534}
+        >
+          {"SISTEMA 2 "}
+        </tspan>
+      </tspan>
+    </text>
+    <text
+      id="text886-0-85-6-1-08-7"
+      transform="scale(1.1427 .87513)"
+      x={73.449417}
+      y={14.177041}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.8965px"
+      letterSpacing={0}
+      strokeWidth={0.43534}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan7940-2"
+        x={73.449417}
+        y={14.177041}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.8965px"
+        strokeWidth={0.43534}
+      >
+        <tspan
+          id="tspan5255"
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal"
+          }}
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="5.8965px"
+          strokeWidth={0.43534}
+        >
+          <tspan
+            id="tspan11428"
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fontFamily="Franklin Gothic Medium"
+            fontSize="5.8965px"
+            strokeWidth={0.43534}
+          >
+            {"SISTEMA 1"}
+          </tspan>
+        </tspan>
+      </tspan>
+    </text>
+  </g>
+  )
+}

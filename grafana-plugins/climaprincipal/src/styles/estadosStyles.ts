@@ -23,7 +23,7 @@ const getStyles = stylesFactory(() => {
       fill: #0066FF;
     `,
     enable: css`
-      fill: #00FF00;;
+      fill: url(#linearGradient4474);
     `,
   };
 });

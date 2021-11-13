@@ -13,7 +13,6 @@ const dataClima = (data: PanelData, options: SimpleOptions, replaceVariables: In
 let SYS_EN = data.series.find(({ name }) => name?.includes('DATA.SYS_EN.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
 
-
 //SENSORES DE TEMPERATURA SIST.2
 let TEMP_S_PRI = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_PRI.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
@@ -90,7 +89,11 @@ let F1_B2_2_A = data.series.find(({ name }) => name?.includes('DATA.F1_B2_2_A.VA
 //ESTADOS DE VALVULAS AUXILIARES
 let ISOV1_S = data.series.find(({ name }) => name?.includes('DATA.ISOV1_S.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
+let ISOV1_C = data.series.find(({ name }) => name?.includes('DATA.ISOV1_C.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
 let ISOV2_S = data.series.find(({ name }) => name?.includes('DATA.ISOV2_S.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let ISOV2_C = data.series.find(({ name }) => name?.includes('DATA.ISOV2_C.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
 
 //ESTADOS CHILLERS Y PARAMETROS
@@ -167,10 +170,14 @@ let VIN_UPS_CHI1A = data.series.find(({ name }) => name?.includes('VIN_UPS_CHI1A
 ?.lastNotNull;
 let VOUT_UPS_CHI1A = data.series.find(({ name }) => name?.includes('VOUT_UPS_CHI1A'))?.fields[1].state?.calcs
 ?.lastNotNull;
+let KW_UPS_CHI1A = data.series.find(({ name }) => name?.includes('KW_UPS_CHI1A'))?.fields[1].state?.calcs
+?.lastNotNull/1000;
 let VIN_UPS_CHI2A = data.series.find(({ name }) => name?.includes('VIN_UPS_CHI2A'))?.fields[1].state?.calcs
 ?.lastNotNull;
 let VOUT_UPS_CHI2A = data.series.find(({ name }) => name?.includes('VOUT_UPS_CHI2A'))?.fields[1].state?.calcs
 ?.lastNotNull;
+let KW_UPS_CHI2A = data.series.find(({ name }) => name?.includes('KW_UPS_CHI2A'))?.fields[1].state?.calcs
+?.lastNotNull/1000;
 
 let clima: DataClima ={
     ParametrosSIS1:{
@@ -179,7 +186,7 @@ let clima: DataClima ={
         TsuminS1: 0, TretS1: 0, 
         LoadB2_3: 0, LoadB2_4: 0,
         TempSumPrimS1: 0, TempSumSecS1: 0, TempTanqueS1: 0, TempRetS1: 0,
-        VinUPSCHI_01A: 0, VoutUPSCHI_01A: 0,
+        VinUPSCHI_01A: 0, VoutUPSCHI_01A: 0, PotUPSCHI_01A: 0,
     },
     ParametrosSIS2:{
         TsuminEa1: 0, TretEa1: 0,
@@ -187,7 +194,7 @@ let clima: DataClima ={
         TsuminS2: 0, TretS2: 0, 
         LoadB2_1: 0, LoadB2_2: 0,
         TempSumPrimS2: 0, TempSumSecS2: 0, TempTanqueS2: 0, TempRetS2: 0,
-        VinUPSCHI_02A: 0, VoutUPSCHI_02A: 0,
+        VinUPSCHI_02A: 0, VoutUPSCHI_02A: 0, PotUPSCHI_02A: 0,
     },
     EstadosSIS1:{
         SIS1habilitado: '',
@@ -245,7 +252,7 @@ let clima: DataClima ={
 
 //Estado del sistema
 //clima.EstadosSIS1.SIS1habilitado = SYS_EN === 1? estadosStyles.ok : estadosStyles.sinConexion;
-clima.EstadosSIS2.SIS2habilitado = SYS_EN === 1? estadosStyles.enable : '';
+clima.EstadosSIS2.SIS2habilitado = SYS_EN === 1? estadosStyles.enable : estadosStyles.sinConexion;
 
 //Parámetros Chillers Sistema 2
 clima.ParametrosSIS2.TsuminEa2 = Number.parseFloat(TEMPSUM_CHILL2?.toFixed(2));
@@ -261,11 +268,13 @@ clima.ParametrosSIS2.TempSumSecS2 = Number.parseFloat(TEMP_S_SEC?.toFixed(2));
 clima.ParametrosSIS2.TempTanqueS2 = Number.parseFloat(TEMP_S_TAN?.toFixed(2));
 clima.ParametrosSIS2.TempRetS2 = Number.parseFloat(TEMP_R?.toFixed(2));
 
-//Parámetros de Voltaje de UPSCHI
+//Parámetros de UPSCHI
 clima.ParametrosSIS1.VinUPSCHI_01A = Number.parseFloat(VIN_UPS_CHI1A?.toFixed(2));
 clima.ParametrosSIS1.VoutUPSCHI_01A = Number.parseFloat(VOUT_UPS_CHI1A?.toFixed(2));
+clima.ParametrosSIS1.PotUPSCHI_01A = Number.parseFloat(KW_UPS_CHI1A?.toFixed(2));
 clima.ParametrosSIS2.VinUPSCHI_02A = Number.parseFloat(VIN_UPS_CHI2A?.toFixed(2));
 clima.ParametrosSIS2.VoutUPSCHI_02A = Number.parseFloat(VOUT_UPS_CHI2A?.toFixed(2));
+clima.ParametrosSIS2.PotUPSCHI_02A = Number.parseFloat(KW_UPS_CHI2A?.toFixed(2));
 
 //Estados de chillers Sistema 1&2
 clima.EstadosSIS1.Chiller_1_ea_3 = F1_EA_3_S === 1? estadosStyles.ok : estadosStyles.sinConexion;
@@ -306,8 +315,8 @@ clima.ParametrosSIS2.LoadB2_2 = Number.parseFloat(F1_B2_2_L?.toFixed(2));
 //Estados de Valvulas auxiliares
 /*clima.EstadosSIS1.VAux1S1 = ISOV3_S === 1? estadosStyles.ok : estadosStyles.sinConexion;
 clima.EstadosSIS1.VAux2S1 = ISOV4_S === 1? estadosStyles.ok : estadosStyles.sinConexion;*/
-clima.EstadosSIS2.VAux1S2 = ISOV1_S === 1? estadosStyles.ok : estadosStyles.sinConexion;
-clima.EstadosSIS2.VAux2S2 = ISOV2_S === 1? estadosStyles.ok : estadosStyles.sinConexion;
+clima.EstadosSIS2.VAux1S2 = (ISOV1_S && ISOV1_S) === 1? estadosStyles.ok : estadosStyles.sinConexion;
+clima.EstadosSIS2.VAux2S2 = (ISOV2_S && ISOV2_C) === 1? estadosStyles.ok : estadosStyles.sinConexion;
 
 //Estados de valvulas suministro Sistema 2
 clima.EstadosSIS2.S2UMA1 = SUM1_S === 1? estadosStyles.ok : estadosStyles.sinConexion;
@@ -369,8 +378,8 @@ clima.Tuberias.B1_2 = F1_B1_2_S === 1? estadosStyles.on : estadosStyles.sinConex
 clima.Tuberias.B1_3 = F1_B1_3_S === 1? estadosStyles.on : estadosStyles.sinConexion;
 clima.Tuberias.B2_1 = F1_B2_1_S === 1? estadosStyles.on : estadosStyles.sinConexion;
 clima.Tuberias.B2_2 = F1_B2_2_S === 1? estadosStyles.on : estadosStyles.sinConexion;
-clima.Tuberias.VAux1S2 = (ISOV1_S && F1_B1_2_S) === 1? estadosStyles.on : estadosStyles.sinConexion;
-clima.Tuberias.VAux2S2 = (ISOV2_S && F1_B1_2_S) === 1? estadosStyles.on : estadosStyles.sinConexion;
+clima.Tuberias.VAux1S2 = (ISOV1_S && ISOV1_C && F1_B1_2_S) === 1? estadosStyles.on : estadosStyles.sinConexion;
+clima.Tuberias.VAux2S2 = (ISOV2_S && ISOV2_C && F1_B1_2_S) === 1? estadosStyles.on : estadosStyles.sinConexion;
 
 //Calculos de voltaje
 /*let VinUPSCHI_01A = (INPUT_VOLTAGE + INPUT_VOLTAGE_2 + INPUT_VOLTAGE_3) / 3;
