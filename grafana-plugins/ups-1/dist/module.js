@@ -1261,7 +1261,7 @@ var dataUps = function dataUps(data, options, replaceVariables) {
     ups.Parametros.CorrienteOut = Number.parseFloat(CorrienteOut === null || CorrienteOut === void 0 ? void 0 : CorrienteOut.toFixed(2));
   }
 
-  var PotenciaOut = (OUTPUT_POWER + OUTPUT_POWER_2 + OUTPUT_POWER_3) / 3000;
+  var PotenciaOut = (OUTPUT_POWER + OUTPUT_POWER_2 + OUTPUT_POWER_3) / 1000;
 
   if (OUTPUT_POWER !== undefined && OUTPUT_POWER_2 !== undefined && OUTPUT_POWER_3 !== undefined) {
     ups.Parametros.PotenciaOut = Number.parseFloat(PotenciaOut === null || PotenciaOut === void 0 ? void 0 : PotenciaOut.toFixed(2));

@@ -22,18 +22,12 @@ type ParametrosClima = {
     uma7_TR: number; uma8_TR: number; uma9_TR: number; uma10_TR: number; uma11_TR: number; uma12_TR: number;
 };
 type ParametrosUPS_SIS1 = {
-    V_in: number;
-    V_out: number;
-    I_out: number;
-    P_out: number;
-    Load: number;
+    V_in: number; V_out: number; I_out: number; P_out: number; Load: number;
+    V_inCHI: number; V_outCHI: number; I_outCHI: number; P_outCHI: number; LoadCHI: number;
 };
 type ParametrosUPS_SIS2 = {
-    V_in: number;
-    V_out: number;
-    I_out: number;
-    P_out: number;
-    Load: number;
+    V_in: number; V_out: number; I_out: number; P_out: number; Load: number;
+    V_inCHI: number; V_outCHI: number; I_outCHI: number; P_outCHI: number; LoadCHI: number;
 };
 type ParametrosClima_SIS1 = {
     T_sumEA3: number; T_retEA3: number;
@@ -97,7 +91,7 @@ type Alarmas_SIS1 = {
 type Alarmas_SIS2 = {
     ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi2: string;
     gen4: string; gen5: string; gen6: string;
-    Ea1: string; Ea2: string;
+    Ea1: string; Ea2: string; Ea1mant: string; Ea2mant: string;
     b1_1: string; b1_2: string; b1_3: string;
     b2_1: string; b2_2: string;
     V1aux: string; V2aux: string;
@@ -2167,7 +2161,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"24.9 \xB0C"}
+        {ParametrosClima_SIS1.T_sumEA3}°C
       </tspan>
     </text>
     <text
@@ -2205,7 +2199,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"24.9 \xB0C"}
+        {ParametrosClima_SIS1.T_retEA3}°C
       </tspan>
     </text>
     <circle
@@ -2215,6 +2209,7 @@ return (
       cy={59.505}
       r={2}
       fill="#2fc43b"
+      className={Estados_SIS1.Ea3}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -2265,7 +2260,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"24.9 \xB0C"}
+        {ParametrosClima_SIS1.T_sumEA4}°C
       </tspan>
     </text>
     <text
@@ -2303,7 +2298,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"24.9 \xB0C"}
+        {ParametrosClima_SIS1.T_retEA4}°C
       </tspan>
     </text>
     <circle
@@ -2313,6 +2308,7 @@ return (
       cy={82.43}
       r={2}
       fill="#2fc43b"
+      className={Estados_SIS1.Ea4}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -2335,6 +2331,7 @@ return (
       cy={110.23}
       r={2}
       fill="#2fc43b"
+      className={Estados_SIS1.b1_6}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -2357,6 +2354,7 @@ return (
       cy={110.23}
       r={2}
       fill="#2fc43b"
+      className={Estados_SIS1.b1_5}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -2379,6 +2377,7 @@ return (
       cy={110.23}
       r={2}
       fill="#2fc43b"
+      className={Estados_SIS1.b1_4}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -2401,6 +2400,7 @@ return (
       cy={137.35}
       r={2}
       fill="#2fc43b"
+      className={Estados_SIS1.b2_4}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -2423,6 +2423,7 @@ return (
       cy={137.35}
       r={2}
       fill="#2fc43b"
+      className={Estados_SIS1.b2_3}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -2473,7 +2474,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"50%"}
+        {ParametrosClima_SIS1.LoadB3}%
       </tspan>
     </text>
     <text
@@ -2511,7 +2512,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"50%"}
+        {ParametrosClima_SIS1.LoadB4}%
       </tspan>
     </text>
     <circle
@@ -2521,6 +2522,7 @@ return (
       cy={156.12}
       r={2}
       fill="#2fc43b"
+      className={Estados_SIS1.V1aux}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -2543,6 +2545,7 @@ return (
       cy={156.12}
       r={2}
       fill="#2fc43b"
+      className={Estados_SIS1.V2aux}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -2593,7 +2596,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"24.5 \xB0C"}
+        {ParametrosClima_SIS1.T_sum_prim}°C
       </tspan>
     </text>
     <text
@@ -2631,7 +2634,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"24.5 \xB0C"}
+        {ParametrosClima_SIS1.T_sum_sec}°C
       </tspan>
     </text>
     <text
@@ -2669,7 +2672,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"24.5 \xB0C"}
+        {ParametrosClima_SIS1.T_tanque}°C
       </tspan>
     </text>
     <text
@@ -2707,7 +2710,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"24.5 \xB0C"}
+        {ParametrosClima_SIS1.T_ret}°C
       </tspan>
     </text>
     <circle
@@ -2734,6 +2737,17 @@ return (
       strokeWidth={1.8378}
     />
     <circle
+      id="st_chill1-1-1-mant"//mantenimiento
+      transform="translate(14.288)"
+      cx={93.875}
+      cy={59.505}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.Ea1mant}
+    />
+    <circle
       id="st_chill1-1-4-8"
       transform="translate(14.288)"
       cx={93.875}
@@ -2755,6 +2769,17 @@ return (
       opacity={0.29}
       paintOrder="markers stroke fill"
       strokeWidth={1.8378}
+    />
+    <circle
+      id="st_chill1-1-4-8-mant"//mantenimiento
+      transform="translate(14.288)"
+      cx={93.875}
+      cy={82.43}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.Ea2mant}
     />
     <circle
       id="st_bomba1-8"
@@ -2780,6 +2805,17 @@ return (
       strokeWidth={1.8378}
     />
     <circle
+      id="st_bomba1-8-al" //alarma1b1-3
+      transform="translate(14.288)"
+      cx={99.756}
+      cy={110.23}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.b1_3}
+    />
+    <circle
       id="st_bomba1-7-8"
       transform="translate(14.288)"
       cx={110.08}
@@ -2801,6 +2837,17 @@ return (
       opacity={0.29}
       paintOrder="markers stroke fill"
       strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bomba1-7-8-al"//alarma1b1-2
+      transform="translate(14.288)"
+      cx={110.08}
+      cy={110.23}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.b1_2}
     />
     <circle
       id="st_bomba1-75-4"
@@ -2826,6 +2873,17 @@ return (
       strokeWidth={1.8378}
     />
     <circle
+      id="st_bomba1-75-4-al"//alarma1b1-1
+      transform="translate(14.288)"
+      cx={119.87}
+      cy={110.23}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.b1_1}
+    />
+    <circle
       id="st_bombasec1-0"
       transform="translate(14.288)"
       cx={110.08}
@@ -2847,6 +2905,17 @@ return (
       opacity={0.29}
       paintOrder="markers stroke fill"
       strokeWidth={1.8378}
+    />
+     <circle
+      id="st_bombasec1-0-al"//alarma1b2-2
+      transform="translate(14.288)"
+      cx={110.08}
+      cy={137.35}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.b2_2}
     />
     <circle
       id="st_bombasec2-7"
@@ -2870,6 +2939,17 @@ return (
       opacity={0.29}
       paintOrder="markers stroke fill"
       strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bombasec2-7-al"//alarma1b2-2
+      transform="translate(14.288)"
+      cx={119.87}
+      cy={137.35}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.b2_1}
     />
     <text
       id="tsumchill1-3-2-5"
@@ -2906,7 +2986,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"50%"}
+        {ParametrosClima_SIS2.LoadB2}%
       </tspan>
     </text>
     <text
@@ -2944,7 +3024,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"50%"}
+        {ParametrosClima_SIS2.LoadB1}%
       </tspan>
     </text>
     <circle
@@ -2954,6 +3034,7 @@ return (
       cy={156.12}
       r={2}
       fill="#2fc43b"
+      className={Estados_SIS2.V1aux}  
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -2976,6 +3057,7 @@ return (
       cy={156.12}
       r={2}
       fill="#2fc43b"
+      className={Estados_SIS2.V2aux}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3026,7 +3108,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"24.5 \xB0C"}
+        {ParametrosClima_SIS2.T_sum_prim}°C
       </tspan>
     </text>
     <text
@@ -3064,7 +3146,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"24.5 \xB0C"}
+        {ParametrosClima_SIS2.T_sum_sec}°C
       </tspan>
     </text>
     <text
@@ -3102,7 +3184,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"24.5 \xB0C"}
+        {ParametrosClima_SIS2.T_tanque}°C
       </tspan>
     </text>
     <text
@@ -3140,7 +3222,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"24.5 \xB0C"}
+        {ParametrosClima_SIS2.T_ret}°C
       </tspan>
     </text>
     <text
@@ -3178,7 +3260,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"440 V"}
+        {ParametrosUPS_SIS1.V_inCHI} V
       </tspan>
     </text>
     <text
@@ -3216,7 +3298,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"400 V"}
+        {ParametrosUPS_SIS1.V_outCHI} V
       </tspan>
     </text>
     <circle
@@ -3241,6 +3323,17 @@ return (
       opacity={0.29}
       paintOrder="markers stroke fill"
       strokeWidth={1.8378}
+    />
+    <circle
+      id="st_upschi-al" //alarma
+      transform="translate(14.288)"
+      cx={31.976}
+      cy={35.994}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.upschi1}
     />
     <text
       id="ioutupschi"
@@ -3277,7 +3370,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"400 A"}
+        {ParametrosUPS_SIS1.I_outCHI} A
       </tspan>
     </text>
     <text
@@ -3315,7 +3408,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"50 %"}
+        {ParametrosUPS_SIS1.LoadCHI} %
       </tspan>
     </text>
     <text
@@ -3353,7 +3446,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"440 V"}
+        {ParametrosUPS_SIS2.V_inCHI} V
       </tspan>
     </text>
     <text
@@ -3391,7 +3484,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"400 V"}
+        {ParametrosUPS_SIS2.V_outCHI} V
       </tspan>
     </text>
     <circle
@@ -3416,6 +3509,17 @@ return (
       opacity={0.29}
       paintOrder="markers stroke fill"
       strokeWidth={1.8378}
+    />
+    <circle
+      id="st_upschi-4-al" //alarma
+      transform="translate(14.288)"
+      cx={93.88}
+      cy={35.995}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.upschi2}
     />
     <text
       id="ioutupschi-8"
@@ -3452,7 +3556,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"400 A"}
+        {ParametrosUPS_SIS2.I_outCHI} A
       </tspan>
     </text>
     <text
@@ -3490,7 +3594,7 @@ return (
         fontSize="3.175px"
         strokeWidth={0.48961}
       >
-        {"50 %"}
+        {ParametrosUPS_SIS2.LoadCHI} %
       </tspan>
     </text>
     <text
@@ -4055,7 +4159,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.43331}
       >
-        {"180 A"}
+        {ParametrosUPS_SIS1.I_out} A
       </tspan>
     </text>
     <text
@@ -4094,7 +4198,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.43331}
       >
-        {"180 KW"}
+        {ParametrosUPS_SIS1.P_out} KW
       </tspan>
     </text>
     <text
@@ -4133,7 +4237,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.43331}
       >
-        {"50 %"}
+        {"%"}
       </tspan>
     </text>
     <text
@@ -4250,7 +4354,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.43331}
       >
-        {"50 %"}
+        {"%"}
       </tspan>
     </text>
     <text
@@ -4406,7 +4510,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.43331}
       >
-        {"400 V"}
+        {ParametrosUPS_SIS1.V_out} V
       </tspan>
     </text>
     <circle
@@ -4416,6 +4520,7 @@ return (
       r={2.3465}
       fill="#4d4d4d"
       paintOrder="markers stroke fill"
+      className={Estados_SIS1.gen1}
     />
     <ellipse
       id="st_trans-12-5-4-9-7-5-6-8-5-0"
@@ -4436,6 +4541,7 @@ return (
       r={2.3465}
       fill="#4d4d4d"
       paintOrder="markers stroke fill"
+      className={Estados_SIS1.gen2}
     />
     <ellipse
       id="st_trans-12-5-4-9-7-5-6-8-5-9-0"
@@ -4456,6 +4562,7 @@ return (
       r={2.3465}
       fill="#4d4d4d"
       paintOrder="markers stroke fill"
+      className={Estados_SIS1.gen3}
     />
     <ellipse
       id="st_trans-12-5-4-9-7-5-6-8-5-2-8"
@@ -4477,6 +4584,7 @@ return (
       r={2.3465}
       fill="#4d4d4d"
       paintOrder="markers stroke fill"
+      className={Estados_SIS2.gen4}
     />
     <ellipse
       id="st_trans-12-5-4-9-7-5-6-8-5-0-2"
@@ -4498,6 +4606,7 @@ return (
       r={2.3465}
       fill="#4d4d4d"
       paintOrder="markers stroke fill"
+      className={Estados_SIS2.gen5}
     />
     <ellipse
       id="st_trans-12-5-4-9-7-5-6-8-5-9-0-3"
@@ -4519,6 +4628,7 @@ return (
       r={2.3465}
       fill="#4d4d4d"
       paintOrder="markers stroke fill"
+      className={Estados_SIS2.gen6}
     />
     <ellipse
       id="st_trans-12-5-4-9-7-5-6-8-5-2-8-4"

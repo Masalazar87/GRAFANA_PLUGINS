@@ -1,13 +1,12 @@
-import { PanelData, InterpolateFunction} from '@grafana/data';
+import { PanelData } from '@grafana/data';
 import { SimpleOptions } from 'types';
 
 import { DataClima } from 'components/variables';
 import estadosStyles from 'styles/estadosStyles';
 
-const dataClima = (data: PanelData, options: SimpleOptions, replaceVariables: InterpolateFunction): DataClima => {  
+const dataClima = (data: PanelData, options: SimpleOptions): DataClima => {  
     console.log('data: ', data);
     console.log('options: ', options);
-    console.log(replaceVariables);
 
 //ESTADO DEL SISTEMA
 let SYS_EN = data.series.find(({ name }) => name?.includes('DATA.SYS_EN.VALUE'))?.fields[1].state?.calcs
@@ -170,14 +169,22 @@ let VIN_UPS_CHI1A = data.series.find(({ name }) => name?.includes('VIN_UPS_CHI1A
 ?.lastNotNull;
 let VOUT_UPS_CHI1A = data.series.find(({ name }) => name?.includes('VOUT_UPS_CHI1A'))?.fields[1].state?.calcs
 ?.lastNotNull;
-let KW_UPS_CHI1A = data.series.find(({ name }) => name?.includes('KW_UPS_CHI1A'))?.fields[1].state?.calcs
-?.lastNotNull/1000;
+let L1_KW_UPS_CHI1A = data.series.find(({ name }) => name?.includes('L1_KW_UPS_CHI1A'))?.fields[1].state?.calcs
+?.lastNotNull;
+let L2_KW_UPS_CHI1A = data.series.find(({ name }) => name?.includes('L2_KW_UPS_CHI1A'))?.fields[1].state?.calcs
+?.lastNotNull;
+let L3_KW_UPS_CHI1A = data.series.find(({ name }) => name?.includes('L3_KW_UPS_CHI1A'))?.fields[1].state?.calcs
+?.lastNotNull;
 let VIN_UPS_CHI2A = data.series.find(({ name }) => name?.includes('VIN_UPS_CHI2A'))?.fields[1].state?.calcs
 ?.lastNotNull;
 let VOUT_UPS_CHI2A = data.series.find(({ name }) => name?.includes('VOUT_UPS_CHI2A'))?.fields[1].state?.calcs
 ?.lastNotNull;
-let KW_UPS_CHI2A = data.series.find(({ name }) => name?.includes('KW_UPS_CHI2A'))?.fields[1].state?.calcs
-?.lastNotNull/1000;
+let L1_KW_UPS_CHI2A = data.series.find(({ name }) => name?.includes('L1_KW_UPS_CHI2A'))?.fields[1].state?.calcs
+?.lastNotNull;
+let L2_KW_UPS_CHI2A = data.series.find(({ name }) => name?.includes('L2_KW_UPS_CHI2A'))?.fields[1].state?.calcs
+?.lastNotNull;
+let L3_KW_UPS_CHI2A = data.series.find(({ name }) => name?.includes('L3_KW_UPS_CHI2A'))?.fields[1].state?.calcs
+?.lastNotNull;
 
 let clima: DataClima ={
     ParametrosSIS1:{
@@ -205,12 +212,12 @@ let clima: DataClima ={
         Bomba_1_b1_6: '',
         Bomba_1_b2_3: '',
         Bomba_1_b2_4: '',
-        S1UMA1: '', S1UMA2: '', S1UMA3: '', S1UMA4: '', S1UMA5: '', S1UMA6: '',
-        S1UMA7: '', S1UMA8: '', S1UMA9: '', S1UMA10: '', S1UMA11: '', S1UMA12: '',
-        R1UMA1: '', R1UMA2: '', R1UMA3: '', R1UMA4: '', R1UMA5: '', R1UMA6: '',
-        R1UMA7: '', R1UMA8: '', R1UMA9: '', R1UMA10: '', R1UMA11: '', R1UMA12: '',
-        VAux1S1: '',
-        VAux2S1: '',
+        S1UMA1: estadosStyles.sinConexion, S1UMA2: estadosStyles.sinConexion, S1UMA3: estadosStyles.sinConexion, S1UMA4: estadosStyles.sinConexion, S1UMA5: estadosStyles.sinConexion, S1UMA6: estadosStyles.sinConexion,
+        S1UMA7: estadosStyles.sinConexion, S1UMA8: estadosStyles.sinConexion, S1UMA9: estadosStyles.sinConexion, S1UMA10: estadosStyles.sinConexion, S1UMA11: estadosStyles.sinConexion, S1UMA12: estadosStyles.sinConexion,
+        R1UMA1: estadosStyles.sinConexion, R1UMA2: estadosStyles.sinConexion, R1UMA3: estadosStyles.sinConexion, R1UMA4: estadosStyles.sinConexion, R1UMA5: estadosStyles.sinConexion, R1UMA6: estadosStyles.sinConexion,
+        R1UMA7: estadosStyles.sinConexion, R1UMA8: estadosStyles.sinConexion, R1UMA9: estadosStyles.sinConexion, R1UMA10: estadosStyles.sinConexion, R1UMA11: estadosStyles.sinConexion, R1UMA12: estadosStyles.sinConexion,
+        VAux1S1: estadosStyles.sinConexion,
+        VAux2S1: estadosStyles.sinConexion,
     },
     EstadosSIS2:{
         SIS2habilitado: '',
@@ -271,10 +278,16 @@ clima.ParametrosSIS2.TempRetS2 = Number.parseFloat(TEMP_R?.toFixed(2));
 //Parámetros de UPSCHI
 clima.ParametrosSIS1.VinUPSCHI_01A = Number.parseFloat(VIN_UPS_CHI1A?.toFixed(2));
 clima.ParametrosSIS1.VoutUPSCHI_01A = Number.parseFloat(VOUT_UPS_CHI1A?.toFixed(2));
-clima.ParametrosSIS1.PotUPSCHI_01A = Number.parseFloat(KW_UPS_CHI1A?.toFixed(2));
+//clima.ParametrosSIS1.PotUPSCHI_01A = Number.parseFloat(L1KW_UPS_CHI1A?.toFixed(2));
+let PotUPSCHI_01A = (L1_KW_UPS_CHI1A + L2_KW_UPS_CHI1A + L3_KW_UPS_CHI1A)/1000
+if (L1_KW_UPS_CHI1A !== undefined && L2_KW_UPS_CHI1A !== undefined && L3_KW_UPS_CHI1A !== undefined) 
+    clima.ParametrosSIS1.PotUPSCHI_01A = Number.parseFloat(PotUPSCHI_01A?.toFixed(2));
 clima.ParametrosSIS2.VinUPSCHI_02A = Number.parseFloat(VIN_UPS_CHI2A?.toFixed(2));
 clima.ParametrosSIS2.VoutUPSCHI_02A = Number.parseFloat(VOUT_UPS_CHI2A?.toFixed(2));
-clima.ParametrosSIS2.PotUPSCHI_02A = Number.parseFloat(KW_UPS_CHI2A?.toFixed(2));
+//clima.ParametrosSIS2.PotUPSCHI_02A = Number.parseFloat(KW_UPS_CHI2A?.toFixed(2));
+let PotUPSCHI_02A = (L1_KW_UPS_CHI2A + L2_KW_UPS_CHI2A + L3_KW_UPS_CHI2A)/1000
+if (L1_KW_UPS_CHI2A !== undefined && L2_KW_UPS_CHI2A !== undefined && L3_KW_UPS_CHI2A !== undefined)
+    clima.ParametrosSIS2.PotUPSCHI_02A = Number.parseFloat(PotUPSCHI_02A?.toFixed(2));
 
 //Estados de chillers Sistema 1&2
 clima.EstadosSIS1.Chiller_1_ea_3 = F1_EA_3_S === 1? estadosStyles.ok : estadosStyles.sinConexion;
@@ -315,7 +328,7 @@ clima.ParametrosSIS2.LoadB2_2 = Number.parseFloat(F1_B2_2_L?.toFixed(2));
 //Estados de Valvulas auxiliares
 /*clima.EstadosSIS1.VAux1S1 = ISOV3_S === 1? estadosStyles.ok : estadosStyles.sinConexion;
 clima.EstadosSIS1.VAux2S1 = ISOV4_S === 1? estadosStyles.ok : estadosStyles.sinConexion;*/
-clima.EstadosSIS2.VAux1S2 = (ISOV1_S && ISOV1_S) === 1? estadosStyles.ok : estadosStyles.sinConexion;
+clima.EstadosSIS2.VAux1S2 = (ISOV1_S && ISOV1_C) === 1? estadosStyles.ok : estadosStyles.sinConexion;
 clima.EstadosSIS2.VAux2S2 = (ISOV2_S && ISOV2_C) === 1? estadosStyles.ok : estadosStyles.sinConexion;
 
 //Estados de valvulas suministro Sistema 2
@@ -389,8 +402,10 @@ let VoutUPSCHI_01A = (OUTPUT_VOLTAGE + OUTPUT_VOLTAGE_2 + OUTPUT_VOLTAGE_3) / 3;
 if (OUTPUT_VOLTAGE !== undefined && OUTPUT_VOLTAGE_2 !== undefined && OUTPUT_VOLTAGE_3 !== undefined) {
    ups.Parametros.CorrienteOut = Number.parseFloat(CorrienteOut?.toFixed(2));*/
 
-
 console.log(clima);
+
 return clima;
+
 };
+
 export default dataClima;
