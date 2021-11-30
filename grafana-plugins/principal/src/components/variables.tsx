@@ -1623,7 +1623,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"22800"}
+        {ParametrosElec.V_inTransf} V
       </tspan>
     </text>
     <text
@@ -1660,7 +1660,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"19"}
+        {ParametrosElec.I_inTransf} A
       </tspan>
     </text>
     <text
@@ -1697,7 +1697,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"1.5"}
+        {ParametrosElec.P_inTransf} KW
       </tspan>
     </text>
     <text
@@ -1734,7 +1734,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"22800"}
+        {ParametrosElec.V_outTransf} V
       </tspan>
     </text>
     <text
@@ -1771,7 +1771,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"19"}
+        {ParametrosElec.I_outTransf} A
       </tspan>
     </text>
     <text
@@ -1808,7 +1808,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"1.5"}
+        {ParametrosElec.P_outTrasnf} KW
       </tspan>
     </text>
     <text
@@ -1971,6 +1971,7 @@ return (
       cy={111.94}
       r={3.2985}
       fill="#2fc43b"
+      className={Estados_Principales.ups_SIS1}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -1992,6 +1993,7 @@ return (
       rx={3.2985}
       ry={3.2987}
       fill="#2fc43b"
+      className={Estados_Principales.ups_SIS2}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -2013,6 +2015,7 @@ return (
       rx={3.2985}
       ry={3.2985}
       fill="#4d4d4d"
+      className={Estados_Principales.gen_SIS1}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -2034,6 +2037,7 @@ return (
       rx={3.2985}
       ry={3.2987}
       fill="#4d4d4d"
+      className={Estados_Principales.gen_SIS2}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3793,6 +3797,7 @@ return (
       cy={11.229}
       r={4.671}
       fill="#2fc43b"
+      className={Estados_Principales.clima_SIS1}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3814,6 +3819,7 @@ return (
       cy={11.229}
       r={4.671}
       fill="#4d4d4d"
+      className={Estados_Principales.clima_SIS2}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3889,6 +3895,17 @@ return (
       paintOrder="markers stroke fill"
     />
     <circle
+      id="st_ups1a-2-al"//alarma
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={130.96}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.ups2}
+    />
+    <circle
       id="st_ups1a-3"
       transform="translate(14.288)"
       cx={418.93}
@@ -3909,6 +3926,17 @@ return (
       filter="url(#filter2091-9-7-7-5-5-5)"
       opacity={0.29}
       paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_ups1a-3-al"//alarma
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={136.93}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.ups3}
     />
     <circle
       id="st_ups1a-4"
@@ -3933,6 +3961,17 @@ return (
       paintOrder="markers stroke fill"
     />
     <circle
+      id="st_ups1a-4-al"//alarma
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={142.9}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.ups4}
+    />
+    <circle
       id="st_ups1a-5"
       transform="translate(14.288)"
       cx={418.93}
@@ -3953,6 +3992,17 @@ return (
       filter="url(#filter2091-9-7-7-5-5-8)"
       opacity={0.29}
       paintOrder="markers stroke fill"
+    />
+     <circle
+      id="st_ups1a-5-al"//alarma
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={148.87}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.ups5}
     />
     <circle
       id="st_ups1a-6"
@@ -3977,6 +4027,17 @@ return (
       paintOrder="markers stroke fill"
     />
     <circle
+      id="st_ups1a-6-al"//alarma
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={154.84}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.ups6}
+    />
+    <circle
       id="st_ups1a-2-1"
       cx={504.02}
       cy={130.96}
@@ -3996,6 +4057,16 @@ return (
       filter="url(#filter2091-9-7-7-5-5-2-8)"
       opacity={0.29}
       paintOrder="markers stroke fill"
+    />
+     <circle
+      id="st_ups1a-2-1"
+      cx={504.02}
+      cy={130.96}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.ups2}
     />
     <circle
       id="st_ups1a-3-5"
@@ -4017,6 +4088,16 @@ return (
       filter="url(#filter2091-9-7-7-5-5-5-7)"
       opacity={0.29}
       paintOrder="markers stroke fill"
+    />
+     <circle
+      id="st_ups1a-3-5-al"//alarma
+      cx={504.02}
+      cy={136.93}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.ups3}
     />
     <circle
       id="st_ups1a-4-4"
@@ -4040,6 +4121,16 @@ return (
       paintOrder="markers stroke fill"
     />
     <circle
+      id="st_ups1a-4-4-al"//alarma
+      cx={504.02}
+      cy={142.9}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.ups4}
+    />
+    <circle
       id="st_ups1a-5-8"
       cx={504.02}
       cy={148.87}
@@ -4059,6 +4150,16 @@ return (
       filter="url(#filter2091-9-7-7-5-5-8-3)"
       opacity={0.29}
       paintOrder="markers stroke fill"
+    />
+     <circle
+      id="st_ups1a-5-8-al"//alarma
+      cx={504.02}
+      cy={148.87}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.ups5}
     />
     <circle
       id="st_ups1a-6-9"
@@ -4082,6 +4183,16 @@ return (
       paintOrder="markers stroke fill"
     />
     <circle
+      id="st_ups1a-6-9-al"//alarmas
+      cx={504.02}
+      cy={154.84}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.ups6}
+    />
+    <circle
       id="st_ups1a-1-8"
       cx={504.02}
       cy={124.99}
@@ -4103,6 +4214,16 @@ return (
       paintOrder="markers stroke fill"
     />
     <circle
+      id="st_ups1a-1-8-al"//alarma
+      cx={504.02}
+      cy={124.99}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.ups1}
+    />
+    <circle
       id="st_ups1a-1"
       cx={433.22}
       cy={124.99}
@@ -4122,6 +4243,16 @@ return (
       filter="url(#filter2091-9-7-7-5-5)"
       opacity={0.29}
       paintOrder="markers stroke fill"
+    />
+     <circle
+      id="st_ups1a-1-al"//alarma
+      cx={433.22}
+      cy={124.99}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.ups1}
     />
     <text
       id="i_outupsS1"
@@ -4535,6 +4666,16 @@ return (
       paintOrder="markers stroke fill"
     />
     <circle
+      id="st_gen4-al"//alarma
+      cx={433.22}
+      cy={63.245}
+      r={2.3465}
+      fill="#4d4d4d"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.gen1}
+    />
+    <circle
       id="st_gen5"
       cx={433.22}
       cy={70.537}
@@ -4556,6 +4697,16 @@ return (
       paintOrder="markers stroke fill"
     />
     <circle
+      id="st_gen5-al"//alarma
+      cx={433.22}
+      cy={70.537}
+      r={2.3465}
+      fill="#4d4d4d"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.gen2}
+    />
+    <circle
       id="st_gen6"
       cx={433.22}
       cy={77.83}
@@ -4575,6 +4726,16 @@ return (
       filter="url(#filter2091-9-7-7-5-54-9-85-9)"
       opacity={0.29}
       paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_gen6"
+      cx={433.22}
+      cy={77.83}
+      r={2.3465}
+      fill="#4d4d4d"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.gen3}
     />
     <circle
       id="st_gen4-5"
@@ -4599,6 +4760,17 @@ return (
       paintOrder="markers stroke fill"
     />
     <circle
+      id="st_gen4-5-al"//alarma
+      transform="translate(14.288)"
+      cx={489.74}
+      cy={63.245}
+      r={2.3465}
+      fill="#4d4d4d"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.gen4}
+    />
+    <circle
       id="st_gen5-5"
       transform="translate(14.288)"
       cx={489.74}
@@ -4621,6 +4793,17 @@ return (
       paintOrder="markers stroke fill"
     />
     <circle
+      id="st_gen5-5-al"//alarma
+      transform="translate(14.288)"
+      cx={489.74}
+      cy={70.537}
+      r={2.3465}
+      fill="#4d4d4d"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.gen5}
+    />
+    <circle
       id="st_gen6-9"
       transform="translate(14.288)"
       cx={489.74}
@@ -4641,6 +4824,17 @@ return (
       filter="url(#filter2091-9-7-7-5-54-9-85-9-5)"
       opacity={0.29}
       paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_gen6-9-al"//alarma
+      transform="translate(14.288)"
+      cx={489.74}
+      cy={77.83}
+      r={2.3465}
+      fill="#4d4d4d"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.gen6}
     />
     <text
       id="v_gens2"
@@ -4676,7 +4870,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {ParametrosUPS_SIS2.V_in} V
+        {ParametrosGEN_SIS2.V_out} V
       </tspan>
     </text>
     <text
@@ -4713,12 +4907,12 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"400"}
+        {ParametrosGEN_SIS2.I_out} A
       </tspan>
     </text>
     <text
       id="p_gens2"
-      x={476.74948}
+      x={486.74948}
       y={89.918533}
       style={{
         fontVariantCaps: "normal",
@@ -4737,7 +4931,7 @@ return (
     >
       <tspan
         id="tspan5118-90-5"
-        x={476.74948}
+        x={486.74948}
         y={89.918533}
         style={{
           fontVariantCaps: "normal",
@@ -4750,13 +4944,13 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"1.5"}
+        {ParametrosGEN_SIS2.P_out} KW
       </tspan>
     </text>
     <text
       id="p_gens2-2"
       transform="translate(14.288)"
-      x={462.46152}
+      x={472.46152}
       y={95.622551}
       style={{
         fontVariantCaps: "normal",
@@ -4775,7 +4969,7 @@ return (
     >
       <tspan
         id="tspan5118-90-5-8"
-        x={462.46152}
+        x={472.46152}
         y={95.622551}
         style={{
           fontVariantCaps: "normal",
@@ -4788,7 +4982,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"1.5"}
+        {ParametrosGEN_SIS2.Load}
       </tspan>
     </text>
     <text
@@ -4825,7 +5019,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"425"}
+        {ParametrosGEN_SIS1.V_out} V
       </tspan>
     </text>
     <text
@@ -4862,12 +5056,12 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"400"}
+        {ParametrosGEN_SIS1.I_out} A
       </tspan>
     </text>
     <text
       id="p_gens1"
-      x={406.41467}
+      x={416.41467}
       y={89.918533}
       style={{
         fontVariantCaps: "normal",
@@ -4886,7 +5080,7 @@ return (
     >
       <tspan
         id="tspan5118-90"
-        x={406.41467}
+        x={416.41467}
         y={89.918533}
         style={{
           fontVariantCaps: "normal",
@@ -4899,13 +5093,13 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"1.5"}
+        {ParametrosGEN_SIS1.P_out} KW
       </tspan>
     </text>
     <text
       id="p_gens1-8"
       transform="translate(14.288)"
-      x={392.12671}
+      x={402.12671}
       y={95.622551}
       style={{
         fontVariantCaps: "normal",
@@ -4924,7 +5118,7 @@ return (
     >
       <tspan
         id="tspan5118-90-9"
-        x={392.12671}
+        x={402.12671}
         y={95.622551}
         style={{
           fontVariantCaps: "normal",
@@ -4937,7 +5131,7 @@ return (
         fontSize="5.195px"
         strokeWidth={0.26458}
       >
-        {"1.5"}
+        {ParametrosGEN_SIS1.Load}
       </tspan>
     </text>
     <ellipse
@@ -4947,6 +5141,7 @@ return (
       rx={3.2985}
       ry={3.2985}
       fill="#4d4d4d"
+      className={Estados_Principales.transf_in}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4968,6 +5163,7 @@ return (
       rx={3.2985}
       ry={3.2985}
       fill="#4d4d4d"
+      className={Estados_Principales.transf_out}
       paintOrder="markers stroke fill"
     />
     <ellipse
