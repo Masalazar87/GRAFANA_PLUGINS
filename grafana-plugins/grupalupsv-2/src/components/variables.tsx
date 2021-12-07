@@ -322,7 +322,7 @@ return (
             fontStretch="semi-expanded"
             strokeWidth={0.24358}
           >
-            {Parametros.Outpow}W
+            {Parametros.Outpow}KW
           </tspan>
         </text>
         <ellipse

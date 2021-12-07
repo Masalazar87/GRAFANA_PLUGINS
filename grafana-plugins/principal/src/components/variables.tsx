@@ -1848,7 +1848,7 @@ return (
         fontSize="7.0556px"
         strokeWidth={0.28918}
       >
-        {"20.9"}
+        {ParametrosClima.T_ret}
       </tspan>
     </text>
     <text
@@ -1886,7 +1886,7 @@ return (
         fontSize="7.0556px"
         strokeWidth={0.28918}
       >
-        {"20"}
+        {ParametrosClima.T_sumin}
       </tspan>
     </text>
     <text
@@ -1924,7 +1924,7 @@ return (
         fontSize="6.35px"
         strokeWidth={0.24491}
       >
-        {"425"}
+        {ParametrosElec.V_inUPS}
       </tspan>
     </text>
     <text
@@ -1962,7 +1962,7 @@ return (
         fontSize="6.35px"
         strokeWidth={0.24491}
       >
-        {"22.8"}
+        {ParametrosElec.V_CMT}
       </tspan>
     </text>
     <circle
@@ -2088,7 +2088,7 @@ return (
         fontSize="7.0556px"
         strokeWidth={0.43331}
       >
-        {"1.7"}
+        {"PUE"}
       </tspan>
     </text>
     <text
@@ -2127,7 +2127,7 @@ return (
         fontSize="7.0556px"
         strokeWidth={0.43331}
       >
-        {"57.9"}
+        {"DCIE"}
       </tspan>
     </text>
     <text
@@ -3869,7 +3869,7 @@ return (
         fontSize="6.35px"
         strokeWidth={0.24491}
       >
-        {"425"}
+        {ParametrosElec.V_outUPS}
       </tspan>
     </text>
     <circle

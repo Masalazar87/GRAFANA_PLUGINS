@@ -19,9 +19,8 @@ let alarm_off = alarmasStyles.sinconexion;
 /*let warning_on = alarmasStyles.on1;
 let warning_off = alarmasStyles.sinconexion;*/
 //
-
-//-------------------------------------------------------------------------------------------------------------
-//----------------------------------------ESTADOS Y ALARMAS DE UMAS--------------------------------------------
+//-----------------------------------------------------------------------------------------------------------
+//----------------------------------------ESTADOS Y ALARMAS DE UMAS------------------------------------------
 let st_uma = [];
 let al_uma = [];
 for (let i = 1; i <= 12; i++) {
@@ -237,18 +236,34 @@ if  (st_gen[i] >= 420) {
 //------------------------------PARAMETROS PRINCIPALES DE SISTEMA DE GENERADORES -------------------------------
 let st_gen_carga = [];
 let vll_genSIS = [];
+let pot_genSIS = [];
 for (let i = 1; i <= 6; i++) {
 vll_genSIS[i] = data.series.find(({ name }) => name?.includes('VOL_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
 st_gen_carga[i] = data.series.find(({ name }) => name?.includes('CUR_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
-    if (vll_genSIS[i] > 0 ){ 
-        vll_genSIS[i] = parseFloat(vll_genSIS[i]).toFixed(1);
-    }
-    if (st_gen_carga[i] > 0 ){
-        st_gen_carga[i] = parseFloat(st_gen_carga[i]).toFixed(1)
-    } else {
+pot_genSIS[i] = data.series.find(({ name }) => name?.includes('POT_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
+    if (vll_genSIS[i] === null || vll_genSIS[i] === 0 ){
+        vll_genSIS[i] = 0;// &&
+        //st_gen[i] === 0;
+    } else { 
+        if (vll_genSIS[i] > 0){
+            vll_genSIS[i] =  Number.parseFloat(vll_genSIS[i])?.toFixed(1);// && 
+            //st_gen[i] === 1;
+    }}
+    if (st_gen_carga[i] === null || st_gen_carga[i] === 0 ){
         st_gen_carga[i] = 0;
+    } else {
+        st_gen_carga[i] = Number.parseFloat(st_gen_carga[i])?.toFixed(1)
+    }
+    if (pot_genSIS[i] === null || pot_genSIS[i] === 0 ){
+        pot_genSIS[i] = 0;
+    } else { 
+        if (pot_genSIS[i] > 0){
+            pot_genSIS[i] =  Number.parseFloat(pot_genSIS[i])?.toFixed(1);
+    }
     }
 }
+
+//------------------------------PARAMETROS PRINCIPALES DE SISTEMA DE GENERADORES -------------------------------
 //-------------------------------------------------------------------------------------------------------------
 //-------------------------------------ESTADOS DE SISTEMA DE CLIMATIZACÓN--------------------------------------
 let SYS_1_EN = data.series.find(({ name }) => name?.includes('SYS_1_EN'))?.fields[1].state?.calcs
@@ -485,21 +500,31 @@ principal.Estados_SIS2.gen4 = st_gen[4];
 principal.Estados_SIS2.gen5 = st_gen[5];
 principal.Estados_SIS2.gen6 = st_gen[6];
 //ALARMAS
-principal.Alarmas_SIS1.gen1 = e_stop_gen[1];
+principal.Alarmas_SIS1.gen1 = e_stop_gen[1];    
 principal.Alarmas_SIS1.gen2 = e_stop_gen[2];
 principal.Alarmas_SIS1.gen3 = e_stop_gen[3];
 principal.Alarmas_SIS2.gen4 = e_stop_gen[4];
 principal.Alarmas_SIS2.gen5 = e_stop_gen[5];
 principal.Alarmas_SIS2.gen6 = e_stop_gen[6];
 //SISTEMA
-principal.Estados_Principales.gen_SIS1 = (st_gen_carga[1] || st_gen_carga[2] || st_gen_carga[3])=== st_on? estadosStyles.on : estadosStyles.sinconexion;
-principal.Estados_Principales.gen_SIS2 = (st_gen_carga[4] || st_gen_carga[5] || st_gen_carga[6])=== st_on? estadosStyles.on : estadosStyles.sinconexion;
-let voltageSIS1_gen = (vll_genSIS[1]+vll_genSIS[2]+vll_genSIS[3])/1;
-principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
-let voltageSIS2_gen = (vll_genSIS[4]+vll_genSIS[5]+vll_genSIS[6])/1;
-principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
-
-//principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(vll_genSIS[4]+vll_genSIS[5]+vll_genSIS[6])/(vll_genSIS[4]+vll_genSIS[5]+vll_genSIS[6]).toFixed(2);*/
+principal.Estados_Principales.gen_SIS1 = (st_gen_carga[1] || st_gen_carga[2] || st_gen_carga[3]) > 0? estadosStyles.on : estadosStyles.sinconexion;
+principal.Estados_Principales.gen_SIS2 = (st_gen_carga[4] || st_gen_carga[5] || st_gen_carga[6]) > 0? estadosStyles.on : estadosStyles.sinconexion;
+let voltageSIS1_gen = (vll_genSIS[1] +++ vll_genSIS[2] +++ vll_genSIS[3]) / 2;
+    principal.ParametrosGEN_SIS1.V_out = voltageSIS1_gen;
+let voltageSIS2_gen = (vll_genSIS[4] +++ vll_genSIS[5] +++ vll_genSIS[6]) / 2;
+    principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+let corrienteSIS1_gen = (st_gen_carga[1] +++ st_gen_carga[2] +++ st_gen_carga[3]);
+    principal.ParametrosGEN_SIS1.I_out = corrienteSIS1_gen;
+let corrienteSIS2_gen = (st_gen_carga[4] +++ st_gen_carga[5] +++ st_gen_carga[6]);
+    principal.ParametrosGEN_SIS2.I_out = corrienteSIS2_gen;
+let potenciaSIS1_gen = (pot_genSIS[1] +++ pot_genSIS[2] +++ pot_genSIS[3]);
+    principal.ParametrosGEN_SIS1.P_out = potenciaSIS1_gen;
+let potenciaSIS2_gen = (pot_genSIS[4] +++ pot_genSIS[5] +++ pot_genSIS[6]);
+    principal.ParametrosGEN_SIS2.P_out = potenciaSIS2_gen;
+let cargaSIS1_gen = potenciaSIS1_gen * 1000 / 2430; 
+    principal.ParametrosGEN_SIS1.Load =  Number.parseFloat(cargaSIS1_gen?.toFixed(2));
+let cargaSIS2_gen = potenciaSIS1_gen * 1000 / 2430; 
+    principal.ParametrosGEN_SIS2.Load =  Number.parseFloat(cargaSIS2_gen?.toFixed(2));
 
 //-------------------------------------------------------------------------------------------------------------
 //-------------------------------------ESTADOS DE SISTEMA DE CLIMATIZACÓN--------------------------------------

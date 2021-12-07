@@ -164,22 +164,7 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     grupalups.Alarmas.Alerta = ALARMS_PRESENT === 1? alarmsStyles.on1 : alarmsStyles.off1;
     grupalups.Alarmas.Habilitado = INPUT_VOLTAGE_MAX > 0? alarmsStyles.on2 : estadoStyles.sinConexion2;
     
-    //CONEXIONES
-    grupalups.Conexion.Entrada = INPUT_VOLTAGE_MAX >420? conexionesStyles.on : conexionesStyles.off;
-    grupalups.Conexion.Rectificador = RECTIFIER_ON_OFF === 1? conexionesStyles.on : conexionesStyles.open;
-    grupalups.Conexion.Inversor = INVERTER_ON_OFF === 1? conexionesStyles.on : conexionesStyles.off;
-    grupalups.Conexion.Salida = OUTPUT_VOLTAGE > 0? conexionesStyles.on : conexionesStyles.off;
-    grupalups.Conexion.Bypass = (BYPASS_ON_OFF) === 1? conexionesStyles.on : conexionesStyles.off;
-    grupalups.Conexion.Bateria = BATTERY_STATUS === 1? conexionesStyles.onbattery : conexionesStyles.off;
-       
-    //ANIMACION FLECHAS
-    grupalups.Animacion.Entrada = INPUT_VOLTAGE_MAX >420? animacionStyles.on : animacionStyles.off;
-    grupalups.Animacion.Inversor = INVERTER_ON_OFF === 1? animacionStyles.on : animacionStyles.off;
-    grupalups.Animacion.Bypass = BYPASS_ON_OFF === 1? animacionStyles.on : animacionStyles.off;
-    grupalups.Animacion.Salida = OUTPUT_VOLTAGE > 0? animacionStyles.on : animacionStyles.off;
-    grupalups.Animacion.CargadorOn = (RECTIFIER_ON_OFF ===1 && INVERTER_ON_OFF ===1)? animacionStyles.on : animacionStyles.off;
-    grupalups.Animacion.CargadorOff = (BATTERY_STATUS ===1 && RECTIFIER_ON_OFF ===2 && INVERTER_ON_OFF ===1)? animacionStyles.on1 : animacionStyles.off;
-       
+    
     //CALCULOS
     let Voltin = (INPUT_VOLTAGE + INPUT_VOLTAGE_2 + INPUT_VOLTAGE_3) / 3;
     if (INPUT_VOLTAGE !== undefined && INPUT_VOLTAGE_2 !== undefined && INPUT_VOLTAGE_3 !== undefined) {
@@ -193,7 +178,7 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     if (OUTPUT_CURRENT !== undefined && OUTPUT_CURRENT_2 !== undefined && OUTPUT_CURRENT_3 !== undefined) {
     grupalups.Parametros.Outcurr = Number.parseFloat(Outcurr?.toFixed(2)); 
     }
-    let Outpow = (OUTPUT_POWER + OUTPUT_POWER_2 + OUTPUT_POWER_3) / 3;
+    let Outpow = (OUTPUT_POWER + OUTPUT_POWER_2 + OUTPUT_POWER_3)/1000;
     if (OUTPUT_POWER !== undefined && OUTPUT_POWER_2 !== undefined && OUTPUT_POWER_3 !== undefined) {
     grupalups.Parametros.Outpow = Number.parseFloat(Outpow?.toFixed(2)); 
     }
@@ -222,6 +207,22 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     grupalups.Animacion.Carga100 = (OUTPUT_PERCENT_LOAD >75 && OUTPUT_PERCENT_LOAD <=90)? bateriaStyles.on : bateriaStyles.sinconexion;
     grupalups.Animacion.Carga100full = OUTPUT_PERCENT_LOAD >90? bateriaStyles.on1 : grupalups.Animacion.Carga100;
     
+    //CONEXIONES
+    grupalups.Conexion.Entrada = Voltin >420? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Rectificador = RECTIFIER_ON_OFF === 1? conexionesStyles.on : conexionesStyles.open;
+    grupalups.Conexion.Inversor = INVERTER_ON_OFF === 1? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Salida = OUTPUT_VOLTAGE > 0? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Bypass = (BYPASS_ON_OFF) === 1? conexionesStyles.on : conexionesStyles.off;
+    grupalups.Conexion.Bateria = BATTERY_STATUS === 1? conexionesStyles.onbattery : conexionesStyles.off;
+       
+    //ANIMACION FLECHAS
+    grupalups.Animacion.Entrada = Voltin >420? animacionStyles.on : animacionStyles.off;
+    grupalups.Animacion.Inversor = INVERTER_ON_OFF === 1? animacionStyles.on : animacionStyles.off;
+    grupalups.Animacion.Bypass = BYPASS_ON_OFF === 1? animacionStyles.on : animacionStyles.off;
+    grupalups.Animacion.Salida = OUTPUT_VOLTAGE > 0? animacionStyles.on : animacionStyles.off;
+    grupalups.Animacion.CargadorOn = (RECTIFIER_ON_OFF ===1 && INVERTER_ON_OFF ===1)? animacionStyles.on : animacionStyles.off;
+    grupalups.Animacion.CargadorOff = (BATTERY_STATUS ===1 && RECTIFIER_ON_OFF ===2 && INVERTER_ON_OFF ===1)? animacionStyles.on1 : animacionStyles.off;
+       
     console.log(grupalups);
 
     return grupalups;
