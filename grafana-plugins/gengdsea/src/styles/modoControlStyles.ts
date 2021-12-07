@@ -18,14 +18,19 @@ const getStyles = stylesFactory(() => {
       fill: red;
     `,
     On3: css`
-      fill: orange;
+      fill: green;
+      animation: ${parpadeo} 1s ease infinite;
     `,
-    On4: css`
+    alarma1: css`
       fill: yellow;
       animation: ${parpadeo} 1s ease infinite;
     `,
-    On5: css`
-      fill: green;
+    alarma2: css`
+      fill: red;
+      animation: ${parpadeo} 1s ease infinite;
+    `,
+    alarma3: css`
+      fill: purple;
       animation: ${parpadeo} 1s ease infinite;
     `,
   };
