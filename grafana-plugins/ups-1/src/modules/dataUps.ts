@@ -121,7 +121,7 @@ if (BATTERY_VOLTAGE !== undefined) {
 }
 
 //ALARMAS
-ups.Alarmas.Presente = ALARMS_PRESENT === 1? alarmsStyles.on : alarmsStyles.off;
+ups.Alarmas.Presente = ALARMS_PRESENT > 0? alarmsStyles.on : alarmsStyles.off;
 ups.Alarmas.Bypass = BYPASS_ON_OFF === 1? alarmsStyles.on : alarmsStyles.off;
 ups.Alarmas.Inversor = INVERTER_ON_OFF === 1? modoControlStyles.On : modoControlStyles.SinConexion;
 ups.Alarmas.Rectificador = RECTIFIER_ON_OFF === 1? modoControlStyles.On : modoControlStyles.SinConexion;

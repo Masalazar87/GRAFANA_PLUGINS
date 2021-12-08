@@ -160,8 +160,8 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     grupalups.Alarmas.Rectifierbox = (RECTIFIER_ON_OFF ===2 && INVERTER_ON_OFF ===1)? alarmsStyles.on : alarmsStyles.off2;
     //grupalups.Alarmas.Battery = (BATTERY_STATUS ==1 && RECTIFIER_ON_OFF ==2 && INVERTER_ON_OFF ==1)? alarmsStyles.on3 : alarmsStyles.off1;
     //grupalups.Alarmas.Bypass = (BYPASS_POWER)
-    grupalups.Alarmas.Alarma = ALARMS_PRESENT === 1? alarmsStyles.on : alarmsStyles.off;
-    grupalups.Alarmas.Alerta = ALARMS_PRESENT === 1? alarmsStyles.on1 : alarmsStyles.off1;
+    grupalups.Alarmas.Alarma = ALARMS_PRESENT > 0? alarmsStyles.on : alarmsStyles.off;
+    grupalups.Alarmas.Alerta = ALARMS_PRESENT > 0? alarmsStyles.on1 : alarmsStyles.off1;
     grupalups.Alarmas.Habilitado = INPUT_VOLTAGE_MAX > 0? alarmsStyles.on2 : estadoStyles.sinConexion2;
     
     

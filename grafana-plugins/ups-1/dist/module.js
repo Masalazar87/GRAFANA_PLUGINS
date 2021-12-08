@@ -1274,7 +1274,7 @@ var dataUps = function dataUps(data, options, replaceVariables) {
   } //ALARMAS
 
 
-  ups.Alarmas.Presente = ALARMS_PRESENT === 1 ? styles_alarmsStyles__WEBPACK_IMPORTED_MODULE_1__["default"].on : styles_alarmsStyles__WEBPACK_IMPORTED_MODULE_1__["default"].off;
+  ups.Alarmas.Presente = ALARMS_PRESENT > 0 ? styles_alarmsStyles__WEBPACK_IMPORTED_MODULE_1__["default"].on : styles_alarmsStyles__WEBPACK_IMPORTED_MODULE_1__["default"].off;
   ups.Alarmas.Bypass = BYPASS_ON_OFF === 1 ? styles_alarmsStyles__WEBPACK_IMPORTED_MODULE_1__["default"].on : styles_alarmsStyles__WEBPACK_IMPORTED_MODULE_1__["default"].off;
   ups.Alarmas.Inversor = INVERTER_ON_OFF === 1 ? styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].On : styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].SinConexion;
   ups.Alarmas.Rectificador = RECTIFIER_ON_OFF === 1 ? styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].On : styles_modoControlStyles__WEBPACK_IMPORTED_MODULE_0__["default"].SinConexion;

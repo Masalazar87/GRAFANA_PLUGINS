@@ -197,6 +197,15 @@ let ISOV2_C = data.series.find(({ name }) => name?.includes('DATA.ISOV2_C.VALUE'
 ?.lastNotNull;
 //-------------------------------------------------------------------------------------------------------------
 //---------------------------------------BREAKERS TUPS IN & OUT------------------------------------------------
+//BREAKERS SIS1
+let V_TUPSIN_1A_0 = data.series.find(({ name }) => name?.includes('V_TUPSIN_1A_0'))?.fields[1].state?.calcs
+?.lastNotNull;
+let V_TUPSOUT_1A_0 = data.series.find(({ name }) => name?.includes('V_TUPSOUT_1A_0'))?.fields[1].state?.calcs
+?.lastNotNull;
+let I_TUPSOUT_1A_0 = data.series.find(({ name }) => name?.includes('I_TUPSOUT_1A_0'))?.fields[1].state?.calcs
+?.lastNotNull;
+let P_TUPSOUT_1A_0 = data.series.find(({ name }) => name?.includes('P_TUPSOUT_1A_0'))?.fields[1].state?.calcs
+?.lastNotNull/10;
 //BREAKERS SIS2
 let V_TUPSIN_2A_0 = data.series.find(({ name }) => name?.includes('V_TUPSIN_2A_0'))?.fields[1].state?.calcs
 ?.lastNotNull;
@@ -475,6 +484,11 @@ principal.Estados_SIS2.V2aux = (ISOV2_S && ISOV2_C) === 1? estadosStyles.on : es
 //-------------------------------------------------------------------------------------------------------------
 //------------------------------------------BREAKERS TUPS IN OUT-----------------------------------------------
 //-------------------------------------------------------------------------------------------------------------
+principal.ParametrosUPS_SIS1.V_in = Number.parseFloat(V_TUPSIN_1A_0?.toFixed(2));
+principal.ParametrosUPS_SIS1.V_out = Number.parseFloat(V_TUPSOUT_1A_0?.toFixed(2));
+principal.ParametrosUPS_SIS1.I_out = Number.parseFloat(I_TUPSOUT_1A_0?.toFixed(2));
+principal.ParametrosUPS_SIS1.P_out = Number.parseFloat(P_TUPSOUT_1A_0?.toFixed(2));
+
 principal.ParametrosUPS_SIS2.V_in = Number.parseFloat(V_TUPSIN_2A_0?.toFixed(2));
 principal.ParametrosUPS_SIS2.V_out = Number.parseFloat(V_TUPSOUT_2A_0?.toFixed(2));
 principal.ParametrosUPS_SIS2.I_out = Number.parseFloat(I_TUPSOUT_2A_0?.toFixed(2));

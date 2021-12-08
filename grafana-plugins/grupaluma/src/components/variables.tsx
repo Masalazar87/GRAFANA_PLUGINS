@@ -10,7 +10,8 @@ type Parametros = {
     TempRoom: number;
     HumRel: number;
     EstadoValv: string;
-    OpernValvRet: number;
+    ValvRet: string;
+    ValvSum: string;
     HorasFunc: number;
     EstadoFan: string;
     PorcFuncFan: number;
@@ -49,9 +50,9 @@ return (
         />
         <circle
           id="path4259-6-0"
-          transform="matrix(.17954 0 0 .17012 48.217 3.3)"
-          cx={312.74}
-          cy={94.163}
+          transform="matrix(.19544 0 0 .1009 43.53 8.617)"
+          cx={312.73999}
+          cy={94.163002}
           r={11.974}
           fillOpacity={0.99608}
           fillRule="evenodd"
@@ -86,7 +87,7 @@ return (
         </text>
         <ellipse
           id="uma5_alm"
-          cx={118.61}
+          cx={118.09}
           cy={20.055}
           rx={3.6661}
           ry={3.5553}
@@ -97,10 +98,13 @@ return (
         />
         <circle
           id="path4259-6-6-1"
-          transform="matrix(.17954 0 0 .17012 62.279 3.3)"
-          cx={312.74}
-          cy={94.163}
+          transform="matrix(.19544 0 0 .1009 57.07 8.617)"
+          cx={312.73999}
+          cy={94.163002}
           r={11.974}
+          /*cx={312.74}
+          cy={94.163}
+          r={11.974}*/
           fillOpacity={0.99608}
           fillRule="evenodd"
           fill="#fff"
@@ -121,9 +125,9 @@ return (
         />
         <circle
           id="path4259-6-2-2"
-          transform="matrix(.17954 0 0 .17012 75.295 3.3)"
-          cx={312.74}
-          cy={94.163}
+          transform="matrix(.19544 0 0 .1009 70.61 8.617)"
+          cx={312.73999}
+          cy={94.163002}
           r={11.974}
           fillOpacity={0.99608}
           fillRule="evenodd"
@@ -328,53 +332,36 @@ return (
           x={205.26299}
           y={42.488434}
           style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
+            lineHeight: 1.25,
             fontVariantLigatures: "normal",
+            fontVariantCaps: "normal",
             fontVariantNumeric: "normal",
-            lineHeight: 1.25
+            fontVariantEastAsian: "normal"
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          fontFamily="Franklin Gothic Medium"
           fontSize="5.2917px"
+          fontFamily="Franklin Gothic Medium"
           letterSpacing={0}
-          strokeWidth={0.44381}
           wordSpacing={0}
+          fill="#fff"
+          strokeWidth={0.44381}
         >
           <tspan
             id="tspan1256-80-8-2-5-2-2"
             x={205.26299}
             y={42.488434}
             style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
+              fontVariantCaps: "normal",
+              fontVariantNumeric: "normal",
+              fontVariantEastAsian: "normal"
             }}
-            fill="#fff"
-            fontFamily="Franklin Gothic Medium"
             fontSize="5.2917px"
+            fontFamily="Franklin Gothic Medium"
+            fill="#fff"
             strokeWidth={0.44381}
           >
-            {Valvulas.Sumin}
-          </tspan>
-          <tspan
-            id="tspan1256-80-8-2-5-2-2-1"
-            x={205.26299}
-            y={54.48843}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fill="#fff"
-            fontFamily="Franklin Gothic Medium"
-            fontSize="5.2917px"
-            strokeWidth={0.44381}
-          >
-            {Valvulas.Sumin}
+            {Parametros.ValvSum}
           </tspan>
         </text>
         <text
@@ -383,74 +370,36 @@ return (
           x={205.26299}
           y={53.317116}
           style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
+            lineHeight: 1.25,
             fontVariantLigatures: "normal",
+            fontVariantCaps: "normal",
             fontVariantNumeric: "normal",
-            lineHeight: 1.25
+            fontVariantEastAsian: "normal"
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          fontFamily="Franklin Gothic Medium"
           fontSize="5.2917px"
+          fontFamily="Franklin Gothic Medium"
           letterSpacing={0}
-          strokeWidth={0.44381}
           wordSpacing={0}
+          fill="#fff"
+          strokeWidth={0.44381}
         >
           <tspan
             id="tspan1256-80-3-86-0-5-7-3"
             x={205.26299}
-            y={48.262848}
+            y={53.317116}
             style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
+              fontVariantCaps: "normal",
+              fontVariantNumeric: "normal",
+              fontVariantEastAsian: "normal"
             }}
-            fill="#fff"
-            fontFamily="Franklin Gothic Medium"
             fontSize="5.2917px"
+            fontFamily="Franklin Gothic Medium"
+            fill="#fff"
             strokeWidth={0.44381}
           >
-            {Parametros.OpernValvRet}
-          </tspan>
-        </text>
-        <text
-          id="uma5_aper_valret"
-          transform="scale(.70565 1.4171)"
-          x={205.26299}
-          y={53.317116}
-          style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantNumeric: "normal",
-            lineHeight: 1.25
-          }}
-          xmlSpace="preserve"
-          fill="#fff"
-          fontFamily="Franklin Gothic Medium"
-          fontSize="5.2917px"
-          letterSpacing={0}
-          strokeWidth={0.44381}
-          wordSpacing={0}
-        >
-          <tspan
-            id="tspan1256-80-3-86-0-5-7-3-1"
-            x={205.26299}
-            y={60.48843}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fill="#fff"
-            fontFamily="Franklin Gothic Medium"
-            fontSize="5.2917px"
-            strokeWidth={0.44381}
-          >
-            {Parametros.OpernValvRet}
+            {Parametros.ValvRet}
           </tspan>
         </text>
         <text
@@ -459,33 +408,33 @@ return (
           x={205.12346}
           y={64.163887}
           style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
+            lineHeight: 1.25,
             fontVariantLigatures: "normal",
+            fontVariantCaps: "normal",
             fontVariantNumeric: "normal",
-            lineHeight: 1.25
+            fontVariantEastAsian: "normal"
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          fontFamily="Franklin Gothic Medium"
           fontSize="5.2917px"
+          fontFamily="Franklin Gothic Medium"
           letterSpacing={0}
-          strokeWidth={0.44381}
           wordSpacing={0}
+          fill="#fff"
+          strokeWidth={0.44381}
         >
           <tspan
             id="tspan1256-80-3-8-7-7-7-7-6"
             x={205.12346}
-            y={69.14579}
+            y={64.163887}
             style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
+              fontVariantCaps: "normal",
+              fontVariantNumeric: "normal",
+              fontVariantEastAsian: "normal"
             }}
-            fill="#fff"
-            fontFamily="Franklin Gothic Medium"
             fontSize="5.2917px"
+            fontFamily="Franklin Gothic Medium"
+            fill="#fff"
             strokeWidth={0.44381}
           >
             {Parametros.HorasFunc} H
@@ -497,33 +446,33 @@ return (
           x={205.28366}
           y={74.97448}
           style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
+            lineHeight: 1.25,
             fontVariantLigatures: "normal",
+            fontVariantCaps: "normal",
             fontVariantNumeric: "normal",
-            lineHeight: 1.25
+            fontVariantEastAsian: "normal"
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          fontFamily="Franklin Gothic Medium"
           fontSize="5.2917px"
+          fontFamily="Franklin Gothic Medium"
           letterSpacing={0}
-          strokeWidth={0.44381}
           wordSpacing={0}
+          fill="#fff"
+          strokeWidth={0.44381}
         >
           <tspan
             id="tspan1256-80-3-8-4-51-4-8-3-2"
             x={205.28366}
-            y={76.97448}
+            y={74.97448}
             style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
+              fontVariantCaps: "normal",
+              fontVariantNumeric: "normal",
+              fontVariantEastAsian: "normal"
             }}
-            fill="#fff"
-            fontFamily="Franklin Gothic Medium"
             fontSize="5.2917px"
+            fontFamily="Franklin Gothic Medium"
+            fill="#fff"
             strokeWidth={0.44381}
           >
             {Parametros.EstadoFan}
@@ -535,33 +484,33 @@ return (
           x={205.27849}
           y={85.803162}
           style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
+            lineHeight: 1.25,
             fontVariantLigatures: "normal",
+            fontVariantCaps: "normal",
             fontVariantNumeric: "normal",
-            lineHeight: 1.25
+            fontVariantEastAsian: "normal"
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          fontFamily="Franklin Gothic Medium"
           fontSize="5.2917px"
+          fontFamily="Franklin Gothic Medium"
           letterSpacing={0}
-          strokeWidth={0.44381}
           wordSpacing={0}
+          fill="#fff"
+          strokeWidth={0.44381}
         >
           <tspan
             id="tspan1256-80-3-8-8-38-8-8-1-4"
             x={205.27849}
             y={85.803162}
             style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
               fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
+              fontVariantCaps: "normal",
+              fontVariantNumeric: "normal",
+              fontVariantEastAsian: "normal"
             }}
-            fill="#fff"
-            fontFamily="Franklin Gothic Medium"
             fontSize="5.2917px"
+            fontFamily="Franklin Gothic Medium"
+            fill="#fff"
             strokeWidth={0.44381}
           >
             {Parametros.PorcFuncFan} %

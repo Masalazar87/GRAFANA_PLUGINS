@@ -1386,165 +1386,123 @@ const Grupaluma = ({DatosGenerales, Parametros, Valvulas, Indicadores }: DataGru
           </tspan>
         </text>
         <text
-          id="lbl7-1-1"
-          transform="scale(.70565 1.4171)"
-          x={155.86725}
-          y={42.48843}
-          style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantNumeric: "normal",
-            lineHeight: 1.25
-          }}
-          xmlSpace="preserve"
-          fill="#00aad4"
-          fontSize="5.2917px"
-          strokeWidth={0.44382}
-        >
-          <tspan id="tspan6400" x={155.86725} y={42.48843}>
-            {"V. SUM. SIST.1:"}
-          </tspan>
+         id="lbl7-1-1"
+         transform="scale(.70565 1.4171)"
+         x={155.86725}
+         y={42.48843}
+         style={{
+           fontVariantCaps: "normal",
+           fontVariantEastAsian: "normal",
+           fontVariantLigatures: "normal",
+           fontVariantNumeric: "normal",
+           lineHeight: 1.25
+         }}
+         xmlSpace="preserve"
+         fill="#00aad4"
+         fontSize="5.2917px"
+         strokeWidth={0.44382}
+       >
+         <tspan id="tspan6400" x={155.86725} y={42.48843}>
+           {"APER. VALV. SUM."}
+         </tspan>
+       </text>
+       <text
+         id="lbl8-9-4"
+         transform="scale(.70565 1.4171)"
+         x={155.86725}
+         y={53.262848}
+         style={{
+           fontVariantCaps: "normal",
+           fontVariantEastAsian: "normal",
+           fontVariantLigatures: "normal",
+           fontVariantNumeric: "normal",
+           lineHeight: 1.25
+         }}
+         xmlSpace="preserve"
+         fill="#00aad4"
+         fontSize="5.2917px"
+         strokeWidth={0.44382}
+       >
+         <tspan id="tspan6402" x={155.86725} y={53.262848}>
+           {"APER. VALV. RET."}
+         </tspan>
         </text>
         <text
-          id="lbl8-9-4"
-          transform="scale(.70565 1.4171)"
-          x={155.86725}
-          y={48.262848}
-          style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantNumeric: "normal",
-            lineHeight: 1.25
-          }}
-          xmlSpace="preserve"
-          fill="#00aad4"
-          fontSize="5.2917px"
-          strokeWidth={0.44382}
-        >
-          <tspan id="tspan6402" x={155.86725} y={48.48843}>
-          {"V. RET. SIST.1:"}
-          </tspan>
-        </text>
-        <text
-          id="lbl7-1-1"
-          transform="scale(.70565 1.4171)"
-          x={155.86725}
-          y={42.48843}
-          style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantNumeric: "normal",
-            lineHeight: 1.25
-          }}
-          xmlSpace="preserve"
-          fill="#00aad4"
-          fontSize="5.2917px"
-          strokeWidth={0.44382}
-        >
-          <tspan id="tspan6400" x={155.86725} y={54.48843}>
-            {"V. SUM. SIST.2:"}
-          </tspan>
-        </text>
-        <text
-          id="lbl8-9-4"
-          transform="scale(.70565 1.4171)"
-          x={155.86725}
-          y={48.262848}
-          style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantNumeric: "normal",
-            lineHeight: 1.25
-          }}
-          xmlSpace="preserve"
-          fill="#00aad4"
-          fontSize="5.2917px"
-          strokeWidth={0.44382}
-        >
-          <tspan id="tspan6402" x={155.86725} y={60.48843}>
-          {"V. RET. SIST.2:"}
-          </tspan>
-        </text>
-        <text
-          id="lbl9-8-0"
-          transform="scale(.70565 1.4171)"
-          x={155.49776}
-          y={64.14579}
-          style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantNumeric: "normal",
-            lineHeight: 1.25
-          }}
-          xmlSpace="preserve"
-          fill="#00aad4"
-          fontSize="5.2917px"
-          strokeWidth={0.44382}
-        >
-          <tspan id="tspan6404" x={155.49776} y={69.14579}>
-            {"HORAS FUNC."}
-          </tspan>
-        </text>
-        <text
-          id="lbl11-1-4"
-          transform="scale(.70565 1.4171)"
-          x={155.71739}
-          y={85.803154}
-          style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantNumeric: "normal",
-            lineHeight: 1.25
-          }}
-          xmlSpace="preserve"
-          fill="#00aad4"
-          fontSize="5.2917px"
-          strokeWidth={0.44382}
-        >
-          <tspan id="tspan6406" x={155.71739} y={85.803154}>
-            {"% FUNC. FAN"}
-          </tspan>
-        </text>
-        <text
-          id="lbl10-4-6"
-          transform="scale(.70565 1.4171)"
-          x={155.49776}
-          y={74.97448}
-          style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantNumeric: "normal",
-            lineHeight: 1.25
-          }}
-          xmlSpace="preserve"
-          fill="#00aad4"
-          fontSize="5.2917px"
-          strokeWidth={0.44382}
-        >
-          <tspan
-            id="tspan1256-58-79-6-6-9-1"
-            x={155.49776}
-            y={76.97448}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fill="#00aad4"
-            fontFamily="Franklin Gothic Medium"
-            fontSize="5.2917px"
-            strokeWidth={0.44382}
-          >
-            {"ESTADO FAN"}
-          </tspan>
+         id="lbl9-8-0"
+         transform="scale(.70565 1.4171)"
+         x={155.49776}
+         y={64.14579}
+         style={{
+           fontVariantCaps: "normal",
+           fontVariantEastAsian: "normal",
+           fontVariantLigatures: "normal",
+           fontVariantNumeric: "normal",
+           lineHeight: 1.25
+         }}
+         xmlSpace="preserve"
+         fill="#00aad4"
+         fontSize="5.2917px"
+         strokeWidth={0.44382}
+       >
+         <tspan id="tspan6404" x={155.49776} y={64.14579}>
+           {"HORAS FUNC."}
+         </tspan>
+       </text>
+       <text
+         id="lbl11-1-4"
+         transform="scale(.70565 1.4171)"
+         x={155.71739}
+         y={85.803154}
+         style={{
+           fontVariantCaps: "normal",
+           fontVariantEastAsian: "normal",
+           fontVariantLigatures: "normal",
+           fontVariantNumeric: "normal",
+           lineHeight: 1.25
+         }}
+         xmlSpace="preserve"
+         fill="#00aad4"
+         fontSize="5.2917px"
+         strokeWidth={0.44382}
+       >
+         <tspan id="tspan6406" x={155.71739} y={85.803154}>
+           {"% FUNC. FAN"}
+         </tspan>
+       </text>
+       <text
+         id="lbl10-4-6"
+         transform="scale(.70565 1.4171)"
+         x={155.49776}
+         y={74.97448}
+         style={{
+           fontVariantCaps: "normal",
+           fontVariantEastAsian: "normal",
+           fontVariantLigatures: "normal",
+           fontVariantNumeric: "normal",
+           lineHeight: 1.25
+         }}
+         xmlSpace="preserve"
+         fill="#00aad4"
+         fontSize="5.2917px"
+         strokeWidth={0.44382}
+       >
+         <tspan
+           id="tspan1256-58-79-6-6-9-1"
+           x={155.49776}
+           y={74.97448}
+           style={{
+             fontVariantCaps: "normal",
+             fontVariantEastAsian: "normal",
+             fontVariantLigatures: "normal",
+             fontVariantNumeric: "normal"
+           }}
+           fill="#00aad4"
+           fontFamily="Franklin Gothic Medium"
+           fontSize="5.2917px"
+           strokeWidth={0.44382}
+         >
+           {"ESTADO FAN"}
+         </tspan>
         </text>
         <text
           id="lbl1-2-6"

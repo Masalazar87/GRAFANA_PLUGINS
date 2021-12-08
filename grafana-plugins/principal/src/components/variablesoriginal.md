@@ -1,0 +1,5183 @@
+import React from 'react';
+
+type ParametrosElec = {
+    V_inTransf: number;
+    V_outTransf: number;
+    I_inTransf: number;
+    I_outTransf: number;
+    P_inTransf: number;
+    P_outTrasnf: number;
+    V_CMT: number;
+    V_inUPS: number;
+    V_outUPS: number;
+    //PUE: number;
+    //DCIE: number
+};
+type ParametrosClima = {
+    T_sumin: number;
+    T_ret: number;
+    uma1_TS: number; uma2_TS: number; uma3_TS: number; uma4_TS: number; uma5_TS: number; uma6_TS: number;
+    uma7_TS: number; uma8_TS: number; uma9_TS: number; uma10_TS: number; uma11_TS: number; uma12_TS: number;
+    uma1_TR: number; uma2_TR: number; uma3_TR: number; uma4_TR: number; uma5_TR: number; uma6_TR: number;
+    uma7_TR: number; uma8_TR: number; uma9_TR: number; uma10_TR: number; uma11_TR: number; uma12_TR: number;
+};
+type ParametrosUPS_SIS1 = {
+    V_in: number; V_out: number; I_out: number; P_out: number; Load: number;
+    V_inCHI: number; V_outCHI: number; I_outCHI: number; P_outCHI: number; LoadCHI: number;
+};
+type ParametrosUPS_SIS2 = {
+    V_in: number; V_out: number; I_out: number; P_out: number; Load: number;
+    V_inCHI: number; V_outCHI: number; I_outCHI: number; P_outCHI: number; LoadCHI: number;
+};
+type ParametrosClima_SIS1 = {
+    T_sumEA3: number; T_retEA3: number;
+    T_sumEA4: number; T_retEA4: number;
+    T_sum_prim: number; T_sum_sec: number; T_tanque: number; T_ret: number;
+    LoadB3: number; LoadB4: number;
+}; 
+type ParametrosClima_SIS2 = {
+    T_sumEA1: number; T_retEA1: number;
+    T_sumEA2: number; T_retEA2: number;
+    T_sum_prim: number; T_sum_sec: number; T_tanque: number; T_ret: number;
+    LoadB1: number; LoadB2: number;
+}; 
+type ParametrosGEN_SIS1 = {
+    V_out: number;
+    I_out: number;
+    P_out: number;
+    Load: number;
+}; 
+type ParametrosGEN_SIS2 = {
+    V_out: number;
+    I_out: number;
+    P_out: number;
+    Load: number;
+}; 
+type Estados_Principales = {
+    ups_SIS1: string; ups_SIS2: string;
+    gen_SIS1: string; gen_SIS2: string;
+    transf_in: string; transf_out: string;
+    clima_SIS1: string; clima_SIS2: string;
+    uma1: string; uma2: string; uma3: string; uma4:string; uma5: string; uma6: string;
+    uma7: string; uma8: string; uma9: string; uma10:string; uma11: string; uma12: string;
+};
+type Estados_SIS1 = {
+    ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi1: string;
+    gen1: string; gen2: string; gen3: string;
+    Ea3: string; Ea4: string;
+    b1_4: string; b1_5: string; b1_6: string;
+    b2_3: string; b2_4: string;
+    V1aux: string; V2aux: string;
+};
+type Estados_SIS2 = {
+    ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi2: string;
+    gen4: string; gen5: string; gen6: string;
+    Ea1: string; Ea2: string;
+    b1_1: string; b1_2: string; b1_3: string;
+    b2_1: string; b2_2: string;
+    V1aux: string; V2aux: string;
+};
+type Alarmas = {
+    uma1: string; uma2: string; uma3: string; uma4:string; uma5: string; uma6: string;
+    uma7: string; uma8: string; uma9: string; uma10:string; uma11: string; uma12: string;
+};
+type Alarmas_SIS1 = {
+    ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi1: string;
+    gen1: string; gen2: string; gen3: string;
+    Ea3: string; Ea4: string;
+    b1_4: string; b1_5: string; b1_6: string;
+    b2_3: string; b2_4: string;
+};
+type Alarmas_SIS2 = {
+    ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi2: string;
+    gen4: string; gen5: string; gen6: string;
+    Ea1: string; Ea2: string; Ea1mant: string; Ea2mant: string;
+    b1_1: string; b1_2: string; b1_3: string;
+    b2_1: string; b2_2: string;
+    V1aux: string; V2aux: string;
+};
+
+export interface DataPrincipal {
+    ParametrosElec: ParametrosElec;
+    ParametrosClima: ParametrosClima;
+    ParametrosUPS_SIS1: ParametrosUPS_SIS1;
+    ParametrosUPS_SIS2: ParametrosUPS_SIS2;
+    ParametrosClima_SIS1: ParametrosClima_SIS1;
+    ParametrosClima_SIS2: ParametrosClima_SIS2;
+    ParametrosGEN_SIS1: ParametrosGEN_SIS1;
+    ParametrosGEN_SIS2: ParametrosGEN_SIS2;
+    Estados_Principales: Estados_Principales;
+    Estados_SIS1: Estados_SIS1;
+    Estados_SIS2: Estados_SIS2;
+    Alarmas: Alarmas;
+    Alarmas_SIS1: Alarmas_SIS1;
+    Alarmas_SIS2: Alarmas_SIS2;
+}
+export const Variables = ({ParametrosElec, ParametrosClima, ParametrosUPS_SIS1, ParametrosUPS_SIS2, ParametrosClima_SIS1, ParametrosClima_SIS2,
+ParametrosGEN_SIS1, ParametrosGEN_SIS2, Estados_Principales, Estados_SIS1, Estados_SIS2, Alarmas, Alarmas_SIS1, Alarmas_SIS2 }: DataPrincipal) => {
+return (
+    <g id="layer5" transform="translate(-14.288)">
+    <text
+      id="tsum_uma10-2-1"
+      transform="scale(1.0459 .95608)"
+      x={146.26207}
+      y={185.82642}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-6-9-6-2"
+        x={146.26207}
+        y={185.82642}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma12_TS}°
+      </tspan>
+    </text>
+    <text
+      id="tret_uma10-8-8"
+      transform="scale(1.0459 .95608)"
+      x={159.03003}
+      y={185.84813}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-8-9-3-5-8"
+        x={159.03003}
+        y={185.84813}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+       {ParametrosClima.uma12_TR}°
+      </tspan>
+    </text>
+    <text
+      id="tsum_uma10-2"
+      transform="scale(1.0459 .95608)"
+      x={146.26207}
+      y={175.30945}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-6-9-6"
+        x={146.26207}
+        y={175.30945}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma11_TS}°
+      </tspan>
+    </text>
+    <text
+      id="tret_uma10-8"
+      transform="scale(1.0459 .95608)"
+      x={159.03003}
+      y={175.33116}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-8-9-3-5"
+        x={159.03003}
+        y={175.33116}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma11_TR}°
+      </tspan>
+    </text>
+    <text
+      id="tsum_uma1"
+      transform="scale(1.0459 .95608)"
+      x={146.26195}
+      y={70.646545}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-6"
+        x={146.26195}
+        y={70.646545}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma1_TS}°
+      </tspan>
+    </text>
+    <text
+      id="tret_uma1"
+      transform="scale(1.0459 .95608)"
+      x={159.02991}
+      y={70.668243}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-8-9"
+        x={159.02991}
+        y={70.668243}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma1_TR}°
+      </tspan>
+    </text>
+    <text
+      id="tsum_uma2"
+      transform="scale(1.0459 .95608)"
+      x={146.26195}
+      y={81.107216}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-6-1"
+        x={146.26195}
+        y={81.107216}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma2_TS}°
+      </tspan>
+    </text>
+    <text
+      id="tret_uma2"
+      transform="scale(1.0459 .95608)"
+      x={159.02991}
+      y={81.128922}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-8-9-9"
+        x={159.02991}
+        y={81.128922}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+      {ParametrosClima.uma2_TR}°
+      </tspan>
+    </text>
+    <text
+      id="tsum_uma3"
+      transform="scale(1.0459 .95608)"
+      x={146.26195}
+      y={91.567871}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-6-2"
+        x={146.26195}
+        y={91.567871}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma3_TS}°
+      </tspan>
+    </text>
+    <text
+      id="tret_uma3"
+      transform="scale(1.0459 .95608)"
+      x={159.02991}
+      y={91.589569}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-8-9-5"
+        x={159.02991}
+        y={91.589569}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+       {ParametrosClima.uma3_TR}°
+      </tspan>
+    </text>
+    <text
+      id="tsum_uma4"
+      transform="scale(1.0459 .95608)"
+      x={146.26195}
+      y={102.0285}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-6-10"
+        x={146.26195}
+        y={102.0285}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma4_TS}°
+      </tspan>
+    </text>
+    <text
+      id="tret_uma4"
+      transform="scale(1.0459 .95608)"
+      x={159.02991}
+      y={102.05026}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-8-9-6"
+        x={159.02991}
+        y={102.05026}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma4_TR}°
+      </tspan>
+    </text>
+    <text
+      id="tsum_uma5"
+      transform="scale(1.0459 .95608)"
+      x={146.26195}
+      y={112.48917}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-6-6"
+        x={146.26195}
+        y={112.48917}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma5_TS}°
+      </tspan>
+    </text>
+    <text
+      id="tret_uma5"
+      transform="scale(1.0459 .95608)"
+      x={159.02991}
+      y={112.5109}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-8-9-4"
+        x={159.02991}
+        y={112.5109}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+      {ParametrosClima.uma5_TR}°
+      </tspan>
+    </text>
+    <text
+      id="tsum_uma6"
+      transform="scale(1.0459 .95608)"
+      x={146.26195}
+      y={122.94986}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-6-8"
+        x={146.26195}
+        y={122.94986}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma6_TS}°
+      </tspan>
+    </text>
+    <text
+      id="tret_uma6"
+      transform="scale(1.0459 .95608)"
+      x={159.02991}
+      y={122.97157}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-8-9-63"
+        x={159.02991}
+        y={122.97157}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+       {ParametrosClima.uma6_TR}°
+      </tspan>
+    </text>
+    <text
+      id="tsum_uma7"
+      transform="scale(1.0459 .95608)"
+      x={146.26195}
+      y={133.41049}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-6-5"
+        x={146.26195}
+        y={133.41049}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma7_TS}°
+      </tspan>
+    </text>
+    <text
+      id="tret_uma7"
+      transform="scale(1.0459 .95608)"
+      x={159.02991}
+      y={133.43219}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-8-9-46"
+        x={159.02991}
+        y={133.43219}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+       {ParametrosClima.uma7_TR}°
+      </tspan>
+    </text>
+    <text
+      id="tsum_uma8"
+      transform="scale(1.0459 .95608)"
+      x={146.26195}
+      y={143.87115}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-6-87"
+        x={146.26195}
+        y={143.87115}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma8_TS}°
+      </tspan>
+    </text>
+    <text
+      id="tret_uma8"
+      transform="scale(1.0459 .95608)"
+      x={159.02991}
+      y={143.89287}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-8-9-8"
+        x={159.02991}
+        y={143.89287}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+       {ParametrosClima.uma8_TR}°
+      </tspan>
+    </text>
+    <text
+      id="tsum_uma9"
+      transform="scale(1.0459 .95608)"
+      x={146.26195}
+      y={154.33183}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-6-0"
+        x={146.26195}
+        y={154.33183}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma9_TS}°
+      </tspan>
+    </text>
+    <text
+      id="tret_uma9"
+      transform="scale(1.0459 .95608)"
+      x={159.02991}
+      y={154.35353}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-8-9-91"
+        x={159.02991}
+        y={154.35353}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+       {ParametrosClima.uma9_TR}°
+      </tspan>
+    </text>
+    <text
+      id="tsum_uma10"
+      transform="scale(1.0459 .95608)"
+      x={146.26195}
+      y={164.79248}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-6-9"
+        x={146.26195}
+        y={164.79248}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma10_TS}°
+      </tspan>
+    </text>
+    <text
+      id="tret_uma10"
+      transform="scale(1.0459 .95608)"
+      x={159.02991}
+      y={164.81419}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.5px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-3-73-5-6-1-8-9-3"
+        x={159.02991}
+        y={164.81419}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.5px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosClima.uma10_TR}°
+      </tspan>
+    </text>
+    <ellipse
+      id="st_uma10-7-9"
+      cx={164.17}
+      cy={171.77}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_Principales.uma12}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-54-2-1"
+      transform="matrix(.30428 0 0 .24778 152.2 127.51)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-10-9-2)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_uma10-7"
+      cx={164.17}
+      cy={161.71}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_Principales.uma11}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-54-2"
+      transform="matrix(.30428 0 0 .24778 152.2 117.46)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-10-9)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_uma1"
+      cx={164.17}
+      cy={60.678}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_Principales.uma1}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76"
+      transform="matrix(.30428 0 0 .24778 152.2 16.42)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_uma2"
+      cx={164.17}
+      cy={70.787}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_Principales.uma2}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-3"
+      transform="matrix(.30428 0 0 .24778 152.2 26.529)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-5)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_uma3"
+      cx={164.17}
+      cy={80.896}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_Principales.uma3}
+
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-68"
+      transform="matrix(.30428 0 0 .24778 152.2 36.638)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-7)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_uma4"
+      cx={164.17}
+      cy={91.005}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_Principales.uma4}
+
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-4"
+      transform="matrix(.30428 0 0 .24778 152.2 46.747)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-71)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_uma5"
+      cx={164.17}
+      cy={101.11}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_Principales.uma5}
+
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-8"
+      transform="matrix(.30428 0 0 .24778 152.2 56.856)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-0)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_uma6"
+      cx={164.17}
+      cy={111.22}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_Principales.uma6}
+
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-9"
+      transform="matrix(.30428 0 0 .24778 152.2 66.965)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-9)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_uma7"
+      cx={164.17}
+      cy={121.33}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_Principales.uma7}
+
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-7"
+      transform="matrix(.30428 0 0 .24778 152.2 77.074)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-675)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_uma8"
+      cx={164.17}
+      cy={131.44}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_Principales.uma8}
+
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-04"
+      transform="matrix(.30428 0 0 .24778 152.2 87.183)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-4)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_uma9"
+      cx={164.17}
+      cy={141.55}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_Principales.uma9}
+
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-05"
+      transform="matrix(.30428 0 0 .24778 152.2 97.292)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-8)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_uma10"
+      cx={164.17}
+      cy={151.66}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_Principales.uma10}
+
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-54"
+      transform="matrix(.30428 0 0 .24778 152.2 107.4)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-10)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="alm_uma10-7-1"
+      cx={172.82}
+      cy={171.77}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Alarmas.uma12}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-06-1-6-6"
+      transform="matrix(.30428 0 0 .24778 160.86 127.51)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-67-2-1-0)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="alm_uma10-7"
+      cx={172.82}
+      cy={161.71}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Alarmas.uma11}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-06-1-6"
+      transform="matrix(.30428 0 0 .24778 160.86 117.46)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-67-2-1)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="alm_uma1"
+      cx={172.82}
+      cy={60.678}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Alarmas.uma1}
+    />
+    <ellipse
+      id="alm_uma2"
+      cx={172.82}
+      cy={70.787}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Alarmas.uma2}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-06-5"
+      transform="matrix(.30428 0 0 .24778 160.86 26.529)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-67-6)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="alm_uma3"
+      cx={172.82}
+      cy={80.896}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Alarmas.uma3}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-06-8"
+      transform="matrix(.30428 0 0 .24778 160.86 36.638)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-67-1)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="alm_uma4"
+      cx={172.82}
+      cy={91.005}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Alarmas.uma4}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-06-2"
+      transform="matrix(.30428 0 0 .24778 160.86 46.747)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-67-27)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="alm_uma5"
+      cx={172.82}
+      cy={101.11}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Alarmas.uma5}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-06-54"
+      transform="matrix(.30428 0 0 .24778 160.86 56.856)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-67-22)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="alm_uma6"
+      cx={172.82}
+      cy={111.22}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Alarmas.uma6}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-06-53"
+      transform="matrix(.30428 0 0 .24778 160.86 66.965)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-67-13)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="alm_uma7"
+      cx={172.82}
+      cy={121.33}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Alarmas.uma7}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-06-4"
+      transform="matrix(.30428 0 0 .24778 160.86 77.074)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-67-0)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="alm_uma8"
+      cx={172.82}
+      cy={131.44}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Alarmas.uma8}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-06-10"
+      transform="matrix(.30428 0 0 .24778 160.86 87.183)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-67-19)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="alm_uma9"
+      cx={172.82}
+      cy={141.55}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Alarmas.uma9}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-06-6"
+      transform="matrix(.30428 0 0 .24778 160.86 97.292)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-67-4)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="alm_uma10"
+      cx={172.82}
+      cy={151.66}
+      rx={1.7563}
+      ry={1.8557}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Alarmas.uma10}
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-06-1"
+      transform="matrix(.30428 0 0 .24778 160.86 107.4)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-67-2)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_trans-12-5-4-76-06"
+      transform="matrix(.30428 0 0 .24778 160.86 16.42)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-91-67)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <text
+      id="vin_trans"
+      x={380.64075}
+      y={23.893778}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5110"
+        x={380.64075}
+        y={23.893778}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosElec.V_inTransf} V
+      </tspan>
+    </text>
+    <text
+      id="iin_trans"
+      x={380.55832}
+      y={30.934095}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5114"
+        x={380.55832}
+        y={30.934095}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosElec.I_inTransf} A
+      </tspan>
+    </text>
+    <text
+      id="pin_trans"
+      x={380.97885}
+      y={37.965534}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5118"
+        x={380.97885}
+        y={37.965534}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosElec.P_inTransf} KW
+      </tspan>
+    </text>
+    <text
+      id="vout_trans"
+      x={468.98184}
+      y={23.893778}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5110-2"
+        x={468.98184}
+        y={23.893778}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosElec.V_outTransf} V
+      </tspan>
+    </text>
+    <text
+      id="iout_trans"
+      x={468.84488}
+      y={30.934093}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5114-9"
+        x={468.84488}
+        y={30.934093}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosElec.I_outTransf} A
+      </tspan>
+    </text>
+    <text
+      id="pout_trans"
+      x={468.84488}
+      y={37.965534}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5118-9"
+        x={468.84488}
+        y={37.965534}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosElec.P_outTrasnf} KW
+      </tspan>
+    </text>
+    <text
+      id="tret"
+      transform="scale(1.0508 .95166)"
+      x={319.4895}
+      y={29.009403}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fillOpacity={0.73387}
+      fill="#00aad4"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="7.0556px"
+      letterSpacing={0}
+      strokeWidth={0.28918}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan1960-4"
+        x={319.4895}
+        y={29.009403}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fillOpacity={0.73387}
+        fill="#00aad4"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="7.0556px"
+        strokeWidth={0.28918}
+      >
+        {ParametrosClima.T_ret}
+      </tspan>
+    </text>
+    <text
+      id="tsum"
+      transform="scale(1.0508 .95167)"
+      x={154.19633}
+      y={29.00918}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#00aad4"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="7.0556px"
+      letterSpacing={0}
+      strokeWidth={0.28918}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5844"
+        x={154.19633}
+        y={29.00918}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#00aad4"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="7.0556px"
+        strokeWidth={0.28918}
+      >
+        {ParametrosClima.T_sumin}
+      </tspan>
+    </text>
+    <text
+      id="vol_upsin"
+      transform="scale(1.0508 .95161)"
+      x={239.21196}
+      y={23.23435}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#00aad4"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="6.35px"
+      letterSpacing={0}
+      strokeWidth={0.24491}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5101-4"
+        x={239.21196}
+        y={23.23435}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="6.35px"
+        strokeWidth={0.24491}
+      >
+        {ParametrosElec.V_inUPS}
+      </tspan>
+    </text>
+    <text
+      id="vol_cmt"
+      transform="scale(1.0508 .95161)"
+      x={198.50215}
+      y={23.212645}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#00aad4"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="6.35px"
+      letterSpacing={0}
+      strokeWidth={0.24491}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5101-4-9"
+        x={198.50215}
+        y={23.212645}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="6.35px"
+        strokeWidth={0.24491}
+      >
+        {ParametrosElec.V_CMT}
+      </tspan>
+    </text>
+    <circle
+      id="st_upss1"
+      cx={403.8}
+      cy={111.94}
+      r={3.2985}
+      fill="#2fc43b"
+      className={Estados_Principales.ups_SIS1}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-5-6"
+      transform="matrix(.4776 0 0 .31621 385.06 54.675)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_upss2"
+      cx={473.94}
+      cy={111.94}
+      rx={3.2985}
+      ry={3.2987}
+      fill="#2fc43b"
+      className={Estados_Principales.ups_SIS2}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-5-5"
+      transform="matrix(.47761 0 0 .31619 455.17 54.679)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-6)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_gens1"
+      cx={402.89}
+      cy={58.298}
+      rx={3.2985}
+      ry={3.2985}
+      fill="#4d4d4d"
+      className={Estados_Principales.gen_SIS1}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-5-6-5"
+      transform="matrix(.46943 0 0 .30963 384.51 2.095)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-7)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_gens2"
+      cx={474.13}
+      cy={58.299}
+      rx={3.2985}
+      ry={3.2987}
+      fill="#4d4d4d"
+      className={Estados_Principales.gen_SIS2}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-5-6-8"
+      transform="matrix(.46945 0 0 .30962 455.76 2.096)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-54)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <text
+      id="pue"
+      transform="scale(.89754 1.1142)"
+      x={228.54941}
+      y={164.20184}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="7.0556px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-68-8-8"
+        x={228.54941}
+        y={164.20184}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="7.0556px"
+        strokeWidth={0.43331}
+      >
+        {"PUE"}
+      </tspan>
+    </text>
+    <text
+      id="dcie"
+      transform="scale(.84137 1.1885)"
+      x={407.82684}
+      y={154.20262}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="7.0556px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-68-8-2"
+        x={407.82684}
+        y={154.20262}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="7.0556px"
+        strokeWidth={0.43331}
+      >
+        {"DCIE"}
+      </tspan>
+    </text>
+    <text
+      id="tsumchill1"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={48.255146}
+      y={64.568314}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-9"
+        x={48.255146}
+        y={64.568314}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS1.T_sumEA3}°C
+      </tspan>
+    </text>
+    <text
+      id="tretchill1"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={48.255146}
+      y={69.886375}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-8-1"
+        x={48.255146}
+        y={69.886375}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS1.T_retEA3}°C
+      </tspan>
+    </text>
+    <circle
+      id="st_chill1-1"
+      transform="translate(14.288)"
+      cx={31.976}
+      cy={59.505}
+      r={2}
+      fill="#2fc43b"
+      className={Estados_SIS1.Ea3}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_chill1brillo-3"
+      transform="matrix(.2836 0 0 .14992 35.156 32.077)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <text
+      id="tsumchill1-3"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={48.254757}
+      y={88.951546}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-9-6"
+        x={48.254757}
+        y={88.951546}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS1.T_sumEA4}°C
+      </tspan>
+    </text>
+    <text
+      id="tretchill1-6"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={48.254757}
+      y={94.269608}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-8-1-4"
+        x={48.254757}
+        y={94.269608}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS1.T_retEA4}°C
+      </tspan>
+    </text>
+    <circle
+      id="st_chill1-1-4"
+      transform="translate(14.288)"
+      cx={31.976}
+      cy={82.43}
+      r={2}
+      fill="#2fc43b"
+      className={Estados_SIS1.Ea4}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_chill1brillo-3-8"
+      transform="matrix(.2836 0 0 .14992 35.155 55.002)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bomba1"
+      transform="translate(14.288)"
+      cx={37.856}
+      cy={110.23}
+      r={2}
+      fill="#2fc43b"
+      className={Estados_SIS1.b1_6}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_bomba1brillo"
+      transform="matrix(.2836 0 0 .14992 41.036 82.615)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bomba1-7"
+      transform="translate(14.288)"
+      cx={48.183}
+      cy={110.23}
+      r={2}
+      fill="#2fc43b"
+      className={Estados_SIS1.b1_5}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_bomba1brillo-4"
+      transform="matrix(.2836 0 0 .14992 51.363 82.615)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-6)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bomba1-75"
+      transform="translate(14.288)"
+      cx={57.972}
+      cy={110.23}
+      r={2}
+      fill="#2fc43b"
+      className={Estados_SIS1.b1_4}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_bomba1brillo-5"
+      transform="matrix(.2836 0 0 .14992 61.152 82.615)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-0)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bombasec1"
+      transform="translate(14.288)"
+      cx={48.183}
+      cy={137.35}
+      r={2}
+      fill="#2fc43b"
+      className={Estados_SIS1.b2_4}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_bombasec1brillo"
+      transform="matrix(.2836 0 0 .14992 51.363 109.73)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-6-4)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bombasec2"
+      transform="translate(14.288)"
+      cx={57.972}
+      cy={137.35}
+      r={2}
+      fill="#2fc43b"
+      className={Estados_SIS1.b2_3}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_bomba1brillo-5-6"
+      transform="matrix(.2836 0 0 .14992 61.152 109.73)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-0-0)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <text
+      id="tsumchill1-3-2"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={42.132683}
+      y={141.47885}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-9-6-3"
+        x={42.132683}
+        y={141.47885}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS1.LoadB3}%
+      </tspan>
+    </text>
+    <text
+      id="tretchill1-6-7"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={52.083023}
+      y={141.47885}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-8-1-4-1"
+        x={52.083023}
+        y={141.47885}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS1.LoadB4}%
+      </tspan>
+    </text>
+    <circle
+      id="st_bomba1-7-4-7"
+      transform="translate(14.288)"
+      cx={48.183}
+      cy={156.12}
+      r={2}
+      fill="#2fc43b"
+      className={Estados_SIS1.V1aux}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_bomba1brillo-4-7-4"
+      transform="matrix(.2836 0 0 .14992 51.363 128.51)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-6-4-2)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bomba1-75-5-8"
+      transform="translate(14.288)"
+      cx={57.972}
+      cy={156.12}
+      r={2}
+      fill="#2fc43b"
+      className={Estados_SIS1.V2aux}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_bomba1brillo-5-6-8"
+      transform="matrix(.2836 0 0 .14992 61.152 128.51)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-0-0-5)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <text
+      id="tempsumprim"
+      transform="matrix(.96219 0 0 1.0393 14.288 0)"
+      x={52.777378}
+      y={167.66022}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan11149-1-7-6"
+        x={52.777378}
+        y={167.66022}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS1.T_sum_prim}°C
+      </tspan>
+    </text>
+    <text
+      id="tempsumsec"
+      transform="matrix(.96219 0 0 1.0393 14.288 0)"
+      x={52.777378}
+      y={171.45076}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan11149-1-7-6-9"
+        x={52.777378}
+        y={171.45076}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS1.T_sum_sec}°C
+      </tspan>
+    </text>
+    <text
+      id="temptanq"
+      transform="matrix(.96219 0 0 1.0393 14.288 0)"
+      x={52.777378}
+      y={175.24135}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan11149-1-7-6-9-3"
+        x={52.777378}
+        y={175.24135}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS1.T_tanque}°C
+      </tspan>
+    </text>
+    <text
+      id="tempret"
+      transform="matrix(.96219 0 0 1.0393 14.288 0)"
+      x={52.777378}
+      y={179.03189}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan11149-1-7-6-9-3-6"
+        x={52.777378}
+        y={179.03189}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS1.T_ret}°C
+      </tspan>
+    </text>
+    <circle
+      id="st_chill1-1-1"
+      transform="translate(14.288)"
+      cx={93.875}
+      cy={59.505}
+      r={2}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.Ea1}
+    />
+    <ellipse
+      id="st_chill1brillo-3-80"
+      transform="matrix(.2836 0 0 .14992 97.055 32.078)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-29)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_chill1-1-1-mant"//mantenimiento
+      transform="translate(14.288)"
+      cx={93.875}
+      cy={59.505}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.Ea1mant}
+    />
+    <circle
+      id="st_chill1-1-4-8"
+      transform="translate(14.288)"
+      cx={93.875}
+      cy={82.43}
+      r={2}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.Ea2}
+    />
+    <ellipse
+      id="st_chill1brillo-3-8-9"
+      transform="matrix(.2836 0 0 .14992 97.055 55.002)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-45)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_chill1-1-4-8-mant"//mantenimiento
+      transform="translate(14.288)"
+      cx={93.875}
+      cy={82.43}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.Ea2mant}
+    />
+    <circle
+      id="st_bomba1-8"
+      transform="translate(14.288)"
+      cx={99.756}
+      cy={110.23}
+      r={2}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.b1_3}
+    />
+    <ellipse
+      id="st_bomba1brillo-47"
+      transform="matrix(.2836 0 0 .14992 102.94 82.615)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-2)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bomba1-8-al" //alarma1b1-3
+      transform="translate(14.288)"
+      cx={99.756}
+      cy={110.23}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.b1_3}
+    />
+    <circle
+      id="st_bomba1-7-8"
+      transform="translate(14.288)"
+      cx={110.08}
+      cy={110.23}
+      r={2}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.b1_2}
+    />
+    <ellipse
+      id="st_bomba1brillo-4-6"
+      transform="matrix(.2836 0 0 .14992 113.26 82.615)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-6-7)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bomba1-7-8-al"//alarma1b1-2
+      transform="translate(14.288)"
+      cx={110.08}
+      cy={110.23}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.b1_2}
+    />
+    <circle
+      id="st_bomba1-75-4"
+      transform="translate(14.288)"
+      cx={119.87}
+      cy={110.23}
+      r={2}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.b1_1}
+    />
+    <ellipse
+      id="st_bomba1brillo-5-9"
+      transform="matrix(.2836 0 0 .14992 123.05 82.615)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-0-6)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bomba1-75-4-al"//alarma1b1-1
+      transform="translate(14.288)"
+      cx={119.87}
+      cy={110.23}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.b1_1}
+    />
+    <circle
+      id="st_bombasec1-0"
+      transform="translate(14.288)"
+      cx={110.08}
+      cy={137.35}
+      r={2}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.b2_2}
+    />
+    <ellipse
+      id="st_bombasec1brillo-8"
+      transform="matrix(.2836 0 0 .14992 113.26 109.73)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-6-4-0)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+     <circle
+      id="st_bombasec1-0-al"//alarma1b2-2
+      transform="translate(14.288)"
+      cx={110.08}
+      cy={137.35}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.b2_2}
+    />
+    <circle
+      id="st_bombasec2-7"
+      transform="translate(14.288)"
+      cx={119.87}
+      cy={137.35}
+      r={2}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.b2_1}
+    />
+    <ellipse
+      id="st_bomba1brillo-5-6-3"
+      transform="matrix(.2836 0 0 .14992 123.05 109.73)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-0-0-6)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bombasec2-7-al"//alarma1b2-2
+      transform="translate(14.288)"
+      cx={119.87}
+      cy={137.35}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.b2_1}
+    />
+    <text
+      id="tsumchill1-3-2-5"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={100.3299}
+      y={141.4792}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-9-6-3-1"
+        x={100.3299}
+        y={141.4792}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS2.LoadB2}%
+      </tspan>
+    </text>
+    <text
+      id="tretchill1-6-7-1"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={110.28021}
+      y={141.4792}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-8-1-4-1-5"
+        x={110.28021}
+        y={141.4792}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS2.LoadB1}%
+      </tspan>
+    </text>
+    <circle
+      id="st_bomba1-7-4-7-5"
+      transform="translate(14.288)"
+      cx={110.08}
+      cy={156.12}
+      r={2}
+      fill="#2fc43b"
+      className={Estados_SIS2.V1aux}  
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_bomba1brillo-4-7-4-9"
+      transform="matrix(.2836 0 0 .14992 113.26 128.51)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-6-4-2-3)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_bomba1-75-5-8-0"
+      transform="translate(14.288)"
+      cx={119.87}
+      cy={156.12}
+      r={2}
+      fill="#2fc43b"
+      className={Estados_SIS2.V2aux}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_bomba1brillo-5-6-8-7"
+      transform="matrix(.2836 0 0 .14992 123.05 128.51)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-2-4-0-0-5-4)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <text
+      id="tempsumprim-1"
+      transform="matrix(.96219 0 0 1.0393 14.288 0)"
+      x={117.10876}
+      y={167.66054}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan11149-1-7-6-98"
+        x={117.10876}
+        y={167.66054}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS2.T_sum_prim}°C
+      </tspan>
+    </text>
+    <text
+      id="tempsumsec-0"
+      transform="matrix(.96219 0 0 1.0393 14.288 0)"
+      x={117.10876}
+      y={171.4511}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan11149-1-7-6-9-1"
+        x={117.10876}
+        y={171.4511}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS2.T_sum_sec}°C
+      </tspan>
+    </text>
+    <text
+      id="temptanq-4"
+      transform="matrix(.96219 0 0 1.0393 14.288 0)"
+      x={117.10876}
+      y={175.24164}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan11149-1-7-6-9-3-3"
+        x={117.10876}
+        y={175.24164}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS2.T_tanque}°C
+      </tspan>
+    </text>
+    <text
+      id="tempret-9"
+      transform="matrix(.96219 0 0 1.0393 14.288 0)"
+      x={117.10876}
+      y={179.0322}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan11149-1-7-6-9-3-6-3"
+        x={117.10876}
+        y={179.0322}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS2.T_ret}°C
+      </tspan>
+    </text>
+    <text
+      id="vinupschi"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={48.255501}
+      y={39.068939}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-9-8"
+        x={48.255501}
+        y={39.068939}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosUPS_SIS1.V_inCHI} V
+      </tspan>
+    </text>
+    <text
+      id="voutupschi"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={48.255501}
+      y={42.930489}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-8-1-9"
+        x={48.255501}
+        y={42.930489}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosUPS_SIS1.V_outCHI} V
+      </tspan>
+    </text>
+    <circle
+      id="st_upschi"
+      transform="translate(14.288)"
+      cx={31.976}
+      cy={35.994}
+      r={2}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS1.upschi1}
+    />
+    <ellipse
+      id="st_st_upschibrillo"
+      transform="matrix(.2836 0 0 .14992 35.156 8.567)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-0)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_upschi-al" //alarma
+      transform="translate(14.288)"
+      cx={31.976}
+      cy={35.994}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.upschi1}
+    />
+    <text
+      id="ioutupschi"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={48.255878}
+      y={46.792042}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-8-1-9-9"
+        x={48.255878}
+        y={46.792042}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosUPS_SIS1.I_outCHI} A
+      </tspan>
+    </text>
+    <text
+      id="loadupschi"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={48.256123}
+      y={50.648167}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-8-1-9-9-4"
+        x={48.256123}
+        y={50.648167}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosUPS_SIS1.LoadCHI} %
+      </tspan>
+    </text>
+    <text
+      id="vinupschi-2"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={106.4567}
+      y={39.069305}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-9-8-3"
+        x={106.4567}
+        y={39.069305}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosUPS_SIS2.V_inCHI} V
+      </tspan>
+    </text>
+    <text
+      id="voutupschi-5"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={106.4567}
+      y={42.930855}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-8-1-9-95"
+        x={106.4567}
+        y={42.930855}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosUPS_SIS2.V_outCHI} V
+      </tspan>
+    </text>
+    <circle
+      id="st_upschi-4"
+      transform="translate(14.288)"
+      cx={93.88}
+      cy={35.995}
+      r={2}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.upschi2}
+    />
+    <ellipse
+      id="st_st_upschibrillo-1"
+      transform="matrix(.2836 0 0 .14992 97.059 8.567)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-0-0-2)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+      strokeWidth={1.8378}
+    />
+    <circle
+      id="st_upschi-4-al" //alarma
+      transform="translate(14.288)"
+      cx={93.88}
+      cy={35.995}
+      r={2}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.upschi2}
+    />
+    <text
+      id="ioutupschi-8"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={106.45707}
+      y={46.792408}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-8-1-9-9-3"
+        x={106.45707}
+        y={46.792408}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosUPS_SIS2.I_outCHI} A
+      </tspan>
+    </text>
+    <text
+      id="loadupschi-6"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={106.45733}
+      y={50.648533}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-8-1-9-9-4-4"
+        x={106.45733}
+        y={50.648533}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosUPS_SIS2.LoadCHI} %
+      </tspan>
+    </text>
+    <text
+      id="text8442-68"
+      transform="matrix(.96672 0 0 1.0344 14.288 0)"
+      x={128.3195}
+      y={72.905388}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#000"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="4.0913px"
+      letterSpacing={0}
+      strokeWidth={0.2558}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan8440-9"
+        x={128.3195}
+        y={72.905388}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fontFamily="Franklin Gothic Medium"
+        fontSize="4.0913px"
+        strokeWidth={0.2558}
+      >
+        {"`"}
+      </tspan>
+    </text>
+    <text
+      id="tsumchill1-2"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={106.45234}
+      y={64.568665}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-9-5"
+        x={106.45234}
+        y={64.568665}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS2.T_sumEA1}°C
+      </tspan>
+    </text>
+    <text
+      id="tretchill1-64"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={106.45234}
+      y={69.886726}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-8-1-6"
+        x={106.45234}
+        y={69.886726}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS2.T_retEA1}°C
+      </tspan>
+    </text>
+    <text
+      id="tsumchill1-3-26"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={106.45197}
+      y={88.951897}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-9-6-7"
+        x={106.45197}
+        y={88.951897}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS2.T_sumEA2}°C
+      </tspan>
+    </text>
+    <text
+      id="tretchill1-6-70"
+      transform="matrix(1.0636 0 0 .94019 14.288 0)"
+      x={106.45197}
+      y={94.269958}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="3.175px"
+      letterSpacing={0}
+      strokeWidth={0.48961}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan4568-3-8-1-4-2"
+        x={106.45197}
+        y={94.269958}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="3.175px"
+        strokeWidth={0.48961}
+      >
+        {ParametrosClima_SIS2.T_retEA2}°C
+      </tspan>
+    </text>
+    <circle
+      id="st_s1aacc"
+      transform="translate(14.288)"
+      cx={53.548}
+      cy={11.229}
+      r={4.671}
+      fill="#2fc43b"
+      className={Estados_Principales.clima_SIS1}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7"
+      transform="matrix(.65326 0 0 .57833 41.958 -92.257)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_s2aacc"
+      transform="translate(14.288)"
+      cx={115.4}
+      cy={11.229}
+      r={4.671}
+      fill="#4d4d4d"
+      className={Estados_Principales.clima_SIS2}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-2"
+      transform="matrix(.65326 0 0 .57833 103.81 -92.257)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-2)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <text
+      id="vol_upsout"
+      transform="scale(1.0508 .95161)"
+      x={279.2937}
+      y={23.23435}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#00aad4"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="6.35px"
+      letterSpacing={0}
+      strokeWidth={0.24491}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5101-4-99"
+        x={279.2937}
+        y={23.23435}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="6.35px"
+        strokeWidth={0.24491}
+      >
+        {ParametrosElec.V_outUPS}
+      </tspan>
+    </text>
+    <circle
+      id="st_ups1a-2"
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={130.96}
+      r={2.3466}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS1.ups2}
+    />
+    <ellipse
+      id="st_brilloups1a-2"
+      transform="matrix(.34361 0 0 .17992 419.67 97.94)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-5-2)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_ups1a-2-al"//alarma
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={130.96}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.ups2}
+    />
+    <circle
+      id="st_ups1a-3"
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={136.93}
+      r={2.3466}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS1.ups3}
+    />
+    <ellipse
+      id="st_brilloups1a-3"
+      transform="matrix(.34361 0 0 .17992 419.67 103.91)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-5-5)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_ups1a-3-al"//alarma
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={136.93}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.ups3}
+    />
+    <circle
+      id="st_ups1a-4"
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={142.9}
+      r={2.3466}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS1.ups4}
+    />
+    <ellipse
+      id="st_brilloups1a-4"
+      transform="matrix(.34361 0 0 .17992 419.67 109.88)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-5-52)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_ups1a-4-al"//alarma
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={142.9}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.ups4}
+    />
+    <circle
+      id="st_ups1a-5"
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={148.87}
+      r={2.3466}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS1.ups5}
+    />
+    <ellipse
+      id="st_brilloups1a-5"
+      transform="matrix(.34361 0 0 .17992 419.67 115.85)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-5-8)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+     <circle
+      id="st_ups1a-5-al"//alarma
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={148.87}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.ups5}
+    />
+    <circle
+      id="st_ups1a-6"
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={154.84}
+      r={2.3466}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS1.ups6}
+    />
+    <ellipse
+      id="st_brilloups1a-6"
+      transform="matrix(.34361 0 0 .17992 419.67 121.82)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-5-8-0)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_ups1a-6-al"//alarma
+      transform="translate(14.288)"
+      cx={418.93}
+      cy={154.84}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.ups6}
+    />
+    <circle
+      id="st_ups1a-2-1"
+      cx={504.02}
+      cy={130.96}
+      r={2.3466}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.ups2}
+    />
+    <ellipse
+      id="st_brilloups1a-2-4"
+      transform="matrix(.34361 0 0 .17992 490.47 97.941)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-5-2-8)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+     <circle
+      id="st_ups1a-2-1"
+      cx={504.02}
+      cy={130.96}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.ups2}
+    />
+    <circle
+      id="st_ups1a-3-5"
+      cx={504.02}
+      cy={136.93}
+      r={2.3466}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.ups3}
+    />
+    <ellipse
+      id="st_brilloups1a-3-4"
+      transform="matrix(.34361 0 0 .17992 490.47 103.91)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-5-5-7)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+     <circle
+      id="st_ups1a-3-5-al"//alarma
+      cx={504.02}
+      cy={136.93}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.ups3}
+    />
+    <circle
+      id="st_ups1a-4-4"
+      cx={504.02}
+      cy={142.9}
+      r={2.3466}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.ups4}
+    />
+    <ellipse
+      id="st_brilloups1a-4-6"
+      transform="matrix(.34361 0 0 .17992 490.47 109.88)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-5-52-1)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_ups1a-4-4-al"//alarma
+      cx={504.02}
+      cy={142.9}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.ups4}
+    />
+    <circle
+      id="st_ups1a-5-8"
+      cx={504.02}
+      cy={148.87}
+      r={2.3466}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.ups5}
+    />
+    <ellipse
+      id="st_brilloups1a-5-3"
+      transform="matrix(.34361 0 0 .17992 490.47 115.85)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-5-8-3)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+     <circle
+      id="st_ups1a-5-8-al"//alarma
+      cx={504.02}
+      cy={148.87}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.ups5}
+    />
+    <circle
+      id="st_ups1a-6-9"
+      cx={504.02}
+      cy={154.84}
+      r={2.3466}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.ups6}
+    />
+    <ellipse
+      id="st_brilloups1a-6-7"
+      transform="matrix(.34361 0 0 .17992 490.47 121.82)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-5-8-0-0)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_ups1a-6-9-al"//alarmas
+      cx={504.02}
+      cy={154.84}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.ups6}
+    />
+    <circle
+      id="st_ups1a-1-8"
+      cx={504.02}
+      cy={124.99}
+      r={2.3466}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.ups1}
+    />
+    <ellipse
+      id="st_brilloups1a-1-4"
+      transform="matrix(.34361 0 0 .17992 490.47 91.971)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-5-25)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_ups1a-1-8-al"//alarma
+      cx={504.02}
+      cy={124.99}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.ups1}
+    />
+    <circle
+      id="st_ups1a-1"
+      cx={433.22}
+      cy={124.99}
+      r={2.3466}
+      fill="#2fc43b"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS1.ups1}
+    />
+    <ellipse
+      id="st_brilloups1a-1"
+      transform="matrix(.34361 0 0 .17992 419.67 91.97)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-5)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+     <circle
+      id="st_ups1a-1-al"//alarma
+      cx={433.22}
+      cy={124.99}
+      r={2.3466}
+      fill="#2fc43b"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.ups1}
+    />
+    <text
+      id="i_outupsS1"
+      transform="matrix(1.046 0 0 .95599 14.288 0)"
+      x={367.70157}
+      y={186.8911}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-3-2-3-6-9"
+        x={367.70157}
+        y={186.8911}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosUPS_SIS1.I_out} A
+      </tspan>
+    </text>
+    <text
+      id="pot_upsS1"
+      transform="matrix(1.046 0 0 .95599 14.288 0)"
+      x={367.70157}
+      y={192.7731}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-3-2-3-6-4"
+        x={367.70157}
+        y={192.7731}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosUPS_SIS1.P_out} KW
+      </tspan>
+    </text>
+    <text
+      id="load_upsS1"
+      transform="matrix(1.046 0 0 .95599 14.288 0)"
+      x={367.85376}
+      y={198.64619}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-3-2-3-6-4-7"
+        x={367.85376}
+        y={198.64619}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.43331}
+      >
+        {/*"%"*/}
+      </tspan>
+    </text>
+    <text
+      id="i_outupsS1-3"
+      transform="scale(1.046 .95599)"
+      x={449.04068}
+      y={186.89148}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-3-2-3-6-9-3"
+        x={449.04068}
+        y={186.89148}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosUPS_SIS2.I_out} A
+      </tspan>
+    </text>
+    <text
+      id="pot_upsS1-1"
+      transform="scale(1.046 .95599)"
+      x={449.04068}
+      y={192.77348}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-3-2-3-6-4-9"
+        x={449.04068}
+        y={192.77348}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosUPS_SIS2.P_out} KW
+      </tspan>
+    </text>
+    <text
+      id="load_upsS1-2"
+      transform="scale(1.046 .95599)"
+      x={449.19287}
+      y={198.64658}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-3-2-3-6-4-7-5"
+        x={449.19287}
+        y={198.64658}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.43331}
+      >
+        {/*"%"*/}
+      </tspan>
+    </text>
+    <text
+      id="vin_upsS1-1"
+      transform="scale(1.046 .95599)"
+      x={449.22079}
+      y={175.1275}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-4-2-4"
+        x={449.22079}
+        y={175.1275}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosUPS_SIS2.V_in} V
+      </tspan>
+    </text>
+    <text
+      id="vout_upsS1-9"
+      transform="scale(1.046 .95599)"
+      x={449.22079}
+      y={181.00948}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-3-2-3-6-49"
+        x={449.22079}
+        y={181.00948}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosUPS_SIS2.V_out} V
+      </tspan>
+    </text>
+    <text
+      id="vin_upsS1"
+      transform="scale(1.046 .95599)"
+      x={381.54041}
+      y={175.12712}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-1-4-2"
+        x={381.54041}
+        y={175.12712}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosUPS_SIS1.V_in} V
+      </tspan>
+    </text>
+    <text
+      id="vout_upsS1"
+      transform="scale(1.046 .95599)"
+      x={381.54041}
+      y={181.00909}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.43331}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan998-6-3-2-3-6"
+        x={381.54041}
+        y={181.00909}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal",
+          lineHeight: 3.25
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.43331}
+      >
+        {ParametrosUPS_SIS1.V_out} V
+      </tspan>
+    </text>
+    <circle
+      id="st_gen4"
+      cx={433.22}
+      cy={63.245}
+      r={2.3465}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS1.gen1}
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-5-6-8-5-0"
+      transform="matrix(.34362 0 0 .17988 419.74 30.317)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-54-9-81)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_gen4-al"//alarma
+      cx={433.22}
+      cy={63.245}
+      r={2.3465}
+      fill="#4d4d4d"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.gen1}
+    />
+    <circle
+      id="st_gen5"
+      cx={433.22}
+      cy={70.537}
+      r={2.3465}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS1.gen2}
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-5-6-8-5-9-0"
+      transform="matrix(.34362 0 0 .17988 419.74 37.61)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-54-9-8-4)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_gen5-al"//alarma
+      cx={433.22}
+      cy={70.537}
+      r={2.3465}
+      fill="#4d4d4d"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.gen2}
+    />
+    <circle
+      id="st_gen6"
+      cx={433.22}
+      cy={77.83}
+      r={2.3465}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS1.gen3}
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-5-6-8-5-2-8"
+      transform="matrix(.34362 0 0 .17988 419.74 44.902)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-54-9-85-9)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_gen6"
+      cx={433.22}
+      cy={77.83}
+      r={2.3465}
+      fill="#4d4d4d"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS1.gen3}
+    />
+    <circle
+      id="st_gen4-5"
+      transform="translate(14.288)"
+      cx={489.74}
+      cy={63.245}
+      r={2.3465}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.gen4}
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-5-6-8-5-0-2"
+      transform="matrix(.34362 0 0 .17988 490.54 30.317)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-54-9-81-7)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_gen4-5-al"//alarma
+      transform="translate(14.288)"
+      cx={489.74}
+      cy={63.245}
+      r={2.3465}
+      fill="#4d4d4d"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.gen4}
+    />
+    <circle
+      id="st_gen5-5"
+      transform="translate(14.288)"
+      cx={489.74}
+      cy={70.537}
+      r={2.3465}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.gen5}
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-5-6-8-5-9-0-3"
+      transform="matrix(.34362 0 0 .17988 490.54 37.61)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-54-9-8-4-6)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_gen5-5-al"//alarma
+      transform="translate(14.288)"
+      cx={489.74}
+      cy={70.537}
+      r={2.3465}
+      fill="#4d4d4d"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.gen5}
+    />
+    <circle
+      id="st_gen6-9"
+      transform="translate(14.288)"
+      cx={489.74}
+      cy={77.83}
+      r={2.3465}
+      fill="#4d4d4d"
+      paintOrder="markers stroke fill"
+      className={Estados_SIS2.gen6}
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-5-6-8-5-2-8-4"
+      transform="matrix(.34362 0 0 .17988 490.54 44.902)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-54-9-85-9-5)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <circle
+      id="st_gen6-9-al"//alarma
+      transform="translate(14.288)"
+      cx={489.74}
+      cy={77.83}
+      r={2.3465}
+      fill="#4d4d4d"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.gen6}
+    />
+    <text
+      id="v_gens2"
+      x={450.47086}
+      y={89.918045}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5110-1-9"
+        x={450.47086}
+        y={89.918045}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosGEN_SIS2.V_out} V
+      </tspan>
+    </text>
+    <text
+      id="i_gens2"
+      x={450.47086}
+      y={95.622124}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5114-0-5"
+        x={450.47086}
+        y={95.622124}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosGEN_SIS2.I_out} A
+      </tspan>
+    </text>
+    <text
+      id="p_gens2"
+      x={486.74948}
+      y={89.918533}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5118-90-5"
+        x={486.74948}
+        y={89.918533}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosGEN_SIS2.P_out} KW
+      </tspan>
+    </text>
+    <text
+      id="p_gens2-2"
+      transform="translate(14.288)"
+      x={472.46152}
+      y={95.622551}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5118-90-5-8"
+        x={472.46152}
+        y={95.622551}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosGEN_SIS2.Load}
+      </tspan>
+    </text>
+    <text
+      id="v_gens1"
+      x={380.67618}
+      y={89.918045}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5110-1"
+        x={380.67618}
+        y={89.918045}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosGEN_SIS1.V_out} V
+      </tspan>
+    </text>
+    <text
+      id="i_gens1"
+      x={380.59375}
+      y={95.622124}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5114-0"
+        x={380.59375}
+        y={95.622124}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosGEN_SIS1.I_out} A
+      </tspan>
+    </text>
+    <text
+      id="p_gens1"
+      x={416.41467}
+      y={89.918533}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5118-90"
+        x={416.41467}
+        y={89.918533}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosGEN_SIS1.P_out} KW
+      </tspan>
+    </text>
+    <text
+      id="p_gens1-8"
+      transform="translate(14.288)"
+      x={402.12671}
+      y={95.622551}
+      style={{
+        fontVariantCaps: "normal",
+        fontVariantEastAsian: "normal",
+        fontVariantLigatures: "normal",
+        fontVariantNumeric: "normal",
+        lineHeight: 1.25
+      }}
+      xmlSpace="preserve"
+      fill="#fff"
+      fontFamily="Franklin Gothic Medium"
+      fontSize="5.195px"
+      letterSpacing={0}
+      strokeWidth={0.26458}
+      wordSpacing={0}
+    >
+      <tspan
+        id="tspan5118-90-9"
+        x={402.12671}
+        y={95.622551}
+        style={{
+          fontVariantCaps: "normal",
+          fontVariantEastAsian: "normal",
+          fontVariantLigatures: "normal",
+          fontVariantNumeric: "normal"
+        }}
+        fill="#fff"
+        fontFamily="Franklin Gothic Medium"
+        fontSize="5.195px"
+        strokeWidth={0.26458}
+      >
+        {ParametrosGEN_SIS1.Load}
+      </tspan>
+    </text>
+    <ellipse
+      id="st_gens1-8"
+      cx={404.99}
+      cy={15.49}
+      rx={3.2985}
+      ry={3.2985}
+      fill="#4d4d4d"
+      className={Estados_Principales.transf_in}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-5-6-5-7"
+      transform="matrix(.46943 0 0 .30963 386.61 -40.713)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-7-8)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_gens1-8-6"
+      cx={493.1}
+      cy={15.49}
+      rx={3.2985}
+      ry={3.2985}
+      fill="#4d4d4d"
+      className={Estados_Principales.transf_out}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="st_trans-12-5-4-9-7-5-6-5-7-0"
+      transform="matrix(.46943 0 0 .30963 474.72 -40.713)"
+      cx={39.31}
+      cy={175.59}
+      rx={4.2297}
+      ry={4.0337}
+      fill="#fff"
+      filter="url(#filter2091-9-7-7-5-7-8-9)"
+      opacity={0.29}
+      paintOrder="markers stroke fill"
+    />
+  </g>
+)
+}
