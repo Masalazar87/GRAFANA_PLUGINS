@@ -68,6 +68,7 @@ type Estados_SIS1 = {
     b1_4: string; b1_5: string; b1_6: string;
     b2_3: string; b2_4: string;
     V1aux: string; V2aux: string;
+    upsoffices_1a: string; upssat_1a: string; rec_1a: string;
 };
 type Estados_SIS2 = {
     ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi2: string;
@@ -76,6 +77,7 @@ type Estados_SIS2 = {
     b1_1: string; b1_2: string; b1_3: string;
     b2_1: string; b2_2: string;
     V1aux: string; V2aux: string;
+    upsnoc_2a: string; upssat_2a: string; rec_2a: string;
 };
 type Alarmas = {
     uma1: string; uma2: string; uma3: string; uma4:string; uma5: string; uma6: string;
@@ -87,6 +89,7 @@ type Alarmas_SIS1 = {
     Ea3: string; Ea4: string;
     b1_4: string; b1_5: string; b1_6: string;
     b2_3: string; b2_4: string;
+    upsoffices_1a: string; upssat_1a: string; //rec_1a: string;
 };
 type Alarmas_SIS2 = {
     ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi2: string;
@@ -95,6 +98,7 @@ type Alarmas_SIS2 = {
     b1_1: string; b1_2: string; b1_3: string;
     b2_1: string; b2_2: string;
     V1aux: string; V2aux: string;
+    upsnoc_2a: string; upssat_2a: string; //rec_2a: string;
 };
 
 export interface DataPrincipal {
@@ -4823,6 +4827,7 @@ return (
     r={2.3465}
     fill="#4d4d4d"
     paintOrder="markers stroke fill"
+    className={Estados_SIS1.upsoffices_1a}
   />
   <ellipse
     id="st_trans-12-5-4-9-7-5-6-8-5-0-1"
@@ -4836,6 +4841,17 @@ return (
     opacity={0.29}
     paintOrder="markers stroke fill"
   />
+   <circle
+    id="al_upsofi_1a"//alarma
+    transform="translate(14.288)"
+    cx={393.13}
+    cy={178.9}
+    r={2.3465}
+    fill="#4d4d4d"
+    paintOrder="markers stroke fill"
+    opacity={0}
+    className={Alarmas_SIS1.upsoffices_1a}
+  />
   <circle
     id="st_upssat_1a"
     transform="translate(14.288)"
@@ -4844,6 +4860,7 @@ return (
     r={2.3465}
     fill="#4d4d4d"
     paintOrder="markers stroke fill"
+    className={Estados_SIS1.upssat_1a}
   />
   <ellipse
     id="st_trans-12-5-4-9-7-5-6-8-5-9-0-34"
@@ -4857,6 +4874,17 @@ return (
     opacity={0.29}
     paintOrder="markers stroke fill"
   />
+    <circle
+    id="al_upssat_1a"//alarma
+    transform="translate(14.288)"
+    cx={393.13}
+    cy={185.14}
+    r={2.3465}
+    fill="#4d4d4d"
+    paintOrder="markers stroke fill"
+    opacity={0}
+    className={Alarmas_SIS1.upssat_1a}
+  />
   <circle
     id="st_rec_1a"
     transform="translate(14.288)"
@@ -4865,6 +4893,7 @@ return (
     r={2.3465}
     fill="#4d4d4d"
     paintOrder="markers stroke fill"
+    className={Estados_SIS1.rec_1a}
   />
   <ellipse
     id="st_trans-12-5-4-9-7-5-6-8-5-0-1-2"
@@ -4878,6 +4907,17 @@ return (
     opacity={0.29}
     paintOrder="markers stroke fill"
   />
+    <circle
+    id="al_rec_1a"//alarma
+    transform="translate(14.288)"
+    cx={408.3}
+    cy={185.14}
+    r={2.3465}
+    fill="#4d4d4d"
+    paintOrder="markers stroke fill"
+    opacity={0}
+    //className={Alarmas_SIS1.rec_1a}
+  />
   <circle
     id="st_upsnoc_2a"
     transform="translate(14.288)"
@@ -4886,6 +4926,7 @@ return (
     r={2.3465}
     fill="#4d4d4d"
     paintOrder="markers stroke fill"
+    className={Estados_SIS2.upsnoc_2a}
   />
   <ellipse
     id="st_trans-12-5-4-9-7-5-6-8-5-0-1-1"
@@ -4900,6 +4941,17 @@ return (
     paintOrder="markers stroke fill"
   />
   <circle
+    id="al_upsnoc_2a"//alarma
+    transform="translate(14.288)"
+    cx={463.75}
+    cy={178.9}
+    r={2.3465}
+    fill="#4d4d4d"
+    paintOrder="markers stroke fill"
+    opacity={0}
+    className={Alarmas_SIS2.upsnoc_2a}
+  />
+  <circle
     id="st_ups_sat_2a"
     transform="translate(14.288)"
     cx={463.75}
@@ -4907,6 +4959,7 @@ return (
     r={2.3465}
     fill="#4d4d4d"
     paintOrder="markers stroke fill"
+    className={Estados_SIS2.upssat_2a}
   />
   <ellipse
     id="st_trans-12-5-4-9-7-5-6-8-5-9-0-34-6"
@@ -4920,6 +4973,17 @@ return (
     opacity={0.29}
     paintOrder="markers stroke fill"
   />
+   <circle
+    id="al_ups_sat_2a"//alarma
+    transform="translate(14.288)"
+    cx={463.75}
+    cy={185.14}
+    r={2.3465}
+    fill="#4d4d4d"
+    paintOrder="markers stroke fill"
+    opacity={0}
+    className={Alarmas_SIS2.upssat_2a}
+  />
   <circle
     id="st_rec_2a"
     transform="translate(14.288)"
@@ -4928,6 +4992,7 @@ return (
     r={2.3465}
     fill="#4d4d4d"
     paintOrder="markers stroke fill"
+    className={Estados_SIS2.rec_2a}
   />
   <ellipse
     id="st_trans-12-5-4-9-7-5-6-8-5-0-1-2-6"
@@ -4940,6 +5005,17 @@ return (
     filter="url(#filter2091-9-7-7-5-54-9-81-6-2-2)"
     opacity={0.29}
     paintOrder="markers stroke fill"
+  />
+   <circle
+    id="al_rec_2a"//alarma
+    transform="translate(14.288)"
+    cx={478.92}
+    cy={185.14}
+    r={2.3465}
+    fill="#4d4d4d"
+    paintOrder="markers stroke fill"
+    opacity={0}
+    //className={Alarmas_SIS2.rec_2a}
   />
   <text
     id="CMTL1"

@@ -2343,6 +2343,22 @@ const Rectifier = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataRecti
                   >
                     {"CURRENT ALARM:"}
                   </tspan>
+                  <tspan
+                    id="tspan563"
+                    x={304.10266}
+                    y={147.33417}
+                    style={{
+                      fontVariantCaps: "normal",
+                      fontVariantEastAsian: "normal",
+                      fontVariantLigatures: "normal",
+                      fontVariantNumeric: "normal"
+                    }}
+                    fontFamily="Franklin Gothic Medium"
+                    fontSize="5.9973px"
+                    strokeWidth={0.47056}
+                  >
+                    {"WARNING ALARM:"}
+                  </tspan>
                 </text>
               </g>          
     <Variables

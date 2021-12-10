@@ -1,5 +1,5 @@
 import { SimpleOptions } from 'types';
-import { PanelData, InterpolateFunction} from '@grafana/data';
+import { PanelData, InterpolateFunction } from '@grafana/data';
 import { DataRectifier } from 'components/variables';
 import alarmsStyles from 'styles/alarmsStyles';
 
@@ -37,17 +37,21 @@ let rectifier: DataRectifier ={
         Ubicacion: 'C. RECT. SIST. 1&2',
     },
     Principal: {
-        Estado: '',
-        Estado_class: alarmsStyles.off,
+        EstadoON: '',
+        EstadoOFF: '',
+        Estado_box: alarmsStyles.off,
         Botón: alarmsStyles.off,
         In_Voltage: 0,
         Out_Current: 0,
         V_Bateria: 0,
+        Alarma_box: alarmsStyles.off,
+        Alarma: '',
     },
     Alarmas: {
         BatteryStatus: alarmsStyles.off,
         CurrentStatus: alarmsStyles.off,
         CurrentAlarm: alarmsStyles.off,
+        WarningAlarm: alarmsStyles.off,
     },
     Parametros: {
         In_Voltage: 0,
@@ -84,8 +88,14 @@ rectifier.Parametros.T_Rectifier = Number.parseFloat(REC_TEMP_VALU?.toFixed(2));
 rectifier.Alarmas.BatteryStatus = BAT_VOL_STAT ===1? alarmsStyles.on1 : alarmsStyles.off,
 rectifier.Alarmas.CurrentStatus = REC_CUR_STAT ===1? alarmsStyles.on1 : alarmsStyles.off,
 rectifier.Alarmas.CurrentAlarm = REC_CUR_ENAB ===1? alarmsStyles.on1 : alarmsStyles.off,
-rectifier.Principal.Estado_class = POW_SYS_STAT ===1? alarmsStyles.on1 : alarmsStyles.off,
-rectifier.Principal.Estado = POW_SYS_STAT ===1? 'ENCENDIDO' : 'APAGADO';
+
+rectifier.Principal.Estado_box = POW_SYS_STAT ===1? alarmsStyles.on1 : alarmsStyles.off,
+rectifier.Principal.Alarma_box = POW_SYS_STAT ===2? alarmsStyles.on2 : '',
+
+rectifier.Principal.EstadoON = POW_SYS_STAT ===1? 'ENCENDIDO' : '',
+rectifier.Principal.EstadoOFF = POW_SYS_STAT ===0? 'APAGADO' : '',
+rectifier.Principal.Alarma = POW_SYS_STAT ===2? 'ALARMADO': '',
+rectifier.Alarmas.WarningAlarm= POW_SYS_STAT ===2? alarmsStyles.on2 : alarmsStyles.off,
 
 console.log(rectifier);
 return rectifier;

@@ -272,7 +272,33 @@ pot_genSIS[i] = data.series.find(({ name }) => name?.includes('POT_GEN' + i))?.f
     }
 }
 
-//------------------------------PARAMETROS PRINCIPALES DE SISTEMA DE GENERADORES -------------------------------
+//---------------------------------------ESTADOS DE UPS 10KVA Y RECTIFICADORES -------------------------------
+let alups10kva = [];
+let stups10kva = [];
+let strec = [];
+for (let i = 1; i <= 4; i++) {
+    alups10kva[i] = data.series.find(({ name }) => name?.includes('AL_UPS10KVA_' + i))?.fields[1].state?.calcs?.lastNotNull;
+    stups10kva[i] = data.series.find(({ name }) => name?.includes('ST_UPS10KVA_' + i))?.fields[1].state?.calcs?.lastNotNull;    
+    if (alups10kva[i] > 0 ){
+        alups10kva[i] = alarm_on;
+    } else {alups10kva[i] = alarm_off;
+    }
+    if (stups10kva[i] > 220 ){
+        stups10kva[i] = st_on;
+    } else {stups10kva[i] = st_off;
+    }
+
+}
+for (let i = 1; i <= 2; i++) {
+    strec[i] = data.series.find(({ name }) => name?.includes('ST_REC_' + i + 'A'))?.fields[1].state?.calcs?.lastNotNull;
+    if (strec[i] === 1 ){
+        strec[i] = st_on;
+    } else 
+        if (strec[i] === 2 ){
+            strec[i] = alarm_on;
+    }
+}
+
 //-------------------------------------------------------------------------------------------------------------
 //-------------------------------------ESTADOS DE SISTEMA DE CLIMATIZACÓN--------------------------------------
 let SYS_1_EN = data.series.find(({ name }) => name?.includes('SYS_1_EN'))?.fields[1].state?.calcs
@@ -352,6 +378,7 @@ let principal: DataPrincipal = {
         b1_4: '', b1_5: '', b1_6: '',
         b2_3: '', b2_4: '',
         V1aux: '', V2aux: '',
+        upsoffices_1a: '', upssat_1a: '', rec_1a: '',
     },
     Estados_SIS2: {
         ups1: '', ups2: '', ups3: '', ups4: '', ups5: '', ups6: '', upschi2: '',
@@ -360,6 +387,7 @@ let principal: DataPrincipal = {
         b1_1: '', b1_2: '', b1_3: '',
         b2_1: '', b2_2: '',
         V1aux: '', V2aux: '',
+        upsnoc_2a: '', upssat_2a: '', rec_2a: '',
     },
     Alarmas: {
         uma1: estadosStyles.sinconexion, uma2: estadosStyles.sinconexion, uma3: estadosStyles.sinconexion,
@@ -373,6 +401,7 @@ let principal: DataPrincipal = {
         Ea3: '', Ea4: '',
         b1_4: '', b1_5: '', b1_6: '',
         b2_3: '', b2_4: '',
+        upsoffices_1a: '', upssat_1a: '', //rec_1a: '',
     },
     Alarmas_SIS2: {
         ups1: '', ups2: '', ups3: '', ups4: '', ups5: '', ups6: '', upschi2: '',
@@ -381,6 +410,7 @@ let principal: DataPrincipal = {
         b1_1: '', b1_2: '', b1_3: '',
         b2_1: '', b2_2: '',
         V1aux: '', V2aux: '',
+        upsnoc_2a: '', upssat_2a: '', //rec_2a: '',
     },
 }
 //---------------------------------------------------------------------------------------------
@@ -547,6 +577,20 @@ principal.Estados_Principales.clima_SIS2 = SYS_2_EN === 1? estadosStyles.on : es
 //-----------------------------------------ESTADOS DE SISTEMA DE UPS´S-----------------------------------------
 principal.Estados_Principales.ups_SIS1 = (st_ups1a[1] || st_ups1a[2] || st_ups1a[3] || st_ups1a[4] || st_ups1a[5] || st_ups1a[6]) === st_on? estadosStyles.on : estadosStyles.sinconexion;
 principal.Estados_Principales.ups_SIS2 = (st_ups2a[1] || st_ups2a[2] || st_ups2a[3] || st_ups2a[4] || st_ups2a[5] || st_ups2a[6]) === st_on? estadosStyles.on : estadosStyles.sinconexion;
+//-----------------------------------------ALARMAS DE UPS´S 10kva Y RECTIFICADORES-----------------------------------
+principal.Alarmas_SIS1.upsoffices_1a = alups10kva[1];
+principal.Alarmas_SIS1.upssat_1a = alups10kva[2];
+principal.Alarmas_SIS2.upsnoc_2a = alups10kva[3];
+principal.Alarmas_SIS2.upssat_2a = alups10kva[4];
+principal.Estados_SIS1.upsoffices_1a = stups10kva[1];
+principal.Estados_SIS1.upssat_1a = stups10kva[2];
+principal.Estados_SIS2.upsnoc_2a = stups10kva[3];
+principal.Estados_SIS2.upssat_2a = stups10kva[4];
+principal.Estados_SIS1.rec_1a = strec[1];
+principal.Estados_SIS2.rec_2a = strec[2];
+
+
+
 console.log(principal);
 
 return principal;
