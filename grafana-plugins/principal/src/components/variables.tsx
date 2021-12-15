@@ -1,12 +1,13 @@
 import React from 'react';
 
 type ParametrosElec = {
-    V_inTransf: number;
-    V_outTransf: number;
-    I_inTransf: number;
-    I_outTransf: number;
-    P_inTransf: number;
-    P_outTrasnf: number;
+    Vab_Tr01: number;
+    Vbc_Tr01: number;
+    Vca_Tr01: number;
+    Ia_Tr01: number;
+    Ib_Tr01: number;
+    Ic_Tr01: number;
+    Pt_Tr01: number;
     V_CMT: number;
     V_inUPS: number;
     V_outUPS: number;
@@ -5198,7 +5199,7 @@ return (
     paintOrder="markers stroke fill"
   />
   <text
-    id="vac_tr01a"
+    id="vab_tr01a"
     transform="matrix(1.046 0 0 .95601 14.288 0)"
     x={442.06537}
     y={21.427717}
@@ -5233,7 +5234,7 @@ return (
       fontSize="3.5277px"
       strokeWidth={0.4333}
     >
-      {"440 V"}
+      {ParametrosElec.Vab_Tr01}
     </tspan>
   </text>
   <text
@@ -5272,11 +5273,11 @@ return (
       fontSize="3.5277px"
       strokeWidth={0.4333}
     >
-      {"440 V"}
+      {ParametrosElec.Vbc_Tr01}
     </tspan>
   </text>
   <text
-    id="text_gen4-5-4-3"
+    id="vca_tr01a"
     transform="matrix(1.046 0 0 .95601 14.288 0)"
     x={442.05881}
     y={32.633904}
@@ -5311,7 +5312,7 @@ return (
       fontSize="3.5277px"
       strokeWidth={0.4333}
     >
-      {"440 V"}
+      {ParametrosElec.Vca_Tr01}
     </tspan>
   </text>
   <text
@@ -5350,7 +5351,7 @@ return (
       fontSize="3.5277px"
       strokeWidth={0.4333}
     >
-      {"900 A"}
+      {ParametrosElec.Ia_Tr01}A
     </tspan>
   </text>
   <text
@@ -5389,7 +5390,7 @@ return (
       fontSize="3.5277px"
       strokeWidth={0.4333}
     >
-      {"900 A"}
+      {ParametrosElec.Ib_Tr01}A
     </tspan>
   </text>
   <text
@@ -5428,7 +5429,7 @@ return (
       fontSize="3.5277px"
       strokeWidth={0.4333}
     >
-      {"900 A"}
+      {ParametrosElec.Ic_Tr01}A
     </tspan>
   </text>
   <text
@@ -5467,7 +5468,7 @@ return (
       fontSize="3.5277px"
       strokeWidth={0.4333}
     >
-      {"1.5 KW"}
+      {ParametrosElec.Pt_Tr01}KW
     </tspan>
   </text>
   <circle

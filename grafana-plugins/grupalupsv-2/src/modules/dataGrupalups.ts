@@ -61,7 +61,7 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     let INVERTER_ON_OFF = data.series.find(({ name }) => name?.includes('DATA.INVERTER_ON_OFF.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let RECTIFIER_ON_OFF = data.series.find(({ name }) => name?.includes('DATA.RECTIFIER_ON_OFF.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull; 
+    ?.lastNotNull;
     let BATTERY_STATUS = data.series.find(({ name }) => name?.includes('DATA.BATTERY_STATUS.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let ALARMS_PRESENT = data.series.find(({ name }) => name?.includes('DATA.ALARMS_PRESENT.VALUE'))?.fields[1].state?.calcs
@@ -70,7 +70,7 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     ?.lastNotNull;
     let BYPASS_POWER = data.series.find(({ name }) => name?.includes('DATA.BYPASS_POWER.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
-
+    
     let grupalups: DataGrupalups ={
         DatosGenerales: {
             Nombre: options.nombre,
@@ -157,7 +157,7 @@ const dataGrupalups = (data: PanelData, options: SimpleOptions): DataGrupalups =
     
     //ALARMAS
     grupalups.Alarmas.Rectifier = (RECTIFIER_ON_OFF ===2 && INVERTER_ON_OFF ===1)? alarmsStyles.on1 : estadoStyles.sinConexion2;
-    grupalups.Alarmas.Rectifierbox = (RECTIFIER_ON_OFF ===2 && INVERTER_ON_OFF ===1)? alarmsStyles.on : alarmsStyles.off2;
+    //grupalups.Alarmas.Rectifierbox = (RECTIFIER_ON_OFF ===2 && INVERTER_ON_OFF ===1)? alarmsStyles.on : alarmsStyles.off2;
     //grupalups.Alarmas.Battery = (BATTERY_STATUS ==1 && RECTIFIER_ON_OFF ==2 && INVERTER_ON_OFF ==1)? alarmsStyles.on3 : alarmsStyles.off1;
     //grupalups.Alarmas.Bypass = (BYPASS_POWER)
     grupalups.Alarmas.Alarma = ALARMS_PRESENT > 0? alarmsStyles.on : alarmsStyles.off;

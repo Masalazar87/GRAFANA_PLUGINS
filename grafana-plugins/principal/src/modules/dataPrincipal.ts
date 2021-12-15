@@ -305,16 +305,33 @@ let SYS_1_EN = data.series.find(({ name }) => name?.includes('SYS_1_EN'))?.field
 ?.lastNotNull;
 let SYS_2_EN = data.series.find(({ name }) => name?.includes('DATA.SYS_EN.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
+//-------------------------------------------------------------------------------------------------------------
+//-------------------------------------PARAMETROS DE TRANSFORMADOR (PQM)---------------------------------------
+let VAB_TR01 = data.series.find(({ name }) => name?.includes('DATA.VOL_VAB.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let VBC_TR01 = data.series.find(({ name }) => name?.includes('DATA.VOL_VBC.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let VCA_TR01 = data.series.find(({ name }) => name?.includes('DATA.VOL_VCA.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let Ia_TR01 = data.series.find(({ name }) => name?.includes('DATA.CURR_A.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let Ib_TR01 = data.series.find(({ name }) => name?.includes('DATA.CURR_B.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let Ic_TR01 = data.series.find(({ name }) => name?.includes('DATA.CURR_C.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let Pt_TR01 = data.series.find(({ name }) => name?.includes('DATA.REALPOW_3PHAS.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 let principal: DataPrincipal = {
     ParametrosElec: {
-        V_inTransf: 0,
-        V_outTransf: 0,
-        I_inTransf: 0,
-        I_outTransf: 0,
-        P_inTransf: 0,
-        P_outTrasnf: 0,
+        Vab_Tr01: 0,
+        Vbc_Tr01: 0,
+        Vca_Tr01: 0,
+        Ia_Tr01: 0,
+        Ib_Tr01: 0,
+        Ic_Tr01: 0,
+        Pt_Tr01: 0,
         V_CMT: 0,
         V_inUPS: 0,
         V_outUPS: 0,
@@ -575,8 +592,8 @@ let cargaSIS2_gen = potenciaSIS1_gen * 1000 / 2430;
 principal.Estados_Principales.clima_SIS1 = SYS_1_EN === 1? estadosStyles.on : estadosStyles.sinconexion;
 principal.Estados_Principales.clima_SIS2 = SYS_2_EN === 1? estadosStyles.on : estadosStyles.sinconexion;
 //-----------------------------------------ESTADOS DE SISTEMA DE UPS´S-----------------------------------------
-principal.Estados_Principales.ups_SIS1 = (st_ups1a[1] || st_ups1a[2] || st_ups1a[3] || st_ups1a[4] || st_ups1a[5] || st_ups1a[6]) === st_on? estadosStyles.on : estadosStyles.sinconexion;
-principal.Estados_Principales.ups_SIS2 = (st_ups2a[1] || st_ups2a[2] || st_ups2a[3] || st_ups2a[4] || st_ups2a[5] || st_ups2a[6]) === st_on? estadosStyles.on : estadosStyles.sinconexion;
+principal.Estados_Principales.ups_SIS1 = st_ups1a[1] === st_on || st_ups1a[2] === st_on || st_ups1a[3] === st_on || st_ups1a[4] === st_on || st_ups1a[5] === st_on || st_ups1a[6] === st_on? estadosStyles.on : estadosStyles.sinconexion;
+principal.Estados_Principales.ups_SIS2 = st_ups2a[1] === st_on || st_ups2a[2] === st_on || st_ups2a[3] === st_on || st_ups2a[4] === st_on || st_ups2a[5] === st_on || st_ups2a[6] === st_on? estadosStyles.on : estadosStyles.sinconexion;
 //-----------------------------------------ALARMAS DE UPS´S 10kva Y RECTIFICADORES-----------------------------------
 principal.Alarmas_SIS1.upsoffices_1a = alups10kva[1];
 principal.Alarmas_SIS1.upssat_1a = alups10kva[2];
@@ -589,7 +606,14 @@ principal.Estados_SIS2.upssat_2a = stups10kva[4];
 principal.Estados_SIS1.rec_1a = strec[1];
 principal.Estados_SIS2.rec_2a = strec[2];
 
-
+//-----------------------------------------PARAMETROS TRANSFORMADOR (PQM)-----------------------------------
+principal.ParametrosElec.Vab_Tr01 = Number.parseFloat(VAB_TR01?.toFixed(2));
+principal.ParametrosElec.Vbc_Tr01 = Number.parseFloat(VBC_TR01?.toFixed(2));
+principal.ParametrosElec.Vca_Tr01 = Number.parseFloat(VCA_TR01?.toFixed(2));
+principal.ParametrosElec.Ia_Tr01 = Number.parseFloat(Ia_TR01?.toFixed(2));
+principal.ParametrosElec.Ib_Tr01 = Number.parseFloat(Ib_TR01?.toFixed(2));
+principal.ParametrosElec.Ic_Tr01 = Number.parseFloat(Ic_TR01?.toFixed(2));
+principal.ParametrosElec.Pt_Tr01 = Number.parseFloat(Pt_TR01?.toFixed(2))/100;
 
 console.log(principal);
 
