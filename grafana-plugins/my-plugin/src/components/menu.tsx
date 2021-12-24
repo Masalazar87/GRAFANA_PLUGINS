@@ -461,7 +461,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"PQM"}
+              <a href={url_pqm} target="_blank" style={{ fill: '#00aad4' }}>
+              {"PQM"}
+              </a>
           </tspan>
         </text>
         <text
