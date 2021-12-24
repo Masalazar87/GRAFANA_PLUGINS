@@ -8,7 +8,10 @@ type ParametrosElec = {
     Ib_Tr01: number;
     Ic_Tr01: number;
     Pt_Tr01: number;
-    V_CMT: number;
+    V_CMTAVG: number;
+    V_CMTL1: number;
+    V_CMTL2: number;
+    V_CMTL3: number;
     V_inUPS: number;
     V_outUPS: number;
     //PUE: number;
@@ -61,6 +64,7 @@ type Estados_Principales = {
     clima_SIS1: string; clima_SIS2: string;
     uma1: string; uma2: string; uma3: string; uma4:string; uma5: string; uma6: string;
     uma7: string; uma8: string; uma9: string; uma10:string; uma11: string; uma12: string;
+    VAB_CMT: string; VBC_CMT: string; VCA_CMT: string; ST_CMT: string;
 };
 type Estados_SIS1 = {
     ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi1: string;
@@ -1737,7 +1741,7 @@ return (
       fontSize="6.35px"
       strokeWidth={0.24491}
     >
-      {ParametrosElec.V_CMT}
+      {ParametrosElec.V_CMTAVG}
     </tspan>
   </text>
   <circle
@@ -5054,7 +5058,7 @@ return (
       fontSize="3.5277px"
       strokeWidth={0.4333}
     >
-      {"28.5KV"}
+      {ParametrosElec.V_CMTL1}KV
     </tspan>
   </text>
   <text
@@ -5093,7 +5097,7 @@ return (
       fontSize="3.5277px"
       strokeWidth={0.4333}
     >
-      {"28.5KV"}
+      {ParametrosElec.V_CMTL2}KV
     </tspan>
   </text>
   <text
@@ -5132,7 +5136,7 @@ return (
       fontSize="3.5277px"
       strokeWidth={0.4333}
     >
-      {"28.5KV"}
+      {ParametrosElec.V_CMTL3}KV
     </tspan>
   </text>
   <circle
@@ -5143,6 +5147,7 @@ return (
     r={2.3465}
     fill="#4d4d4d"
     paintOrder="markers stroke fill"
+    className={Estados_Principales.VAB_CMT}
   />
   <ellipse
     id="st_trans-12-5-4-9-7-5-6-8-5-0-9"
@@ -5164,6 +5169,7 @@ return (
     r={2.3465}
     fill="#4d4d4d"
     paintOrder="markers stroke fill"
+    className={Estados_Principales.VBC_CMT}
   />
   <ellipse
     id="st_trans-12-5-4-9-7-5-6-8-5-9-0-5"
@@ -5185,6 +5191,7 @@ return (
     r={2.3465}
     fill="#4d4d4d"
     paintOrder="markers stroke fill"
+    className={Estados_Principales.VCA_CMT}
   />
   <ellipse
     id="st_trans-12-5-4-9-7-5-6-8-5-2-8-6"
@@ -5478,6 +5485,7 @@ return (
     r={3.2985}
     fill="#4d4d4d"
     paintOrder="markers stroke fill"
+    className={Estados_Principales.ST_CMT}    
   />
   <ellipse
     id="st_trans-12-5-4-9-7-5-6-5-7"
