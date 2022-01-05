@@ -12,8 +12,8 @@ type ParametrosElec = {
     V_CMTL1: number;
     V_CMTL2: number;
     V_CMTL3: number;
-    V_inUPS: number;
-    V_outUPS: number;
+    P_SIS1: number;
+    P_SIS2: number;
     //PUE: number;
     //DCIE: number
 };
@@ -87,11 +87,12 @@ type Estados_SIS2 = {
 type Alarmas = {
     uma1: string; uma2: string; uma3: string; uma4:string; uma5: string; uma6: string;
     uma7: string; uma8: string; uma9: string; uma10:string; uma11: string; uma12: string;
+    clima_SIS1: string; clima_SIS2: string;
 };
 type Alarmas_SIS1 = {
     ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi1: string;
     gen1: string; gen2: string; gen3: string;
-    Ea3: string; Ea4: string;
+    Ea3: string; Ea4: string; Ea3mant: string; Ea4mant: string;
     b1_4: string; b1_5: string; b1_6: string;
     b2_3: string; b2_4: string;
     upsoffices_1a: string; upssat_1a: string; //rec_1a: string;
@@ -1112,7 +1113,7 @@ return (
     cy={60.678}
     rx={1.7563}
     ry={1.8557}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_Principales.uma1}
   />
@@ -1156,7 +1157,7 @@ return (
     cy={80.896}
     rx={1.7563}
     ry={1.8557}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_Principales.uma3}
   />
@@ -1200,7 +1201,7 @@ return (
     cy={101.11}
     rx={1.7563}
     ry={1.8557}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_Principales.uma5}
   />
@@ -1244,7 +1245,7 @@ return (
     cy={121.33}
     rx={1.7563}
     ry={1.8557}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_Principales.uma7}
   />
@@ -1288,7 +1289,7 @@ return (
     cy={141.55}
     rx={1.7563}
     ry={1.8557}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_Principales.uma9}
   />
@@ -1671,7 +1672,7 @@ return (
   <text
     id="vol_upsin"
     transform="scale(1.0508 .95161)"
-    x={239.21196}
+    x={236.21196}
     y={23.23435}
     style={{
       fontVariantCaps: "normal",
@@ -1690,7 +1691,7 @@ return (
   >
     <tspan
       id="tspan5101-4"
-      x={239.21196}
+      x={236.21196}
       y={23.23435}
       style={{
         fontVariantCaps: "normal",
@@ -1703,7 +1704,7 @@ return (
       fontSize="6.35px"
       strokeWidth={0.24491}
     >
-      {ParametrosElec.V_inUPS}
+      {ParametrosElec.P_SIS1}
     </tspan>
   </text>
   <text
@@ -1749,7 +1750,7 @@ return (
     cx={403.8}
     cy={107.18}
     r={3.2985}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_Principales.ups_SIS1}
   />
@@ -1771,7 +1772,7 @@ return (
     cy={107.18}
     rx={3.2985}
     ry={3.2987}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_Principales.ups_SIS2}
   />
@@ -1990,7 +1991,7 @@ return (
     cx={31.976}
     cy={59.505}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.Ea3}
   />
@@ -2006,6 +2007,28 @@ return (
     opacity={0.29}
     paintOrder="markers stroke fill"
     strokeWidth={1.8378}
+  />
+  <circle
+    id="st_chill1-1-mant"//mantenimiento
+    transform="translate(14.288)"
+    cx={31.976}
+    cy={59.505}
+    r={2}
+    fill="#999"
+    opacity={0}
+    paintOrder="markers stroke fill"
+    className={Alarmas_SIS1.Ea3mant}
+  />
+  <circle
+    id="st_chill1-1-alarma"//alarma
+    transform="translate(14.288)"
+    cx={31.976}
+    cy={59.505}
+    r={2}
+    fill="#999"
+    opacity={0}
+    paintOrder="markers stroke fill"
+    className={Alarmas_SIS1.Ea3}
   />
   <text
     id="tsumchill1-3"
@@ -2089,7 +2112,7 @@ return (
     cx={31.976}
     cy={82.43}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.Ea4}
   />
@@ -2106,13 +2129,35 @@ return (
     paintOrder="markers stroke fill"
     strokeWidth={1.8378}
   />
+   <circle
+    id="st_chill1-1-4-mant"//mantenimiento
+    transform="translate(14.288)"
+    cx={31.976}
+    cy={82.43}
+    r={2}
+    fill="#999"
+    opacity={0}
+    paintOrder="markers stroke fill"
+    className={Alarmas_SIS1.Ea4mant}
+  />
+    <circle
+    id="st_chill1-1-4-alarma"//alarma
+    transform="translate(14.288)"
+    cx={31.976}
+    cy={82.43}
+    r={2}
+    fill="#999"
+    opacity={0}
+    paintOrder="markers stroke fill"
+    className={Alarmas_SIS1.Ea4}
+  />
   <circle
     id="st_bomba1"
     transform="translate(14.288)"
     cx={37.856}
     cy={110.23}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.b1_6}
   />
@@ -2135,7 +2180,7 @@ return (
     cx={48.183}
     cy={110.23}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.b1_5}
   />
@@ -2158,7 +2203,7 @@ return (
     cx={57.972}
     cy={110.23}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.b1_4}
   />
@@ -2181,7 +2226,7 @@ return (
     cx={48.183}
     cy={137.35}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.b2_4}
   />
@@ -2204,7 +2249,7 @@ return (
     cx={57.972}
     cy={137.35}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.b2_3}
   />
@@ -2303,7 +2348,7 @@ return (
     cx={48.183}
     cy={156.12}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.V1aux}
   />
@@ -2326,7 +2371,7 @@ return (
     cx={57.972}
     cy={156.12}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.V2aux}
   />
@@ -2501,7 +2546,7 @@ return (
     cx={93.875}
     cy={59.505}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.Ea1}
   />
@@ -2524,10 +2569,21 @@ return (
       cx={93.875}
       cy={59.505}
       r={2}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.Ea1mant}
+    />
+    <circle
+      id="st_chill1-1-1-alarma"//alarma
+      transform="translate(14.288)"
+      cx={93.875}
+      cy={59.505}
+      r={2}
+      fill="#999"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.Ea1}
     />
   <circle
     id="st_chill1-1-4-8"
@@ -2535,7 +2591,7 @@ return (
     cx={93.875}
     cy={82.43}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.Ea2}
   />
@@ -2558,10 +2614,21 @@ return (
       cx={93.875}
       cy={82.43}
       r={2}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.Ea2mant}
+    />
+    <circle
+      id="st_chill1-1-4-8-alarma"//alarma
+      transform="translate(14.288)"
+      cx={93.875}
+      cy={82.43}
+      r={2}
+      fill="#999"
+      opacity={0}
+      paintOrder="markers stroke fill"
+      className={Alarmas_SIS2.Ea2}
     />
   <circle
     id="st_bomba1-8"
@@ -2569,7 +2636,7 @@ return (
     cx={99.756}
     cy={110.23}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.b1_3}
   />
@@ -2592,7 +2659,7 @@ return (
       cx={99.756}
       cy={110.23}
       r={2}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.b1_3}
@@ -2603,7 +2670,7 @@ return (
     cx={110.08}
     cy={110.23}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.b1_2}
   />
@@ -2626,7 +2693,7 @@ return (
       cx={110.08}
       cy={110.23}
       r={2}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.b1_2}
@@ -2637,7 +2704,7 @@ return (
     cx={119.87}
     cy={110.23}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.b1_1}
   />
@@ -2660,7 +2727,7 @@ return (
       cx={119.87}
       cy={110.23}
       r={2}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.b1_1}
@@ -2671,7 +2738,7 @@ return (
     cx={110.08}
     cy={137.35}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.b2_2}
   />
@@ -2694,7 +2761,7 @@ return (
       cx={110.08}
       cy={137.35}
       r={2}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.b2_2}
@@ -2705,7 +2772,7 @@ return (
     cx={119.87}
     cy={137.35}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.b2_1}
   />
@@ -2728,7 +2795,7 @@ return (
       cx={119.87}
       cy={137.35}
       r={2}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.b2_1}
@@ -2815,7 +2882,7 @@ return (
     cx={110.08}
     cy={156.12}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.V1aux} 
   />
@@ -2838,7 +2905,7 @@ return (
     cx={119.87}
     cy={156.12}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.V2aux}
   />
@@ -3089,7 +3156,7 @@ return (
     cx={31.976}
     cy={35.994}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.upschi1}
   />
@@ -3112,7 +3179,7 @@ return (
       cx={31.976}
       cy={35.994}
       r={2}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS1.upschi1}
@@ -3275,7 +3342,7 @@ return (
     cx={93.88}
     cy={35.995}
     r={2}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.upschi2}
   />
@@ -3298,7 +3365,7 @@ return (
       cx={93.88}
       cy={35.995}
       r={2}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.upschi2}
@@ -3574,9 +3641,20 @@ return (
     cx={53.548}
     cy={11.229}
     r={4.671}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_Principales.clima_SIS1}
+  />
+  <circle
+    id="al_s1aacc"//alarma
+    transform="translate(14.288)"
+    cx={53.548}
+    cy={11.229}
+    r={4.671}
+    fill="#999"
+    opacity={0}
+    paintOrder="markers stroke fill"
+    className={Alarmas.clima_SIS1}
   />
   <ellipse
     id="st_trans-12-5-4-9-7"
@@ -3600,6 +3678,17 @@ return (
     paintOrder="markers stroke fill"
     className={Estados_Principales.clima_SIS2}
   />
+   <circle
+    id="al_s2aacc"//alarma
+    transform="translate(14.288)"
+    cx={115.4}
+    cy={11.229}
+    r={4.671}
+    fill="#4d4d4d"
+    opacity={0}
+    paintOrder="markers stroke fill"
+    className={Alarmas.clima_SIS2}
+  />
   <ellipse
     id="st_trans-12-5-4-9-7-2"
     transform="matrix(.65326 0 0 .57833 103.81 -92.257)"
@@ -3615,7 +3704,7 @@ return (
   <text
     id="vol_upsout"
     transform="scale(1.0508 .95161)"
-    x={279.2937}
+    x={276.2937}
     y={23.23435}
     style={{
       fontVariantCaps: "normal",
@@ -3634,7 +3723,7 @@ return (
   >
     <tspan
       id="tspan5101-4-99"
-      x={279.2937}
+      x={276.2937}
       y={23.23435}
       style={{
         fontVariantCaps: "normal",
@@ -3647,7 +3736,7 @@ return (
       fontSize="6.35px"
       strokeWidth={0.24491}
     >
-      {ParametrosElec.V_outUPS}
+      {ParametrosElec.P_SIS2}
     </tspan>
   </text>
   <circle
@@ -3655,7 +3744,7 @@ return (
     cx={433.22}
     cy={113.5}
     r={2.3466}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.ups2}
   />
@@ -3677,7 +3766,7 @@ return (
       cx={418.93}
       cy={130.96}
       r={2.3466}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS1.ups2}
@@ -3687,7 +3776,7 @@ return (
     cx={433.22}
     cy={119.47}
     r={2.3466}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.ups3}
   />
@@ -3709,7 +3798,7 @@ return (
       cx={418.93}
       cy={136.93}
       r={2.3466}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS1.ups3}
@@ -3719,7 +3808,7 @@ return (
     cx={433.22}
     cy={125.44}
     r={2.3466}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.ups4}
   />
@@ -3741,7 +3830,7 @@ return (
       cx={418.93}
       cy={142.9}
       r={2.3466}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS1.ups4}
@@ -3751,7 +3840,7 @@ return (
     cx={433.22}
     cy={131.41}
     r={2.3466}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.ups5}
   />
@@ -3773,7 +3862,7 @@ return (
       cx={418.93}
       cy={148.87}
       r={2.3466}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS1.ups5}
@@ -3783,7 +3872,7 @@ return (
     cx={433.22}
     cy={137.38}
     r={2.3466}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.ups6}
   />
@@ -3805,7 +3894,7 @@ return (
       cx={418.93}
       cy={154.84}
       r={2.3466}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS1.ups6}
@@ -3815,7 +3904,7 @@ return (
     cx={504.02}
     cy={113.5}
     r={2.3466}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.ups2}
   />
@@ -3836,7 +3925,7 @@ return (
       cx={504.02}
       cy={130.96}
       r={2.3466}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.ups2}
@@ -3846,7 +3935,7 @@ return (
     cx={504.02}
     cy={119.47}
     r={2.3466}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.ups3}
   />
@@ -3867,7 +3956,7 @@ return (
       cx={504.02}
       cy={136.93}
       r={2.3466}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.ups3}
@@ -3877,7 +3966,7 @@ return (
     cx={504.02}
     cy={125.44}
     r={2.3466}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.ups4}
   />
@@ -3898,7 +3987,7 @@ return (
       cx={504.02}
       cy={142.9}
       r={2.3466}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.ups4}
@@ -3908,7 +3997,7 @@ return (
     cx={504.02}
     cy={131.41}
     r={2.3466}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.ups5}
   />
@@ -3929,7 +4018,7 @@ return (
       cx={504.02}
       cy={148.87}
       r={2.3466}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.ups5}
@@ -3939,7 +4028,7 @@ return (
     cx={504.02}
     cy={137.38}
     r={2.3466}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.ups6}
   />
@@ -3960,7 +4049,7 @@ return (
       cx={504.02}
       cy={154.84}
       r={2.3466}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.ups6}
@@ -3970,7 +4059,7 @@ return (
     cx={504.02}
     cy={107.53}
     r={2.3466}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS2.ups1}
   />
@@ -3991,7 +4080,7 @@ return (
       cx={504.02}
       cy={124.99}
       r={2.3466}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.ups1}
@@ -4001,7 +4090,7 @@ return (
     cx={433.22}
     cy={107.53}
     r={2.3466}
-    fill="#2fc43b"
+    fill="#999"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.ups1}
   />
@@ -4022,7 +4111,7 @@ return (
       cx={433.22}
       cy={124.99}
       r={2.3466}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS1.ups1}

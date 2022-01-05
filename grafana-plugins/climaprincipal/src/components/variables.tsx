@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 
 type ParametrosSIS1 = {
@@ -49,18 +51,14 @@ type EstadosSIS2 = {
     VAux2S2: string;
 };
 type AlarmasSIS1 = {
-  B1_4: string;
-  B1_5: string;
-  B1_6: string;
-  B2_3: string;
-  B2_4: string;
+  B1_4: string;  B1_5: string;  B1_6: string;  B2_3: string;  B2_4: string;
+  alEA3: string; alEA4: string; mantEA3: string; mantEA4: string;
+  SIS1alarma: string;
 };
 type AlarmasSIS2 = {
-  B1_1: string;
-  B1_2: string;
-  B1_3: string;
-  B2_1: string;
-  B2_2: string;
+  B1_1: string;  B1_2: string;  B1_3: string;  B2_1: string;  B2_2: string;
+  alEA1: string; alEA2: string; mantEA1: string; mantEA2: string;
+  SIS2alarma: string;
 };
 type Tuberias = {
   B1_1: string;  B1_2: string;  B1_3: string;  B2_1: string;  B2_2: string;
@@ -656,7 +654,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       id="tret_chill4"
       transform="scale(.98412 1.0161)"
       x={473.51965}
-      y={108.80931}
+      y={108.00931}
       style={{
         fontVariantCaps: "normal",
         fontVariantEastAsian: "normal",
@@ -675,7 +673,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       <tspan
         id="tspan884-5-9-8-1-7-1"
         x={473.51965}
-        y={108.80931}
+        y={108.00931}
         style={{
           fontVariantCaps: "normal",
           fontVariantEastAsian: "normal",
@@ -864,7 +862,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       id="tret_chill2"
       transform="scale(.98412 1.0161)"
       x={49.904591}
-      y={108.80931}
+      y={108.00931}
       style={{
         fontVariantCaps: "normal",
         fontVariantEastAsian: "normal",
@@ -883,7 +881,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       <tspan
         id="tspan884-5-9-8-1-7"
         x={49.904591}
-        y={108.80931}
+        y={108.00931}
         style={{
           fontVariantCaps: "normal",
           fontVariantEastAsian: "normal",
@@ -1521,7 +1519,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     <path
       id="t9-9"
       transform="rotate(-90)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       className={Tuberias.VAux1S1}
       paintOrder="markers fill stroke"
@@ -1557,7 +1555,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     <path
       id="t9-6"
       fillOpacity={0.99608}
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       className={Tuberias.B1_6}
       paintOrder="markers fill stroke"
@@ -1577,7 +1575,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     <path
       id="t9-9-6"
       transform="rotate(-90)"
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       className={Tuberias.VAux2S1}
       paintOrder="markers fill stroke"
@@ -1800,7 +1798,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       id="t12-5"
       d="M111.11 60.837c1.402.312 1.949.955 1.908 1.965l3.37-.006-.013-1.965c-.213-1.818-2.176-3.656-5.263-3.18z"
       fillOpacity={0.99608}
-      fill="#999"
+      fill="#0066FF"
       className={Tuberias.B1_6}
       opacity={0.768}
     />
@@ -1816,7 +1814,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     <path
       id="t9-6-1"
       fillOpacity={0.99608}
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       className={Tuberias.B1_5}
       paintOrder="markers fill stroke"
@@ -1837,7 +1835,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       id="t12-5-7"
       d="M111.11 94.307c1.402.312 1.949.955 1.908 1.965l3.37-.006-.013-1.965c-.213-1.818-2.176-3.656-5.263-3.18z"
       fillOpacity={0.99608}
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       className={Tuberias.B1_5}
     />
@@ -1853,7 +1851,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     <path
       id="t9-6-1-3"
       fillOpacity={0.99608}
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       className={Tuberias.B1_4}
       paintOrder="markers fill stroke"
@@ -1874,7 +1872,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       id="t12-5-7-5"
       d="M111.11 128.25c1.402.312 1.949.955 1.908 1.965l3.37-.006-.013-1.965c-.213-1.818-2.176-3.656-5.263-3.18z"
       fillOpacity={0.99608}
-      fill="#999"
+      fill="#0066FF"
       opacity={0.768}
       className={Tuberias.B1_4}
     />
@@ -3076,7 +3074,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={180.54}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.Bomba_1_b2_1}
       paintOrder="markers stroke fill"
     />
@@ -3100,7 +3098,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={180.54}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       className={AlarmasSIS2.B2_1}
       paintOrder="markers stroke fill"
@@ -3112,7 +3110,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={201.71}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.Bomba_1_b2_2}
       paintOrder="markers stroke fill"
     />
@@ -3136,7 +3134,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={201.71}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       className={AlarmasSIS2.B2_2}
       paintOrder="markers stroke fill"
@@ -3148,7 +3146,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={78.292}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.Bomba_1_b1_3}
       paintOrder="markers stroke fill"
     />
@@ -3172,7 +3170,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={78.292}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       className={AlarmasSIS2.B1_3}
       paintOrder="markers stroke fill"
@@ -3184,7 +3182,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={111.45}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.Bomba_1_b1_2}
       paintOrder="markers stroke fill"
     />
@@ -3208,7 +3206,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={111.45}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       className={AlarmasSIS2.B1_2}
       paintOrder="markers stroke fill"
@@ -3220,7 +3218,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={145.41}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.Bomba_1_b1_1}
       paintOrder="markers stroke fill"
     />
@@ -3244,7 +3242,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={145.41}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       className={AlarmasSIS2.B1_1}
       paintOrder="markers stroke fill"
@@ -3256,8 +3254,32 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={134.02}
       rx={3.23}
       ry={3.3008}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.Chiller_1_ea_1}
+      paintOrder="markers stroke fill"
+    />
+     <ellipse
+      id="al_chill2-1"//alarma
+      transform="scale(-1 1)"
+      cx={-433.14}
+      cy={134.02}
+      rx={3.23}
+      ry={3.3008}
+      fill="#999"
+      opacity={0}
+      className={AlarmasSIS2.alEA1}
+      paintOrder="markers stroke fill"
+    />
+      <ellipse
+      id="mant_chill2-1"//mantenimiento
+      transform="scale(-1 1)"
+      cx={-433.14}
+      cy={134.02}
+      rx={3.23}
+      ry={3.3008}
+      fill="#999"
+      opacity={0}
+      className={AlarmasSIS2.mantEA1}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3267,8 +3289,32 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={52.702}
       rx={3.23}
       ry={3.3008}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.Chiller_1_ea_2}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="al_chill1-9"//alarma
+      transform="scale(-1 1)"
+      cx={-433.14}
+      cy={52.702}
+      rx={3.23}
+      ry={3.3008}
+      fill="#999"
+      opacity={0}
+      className={AlarmasSIS2.alEA2}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="mant_chill1-9"//mantenimiento
+      transform="scale(-1 1)"
+      cx={-433.14}
+      cy={52.702}
+      rx={3.23}
+      ry={3.3008}
+      fill="#999"
+      opacity={0}
+      className={AlarmasSIS2.mantEA2}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -3302,7 +3348,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={180.86}
       cy={89.998}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.R1UMA11}
       paintOrder="markers stroke fill"
     />
@@ -3323,7 +3369,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={180.86}
       cy={81.37}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.S1UMA11}
       paintOrder="markers stroke fill"
     />
@@ -3344,7 +3390,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={180.86}
       cy={114.65}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.R1UMA10}
       paintOrder="markers stroke fill"
     />
@@ -3365,7 +3411,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={180.86}
       cy={106.02}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.S1UMA10}
       paintOrder="markers stroke fill"
     />
@@ -3386,7 +3432,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={180.86}
       cy={139.29}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.R1UMA9}
       paintOrder="markers stroke fill"
     />
@@ -3407,7 +3453,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={180.86}
       cy={130.67}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.S1UMA9}
       paintOrder="markers stroke fill"
     />
@@ -3428,7 +3474,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={180.86}
       cy={163.94}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.R1UMA8}
       paintOrder="markers stroke fill"
     />
@@ -3449,7 +3495,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={180.86}
       cy={155.31}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.S1UMA8}
       paintOrder="markers stroke fill"
     />
@@ -3470,7 +3516,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={180.86}
       cy={188.59}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.R1UMA7}
       paintOrder="markers stroke fill"
     />
@@ -3491,7 +3537,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={180.86}
       cy={179.96}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.S1UMA7}
       paintOrder="markers stroke fill"
     />
@@ -3512,7 +3558,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={180.86}
       cy={65.351}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.R1UMA12}
       paintOrder="markers stroke fill"
     />
@@ -3533,7 +3579,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={180.86}
       cy={56.722}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.S1UMA12}
       paintOrder="markers stroke fill"
     />
@@ -3542,7 +3588,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={321.99}
       cy={89.998}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.R1UMA2}
       paintOrder="markers stroke fill"
     />
@@ -3563,7 +3609,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={321.99}
       cy={81.37}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.S1UMA2}
       paintOrder="markers stroke fill"
     />
@@ -3584,7 +3630,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={321.99}
       cy={114.65}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.R1UMA3}
       paintOrder="markers stroke fill"
     />
@@ -3605,7 +3651,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={321.99}
       cy={106.02}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.S1UMA3}
       paintOrder="markers stroke fill"
     />
@@ -3626,7 +3672,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={321.99}
       cy={139.29}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.R1UMA4}
       paintOrder="markers stroke fill"
     />
@@ -3647,7 +3693,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={321.99}
       cy={130.67}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.S1UMA4}
       paintOrder="markers stroke fill"
     />
@@ -3668,7 +3714,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={321.99}
       cy={163.94}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.R1UMA5}
       paintOrder="markers stroke fill"
     />
@@ -3689,7 +3735,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={321.99}
       cy={155.31}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.S1UMA5}
       paintOrder="markers stroke fill"
     />
@@ -3710,7 +3756,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={321.99}
       cy={188.59}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.R1UMA6}
       paintOrder="markers stroke fill"
     />
@@ -3731,7 +3777,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={321.99}
       cy={179.96}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.S1UMA6}
       paintOrder="markers stroke fill"
     />
@@ -3752,7 +3798,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={321.99}
       cy={65.351}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.R1UMA1}
       paintOrder="markers stroke fill"
     />
@@ -3773,7 +3819,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={321.99}
       cy={56.722}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.S1UMA1}
       paintOrder="markers stroke fill"
     />
@@ -3794,7 +3840,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={187.81}
       cy={81.369}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.S2UMA11}
       paintOrder="markers stroke fill"
     />
@@ -3815,7 +3861,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={187.81}
       cy={89.998}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.R2UMA11}
       paintOrder="markers stroke fill"
     />
@@ -3836,7 +3882,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={187.81}
       cy={106.02}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.S2UMA10}
       paintOrder="markers stroke fill"
     />
@@ -3857,7 +3903,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={187.81}
       cy={114.65}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.R2UMA10}
       paintOrder="markers stroke fill"
     />
@@ -3878,7 +3924,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={187.81}
       cy={130.67}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.S2UMA9}
       paintOrder="markers stroke fill"
     />
@@ -3899,7 +3945,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={187.81}
       cy={139.29}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.R2UMA9}
       paintOrder="markers stroke fill"
     />
@@ -3920,7 +3966,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={187.81}
       cy={155.31}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.S2UMA8}
       paintOrder="markers stroke fill"
     />
@@ -3941,7 +3987,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={187.81}
       cy={163.94}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.R2UMA8}
       paintOrder="markers stroke fill"
     />
@@ -3962,7 +4008,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={187.81}
       cy={179.96}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.S2UMA7}
       paintOrder="markers stroke fill"
     />
@@ -3983,7 +4029,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={187.81}
       cy={188.59}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.R2UMA7}
       paintOrder="markers stroke fill"
     />
@@ -4004,7 +4050,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={187.81}
       cy={56.722}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.S2UMA12}
       paintOrder="markers stroke fill"
     />
@@ -4025,7 +4071,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={187.81}
       cy={65.351}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.R2UMA12}
       paintOrder="markers stroke fill"
     />
@@ -4046,7 +4092,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={328.94}
       cy={81.369}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.S2UMA2}
       paintOrder="markers stroke fill"
     />
@@ -4067,7 +4113,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={328.94}
       cy={89.998}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.R2UMA2}
       paintOrder="markers stroke fill"
     />
@@ -4088,7 +4134,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={328.94}
       cy={106.02}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.S2UMA3}
       paintOrder="markers stroke fill"
     />
@@ -4109,7 +4155,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={328.94}
       cy={114.65}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.R2UMA3}
       paintOrder="markers stroke fill"
     />
@@ -4130,7 +4176,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={328.94}
       cy={130.67}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.S2UMA4}
       paintOrder="markers stroke fill"
     />
@@ -4151,7 +4197,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={328.94}
       cy={139.29}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.R2UMA4}
       paintOrder="markers stroke fill"
     />
@@ -4172,7 +4218,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={328.94}
       cy={155.31}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.S2UMA5}
       paintOrder="markers stroke fill"
     />
@@ -4193,7 +4239,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={328.94}
       cy={163.94}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.R2UMA5}
       paintOrder="markers stroke fill"
     />
@@ -4214,7 +4260,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={328.94}
       cy={179.96}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.S2UMA6}
       paintOrder="markers stroke fill"
     />
@@ -4235,7 +4281,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={328.94}
       cy={188.59}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.R2UMA6}
       paintOrder="markers stroke fill"
     />
@@ -4256,7 +4302,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={328.94}
       cy={56.722}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.S2UMA1}
       paintOrder="markers stroke fill"
     />
@@ -4277,7 +4323,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cx={328.94}
       cy={65.351}
       r={2.3656}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS2.R2UMA1}
       paintOrder="markers stroke fill"
     />
@@ -4299,7 +4345,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={180.55}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.Bomba_1_b2_3}
       paintOrder="markers stroke fill"
     />
@@ -4322,7 +4368,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={180.55}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       className={AlarmasSIS1.B2_3}
       paintOrder="markers stroke fill"
     />
@@ -4332,7 +4378,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={201.71}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.Bomba_1_b2_4}
       paintOrder="markers stroke fill"
     />
@@ -4355,7 +4401,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={201.71}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       className={AlarmasSIS1.B2_4}
       paintOrder="markers stroke fill"
     />
@@ -4365,7 +4411,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={78.292}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.Bomba_1_b1_6}
       paintOrder="markers stroke fill"
     />
@@ -4388,7 +4434,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={78.292}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       opacity={0}
       className={AlarmasSIS1.B1_6}
       paintOrder="markers stroke fill"
@@ -4399,7 +4445,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={111.45}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.Bomba_1_b1_5}
       paintOrder="markers stroke fill"
     />
@@ -4422,7 +4468,8 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={111.45}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
+      opacity={0}
       className={AlarmasSIS1.B1_5}
       paintOrder="markers stroke fill"
     />
@@ -4432,7 +4479,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={145.41}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.Bomba_1_b1_4}
       paintOrder="markers stroke fill"
     />
@@ -4455,7 +4502,8 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={145.41}
       rx={2.0789}
       ry={2.1244}
-      fill="#2fc43b"
+      fill="#999"
+      opacity={0}
       className={AlarmasSIS1.B1_4}
       paintOrder="markers stroke fill"
     />
@@ -4465,8 +4513,30 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={134.02}
       rx={3.23}
       ry={3.3008}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.Chiller_1_ea_4}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="al_chill2"//alarma
+      cx={76.45}
+      cy={134.02}
+      rx={3.23}
+      ry={3.3008}
+      fill="#999"
+      opacity={0}
+      className={AlarmasSIS1.alEA4}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="mant_chill2"//mantenimiento
+      cx={76.45}
+      cy={134.02}
+      rx={3.23}
+      ry={3.3008}
+      fill="#999"
+      opacity={0}
+      className={AlarmasSIS1.mantEA4}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4475,8 +4545,30 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       cy={52.702}
       rx={3.23}
       ry={3.3008}
-      fill="#2fc43b"
+      fill="#999"
       className={EstadosSIS1.Chiller_1_ea_3}
+      paintOrder="markers stroke fill"
+    />
+    <ellipse
+      id="al_chill1"//alarma
+      cx={76.45}
+      cy={52.702}
+      rx={3.23}
+      ry={3.3008}
+      fill="#999"
+      opacity={0}
+      className={AlarmasSIS1.alEA3}
+      paintOrder="markers stroke fill"
+    />
+     <ellipse
+      id="mant_chill1"//mantenimiento
+      cx={76.45}
+      cy={52.702}
+      rx={3.23}
+      ry={3.3008}
+      fill="#999"
+      opacity={0}
+      className={AlarmasSIS1.mantEA3}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -5395,7 +5487,8 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     <path
       id="estado_eq"
       fillRule="evenodd"
-      fill="url(#linearGradient4474)"
+      fill="#999"
+      //fill="url(#linearGradient4474)"
       strokeWidth={0.26218}
       className={EstadosSIS2.SIS2habilitado}
       d="M383.45 3.5781H431.06399999999996V18.3581H383.45z"
@@ -5403,9 +5496,30 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
     <path
       id="estado_eq-7"
       fillRule="evenodd"
-      fill="url(#linearGradient4474-6)"
+      fill="#999"
+      //fill="url(#linearGradient4474-6)"
       strokeWidth={0.26218}
       className={EstadosSIS1.SIS1habilitado}
+      d="M75.079 3.578H122.69299999999998V18.358H75.079z"
+    />
+     <path
+      id="alarmaSIS2"
+      fillRule="evenodd"
+      fill="#999"
+      //fill="url(#linearGradient4474)"
+      opacity={0}
+      strokeWidth={0.26218}
+      className={AlarmasSIS2.SIS2alarma}
+      d="M383.45 3.5781H431.06399999999996V18.3581H383.45z"
+    />
+    <path
+      id="larmaSIS1"
+      fillRule="evenodd"
+      fill="#999"
+      //fill="url(#linearGradient4474-6)"
+      opacity={0}
+      strokeWidth={0.26218}
+      className={AlarmasSIS1.SIS1alarma}
       d="M75.079 3.578H122.69299999999998V18.358H75.079z"
     />
     <text

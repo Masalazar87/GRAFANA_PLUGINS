@@ -9,11 +9,11 @@ import Clima from 'components/clima';
 
 interface Props extends PanelProps<SimpleOptions> {}
 
-export const SimplePanel: React.FC<Props> = ({ options, data, replaceVariables, width, height }) => {
+export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) => {
   //const theme = useTheme();
   const styles = getStyles();
 
-  let clima = dataClima(data,options,replaceVariables);
+  let clima = dataClima(data,options);
 
   return (
     <div

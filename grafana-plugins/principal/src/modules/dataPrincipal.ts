@@ -131,7 +131,7 @@ for (let i = 1; i <= 4; i++) {
         alups10kva[i] = alarm_on;
     } else {alups10kva[i] = alarm_off;
     }
-    if (stups10kva[i] > 220 ){
+    if (stups10kva[i] > 200){
         stups10kva[i] = st_on;
     } else {stups10kva[i] = st_off;
     }
@@ -149,16 +149,36 @@ for (let i = 1; i <= 2; i++) {
         }
 }
 //-------------------------------------------------------------------------------------------------------------
-//---------------------------------------ESTADOS Y ALARMAS CHILLERS SISTEMA 2----------------------------------
-let F1_EA_1_S = data.series.find(({ name }) => name?.includes('F1_EA_1_S'))?.fields[1].state?.calcs
+//---------------------------------------ESTADOS Y ALARMAS CHILLERS SISTEMA 1&2----------------------------------
+let ST_EA1 = data.series.find(({ name }) => name?.includes('ST_EA1'))?.fields[1].state?.calcs?.lastNotNull;
+let ST_EA2 = data.series.find(({ name }) => name?.includes('ST_EA2'))?.fields[1].state?.calcs?.lastNotNull;
+let ST_EA3 = data.series.find(({ name }) => name?.includes('ST_EA3'))?.fields[1].state?.calcs?.lastNotNull;
+let ST_EA4 = data.series.find(({ name }) => name?.includes('ST_EA4'))?.fields[1].state?.calcs?.lastNotNull;
+/*let F1_EA_1_S = data.series.find(({ name }) => name?.includes('F1_EA_1_S'))?.fields[1].state?.calcs
 ?.lastNotNull;
 let F1_EA_2_S = data.series.find(({ name }) => name?.includes('F1_EA_2_S'))?.fields[1].state?.calcs
 ?.lastNotNull;
+let F1_EA_3_S = data.series.find(({ name }) => name?.includes('F1_EA_3_S'))?.fields[1].state?.calcs
+?.lastNotNull;
+let F1_EA_4_S = data.series.find(({ name }) => name?.includes('F1_EA_4_S'))?.fields[1].state?.calcs
+?.lastNotNull;*/
 let F1_EA_1_MS = data.series.find(({ name }) => name?.includes('F1_EA_1_MS'))?.fields[1].state?.calcs
 ?.lastNotNull;
 let F1_EA_2_MS = data.series.find(({ name }) => name?.includes('F1_EA_2_MS'))?.fields[1].state?.calcs
 ?.lastNotNull;
-//-----------------------------------------PARAMETROS CHILLERS SISTEMA 2---------------------------------------
+let F1_EA_3_MS = data.series.find(({ name }) => name?.includes('F1_EA_3_MS'))?.fields[1].state?.calcs
+?.lastNotNull;
+let F1_EA_4_MS = data.series.find(({ name }) => name?.includes('F1_EA_4_MS'))?.fields[1].state?.calcs
+?.lastNotNull;
+let EA_1_AL = data.series.find(({ name }) => name?.includes('EA_1_AL'))?.fields[1].state?.calcs
+?.lastNotNull;
+let EA_2_AL = data.series.find(({ name }) => name?.includes('EA_2_AL'))?.fields[1].state?.calcs
+?.lastNotNull;
+let EA_3_AL = data.series.find(({ name }) => name?.includes('EA_3_AL'))?.fields[1].state?.calcs
+?.lastNotNull;
+let EA_4_AL = data.series.find(({ name }) => name?.includes('EA_4_AL'))?.fields[1].state?.calcs
+?.lastNotNull;
+//-----------------------------------------PARAMETROS CHILLERS SISTEMA 1&2---------------------------------------
 let TSUM_EA_1 = data.series.find(({ name }) => name?.includes('TSUM_EA_1'))?.fields[1].state?.calcs
 ?.lastNotNull;
 let TRET_EA_1 = data.series.find(({ name }) => name?.includes('TRET_EA_1'))?.fields[1].state?.calcs
@@ -166,6 +186,14 @@ let TRET_EA_1 = data.series.find(({ name }) => name?.includes('TRET_EA_1'))?.fie
 let TSUM_EA_2 = data.series.find(({ name }) => name?.includes('TSUM_EA_2'))?.fields[1].state?.calcs
 ?.lastNotNull;
 let TRET_EA_2 = data.series.find(({ name }) => name?.includes('TRET_EA_2'))?.fields[1].state?.calcs
+?.lastNotNull;
+let TSUM_EA_3 = data.series.find(({ name }) => name?.includes('TSUM_EA_3'))?.fields[1].state?.calcs
+?.lastNotNull;
+let TRET_EA_3 = data.series.find(({ name }) => name?.includes('TRET_EA_3'))?.fields[1].state?.calcs
+?.lastNotNull;
+let TSUM_EA_4 = data.series.find(({ name }) => name?.includes('TSUM_EA_4'))?.fields[1].state?.calcs
+?.lastNotNull;
+let TRET_EA_4 = data.series.find(({ name }) => name?.includes('TRET_EA_4'))?.fields[1].state?.calcs
 ?.lastNotNull;
 //------------------------------------------------------------------------------------------------------------
 //-----------------------------------ESTADOS, ALARMAS DE BOMBAS y VALVULAS------------------------------------
@@ -180,7 +208,7 @@ for (let i = 1; i <= 6; i++) {
         }   else {
             st_1b1[i] = st_off;
         }
-    if (al_1b1[i] === 1) {
+    if (al_1b1[i] === 2) {
         al_1b1[i] = alarm_on;
         }   else {
             al_1b1[i] = alarm_off;
@@ -204,20 +232,29 @@ for (let i = 1; i <= 4; i++) {
         }   else {
             load_1b2[i] = parseFloat(load_1b2[i]).toFixed(0);
         } 
-    if (al_1b2[i] === 1) {
+    if (al_1b2[i] === 2) {
         al_1b2[i] = alarm_on;
         }   else {
             al_1b2[i] = alarm_off;
         }
+        
 }
-//VALVULAS SIST. 2
-let ISOV1_S = data.series.find(({ name }) => name?.includes('DATA.ISOV1_S.VALUE'))?.fields[1].state?.calcs
+//VALVULAS SIST 1&2
+let ISOV1_S_SIS2 = data.series.find(({ name }) => name?.includes('DATA.ISOV1_S_SIS2.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
-let ISOV1_C = data.series.find(({ name }) => name?.includes('DATA.ISOV1_C.VALUE'))?.fields[1].state?.calcs
+let ISOV1_C_SIS2 = data.series.find(({ name }) => name?.includes('DATA.ISOV1_C_SIS2.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
-let ISOV2_S = data.series.find(({ name }) => name?.includes('DATA.ISOV2_S.VALUE'))?.fields[1].state?.calcs
+let ISOV2_S_SIS2 = data.series.find(({ name }) => name?.includes('DATA.ISOV2_S_SIS2.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
-let ISOV2_C = data.series.find(({ name }) => name?.includes('DATA.ISOV2_C.VALUE'))?.fields[1].state?.calcs
+let ISOV2_C_SIS2 = data.series.find(({ name }) => name?.includes('DATA.ISOV2_C_SIS2.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let ISOV1_S_SIS1 = data.series.find(({ name }) => name?.includes('DATA.ISOV1_S_SIS1.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let ISOV1_C_SIS1 = data.series.find(({ name }) => name?.includes('DATA.ISOV1_C_SIS1.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let ISOV2_S_SIS1 = data.series.find(({ name }) => name?.includes('DATA.ISOV2_S_SIS1.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let ISOV2_C_SIS1 = data.series.find(({ name }) => name?.includes('DATA.ISOV2_C_SIS1.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
 //------------------------------------------------------------------------------------------------------------
 //-----------------------------------PARAMETROS BREAKERS TUPS IN & OUT----------------------------------------
@@ -241,14 +278,22 @@ let P_TUPSOUT_2A_0 = data.series.find(({ name }) => name?.includes('P_TUPSOUT_2A
 ?.lastNotNull/10;
 //-------------------------------------------------------------------------------------------------------------
 //--------------------------------SENSORES DE CLIMATIZACIÓN SISTEMA 1&2----------------------------------------
-//SENSORES SIST. 2
-let TEMP_S_PRI = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_PRI.VALUE'))?.fields[1].state?.calcs
+//SENSORES DE TEMPERATURA SIS 1&2
+let TEMP_S_PRI_SIS1 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_PRI_SIS1.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
-let TEMP_S_SEC = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_SEC.VALUE'))?.fields[1].state?.calcs
+let TEMP_S_SEC_SIS1 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_SEC_SIS1.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
-let TEMP_S_TAN = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_TAN.VALUE'))?.fields[1].state?.calcs
+let TEMP_S_TAN_SIS1 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_TAN_SIS1.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
-let TEMP_R = data.series.find(({ name }) => name?.includes('DATA.TEMP_R.VALUE'))?.fields[1].state?.calcs
+let TEMP_R_SIS1 = data.series.find(({ name }) => name?.includes('DATA.TEMP_R_SIS1.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let TEMP_S_PRI_SIS2 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_PRI_SIS2.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let TEMP_S_SEC_SIS2 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_SEC_SIS2.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let TEMP_S_TAN_SIS2 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_TAN_SIS2.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull; 
+let TEMP_R_SIS2 = data.series.find(({ name }) => name?.includes('DATA.TEMP_R_SIS2.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
 //----------------------------------- ESTADO Y ALARMAS DE GENERADORES -----------------------------------------
 let st_gen = [];
@@ -297,10 +342,15 @@ pot_genSIS[i] = data.series.find(({ name }) => name?.includes('POT_GEN' + i))?.f
 }
 //-------------------------------------ESTADOS DE SISTEMA DE CLIMATIZACÓN--------------------------------------
 //-------------------------------------------------------------------------------------------------------------
-/*let SYS_1_EN = data.series.find(({ name }) => name?.includes('SYS_1_EN'))?.fields[1].state?.calcs
-?.lastNotNull;*/
-let SYS_2_EN = data.series.find(({ name }) => name?.includes('DATA.SYS_EN.VALUE'))?.fields[1].state?.calcs
+let SYS_1_EN = data.series.find(({ name }) => name?.includes('DATA.SYS_EN_SIS1.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
+let SYS_2_EN = data.series.find(({ name }) => name?.includes('DATA.SYS_EN_SIS2.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let SYS_ALARM_SIS1 = data.series.find(({ name }) => name?.includes('DATA.SYS_ALARM_SIS1.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let SYS_ALARM_SIS2 = data.series.find(({ name }) => name?.includes('DATA.SYS_ALARM_SIS2.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+
 //-------------------------------------------------------------------------------------------------------------
 //-------------------------------------PARAMETROS DE TRANSFORMADOR (PQM)---------------------------------------
 let VAB_TR01 = data.series.find(({ name }) => name?.includes('DATA.VOL_VAB.VALUE'))?.fields[1].state?.calcs
@@ -327,28 +377,25 @@ let VCA_CMT = data.series.find(({ name }) => name?.includes('DATA.VLL_CA.VALUE')
 ?.lastNotNull;
 let VAVG_CMT = data.series.find(({ name }) => name?.includes('DATA.VLL_AVG.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
+//-------------------------------------------------------------------------------------------------------------
+//-------------------------------------PARAMETROS DE POTENCIA POR SISTEMA--------------------------------------
+let POT_SIS1 = data.series.find(({ name }) => name?.includes('POT_SIS1'))?.fields[1].state?.calcs
+?.lastNotNull;
+let POT_SIS2 = data.series.find(({ name }) => name?.includes('POT_SIS2'))?.fields[1].state?.calcs
+?.lastNotNull;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 let principal: DataPrincipal = {
     ParametrosElec: {
-        Vab_Tr01: 0,
-        Vbc_Tr01: 0,
-        Vca_Tr01: 0,
-        Ia_Tr01: 0,
-        Ib_Tr01: 0,
-        Ic_Tr01: 0,
+        Vab_Tr01: 0, Vbc_Tr01: 0, Vca_Tr01: 0,
+        Ia_Tr01: 0, Ib_Tr01: 0, Ic_Tr01: 0,
         Pt_Tr01: 0,
-        V_CMTAVG: 0,
-        V_CMTL1: 0,
-        V_CMTL2: 0,
-        V_CMTL3: 0,
-        V_inUPS: 0,
-        V_outUPS: 0,
+        V_CMTAVG: 0, V_CMTL1: 0, V_CMTL2: 0, V_CMTL3: 0,
+        P_SIS1: 0, P_SIS2: 0,
         //PUE: 0,
         //DCIE: 0,
     },
     ParametrosClima: {
-        T_sumin: 0,
-        T_ret: 0,
+        T_sumin: 0, T_ret: 0,
         uma1_TS: 0, uma2_TS: 0, uma3_TS: 0, uma4_TS: 0, uma5_TS: 0, uma6_TS: 0,
         uma7_TS: 0, uma8_TS: 0, uma9_TS: 0, uma10_TS: 0, uma11_TS: 0, uma12_TS: 0,
         uma1_TR: 0, uma2_TR: 0, uma3_TR: 0, uma4_TR: 0, uma5_TR: 0, uma6_TR: 0,
@@ -375,28 +422,22 @@ let principal: DataPrincipal = {
         LoadB1: 0, LoadB2: 0,
     },
     ParametrosGEN_SIS1: {
-        V_out: 0,
-        I_out: 0,
-        P_out: 0,
-        Load: 0,
+        V_out: 0, I_out: 0, P_out: 0, Load: 0,
     },
     ParametrosGEN_SIS2: {
-        V_out: 0,
-        I_out: 0,
-        P_out: 0,
-        Load: 0,
+        V_out: 0, I_out: 0, P_out: 0, Load: 0,
     },
     Estados_Principales: {
         ups_SIS1: '', ups_SIS2: '',
         gen_SIS1: '', gen_SIS2: '',
-        transf_in: estadosStyles.sinconexion, transf_out: estadosStyles.sinconexion,
-        clima_SIS1: estadosStyles.sinconexion, clima_SIS2: estadosStyles.sinconexion,
-        uma1: estadosStyles.sinconexion, uma2: estadosStyles.sinconexion, uma3: estadosStyles.sinconexion,
-        uma4: estadosStyles.sinconexion, uma5: estadosStyles.sinconexion, uma6: estadosStyles.sinconexion,
-        uma7: estadosStyles.sinconexion, uma8: estadosStyles.sinconexion, uma9: estadosStyles.sinconexion,
-        uma10: estadosStyles.sinconexion, uma11: estadosStyles.sinconexion, uma12: estadosStyles.sinconexion,
-        VAB_CMT: estadosStyles.sinconexion, VBC_CMT: estadosStyles.sinconexion,  VCA_CMT: estadosStyles.sinconexion,
-        ST_CMT: estadosStyles.sinconexion,
+        transf_in: '', transf_out: '',
+        clima_SIS1: '', clima_SIS2: '',
+        uma1: '', uma2: '', uma3: '',
+        uma4: '', uma5: '', uma6: '',
+        uma7: '', uma8: '', uma9: '',
+        uma10: '', uma11: '', uma12: '',
+        VAB_CMT: '', VBC_CMT: '',  VCA_CMT: '',
+        ST_CMT: '',
     },
     Estados_SIS1: {
         ups1: '', ups2: '', ups3: '', ups4: '', ups5: '', ups6: '', upschi1: '',
@@ -417,15 +458,14 @@ let principal: DataPrincipal = {
         upsnoc_2a: '', upssat_2a: '', rec_2a: '',
     },
     Alarmas: {
-        uma1: estadosStyles.sinconexion, uma2: estadosStyles.sinconexion, uma3: estadosStyles.sinconexion,
-        uma4: estadosStyles.sinconexion, uma5: estadosStyles.sinconexion, uma6: estadosStyles.sinconexion,
-        uma7: estadosStyles.sinconexion, uma8: estadosStyles.sinconexion, uma9: estadosStyles.sinconexion,
-        uma10: estadosStyles.sinconexion, uma11: estadosStyles.sinconexion, uma12: estadosStyles.sinconexion,
+        uma1: '', uma2: '', uma3: '', uma4: '', uma5: '', uma6: '',
+        uma7: '', uma8: '', uma9: '', uma10: '', uma11: '', uma12: '',
+        clima_SIS1: '', clima_SIS2: '',
     },
     Alarmas_SIS1: {
         ups1: '', ups2: '', ups3: '', ups4: '', ups5: '', ups6: '', upschi1: '',
         gen1: '', gen2: '', gen3: '',
-        Ea3: '', Ea4: '',
+        Ea3: '', Ea4: '', Ea3mant: '', Ea4mant: '',
         b1_4: '', b1_5: '', b1_6: '',
         b2_3: '', b2_4: '',
         upsoffices_1a: '', upssat_1a: '', //rec_1a: '',
@@ -520,37 +560,67 @@ principal.Estados_SIS1.rec_1a = strec[1];
 principal.Estados_SIS2.rec_2a = strec[2];
 //--------------------------------------------------------------------------------------------------------
 //--------------------------------------------CHILLERS----------------------------------------------------
-//ESTADOS CHILLERS SIS2
-principal.Estados_SIS2.Ea1 = F1_EA_1_S === 1? estadosStyles.on : estadosStyles.sinconexion;
-principal.Estados_SIS2.Ea2 = F1_EA_2_S === 1? estadosStyles.on : estadosStyles.sinconexion;
-//AL. MANTENIMIENTO CHILLER SIS2
+//ESTADOS CHILLERS SIS
+principal.Estados_SIS2.Ea1 = ST_EA1 === 1? estadosStyles.on : estadosStyles.sinconexion;
+principal.Estados_SIS2.Ea2 = ST_EA2 === 1? estadosStyles.on : estadosStyles.sinconexion;
+principal.Estados_SIS1.Ea3 = ST_EA3 === 1? estadosStyles.on : estadosStyles.sinconexion;
+principal.Estados_SIS1.Ea4 = ST_EA4 === 1? estadosStyles.on : estadosStyles.sinconexion;
+//AL. MANTENIMIENTO CHILLER SIS
 principal.Alarmas_SIS2.Ea1mant = F1_EA_1_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
 principal.Alarmas_SIS2.Ea2mant = F1_EA_2_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
-//PARAMETROS CHILLERS SIS2
+principal.Alarmas_SIS1.Ea3mant = F1_EA_3_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
+principal.Alarmas_SIS1.Ea4mant = F1_EA_4_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
+//ALARMA DE CHILLER
+principal.Alarmas_SIS2.Ea1 = EA_1_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
+principal.Alarmas_SIS2.Ea2 = EA_2_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
+principal.Alarmas_SIS1.Ea3 = EA_3_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
+principal.Alarmas_SIS1.Ea4 = EA_4_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
+//PARAMETROS CHILLERS SIS
 principal.ParametrosClima_SIS2.T_sumEA1 = Number.parseFloat(TSUM_EA_1?.toFixed(2));
 principal.ParametrosClima_SIS2.T_retEA1 = Number.parseFloat(TRET_EA_1?.toFixed(2));
 principal.ParametrosClima_SIS2.T_sumEA2 = Number.parseFloat(TSUM_EA_2?.toFixed(2));
 principal.ParametrosClima_SIS2.T_retEA2 = Number.parseFloat(TRET_EA_2?.toFixed(2));
+principal.ParametrosClima_SIS1.T_sumEA3 = Number.parseFloat(TSUM_EA_3?.toFixed(2));
+principal.ParametrosClima_SIS1.T_retEA3 = Number.parseFloat(TRET_EA_3?.toFixed(2));
+principal.ParametrosClima_SIS1.T_sumEA4 = Number.parseFloat(TSUM_EA_4?.toFixed(2));
+principal.ParametrosClima_SIS1.T_retEA4 = Number.parseFloat(TRET_EA_4?.toFixed(2));
 //-----------------------------------------BOMBAS Y VALVULAS----------------------------------------------
 //--------------------------------------------------------------------------------------------------------
-//ESTADOS B. PRIM Y SEC SIS1
-principal.Estados_SIS1.b1_4 = st_1b1[4];   
-principal.Estados_SIS1.b1_5 = st_1b1[5];
-principal.Estados_SIS1.b1_6 = st_1b1[6];    
-principal.Estados_SIS1.b2_3 = st_1b2[3];
-principal.Estados_SIS1.b2_4 = st_1b2[4];    
-principal.ParametrosClima_SIS1.LoadB3 = load_1b2[3];
-principal.ParametrosClima_SIS1.LoadB4 = load_1b2[4];
-//ESTADOS B. PRIM & SEC SIS2/VAUX
+//ESTADOS Y ALARMAS B. PRIMARIAS
 principal.Estados_SIS2.b1_1 = st_1b1[1];    
 principal.Estados_SIS2.b1_2 = st_1b1[2];
-principal.Estados_SIS2.b1_3 = st_1b1[3];    
+principal.Estados_SIS2.b1_3 = st_1b1[3];   
+principal.Estados_SIS1.b1_4 = st_1b1[4];   
+principal.Estados_SIS1.b1_5 = st_1b1[5];
+principal.Estados_SIS1.b1_6 = st_1b1[6];
+principal.Alarmas_SIS2.b1_1 = al_1b1[1];
+principal.Alarmas_SIS2.b1_2 = al_1b1[2];
+principal.Alarmas_SIS2.b1_3 = al_1b1[3];
+principal.Alarmas_SIS1.b1_4 = al_1b1[4];
+principal.Alarmas_SIS1.b1_5 = al_1b1[5];
+principal.Alarmas_SIS1.b1_6 = al_1b1[6];
+//ESTADOS Y ALARMAS B. SECUNDARIAS 
 principal.Estados_SIS2.b2_1 = st_1b2[1];
-principal.Estados_SIS2.b2_2 = st_1b2[2];    
+principal.Estados_SIS2.b2_2 = st_1b2[2]; 
+principal.Estados_SIS1.b2_3 = st_1b2[3];
+principal.Estados_SIS1.b2_4 = st_1b2[4];
+principal.Alarmas_SIS2.b2_1 = al_1b2[1];
+principal.Alarmas_SIS2.b2_2 = al_1b2[2]; 
+principal.Alarmas_SIS1.b2_3 = al_1b2[3];
+principal.Alarmas_SIS1.b2_4 = al_1b2[4];
+
 principal.ParametrosClima_SIS2.LoadB1 = load_1b2[1];
 principal.ParametrosClima_SIS2.LoadB2 = load_1b2[2];
-principal.Estados_SIS2.V1aux = (ISOV1_S && ISOV1_C) === 1? estadosStyles.on : estadosStyles.sinconexion;
-principal.Estados_SIS2.V2aux = (ISOV2_S && ISOV2_C) === 1? estadosStyles.on : estadosStyles.sinconexion;
+principal.ParametrosClima_SIS1.LoadB3 = load_1b2[3];
+principal.ParametrosClima_SIS1.LoadB4 = load_1b2[4];
+
+//ESTADOS DE VALVULAS SISTEMA 1&2
+principal.Estados_SIS2.V1aux = ISOV1_S_SIS2 === 1 && ISOV1_C_SIS2 === 1? estadosStyles.on : estadosStyles.sinconexion;
+principal.Estados_SIS2.V2aux = ISOV2_S_SIS2 === 1 && ISOV2_C_SIS2 === 1? estadosStyles.on : estadosStyles.sinconexion;
+principal.Estados_SIS1.V1aux = ISOV1_S_SIS1 === 1 && ISOV1_C_SIS1 === 1? estadosStyles.on : estadosStyles.sinconexion;
+principal.Estados_SIS1.V2aux = ISOV2_S_SIS1 === 1 && ISOV2_C_SIS1 === 1? estadosStyles.on : estadosStyles.sinconexion;
+
+
 //----------------------------------------BREAKERS TUPS IN OUT---------------------------------------------
 //---------------------------------------------------------------------------------------------------------
 //PARAMETROS DE UPS SIS1
@@ -565,11 +635,15 @@ principal.ParametrosUPS_SIS2.I_out = Number.parseFloat(I_TUPSOUT_2A_0?.toFixed(2
 principal.ParametrosUPS_SIS2.P_out = Number.parseFloat(P_TUPSOUT_2A_0?.toFixed(2));
 //----------------------------------------------SENSORES --------------------------------------------------
 //---------------------------------------------------------------------------------------------------------
-//SENSORES DE TUBERIAS SIS2
-principal.ParametrosClima_SIS2.T_sum_prim = Number.parseFloat(TEMP_S_PRI ?.toFixed(2));
-principal.ParametrosClima_SIS2.T_sum_sec = Number.parseFloat(TEMP_S_SEC ?.toFixed(2));
-principal.ParametrosClima_SIS2.T_tanque = Number.parseFloat(TEMP_S_TAN ?.toFixed(2));
-principal.ParametrosClima_SIS2.T_ret = Number.parseFloat(TEMP_R ?.toFixed(2));
+//SENSORES DE TUBERIAS SIS1&2
+principal.ParametrosClima_SIS1.T_sum_prim = Number.parseFloat(TEMP_S_PRI_SIS1 ?.toFixed(2));
+principal.ParametrosClima_SIS1.T_sum_sec = Number.parseFloat(TEMP_S_SEC_SIS1 ?.toFixed(2));
+principal.ParametrosClima_SIS1.T_tanque = Number.parseFloat(TEMP_S_TAN_SIS1 ?.toFixed(2));
+principal.ParametrosClima_SIS1.T_ret = Number.parseFloat(TEMP_R_SIS1 ?.toFixed(2));
+principal.ParametrosClima_SIS2.T_sum_prim = Number.parseFloat(TEMP_S_PRI_SIS2 ?.toFixed(2));
+principal.ParametrosClima_SIS2.T_sum_sec = Number.parseFloat(TEMP_S_SEC_SIS2 ?.toFixed(2));
+principal.ParametrosClima_SIS2.T_tanque = Number.parseFloat(TEMP_S_TAN_SIS2 ?.toFixed(2));
+principal.ParametrosClima_SIS2.T_ret = Number.parseFloat(TEMP_R_SIS2 ?.toFixed(2));
 //-----------------------------------ESTADOS, ALARMAS Y PARÁMETROS DE GENERADORES--------------------------
 //---------------------------------------------------------------------------------------------------------
 //ESTADOS
@@ -589,10 +663,90 @@ principal.Alarmas_SIS2.gen6 = e_stop_gen[6];
 //STATUS Y PARAMETROS DE SISTEMA DE GENERACIÓN SIS1&2
 principal.Estados_Principales.gen_SIS1 = st_gen_carga[1] > 0 || st_gen_carga[2] > 0 || st_gen_carga[3] > 0? estadosStyles.on : estadosStyles.sinconexion;
 principal.Estados_Principales.gen_SIS2 = st_gen_carga[4] > 0 || st_gen_carga[5] > 0 || st_gen_carga[6] > 0? estadosStyles.on : estadosStyles.sinconexion;
-let voltageSIS1_gen = (vll_genSIS[1] +++ vll_genSIS[2] +++ vll_genSIS[3]) / 2;
-    principal.ParametrosGEN_SIS1.V_out = voltageSIS1_gen;
-let voltageSIS2_gen = (vll_genSIS[4] +++ vll_genSIS[5] +++ vll_genSIS[6]) / 2;
+//CALCULOS VOLTAJE GENERADORES
+let voltageSIS1_gen;
+if (vll_genSIS[1] > 0 && vll_genSIS[2] > 0 && vll_genSIS[3] > 0){
+    voltageSIS1_gen = (vll_genSIS[1] +++ vll_genSIS[2] +++ vll_genSIS[3]) / 3;
+    principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
+    }
+    else {
+        if (vll_genSIS[1] === 0 && vll_genSIS[2] > 0 && vll_genSIS[3] > 0){
+            voltageSIS1_gen = (vll_genSIS[2] +++ vll_genSIS[3]) / 2;
+            principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
+        }
+        else {
+            if (vll_genSIS[1] > 0 && vll_genSIS[2] > 0 && vll_genSIS[3] === 0){
+                voltageSIS1_gen = (vll_genSIS[1] +++ vll_genSIS[2]) / 2;
+                principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
+            }
+            else {
+                if (vll_genSIS[1] > 0 && vll_genSIS[2] === 0 && vll_genSIS[3] > 0){
+                    voltageSIS1_gen = (vll_genSIS[1] +++ vll_genSIS[3]) / 2;
+                    principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
+                }
+                else {
+                if (vll_genSIS[1] === 0 && vll_genSIS[2] === 0 && vll_genSIS[3] > 0){
+                    voltageSIS1_gen = (vll_genSIS[3]) / 1;
+                    principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
+                    }
+                    else {
+                        if (vll_genSIS[1] === 0 && vll_genSIS[2] > 0 && vll_genSIS[3] === 0){
+                            voltageSIS1_gen = (vll_genSIS[2])/ 1;
+                            principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
+                        }
+                        else {
+                            if (vll_genSIS[1] > 0 && vll_genSIS[2] === 0 && vll_genSIS[3] === 0){
+                                voltageSIS1_gen = (vll_genSIS[1])/ 1;
+                                principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+let voltageSIS2_gen;
+if (vll_genSIS[4] > 0 && vll_genSIS[5] > 0 && vll_genSIS[6] > 0){
+    voltageSIS2_gen = (vll_genSIS[4] +++ vll_genSIS[5] +++ vll_genSIS[6]) / 3;
     principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+    }
+    else {
+        if (vll_genSIS[4] === 0 && vll_genSIS[5] > 0 && vll_genSIS[6] > 0){
+            voltageSIS2_gen = (vll_genSIS[5] +++ vll_genSIS[6]) / 2;
+            principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+        }
+        else {
+            if (vll_genSIS[4] > 0 && vll_genSIS[5] > 0 && vll_genSIS[6] === 0){
+                voltageSIS2_gen = (vll_genSIS[4] +++ vll_genSIS[5]) / 2;
+                principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+            }
+            else {
+                if (vll_genSIS[4] > 0 && vll_genSIS[5] === 0 && vll_genSIS[6] > 0){
+                    voltageSIS2_gen = (vll_genSIS[4] +++ vll_genSIS[6]) / 2;
+                    principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+                }
+                else {
+                if (vll_genSIS[4] === 0 && vll_genSIS[5] === 0 && vll_genSIS[6] > 0){
+                    voltageSIS2_gen = (vll_genSIS[6]) / 1;
+                    principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+                    }
+                    else {
+                        if (vll_genSIS[4] === 0 && vll_genSIS[5] > 0 && vll_genSIS[6] === 0){
+                            voltageSIS2_gen = (vll_genSIS[5])/ 1;
+                            principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+                        }
+                        else {
+                            if (vll_genSIS[4] > 0 && vll_genSIS[5] === 0 && vll_genSIS[6] === 0){
+                                voltageSIS2_gen = (vll_genSIS[4])/ 1;
+                                principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 let corrienteSIS1_gen = (st_gen_carga[1] +++ st_gen_carga[2] +++ st_gen_carga[3]);
     principal.ParametrosGEN_SIS1.I_out = corrienteSIS1_gen;
 let corrienteSIS2_gen = (st_gen_carga[4] +++ st_gen_carga[5] +++ st_gen_carga[6]);
@@ -607,8 +761,11 @@ let cargaSIS2_gen = potenciaSIS1_gen * 1000 / 2430;
     principal.ParametrosGEN_SIS2.Load =  Number.parseFloat(cargaSIS2_gen?.toFixed(2));
 //------------------------------------ESTADOS DE SISTEMA DE CLIMATIZACÓN-----------------------------------
 //---------------------------------------------------------------------------------------------------------
-/*principal.Estados_Principales.clima_SIS1 = SYS_1_EN === 1? estadosStyles.on : estadosStyles.sinconexion;*/
+principal.Estados_Principales.clima_SIS1 = SYS_1_EN === 1? estadosStyles.on : estadosStyles.sinconexion;
 principal.Estados_Principales.clima_SIS2 = SYS_2_EN === 1? estadosStyles.on : estadosStyles.sinconexion;
+principal.Alarmas.clima_SIS1 = SYS_ALARM_SIS1 === 1? alarmasStyles.on : alarmasStyles.sinconexion;
+principal.Alarmas.clima_SIS2 = SYS_ALARM_SIS2 === 1? alarmasStyles.on : alarmasStyles.sinconexion;
+
 
 //-----------------------------------------PARAMETROS TRANSFORMADOR (PQM)-----------------------------------
 principal.ParametrosElec.Vab_Tr01 = Number.parseFloat(VAB_TR01?.toFixed(2));
@@ -633,6 +790,28 @@ principal.Estados_Principales.VAB_CMT = Voltaje_CMTL1 > 0? estadosStyles.on : es
 principal.Estados_Principales.VBC_CMT = Voltaje_CMTL2 > 0? estadosStyles.on : estadosStyles.sinconexion;
 principal.Estados_Principales.VCA_CMT = Voltaje_CMTL3 > 0? estadosStyles.on : estadosStyles.sinconexion;
 principal.Estados_Principales.ST_CMT =  Voltaje_CMTL1 > 0 &&  Voltaje_CMTL2 > 0 &&  Voltaje_CMTL3 > 0? estadosStyles.on : estadosStyles.alarma;
+
+//-----------------------------------------PARAMETROS POTENCIA POR SISTEMA TDLOWA&2---------------------------
+let pot_tdlow1 = POT_SIS1/10;
+    principal.ParametrosElec.P_SIS1 = Number.parseFloat(pot_tdlow1?.toFixed(2));
+let pot_tdlow2 = POT_SIS2/10;  
+principal.ParametrosElec.P_SIS2 = Number.parseFloat(pot_tdlow2?.toFixed(2));
+
+//-----------------------------------------PARAMETROS TEMPERATURA PRINCIPALES---------------------------
+if (st_1b2[1] = 1 || st_1b2[2] == 1) {
+principal.ParametrosClima.T_ret = Number.parseFloat(TEMP_R_SIS2?.toFixed(1));
+principal.ParametrosClima.T_sumin = Number.parseFloat(TEMP_S_PRI_SIS2?.toFixed(1));
+}
+else {
+    if (st_1b2[3] = 1 || st_1b2[4] == 1) {
+        principal.ParametrosClima.T_ret = Number.parseFloat(TEMP_R_SIS1?.toFixed(1));
+        principal.ParametrosClima.T_sumin = Number.parseFloat(TEMP_S_PRI_SIS1?.toFixed(1));
+        }
+}
+
+
+
+
 console.log(principal);
 
 return principal;

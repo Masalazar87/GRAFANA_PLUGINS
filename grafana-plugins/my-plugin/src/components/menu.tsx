@@ -2,8 +2,50 @@ import React from 'react'
 
 const Menu = ()=> {
 //DECLARAR VARIABLES PARA VINCULAR
-let url_pqm='';
+//Equipos individuales
+let url_cmt = '';
+let url_pqm = '';
+let url_psg = '';
+let url_breaker = '';
+let url_ats = '';
+let url_pdi = '';
+let url_ups = '';
+let url_rect = '';
+let url_generador = '';
+let url_chiller = '';
+let url_uma = '';
+//Equipos grupales
+let url_grup_ats = '';
+let url_grup_pdi = '';
+let url_grup_ups1 = '';
+let url_grup_ups2 = '';
+let url_grup_chiller = '';
+let url_grup_gen = '';
+let url_grup_uma = '';
+//Principales
+let url_principal = '';
+let url_clima = '';
+
+url_cmt = '';
 url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now';
+url_psg = '';
+url_breaker = '';
+url_ats = '';
+url_pdi = 'http://localhost:3000/d/vVCC-Gd7k/canales-pdi?orgId=1&refresh=5s&var-EQUIPO=PDU_1A_F1';
+url_ups = 'http://localhost:3000/d/JKzv01uMk/ups-s-fase-a?orgId=1&refresh=5s';
+url_generador = '';
+url_chiller = 'http://localhost:3000/d/vqpPvR57k/chillers?orgId=1&refresh=5s';
+url_uma = '';
+url_grup_ats = 'http://localhost:3000/d/THvFKSCGz/grupal-ats?orgId=1&refresh=5s';
+url_grup_pdi = 'http://localhost:3000/d/vhbjeTjMz/grupal-pdi?orgId=1&refresh=5s';
+url_grup_ups1 = 'http://localhost:3000/d/9AN-FjI7z/grupal-ups-sistema-1?orgId=1&refresh=5s';
+url_grup_ups2 = 'http://localhost:3000/d/qcxKn4F7z/grupal-ups-sistema-2?orgId=1&refresh=5s';
+url_grup_chiller = 'http://localhost:3000/d/K3nq1CrMz/grupal-chiller?orgId=1';
+url_grup_gen = 'http://localhost:3000/d/CKwriPOnk/gengroupdeepsea?orgId=1&refresh=5s';
+url_grup_uma = '';
+url_principal = 'http://localhost:3000/d/Zz1XUb5nk/principal?orgId=1&refresh=5s';
+url_clima = 'http://localhost:3000/d/i4SQZRc7k/principal-climatizacion?orgId=1&refresh=5s';
+url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s';
 
   return (
     <svg
@@ -258,7 +300,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="5.6444px"
             strokeWidth={0.33875}
           >
-            {"DATACENTER"}
+            <a href={url_principal} target="_blank" style={{ fill: '#00aad4' }}>
+              {"DATACENTER"}
+              </a>
           </tspan>
         </text>
         <text
@@ -294,7 +338,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="5.6444px"
             strokeWidth={0.33875}
           >
-            {"CLIMA"}
+            <a href={url_clima} target="_blank" style={{ fill: '#00aad4' }}>
+              {"CLIMA"}
+              </a>
           </tspan>
         </text>
         <text
@@ -332,7 +378,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"PSG"}
+            <a href={url_psg} target="_blank" style={{ fill: '#00aad4' }}>
+              {"PSG"}
+              </a>
           </tspan>
         </text>
         <text
@@ -370,7 +418,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"ATS"}
+              <a href={url_ats} target="_blank" style={{ fill: '#00aad4' }}>
+              {"ATS"}
+              </a>
           </tspan>
         </text>
         <text
@@ -422,7 +472,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
               fontSize="12.162px"
               strokeWidth={0.72989}
             >
+              <a href={url_cmt} target="_blank" style={{ fill: '#00aad4' }}>
               {"C.M.T"}
+              </a>
             </tspan>
           </tspan>
         </text>
@@ -501,7 +553,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"BREAKER"}
+             <a href={url_breaker} target="_blank" style={{ fill: '#00aad4' }}>
+              {"BREAKER"}
+              </a>
           </tspan>
         </text>
         <text
@@ -539,7 +593,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"PDI"}
+            <a href={url_pdi} target="_blank" style={{ fill: '#00aad4' }}>
+              {"PDI"}
+              </a>
           </tspan>
         </text>
         <text
@@ -577,7 +633,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"UPS"}
+              <a href={url_ups} target="_blank" style={{ fill: '#00aad4' }}>
+              {"UPS"}
+              </a>
           </tspan>
         </text>
         <text
@@ -615,7 +673,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"GENERADOR"}
+              <a href={url_generador} target="_blank" style={{ fill: '#00aad4' }}>
+              {"GENERADOR"}
+              </a>
           </tspan>
         </text>
         <path
@@ -662,7 +722,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"CHILLER"}
+              <a href={url_chiller} target="_blank" style={{ fill: '#00aad4' }}>
+              {"CHILLER"}
+              </a>
           </tspan>
         </text>
         <text
@@ -700,7 +762,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"UMAS"}
+              <a href={url_uma} target="_blank" style={{ fill: '#00aad4' }}>
+              {"UMA"}
+              </a>
           </tspan>
         </text>
         <text
@@ -738,7 +802,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"ATS"}
+              <a href={url_grup_ats} target="_blank" style={{ fill: '#00aad4' }}>
+              {"ATS"}
+              </a>
           </tspan>
         </text>
         <text
@@ -776,7 +842,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"PDI"}
+             <a href={url_grup_pdi} target="_blank" style={{ fill: '#00aad4' }}>
+              {"PDI"}
+              </a>
           </tspan>
         </text>
         <text
@@ -814,7 +882,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"UPS"}
+            <a href={url_grup_ups1} target="_blank" style={{ fill: '#00aad4' }}>
+              {"UPS"}
+              </a>
           </tspan>
         </text>
         <text
@@ -852,7 +922,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"CHILLER"}
+            <a href={url_grup_chiller} target="_blank" style={{ fill: '#00aad4' }}>
+              {"CHILLER"}
+              </a>
           </tspan>
         </text>
         <text
@@ -890,7 +962,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"GENERADOR"}
+           <a href={url_grup_gen} target="_blank" style={{ fill: '#00aad4' }}>
+              {"GENERADOR"}
+              </a>
           </tspan>
         </text>
         <text
@@ -928,7 +1002,9 @@ url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"UMA"}
+            <a href={url_grup_uma} target="_blank" style={{ fill: '#00aad4' }}>
+              {"UMA"}
+              </a>
           </tspan>
         </text>
       </g>
