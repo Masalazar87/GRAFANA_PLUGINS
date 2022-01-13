@@ -1,4 +1,4 @@
-import { PanelData, InterpolateFunction } from '@grafana/data';
+import { PanelData, InterpolateFunction} from '@grafana/data';
 import { SimpleOptions } from 'types';
 
 import { DataGrupaluma } from 'components/variables';
@@ -14,8 +14,8 @@ const dataGrupaluma = (data: PanelData, options: SimpleOptions, replaceVariables
     ?.lastNotNull;
     let DELI_AIR_TEMP = data.series.find(({ name }) => name?.includes('DATA.DELI_AIR_TEMP.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
-    //let EVAP_FAN_SPEED = data.series.find(({ name }) => name?.includes('DATA.EVAP_FAN_SPEED.VALUE'))?.fields[1].state?.calcs
-    //?.lastNotNull;
+    let EVAP_FAN_SPEED = data.series.find(({ name }) => name?.includes('DATA.EVAP_FAN_SPEED.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
 
     let ROOM_REL_HUM = data.series.find(({ name }) => name?.includes('DATA.ROOM_REL_HUM.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
@@ -50,28 +50,50 @@ const dataGrupaluma = (data: PanelData, options: SimpleOptions, replaceVariables
     let SMOKE_FIRE_ALARM = data.series.find(({ name }) => name?.includes('DATA.SMOKE_FIRE_ALARM.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
 
-    //VALVULAS
-    /*let SUM12_S = data.series.find(({ name }) => name?.includes('DATA.SUM12_S.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
-    let RET12_S = data.series.find(({ name }) => name?.includes('DATA.RET12_S.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;*/
-
-    let VSUM_ST = [];
-    let VRET_ST = [];
+    //VALVULAS SIS1
+    let S1UMA_ST = [];
+    let R1UMA_ST = [];
     for (let i = 1; i <= 12; i++) {
-        VSUM_ST[i] = data.series.find(({ name }) => name?.includes('VSUM_ST_U' + i))?.fields[1].state?.calcs?.lastNotNull;   
-        VRET_ST[i] = data.series.find(({ name }) => name?.includes('vRET_ST_U' + i))?.fields[1].state?.calcs?.lastNotNull;   
-    if (VSUM_ST[i] === null || VSUM_ST[i] === 0) {
-        VSUM_ST[i] = 'OFF';
-        }   else {
-            VSUM_ST[i] = 'ON';
-        } 
-        if (VRET_ST[i] === null || VRET_ST[i] === 0) {
-            VRET_ST[i] = 'OFF';
-            }   else {
-                VRET_ST[i] = 'ON';
-            }
-        } 
+    S1UMA_ST[i] = data.series.find(({ name }) => name?.includes('DATA.S1UM' + i + '_S.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
+    R1UMA_ST[i] = data.series.find(({ name }) => name?.includes('DATA.R1UM' + i + '_S.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
+    if (S1UMA_ST[i] === null || S1UMA_ST[i] ===0){
+        S1UMA_ST[i] = 'OFF';
+    } else {
+        if (S1UMA_ST[i] === 1){
+        S1UMA_ST[i] = 'ON';
+        }
+    }
+
+   if (R1UMA_ST[i] === null || R1UMA_ST[i] ===0){
+    R1UMA_ST[i] = 'OFF';
+} else {
+    if (R1UMA_ST[i] === 1){
+    R1UMA_ST[i] = 'ON';
+    }
+}
+}  
+    //VALVULAS SIS2
+    let S2UMA_ST = [];
+    let R2UMA_ST = [];
+    for (let i = 1; i <= 12; i++) {
+    S2UMA_ST[i] = data.series.find(({ name }) => name?.includes('DATA.S2UM' + i + '_S.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
+    R2UMA_ST[i] = data.series.find(({ name }) => name?.includes('DATA.R2UM' + i + '_S.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
+    if (S2UMA_ST[i] === null || S2UMA_ST[i] ===0){
+        S2UMA_ST[i] = 'OFF';
+    } else {
+        if (S2UMA_ST[i] === 1){
+        S2UMA_ST[i] = 'ON';
+        }
+    }
+
+    if (R2UMA_ST[i] === null || R2UMA_ST[i] ===0){
+    R2UMA_ST[i] = 'OFF';
+    } else {
+    if (R2UMA_ST[i] === 1){
+    R2UMA_ST[i] = 'ON';
+    }
+    }
+    }  
         
 let grupaluma: DataGrupaluma = {
     DatosGenerales: {
@@ -83,14 +105,15 @@ let grupaluma: DataGrupaluma = {
         TempRoom: 0,
         HumRel: 0,
         EstadoValv: '',
-        ValvSum: '',
-        ValvRet: '',
         HorasFunc: 0,
         EstadoFan: '',
         PorcFuncFan: 0,
     },
     Valvulas: {
-        Sumin:'',
+        S1ValvSum: '',
+        R1ValvRet: '',
+        S2ValvSum: '',
+        R2ValvRet: '',
     },
     Indicadores:{
         Estado: estadosStyles.off,
@@ -98,6 +121,11 @@ let grupaluma: DataGrupaluma = {
         Mant: estadosStyles.off,
     },
 }
+
+//INTERPOLACION DE VARIABLES
+let variableNombre = replaceVariables('');
+grupaluma.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre;
+
     //PARAMETROS 
     grupaluma.Parametros.TempSum = Number.parseFloat(DELI_AIR_TEMP?.toFixed(2));
     grupaluma.Parametros.TempRet = Number.parseFloat(ROOM_TEMP?.toFixed(2));
@@ -106,8 +134,18 @@ let grupaluma: DataGrupaluma = {
     grupaluma.Parametros.EstadoValv = COLD_WAT_VALV === 1? 'ON' : 'OFF';
     grupaluma.Parametros.HorasFunc = Number.parseFloat(UNIT_RUN_ALARM?.toFixed(2));
     grupaluma.Parametros.EstadoFan = SYS_ON === 1? 'ON' : 'OFF';
-    grupaluma.Parametros.PorcFuncFan = Number.parseFloat(COLD_WAT_VALV?.toFixed(2));
+    grupaluma.Parametros.PorcFuncFan = Number.parseFloat(EVAP_FAN_SPEED?.toFixed(2));
     
+    //VALVULAS
+    grupaluma.Valvulas.S1ValvSum = S1UMA_ST[1] || S1UMA_ST[2] || S1UMA_ST[3] || S1UMA_ST[4] || S1UMA_ST[5] || S1UMA_ST[6]
+                                || S1UMA_ST[7] || S1UMA_ST[8] || S1UMA_ST[9] || S1UMA_ST[10] || S1UMA_ST[11] || S1UMA_ST[12];
+    grupaluma.Valvulas.R1ValvRet = R1UMA_ST[1] || R1UMA_ST[2] || R1UMA_ST[3] || R1UMA_ST[4] || R1UMA_ST[5] || R1UMA_ST[6]
+                                || R1UMA_ST[7] || R1UMA_ST[8] || R1UMA_ST[9] || R1UMA_ST[10] || R1UMA_ST[11] || R1UMA_ST[12];
+    grupaluma.Valvulas.S2ValvSum = S2UMA_ST[1] || S2UMA_ST[2] || S2UMA_ST[3] || S2UMA_ST[4] || S2UMA_ST[5] || S2UMA_ST[6]
+                                || S2UMA_ST[7] || S2UMA_ST[8] || S2UMA_ST[9] || S2UMA_ST[10] || S2UMA_ST[11] || S2UMA_ST[12];
+    grupaluma.Valvulas.R2ValvRet = R2UMA_ST[1] || R2UMA_ST[2] || R2UMA_ST[3] || R2UMA_ST[4] || R2UMA_ST[5] || R2UMA_ST[6]
+                                || R2UMA_ST[7] || R2UMA_ST[8] || R2UMA_ST[9] || R2UMA_ST[10] || R2UMA_ST[11] || R2UMA_ST[12];
+      
     //ESTADOS Y ALARMAS
     grupaluma.Indicadores.Estado = SYS_ON ===1? estadosStyles.on : estadosStyles.off;
     grupaluma.Indicadores.Alarma = UNIT_ALARM ===1? estadosStyles.alarma : estadosStyles.off; 
@@ -118,17 +156,6 @@ let grupaluma: DataGrupaluma = {
         else {  
             grupaluma.Indicadores.Alarma = estadosStyles.off}
     
-    let uma = replaceVariables('$1_UMA_2')
-    uma = '$1_UMA_2';
-    if (uma = '$1_UMA_2'){
-    (grupaluma.Parametros.ValvSum = (VSUM_ST[1])) && (grupaluma.Parametros.ValvRet = (VRET_ST[1]));}
-    else{
-        (grupaluma.Parametros.ValvSum = 'no') && (grupaluma.Parametros.ValvRet = 'no');}
-    
-    
-     
-
-
     console.log(grupaluma);
 
     return grupaluma;
@@ -136,4 +163,3 @@ let grupaluma: DataGrupaluma = {
 };
 
 export default dataGrupaluma;
-

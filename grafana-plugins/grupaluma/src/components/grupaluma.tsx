@@ -1407,6 +1407,48 @@ const Grupaluma = ({DatosGenerales, Parametros, Valvulas, Indicadores }: DataGru
          </tspan>
        </text>
        <text
+         id="SIS1"
+         transform="scale(.70565 1.4171)"
+         x={155.86725}
+         y={42.48843}
+         style={{
+           fontVariantCaps: "normal",
+           fontVariantEastAsian: "normal",
+           fontVariantLigatures: "normal",
+           fontVariantNumeric: "normal",
+           lineHeight: 1.25
+         }}
+         xmlSpace="preserve"
+         fill="#00aad4"
+         fontSize="5.2917px"
+         strokeWidth={0.44382}
+       >
+         <tspan id="tspan6400" x={204.86725} y={35.48843}>
+           {"SIS1"}
+         </tspan>
+       </text>
+       <text
+         id="SIS2"
+         transform="scale(.70565 1.4171)"
+         x={155.86725}
+         y={42.48843}
+         style={{
+           fontVariantCaps: "normal",
+           fontVariantEastAsian: "normal",
+           fontVariantLigatures: "normal",
+           fontVariantNumeric: "normal",
+           lineHeight: 1.25
+         }}
+         xmlSpace="preserve"
+         fill="#00aad4"
+         fontSize="5.2917px"
+         strokeWidth={0.44382}
+       >
+         <tspan id="tspan6400" x={218.86725} y={35.48843}>
+           {"SIS2"}
+         </tspan>
+       </text>
+       <text
          id="lbl8-9-4"
          transform="scale(.70565 1.4171)"
          x={155.86725}

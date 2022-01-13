@@ -10,15 +10,16 @@ type Parametros = {
     TempRoom: number;
     HumRel: number;
     EstadoValv: string;
-    ValvRet: string;
-    ValvSum: string;
     HorasFunc: number;
     EstadoFan: string;
     PorcFuncFan: number;
 };
 
 type Valvulas ={
-  Sumin: string;
+    R1ValvRet: string;
+    S1ValvSum: string;
+    R2ValvRet: string;
+    S2ValvSum: string;
 };
 
 type Indicadores = {
@@ -327,7 +328,7 @@ return (
           </tspan>
         </text>
         <text
-          id="uma5_aper_valsum"
+          id="uma5_aper_valsum-SIS1"
           transform="scale(.70565 1.4171)"
           x={205.26299}
           y={42.488434}
@@ -361,11 +362,11 @@ return (
             fill="#fff"
             strokeWidth={0.44381}
           >
-            {Parametros.ValvSum}
+            {Valvulas.S1ValvSum}
           </tspan>
         </text>
         <text
-          id="uma5_aper_valret"
+          id="uma5_aper_valret-SIS1"
           transform="scale(.70565 1.4171)"
           x={205.26299}
           y={53.317116}
@@ -399,7 +400,83 @@ return (
             fill="#fff"
             strokeWidth={0.44381}
           >
-            {Parametros.ValvRet}
+            {Valvulas.R1ValvRet}
+          </tspan>
+        </text>
+        <text
+          id="uma5_aper_valsum-SIS2"
+          transform="scale(.70565 1.4171)"
+          x={220.26299}
+          y={42.488434}
+          style={{
+            lineHeight: 1.25,
+            fontVariantLigatures: "normal",
+            fontVariantCaps: "normal",
+            fontVariantNumeric: "normal",
+            fontVariantEastAsian: "normal"
+          }}
+          xmlSpace="preserve"
+          fontSize="5.2917px"
+          fontFamily="Franklin Gothic Medium"
+          letterSpacing={0}
+          wordSpacing={0}
+          fill="#fff"
+          strokeWidth={0.44381}
+        >
+          <tspan
+            id="tspan1256-80-8-2-5-2-2"
+            x={220.26299}
+            y={42.488434}
+            style={{
+              fontVariantLigatures: "normal",
+              fontVariantCaps: "normal",
+              fontVariantNumeric: "normal",
+              fontVariantEastAsian: "normal"
+            }}
+            fontSize="5.2917px"
+            fontFamily="Franklin Gothic Medium"
+            fill="#fff"
+            strokeWidth={0.44381}
+          >
+            {Valvulas.S2ValvSum}
+          </tspan>
+        </text>
+        <text
+          id="uma5_aper_valret-SIS2"
+          transform="scale(.70565 1.4171)"
+          x={220.26299}
+          y={53.317116}
+          style={{
+            lineHeight: 1.25,
+            fontVariantLigatures: "normal",
+            fontVariantCaps: "normal",
+            fontVariantNumeric: "normal",
+            fontVariantEastAsian: "normal"
+          }}
+          xmlSpace="preserve"
+          fontSize="5.2917px"
+          fontFamily="Franklin Gothic Medium"
+          letterSpacing={0}
+          wordSpacing={0}
+          fill="#fff"
+          strokeWidth={0.44381}
+        >
+          <tspan
+            id="tspan1256-80-3-86-0-5-7-3"
+            x={220.26299}
+            y={53.317116}
+            style={{
+              fontVariantLigatures: "normal",
+              fontVariantCaps: "normal",
+              fontVariantNumeric: "normal",
+              fontVariantEastAsian: "normal"
+            }}
+            fontSize="5.2917px"
+            fontFamily="Franklin Gothic Medium"
+            fill="#fff"
+            strokeWidth={0.44381}
+          >
+            {Valvulas.R2ValvRet}
           </tspan>
         </text>
         <text

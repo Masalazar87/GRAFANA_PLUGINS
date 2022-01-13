@@ -6,7 +6,7 @@ const Menu = ()=> {
 let url_cmt = '';
 let url_pqm = '';
 let url_psg = '';
-let url_breaker = '';
+let url_ecoluz = '';
 let url_ats = '';
 let url_pdi = '';
 let url_ups = '';
@@ -29,7 +29,7 @@ let url_clima = '';
 url_cmt = '';
 url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now';
 url_psg = '';
-url_breaker = '';
+url_ecoluz = 'http://localhost:3000/d/wInTFO1nz/ecoluz?orgId=1&refresh=5s';
 url_ats = '';
 url_pdi = 'http://localhost:3000/d/vVCC-Gd7k/canales-pdi?orgId=1&refresh=5s&var-EQUIPO=PDU_1A_F1';
 url_ups = 'http://localhost:3000/d/JKzv01uMk/ups-s-fase-a?orgId=1&refresh=5s';
@@ -553,8 +553,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-             <a href={url_breaker} target="_blank" style={{ fill: '#00aad4' }}>
-              {"BREAKER"}
+             <a href={url_ecoluz} target="_blank" style={{ fill: '#00aad4' }}>
+              {"ECOLUZ"}
               </a>
           </tspan>
         </text>
