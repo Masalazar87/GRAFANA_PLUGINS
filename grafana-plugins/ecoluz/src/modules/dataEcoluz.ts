@@ -117,28 +117,28 @@ let VOLTAGE_AN = VLN_A / 1000;
 if (VOLTAGE_AN < 7.7) {
     ecoluz.Alarmas.Falla_A = alarm_on;
 } else {
-    ecoluz.Alarmas.Falla_A = st_on;
+    ecoluz.Alarmas.Falla_A = st_off;
 }
 
 let VOLTAGE_BN = VLN_B / 1000;
 if (VOLTAGE_BN < 7.7) {
     ecoluz.Alarmas.Falla_B = alarm_on;
 } else {
-    ecoluz.Alarmas.Falla_B = st_on;
+    ecoluz.Alarmas.Falla_B = st_off;
 }
 
 let VOLTAGE_CN = VLN_C / 1000;
 if (VOLTAGE_CN < 7.7) {
     ecoluz.Alarmas.Falla_C = alarm_on;
 } else {
-    ecoluz.Alarmas.Falla_C = st_on;
+    ecoluz.Alarmas.Falla_C = st_off;
 }
 
 // ESTADO APAGADO
 if (VOLTAGE_AVG === 0) {
-    ecoluz.Alarmas.Falla_A = st_off;
+    /*ecoluz.Alarmas.Falla_A = st_off;
     ecoluz.Alarmas.Falla_B = st_off;
-    ecoluz.Alarmas.Falla_C = st_off;
+    ecoluz.Alarmas.Falla_C = st_off;*/
     ecoluz.Estados.Estado_box = st_off;
     ecoluz.Estados.Estado_boton = st_off;
     ecoluz.Estados.Estado_equipo = 'APAGADO';

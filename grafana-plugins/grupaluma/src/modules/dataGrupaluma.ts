@@ -9,6 +9,11 @@ const dataGrupaluma = (data: PanelData, options: SimpleOptions, replaceVariables
     console.log('options: ', options);
     console.log(replaceVariables);
 
+    //let st_on = estadosStyles.on;
+    //let st_off = estadosStyles.off;  
+    //let alarm_on = estadosStyles.alarma; 
+    //let st_mant = estadosStyles.mant; 
+
     //VARIABLES DE PARAMETROS
     let COLD_WAT_VALV = data.series.find(({ name }) => name?.includes('DATA.COLD_WAT_VALV.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
@@ -94,7 +99,30 @@ const dataGrupaluma = (data: PanelData, options: SimpleOptions, replaceVariables
     }
     }
     }  
-        
+
+    //ESTADO DE MANTENIMIENTO SOLO SI LOS 2 BREAKERS ESTÁN ABIERTOS
+    let POS_SIS1_UMA = [];
+    let POS_SIS2_UMA = [];
+    for (let i = 1; i <= 12; i++) {
+    POS_SIS1_UMA[i] = data.series.find(({ name }) => name?.includes('POS_BREAKER_UMA' + i + '_SIS1'))?.fields[1].state?.calcs?.lastNotNull;
+    POS_SIS2_UMA[i] = data.series.find(({ name }) => name?.includes('POS_BREAKER_UMA' + i + '_SIS2'))?.fields[1].state?.calcs?.lastNotNull;
+       
+    if (POS_SIS1_UMA[i] === null || POS_SIS1_UMA[i] ===0){
+        POS_SIS1_UMA[i] = 0; //ABIERTO
+    } else {
+        if (POS_SIS1_UMA[i] === 1){
+            POS_SIS1_UMA[i] = 1; //CERRADO
+        }
+    }
+    if (POS_SIS2_UMA[i] === null || POS_SIS2_UMA[i] ===0){
+        POS_SIS2_UMA[i] = 0; //ABIERTO
+    } else {
+        if (POS_SIS2_UMA[i] === 1){
+            POS_SIS2_UMA[i] = 1; //CERRADO
+        }
+    }
+}
+
 let grupaluma: DataGrupaluma = {
     DatosGenerales: {
         Nombre: options.nombre,
@@ -123,8 +151,8 @@ let grupaluma: DataGrupaluma = {
 }
 
 //INTERPOLACION DE VARIABLES
-let variableNombre = replaceVariables('');
-grupaluma.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre;
+//let variableNombre = replaceVariables('');
+//grupaluma.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre;
 
     //PARAMETROS 
     grupaluma.Parametros.TempSum = Number.parseFloat(DELI_AIR_TEMP?.toFixed(2));
@@ -148,13 +176,22 @@ grupaluma.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.
       
     //ESTADOS Y ALARMAS
     grupaluma.Indicadores.Estado = SYS_ON ===1? estadosStyles.on : estadosStyles.off;
-    grupaluma.Indicadores.Alarma = UNIT_ALARM ===1? estadosStyles.alarma : estadosStyles.off; 
+    //grupaluma.Indicadores.Alarma = UNIT_ALARM ===1? estadosStyles.alarma : estadosStyles.off; 
     
     if (UNIT_ALARM ===1 || UNIT_RUN_ALARM ===1 || FILTER_ALARM  ===1 || FLOODING_ALARM  ===1 || HEAT_OVER_ALARM  ===1 || 
         HUMIDIFIER_ALARM  ===1 || HUM_RUN_HOURS  ===1|| LOSS_OF_AIR  ===1|| SMOKE_FIRE_ALARM  ===1){
             grupaluma.Indicadores.Alarma = estadosStyles.alarma}
         else {  
             grupaluma.Indicadores.Alarma = estadosStyles.off}
+            
+    //ESTADO DE MANTENIMIENTO
+    if ((POS_SIS1_UMA[1] == 0 && POS_SIS2_UMA[1] == 0) || (POS_SIS1_UMA[2] == 0 && POS_SIS2_UMA[2] == 0) || (POS_SIS1_UMA[3] == 0 &&  POS_SIS2_UMA[3] == 0) ||
+        (POS_SIS1_UMA[4] == 0 && POS_SIS2_UMA[4] == 0) || (POS_SIS1_UMA[5] == 0 && POS_SIS2_UMA[5] == 0) || (POS_SIS1_UMA[3] == 0 &&  POS_SIS2_UMA[3] == 0) ||
+        (POS_SIS1_UMA[7] == 0 && POS_SIS2_UMA[7] == 0) || (POS_SIS1_UMA[8] == 0 && POS_SIS2_UMA[8] == 0) || (POS_SIS1_UMA[9] == 0 &&  POS_SIS2_UMA[9] == 0) ||
+        (POS_SIS1_UMA[10] == 0 && POS_SIS2_UMA[10] == 0) || (POS_SIS1_UMA[11] == 0 && POS_SIS2_UMA[11] == 0) || (POS_SIS1_UMA[12] == 0 &&  POS_SIS2_UMA[12] == 0)){
+    grupaluma.Indicadores.Mant = estadosStyles.mant}
+    else {
+        grupaluma.Indicadores.Mant = estadosStyles.off}
     
     console.log(grupaluma);
 

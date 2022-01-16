@@ -12,11 +12,15 @@ const getStyles = stylesFactory(() => {
       fill: #999;
     `,
     on: css`
-      fill: green;
+      stroke: url(#linearGradient4474);
       //animation: ${parpadeo} 1s ease infinite;
     `,
     alarma: css`
       fill: red;
+      animation: ${parpadeo} 1s ease infinite;
+    `,
+    mant: css`
+      fill: orange;
       animation: ${parpadeo} 1s ease infinite;
     `,
   };
