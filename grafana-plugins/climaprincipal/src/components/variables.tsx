@@ -4370,6 +4370,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       ry={2.1244}
       fill="#999"
       className={AlarmasSIS1.B2_3}
+      opacity={0}
       paintOrder="markers stroke fill"
     />
     <ellipse
@@ -4403,6 +4404,7 @@ export const Variables = ({ ParametrosSIS1, ParametrosSIS2, EstadosSIS1, Estados
       ry={2.1244}
       fill="#999"
       className={AlarmasSIS1.B2_4}
+      opacity={0}
       paintOrder="markers stroke fill"
     />
     <ellipse

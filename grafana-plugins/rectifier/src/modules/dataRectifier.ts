@@ -78,24 +78,18 @@ rectifier.Parametros.C_Rectifier = Number.parseFloat(REC_CUR_VALU?.toFixed(2));
 rectifier.Parametros.V_Battery = rectifier.Principal.V_Bateria;
 rectifier.Parametros.T_Rectifier = Number.parseFloat(REC_TEMP_VALU?.toFixed(2));
 
-//CALCULOS
-//let CorrienteOut = (OUTPUT_CURRENT) / 10;
-//if (OUTPUT_CURRENT !== undefined) {
-   //ups.Parametros.CorrienteOut = Number.parseFloat(CorrienteOut?.toFixed(2));
-//}
-
 //ESTADOS Y ALARMAS
 rectifier.Alarmas.BatteryStatus = BAT_VOL_STAT ===1? alarmsStyles.on1 : alarmsStyles.off,
 rectifier.Alarmas.CurrentStatus = REC_CUR_STAT ===1? alarmsStyles.on1 : alarmsStyles.off,
 rectifier.Alarmas.CurrentAlarm = REC_CUR_ENAB ===1? alarmsStyles.on1 : alarmsStyles.off,
 
 rectifier.Principal.Estado_box = POW_SYS_STAT ===1? alarmsStyles.on1 : alarmsStyles.off,
-rectifier.Principal.Alarma_box = POW_SYS_STAT ===2? alarmsStyles.on2 : '',
+rectifier.Principal.Alarma_box = POW_SYS_STAT >=2? alarmsStyles.on2 : '',
 
 rectifier.Principal.EstadoON = POW_SYS_STAT ===1? 'ENCENDIDO' : '',
 rectifier.Principal.EstadoOFF = POW_SYS_STAT ===0? 'APAGADO' : '',
-rectifier.Principal.Alarma = POW_SYS_STAT ===2? 'ALARMADO': '',
-rectifier.Alarmas.WarningAlarm= POW_SYS_STAT ===2? alarmsStyles.on2 : alarmsStyles.off,
+rectifier.Principal.Alarma = POW_SYS_STAT >=2? 'ALARMADO': '',
+rectifier.Alarmas.WarningAlarm= POW_SYS_STAT >=2? alarmsStyles.on2 : alarmsStyles.off,
 
 console.log(rectifier);
 return rectifier;
