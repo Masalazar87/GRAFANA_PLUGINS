@@ -324,19 +324,19 @@ pot_genSIS[i] = data.series.find(({ name }) => name?.includes('POT_GEN' + i))?.f
         //st_gen[i] === 0;
     } else { 
         if (vll_genSIS[i] > 0){
-            vll_genSIS[i] =  Number.parseFloat(vll_genSIS[i])?.toFixed(1);// && 
+            vll_genSIS[i] =  vll_genSIS[i];
             //st_gen[i] === 1;
     }}
     if (st_gen_carga[i] === null || st_gen_carga[i] === 0 ){
         st_gen_carga[i] = 0;
     } else {
-        st_gen_carga[i] = Number.parseFloat(st_gen_carga[i])?.toFixed(1)
+        st_gen_carga[i] = st_gen_carga[i];
     }
     if (pot_genSIS[i] === null || pot_genSIS[i] === 0 ){
         pot_genSIS[i] = 0;
     } else { 
         if (pot_genSIS[i] > 0){
-            pot_genSIS[i] =  Number.parseFloat(pot_genSIS[i])?.toFixed(1);
+            pot_genSIS[i] =  pot_genSIS[i]
     }
     }
 }
@@ -665,37 +665,37 @@ principal.Estados_Principales.gen_SIS1 = st_gen_carga[1] > 0 || st_gen_carga[2] 
 principal.Estados_Principales.gen_SIS2 = st_gen_carga[4] > 0 || st_gen_carga[5] > 0 || st_gen_carga[6] > 0? estadosStyles.on : estadosStyles.sinconexion;
 //CALCULOS VOLTAJE GENERADORES
 let voltageSIS1_gen;
-if (vll_genSIS[1] > 0 && vll_genSIS[2] > 0 && vll_genSIS[3] > 0){
-    voltageSIS1_gen = (vll_genSIS[1] +++ vll_genSIS[2] +++ vll_genSIS[3]) / 3;
+if ((vll_genSIS[1] > 0) && (vll_genSIS[2] > 0) && (vll_genSIS[3] > 0)){
+    voltageSIS1_gen = (vll_genSIS[1] +++ vll_genSIS[2] +++ vll_genSIS[3]) /3;
     principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
     }
     else {
-        if (vll_genSIS[1] === 0 && vll_genSIS[2] > 0 && vll_genSIS[3] > 0){
+        if ((vll_genSIS[1] === 0) && (vll_genSIS[2] > 0) && (vll_genSIS[3] > 0)){
             voltageSIS1_gen = (vll_genSIS[2] +++ vll_genSIS[3]) / 2;
             principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
         }
         else {
-            if (vll_genSIS[1] > 0 && vll_genSIS[2] > 0 && vll_genSIS[3] === 0){
+            if ((vll_genSIS[1] > 0) && (vll_genSIS[2] > 0) && (vll_genSIS[3] === 0)){
                 voltageSIS1_gen = (vll_genSIS[1] +++ vll_genSIS[2]) / 2;
                 principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
             }
             else {
-                if (vll_genSIS[1] > 0 && vll_genSIS[2] === 0 && vll_genSIS[3] > 0){
+                if ((vll_genSIS[1] > 0) && (vll_genSIS[2] === 0) && (vll_genSIS[3] > 0)){
                     voltageSIS1_gen = (vll_genSIS[1] +++ vll_genSIS[3]) / 2;
                     principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
                 }
                 else {
-                if (vll_genSIS[1] === 0 && vll_genSIS[2] === 0 && vll_genSIS[3] > 0){
+                if ((vll_genSIS[1] === 0) && (vll_genSIS[2] === 0) && (vll_genSIS[3] > 0)){
                     voltageSIS1_gen = (vll_genSIS[3]) / 1;
                     principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
                     }
                     else {
-                        if (vll_genSIS[1] === 0 && vll_genSIS[2] > 0 && vll_genSIS[3] === 0){
+                        if ((vll_genSIS[1] === 0) && (vll_genSIS[2] > 0) && (vll_genSIS[3] === 0)){
                             voltageSIS1_gen = (vll_genSIS[2])/ 1;
                             principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
                         }
                         else {
-                            if (vll_genSIS[1] > 0 && vll_genSIS[2] === 0 && vll_genSIS[3] === 0){
+                            if ((vll_genSIS[1] > 0) && (vll_genSIS[2] === 0) && (vll_genSIS[3] === 0)){
                                 voltageSIS1_gen = (vll_genSIS[1])/ 1;
                                 principal.ParametrosGEN_SIS1.V_out = Number.parseFloat(voltageSIS1_gen?.toFixed(2));
                             }
@@ -705,56 +705,58 @@ if (vll_genSIS[1] > 0 && vll_genSIS[2] > 0 && vll_genSIS[3] > 0){
             }
         }
     }
-let voltageSIS2_gen;
-if (vll_genSIS[4] > 0 && vll_genSIS[5] > 0 && vll_genSIS[6] > 0){
-    voltageSIS2_gen = (vll_genSIS[4] +++ vll_genSIS[5] +++ vll_genSIS[6]) / 3;
-    principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
-    }
-    else {
-        if (vll_genSIS[4] === 0 && vll_genSIS[5] > 0 && vll_genSIS[6] > 0){
-            voltageSIS2_gen = (vll_genSIS[5] +++ vll_genSIS[6]) / 2;
-            principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+    let voltageSIS2_gen;
+    if ((vll_genSIS[4] > 0) && (vll_genSIS[5] > 0) && (vll_genSIS[6] > 0)){
+        voltageSIS2_gen = (vll_genSIS[4] +++ vll_genSIS[5] +++ vll_genSIS[6]) /3;
+        principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
         }
         else {
-            if (vll_genSIS[4] > 0 && vll_genSIS[5] > 0 && vll_genSIS[6] === 0){
-                voltageSIS2_gen = (vll_genSIS[4] +++ vll_genSIS[5]) / 2;
+            if ((vll_genSIS[4] === 0) && (vll_genSIS[5] > 0) && (vll_genSIS[6] > 0)){
+                voltageSIS2_gen = (vll_genSIS[5] +++ vll_genSIS[6]) / 2;
                 principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
             }
             else {
-                if (vll_genSIS[4] > 0 && vll_genSIS[5] === 0 && vll_genSIS[6] > 0){
-                    voltageSIS2_gen = (vll_genSIS[4] +++ vll_genSIS[6]) / 2;
+                if ((vll_genSIS[4] > 0) && (vll_genSIS[5] > 0) && (vll_genSIS[6] === 0)){
+                    voltageSIS2_gen = (vll_genSIS[4] +++ vll_genSIS[5]) / 2;
                     principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
                 }
                 else {
-                if (vll_genSIS[4] === 0 && vll_genSIS[5] === 0 && vll_genSIS[6] > 0){
-                    voltageSIS2_gen = (vll_genSIS[6]) / 1;
-                    principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+                    if ((vll_genSIS[4] > 0) && (vll_genSIS[5] === 0) && (vll_genSIS[6] > 0)){
+                        voltageSIS2_gen = (vll_genSIS[4] +++ vll_genSIS[6]) / 2;
+                        principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
                     }
                     else {
-                        if (vll_genSIS[4] === 0 && vll_genSIS[5] > 0 && vll_genSIS[6] === 0){
-                            voltageSIS2_gen = (vll_genSIS[5])/ 1;
-                            principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+                    if ((vll_genSIS[4] === 0) && (vll_genSIS[5] === 0) && (vll_genSIS[6] > 0)){
+                        voltageSIS2_gen = (vll_genSIS[6]) / 1;
+                        principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
                         }
                         else {
-                            if (vll_genSIS[4] > 0 && vll_genSIS[5] === 0 && vll_genSIS[6] === 0){
-                                voltageSIS2_gen = (vll_genSIS[4])/ 1;
+                            if ((vll_genSIS[4] === 0) && (vll_genSIS[5] > 0) && (vll_genSIS[6] === 0)){
+                                voltageSIS2_gen = (vll_genSIS[5])/ 1;
                                 principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+                            }
+                            else {
+                                if ((vll_genSIS[4] > 0) && (vll_genSIS[5] === 0) && (vll_genSIS[6] === 0)){
+                                    voltageSIS2_gen = (vll_genSIS[4])/ 1;
+                                    principal.ParametrosGEN_SIS2.V_out = Number.parseFloat(voltageSIS2_gen?.toFixed(2));
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
     
 let corrienteSIS1_gen = (st_gen_carga[1] +++ st_gen_carga[2] +++ st_gen_carga[3]);
-    principal.ParametrosGEN_SIS1.I_out = corrienteSIS1_gen;
+    principal.ParametrosGEN_SIS1.I_out = Number.parseFloat(corrienteSIS1_gen?.toFixed(2));
 let corrienteSIS2_gen = (st_gen_carga[4] +++ st_gen_carga[5] +++ st_gen_carga[6]);
-    principal.ParametrosGEN_SIS2.I_out = corrienteSIS2_gen;
+    principal.ParametrosGEN_SIS2.I_out = Number.parseFloat(corrienteSIS2_gen?.toFixed(2));
+
 let potenciaSIS1_gen = (pot_genSIS[1] +++ pot_genSIS[2] +++ pot_genSIS[3]);
-    principal.ParametrosGEN_SIS1.P_out = potenciaSIS1_gen;
+    principal.ParametrosGEN_SIS1.P_out = Number.parseFloat(potenciaSIS1_gen?.toFixed(2));
 let potenciaSIS2_gen = (pot_genSIS[4] +++ pot_genSIS[5] +++ pot_genSIS[6]);
-    principal.ParametrosGEN_SIS2.P_out = potenciaSIS2_gen;
+    principal.ParametrosGEN_SIS2.P_out = Number.parseFloat(potenciaSIS2_gen?.toFixed(2));
+
 let cargaSIS1_gen = potenciaSIS1_gen * 1000 / 2430; 
     principal.ParametrosGEN_SIS1.Load =  Number.parseFloat(cargaSIS1_gen?.toFixed(2));
 let cargaSIS2_gen = potenciaSIS1_gen * 1000 / 2430; 

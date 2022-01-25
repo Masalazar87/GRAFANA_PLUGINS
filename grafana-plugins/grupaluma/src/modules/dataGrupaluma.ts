@@ -159,7 +159,7 @@ let grupaluma: DataGrupaluma = {
     grupaluma.Parametros.TempRet = Number.parseFloat(ROOM_TEMP?.toFixed(2));
     grupaluma.Parametros.TempRoom = Number.parseFloat(ROOM_TEMP?.toFixed(2));
     grupaluma.Parametros.HumRel = Number.parseFloat(ROOM_REL_HUM?.toFixed(2));
-    grupaluma.Parametros.EstadoValv = COLD_WAT_VALV === 1? 'ON' : 'OFF';
+    grupaluma.Parametros.EstadoValv = COLD_WAT_VALV > 1? 'ON' : 'OFF';
     grupaluma.Parametros.HorasFunc = Number.parseFloat(UNIT_RUN_ALARM?.toFixed(2));
     grupaluma.Parametros.EstadoFan = SYS_ON === 1? 'ON' : 'OFF';
     grupaluma.Parametros.PorcFuncFan = Number.parseFloat(EVAP_FAN_SPEED?.toFixed(2));

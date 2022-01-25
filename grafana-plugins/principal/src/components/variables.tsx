@@ -2301,7 +2301,7 @@ return (
       fontSize="3.175px"
       strokeWidth={0.48961}
     >
-      {ParametrosClima_SIS1.LoadB3}%
+      {ParametrosClima_SIS1.LoadB4}%
     </tspan>
   </text>
   <text
@@ -2339,7 +2339,7 @@ return (
       fontSize="3.175px"
       strokeWidth={0.48961}
     >
-      {ParametrosClima_SIS1.LoadB4}%
+      {ParametrosClima_SIS1.LoadB3}%
     </tspan>
   </text>
   <circle
@@ -3764,7 +3764,7 @@ return (
       id="st_ups1a-2-al"//alarma
       transform="translate(14.288)"
       cx={418.93}
-      cy={130.96}
+      cy={113.5}
       r={2.3466}
       fill="#999"
       opacity={0}
@@ -3796,7 +3796,7 @@ return (
       id="st_ups1a-3-al"//alarma
       transform="translate(14.288)"
       cx={418.93}
-      cy={136.93}
+      cy={119.47}
       r={2.3466}
       fill="#999"
       opacity={0}
@@ -3828,7 +3828,7 @@ return (
       id="st_ups1a-4-al"//alarma
       transform="translate(14.288)"
       cx={418.93}
-      cy={142.9}
+      cy={125.44}
       r={2.3466}
       fill="#999"
       opacity={0}
@@ -3860,7 +3860,7 @@ return (
       id="st_ups1a-5-al"//alarma
       transform="translate(14.288)"
       cx={418.93}
-      cy={148.87}
+      cy={131.41}
       r={2.3466}
       fill="#999"
       opacity={0}
@@ -3892,7 +3892,7 @@ return (
       id="st_ups1a-6-al"//alarma
       transform="translate(14.288)"
       cx={418.93}
-      cy={154.84}
+      cy={137.38}
       r={2.3466}
       fill="#999"
       opacity={0}
@@ -3923,7 +3923,7 @@ return (
   <circle
       id="st_ups1a-2-1"//alarma
       cx={504.02}
-      cy={130.96}
+      cy={113.5}
       r={2.3466}
       fill="#999"
       opacity={0}
@@ -3954,7 +3954,7 @@ return (
    <circle
       id="st_ups1a-3-5-al"//alarma
       cx={504.02}
-      cy={136.93}
+      cy={119.47}
       r={2.3466}
       fill="#999"
       opacity={0}
@@ -3985,7 +3985,7 @@ return (
   <circle
       id="st_ups1a-4-4-al"//alarma
       cx={504.02}
-      cy={142.9}
+      cy={125.44}
       r={2.3466}
       fill="#999"
       opacity={0}
@@ -4016,7 +4016,7 @@ return (
   <circle
       id="st_ups1a-5-8-al"//alarma
       cx={504.02}
-      cy={148.87}
+      cy={131.41}
       r={2.3466}
       fill="#999"
       opacity={0}
@@ -4047,7 +4047,7 @@ return (
    <circle
       id="st_ups1a-6-9-al"//alarmas
       cx={504.02}
-      cy={154.84}
+      cy={137.38}
       r={2.3466}
       fill="#999"
       opacity={0}
@@ -4078,7 +4078,7 @@ return (
   <circle
       id="st_ups1a-1-8-al"//alarma
       cx={504.02}
-      cy={124.99}
+      cy={107.53}
       r={2.3466}
       fill="#999"
       opacity={0}
@@ -4109,7 +4109,7 @@ return (
   <circle
       id="st_ups1a-1-al"//alarma
       cx={433.22}
-      cy={124.99}
+      cy={107.53}
       r={2.3466}
       fill="#999"
       opacity={0}
@@ -4452,7 +4452,7 @@ return (
   <circle
       id="st_gen4-al"//alarma
       cx={433.22}
-      cy={63.245}
+      cy={58.482}
       r={2.3465}
       fill="#4d4d4d"
       opacity={0}
@@ -4483,7 +4483,7 @@ return (
   <circle
       id="st_gen5-al"//alarma
       cx={433.22}
-      cy={70.537}
+      cy={65.774}
       r={2.3465}
       fill="#4d4d4d"
       opacity={0}
@@ -4514,7 +4514,7 @@ return (
   <circle
       id="st_gen6"
       cx={433.22}
-      cy={77.83}
+      cy={73.067}
       r={2.3465}
       fill="#4d4d4d"
       opacity={0}
@@ -4546,7 +4546,7 @@ return (
       id="st_gen4-5-al"//alarma
       transform="translate(14.288)"
       cx={489.74}
-      cy={63.245}
+      cy={58.482}
       r={2.3465}
       fill="#4d4d4d"
       opacity={0}
@@ -4578,7 +4578,7 @@ return (
       id="st_gen5-5-al"//alarma
       transform="translate(14.288)"
       cx={489.74}
-      cy={70.537}
+      cy={65.774}
       r={2.3465}
       fill="#4d4d4d"
       opacity={0}
@@ -4610,7 +4610,7 @@ return (
       id="st_gen6-9-al"//alarma
       transform="translate(14.288)"
       cx={489.74}
-      cy={77.83}
+      cy={73.067}
       r={2.3465}
       fill="#4d4d4d"
       opacity={0}
