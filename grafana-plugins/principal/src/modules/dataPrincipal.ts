@@ -759,7 +759,7 @@ let potenciaSIS2_gen = (pot_genSIS[4] +++ pot_genSIS[5] +++ pot_genSIS[6]);
 
 let cargaSIS1_gen = potenciaSIS1_gen * 1000 / 2430; 
     principal.ParametrosGEN_SIS1.Load =  Number.parseFloat(cargaSIS1_gen?.toFixed(2));
-let cargaSIS2_gen = potenciaSIS1_gen * 1000 / 2430; 
+let cargaSIS2_gen = potenciaSIS2_gen * 1000 / 2430; 
     principal.ParametrosGEN_SIS2.Load =  Number.parseFloat(cargaSIS2_gen?.toFixed(2));
 //------------------------------------ESTADOS DE SISTEMA DE CLIMATIZACÓN-----------------------------------
 //---------------------------------------------------------------------------------------------------------
