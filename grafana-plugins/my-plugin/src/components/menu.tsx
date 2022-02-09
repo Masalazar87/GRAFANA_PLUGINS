@@ -3,49 +3,61 @@ import React from 'react'
 const Menu = ()=> {
 //DECLARAR VARIABLES PARA VINCULAR
 //Equipos individuales
-let url_cmt = '';
-let url_pqm = '';
-let url_psg = '';
+//let url_cmt = '';
+//let url_psg = '';
 let url_ecoluz = '';
+let url_pqm = '';
 let url_ats = '';
 let url_pdi = '';
 let url_ups = '';
+let url_ups_10kva = '';
 let url_rect = '';
 let url_generador = '';
 let url_chiller = '';
 let url_uma = '';
 //Equipos grupales
 let url_grup_ats = '';
-let url_grup_pdi = '';
+let url_grup_pdi1 = '';
+let url_grup_pdi2 = '';
+let url_grup_canales = '';
 let url_grup_ups1 = '';
 let url_grup_ups2 = '';
+let url_grup_uma1 = '';
+let url_grup_uma2 = '';
 let url_grup_chiller = '';
 let url_grup_gen = '';
-let url_grup_uma = '';
+let url_scada = '';
+let url_niveles = '';
+
 //Principales
 let url_principal = '';
 let url_clima = '';
 
-url_cmt = '';
-url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&from=now-1h&to=now';
-url_psg = '';
-url_ecoluz = 'http://localhost:3000/d/wInTFO1nz/ecoluz?orgId=1&refresh=5s';
-url_ats = '';
-url_pdi = 'http://localhost:3000/d/vVCC-Gd7k/canales-pdi?orgId=1&refresh=5s&var-EQUIPO=PDU_1A_F1';
-url_ups = 'http://localhost:3000/d/JKzv01uMk/ups-s-fase-a?orgId=1&refresh=5s';
-url_generador = '';
-url_chiller = 'http://localhost:3000/d/vqpPvR57k/chillers?orgId=1&refresh=5s';
-url_uma = '';
-url_grup_ats = 'http://localhost:3000/d/THvFKSCGz/grupal-ats?orgId=1&refresh=5s';
-url_grup_pdi = 'http://localhost:3000/d/vhbjeTjMz/grupal-pdi?orgId=1&refresh=5s';
-url_grup_ups1 = 'http://localhost:3000/d/9AN-FjI7z/grupal-ups-sistema-1?orgId=1&refresh=5s';
-url_grup_ups2 = 'http://localhost:3000/d/qcxKn4F7z/grupal-ups-sistema-2?orgId=1&refresh=5s';
-url_grup_chiller = 'http://localhost:3000/d/K3nq1CrMz/grupal-chiller?orgId=1';
-url_grup_gen = 'http://localhost:3000/d/CKwriPOnk/gengroupdeepsea?orgId=1&refresh=5s';
-url_grup_uma = '';
-url_principal = 'http://localhost:3000/d/Zz1XUb5nk/principal?orgId=1&refresh=5s';
-url_clima = 'http://localhost:3000/d/i4SQZRc7k/principal-climatizacion?orgId=1&refresh=5s';
-url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s';
+//url_cmt = '';
+url_ecoluz = 'http://172.30.31.31:32308/d/ZwPUWf1nk/ecoluz?orgId=1&refresh=5s';
+url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&refresh=5s';
+url_ats = 'http://172.30.31.31:32308/d/NEwnojv7k/ats?orgId=1&refresh=5s';
+url_pdi = 'http://172.30.31.31:32308/d/oM-QqSO7k/pdu?orgId=1&refresh=5s';
+url_ups = 'http://172.30.31.31:32308/d/WK3zBCv7k/ups?orgId=1&refresh=5s';
+url_ups_10kva = 'http://172.30.31.31:32308/d/jrbmM5Fnz/ups-10-kva?orgId=1&refresh=5s'
+url_rect = 'http://172.30.31.31:32308/d/cNQ4vaK7k/rectificador?orgId=1&refresh=5s';
+url_generador = 'http://172.30.31.31:32308/d/MVdPg3K7k/generador?orgId=1&refresh=5s';
+url_chiller = 'http://172.30.31.31:32308/d/D1onBjv7z/chiller?orgId=1&refresh=5s';
+url_uma = 'http://172.30.31.31:32308/d/0adIfCD7z/uma?orgId=1&refresh=5s';
+url_grup_ats = 'http://172.30.31.31:32308/d/_Z05oCv7k/grupal-ats?orgId=1&refresh=5s';
+url_grup_pdi1 = 'http://172.30.31.31:32308/d/smlmmwAnz/grupal-pdi-sistema-1?orgId=1&refresh=5s';
+url_grup_pdi2 = 'http://172.30.31.31:32308/d/QpzK0Aa7z/grupal-pdi-sistema-2?orgId=1&refresh=5s';
+url_grup_canales = 'http://172.30.31.31:32308/d/yqLAwtOnz/breakers-pdi?orgId=1&refresh=5s';
+url_grup_ups1 = 'http://172.30.31.31:32308/d/9Dl-MNOnz/grupal-ups-sistema-1?orgId=1&efresh=5s';
+url_grup_ups2 = 'http://172.30.31.31:32308/d/05MgX7K7z/grupal-ups-sistema-2?orgId=1&efresh=5s&refresh=5s';
+url_grup_chiller = 'http://172.30.31.31:32308/d/nxqbTCD7z/grupales-chillers?orgId=1&refresh=5s';
+url_grup_gen = 'http://172.30.31.31:32308/d/-FlIdiAnz/gengroupdeepsea?orgId=1&refresh=5s';
+url_scada = 'http://172.30.31.31:32308/d/v8PnZBJnk/scada_generadores?orgId=1&from=now-1h&to=now&refresh=5s';
+url_niveles = 'http://172.30.31.31:32308/d/Pe3pt-Fnz/full-lvl-gen?orgId=1&refresh=5s';
+url_grup_uma1 = 'http://172.30.31.31:32308/d/YzqGZB1nk/grupal-uma-sist-1?orgId=1&refresh=5s';
+url_grup_uma2 = 'http://172.30.31.31:32308/d/7PV-ZB17k/grupal-uma-sist-2?orgId=1&refresh=5s';
+url_principal = 'http://172.30.31.31:32308/d/uw2mOrTnz/pantalla-principal?orgId=1&refresh=5s';
+url_clima = 'http://172.30.31.31:32308/d/uw2mOrTnz/pantalla-principal?orgId=1&refresh=5s';
 
   return (
     <svg
@@ -71,13 +83,13 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         </filter>
         <filter
           id="filter2880"
-          x={-0.00067084}
-          y={-0.0056821}
-          width={1.0013}
-          height={1.0114}
+          x={-0.007542}
+          y={-0.0068877}
+          width={1.0151}
+          height={1.0138}
           colorInterpolationFilters="sRGB"
         >
-          <feGaussianBlur id="feGaussianBlur2882" stdDeviation={0.14122707} />
+          <feGaussianBlur id="feGaussianBlur2882" stdDeviation={0.1578855} />
         </filter>
         <filter
           id="filter21611-1-1-4-7-1-0-10"
@@ -103,30 +115,36 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
           <rect
             id="rect10510-2-5"
             x={-0.63154}
-            y={-347.35}
+            y={-348.31}
             width={510.27}
-            height={179.05}
+            height={180.01}
             rx={0.21864}
-            ry={0.095046}
+            ry={0.095553}
             opacity={0.95}
             strokeWidth={1.4901}
           />
           <path
             id="path21615-1-6-7-4-7-5-3"
-            transform="matrix(40.526 0 0 3.308 -2083 -925.75)"
+            transform="matrix(36.002 0 0 3.308 -1853 -925.75)"
             d="M54.82 213.16h3.214v2.721h-3.15z"
             fill="#00b1d4"
             filter="url(#filter21611-1-1-4-7-1-0-10)"
             opacity={0.8}
-            strokeWidth={0.76955}
+            strokeWidth={0.81647}
           />
         </g>
       </g>
-      <g id="layer1">
+      <g
+        id="layer1"
+        fill="#fff"
+        fontFamily="sans-serif"
+        letterSpacing={0}
+        wordSpacing={0}
+      >
         <text
           id="text_EquiposElec"
-          x={15.496697}
-          y={14.950388}
+          x={8.6175365}
+          y={14.890043}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -135,17 +153,13 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          fontFamily="sans-serif"
           fontSize="5.6444px"
-          letterSpacing={0}
           strokeWidth={0.33875}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-5-0-6"
-            x={15.496697}
-            y={14.950388}
+            x={8.6175365}
+            y={14.890043}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -161,8 +175,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         </text>
         <text
           id="text_GRUPALES"
-          x={280.35571}
-          y={14.950224}
+          x={250.19292}
+          y={14.890038}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -171,17 +185,13 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          fontFamily="sans-serif"
           fontSize="5.6444px"
-          letterSpacing={0}
           strokeWidth={0.33875}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-5-0-0-7"
-            x={280.35571}
-            y={14.950224}
+            x={250.19292}
+            y={14.890038}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -197,7 +207,7 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         </text>
         <text
           id="text_Equipo_Clima"
-          x={15.496779}
+          x={8.6176186}
           y={30.067389}
           style={{
             fontVariantCaps: "normal",
@@ -207,16 +217,12 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          fontFamily="sans-serif"
           fontSize="5.6444px"
-          letterSpacing={0}
           strokeWidth={0.33875}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-5-0-3-1"
-            x={15.496779}
+            x={8.6176186}
             y={30.067389}
             style={{
               fontVariantCaps: "normal",
@@ -233,7 +239,7 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         </text>
         <text
           id="text_Principales"
-          x={280.3179}
+          x={250.15512}
           y={30.066891}
           style={{
             fontVariantCaps: "normal",
@@ -243,16 +249,12 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          fontFamily="sans-serif"
           fontSize="5.6444px"
-          letterSpacing={0}
           strokeWidth={0.33875}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-5-0-3-1-6"
-            x={280.3179}
+            x={250.15512}
             y={30.066891}
             style={{
               fontVariantCaps: "normal",
@@ -269,7 +271,7 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         </text>
         <text
           id="text_DATACENTER"
-          x={353.45566}
+          x={323.29269}
           y={30.066891}
           style={{
             fontVariantCaps: "normal",
@@ -279,16 +281,12 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          fontFamily="sans-serif"
           fontSize="5.6444px"
-          letterSpacing={0}
           strokeWidth={0.33875}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-5-0-3-1-6-9"
-            x={353.45566}
+            x={323.29269}
             y={30.066891}
             style={{
               fontVariantCaps: "normal",
@@ -299,15 +297,14 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontFamily="sans-serif"
             fontSize="5.6444px"
             strokeWidth={0.33875}
-          >
-            <a href={url_principal} target="_blank" style={{ fill: '#00aad4' }}>
-              {"DATACENTER"}
-              </a>
+            ><a href={url_principal} target="_blank" style={{ fill: '#00aad4' }}>
+            {"DATACENTER"}
+            </a>
           </tspan>
         </text>
         <text
           id="text_CLIMA"
-          x={414.58038}
+          x={384.41742}
           y={30.066891}
           style={{
             fontVariantCaps: "normal",
@@ -317,16 +314,12 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          fontFamily="sans-serif"
           fontSize="5.6444px"
-          letterSpacing={0}
           strokeWidth={0.33875}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-5-0-3-1-6-9-0"
-            x={414.58038}
+            x={384.41742}
             y={30.066891}
             style={{
               fontVariantCaps: "normal",
@@ -339,13 +332,13 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             strokeWidth={0.33875}
           >
             <a href={url_clima} target="_blank" style={{ fill: '#00aad4' }}>
-              {"CLIMA"}
-              </a>
+            {"CLIMA"}
+            </a>
           </tspan>
         </text>
         <text
-          id="text_PSG"
-          transform="matrix(.46412 0 0 .46411 .907 75.27)"
+          id="text_PDI"
+          transform="matrix(.46412 0 0 .46411 14.783 75.13)"
           x={222.13811}
           y={-129.90706}
           style={{
@@ -356,13 +349,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-57"
@@ -377,15 +365,14 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-          >
-            <a href={url_psg} target="_blank" style={{ fill: '#00aad4' }}>
-              {"PSG"}
-              </a>
+            ><a href={url_pdi} target="_blank" style={{ fill: '#00aad4' }}>
+            {"PDI"}
+            </a>
           </tspan>
         </text>
         <text
-          id="text_ATS"
-          transform="matrix(.46412 0 0 .46411 .907 75.27)"
+          id="text_UPS10KVA"
+          transform="matrix(.46412 0 0 .46411 10.734 75.205)"
           x={327.6532}
           y={-129.90634}
           style={{
@@ -396,13 +383,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-4-4"
@@ -417,15 +399,19 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-          >
-              <a href={url_ats} target="_blank" style={{ fill: '#00aad4' }}>
-              {"ATS"}
+            ><a href={url_ups_10kva} target="_blank" style={{ fill: '#00aad4' }}>
+            {"UPS "}
+            </a>
+            <tspan id="tspan85" fontSize="6.841px">
+            <a href={url_ups_10kva} target="_blank" style={{ fill: '#00aad4' }}>
+              {"10KVA"}
               </a>
+            </tspan>
           </tspan>
         </text>
         <text
-          id="text_CMT"
-          transform="matrix(.46412 0 0 .46411 .907 75.27)"
+          id="text_PQM"
+          transform="matrix(.46412 0 0 .46411 20.427 75.209)"
           x={137.67862}
           y={-129.90706}
           style={{
@@ -436,13 +422,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan788-0"
@@ -457,30 +438,14 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-          >
-            <tspan
-              id="tspan18521-4-59-5-1-10-0"
-              x={137.67862}
-              y={-129.90706}
-              style={{
-                fontVariantCaps: "normal",
-                fontVariantEastAsian: "normal",
-                fontVariantLigatures: "normal",
-                fontVariantNumeric: "normal"
-              }}
-              fontFamily="sans-serif"
-              fontSize="12.162px"
-              strokeWidth={0.72989}
-            >
-              <a href={url_cmt} target="_blank" style={{ fill: '#00aad4' }}>
-              {"C.M.T"}
-              </a>
-            </tspan>
+            ><a href={url_pqm} target="_blank" style={{ fill: '#00aad4' }}>
+          {"PQM"}
+          </a>
           </tspan>
         </text>
         <text
-          id="text_PQM"
-          transform="matrix(.46412 0 0 .46411 .907 75.27)"
+          id="text_ATS"
+          transform="matrix(.46412 0 0 .46411 17.587 75.206)"
           x={182.68095}
           y={-129.90706}
           style={{
@@ -491,13 +456,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-5-1-7-0"
@@ -513,14 +473,14 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-              <a href={url_pqm} target="_blank" style={{ fill: '#00aad4' }}>
-              {"PQM"}
+            <a href={url_ats} target="_blank" style={{ fill: '#00aad4' }}>
+            {"ATS"}
               </a>
           </tspan>
         </text>
         <text
-          id="text_BREAKERS"
-          transform="matrix(.46412 0 0 .46411 .907 75.27)"
+          id="text_UPS200KVA"
+          transform="matrix(.46412 0 0 .46411 12.199 75.206)"
           x={258.52243}
           y={-129.90706}
           style={{
@@ -531,13 +491,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-5-5"
@@ -552,15 +507,19 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-          >
-             <a href={url_ecoluz} target="_blank" style={{ fill: '#00aad4' }}>
-              {"ECOLUZ"}
+            ><a href={url_ups} target="_blank" style={{ fill: '#00aad4' }}>
+            {"UPS "}
+            </a>
+            <tspan id="tspan87" fontSize="6.841px">
+            <a href={url_ups} target="_blank" style={{ fill: '#00aad4' }}>
+              {"200KVA"}
               </a>
+            </tspan>
           </tspan>
         </text>
         <text
-          id="text_PDI"
-          transform="matrix(.46412 0 0 .46411 .907 75.27)"
+          id="text_ECOLUZ"
+          transform="matrix(.46412 0 0 .46411 -111.62 75.205)"
           x={362.20023}
           y={-129.90634}
           style={{
@@ -571,13 +530,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-8-1"
@@ -592,15 +546,14 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-          >
-            <a href={url_pdi} target="_blank" style={{ fill: '#00aad4' }}>
-              {"PDI"}
-              </a>
+            ><a href={url_ecoluz} target="_blank" style={{ fill: '#00aad4' }}>
+            {"ECOLUZ"}
+            </a>
           </tspan>
         </text>
         <text
-          id="text_UPS"
-          transform="matrix(.46412 0 0 .46411 .907 75.27)"
+          id="text_RECT"
+          transform="matrix(.46412 0 0 .46411 8.563 75.205)"
           x={393.80118}
           y={-129.90634}
           style={{
@@ -611,13 +564,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-0-4"
@@ -632,15 +580,14 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-          >
-              <a href={url_ups} target="_blank" style={{ fill: '#00aad4' }}>
-              {"UPS"}
-              </a>
+          ><a href={url_rect} target="_blank" style={{ fill: '#00aad4' }}>
+          {"RECT"}
+          </a>
           </tspan>
         </text>
         <text
           id="text_GEN"
-          transform="matrix(.46412 0 0 .46411 .907 75.27)"
+          transform="matrix(.46412 0 0 .46411 12.549 75.205)"
           x={429.3927}
           y={-129.90634}
           style={{
@@ -651,13 +598,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-5-10"
@@ -672,24 +614,14 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-          >
-              <a href={url_generador} target="_blank" style={{ fill: '#00aad4' }}>
-              {"GENERADOR"}
-              </a>
+          ><a href={url_generador} target="_blank" style={{ fill: '#00aad4' }}>
+          {"GEN"}
+          </a>
           </tspan>
         </text>
-        <path
-          id="path2427-5-4-7"
-          transform="translate(170.17 13.007) scale(.26458)"
-          d="M173.81 18.98H0"
-          fill="none"
-          filter="url(#filter2880)"
-          strokeWidth=".99999px"
-          stroke="#00bec4"
-        />
         <text
-          id="text_CHILLER-3"
-          transform="matrix(.46412 0 0 .46411 .907 75.545)"
+          id="text_CHILLER"
+          transform="matrix(.46412 0 0 .46411 -7.03 75.545)"
           x={146.26892}
           y={-97.988243}
           style={{
@@ -700,13 +632,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-3-5"
@@ -722,14 +649,14 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-              <a href={url_chiller} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_chiller} target="_blank" style={{ fill: '#00aad4' }}>
               {"CHILLER"}
               </a>
           </tspan>
         </text>
         <text
           id="text_UMA"
-          transform="matrix(.46412 0 0 .46411 .907 75.545)"
+          transform="matrix(.46412 0 0 .46411 -7.03 75.545)"
           x={208.60985}
           y={-97.988243}
           style={{
@@ -740,13 +667,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-5-1-103"
@@ -762,14 +684,14 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-              <a href={url_uma} target="_blank" style={{ fill: '#00aad4' }}>
+           <a href={url_uma} target="_blank" style={{ fill: '#00aad4' }}>
               {"UMA"}
               </a>
           </tspan>
         </text>
         <text
           id="text_Grup_ATS-0"
-          transform="translate(.907 75.569) scale(.46412)"
+          transform="translate(-31.901 75.51) scale(.46412)"
           x={742.81177}
           y={-130.55989}
           style={{
@@ -780,13 +702,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-4-2-6-3"
@@ -802,14 +719,14 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-              <a href={url_grup_ats} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_grup_ats} target="_blank" style={{ fill: '#00aad4' }}>
               {"ATS"}
               </a>
           </tspan>
         </text>
         <text
           id="text_Grup_PDI"
-          transform="translate(.907 75.569) scale(.46412)"
+          transform="translate(-33.516 75.436) scale(.46412)"
           x={777.21857}
           y={-130.55989}
           style={{
@@ -820,13 +737,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-8-4-1"
@@ -842,54 +754,17 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-             <a href={url_grup_pdi} target="_blank" style={{ fill: '#00aad4' }}>
-              {"PDI"}
+            {"PDI "}
+            <tspan id="tspan918" fontSize="6.8409px">
+            <a href={url_grup_pdi1} target="_blank" style={{ fill: '#00aad4' }}>
+              {"SIS. 1 / "}
               </a>
-          </tspan>
-        </text>
-        <text
-          id="text_Grup_UPS"
-          transform="translate(.907 75.569) scale(.46412)"
-          x={808.67932}
-          y={-130.55989}
-          style={{
-            fontVariantCaps: "normal",
-            fontVariantEastAsian: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantNumeric: "normal",
-            lineHeight: 1.25
-          }}
-          xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
-          fontSize="12.162px"
-          letterSpacing={0}
-          strokeWidth={0.72989}
-          wordSpacing={0}
-        >
-          <tspan
-            id="tspan18521-4-0-6-3"
-            x={808.67932}
-            y={-130.55989}
-            style={{
-              fontVariantCaps: "normal",
-              fontVariantEastAsian: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantNumeric: "normal"
-            }}
-            fontFamily="sans-serif"
-            fontSize="12.162px"
-            strokeWidth={0.72989}
-          >
-            <a href={url_grup_ups1} target="_blank" style={{ fill: '#00aad4' }}>
-              {"UPS"}
-              </a>
+            </tspan>
           </tspan>
         </text>
         <text
           id="text_Grup_CHILLER"
-          transform="translate(.907 75.569) scale(.46412)"
+          transform="translate(83.11 75.51) scale(.46412)"
           x={845.27087}
           y={-130.55989}
           style={{
@@ -900,13 +775,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-7-0"
@@ -929,7 +799,7 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         </text>
         <text
           id="text_Grup_GEN"
-          transform="translate(.907 75.569) scale(.46412)"
+          transform="translate(19.953 75.51) scale(.46412)"
           x={907.99274}
           y={-130.55989}
           style={{
@@ -940,13 +810,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-5-03-0"
@@ -962,14 +827,19 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-           <a href={url_grup_gen} target="_blank" style={{ fill: '#00aad4' }}>
-              {"GENERADOR"}
+            <a href={url_grup_gen} target="_blank" style={{ fill: '#00aad4' }}>
+              {"GEN "}
               </a>
+            <tspan id="tspan1242" fontSize="6.8409px">
+            <a href={url_scada} target="_blank" style={{ fill: '#00aad4' }}>
+              {"SCADA /"}
+              </a>
+            </tspan>
           </tspan>
         </text>
         <text
-          id="text_Grup_UMA"
-          transform="translate(.907 75.569) scale(.46412)"
+          id="text_Grup_UMASIS1"
+          transform="translate(-61.709 75.436) scale(.46412)"
           x={997.9895}
           y={-130.55989}
           style={{
@@ -980,13 +850,8 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             lineHeight: 1.25
           }}
           xmlSpace="preserve"
-          fill="#fff"
-          filter="url(#filter2880)"
-          fontFamily="sans-serif"
           fontSize="12.162px"
-          letterSpacing={0}
           strokeWidth={0.72989}
-          wordSpacing={0}
         >
           <tspan
             id="tspan18521-4-59-5-1-1-7"
@@ -1002,8 +867,229 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            <a href={url_grup_uma} target="_blank" style={{ fill: '#00aad4' }}>
-              {"UMA"}
+            {"UMA "}
+            <tspan id="tspan118" fontSize="6.8409px">
+            <a href={url_grup_uma1} target="_blank" style={{ fill: '#00aad4' }}>
+              {"SIS. 1 / "}
+              </a>
+            </tspan>
+          </tspan>
+        </text>
+        <text
+          id="text_Grup_UPSSIS1"
+          transform="translate(-11.835 75.511) scale(.46412)"
+          x={808.67932}
+          y={-130.55989}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fontSize="12.162px"
+          strokeWidth={0.72989}
+        >
+          <tspan
+            id="tspan18521-4-0-6-3-3"
+            x={808.67932}
+            y={-130.55989}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fontFamily="sans-serif"
+            fontSize="12.162px"
+            strokeWidth={0.72989}
+          >
+           {"UPS "}
+            <tspan id="tspan89-3" fontSize="6.8409px">
+            <a href={url_grup_ups1} target="_blank" style={{ fill: '#00aad4' }}>
+              {"SIS. 1 / "}
+              </a>
+            </tspan>
+          </tspan>
+        </text>
+        <text
+          id="text_Grup_PDI-canales"
+          transform="translate(-19.28 80.167) scale(.46412)"
+          x={777.21857}
+          y={-130.55989}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fontSize="6.8409px"
+          strokeWidth={0.72989}
+        >
+          <tspan
+            id="tspan18521-4-8-4-1-2"
+            x={777.21857}
+            y={-130.55989}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fontFamily="sans-serif"
+            fontSize="6.8409px"
+            strokeWidth={0.72989}
+          >
+           <a href={url_grup_canales} target="_blank" style={{ fill: '#00aad4' }}>
+              {"CANALES"}
+              </a>
+          </tspan>
+        </text>
+        <text
+          id="text_Grup_PDI-2"
+          transform="translate(-10.108 75.436) scale(.46412)"
+          x={777.21857}
+          y={-130.55989}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fontSize="12.162px"
+          strokeWidth={0.72989}
+        >
+          <tspan id="tspan1181" x={777.21857} y={-130.55989}>
+            <tspan
+              id="tspan18521-4-8-4-1-8"
+              x={777.21857}
+              y={-130.55989}
+              style={{
+                fontVariantCaps: "normal",
+                fontVariantEastAsian: "normal",
+                fontVariantLigatures: "normal",
+                fontVariantNumeric: "normal"
+              }}
+              fontFamily="sans-serif"
+              fontSize="6.8409px"
+              strokeWidth={0.72989}
+            >
+              <a href={url_grup_pdi2} target="_blank" style={{ fill: '#00aad4' }}>
+              {"SIS. 2"}
+              </a>
+            </tspan>
+          </tspan>
+        </text>
+        <text
+          id="text_Grup_UPSSIS2"
+          transform="translate(28.172 75.436) scale(.46412)"
+          x={777.21857}
+          y={-130.55989}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fontSize="12.162px"
+          strokeWidth={0.72989}
+        >
+          <tspan id="tspan1181-0" x={777.21857} y={-130.55989}>
+            <tspan
+              id="tspan18521-4-8-4-1-8-8"
+              x={777.21857}
+              y={-130.55989}
+              style={{
+                fontVariantCaps: "normal",
+                fontVariantEastAsian: "normal",
+                fontVariantLigatures: "normal",
+                fontVariantNumeric: "normal"
+              }}
+              fontFamily="sans-serif"
+              fontSize="6.8409px"
+              strokeWidth={0.72989}
+            >
+              <a href={url_grup_ups2} target="_blank" style={{ fill: '#00aad4' }}>
+              {"SIS. 2"}
+              </a>
+            </tspan>
+          </tspan>
+        </text>
+        <text
+          id="text_Grup_UMASIS2"
+          transform="translate(67.935 75.436) scale(.46412)"
+          x={774.21857}
+          y={-130.55989}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fontSize="12.162px"
+          strokeWidth={0.72989}
+        >
+          <tspan id="tspan1181-0-5" x={777.21857} y={-130.55989}>
+            <tspan
+              id="tspan18521-4-8-4-1-8-8-7"
+              x={774.21857}
+              y={-130.55989}
+              style={{
+                fontVariantCaps: "normal",
+                fontVariantEastAsian: "normal",
+                fontVariantLigatures: "normal",
+                fontVariantNumeric: "normal"
+              }}
+              fontFamily="sans-serif"
+              fontSize="6.8409px"
+              strokeWidth={0.72989}
+            >
+               <a href={url_grup_uma2} target="_blank" style={{ fill: '#00aad4' }}>
+              {"SIS. 2"}
+              </a>
+            </tspan>
+          </tspan>
+        </text>
+        <text
+          id="text_niveles"
+          x={448.2897}
+          y={19.57128}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fontSize="3.175px"
+          strokeWidth={0.33876}
+        >
+          <tspan
+            id="tspan18521-4-8-4-1-2-2"
+            x={448.2897}
+            y={19.57128}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fontFamily="sans-serif"
+            fontSize="3.175px"
+            strokeWidth={0.33876}
+          >
+            <a href={url_niveles} target="_blank" style={{ fill: '#00aad4' }}>
+              {"NIVELES"}
               </a>
           </tspan>
         </text>
@@ -1011,7 +1097,7 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
       <g id="layer2">
         <image
           id="imagen_rayo"
-          x={48.107}
+          x={40.169}
           y={7.3542}
           width={10.13}
           height={12.897}
@@ -1021,7 +1107,7 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         />
         <image
           id="imagen_clima"
-          x={48.107}
+          x={40.169}
           y={21.309}
           width={10.674}
           height={12.262}
@@ -1031,7 +1117,7 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         />
         <image
           id="imagen_rayo1"
-          x={314.86}
+          x={284.7}
           y={7.3546}
           width={10.13}
           height={12.897}
@@ -1041,7 +1127,7 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         />
         <image
           id="imagen_clima1"
-          x={326.12}
+          x={295.96}
           y={7.3546}
           width={10.674}
           height={12.262}
@@ -1051,7 +1137,7 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         />
         <image
           id="imagen_home"
-          x={324.52}
+          x={294.36}
           y={21.079}
           width={12.272}
           height={12.272}
@@ -1061,7 +1147,7 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         />
         <image
           id="imagen_clima2"
-          x={435.34}
+          x={405.18}
           y={21.737}
           width={10.674}
           height={12.262}
@@ -1071,7 +1157,7 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         />
         <image
           id="imagen_rayo3"
-          x={396.18}
+          x={366.02}
           y={21.39}
           width={10.13}
           height={12.897}
@@ -1081,31 +1167,43 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
         />
         <image
           id="image1272"
-          transform="matrix(.9953 0 0 .21642 1.966 76.989)"
+          transform="matrix(.9953 0 0 .21642 -2.797 75.401)"
           x={458.33}
           y={-229.99}
           width={50.242}
           height={55.015}
           preserveAspectRatio="none"
           xlinkHref="data:image/png;base64,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 AABJRU5ErkJggg=="
-          filter="url(#filter2880)"
           strokeWidth={1.4901}
         />
       </g>
-      <g id="layer4" filter="url(#filter2880)" fill="none" strokeWidth={0.5}>
+      <g id="layer4" filter="url(#filter2880)">
+        <path
+          id="path21615-1-6-7-4-7-5"
+          transform="matrix(67.034 0 0 .71591 -3660.5 -148.16)"
+          d="M54.82 213.16h3.214v2.721h-3.15z"
+          fill="#00b1d4"
+          filter="url(#filter21611-1-1-4-7-1-0)"
+          opacity={0.8}
+          strokeWidth={0.59694}
+        />
         <path
           id="path230"
-          d="M63.209 19.589h183.38l5.538-13.82"
+          d="M55.271 19.589h183.38l5.538-13.82"
+          fill="none"
           strokeOpacity={0.98824}
+          strokeWidth={0.5}
           stroke="#008ea9"
         />
         <path
           id="path1055"
-          d="M252.12 5.769h250.13"
+          d="M244.18 5.769h250.13"
           style={{
             mixBlendMode: "normal"
           }}
+          fill="none"
           strokeOpacity={0.99608}
+          strokeWidth={0.5}
           stroke="#0088a2"
         />
       </g>
@@ -1113,4 +1211,4 @@ url_rect = 'http://localhost:3000/d/1NUM42Knk/rectificadores?orgId=1&refresh=5s'
   )
 }
 
-export default Menu;
+export default Menu

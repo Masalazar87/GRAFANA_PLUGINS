@@ -377,6 +377,13 @@ let VCA_CMT = data.series.find(({ name }) => name?.includes('DATA.VLL_CA.VALUE')
 ?.lastNotNull;
 let VAVG_CMT = data.series.find(({ name }) => name?.includes('DATA.VLL_AVG.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
+let VLN_A = data.series.find(({ name }) => name?.includes('DATA.VLN_A.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let VLN_B = data.series.find(({ name }) => name?.includes('DATA.VLN_B.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+let VLN_C = data.series.find(({ name }) => name?.includes('DATA.VLN_C.VALUE'))?.fields[1].state?.calcs
+?.lastNotNull;
+
 //-------------------------------------------------------------------------------------------------------------
 //-------------------------------------PARAMETROS DE POTENCIA POR SISTEMA--------------------------------------
 let POT_SIS1 = data.series.find(({ name }) => name?.includes('POT_SIS1'))?.fields[1].state?.calcs
@@ -788,10 +795,14 @@ let Voltaje_CMTL3 = VCA_CMT/1000;
     principal.ParametrosElec.V_CMTL3 = Number.parseFloat(Voltaje_CMTL3?.toFixed(1));
 let Vprom_CMTAVG = VAVG_CMT/1000;
     principal.ParametrosElec.V_CMTAVG = Number.parseFloat(Vprom_CMTAVG?.toFixed(1));
-principal.Estados_Principales.VAB_CMT = Voltaje_CMTL1 > 0? estadosStyles.on : estadosStyles.sinconexion;
-principal.Estados_Principales.VBC_CMT = Voltaje_CMTL2 > 0? estadosStyles.on : estadosStyles.sinconexion;
-principal.Estados_Principales.VCA_CMT = Voltaje_CMTL3 > 0? estadosStyles.on : estadosStyles.sinconexion;
-principal.Estados_Principales.ST_CMT =  Voltaje_CMTL1 > 0 &&  Voltaje_CMTL2 > 0 &&  Voltaje_CMTL3 > 0? estadosStyles.on : estadosStyles.alarma;
+let Voltaje_CMTVL_AN = VLN_A/1000;
+let Voltaje_CMTVL_BN = VLN_B/1000;
+let Voltaje_CMTVL_CN = VLN_C/1000;
+
+principal.Estados_Principales.VAB_CMT = Voltaje_CMTVL_AN > 7.7? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VBC_CMT = Voltaje_CMTVL_BN > 7.7? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VCA_CMT = Voltaje_CMTVL_CN > 7.7? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.ST_CMT =  Vprom_CMTAVG > 13.4? estadosStyles.on : estadosStyles.alarma;
 
 //-----------------------------------------PARAMETROS POTENCIA POR SISTEMA TDLOWA&2---------------------------
 let pot_tdlow1 = POT_SIS1/10;
@@ -800,18 +811,35 @@ let pot_tdlow2 = POT_SIS2/10;
 principal.ParametrosElec.P_SIS2 = Number.parseFloat(pot_tdlow2?.toFixed(2));
 
 //-----------------------------------------PARAMETROS TEMPERATURA PRINCIPALES---------------------------
-if (st_1b2[1] = 1 || st_1b2[2] == 1) {
-principal.ParametrosClima.T_ret = Number.parseFloat(TEMP_R_SIS2?.toFixed(1));
-principal.ParametrosClima.T_sumin = Number.parseFloat(TEMP_S_PRI_SIS2?.toFixed(1));
+let TR_SIS1 = Number.parseFloat(TEMP_R_SIS1?.toFixed(1));
+let TS_SIS1 = Number.parseFloat(TEMP_S_PRI_SIS1?.toFixed(1));
+let TR_SIS2 = Number.parseFloat(TEMP_R_SIS2?.toFixed(1));
+let TS_SIS2 = Number.parseFloat(TEMP_S_PRI_SIS2?.toFixed(1));
+
+/*if (st_1b2[1] = 0 || st_1b2[2] == 0) {
+    principal.ParametrosClima.T_ret = TR_SIS1;
+    principal.ParametrosClima.T_sumin = TS_SIS1;
 }
-else {
-    if (st_1b2[3] = 1 || st_1b2[4] == 1) {
+else{
+    if (st_1b2[3] = 0 || st_1b2[4] == 0) {
+        principal.ParametrosClima.T_ret = TR_SIS2;
+        principal.ParametrosClima.T_sumin = TS_SIS2;
+    }
+}*/
+principal.ParametrosClima.T_ret = (st_1b2[1] === 1 || st_1b2[2] === 1)? TR_SIS2 : TR_SIS1;
+principal.ParametrosClima.T_sumin = (st_1b2[1] === 1 || st_1b2[2] === 1)? TS_SIS2 : TS_SIS1;
+        
+    /*principal.ParametrosClima.T_ret = (st_1b2[1] === 1 || st_1b2[2] === 1)?Number.parseFloat(TEMP_R_SIS2?.toFixed(1)): 100;
+    principal.ParametrosClima.T_ret = (st_1b2[3] === 1 || st_1b2[4] === 1)?Number.parseFloat(TEMP_R_SIS1?.toFixed(1)): 200;
+    /*principal.ParametrosClima.T_sumin = (st_1b2[1] === 1 || st_1b2[2] == 1?Number.parseFloat(TEMP_S_PRI_SIS2?.toFixed(1)):);
+                                         st_1b2[3] === 1 || st_1b2[4] == 1?Number.parseFloat(TEMP_S_PRI_SIS1?.toFixed(1))
+
+ 
+else{
+    if (st_1b2[3] >= 1 || st_1b2[4] >= 1) {
         principal.ParametrosClima.T_ret = Number.parseFloat(TEMP_R_SIS1?.toFixed(1));
         principal.ParametrosClima.T_sumin = Number.parseFloat(TEMP_S_PRI_SIS1?.toFixed(1));
-        }
-}
-
-
+    }*/
 
 
 console.log(principal);
