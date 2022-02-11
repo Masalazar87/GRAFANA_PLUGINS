@@ -802,7 +802,7 @@ let Voltaje_CMTVL_CN = VLN_C/1000;
 principal.Estados_Principales.VAB_CMT = Voltaje_CMTVL_AN > 7.7? estadosStyles.on : estadosStyles.alarma;
 principal.Estados_Principales.VBC_CMT = Voltaje_CMTVL_BN > 7.7? estadosStyles.on : estadosStyles.alarma;
 principal.Estados_Principales.VCA_CMT = Voltaje_CMTVL_CN > 7.7? estadosStyles.on : estadosStyles.alarma;
-principal.Estados_Principales.ST_CMT =  Vprom_CMTAVG > 13.4? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.ST_CMT =  Vprom_CMTAVG > 13.1? estadosStyles.on : estadosStyles.alarma;
 
 //-----------------------------------------PARAMETROS POTENCIA POR SISTEMA TDLOWA&2---------------------------
 let pot_tdlow1 = POT_SIS1/10;
