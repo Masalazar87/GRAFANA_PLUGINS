@@ -1,14 +1,14 @@
-import { PanelData,InterpolateFunction } from '@grafana/data';
+import { PanelData,InterpolateFunction} from '@grafana/data';
 import { SimpleOptions } from 'types';
 
 import { DataPdi } from 'components/variables';
 import estadosStyles from 'styles/estadosStyles';
 
-const dataPdi = (data: PanelData, options: SimpleOptions,replaceVariables:InterpolateFunction): DataPdi => {  
+const dataPdi = (data: PanelData, options: SimpleOptions, replaceVariables: InterpolateFunction, ): DataPdi => {  
     console.log('data: ', data);
     console.log('options: ', options);
     console.log(replaceVariables);
-    
+         
 // ESTADOS
 let GEN_ALM = data.series.find(({ name }) => name?.includes('DATA.GEN_ALM.VALUE'))?.fields[1].state?.calcs?.lastNotNull
 let MODBUS_ST = data.series.find(({ name }) => name?.includes('DATA.MODBUS_ST.VALUE'))?.fields[1].state?.calcs?.lastNotNull
@@ -376,8 +376,9 @@ let KVA_2_CH42 = data.series.find(({ name }) => name?.includes('DATA.KVA_2.CH42.
 
 let pdi: DataPdi = {
     DatosGenerales: {
-        Nombre:'',
+        Nombre: '',
     },
+
     Estado:{
         Status: estadosStyles.off,
         Status_ON: estadosStyles.off,
@@ -422,9 +423,7 @@ let pdi: DataPdi = {
 }
 
 
-//INTERPOLACION DE VARIABLES
-let variableNombre1 = replaceVariables('$EQUIPO')
-pdi.DatosGenerales.Nombre = variableNombre1 !==''? variableNombre1: options.nombre
+
 
 
 //DATOS P1 POTENCIA KVA----------------------------------
@@ -948,7 +947,15 @@ pdi.Estado.Alarma = GEN_ALM === 1? estadosStyles.on : estadosStyles.off;
 pdi.Estado.Status = MODBUS_ST  === 1? estadosStyles.off : estadosStyles.on1;
 pdi.Estado.Status_ON = MODBUS_ST  === 1? estadosStyles.off : estadosStyles.on2;
 
-console.log(pdi);
+
+//INTERPOLACION DE VARIABLE
+let variableNombre1 = replaceVariables('$EQUIPO1');
+//let variableNombre2 = replaceVariables('$EQUIPO2');
+pdi.DatosGenerales.Nombre = variableNombre1 !==''? variableNombre1: options.nombre;
+//pdi.DatosGenerales.Nombre = variableNombre2 !==''? variableNombre2: options.nombre;
+    //pdi.DatosGenerales.Nombre1 = variableNombre2 !==''? variableNombre2: options.nombre1;
+    //pdi.DatosGenerales.Nombre1 = variableNombre2 !==''? variableNombre2: options.nombre1;
+
 
 return pdi;
 

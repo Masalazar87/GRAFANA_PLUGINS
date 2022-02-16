@@ -57,7 +57,7 @@ url_niveles = 'http://172.30.31.31:32308/d/Pe3pt-Fnz/full-lvl-gen?orgId=1&refres
 url_grup_uma1 = 'http://172.30.31.31:32308/d/YzqGZB1nk/grupal-uma-sist-1?orgId=1&refresh=5s';
 url_grup_uma2 = 'http://172.30.31.31:32308/d/7PV-ZB17k/grupal-uma-sist-2?orgId=1&refresh=5s';
 url_principal = 'http://172.30.31.31:32308/d/uw2mOrTnz/pantalla-principal?orgId=1&refresh=5s';
-url_clima = 'http://172.30.31.31:32308/d/uw2mOrTnz/pantalla-principal?orgId=1&refresh=5s';
+url_clima = 'http://172.30.31.31:32308/d/lW6YK9T7z/clima_p?orgId=1&refresh=5s';
 
   return (
     <svg

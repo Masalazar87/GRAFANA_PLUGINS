@@ -2,7 +2,7 @@ import React from 'react'
 
 type DatosGenerales = {
   Nombre: string;
-};
+ };
 type Estado = {
   Status: string;
   Alarma: string;
@@ -8265,7 +8265,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
               d="M88.314 8.4258H121.68599999999999V18.344700000000003H88.314z"
             />
             <text
-              id="nom_on-5"
+              id="nom_on-5"//sombra
               transform="matrix(1.023 0 0 .97163 0 .792)"
               x={90.061333}
               y={15.320139}
@@ -8316,6 +8316,7 @@ export const Variables = ({ DatosGenerales,Estado,Panel1_kva,Panel1_kwh,Panel1_A
                 {DatosGenerales.Nombre}
               </tspan>
             </text>
+                        
           </g>
 
     )
