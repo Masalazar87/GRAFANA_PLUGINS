@@ -139,8 +139,7 @@ grupalgen.DatosGenerales.Nombre = variableNombre ! == '$NOMBRE' ?  variableNombr
   grupalgen.Indicadores.Estado = CONTROL_MODE >=1? modoControlStyles.On : modoControlStyles.SinConexion;
 
 //ALARMAS
-if (E_STOP ===2 || L_OIL_P ===2 || H_COOL_T ===2 || U_SPEED ===2 || O_SPEED ===2 || F_START ===2 ||
-   F_REST ===2|| LOSS_SPEED ===2|| LV_GEN ===2 || HV_GEN ===2|| LF_GEN ===2|| HF_GEN ===2|| HCUR_GEN ===2){
+if (E_STOP ===2 || L_OIL_P ===2 || H_COOL_T ===2 || U_SPEED ===2 || O_SPEED ===2 || F_START ===2 || F_REST ===2|| LOSS_SPEED ===2|| LV_GEN ===2 || HV_GEN ===2|| LF_GEN ===2|| HF_GEN ===2|| HCUR_GEN ===2){
     grupalgen.Indicadores.Alarma = modoControlStyles.alarma1}
 else {
   if (E_STOP ===3 || L_OIL_P ===3 || H_COOL_T ===3 || U_SPEED ===3 || O_SPEED ===3 || F_START ===3 ||
@@ -156,13 +155,10 @@ else {
     }
 
 
-
   //grupalgen.Indicadores.Alarma = (E_STOP || L_OIL_P || H_COOL_T || U_SPEED || O_SPEED || F_START || F_REST || LOSS_SPEED || LV_GEN || HV_GEN || LF_GEN || HF_GEN || HCUR_GEN) == 2? modoControlStyles.alarma1 : modoControlStyles.SinConexion;
   //grupalgen.Indicadores.Alarma = (E_STOP || L_OIL_P || H_COOL_T || U_SPEED || O_SPEED || F_START || F_REST || LOSS_SPEED || LV_GEN || HV_GEN || LF_GEN || HF_GEN || HCUR_GEN) === 3? modoControlStyles.alarma2 : modoControlStyles.SinConexion;
   //grupalgen.Indicadores.Alarma = (E_STOP || L_OIL_P || H_COOL_T || U_SPEED || O_SPEED || F_START || F_REST || LOSS_SPEED || LV_GEN || HV_GEN || LF_GEN || HF_GEN || HCUR_GEN) === 4? modoControlStyles.alarma3 : modoControlStyles.SinConexion;
-  grupalgen.Indicadores.Mant = (E_STOP === 3 && CONTROL_MODE === 7)? modoControlStyles.alarma1 : modoControlStyles.SinConexion;
-
-
+  //grupalgen.Indicadores.Mant = (E_STOP === 3 && CONTROL_MODE === 7)? modoControlStyles.alarma1 : modoControlStyles.SinConexion;
 
 console.log(grupalgen);
 
