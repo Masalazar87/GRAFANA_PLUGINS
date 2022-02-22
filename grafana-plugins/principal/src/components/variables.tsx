@@ -14,8 +14,8 @@ type ParametrosElec = {
     V_CMTL3: number;
     P_SIS1: number;
     P_SIS2: number;
-    //PUE: number;
-    //DCIE: number
+    PUE: number;
+    DCIE: number
 };
 type ParametrosClima = {
     T_sumin: number;
@@ -1834,7 +1834,7 @@ return (
   <text
     id="pue"
     transform="scale(.89754 1.1142)"
-    x={228.54941}
+    x={227.54941}
     y={164.20184}
     style={{
       fontVariantCaps: "normal",
@@ -1853,7 +1853,7 @@ return (
   >
     <tspan
       id="tspan998-68-8-8"
-      x={228.54941}
+      x={227.54941}
       y={164.20184}
       style={{
         fontVariantCaps: "normal",
@@ -1867,13 +1867,13 @@ return (
       fontSize="7.0556px"
       strokeWidth={0.43331}
     >
-      {"PUE"}
+      {ParametrosElec.PUE}
     </tspan>
   </text>
   <text
     id="dcie"
     transform="scale(.84137 1.1885)"
-    x={407.82684}
+    x={404.82684}
     y={154.20262}
     style={{
       fontVariantCaps: "normal",
@@ -1892,7 +1892,7 @@ return (
   >
     <tspan
       id="tspan998-68-8-2"
-      x={407.82684}
+      x={404.82684}
       y={154.20262}
       style={{
         fontVariantCaps: "normal",
@@ -1906,7 +1906,7 @@ return (
       fontSize="7.0556px"
       strokeWidth={0.43331}
     >
-      {"DCIE"}
+      {ParametrosElec.DCIE}%
     </tspan>
   </text>
   <text
