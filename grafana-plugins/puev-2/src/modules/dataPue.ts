@@ -8,8 +8,8 @@ const dataPue = (data: PanelData, options:SimpleOptions): DataPue => {
     console.log('options: ', options);
 
     //ESTADO
-    let VLL_AVG = data.series.find(({ name }) => name?.includes('DATA.VLL_AVG.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    let VLL_AVG = 200;//data.series.find(({ name }) => name?.includes('DATA.VLL_AVG.VALUE'))?.fields[1].state?.calcs
+    //?.lastNotNull;
     //CARGA TOTAL PQM
     let REALPOW_3PHAS = data.series.find(({ name }) => name?.includes('DATA.REALPOW_3PHAS.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;

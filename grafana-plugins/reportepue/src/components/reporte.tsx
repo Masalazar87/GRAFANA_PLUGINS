@@ -503,7 +503,7 @@ const Reporte = ({ParametrosPrincipales}: DataReporte) => {
         </text>
         <text
           id="text3241-1-9-21"
-          x={356.61273}
+          x={357.38318}
           y={235.17029}
           style={{
             fontVariantCaps: "normal",
@@ -519,7 +519,7 @@ const Reporte = ({ParametrosPrincipales}: DataReporte) => {
         >
           <tspan
             id="tspan3239-1-9-2"
-            x={356.61273}
+            x={357.38318}
             y={235.17029}
             style={{
               fontVariantCaps: "normal",
