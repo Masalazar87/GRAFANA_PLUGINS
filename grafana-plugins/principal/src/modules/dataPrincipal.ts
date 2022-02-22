@@ -141,7 +141,7 @@ for (let i = 1; i <= 2; i++) {
     if (strec[i] === 1 ){
         strec[i] = st_on;
     } else 
-        if (strec[i] === 2 ){
+        if (strec[i] >= 2 ){
             strec[i] = alarm_on;
     }else 
         if (strec[i] === 0){

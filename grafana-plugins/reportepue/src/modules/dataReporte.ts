@@ -40,6 +40,11 @@ for (let i = 1; i <= 10; i++) {
 let POT_UPS_SAT_1A = data.series.find(({ name }) => name?.includes('POT_UPS_SAT_1A'))?.fields[1].state?.calcs?.lastNotNull;
 let POT_UPS_SAT_2A = data.series.find(({ name }) => name?.includes('POT_UPS_SAT_2A'))?.fields[1].state?.calcs?.lastNotNull;
 
+//POTENCIAS DER RECTIFICADORES
+let V_RECT_1A = data.series.find(({ name }) => name?.includes('V_RECT_1A'))?.fields[1].state?.calcs?.lastNotNull;
+let I_RECT_1A = data.series.find(({ name }) => name?.includes('I_RECT_1A'))?.fields[1].state?.calcs?.lastNotNull;
+let V_RECT_2A = data.series.find(({ name }) => name?.includes('V_RECT_2A'))?.fields[1].state?.calcs?.lastNotNull;
+let I_RECT_2A = data.series.find(({ name }) => name?.includes('I_RECT_2A'))?.fields[1].state?.calcs?.lastNotNull;
 
 let reporte: DataReporte = {
     ParametrosPrincipales: {
@@ -67,13 +72,19 @@ let sum_pot_sis2_pdi = SIS2_POT_PDI_[1] +++ SIS2_POT_PDI_[2] +++ SIS2_POT_PDI_[3
 let sum_pot_pdis = (sum_pot_sis1_pdi + sum_pot_sis2_pdi) / 10; 
 
 //POTENCIA 3FASE PUE
-let pot_pqm = APPPOW_3PHAS / 100
+let pot_pqm = APPPOW_3PHAS / 100;
 
 //POTENCIA SATELITAL
 let pot_total_ups_sat = (POT_UPS_SAT_1A + POT_UPS_SAT_2A) / 1000;
 
+//POTENCIA DE ATS_REC
+let pot_rect_1a =  (V_RECT_1A * I_RECT_1A) / 1000
+let pot_rect_2a = (V_RECT_2A * I_RECT_2A) / 1000
+let pot_total_rec = (pot_rect_1a + pot_rect_2a)
+
 //CALCULO DE PUE
-let calculo_pue =  pot_pqm / (sum_pot_pdis + pot_total_ups_sat); 
+let calculo_pue =  pot_pqm / (sum_pot_pdis + pot_total_ups_sat + pot_total_rec); 
+
 //CALCULO DE DICE
 let calculo_dcie = 1 / calculo_pue * 100;
 
