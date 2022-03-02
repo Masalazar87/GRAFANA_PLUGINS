@@ -28,7 +28,7 @@ export const SimplePanel: React.FC<Props> = ({options, data, width, height}) => 
       <Pue
         Estado={pue.Estado}
         Principal={pue.Principal}
-        Cargas_kw={pue.Cargas_kw}
+        //Cargas_kw={pue.Cargas_kw}
         Cargas_kva={pue.Cargas_kva}
         Cargas_uso={pue.Cargas_uso}
       />

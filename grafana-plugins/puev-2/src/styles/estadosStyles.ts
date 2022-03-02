@@ -13,10 +13,16 @@ const getStyles = stylesFactory(() => {
     `,
     gen: css`
       fill: orange;
-      animation: ${parpadeo} 1s ease infinite;
+      animation: ${parpadeo} 2s ease infinite;
     `,
     eee: css`
-      stroke: url(#linearGradient4474); 
+      stroke: url(#linearGradient4474);
+      animation: ${parpadeo} 2s ease infinite; 
+    `,
+    reactor: css`
+    fill: red;
+    //fill: #87CDDE;
+    animation: ${parpadeo} 1s ease infinite;
     `,
   };
 });
