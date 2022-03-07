@@ -17,12 +17,19 @@ const getStyles = stylesFactory(() => {
     `,
     eee: css`
       stroke: url(#linearGradient4474);
-      animation: ${parpadeo} 2s ease infinite; 
+      animation: ${parpadeo} 3s ease infinite; 
     `,
     reactor: css`
-    fill: red;
-    //fill: #87CDDE;
-    animation: ${parpadeo} 1s ease infinite;
+    fill: #87CDDE;
+    animation: ${parpadeo} 3s ease infinite;
+    `,
+    aura: css`
+    stroke: #87CDDE;
+    animation: ${parpadeo} 3s ease infinite;
+    opacity: 0.1;
+    `,
+    move: css`
+    animation: ${parpadeo} 3s infinite alternate slidein;
     `,
   };
 });

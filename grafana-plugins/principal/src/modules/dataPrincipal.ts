@@ -336,7 +336,7 @@ pot_genSIS[i] = data.series.find(({ name }) => name?.includes('POT_GEN' + i))?.f
         pot_genSIS[i] = 0;
     } else { 
         if (pot_genSIS[i] > 0){
-            pot_genSIS[i] =  pot_genSIS[i]
+            pot_genSIS[i] =  pot_genSIS[i] * 10
     }
     }
 }
@@ -799,9 +799,9 @@ let potenciaSIS1_gen = (pot_genSIS[1] +++ pot_genSIS[2] +++ pot_genSIS[3]);
 let potenciaSIS2_gen = (pot_genSIS[4] +++ pot_genSIS[5] +++ pot_genSIS[6]);
     principal.ParametrosGEN_SIS2.P_out = Number.parseFloat(potenciaSIS2_gen?.toFixed(2));
 
-let cargaSIS1_gen = potenciaSIS1_gen * 1000 / 2430; 
+let cargaSIS1_gen = potenciaSIS1_gen * 100 / 2430; 
     principal.ParametrosGEN_SIS1.Load =  Number.parseFloat(cargaSIS1_gen?.toFixed(2));
-let cargaSIS2_gen = potenciaSIS2_gen * 1000 / 2430; 
+let cargaSIS2_gen = potenciaSIS2_gen * 100 / 2430; 
     principal.ParametrosGEN_SIS2.Load =  Number.parseFloat(cargaSIS2_gen?.toFixed(2));
 //------------------------------------ESTADOS DE SISTEMA DE CLIMATIZACÓN-----------------------------------
 //---------------------------------------------------------------------------------------------------------
@@ -837,7 +837,7 @@ let Voltaje_CMTVL_CN = VLN_C/1000;
 principal.Estados_Principales.VAB_CMT = Voltaje_CMTVL_AN > 7.7? estadosStyles.on : estadosStyles.alarma;
 principal.Estados_Principales.VBC_CMT = Voltaje_CMTVL_BN > 7.7? estadosStyles.on : estadosStyles.alarma;
 principal.Estados_Principales.VCA_CMT = Voltaje_CMTVL_CN > 7.7? estadosStyles.on : estadosStyles.alarma;
-principal.Estados_Principales.ST_CMT =  Vprom_CMTAVG > 13.1? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.ST_CMT =  Vprom_CMTAVG > 13? estadosStyles.on : estadosStyles.alarma;
 
 //-----------------------------------------PARAMETROS POTENCIA POR SISTEMA TDLOWA&2---------------------------
 let pot_tdlow1 = POT_SIS1/10;

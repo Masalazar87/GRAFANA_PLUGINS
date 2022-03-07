@@ -81,6 +81,7 @@ const dataPue = (data: PanelData, options:SimpleOptions): DataPue => {
 
 let pue: DataPue = {
     Estado: {
+        Move: '',
         Estado: '',
         Estadoclass: '',
         Reactor1: '',
@@ -91,6 +92,7 @@ let pue: DataPue = {
         Reactor6: '',
         Reactor7: '',
         Reactor8: '',
+        Reactorcentral: '',
     },
     Principal: {
         PUE: 0,
@@ -218,13 +220,17 @@ pue.Estado.Estado = carga_total_kva > 0? estadoStyles.eee : estadoStyles.gen;
 
 //REACTOR
 pue.Estado.Reactor1 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
-pue.Estado.Reactor2 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
+pue.Estado.Reactor2 = carga_total_kva > 0? estadoStyles.aura : estadoStyles.sinConexion;
+pue.Estado.Move = carga_total_kva > 0? estadoStyles.move : estadoStyles.sinConexion;
+/*pue.Estado.Reactor2 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
 pue.Estado.Reactor3 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
 pue.Estado.Reactor4 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
 pue.Estado.Reactor5 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
 pue.Estado.Reactor6 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
 pue.Estado.Reactor7 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
 pue.Estado.Reactor8 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
+pue.Estado.Reactorcentral = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
+*/
 console.log(pue);
 return pue;
 };

@@ -113,6 +113,9 @@ let grupalgen: DataGrupalgen ={
 let variableNombre = replaceVariables('$EQUIPO')
 grupalgen.DatosGenerales.Nombre = variableNombre ! == '$NOMBRE' ?  variableNombre: options.nombre
 
+//CALCULOS
+let PotenciaKW = TOT_WATTS * 10
+let PotenciaKVA = TOT_VA * 10
 
 // DATOS DE VARIABLES
   grupalgen.Motor.Temp = Number.parseFloat(COOL_TEMP?.toFixed(2));
@@ -121,11 +124,11 @@ grupalgen.DatosGenerales.Nombre = variableNombre ! == '$NOMBRE' ?  variableNombr
   grupalgen.Motor.Vbatt = Number.parseFloat(ENG_BATT_VOL?.toFixed(2));
   grupalgen.Motor.LvFuel = Number.parseFloat(FUEL_LEV?.toFixed(2));
   grupalgen.Motor.OperHours = Number.parseFloat(ENG_RUN_TIME?.toFixed(2));
-  grupalgen.Alternador.Energy = Number.parseFloat(KW_HOURS?.toFixed(2))
-  grupalgen.Alternador.VLLprom = Number.parseFloat(LL_VOL_AVG?.toFixed(2))
-  grupalgen.Alternador.Illprom = Number.parseFloat(CUR_AVG?.toFixed(2))
-  grupalgen.Alternador.kvaprom = Number.parseFloat(TOT_VA?.toFixed(2))
-  grupalgen.Alternador.kwprom = Number.parseFloat(TOT_WATTS?.toFixed(2))
+  grupalgen.Alternador.Energy = Number.parseFloat(KW_HOURS?.toFixed(2));
+  grupalgen.Alternador.VLLprom = Number.parseFloat(LL_VOL_AVG?.toFixed(2));
+  grupalgen.Alternador.Illprom = Number.parseFloat(CUR_AVG?.toFixed(2));
+  grupalgen.Alternador.kvaprom = Number.parseFloat(PotenciaKVA?.toFixed(2));
+  grupalgen.Alternador.kwprom = Number.parseFloat(PotenciaKW?.toFixed(2));
   grupalgen.Alternador.FP = Number.parseFloat(PF_AVG?.toFixed(2))
   //grupalgen.Alternador.FP = Number.parseFloat(AVG_PF?.toFixed(2))
 
