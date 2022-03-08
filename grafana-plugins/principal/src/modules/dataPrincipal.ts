@@ -311,7 +311,7 @@ if  (st_gen[i] >= 420) {
     st_gen[i] = st_off;
     }
 }
-//------------------------------PARAMETROS RINCIPALES DE SISTEMA DE GENERADORES ------------------------------
+//------------------------------PARAMETROS PRINCIPALES DE SISTEMA DE GENERADORES ------------------------------
 let st_gen_carga = [];
 let vll_genSIS = [];
 let pot_genSIS = [];
@@ -390,6 +390,11 @@ let POT_SIS1 = data.series.find(({ name }) => name?.includes('POT_SIS1'))?.field
 ?.lastNotNull;
 let POT_SIS2 = data.series.find(({ name }) => name?.includes('POT_SIS2'))?.fields[1].state?.calcs
 ?.lastNotNull;
+let POT_TDP1A = data.series.find(({ name }) => name?.includes('POT_TDP1A'))?.fields[1].state?.calcs
+?.lastNotNull;
+let POT_TDP2A = data.series.find(({ name }) => name?.includes('POT_TDP2A'))?.fields[1].state?.calcs
+?.lastNotNull;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //-------------------------------------------------------------------------------------------------------------
 //----------------------------------PARAMETROS DE POTENCIA PARA CALCULO DEL PUE--------------------------------
@@ -834,10 +839,10 @@ let Voltaje_CMTVL_AN = VLN_A/1000;
 let Voltaje_CMTVL_BN = VLN_B/1000;
 let Voltaje_CMTVL_CN = VLN_C/1000;
 
-principal.Estados_Principales.VAB_CMT = Voltaje_CMTVL_AN > 7.7? estadosStyles.on : estadosStyles.alarma;
-principal.Estados_Principales.VBC_CMT = Voltaje_CMTVL_BN > 7.7? estadosStyles.on : estadosStyles.alarma;
-principal.Estados_Principales.VCA_CMT = Voltaje_CMTVL_CN > 7.7? estadosStyles.on : estadosStyles.alarma;
-principal.Estados_Principales.ST_CMT =  Vprom_CMTAVG > 13? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VAB_CMT = Voltaje_CMTVL_AN > 7.5? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VBC_CMT = Voltaje_CMTVL_BN > 7.5? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VCA_CMT = Voltaje_CMTVL_CN > 7.5? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.ST_CMT =  Vprom_CMTAVG > 13.2? estadosStyles.on : estadosStyles.alarma;
 
 //-----------------------------------------PARAMETROS POTENCIA POR SISTEMA TDLOWA&2---------------------------
 let pot_tdlow1 = POT_SIS1/10;
@@ -894,15 +899,29 @@ let pot_rect_1a =  (V_RECT_1A * I_RECT_1A) / 1000
 let pot_rect_2a = (V_RECT_2A * I_RECT_2A) / 1000
 let pot_total_rec = (pot_rect_1a + pot_rect_2a)
 
-//CALCULO DE PUE
-let calculo_pue =  pot_pqm / (sum_pot_pdis + pot_total_ups_sat + pot_total_rec); 
+//CALCULO DE PUE CON PQM (EEE)
+let calculo_pue1 =  pot_pqm / (sum_pot_pdis + pot_total_ups_sat + pot_total_rec); 
+//CALCULO DE PUE CON TDPS EN GENERACIÓN
+let calculo_pue2 =  ((POT_TDP1A + POT_TDP2A) / 10) / (sum_pot_pdis + pot_total_ups_sat + pot_total_rec); 
 
-//CALCULO DE DICE
-let calculo_dcie = 1 / calculo_pue * 100;
+//CALCULO DE DICE (EEE)
+let calculo_dcie1 = 1 / calculo_pue1 * 100;
+//CALCULO DE DICE (GENERACION)
+let calculo_dcie2 = 1 / calculo_pue2 * 100;
 
-principal.ParametrosElec.PUE= Number.parseFloat(calculo_pue?.toFixed(2)); 
+if (pot_pqm === 0){
+    principal.ParametrosElec.PUE= Number.parseFloat(calculo_pue2?.toFixed(2)); 
+    principal.ParametrosElec.DCIE= Number.parseFloat(calculo_dcie2?.toFixed(2)); 
+}
+else {
+    principal.ParametrosElec.PUE= Number.parseFloat(calculo_pue1?.toFixed(2)); 
+    principal.ParametrosElec.DCIE= Number.parseFloat(calculo_dcie1?.toFixed(2)); 
+}
+
+
+/*principal.ParametrosElec.PUE= Number.parseFloat(calculo_pue2?.toFixed(2)); 
 principal.ParametrosElec.DCIE= Number.parseFloat(calculo_dcie?.toFixed(2)); 
-
+*/
 
 
 console.log(principal);

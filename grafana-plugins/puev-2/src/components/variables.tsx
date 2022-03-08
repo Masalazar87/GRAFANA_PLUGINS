@@ -575,7 +575,6 @@ export const Variables = ({Estado, Principal, Cargas_kva, Cargas_uso }: DataPue)
     </text>
     <text
       id="pue"
-      className={Estado.Move}
       transform="scale(.9853 1.0149)"
       x={133.91106}
       y={82.44767}

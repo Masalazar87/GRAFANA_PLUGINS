@@ -15,6 +15,10 @@ const dataPue = (data: PanelData, options:SimpleOptions): DataPue => {
     let APPPOW_3PHAS = data.series.find(({ name }) => name?.includes('DATA.APPPOW_3PHAS.VALUE'))?.fields[1].state?.calcs?.lastNotNull;    
     let ENY_POS_REAL = data.series.find(({ name }) => name?.includes('DATA.ENY_POS_REAL.VALUE'))?.fields[1].state?.calcs?.lastNotNull; 
    
+    //POTENCIA DE TDP´S
+    let POT_TDP1A = data.series.find(({ name }) => name?.includes('POT_TDP1A'))?.fields[1].state?.calcs?.lastNotNull;
+    let POT_TDP2A = data.series.find(({ name }) => name?.includes('POT_TDP2A'))?.fields[1].state?.calcs?.lastNotNull;
+
     //CARGA PERDIDAS UPS (BREAKERS PRINCIPALES IN - OUT)
     //let TUPSIN_1A_POW_REAL = data.series.find(({ name }) => name?.includes('TUPSIN_1A_POW_REAL'))?.fields[1].state?.calcs?.lastNotNull;
     let TUPSIN_1A_POW_APPRT = data.series.find(({ name }) => name?.includes('TUPSIN_1A_POW_APPRT'))?.fields[1].state?.calcs?.lastNotNull;
@@ -126,7 +130,11 @@ let pue: DataPue = {
 }
 
 ////////////////////////////////////////////////// CALCULOS //////////////////////////////////////////
+//CARGA TOTAL EEE
 let carga_total_kva = (APPPOW_3PHAS) / 100
+//CARGA TOTAL GENERACION
+let carga_generación = (POT_TDP1A + POT_TDP2A) / 10
+
 
 //SUMATORIA DE POTENCIAS KVA PDI
 let sum_pot_sis1_pdi = SIS1_POT_PDI_[1] +++ SIS1_POT_PDI_[2] +++ SIS1_POT_PDI_[3] +++ SIS1_POT_PDI_[4] +++ SIS1_POT_PDI_[5] +++ 
@@ -169,13 +177,29 @@ let carga_ups_sis2_kva = (TUPSIN_2A_POW_APPRT - TUPSOUT_2A_POW_APPRT)
 let perdida_ups_kva = (carga_ups_sis1_kva + carga_ups_sis2_kva) / 10;
 
 //CALCULO DE PUE
-let calculo_pue =  carga_total_kva / (carga_pdi_kva + pot_total_ups_sat + pot_total_rec); 
+let calculo_pue1 =  carga_total_kva / (carga_pdi_kva + pot_total_ups_sat + pot_total_rec); 
+//CALCULO DE PUE (GENERACION)
+let calculo_pue2 =  ((POT_TDP1A + POT_TDP2A) / 10) / (carga_pdi_kva + pot_total_ups_sat + pot_total_rec);
 
 //CALCULO DE DICE
-let calculo_dcie = 1 / calculo_pue * 100;
+let calculo_dcie1 = 1 / calculo_pue1 * 100;
+//CALCULO DE DICE (GENERACION)
+let calculo_dcie2 = 1 / calculo_pue2 * 100;
+
+
+if (carga_total_kva === 0){
+    pue.Cargas_kva.Carga_total_kva = Number.parseFloat(carga_generación?.toFixed(2));
+    pue.Principal.PUE = Number.parseFloat(calculo_pue2?.toFixed(2));
+    pue.Principal.DCIE = Number.parseFloat(calculo_dcie2?.toFixed(2));
+}
+else {
+    pue.Cargas_kva.Carga_total_kva = Number.parseFloat(carga_total_kva?.toFixed(2));
+    pue.Principal.PUE = Number.parseFloat(calculo_pue1?.toFixed(2));
+    pue.Principal.DCIE = Number.parseFloat(calculo_dcie1?.toFixed(2)); 
+}
 
 //DIRECCIONAMIENTO DE VARIABLE DE POTENCIAS
-pue.Cargas_kva.Carga_total_kva = Number.parseFloat(carga_total_kva?.toFixed(2));
+//pue.Cargas_kva.Carga_total_kva = Number.parseFloat(carga_total_kva?.toFixed(2));
 pue.Cargas_kva.pdi_kva = Number.parseFloat(carga_pdi_kva?.toFixed(2));
 pue.Cargas_kva.rect_kva = Number.parseFloat(pot_total_rec?.toFixed(2));
 pue.Cargas_kva.sat_kva = Number.parseFloat(pot_total_ups_sat?.toFixed(2));
@@ -185,12 +209,12 @@ pue.Cargas_kva.uma_kva = Number.parseFloat(carga_total_uma_kva?.toFixed(2));
 pue.Cargas_kva.sg_kva = Number.parseFloat(carga_sg_kva?.toFixed(2));
 pue.Cargas_kva.perd_pdi_kva = Number.parseFloat(perdida_pdi_kva?.toFixed(2));
 pue.Cargas_kva.perd_ups_kva = Number.parseFloat(perdida_ups_kva?.toFixed(2));
-pue.Principal.PUE = Number.parseFloat(calculo_pue?.toFixed(2));
-pue.Principal.DCIE = Number.parseFloat(calculo_dcie?.toFixed(2));
+//pue.Principal.PUE = Number.parseFloat(calculo_pue?.toFixed(2));
+//pue.Principal.DCIE = Number.parseFloat(calculo_dcie?.toFixed(2));
 pue.Principal.ENERGIA = Number.parseFloat(energia_total?.toFixed(2));
 
 
-//CALCULO DE PORCENTAJE DE USO
+//CALCULO DE PORCENTAJE DE USO EEE
 let percent_total = carga_total_kva * 100 / carga_total_kva;
 let percent_carga_AC = carga_pdi_kva * 100 / carga_total_kva;
 let percent_carga_DC = pot_total_rec * 100 / carga_total_kva;
@@ -202,8 +226,45 @@ let percent_uma = carga_total_uma_kva * 100 / carga_total_kva;
 let percent_perd_pdi = perdida_pdi_kva * 100 / carga_total_kva;
 let percent_perd_ups = perdida_ups_kva * 100 / carga_total_kva;
 
+//CALCULO DE PORCENTAJE DE USO GENERACION
+let percent_total_gen = carga_generación * 100 / carga_generación;
+let percent_carga_AC_gen = carga_pdi_kva * 100 / carga_generación;
+let percent_carga_DC_gen = pot_total_rec * 100 / carga_generación;
+let percent_carga_SAT_gen = pot_total_ups_sat * 100 / carga_generación;
+let percent_sg_gen = carga_sg_kva * 100 / carga_generación;
+//let percent_chiller = * 100 / carga_generación;
+let percent_uma_gen = carga_total_uma_kva * 100 / carga_generación;
+//let percent_bombas = * 100 / carga_generación;
+let percent_perd_pdi_gen = perdida_pdi_kva * 100 / carga_generación;
+let percent_perd_ups_gen = perdida_ups_kva * 100 / carga_generación;
+
 //DIRECCIONAMIENO DE VARIABLE DE USO
-pue.Cargas_uso.Carga_total_uso = Number.parseFloat(percent_total?.toFixed(2));
+if (carga_total_kva === 0){
+    pue.Cargas_uso.Carga_total_uso = Number.parseFloat(percent_total_gen?.toFixed(2));
+    pue.Cargas_uso.pdi_uso = Number.parseFloat(percent_carga_AC_gen?.toFixed(2));
+    pue.Cargas_uso.rect_uso = Number.parseFloat(percent_carga_DC_gen?.toFixed(2));
+    pue.Cargas_uso.sat_uso = Number.parseFloat(percent_carga_SAT_gen?.toFixed(2));
+    //pue.Cargas_uso.chiller_uso = Number.parseFloat(percent_chiller?.toFixed(2));
+    pue.Cargas_uso.uma_uso = Number.parseFloat(percent_uma_gen?.toFixed(2));
+    //pue.Cargas_uso.bombas_uso = Number.parseFloat(percent_bombas?.toFixed(2));
+    pue.Cargas_uso.sg_uso = Number.parseFloat(percent_sg_gen?.toFixed(2));
+    pue.Cargas_uso.perd_pdi_uso = Number.parseFloat(percent_perd_pdi_gen?.toFixed(2));
+    pue.Cargas_uso.perd_ups_uso = Number.parseFloat(percent_perd_ups_gen?.toFixed(2));
+}
+else {
+    pue.Cargas_uso.Carga_total_uso = Number.parseFloat(percent_total?.toFixed(2));
+    pue.Cargas_uso.pdi_uso = Number.parseFloat(percent_carga_AC?.toFixed(2));
+    pue.Cargas_uso.rect_uso = Number.parseFloat(percent_carga_DC?.toFixed(2));
+    pue.Cargas_uso.sat_uso = Number.parseFloat(percent_carga_SAT?.toFixed(2));
+    //pue.Cargas_uso.chiller_uso = Number.parseFloat(percent_chiller?.toFixed(2));
+    pue.Cargas_uso.uma_uso = Number.parseFloat(percent_uma?.toFixed(2));
+    //pue.Cargas_uso.bombas_uso = Number.parseFloat(percent_bombas?.toFixed(2));
+    pue.Cargas_uso.sg_uso = Number.parseFloat(percent_sg?.toFixed(2));
+    pue.Cargas_uso.perd_pdi_uso = Number.parseFloat(percent_perd_pdi?.toFixed(2));
+    pue.Cargas_uso.perd_ups_uso = Number.parseFloat(percent_perd_ups?.toFixed(2));   
+}
+
+/*pue.Cargas_uso.Carga_total_uso = Number.parseFloat(percent_total?.toFixed(2));
 pue.Cargas_uso.pdi_uso = Number.parseFloat(percent_carga_AC?.toFixed(2));
 pue.Cargas_uso.rect_uso = Number.parseFloat(percent_carga_DC?.toFixed(2));
 pue.Cargas_uso.sat_uso = Number.parseFloat(percent_carga_SAT?.toFixed(2));
@@ -213,15 +274,13 @@ pue.Cargas_uso.uma_uso = Number.parseFloat(percent_uma?.toFixed(2));
 pue.Cargas_uso.sg_uso = Number.parseFloat(percent_sg?.toFixed(2));
 pue.Cargas_uso.perd_pdi_uso = Number.parseFloat(percent_perd_pdi?.toFixed(2));
 pue.Cargas_uso.perd_ups_uso = Number.parseFloat(percent_perd_ups?.toFixed(2));
-
+*/
 //ESTADO
 pue.Estado.Estado = carga_total_kva > 0? estadoStyles.eee : estadoStyles.gen;
 //pue.Estado.Estadoclass = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
 
 //REACTOR
-pue.Estado.Reactor1 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
-pue.Estado.Reactor2 = carga_total_kva > 0? estadoStyles.aura : estadoStyles.sinConexion;
-pue.Estado.Move = carga_total_kva > 0? estadoStyles.move : estadoStyles.sinConexion;
+pue.Estado.Reactor1 = carga_total_kva > 0? estadoStyles.reactor_on : estadoStyles.reactor_gen;
 /*pue.Estado.Reactor2 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
 pue.Estado.Reactor3 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
 pue.Estado.Reactor4 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;

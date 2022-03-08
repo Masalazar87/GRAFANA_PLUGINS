@@ -33,6 +33,7 @@ let url_niveles = '';
 let url_principal = '';
 let url_clima = '';
 let url_home = '';
+let url_resumen = '';
 
 //url_cmt = '';
 url_ecoluz = 'http://172.30.31.31:32308/d/ZwPUWf1nk/ecoluz?orgId=1&refresh=5s';
@@ -60,6 +61,7 @@ url_grup_uma2 = 'http://172.30.31.31:32308/d/7PV-ZB17k/grupal-uma-sist-2?orgId=1
 url_principal = 'http://172.30.31.31:32308/d/uw2mOrTnz/pantalla-principal?orgId=1&refresh=5s';
 url_clima = 'http://172.30.31.31:32308/d/lW6YK9T7z/clima_p?orgId=1&refresh=5s';
 url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
+url_resumen = 'http://172.30.31.31:32308/d/6bUdsYY7k/resumen?orgId=1&refresh=5s';
 
   return (
     <svg
@@ -299,7 +301,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontFamily="sans-serif"
             fontSize="5.6444px"
             strokeWidth={0.33875}
-            ><a href={url_principal} target="_blank" style={{ fill: '#00aad4' }}>
+            ><a href={url_principal} target="_self" style={{ fill: '#00aad4' }}>
             {"DATACENTER"}
             </a>
           </tspan>
@@ -333,8 +335,42 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontSize="5.6444px"
             strokeWidth={0.33875}
           >
-            <a href={url_clima} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_clima} target="_self" style={{ fill: '#00aad4' }}>
             {"CLIMA"}
+            </a>
+          </tspan>
+        </text>
+        <text
+          id="text_RESUMEN"
+          x={422.41742}
+          y={30.066891}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fontSize="5.6444px"
+          strokeWidth={0.33875}
+        >
+          <tspan
+            id="tspan18521-4-59-5-0-3-1-6-9-0"
+            x={422.41742}
+            y={30.066891}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fontFamily="sans-serif"
+            fontSize="5.6444px"
+            strokeWidth={0.33875}
+          >
+            <a href={url_resumen} target="_self" style={{ fill: '#00aad4' }}>
+            {"RESUMEN"}
             </a>
           </tspan>
         </text>
@@ -367,7 +403,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-            ><a href={url_pdi} target="_blank" style={{ fill: '#00aad4' }}>
+            ><a href={url_pdi} target="_self" style={{ fill: '#00aad4' }}>
             {"PDI"}
             </a>
           </tspan>
@@ -401,11 +437,11 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-            ><a href={url_ups_10kva} target="_blank" style={{ fill: '#00aad4' }}>
+            ><a href={url_ups_10kva} target="_self" style={{ fill: '#00aad4' }}>
             {"UPS "}
             </a>
             <tspan id="tspan85" fontSize="6.841px">
-            <a href={url_ups_10kva} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_ups_10kva} target="_self" style={{ fill: '#00aad4' }}>
               {"10KVA"}
               </a>
             </tspan>
@@ -440,7 +476,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-            ><a href={url_pqm} target="_blank" style={{ fill: '#00aad4' }}>
+            ><a href={url_pqm} target="_self" style={{ fill: '#00aad4' }}>
           {"PQM"}
           </a>
           </tspan>
@@ -475,7 +511,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            <a href={url_ats} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_ats} target="_self" style={{ fill: '#00aad4' }}>
             {"ATS"}
               </a>
           </tspan>
@@ -509,11 +545,11 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-            ><a href={url_ups} target="_blank" style={{ fill: '#00aad4' }}>
+            ><a href={url_ups} target="_self" style={{ fill: '#00aad4' }}>
             {"UPS "}
             </a>
             <tspan id="tspan87" fontSize="6.841px">
-            <a href={url_ups} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_ups} target="_self" style={{ fill: '#00aad4' }}>
               {"200KVA"}
               </a>
             </tspan>
@@ -548,7 +584,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-            ><a href={url_ecoluz} target="_blank" style={{ fill: '#00aad4' }}>
+            ><a href={url_ecoluz} target="_self" style={{ fill: '#00aad4' }}>
             {"ECOLUZ"}
             </a>
           </tspan>
@@ -582,7 +618,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-          ><a href={url_rect} target="_blank" style={{ fill: '#00aad4' }}>
+          ><a href={url_rect} target="_self" style={{ fill: '#00aad4' }}>
           {"RECT"}
           </a>
           </tspan>
@@ -616,7 +652,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontFamily="sans-serif"
             fontSize="12.162px"
             strokeWidth={0.72989}
-          ><a href={url_generador} target="_blank" style={{ fill: '#00aad4' }}>
+          ><a href={url_generador} target="_self" style={{ fill: '#00aad4' }}>
           {"GEN"}
           </a>
           </tspan>
@@ -651,7 +687,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            <a href={url_chiller} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_chiller} target="_self" style={{ fill: '#00aad4' }}>
               {"CHILLER"}
               </a>
           </tspan>
@@ -686,7 +722,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-           <a href={url_uma} target="_blank" style={{ fill: '#00aad4' }}>
+           <a href={url_uma} target="_self" style={{ fill: '#00aad4' }}>
               {"UMA"}
               </a>
           </tspan>
@@ -721,7 +757,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            <a href={url_grup_ats} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_grup_ats} target="_self" style={{ fill: '#00aad4' }}>
               {"ATS"}
               </a>
           </tspan>
@@ -758,7 +794,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
           >
             {"PDI "}
             <tspan id="tspan918" fontSize="6.8409px">
-            <a href={url_grup_pdi1} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_grup_pdi1} target="_self" style={{ fill: '#00aad4' }}>
               {"SIS. 1 / "}
               </a>
             </tspan>
@@ -794,7 +830,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            <a href={url_grup_chiller} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_grup_chiller} target="_self" style={{ fill: '#00aad4' }}>
               {"CHILLER"}
               </a>
           </tspan>
@@ -829,11 +865,11 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            <a href={url_grup_gen} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_grup_gen} target="_self" style={{ fill: '#00aad4' }}>
               {"GEN "}
               </a>
             <tspan id="tspan1242" fontSize="6.8409px">
-            <a href={url_scada} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_scada} target="_self" style={{ fill: '#00aad4' }}>
               {"SCADA /"}
               </a>
             </tspan>
@@ -871,7 +907,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
           >
             {"UMA "}
             <tspan id="tspan118" fontSize="6.8409px">
-            <a href={url_grup_uma1} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_grup_uma1} target="_self" style={{ fill: '#00aad4' }}>
               {"SIS. 1 / "}
               </a>
             </tspan>
@@ -909,7 +945,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
           >
            {"UPS "}
             <tspan id="tspan89-3" fontSize="6.8409px">
-            <a href={url_grup_ups1} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_grup_ups1} target="_self" style={{ fill: '#00aad4' }}>
               {"SIS. 1 / "}
               </a>
             </tspan>
@@ -945,7 +981,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontSize="6.8409px"
             strokeWidth={0.72989}
           >
-           <a href={url_grup_canales} target="_blank" style={{ fill: '#00aad4' }}>
+           <a href={url_grup_canales} target="_self" style={{ fill: '#00aad4' }}>
               {"CANALES"}
               </a>
           </tspan>
@@ -981,7 +1017,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
               fontSize="6.8409px"
               strokeWidth={0.72989}
             >
-              <a href={url_grup_pdi2} target="_blank" style={{ fill: '#00aad4' }}>
+              <a href={url_grup_pdi2} target="_self" style={{ fill: '#00aad4' }}>
               {"SIS. 2"}
               </a>
             </tspan>
@@ -1018,7 +1054,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
               fontSize="6.8409px"
               strokeWidth={0.72989}
             >
-              <a href={url_grup_ups2} target="_blank" style={{ fill: '#00aad4' }}>
+              <a href={url_grup_ups2} target="_self" style={{ fill: '#00aad4' }}>
               {"SIS. 2"}
               </a>
             </tspan>
@@ -1055,7 +1091,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
               fontSize="6.8409px"
               strokeWidth={0.72989}
             >
-               <a href={url_grup_uma2} target="_blank" style={{ fill: '#00aad4' }}>
+               <a href={url_grup_uma2} target="_self" style={{ fill: '#00aad4' }}>
               {"SIS. 2"}
               </a>
             </tspan>
@@ -1090,7 +1126,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
             fontSize="3.175px"
             strokeWidth={0.33876}
           >
-            <a href={url_niveles} target="_blank" style={{ fill: '#00aad4' }}>
+            <a href={url_niveles} target="_self" style={{ fill: '#00aad4' }}>
               {"NIVELES"}
               </a>
           </tspan>
@@ -1148,7 +1184,7 @@ url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
           xlinkHref="data:image/png;base64,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 ZHBUsdVPAAAAAElFTkSuQmCC"
           strokeWidth={1.1211}
         />
-        <a href={url_home} target="_blank">
+        <a href={url_home} target="_self">
          <ellipse
           id="path95"
           cx={300.55}
