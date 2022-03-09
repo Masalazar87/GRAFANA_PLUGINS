@@ -237,7 +237,6 @@ for (let i = 1; i <= 4; i++) {
         }   else {
             al_1b2[i] = alarm_off;
         }
-        
 }
 //VALVULAS SIST 1&2
 let ISOV1_S_SIS2 = data.series.find(({ name }) => name?.includes('DATA.ISOV1_S_SIS2.VALUE'))?.fields[1].state?.calcs
@@ -839,9 +838,9 @@ let Voltaje_CMTVL_AN = VLN_A/1000;
 let Voltaje_CMTVL_BN = VLN_B/1000;
 let Voltaje_CMTVL_CN = VLN_C/1000;
 
-principal.Estados_Principales.VAB_CMT = Voltaje_CMTVL_AN > 7.5? estadosStyles.on : estadosStyles.alarma;
-principal.Estados_Principales.VBC_CMT = Voltaje_CMTVL_BN > 7.5? estadosStyles.on : estadosStyles.alarma;
-principal.Estados_Principales.VCA_CMT = Voltaje_CMTVL_CN > 7.5? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VAB_CMT = Voltaje_CMTVL_AN > 7.3? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VBC_CMT = Voltaje_CMTVL_BN > 7.3? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VCA_CMT = Voltaje_CMTVL_CN > 7.3? estadosStyles.on : estadosStyles.alarma;
 principal.Estados_Principales.ST_CMT =  Vprom_CMTAVG > 13.2? estadosStyles.on : estadosStyles.alarma;
 
 //-----------------------------------------PARAMETROS POTENCIA POR SISTEMA TDLOWA&2---------------------------
@@ -851,35 +850,17 @@ let pot_tdlow2 = POT_SIS2/10;
 principal.ParametrosElec.P_SIS2 = Number.parseFloat(pot_tdlow2?.toFixed(2));
 
 //-----------------------------------------PARAMETROS TEMPERATURA PRINCIPALES---------------------------
-let TR_SIS1 = Number.parseFloat(TEMP_R_SIS1?.toFixed(1));
-let TS_SIS1 = Number.parseFloat(TEMP_S_PRI_SIS1?.toFixed(1));
-let TR_SIS2 = Number.parseFloat(TEMP_R_SIS2?.toFixed(1));
-let TS_SIS2 = Number.parseFloat(TEMP_S_PRI_SIS2?.toFixed(1));
-
-/*if (st_1b2[1] = 0 || st_1b2[2] == 0) {
-    principal.ParametrosClima.T_ret = TR_SIS1;
-    principal.ParametrosClima.T_sumin = TS_SIS1;
-}
-else{
-    if (st_1b2[3] = 0 || st_1b2[4] == 0) {
-        principal.ParametrosClima.T_ret = TR_SIS2;
-        principal.ParametrosClima.T_sumin = TS_SIS2;
+if (st_1b2[1] === st_on || st_1b2[2] === st_on){
+    principal.ParametrosClima.T_sumin = Number.parseFloat(TEMP_S_PRI_SIS2?.toFixed(1));
+    principal.ParametrosClima.T_ret = Number.parseFloat(TEMP_R_SIS2?.toFixed(1));
     }
-}*/
-principal.ParametrosClima.T_ret = (st_1b2[1] === 1 || st_1b2[2] === 1)? TR_SIS2 : TR_SIS1;
-principal.ParametrosClima.T_sumin = (st_1b2[1] === 1 || st_1b2[2] === 1)? TS_SIS2 : TS_SIS1;
-        
-    /*principal.ParametrosClima.T_ret = (st_1b2[1] === 1 || st_1b2[2] === 1)?Number.parseFloat(TEMP_R_SIS2?.toFixed(1)): 100;
-    principal.ParametrosClima.T_ret = (st_1b2[3] === 1 || st_1b2[4] === 1)?Number.parseFloat(TEMP_R_SIS1?.toFixed(1)): 200;
-    /*principal.ParametrosClima.T_sumin = (st_1b2[1] === 1 || st_1b2[2] == 1?Number.parseFloat(TEMP_S_PRI_SIS2?.toFixed(1)):);
-                                         st_1b2[3] === 1 || st_1b2[4] == 1?Number.parseFloat(TEMP_S_PRI_SIS1?.toFixed(1))
-
- 
-else{
-    if (st_1b2[3] >= 1 || st_1b2[4] >= 1) {
-        principal.ParametrosClima.T_ret = Number.parseFloat(TEMP_R_SIS1?.toFixed(1));
-        principal.ParametrosClima.T_sumin = Number.parseFloat(TEMP_S_PRI_SIS1?.toFixed(1));
-    }*/
+    else {
+if (st_1b2[3] === st_on || st_1b2[4] === st_on){
+    principal.ParametrosClima.T_sumin = Number.parseFloat(TEMP_S_PRI_SIS1?.toFixed(1));
+    principal.ParametrosClima.T_ret = Number.parseFloat(TEMP_R_SIS1?.toFixed(1));
+    }
+}
+    
 //////////////////////////////////DIRECCIONAMIENTO DE VARIABLES Y CALCULOS PARA PUE////////////////////////////////////////////
 //SUMATORIA DE POTENCIAS KVA PDI
 let sum_pot_sis1_pdi = SIS1_POT_PDI_[1] +++ SIS1_POT_PDI_[2] +++ SIS1_POT_PDI_[3] +++ SIS1_POT_PDI_[4] +++ SIS1_POT_PDI_[5] +++ 
