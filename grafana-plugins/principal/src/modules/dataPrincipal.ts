@@ -5,6 +5,7 @@ import { DataPrincipal } from 'components/variables';
 import estadosStyles from 'styles/estadosStyles';
 import alarmasStyles from 'styles/alarmasStyles';
 
+
 const dataPrincipal = (data: PanelData, options: SimpleOptions): DataPrincipal => {  
     console.log('data: ', data);
     console.log('options: ', options);
@@ -15,6 +16,8 @@ let st_off = estadosStyles.sinconexion;
 //ALARMS
 let alarm_on = alarmasStyles.on;
 let alarm_off = alarmasStyles.sinconexion;
+//ALARMAS AUDIO
+//let alarm_sound = sound_alarm;
 //WARNINGS
 /*let warning_on = alarmasStyles.on1;
 let warning_off = alarmasStyles.sinconexion;*/
