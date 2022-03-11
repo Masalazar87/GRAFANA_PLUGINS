@@ -1,0 +1,7 @@
+{
+test: /\.mp3$/,
+loader: 'file-loader',
+query: {
+name: 'static/media/[sound_alarm.mp3].[hash:8].[ext]'
+}
+}

@@ -7,6 +7,8 @@ const dataPue = (data: PanelData, options:SimpleOptions): DataPue => {
     console.log('data: ', data);
     console.log('options: ', options);
 
+    let alarm_sound = 'https://github.com/Masalazar87/GRAFANA_PLUGINS/blob/grupalgen/grafana-plugins/principal/src/components/audio/sound_alarm.mp3';
+
     //ESTADO
     //let VLL_AVG = 200;//data.series.find(({ name }) => name?.includes('DATA.VLL_AVG.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
     
@@ -281,6 +283,15 @@ pue.Estado.Estado = carga_total_kva > 0? estadoStyles.eee : estadoStyles.gen;
 
 //REACTOR
 pue.Estado.Reactor1 = carga_total_kva > 0? estadoStyles.reactor_on : estadoStyles.reactor_gen;
+
+function reproducir(sonido: any) {
+    const audio = new Audio(sonido);
+    audio.play();
+  }
+
+  if (pue.Estado.Reactor1 = estadoStyles.reactor_on){
+    reproducir(alarm_sound);
+  }
 /*pue.Estado.Reactor2 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
 pue.Estado.Reactor3 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;
 pue.Estado.Reactor4 = carga_total_kva > 0? estadoStyles.reactor : estadoStyles.sinConexion;

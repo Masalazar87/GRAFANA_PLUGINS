@@ -4,6 +4,7 @@ import { SimpleOptions } from 'types';
 import { DataPrincipal } from 'components/variables';
 import estadosStyles from 'styles/estadosStyles';
 import alarmasStyles from 'styles/alarmasStyles';
+//import {sound_alarm} from 'components/my-resources/';
 
 
 const dataPrincipal = (data: PanelData, options: SimpleOptions): DataPrincipal => {  
@@ -17,7 +18,8 @@ let st_off = estadosStyles.sinconexion;
 let alarm_on = alarmasStyles.on;
 let alarm_off = alarmasStyles.sinconexion;
 //ALARMAS AUDIO
-//let alarm_sound = sound_alarm;
+let sound_alarm = new Audio('components/my-resources/sound_alarm.mp3');
+//sound_alarm.play();
 //WARNINGS
 /*let warning_on = alarmasStyles.on1;
 let warning_off = alarmasStyles.sinconexion;*/
@@ -58,6 +60,7 @@ for (let i = 1; i <= 12; i++) {
         } 
     }
 //--------------------------------------ESTADOS Y ALARMAS DE UPS 200KVA--------------------------------------
+
 let st_ups1a = [];
 let st_ups2a = [];
 let al_ups1a = [];
@@ -124,6 +127,10 @@ let IOUT_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('IOUT_UPS_CH
 let LOAD_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('LOAD_UPS_CHI_2A'))?.fields[1].state?.calcs
 ?.lastNotNull;
 //--------------------------------------ESTADOS DE UPS 10KVA Y RECTIFICADORES -------------------------------
+function reproducir(sonido: any) {
+    const audio = new Audio(sonido);
+    audio.play();
+  }
 let alups10kva = [];
 let stups10kva = [];
 let strec = [];
@@ -132,10 +139,13 @@ for (let i = 1; i <= 4; i++) {
     stups10kva[i] = data.series.find(({ name }) => name?.includes('ST_UPS10KVA_' + i))?.fields[1].state?.calcs?.lastNotNull;    
     if (alups10kva[i] > 0 ){
         alups10kva[i] = alarm_on;
+        reproducir(sound_alarm);
     } else {alups10kva[i] = alarm_off;
     }
     if (stups10kva[i] > 200){
         stups10kva[i] = st_on;
+        reproducir(sound_alarm);
+    
     } else {stups10kva[i] = st_off;
     }
 }
