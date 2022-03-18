@@ -17,9 +17,6 @@ let st_off = estadosStyles.sinconexion;
 //ALARMS
 let alarm_on = alarmasStyles.on;
 let alarm_off = alarmasStyles.sinconexion;
-//ALARMAS AUDIO
-let sound_alarm = new Audio('components/my-resources/sound_alarm.mp3');
-//sound_alarm.play();
 //WARNINGS
 /*let warning_on = alarmasStyles.on1;
 let warning_off = alarmasStyles.sinconexion;*/
@@ -127,10 +124,7 @@ let IOUT_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('IOUT_UPS_CH
 let LOAD_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('LOAD_UPS_CHI_2A'))?.fields[1].state?.calcs
 ?.lastNotNull;
 //--------------------------------------ESTADOS DE UPS 10KVA Y RECTIFICADORES -------------------------------
-function reproducir(sonido: any) {
-    const audio = new Audio(sonido);
-    audio.play();
-  }
+
 let alups10kva = [];
 let stups10kva = [];
 let strec = [];
@@ -139,13 +133,10 @@ for (let i = 1; i <= 4; i++) {
     stups10kva[i] = data.series.find(({ name }) => name?.includes('ST_UPS10KVA_' + i))?.fields[1].state?.calcs?.lastNotNull;    
     if (alups10kva[i] > 0 ){
         alups10kva[i] = alarm_on;
-        reproducir(sound_alarm);
     } else {alups10kva[i] = alarm_off;
     }
-    if (stups10kva[i] > 200){
+    if (stups10kva[i] > 190){
         stups10kva[i] = st_on;
-        reproducir(sound_alarm);
-    
     } else {stups10kva[i] = st_off;
     }
 }
@@ -851,9 +842,9 @@ let Voltaje_CMTVL_AN = VLN_A/1000;
 let Voltaje_CMTVL_BN = VLN_B/1000;
 let Voltaje_CMTVL_CN = VLN_C/1000;
 
-principal.Estados_Principales.VAB_CMT = Voltaje_CMTVL_AN > 7.3? estadosStyles.on : estadosStyles.alarma;
-principal.Estados_Principales.VBC_CMT = Voltaje_CMTVL_BN > 7.3? estadosStyles.on : estadosStyles.alarma;
-principal.Estados_Principales.VCA_CMT = Voltaje_CMTVL_CN > 7.3? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VAB_CMT = Voltaje_CMTVL_AN > 7.2? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VBC_CMT = Voltaje_CMTVL_BN > 7.2? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VCA_CMT = Voltaje_CMTVL_CN > 7.2? estadosStyles.on : estadosStyles.alarma;
 principal.Estados_Principales.ST_CMT =  Vprom_CMTAVG > 13.2? estadosStyles.on : estadosStyles.alarma;
 
 //-----------------------------------------PARAMETROS POTENCIA POR SISTEMA TDLOWA&2---------------------------

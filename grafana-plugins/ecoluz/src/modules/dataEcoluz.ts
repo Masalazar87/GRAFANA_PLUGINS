@@ -102,7 +102,7 @@ ecoluz.Parametros.Pot_apparent = Number.parseFloat(KVA_TOTAL?.toFixed(2));
 ecoluz.Parametros.Energy = Number.parseFloat(KWH_E?.toFixed(2));
 
 // ESTADO DE EQUIPO
-if (VOLTAGE_AVG >= 13.4){
+if (VOLTAGE_AVG > 13){
     ecoluz.Estados.Estado_box = st_on;
     ecoluz.Estados.Estado_boton = st_on;
     ecoluz.Estados.Estado_equipo = 'ENCENDIDO';
@@ -114,35 +114,26 @@ if (VOLTAGE_AVG >= 13.4){
 
 // ALARMAS
 let VOLTAGE_AN = VLN_A / 1000;
-if (VOLTAGE_AN < 7.7) {
+if (VOLTAGE_AN < 7.2) {
     ecoluz.Alarmas.Falla_A = alarm_on;
 } else {
-    ecoluz.Alarmas.Falla_A = st_off;
+    ecoluz.Alarmas.Falla_A = st_on;
 }
 
 let VOLTAGE_BN = VLN_B / 1000;
-if (VOLTAGE_BN < 7.7) {
+if (VOLTAGE_BN < 7.2) {
     ecoluz.Alarmas.Falla_B = alarm_on;
 } else {
-    ecoluz.Alarmas.Falla_B = st_off;
+    ecoluz.Alarmas.Falla_B = st_on;
 }
 
 let VOLTAGE_CN = VLN_C / 1000;
-if (VOLTAGE_CN < 7.7) {
+if (VOLTAGE_CN < 7.2) {
     ecoluz.Alarmas.Falla_C = alarm_on;
 } else {
-    ecoluz.Alarmas.Falla_C = st_off;
+    ecoluz.Alarmas.Falla_C = st_on;
 }
 
-// ESTADO APAGADO
-if (VOLTAGE_AVG === 0) {
-    /*ecoluz.Alarmas.Falla_A = st_off;
-    ecoluz.Alarmas.Falla_B = st_off;
-    ecoluz.Alarmas.Falla_C = st_off;*/
-    ecoluz.Estados.Estado_box = st_off;
-    ecoluz.Estados.Estado_boton = st_off;
-    ecoluz.Estados.Estado_equipo = 'APAGADO';
-}
 
 console.log(ecoluz);
 return ecoluz;

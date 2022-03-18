@@ -1900,14 +1900,14 @@ return (
         >
           <tspan
             id="tspan3703"
-            x={314.96887}
+            x={300.96887}
             y={113.27628}
             fill="#00aad4"
             fontFamily="Franklin Gothic Medium"
             fontSize="5.6444px"
             strokeWidth={0.26458}
           >
-            {"ALARMAS"}
+            {"ESTADOS Y ALARMAS"}
           </tspan>
         </text>
         <text
@@ -2181,7 +2181,7 @@ return (
             y={110.89507}
             strokeWidth={0.27199}
           >
-            {"FALLA EN FASE A:"}
+            {"FASE A:"}
           </tspan>
           <tspan
             id="tspan777"
@@ -2189,7 +2189,7 @@ return (
             y={118.25249}
             strokeWidth={0.27199}
           >
-            {"FALLA EN FASE B:"}
+            {"FASE B:"}
           </tspan>
           <tspan
             id="tspan779"
@@ -2197,7 +2197,7 @@ return (
             y={125.60992}
             strokeWidth={0.27199}
           >
-            {"FALLA EN FASE C:"}
+            {"FASE C:"}
           </tspan>
           <tspan
             id="tspan781"
