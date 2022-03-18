@@ -36,32 +36,32 @@ let url_home = '';
 let url_resumen = '';
 
 //url_cmt = '';
-url_ecoluz = 'http://172.30.31.31:32308/d/ZwPUWf1nk/ecoluz?orgId=1&refresh=5s';
-url_pqm = 'http://172.30.31.31:32308/d/4nyCaCD7k/pqm?orgId=1&refresh=5s';
-url_ats = 'http://172.30.31.31:32308/d/NEwnojv7k/ats?orgId=1&refresh=5s';
-url_pdi = 'http://172.30.31.31:32308/d/oM-QqSO7k/pdu?orgId=1&refresh=5s';
-url_ups = 'http://172.30.31.31:32308/d/WK3zBCv7k/ups?orgId=1&refresh=5s';
-url_ups_10kva = 'http://172.30.31.31:32308/d/jrbmM5Fnz/ups-10-kva?orgId=1&refresh=5s'
-url_rect = 'http://172.30.31.31:32308/d/cNQ4vaK7k/rectificador?orgId=1&refresh=5s';
-url_generador = 'http://172.30.31.31:32308/d/MVdPg3K7k/generador?orgId=1&refresh=5s';
-url_chiller = 'http://172.30.31.31:32308/d/D1onBjv7z/chiller?orgId=1&refresh=5s';
-url_uma = 'http://172.30.31.31:32308/d/0adIfCD7z/uma?orgId=1&refresh=5s';
-url_grup_ats = 'http://172.30.31.31:32308/d/_Z05oCv7k/grupal-ats?orgId=1&refresh=5s';
-url_grup_pdi1 = 'http://172.30.31.31:32308/d/smlmmwAnz/grupal-pdi-sistema-1?orgId=1&refresh=5s';
-url_grup_pdi2 = 'http://172.30.31.31:32308/d/QpzK0Aa7z/grupal-pdi-sistema-2?orgId=1&refresh=5s';
-url_grup_canales = 'http://172.30.31.31:32308/d/yqLAwtOnz/breakers-pdi?orgId=1&refresh=5s';
-url_grup_ups1 = 'http://172.30.31.31:32308/d/9Dl-MNOnz/grupal-ups-sistema-1?orgId=1&efresh=5s';
-url_grup_ups2 = 'http://172.30.31.31:32308/d/05MgX7K7z/grupal-ups-sistema-2?orgId=1&efresh=5s&refresh=5s';
-url_grup_chiller = 'http://172.30.31.31:32308/d/nxqbTCD7z/grupales-chillers?orgId=1&refresh=5s';
-url_grup_gen = 'http://172.30.31.31:32308/d/-FlIdiAnz/gengroupdeepsea?orgId=1&refresh=5s';
-url_scada = 'http://172.30.31.31:32308/d/v8PnZBJnk/scada_generadores?orgId=1&from=now-1h&to=now&refresh=5s';
-url_niveles = 'http://172.30.31.31:32308/d/Pe3pt-Fnz/full-lvl-gen?orgId=1&refresh=5s';
-url_grup_uma1 = 'http://172.30.31.31:32308/d/YzqGZB1nk/grupal-uma-sist-1?orgId=1&refresh=5s';
-url_grup_uma2 = 'http://172.30.31.31:32308/d/7PV-ZB17k/grupal-uma-sist-2?orgId=1&refresh=5s';
-url_principal = 'http://172.30.31.31:32308/d/uw2mOrTnz/pantalla-principal?orgId=1&refresh=5s';
-url_clima = 'http://172.30.31.31:32308/d/lW6YK9T7z/clima_p?orgId=1&refresh=5s';
-url_home = 'http://172.30.31.31:32308/d/5oEqkED7z/menu-principal?orgId=1';
-url_resumen = 'http://172.30.31.31:32308/d/6bUdsYY7k/resumen?orgId=1&refresh=5s';
+url_ecoluz = 'https://bmscloudgye.i.telconet.net/d/ZwPUWf1nk/ecoluz?orgId=1&refresh=5s';
+url_pqm = 'https://bmscloudgye.i.telconet.net/d/4nyCaCD7k/pqm?orgId=1&refresh=5s';
+url_ats = 'https://bmscloudgye.i.telconet.net/d/NEwnojv7k/ats?orgId=1&refresh=5s';
+url_pdi = 'https://bmscloudgye.i.telconet.net/d/oM-QqSO7k/pdi?orgId=1&refresh=5s';
+url_ups = 'https://bmscloudgye.i.telconet.net/d/WK3zBCv7k/ups?orgId=1&refresh=5s';
+url_ups_10kva = 'https://bmscloudgye.i.telconet.net/d/jrbmM5Fnz/ups-10-kva?orgId=1&refresh=5s'
+url_rect = 'https://bmscloudgye.i.telconet.net/d/cNQ4vaK7k/rectificador?orgId=1&refresh=5s';
+url_generador = 'https://bmscloudgye.i.telconet.net/d/MVdPg3K7k/generador?orgId=1&refresh=5s';
+url_chiller = 'https://bmscloudgye.i.telconet.net/d/D1onBjv7z/chiller?orgId=1&refresh=5s';
+url_uma = 'https://bmscloudgye.i.telconet.net/d/0adIfCD7z/uma?orgId=1&refresh=5s';
+url_grup_ats = 'https://bmscloudgye.i.telconet.net/d/_Z05oCv7k/grupal-ats?orgId=1&refresh=5s';
+url_grup_pdi1 = 'https://bmscloudgye.i.telconet.net/d/smlmmwAnz/grupal-pdi-sistema-1?orgId=1&refresh=5s';
+url_grup_pdi2 = 'https://bmscloudgye.i.telconet.net/d/QpzK0Aa7z/grupal-pdi-sistema-2?orgId=1&refresh=5s';
+url_grup_canales = 'https://bmscloudgye.i.telconet.net/d/yqLAwtOnz/canales-pdi?orgId=1&refresh=5s';
+url_grup_ups1 = 'https://bmscloudgye.i.telconet.net/d/9Dl-MNOnz/grupal-ups-sistema-1?orgId=1&refresh=5s';
+url_grup_ups2 = 'https://bmscloudgye.i.telconet.net/d/05MgX7K7z/grupal-ups-sistema-2?orgId=1&refresh=5s';
+url_grup_chiller = 'https://bmscloudgye.i.telconet.net/d/nxqbTCD7z/grupales-chillers?orgId=1&refresh=5s';
+url_grup_gen = 'https://bmscloudgye.i.telconet.net/d/-FlIdiAnz/grupal-generadores?orgId=1&refresh=5s';
+url_scada = 'https://bmscloudgye.i.telconet.net/d/v8PnZBJnk/scada_generadores?orgId=1&refresh=5s';
+url_niveles = 'https://bmscloudgye.i.telconet.net/d/Pe3pt-Fnz/full-lvl-gen?orgId=1&refresh=5s';
+url_grup_uma1 = 'https://bmscloudgye.i.telconet.net/d/YzqGZB1nk/grupal-uma-sistema-1?orgId=1&refresh=5s';
+url_grup_uma2 = 'https://bmscloudgye.i.telconet.net/d/7PV-ZB17k/grupal-uma-sistema-2?orgId=1&refresh=5s';
+url_principal = 'https://bmscloudgye.i.telconet.net/d/uw2mOrTnz/datacenter?orgId=1&refresh=5s';
+url_clima = 'https://bmscloudgye.i.telconet.net/d/lW6YK9T7z/clima?orgId=1&refresh=5s';
+url_home = 'https://bmscloudgye.i.telconet.net/d/5oEqkED7z/menu-principal?orgId=1';
+url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&refresh=5s';
 
   return (
     <svg
