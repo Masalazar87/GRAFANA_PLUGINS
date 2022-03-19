@@ -69,7 +69,6 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
       //width={1920}
       //height={148}
       viewBox="0 0 508 39.158"
-
     >
       <defs id="defs2081">
         <filter
@@ -378,7 +377,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_PDI"
           transform="matrix(.46412 0 0 .46411 14.783 75.13)"
           x={222.13811}
-          y={-129.90706}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -393,7 +392,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           <tspan
             id="tspan18521-4-57"
             x={222.13811}
-            y={-129.90706}
+            y={-129.90634}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -426,7 +425,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
         >
           <tspan
             id="tspan18521-4-59-4-4"
-            x={327.6532}
+            x={327.6532} 
             y={-129.90634}
             style={{
               fontVariantCaps: "normal",
@@ -451,7 +450,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_PQM"
           transform="matrix(.46412 0 0 .46411 20.427 75.209)"
           x={137.67862}
-          y={-129.90706}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -466,7 +465,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           <tspan
             id="tspan788-0"
             x={137.67862}
-            y={-129.90706}
+            y={-129.90634}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -485,7 +484,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_ATS"
           transform="matrix(.46412 0 0 .46411 17.587 75.206)"
           x={182.68095}
-          y={-129.90706}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -500,7 +499,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           <tspan
             id="tspan18521-4-59-5-1-7-0"
             x={182.68095}
-            y={-129.90706}
+            y={-129.90634}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -520,7 +519,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_UPS200KVA"
           transform="matrix(.46412 0 0 .46411 12.199 75.206)"
           x={258.52243}
-          y={-129.90706}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -535,7 +534,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           <tspan
             id="tspan18521-4-5-5"
             x={258.52243}
-            y={-129.90706}
+            y={-129.90634}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -731,7 +730,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_Grup_ATS-0"
           transform="translate(-31.901 75.51) scale(.46412)"
           x={742.81177}
-          y={-130.55989}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -746,7 +745,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           <tspan
             id="tspan18521-4-59-4-2-6-3"
             x={742.81177}
-            y={-130.55989}
+            y={-129.90634}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -766,7 +765,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_Grup_PDI"
           transform="translate(-33.516 75.436) scale(.46412)"
           x={777.21857}
-          y={-130.55989}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -781,7 +780,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           <tspan
             id="tspan18521-4-8-4-1"
             x={777.21857}
-            y={-130.55989}
+            y={-129.90634}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -792,7 +791,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
             fontSize="12.162px"
             strokeWidth={0.72989}
           >
-            {"PDI "}
+            {"PDI"}
             <tspan id="tspan918" fontSize="6.8409px">
             <a href={url_grup_pdi1} target="_self" style={{ fill: '#00aad4' }}>
               {"SIS. 1 / "}
@@ -804,7 +803,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_Grup_CHILLER"
           transform="translate(83.11 75.51) scale(.46412)"
           x={845.27087}
-          y={-130.55989}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -819,7 +818,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           <tspan
             id="tspan18521-4-59-7-0"
             x={845.27087}
-            y={-130.55989}
+            y={-129.90634}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -839,7 +838,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_Grup_GEN"
           transform="translate(19.953 75.51) scale(.46412)"
           x={907.99274}
-          y={-130.55989}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -854,7 +853,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           <tspan
             id="tspan18521-4-59-5-03-0"
             x={907.99274}
-            y={-130.55989}
+            y={-129.90634}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -879,7 +878,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_Grup_UMASIS1"
           transform="translate(-61.709 75.436) scale(.46412)"
           x={997.9895}
-          y={-130.55989}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -894,7 +893,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           <tspan
             id="tspan18521-4-59-5-1-1-7"
             x={997.9895}
-            y={-130.55989}
+            y={-129.90634}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -917,7 +916,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_Grup_UPSSIS1"
           transform="translate(-11.835 75.511) scale(.46412)"
           x={808.67932}
-          y={-130.55989}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -932,7 +931,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           <tspan
             id="tspan18521-4-0-6-3-3"
             x={808.67932}
-            y={-130.55989}
+            y={-129.90634}
             style={{
               fontVariantCaps: "normal",
               fontVariantEastAsian: "normal",
@@ -990,7 +989,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_Grup_PDI-2"
           transform="translate(-10.108 75.436) scale(.46412)"
           x={777.21857}
-          y={-130.55989}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -1006,7 +1005,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
             <tspan
               id="tspan18521-4-8-4-1-8"
               x={777.21857}
-              y={-130.55989}
+              y={-129.90634}
               style={{
                 fontVariantCaps: "normal",
                 fontVariantEastAsian: "normal",
@@ -1027,7 +1026,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_Grup_UPSSIS2"
           transform="translate(28.172 75.436) scale(.46412)"
           x={777.21857}
-          y={-130.55989}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -1043,7 +1042,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
             <tspan
               id="tspan18521-4-8-4-1-8-8"
               x={777.21857}
-              y={-130.55989}
+              y={-129.90634}
               style={{
                 fontVariantCaps: "normal",
                 fontVariantEastAsian: "normal",
@@ -1064,7 +1063,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           id="text_Grup_UMASIS2"
           transform="translate(67.935 75.436) scale(.46412)"
           x={774.21857}
-          y={-130.55989}
+          y={-129.90634}
           style={{
             fontVariantCaps: "normal",
             fontVariantEastAsian: "normal",
@@ -1080,7 +1079,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
             <tspan
               id="tspan18521-4-8-4-1-8-8-7"
               x={774.21857}
-              y={-130.55989}
+              y={-129.90634}
               style={{
                 fontVariantCaps: "normal",
                 fontVariantEastAsian: "normal",
