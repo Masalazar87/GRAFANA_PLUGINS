@@ -794,7 +794,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
             {"PDI"}
             <tspan id="tspan918" fontSize="6.8409px">
             <a href={url_grup_pdi1} target="_self" style={{ fill: '#00aad4' }}>
-              {"SIS. 1 / "}
+              {" SIS. 1 /"}
               </a>
             </tspan>
           </tspan>
@@ -1004,7 +1004,7 @@ url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&re
           <tspan id="tspan1181" x={777.21857} y={-130.55989}>
             <tspan
               id="tspan18521-4-8-4-1-8"
-              x={777.21857}
+              x={775.21857}
               y={-129.90634}
               style={{
                 fontVariantCaps: "normal",
