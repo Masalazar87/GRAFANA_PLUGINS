@@ -31,7 +31,6 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
     Estados={ecoluz.Estados}
     Alarmas={ecoluz.Alarmas}
     />
-  )
 </div>
 );
 };
