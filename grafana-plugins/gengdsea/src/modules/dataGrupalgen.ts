@@ -117,6 +117,10 @@ grupalgen.DatosGenerales.Nombre = variableNombre ! == '$NOMBRE' ?  variableNombr
 let PotenciaKW = TOT_WATTS * 10
 let PotenciaKVA = TOT_VA * 10
 
+  if  (PF_AVG === null || PF_AVG > 2 ) {
+    PF_AVG = 0;
+  }
+
 // DATOS DE VARIABLES
   grupalgen.Motor.Temp = Number.parseFloat(COOL_TEMP?.toFixed(2));
   grupalgen.Motor.PresOil = Number.parseFloat(OIL_PRESS?.toFixed(2));
