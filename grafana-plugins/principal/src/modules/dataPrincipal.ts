@@ -85,7 +85,7 @@ for (let i = 1; i <= 6; i++) {
     if (al_ups2a[i] > 0) {
         al_ups2a[i] = alarm_on;
         }   else {
-            al_ups1a[i] = alarm_off;
+            al_ups2a[i] = alarm_off;
         }    
 }
 //---------------------------------------ESTADOS Y ALARMAS DE UPS CHI 200KVA---------------------------------

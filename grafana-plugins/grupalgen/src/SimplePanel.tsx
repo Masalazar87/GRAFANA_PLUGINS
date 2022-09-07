@@ -27,10 +27,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, replaceVariables, 
       )}
     >
       <Grupalgen
-        DatosGenerales={grupalgen.DatosGenerales}
-        Motor={grupalgen.Motor}
-        Alternador={grupalgen.Alternador}
-        Indicadores={grupalgen.Indicadores}
+        Estado={grupalgen.Estado}
       />
     </div>
   );

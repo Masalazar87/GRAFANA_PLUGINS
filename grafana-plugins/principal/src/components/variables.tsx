@@ -2015,7 +2015,7 @@ return (
     cy={59.505}
     r={2}
     fill="#999"
-    opacity={0}
+    //opacity={0}
     paintOrder="markers stroke fill"
     className={Alarmas_SIS1.Ea3mant}
   />
@@ -2136,7 +2136,7 @@ return (
     cy={82.43}
     r={2}
     fill="#999"
-    opacity={0}
+    //opacity={0}
     paintOrder="markers stroke fill"
     className={Alarmas_SIS1.Ea4mant}
   />
@@ -2570,7 +2570,7 @@ return (
       cy={59.505}
       r={2}
       fill="#999"
-      opacity={0}
+      //opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.Ea1mant}
     />
@@ -2615,7 +2615,7 @@ return (
       cy={82.43}
       r={2}
       fill="#999"
-      opacity={0}
+      //opacity={0}
       paintOrder="markers stroke fill"
       className={Alarmas_SIS2.Ea2mant}
     />
@@ -4090,7 +4090,7 @@ return (
     cx={433.22}
     cy={107.53}
     r={2.3466}
-    fill="#999"
+    fill="red"
     paintOrder="markers stroke fill"
     className={Estados_SIS1.ups1}
   />

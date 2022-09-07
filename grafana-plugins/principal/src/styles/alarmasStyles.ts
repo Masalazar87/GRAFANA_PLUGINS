@@ -17,7 +17,7 @@ const getStyles = stylesFactory(() => {
     `,
     on1: css`
       fill: orange;
-      animation: ${parpadeo} 1s ease infinite;
+      /*animation: ${parpadeo} 3s ease infinite;*/
     `,
     on2: css`
       fill: purple;
