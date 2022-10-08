@@ -1,11 +1,10 @@
 import { PanelData } from '@grafana/data';
 import { SimpleOptions } from 'types';
 
-import { DataPrincipal } from 'components/variables';
+//import { DataPrincipal } from 'components/variables';
+import { DataPrincipal } from 'components/variables2';
 import estadosStyles from 'styles/estadosStyles';
 import alarmasStyles from 'styles/alarmasStyles';
-//import {sound_alarm} from 'components/my-resources/';
-
 
 const dataPrincipal = (data: PanelData, options: SimpleOptions): DataPrincipal => {  
     console.log('data: ', data);
@@ -519,6 +518,7 @@ let principal: DataPrincipal = {
         b1_4: '', b1_5: '', b1_6: '',
         b2_3: '', b2_4: '',
         upsoffices_1a: '', upssat_1a: '', //rec_1a: '',
+        text_mant_Ea4:'', text_mant_Ea3:'',
     },
     Alarmas_SIS2: {
         ups1: '', ups2: '', ups3: '', ups4: '', ups5: '', ups6: '', upschi2: '',
@@ -528,6 +528,7 @@ let principal: DataPrincipal = {
         b2_1: '', b2_2: '',
         V1aux: '', V2aux: '',
         upsnoc_2a: '', upssat_2a: '', //rec_2a: '',
+        text_mant_Ea1:'', text_mant_Ea2:'',
     },
 }
 //PRESENTACIÓN DE LA VARIABLE//
@@ -620,6 +621,11 @@ principal.Alarmas_SIS2.Ea1mant = F1_EA_1_MS === 2? alarmasStyles.on1 : alarmasSt
 principal.Alarmas_SIS2.Ea2mant = F1_EA_2_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
 principal.Alarmas_SIS1.Ea3mant = F1_EA_3_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
 principal.Alarmas_SIS1.Ea4mant = F1_EA_4_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
+principal.Alarmas_SIS2.text_mant_Ea1 = F1_EA_1_MS === 2? alarmasStyles.mant : alarmasStyles.sinconexion;
+principal.Alarmas_SIS2.text_mant_Ea2 = F1_EA_2_MS === 2? alarmasStyles.mant : alarmasStyles.sinconexion;
+principal.Alarmas_SIS1.text_mant_Ea3 = F1_EA_3_MS === 2? alarmasStyles.mant : alarmasStyles.sinconexion;
+principal.Alarmas_SIS1.text_mant_Ea4 = F1_EA_4_MS === 2? alarmasStyles.mant : alarmasStyles.sinconexion;
+
 //ALARMA DE CHILLER
 principal.Alarmas_SIS2.Ea1 = EA_1_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
 principal.Alarmas_SIS2.Ea2 = EA_2_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
@@ -842,10 +848,10 @@ let Voltaje_CMTVL_AN = VLN_A/1000;
 let Voltaje_CMTVL_BN = VLN_B/1000;
 let Voltaje_CMTVL_CN = VLN_C/1000;
 
-principal.Estados_Principales.VAB_CMT = Voltaje_CMTVL_AN > 7.2? estadosStyles.on : estadosStyles.alarma;
-principal.Estados_Principales.VBC_CMT = Voltaje_CMTVL_BN > 7.2? estadosStyles.on : estadosStyles.alarma;
-principal.Estados_Principales.VCA_CMT = Voltaje_CMTVL_CN > 7.2? estadosStyles.on : estadosStyles.alarma;
-principal.Estados_Principales.ST_CMT =  Vprom_CMTAVG > 13.2? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VAB_CMT = Voltaje_CMTVL_AN > 7.5? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VBC_CMT = Voltaje_CMTVL_BN > 7.5? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.VCA_CMT = Voltaje_CMTVL_CN > 7.5? estadosStyles.on : estadosStyles.alarma;
+principal.Estados_Principales.ST_CMT =  Vprom_CMTAVG > 13.1? estadosStyles.on : estadosStyles.alarma;
 
 //-----------------------------------------PARAMETROS POTENCIA POR SISTEMA TDLOWA&2---------------------------
 let pot_tdlow1 = POT_SIS1/10;

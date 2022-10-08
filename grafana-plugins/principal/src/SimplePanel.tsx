@@ -4,7 +4,8 @@ import { SimpleOptions } from 'types';
 import { css, cx } from 'emotion';
 //import { stylesFactory, useTheme } from '@grafana/ui';
 import { stylesFactory } from '@grafana/ui';
-import Principal from './components/principal';
+//import Principal from './components/principal';
+import Principal2 from './components/principal2';
 
 import dataPrincipal from 'modules/dataPrincipal';
 interface Props extends PanelProps<SimpleOptions> {}
@@ -24,7 +25,7 @@ export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) =
         `
       )}
     >
-      <Principal
+      <Principal2
       ParametrosElec={principal.ParametrosElec}
       ParametrosClima={principal.ParametrosClima}
       ParametrosUPS_SIS1={principal.ParametrosUPS_SIS1}

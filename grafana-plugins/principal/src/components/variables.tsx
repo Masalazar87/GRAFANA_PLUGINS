@@ -2015,7 +2015,7 @@ return (
     cy={59.505}
     r={2}
     fill="#999"
-    //opacity={0}
+    opacity={0}
     paintOrder="markers stroke fill"
     className={Alarmas_SIS1.Ea3mant}
   />

@@ -17,11 +17,15 @@ const getStyles = stylesFactory(() => {
     `,
     on1: css`
       fill: orange;
-      /*animation: ${parpadeo} 3s ease infinite;*/
+      animation: ${parpadeo} 3s ease infinite;
     `,
     on2: css`
       fill: purple;
       animation: ${parpadeo} 1s ease infinite;
+    `,
+    mant: css`
+     fill:gray;
+     animation: ${parpadeo} 3s ease infinite;
     `,
   };
 });
