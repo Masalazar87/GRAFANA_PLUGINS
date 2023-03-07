@@ -20,5 +20,8 @@
   },
   "engines": {
     "node": ">=14"
+  },
+  "dependencies": {
+    "react-use-effect": "0.0.1"
   }
 }
