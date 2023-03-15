@@ -320,7 +320,7 @@ let pot_genSIS = [];
 for (let i = 1; i <= 6; i++) {
 vll_genSIS[i] = data.series.find(({ name }) => name?.includes('VOL_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
 st_gen_carga[i] = data.series.find(({ name }) => name?.includes('CUR_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
-pot_genSIS[i] = data.series.find(({ name }) => name?.includes('POT_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
+pot_genSIS[i] = data.series.find(({ name }) => name?.includes('POT_GEN' + i))?.fields[1].state?.calcs?.lastNotNull /10;
     if (vll_genSIS[i] === null || vll_genSIS[i] === 0 ){
         vll_genSIS[i] = 0;// &&
         //st_gen[i] === 0;
