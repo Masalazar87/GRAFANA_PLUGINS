@@ -202,7 +202,7 @@ export const Variables = ({DatosGenerales, Parametros, Estados, Principal }: Dat
         fontSize="5.6444px"
         strokeWidth={0.26458}
       >
-        {Parametros.Ltime_banda}
+        C {Parametros.Ltime_banda}
       </tspan>
     </text>
     <text

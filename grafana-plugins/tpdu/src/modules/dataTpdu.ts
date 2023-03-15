@@ -161,12 +161,37 @@ if (LT_TRIP_PICKUP = 11 ){
     Longt_pickup = 1.00
 }
 
+let Longt_delay = LT_TRIP_DELAY;
+if (LT_TRIP_DELAY = 0 ){
+    Longt_delay = 'OFF'
+}
+
+let shortt_pickup = ST_TRIP_PICKUP;
+if (ST_TRIP_PICKUP = 0 ){
+    shortt_pickup = 'OFF'
+}
+
+let shortt_delay = ST_TRIP_DELAY;
+if (ST_TRIP_DELAY = 0 ){
+    shortt_pickup = 'OFF'
+}
+
+let inst_pickup = INST_TRIP_PICKUP;
+if (ST_TRIP_PICKUP = 0 ){
+    inst_pickup = 'OFF';
+}
+
+let Redinst_pickup = RED_INST_TRIP_PICKUP;
+if (RED_INST_TRIP_PICKUP = 0 ){
+    Redinst_pickup = 'OFF';
+}
+
 tpdu.Parametros.Ltime_pickup = (Longt_pickup?.toFixed(1));
-tpdu.Parametros.Ltime_banda = "C_" + Number.parseFloat(LT_TRIP_DELAY?.toFixed(1));
-tpdu.Parametros.Stime_pickup = (ST_TRIP_PICKUP?.toFixed(1));
-tpdu.Parametros.Stime_banda = Number.parseFloat(ST_TRIP_DELAY?.toFixed(1));
-tpdu.Parametros.inst_pickup = Number.parseFloat(INST_TRIP_PICKUP?.toFixed(1));
-tpdu.Parametros.Relinst_pickup = Number.parseFloat(RED_INST_TRIP_PICKUP?.toFixed(1));
+tpdu.Parametros.Ltime_banda = Number.parseFloat(Longt_delay?.toFixed(1));
+tpdu.Parametros.Stime_pickup = (shortt_pickup?.toFixed(1));
+tpdu.Parametros.Stime_banda = Number.parseFloat(shortt_delay?.toFixed(1));
+tpdu.Parametros.inst_pickup = (inst_pickup?.toFixed(1));
+tpdu.Parametros.Relinst_pickup = (Redinst_pickup?.toFixed(1));
 
 //ESTADOS Y ALARMAS
 tpdu.Estados.Estado_box = POS ===1? alarmsStyles.on1 : alarmsStyles.off,

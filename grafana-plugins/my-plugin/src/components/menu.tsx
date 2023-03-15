@@ -1156,7 +1156,12 @@ return (
             <a href={url_b_psg} target="_self" style={{ fill: '#00aad4' }}>
               {"PSG "}
               </a>
-            {"/ TDLOW / TDP / TUPS / TPDU / TSG"}
+            {"/ TDLOW / TDP / TUPS "}
+            
+            <a href={url_b_psg} target="_self" style={{ fill: '#00aad4' }}>
+              {"TPDU "}
+              </a>
+             {"/ TSG"}
           </tspan>
         </text>
         <text
@@ -1187,8 +1192,10 @@ return (
             fontFamily="sans-serif"
             fontSize="5.6444px"
             strokeWidth={0.33875}
-          >
-            {"UNIFILAR"}
+            >
+            <a href={url_unifilar} target="_self" style={{ fill: '#00aad4' }}>
+              {"UNIFILAR"}
+              </a>
           </tspan>
         </text>
         <text
