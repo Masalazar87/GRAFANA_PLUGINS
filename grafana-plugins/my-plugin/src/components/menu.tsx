@@ -37,7 +37,14 @@ let url_resumen = '';
 let url_unifilar = '';
 
 //Breakers
-let url_b_psg = '';
+let url_psg = '';
+let url_tdlow = '';
+let url_deepsea = '';
+let url_tdp = '';
+let url_tups = '';
+let url_tpdu = '';
+let url_tsg = '';
+
 
 //url_cmt = '';
 url_ecoluz = 'https://bmscloudgye.i.telconet.net/d/ZwPUWf1nk/ecoluz?orgId=1&refresh=5s';
@@ -67,7 +74,13 @@ url_clima = 'https://bmscloudgye.i.telconet.net/d/lW6YK9T7z/clima?orgId=1&refres
 url_home = 'https://bmscloudgye.i.telconet.net/d/5oEqkED7z/menu-principal?orgId=1';
 url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&refresh=5s';
 url_unifilar = 'http://bmscloudgye.i.telconet.net/d/ItHGf1b4k/unifilar-api?orgId=1&refresh=5s'
-url_b_psg = 'http://localhost:3000/d/CsqRTz-Vz/breakers-psg?orgId=1&from=1678512600000&to=1678513200000&var-EQUIPO=PSG_1A_1'
+url_psg = 'https://bmscloudgye.i.telconet.net/d/SDPtqL-4z/psg?orgId=1&refresh=5s'
+url_tdlow = 'https://bmscloudgye.i.telconet.net/d/b5sJBG-Vk/td_low?orgId=1&refresh=5s'
+url_deepsea = 'https://bmscloudgye.i.telconet.net/d/s8yqwN-Vk/dse-7420?orgId=1'
+url_tdp = ''
+url_tups = ''
+url_tpdu = 'https://bmscloudgye.i.telconet.net/d/8ELm6Y-4k/tpdu?orgId=1&refresh=5s'
+url_tsg = ''
 
 return (
     <svg
@@ -1153,15 +1166,34 @@ return (
             fontSize="3.175px"
             strokeWidth={0.33876}
           >
-            <a href={url_b_psg} target="_self" style={{ fill: '#00aad4' }}>
+            <a href={url_psg} target="_self" style={{ fill: '#00aad4' }}>
               {"PSG "}
               </a>
-            {"/ TDLOW / TDP / TUPS "}
-            
-            <a href={url_b_psg} target="_self" style={{ fill: '#00aad4' }}>
+            {"/ "}
+            <a href={url_tdlow} target="_self" style={{ fill: '#00aad4' }}>
+              {"TDLOW "}
+              </a>
+            {"/ "} 
+            <a href={url_deepsea} target="_self" style={{ fill: '#00aad4' }}>
+              {"DEEPSEA "}
+              </a>
+            {"/ "} 
+            <a href={url_tdp} target="_self" style={{ fill: '#00aad4' }}>
+              {"TDP "}
+              </a>
+            {"/ "}
+            <a href={url_tups} target="_self" style={{ fill: '#00aad4' }}>
+              {"TUPS "}
+              </a>
+            {"/ "} 
+            <a href={url_tpdu} target="_self" style={{ fill: '#00aad4' }}>
               {"TPDU "}
               </a>
-             {"/ TSG"}
+            {"/ "}  
+            <a href={url_tsg} target="_self" style={{ fill: '#00aad4' }}>
+              {"TSG "}
+              </a>
+             
           </tspan>
         </text>
         <text
