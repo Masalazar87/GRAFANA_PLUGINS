@@ -1,10 +1,10 @@
 import { SimpleOptions } from 'types';
 import { PanelData, InterpolateFunction } from '@grafana/data';
-import { DataPsg } from 'components/variables';
+import { DataTchi } from 'components/variables';
 import alarmsStyles from 'styles/alarmsStyles';
 
 
-const DataPsg = (data: PanelData, options:SimpleOptions, replaceVariables:InterpolateFunction): DataPsg => {  
+const DataTchi = (data: PanelData, options:SimpleOptions, replaceVariables:InterpolateFunction): DataTchi => {  
     console.log('data: ', data);
     console.log('options: ', options);
     console.log(replaceVariables);
@@ -50,14 +50,14 @@ const DataPsg = (data: PanelData, options:SimpleOptions, replaceVariables:Interp
     let RED_INST_TRIP_PICKUP = data.series.find(({ name }) => name?.includes('DATA.RED_INST_TRIP_PICKUP.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
 
-    let psg: DataPsg ={
+    let tchi: DataTchi ={
         DatosGenerales: {
             Nombre: '',
             Fase: 'A',
-            Sistema: '',
-            Marca: 'POWER BREAK II',
-            Modelo: 'ENTELLIGUARD',
-            Ubicacion: 'EXTERIORES FASE A',
+            Sistema: '1&2',
+            Marca: 'GENERAL ELECTRIC',
+            Modelo: 'SPECTRA',
+            Ubicacion: 'CUARTOS ELECTRICOS',
         },
         Principal: {
             Voltage_prom: 0,
@@ -98,31 +98,31 @@ const DataPsg = (data: PanelData, options:SimpleOptions, replaceVariables:Interp
 
     //INTERPOLACION DE VARIABLES
 let variableNombre = replaceVariables('$EQUIPO')
-psg.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
+tchi.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
 
-if (variableNombre = 'PSG_'+ 1 +'A_'+''){
-    psg.DatosGenerales.Sistema === 1;}
+if (variableNombre = 'TCHI_'+ 1 +'A_'+''){
+    tchi.DatosGenerales.Sistema = "1";}
 else{
-    if (variableNombre = 'PSG_'+ 2 +'A_'+''){
-    psg.DatosGenerales.Sistema === 2;}}
+    if (variableNombre = 'TCHI_'+ 2 +'A_'+''){
+    tchi.DatosGenerales.Sistema = "2";}}
 
 //PRINCIPAL
-psg.Principal.Voltage_prom = Number.parseFloat(V_FASE_A?.toFixed(2));
+tchi.Principal.Voltage_prom = Number.parseFloat(V_FASE_A?.toFixed(2));
 
 let Curr_prom = (CUR_FASE_A + CUR_FASE_B + CUR_FASE_C) / 3;
-psg.Principal.Corriente_prom = Number.parseFloat(Curr_prom?.toFixed(2));
+tchi.Principal.Corriente_prom = Number.parseFloat(Curr_prom?.toFixed(2));
 
-psg.Principal.fp = Number.parseFloat(POW_FACT_TOTAL?.toFixed(2));
+tchi.Principal.fp = Number.parseFloat(POW_FACT_TOTAL?.toFixed(2));
 
 //PARAMETROS
-psg.Parametros.Vol_AB = Number.parseFloat(V_FASE_A?.toFixed(2));
-psg.Parametros.Vol_BC = Number.parseFloat(V_FASE_B?.toFixed(2));
-psg.Parametros.Vol_CA = Number.parseFloat(V_FASE_C?.toFixed(2));
-psg.Parametros.CorrienteA = Number.parseFloat(CUR_FASE_A?.toFixed(2));
-psg.Parametros.CorrienteB = Number.parseFloat(CUR_FASE_B?.toFixed(2));
-psg.Parametros.CorrienteC = Number.parseFloat(CUR_FASE_C?.toFixed(2));
-psg.Parametros.Pot_appt = Number.parseFloat(POW_APPRT_TOTAL?.toFixed(2));
-psg.Parametros.Pot_real = Number.parseFloat(POW_REAL_TOTAL?.toFixed(2));
+tchi.Parametros.Vol_AB = Number.parseFloat(V_FASE_A?.toFixed(2));
+tchi.Parametros.Vol_BC = Number.parseFloat(V_FASE_B?.toFixed(2));
+tchi.Parametros.Vol_CA = Number.parseFloat(V_FASE_C?.toFixed(2));
+tchi.Parametros.CorrienteA = Number.parseFloat(CUR_FASE_A?.toFixed(2));
+tchi.Parametros.CorrienteB = Number.parseFloat(CUR_FASE_B?.toFixed(2));
+tchi.Parametros.CorrienteC = Number.parseFloat(CUR_FASE_C?.toFixed(2));
+tchi.Parametros.Pot_appt = Number.parseFloat(POW_APPRT_TOTAL?.toFixed(2));
+tchi.Parametros.Pot_real = Number.parseFloat(POW_REAL_TOTAL?.toFixed(2));
 
 
 //PARAMETROS CONFIGURACION
@@ -161,55 +161,29 @@ if (LT_TRIP_PICKUP = 11 ){
     Longt_pickup = 1.00
 }
 
-let Longt_delay = LT_TRIP_DELAY;
-if (LT_TRIP_DELAY = 0 ){
-    Longt_delay = 'OFF'
-}
 
-let shortt_pickup = ST_TRIP_PICKUP;
-if (ST_TRIP_PICKUP = 0 ){
-    shortt_pickup = 'OFF'
-}
-
-let shortt_delay = ST_TRIP_DELAY;
-if (ST_TRIP_DELAY = 0 ){
-    shortt_pickup = 'OFF'
-}
-
-let inst_pickup = INST_TRIP_PICKUP;
-if (ST_TRIP_PICKUP = 0 ){
-    inst_pickup = 'OFF';
-}
-
-let Redinst_pickup = RED_INST_TRIP_PICKUP;
-if (RED_INST_TRIP_PICKUP = 0 ){
-    Redinst_pickup = 'OFF';
-}
-
-psg.Parametros.Ltime_pickup = (Longt_pickup?.toFixed(1));
-psg.Parametros.Ltime_banda = Number.parseFloat(Longt_delay?.toFixed(1));
-psg.Parametros.Stime_pickup = (shortt_pickup?.toFixed(1));
-psg.Parametros.Stime_banda = Number.parseFloat(shortt_delay?.toFixed(1));
-psg.Parametros.inst_pickup = (inst_pickup?.toFixed(1));
-psg.Parametros.Relinst_pickup = (Redinst_pickup?.toFixed(1));
+tchi.Parametros.Ltime_pickup = (Longt_pickup?.toFixed(1));
+tchi.Parametros.Ltime_banda = Number.parseFloat(LT_TRIP_DELAY?.toFixed(1));
+tchi.Parametros.Stime_pickup = (ST_TRIP_PICKUP?.toFixed(1));
+tchi.Parametros.Stime_banda = Number.parseFloat(ST_TRIP_DELAY?.toFixed(1));
+tchi.Parametros.inst_pickup =  (INST_TRIP_PICKUP?.toFixed(1));
+tchi.Parametros.Relinst_pickup = Number.parseFloat(RED_INST_TRIP_PICKUP?.toFixed(1));
 
 //ESTADOS Y ALARMAS
-psg.Estados.Estado_box = POS === 1? alarmsStyles.on1 : alarmsStyles.off,
-psg.Estados.warning_box = WARNING_ST === 1? alarmsStyles.on2 : '',
-psg.Estados.Botón = POS === 1? alarmsStyles.on1 : alarmsStyles.off,
-psg.Estados.warning_boton = WARNING_ST === 1? alarmsStyles.on2 : '',
+tchi.Estados.Estado_box = POS === 1? alarmsStyles.on1 : alarmsStyles.off,
+tchi.Estados.warning_box = WARNING_ST === 1? alarmsStyles.on2 : '',
+tchi.Estados.Botón = POS === 1? alarmsStyles.on1 : alarmsStyles.off,
+tchi.Estados.warning_boton = WARNING_ST === 1? alarmsStyles.on2 : '',
 
-psg.Estados.EstadoON = POS === 1? 'CERRADO' : 'ABIERTO',
-//psg.Estados.EstadoOFF = POS === 0? 'ABIERTO' : '',
-psg.Estados.st_Modbus = MODBUS_ST === 1? alarmsStyles.on1 : alarmsStyles.off,
-psg.Estados.warning_txt = WARNING_ST === 1? 'ALARMADO': '',
-psg.Estados.warning_led = WARNING_ST >=1? alarmsStyles.on2 : alarmsStyles.off,
-
-
+tchi.Estados.EstadoON = POS === 1? 'CERRADO' : 'ABIERTO',
+//tchi.Estados.EstadoOFF = POS === 0? 'ABIERTO' : '',
+tchi.Estados.st_Modbus = MODBUS_ST === 1? alarmsStyles.on1 : alarmsStyles.off,
+//tchi.Estados.warning_txt = WARNING_ST === 1? 'ALARMADO': '',
+tchi.Estados.warning_led = WARNING_ST >=1? alarmsStyles.on2 : alarmsStyles.off,
 
 
-console.log(psg);
-return psg;
+console.log(tchi);
+return tchi;
 };
 
-export default DataPsg;
+export default DataTchi;

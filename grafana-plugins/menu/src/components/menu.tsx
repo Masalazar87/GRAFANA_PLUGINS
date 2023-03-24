@@ -35,14 +35,17 @@ let url_clima = '';
 let url_home = '';
 let url_resumen = '';
 let url_unifilar = '';
+let url_sci = '';
 
 //Breakers
 let url_psg = '';
 let url_tdlow = '';
 let url_deepsea = '';
+let url_tats = '';
 let url_tdp = '';
 let url_tups = '';
 let url_tpdu = '';
+let url_tchi = '';
 let url_tsg = '';
 
 
@@ -73,14 +76,17 @@ url_principal = 'https://bmscloudgye.i.telconet.net/d/uw2mOrTnz/datacenter?orgId
 url_clima = 'https://bmscloudgye.i.telconet.net/d/lW6YK9T7z/clima?orgId=1&refresh=5s';
 url_home = 'https://bmscloudgye.i.telconet.net/d/5oEqkED7z/menu-principal?orgId=1';
 url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&refresh=5s';
-url_unifilar = 'http://bmscloudgye.i.telconet.net/d/ItHGf1b4k/unifilar-api?orgId=1&refresh=5s'
-url_psg = 'https://bmscloudgye.i.telconet.net/d/SDPtqL-4z/psg?orgId=1&refresh=5s'
-url_tdlow = 'https://bmscloudgye.i.telconet.net/d/b5sJBG-Vk/td_low?orgId=1&refresh=5s'
-url_deepsea = 'https://bmscloudgye.i.telconet.net/d/s8yqwN-Vk/dse-7420?orgId=1'
-url_tdp = ''
-url_tups = ''
-url_tpdu = 'https://bmscloudgye.i.telconet.net/d/8ELm6Y-4k/tpdu?orgId=1&refresh=5s'
-url_tsg = ''
+url_unifilar = 'http://bmscloudgye.i.telconet.net/d/ItHGf1b4k/unifilar-api?orgId=1&refresh=5s';
+url_sci = 'https://bmscloudgye.i.telconet.net/d/Y3p2mqaVk/sistema-contraincendios?orgId=1&from=now-1h&to=now&refresh=5s';
+url_psg = 'https://bmscloudgye.i.telconet.net/d/SDPtqL-4z/psg?orgId=1&refresh=5s';
+url_tdlow = 'https://bmscloudgye.i.telconet.net/d/b5sJBG-Vk/td_low?orgId=1&refresh=5s';
+url_deepsea = 'https://bmscloudgye.i.telconet.net/d/s8yqwN-Vk/dse-7420?orgId=1';
+url_tats = 'https://bmscloudgye.i.telconet.net/d/F9XITnBVk/t-ats-3a?orgId=1&refresh=5s';
+url_tdp = 'https://bmscloudgye.i.telconet.net/d/fqeZdp-Vz/tdp-1a?orgId=1&refresh=5s&var-EQUIPO=TDP_1A_0&from=now-1h&to=now';
+url_tups = 'https://bmscloudgye.i.telconet.net/d/QgHNkXa4z/t-ups-in?orgId=1&from=now-1h&to=now&refresh=5s';
+url_tpdu = 'https://bmscloudgye.i.telconet.net/d/8ELm6Y-4k/tpdu?orgId=1&refresh=5s';
+url_tchi = '';
+url_tsg = 'https://bmscloudgye.i.telconet.net/d/uqvScHB4k/t-sg?orgId=1&from=now-1h&to=now&refresh=5s';
 
 return (
     <svg
@@ -1178,6 +1184,10 @@ return (
               {"DEEPSEA "}
               </a>
             {"/ "} 
+            <a href={url_tats} target="_self" style={{ fill: '#00aad4' }}>
+              {"TATS "}
+              </a>
+            {"/ "} 
             <a href={url_tdp} target="_self" style={{ fill: '#00aad4' }}>
               {"TDP "}
               </a>
@@ -1189,7 +1199,11 @@ return (
             <a href={url_tpdu} target="_self" style={{ fill: '#00aad4' }}>
               {"TPDU "}
               </a>
-            {"/ "}  
+            {"/ "}
+            <a href={url_tchi} target="_self" style={{ fill: '#00aad4' }}>
+              {"TCHI "}
+              </a>
+            {"/ "}    
             <a href={url_tsg} target="_self" style={{ fill: '#00aad4' }}>
               {"TSG "}
               </a>
@@ -1232,7 +1246,7 @@ return (
         </text>
         <text
           id="text_CLIMA-0-2"
-          x={443.81125}
+          x={438.81125}
           y={30.066631}
           style={{
             fontVariantCaps: "normal",
@@ -1247,7 +1261,41 @@ return (
         >
           <tspan
             id="tspan18521-4-59-5-0-3-1-6-9-0-7-0"
-            x={443.81125}
+            x={438.81125}
+            y={30.066631}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fontFamily="sans-serif"
+            fontSize="5.6444px"
+            strokeWidth={0.33875}
+          >
+           <a href={url_sci} target="_self" style={{ fill: '#00aad4' }}>
+            {"SCI"}
+            </a>
+          </tspan>
+        </text>
+        <text
+          id="text_CLIMA-0-3"
+          x={452.81125}
+          y={30.066631}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fontSize="5.6444px"
+          strokeWidth={0.33875}
+        >
+          <tspan
+            id="tspan18521-4-59-5-0-3-1-6-9-0-7-0"
+            x={452.81125}
             y={30.066631}
             style={{
               fontVariantCaps: "normal",
