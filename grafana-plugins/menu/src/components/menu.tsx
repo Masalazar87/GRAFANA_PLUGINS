@@ -85,7 +85,7 @@ url_tats = 'https://bmscloudgye.i.telconet.net/d/F9XITnBVk/t-ats-3a?orgId=1&refr
 url_tdp = 'https://bmscloudgye.i.telconet.net/d/fqeZdp-Vz/tdp-1a?orgId=1&refresh=5s&var-EQUIPO=TDP_1A_0&from=now-1h&to=now';
 url_tups = 'https://bmscloudgye.i.telconet.net/d/QgHNkXa4z/t-ups-in?orgId=1&from=now-1h&to=now&refresh=5s';
 url_tpdu = 'https://bmscloudgye.i.telconet.net/d/8ELm6Y-4k/tpdu?orgId=1&refresh=5s';
-url_tchi = '';
+url_tchi = 'https://bmscloudgye.i.telconet.net/d/Mw-TJpf4k/tchi?orgId=1&refresh=5s';
 url_tsg = 'https://bmscloudgye.i.telconet.net/d/uqvScHB4k/t-sg?orgId=1&from=now-1h&to=now&refresh=5s';
 
 return (
