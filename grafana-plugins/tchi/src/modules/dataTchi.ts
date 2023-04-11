@@ -3,7 +3,6 @@ import { PanelData, InterpolateFunction } from '@grafana/data';
 import { DataTchi } from 'components/variables';
 import alarmsStyles from 'styles/alarmsStyles';
 
-
 const DataTchi = (data: PanelData, options:SimpleOptions, replaceVariables:InterpolateFunction): DataTchi => {  
     console.log('data: ', data);
     console.log('options: ', options);
@@ -85,13 +84,13 @@ const DataTchi = (data: PanelData, options:SimpleOptions, replaceVariables:Inter
             CorrienteC: 0,
             Pot_appt: 0,
             Pot_real: 0,
-            Ltime_curve: 0,
-            Ltime_banda: 0,
+            Ltime_curve: '- - -',
+            Ltime_banda: '',
             Ltime_pickup: 0,
-            Stime_curve: 0,
-            Stime_banda: 0,
+            Stime_curve: '- - -',
+            Stime_banda: '',
             Stime_pickup: 0,
-            inst_pickup: 0,
+            inst_pickup: '',
             Relinst_pickup: 0,
         },
     }
@@ -99,12 +98,6 @@ const DataTchi = (data: PanelData, options:SimpleOptions, replaceVariables:Inter
     //INTERPOLACION DE VARIABLES
 let variableNombre = replaceVariables('$EQUIPO')
 tchi.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
-
-if (variableNombre = 'TCHI_'+ 1 +'A_'+''){
-    tchi.DatosGenerales.Sistema = "1";}
-else{
-    if (variableNombre = 'TCHI_'+ 2 +'A_'+''){
-    tchi.DatosGenerales.Sistema = "2";}}
 
 //PRINCIPAL
 tchi.Principal.Voltage_prom = Number.parseFloat(V_FASE_A?.toFixed(2));
@@ -126,48 +119,139 @@ tchi.Parametros.Pot_real = Number.parseFloat(POW_REAL_TOTAL?.toFixed(2));
 
 
 //PARAMETROS CONFIGURACION
-let Longt_pickup = LT_TRIP_PICKUP;
-if (LT_TRIP_PICKUP = 1 ){
-    Longt_pickup = 0.5
-}
-if (LT_TRIP_PICKUP = 2 ){
-    Longt_pickup = 0.55
-}
-if (LT_TRIP_PICKUP = 3 ){
-    Longt_pickup = 0.6
-}
-if (LT_TRIP_PICKUP = 4 ){
-    Longt_pickup = 0.65
-}
-if (LT_TRIP_PICKUP = 5 ){
-    Longt_pickup = 0.7
-}
-if (LT_TRIP_PICKUP = 6 ){
-    Longt_pickup = 0.75
-}
-if (LT_TRIP_PICKUP = 7 ){
-    Longt_pickup = 0.8
-}
-if (LT_TRIP_PICKUP = 8 ){
-    Longt_pickup = 0.85
-}
-if (LT_TRIP_PICKUP = 9 ){
-    Longt_pickup = 0.9
-}
-if (LT_TRIP_PICKUP = 10 ){
-    Longt_pickup = 0.95
-}
-if (LT_TRIP_PICKUP = 11 ){
-    Longt_pickup = 1.00
-}
+const varLongPickup = [
+    {varlong:1, valor:0.5},
+    {varlong:2, valor:0.55},
+    {varlong:3, valor:0.6},
+    {varlong:4, valor:0.65},
+    {varlong:5, valor:0.7},
+    {varlong:6, valor:0.75},
+    {varlong:7, valor:0.8},
+    {varlong:8, valor:0.85},
+    {varlong:9, valor:0.9},
+    {varlong:10, valor:0.95},
+    {varlong:11, valor:1.0}
+  ]
+let obj_variable_long_pickup = varLongPickup.find(o => o.varlong === LT_TRIP_PICKUP)!;
+
+const varLongDelay = [
+    {varlong:0, valor:"OFF"},
+    {varlong:1, valor:"MVT 1"},
+    {varlong:2, valor:"MVT 2"},
+    {varlong:3, valor:"MVT 3"},
+    {varlong:4, valor:"MVT 4"},
+    {varlong:5, valor:"C 1"},
+    {varlong:6, valor:"C 2"},
+    {varlong:7, valor:"C 3"},
+    {varlong:8, valor:"C 4"},
+    {varlong:9, valor:"C 5"},
+    {varlong:10, valor:"C 6"},
+    {varlong:11, valor:"C 7"},
+    {varlong:12, valor:"C 8"},
+    {varlong:13, valor:"C 9"},
+    {varlong:14, valor:"C 10"},
+    {varlong:15, valor:"C 11"},
+    {varlong:16, valor:"F 1"},
+    {varlong:17, valor:"F 2"},
+    {varlong:18, valor:"C 3"},
+    {varlong:19, valor:"C 4"},
+    {varlong:20, valor:"C 5"},
+    {varlong:21, valor:"C 6"},
+    {varlong:22, valor:"F 7"},
+    {varlong:23, valor:"F 8"}
+  ]
+let obj_variable_long_delay = varLongDelay.find(o => o.varlong === LT_TRIP_DELAY)!;
+
+const varShortPickup = [
+    {varlong:1, valor:1.5},
+    {varlong:2, valor:2.0},
+    {varlong:3, valor:2.5},
+    {varlong:4, valor:3.0},
+    {varlong:5, valor:3.5},
+    {varlong:6, valor:4.0},
+    {varlong:7, valor:4.5},
+    {varlong:8, valor:5.0},
+    {varlong:9, valor:5.5},
+    {varlong:10, valor:6.0},
+    {varlong:11, valor:6.5},
+    {varlong:12, valor:7.0},
+    {varlong:13, valor:7.5},
+    {varlong:14, valor:8.0},
+    {varlong:15, valor:8.5},
+    {varlong:16, valor:9.0}
+  ]
+let obj_variable_short_pickup = varShortPickup.find(o => o.varlong === ST_TRIP_PICKUP)!;
+
+const varShortDelay = [
+    {varlong:0, valor:"OFF"},
+    {varlong:1, valor:1},
+    {varlong:2, valor:2},
+    {varlong:3, valor:3},
+    {varlong:4, valor:4},
+    {varlong:5, valor:5},
+    {varlong:6, valor:6},
+    {varlong:7, valor:7},
+    {varlong:8, valor:8},
+    {varlong:9, valor:9},
+    {varlong:10, valor:10},
+    {varlong:11, valor:11},
+    {varlong:12, valor:12}
+]
+
+let obj_variable_short_delay = varShortDelay.find(o => o.varlong === ST_TRIP_DELAY)!;
+
+const varInstPickup = [
+    {varlong:0, valor:"OFF"},
+    //{varlong:1, valor:1},
+    {varlong:2, valor:2},
+    {varlong:3, valor:2.5},
+    {varlong:4, valor:3},
+    {varlong:5, valor:3.5},
+    {varlong:6, valor:4},
+    {varlong:7, valor:4.5},
+    {varlong:8, valor:5},
+    {varlong:9, valor:5.5},
+    {varlong:10, valor:6},
+    {varlong:11, valor:6.5},
+    {varlong:12, valor:7},
+    {varlong:13, valor:7.5},
+    {varlong:14, valor:8},
+    {varlong:15, valor:8.5},
+    {varlong:16, valor:9},
+    {varlong:17, valor:9.5},
+    {varlong:18, valor:10}
+  ]
+let obj_variable_inst_pickup = varInstPickup.find(o => o.varlong === INST_TRIP_PICKUP)!;
+
+const varRedInst = [
+    {varlong:1, valor:1.5},
+    {varlong:2, valor:2},
+    {varlong:3, valor:2.5},
+    {varlong:4, valor:3},
+    {varlong:5, valor:3.5},
+    {varlong:6, valor:4},
+    {varlong:7, valor:4.5},
+    {varlong:8, valor:5},
+    {varlong:9, valor:5.5},
+    {varlong:10, valor:6},
+    {varlong:11, valor:6.5},
+    {varlong:12, valor:7},
+    {varlong:13, valor:7.5},
+    {varlong:14, valor:8},
+    {varlong:15, valor:8.5},
+    {varlong:16, valor:9},
+    {varlong:17, valor:9.5},
+    {varlong:18, valor:10}
+  ]
+let obj_variable_reduce_inst = varRedInst.find(o => o.varlong === RED_INST_TRIP_PICKUP)!;
 
 
-tchi.Parametros.Ltime_pickup = (Longt_pickup?.toFixed(1));
-tchi.Parametros.Ltime_banda = Number.parseFloat(LT_TRIP_DELAY?.toFixed(1));
-tchi.Parametros.Stime_pickup = (ST_TRIP_PICKUP?.toFixed(1));
-tchi.Parametros.Stime_banda = Number.parseFloat(ST_TRIP_DELAY?.toFixed(1));
-tchi.Parametros.inst_pickup =  (INST_TRIP_PICKUP?.toFixed(1));
-tchi.Parametros.Relinst_pickup = Number.parseFloat(RED_INST_TRIP_PICKUP?.toFixed(1));
+tchi.Parametros.Ltime_pickup = obj_variable_long_pickup?.valor;
+tchi.Parametros.Ltime_banda = obj_variable_long_delay?.valor;
+tchi.Parametros.Stime_pickup = obj_variable_short_pickup?.valor;
+tchi.Parametros.Stime_banda = obj_variable_short_delay?.valor.toString();
+tchi.Parametros.inst_pickup = obj_variable_inst_pickup?.valor.toString();
+tchi.Parametros.Relinst_pickup = obj_variable_reduce_inst?.valor;
 
 //ESTADOS Y ALARMAS
 tchi.Estados.Estado_box = POS === 1? alarmsStyles.on1 : alarmsStyles.off,

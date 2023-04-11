@@ -1,9 +1,9 @@
 import { SimpleOptions } from 'types';
 import { PanelData, InterpolateFunction } from '@grafana/data';
-import { DataPsg } from 'components/variables';
+import { DataTpdu_sec } from 'components/variables';
 import alarmsStyles from 'styles/alarmsStyles';
 
-const DataPsg = (data: PanelData, options:SimpleOptions, replaceVariables:InterpolateFunction): DataPsg => {  
+const DataTpdu_sec = (data: PanelData, options:SimpleOptions, replaceVariables:InterpolateFunction): DataTpdu_sec => {  
     console.log('data: ', data);
     console.log('options: ', options);
     console.log(replaceVariables);
@@ -24,6 +24,8 @@ const DataPsg = (data: PanelData, options:SimpleOptions, replaceVariables:Interp
     ?.lastNotNull;
     let POS = data.series.find(({ name }) => name?.includes('DATA.POS.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
+    /*let TRIP = data.series.find(({ name }) => name?.includes('DATA.TRIP.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;*/
     let POW_APPRT_TOTAL = data.series.find(({ name }) => name?.includes('DATA.POW_APPRT_TOTAL.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let POW_FACT_TOTAL = data.series.find(({ name }) => name?.includes('DATA.POW_FACT_TOTAL.VALUE'))?.fields[1].state?.calcs
@@ -48,16 +50,15 @@ const DataPsg = (data: PanelData, options:SimpleOptions, replaceVariables:Interp
     ?.lastNotNull;
     let RED_INST_TRIP_PICKUP = data.series.find(({ name }) => name?.includes('DATA.RED_INST_TRIP_PICKUP.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
-    
-    
-    let psg: DataPsg ={
+
+    let tpdu_sec: DataTpdu_sec ={
         DatosGenerales: {
             Nombre: '',
             Fase: 'A',
             Sistema: '1&2',
-            Marca: 'POWER BREAK II',
-            Modelo: 'ENTELLIGUARD',
-            Ubicacion: 'EXTERIORES FASE A',
+            Marca: 'GENERAL ELECTRIC',
+            Modelo: 'SPECTRA',
+            Ubicacion: 'CUARTOS ELECTRICOS',
         },
         Principal: {
             Voltage_prom: 0,
@@ -98,25 +99,26 @@ const DataPsg = (data: PanelData, options:SimpleOptions, replaceVariables:Interp
 
     //INTERPOLACION DE VARIABLES
 let variableNombre = replaceVariables('$EQUIPO')
-psg.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
+tpdu_sec.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
 
 //PRINCIPAL
-psg.Principal.Voltage_prom = Number.parseFloat(V_FASE_A?.toFixed(2));
+tpdu_sec.Principal.Voltage_prom = Number.parseFloat(V_FASE_A?.toFixed(2));
 
 let Curr_prom = (CUR_FASE_A + CUR_FASE_B + CUR_FASE_C) / 3;
-psg.Principal.Corriente_prom = Number.parseFloat(Curr_prom?.toFixed(2));
+tpdu_sec.Principal.Corriente_prom = Number.parseFloat(Curr_prom?.toFixed(2));
 
-psg.Principal.fp = Number.parseFloat(POW_FACT_TOTAL?.toFixed(2));
+tpdu_sec.Principal.fp = Number.parseFloat(POW_FACT_TOTAL?.toFixed(2));
 
 //PARAMETROS
-psg.Parametros.Vol_AB = Number.parseFloat(V_FASE_A?.toFixed(2));
-psg.Parametros.Vol_BC = Number.parseFloat(V_FASE_B?.toFixed(2));
-psg.Parametros.Vol_CA = Number.parseFloat(V_FASE_C?.toFixed(2));
-psg.Parametros.CorrienteA = Number.parseFloat(CUR_FASE_A?.toFixed(2));
-psg.Parametros.CorrienteB = Number.parseFloat(CUR_FASE_B?.toFixed(2));
-psg.Parametros.CorrienteC = Number.parseFloat(CUR_FASE_C?.toFixed(2));
-psg.Parametros.Pot_appt = Number.parseFloat(POW_APPRT_TOTAL?.toFixed(2));
-psg.Parametros.Pot_real = Number.parseFloat(POW_REAL_TOTAL?.toFixed(2));
+tpdu_sec.Parametros.Vol_AB = Number.parseFloat(V_FASE_A?.toFixed(2));
+tpdu_sec.Parametros.Vol_BC = Number.parseFloat(V_FASE_B?.toFixed(2));
+tpdu_sec.Parametros.Vol_CA = Number.parseFloat(V_FASE_C?.toFixed(2));
+tpdu_sec.Parametros.CorrienteA = Number.parseFloat(CUR_FASE_A?.toFixed(2));
+tpdu_sec.Parametros.CorrienteB = Number.parseFloat(CUR_FASE_B?.toFixed(2));
+tpdu_sec.Parametros.CorrienteC = Number.parseFloat(CUR_FASE_C?.toFixed(2));
+tpdu_sec.Parametros.Pot_appt = Number.parseFloat(POW_APPRT_TOTAL?.toFixed(2));
+tpdu_sec.Parametros.Pot_real = Number.parseFloat(POW_REAL_TOTAL?.toFixed(2));
+
 
 //PARAMETROS CONFIGURACION
 const varLongPickup = [
@@ -136,50 +138,29 @@ let obj_variable_long_pickup = varLongPickup.find(o => o.varlong === LT_TRIP_PIC
 
 const varLongDelay = [
     {varlong:0, valor:"OFF"},
-    {varlong:1, valor:"C 1"},
-    {varlong:2, valor:"C 2"},
-    {varlong:3, valor:"C 3"},
-    {varlong:4, valor:"C 4"},
-    {varlong:5, valor:"C 5"},
-    {varlong:6, valor:"C 6"},
-    {varlong:7, valor:"C 7"},
-    {varlong:8, valor:"C 8"},
-    {varlong:9, valor:"C 9"},
-    {varlong:10, valor:"C 10"},
-    {varlong:11, valor:"C 11"},
-    {varlong:12, valor:"C 12"},
-    {varlong:13, valor:"C 13"},
-    {varlong:14, valor:"C 14"},
-    {varlong:15, valor:"C 15"},
-    {varlong:16, valor:"C 16"},
-    {varlong:17, valor:"C 17"},
-    {varlong:18, valor:"C 18"},
-    {varlong:19, valor:"C 19"},
-    {varlong:20, valor:"C 20"},
-    {varlong:21, valor:"C 21"},
-    {varlong:22, valor:"C 22"},
-    {varlong:23, valor:"C 23"},
-    {varlong:24, valor:"F 2"},
-    {varlong:25, valor:"F 3"},
-    {varlong:26, valor:"F 4"},
-    {varlong:27, valor:"F 5"},
-    {varlong:28, valor:"F 6"},
-    {varlong:29, valor:"F 7"},
-    {varlong:30, valor:"F 8"},
-    {varlong:31, valor:"F 9"},
-    {varlong:32, valor:"F 10"},
-    {varlong:33, valor:"F 11"},
-    {varlong:34, valor:"F 12"},
-    {varlong:35, valor:"F 13"},
-    {varlong:36, valor:"F 14"},
-    {varlong:37, valor:"F 15"},
-    {varlong:38, valor:"F 16"},
-    {varlong:39, valor:"F 17"},
-    {varlong:40, valor:"F 18"},
-    {varlong:41, valor:"F 19"},
-    {varlong:42, valor:"F 20"},
-    {varlong:43, valor:"F 21"},
-    {varlong:44, valor:"F 22"}
+    {varlong:1, valor:"MVT 1"},
+    {varlong:2, valor:"MVT 2"},
+    {varlong:3, valor:"MVT 3"},
+    {varlong:4, valor:"MVT 4"},
+    {varlong:5, valor:"C 1"},
+    {varlong:6, valor:"C 2"},
+    {varlong:7, valor:"C 3"},
+    {varlong:8, valor:"C 4"},
+    {varlong:9, valor:"C 5"},
+    {varlong:10, valor:"C 6"},
+    {varlong:11, valor:"C 7"},
+    {varlong:12, valor:"C 8"},
+    {varlong:13, valor:"C 9"},
+    {varlong:14, valor:"C 10"},
+    {varlong:15, valor:"C 11"},
+    {varlong:16, valor:"F 1"},
+    {varlong:17, valor:"F 2"},
+    {varlong:18, valor:"C 3"},
+    {varlong:19, valor:"C 4"},
+    {varlong:20, valor:"C 5"},
+    {varlong:21, valor:"C 6"},
+    {varlong:22, valor:"F 7"},
+    {varlong:23, valor:"F 8"}
   ]
 let obj_variable_long_delay = varLongDelay.find(o => o.varlong === LT_TRIP_DELAY)!;
 
@@ -199,19 +180,7 @@ const varShortPickup = [
     {varlong:13, valor:7.5},
     {varlong:14, valor:8.0},
     {varlong:15, valor:8.5},
-    {varlong:16, valor:9.0},
-    {varlong:17, valor:9.5},
-    {varlong:18, valor:10},
-    {varlong:19, valor:10.5},
-    {varlong:20, valor:11},
-    {varlong:21, valor:11.5},
-    {varlong:22, valor:12},
-    {varlong:23, valor:12.5},
-    {varlong:24, valor:13},
-    {varlong:25, valor:13.5},
-    {varlong:26, valor:14},
-    {varlong:27, valor:14.5},
-    {varlong:28, valor:15}
+    {varlong:16, valor:9.0}
   ]
 let obj_variable_short_pickup = varShortPickup.find(o => o.varlong === ST_TRIP_PICKUP)!;
 
@@ -228,12 +197,7 @@ const varShortDelay = [
     {varlong:9, valor:9},
     {varlong:10, valor:10},
     {varlong:11, valor:11},
-    {varlong:12, valor:12},
-    {varlong:13, valor:13},
-    {varlong:14, valor:14},
-    {varlong:15, valor:15},
-    {varlong:16, valor:16},
-    {varlong:17, valor:17}
+    {varlong:12, valor:12}
 ]
 
 let obj_variable_short_delay = varShortDelay.find(o => o.varlong === ST_TRIP_DELAY)!;
@@ -257,33 +221,7 @@ const varInstPickup = [
     {varlong:15, valor:8.5},
     {varlong:16, valor:9},
     {varlong:17, valor:9.5},
-    {varlong:18, valor:10},
-    {varlong:19, valor:10.5},
-    {varlong:20, valor:11},
-    {varlong:21, valor:11.5},
-    {varlong:22, valor:12},
-    {varlong:23, valor:12.5},
-    {varlong:24, valor:13},
-    {varlong:25, valor:13.5},
-    {varlong:26, valor:14},
-    {varlong:27, valor:14.5},
-    {varlong:28, valor:15},
-    {varlong:29, valor:15.5},
-    {varlong:30, valor:16},
-    {varlong:31, valor:16.5},
-    {varlong:32, valor:17},
-    {varlong:33, valor:17.5},
-    {varlong:34, valor:18},
-    {varlong:35, valor:18.5},
-    {varlong:36, valor:19},
-    {varlong:37, valor:19.5},
-    {varlong:38, valor:20},
-    {varlong:39, valor:20.5},
-    {varlong:40, valor:21},
-    {varlong:41, valor:21.5},
-    {varlong:42, valor:22},
-    {varlong:43, valor:29},
-    {varlong:44, valor:30},
+    {varlong:18, valor:10}
   ]
 let obj_variable_inst_pickup = varInstPickup.find(o => o.varlong === INST_TRIP_PICKUP)!;
 
@@ -305,44 +243,34 @@ const varRedInst = [
     {varlong:15, valor:8.5},
     {varlong:16, valor:9},
     {varlong:17, valor:9.5},
-    {varlong:18, valor:10},
-    {varlong:19, valor:10.5},
-    {varlong:20, valor:11},
-    {varlong:21, valor:11.5},
-    {varlong:22, valor:12},
-    {varlong:23, valor:12.5},
-    {varlong:24, valor:13},
-    {varlong:25, valor:13.5},
-    {varlong:26, valor:14},
-    {varlong:27, valor:14.5},
-    {varlong:28, valor:15}
+    {varlong:18, valor:10}
   ]
 let obj_variable_reduce_inst = varRedInst.find(o => o.varlong === RED_INST_TRIP_PICKUP)!;
 
-psg.Parametros.Ltime_pickup = obj_variable_long_pickup?.valor;
-psg.Parametros.Ltime_banda = obj_variable_long_delay?.valor;
-psg.Parametros.Stime_pickup = obj_variable_short_pickup?.valor;
-psg.Parametros.Stime_banda = obj_variable_short_delay?.valor.toString();
-psg.Parametros.inst_pickup = obj_variable_inst_pickup?.valor.toString();
-psg.Parametros.Relinst_pickup = obj_variable_reduce_inst?.valor;
+
+tpdu_sec.Parametros.Ltime_pickup = obj_variable_long_pickup?.valor;
+tpdu_sec.Parametros.Ltime_banda = obj_variable_long_delay?.valor;
+tpdu_sec.Parametros.Stime_pickup = obj_variable_short_pickup?.valor;
+tpdu_sec.Parametros.Stime_banda = obj_variable_short_delay?.valor.toString();
+tpdu_sec.Parametros.inst_pickup = obj_variable_inst_pickup?.valor.toString();
+tpdu_sec.Parametros.Relinst_pickup = obj_variable_reduce_inst?.valor;
 
 //ESTADOS Y ALARMAS
-psg.Estados.Estado_box = POS === 1? alarmsStyles.on1 : alarmsStyles.off,
-psg.Estados.warning_box = WARNING_ST === 1? alarmsStyles.on2 : '',
-psg.Estados.Botón = POS === 1? alarmsStyles.on1 : alarmsStyles.off,
-psg.Estados.warning_boton = WARNING_ST === 1? alarmsStyles.on2 : '',
+tpdu_sec.Estados.Estado_box = POS === 1? alarmsStyles.on1 : alarmsStyles.off,
+tpdu_sec.Estados.warning_box = WARNING_ST === 1? alarmsStyles.on2 : '',
+tpdu_sec.Estados.Botón = POS === 1? alarmsStyles.on1 : alarmsStyles.off,
+tpdu_sec.Estados.warning_boton = WARNING_ST === 1? alarmsStyles.on2 : '',
 
-psg.Estados.EstadoON = POS === 1? 'CERRADO' : 'ABIERTO',
-//psg.Estados.EstadoOFF = POS === 0? 'ABIERTO' : '',
-psg.Estados.st_Modbus = MODBUS_ST === 1? alarmsStyles.on1 : alarmsStyles.off,
-psg.Estados.warning_txt = WARNING_ST === 1? 'ALARMADO': '',
-psg.Estados.warning_led = WARNING_ST >=1? alarmsStyles.on2 : alarmsStyles.off,
+tpdu_sec.Estados.EstadoON = POS === 1? 'CERRADO' : 'ABIERTO',
+//tpdu_sec.Estados.EstadoOFF = POS === 0? 'ABIERTO' : '',
+tpdu_sec.Estados.st_Modbus = MODBUS_ST === 1? alarmsStyles.on1 : alarmsStyles.off,
+//tpdu_sec.Estados.warning_txt = WARNING_ST === 1? 'ALARMADO': '',
+//tpdu_sec.Estados.warning_led = WARNING_ST >=1? alarmsStyles.on2 : alarmsStyles.off;
+//tpdu_sec.Estados.warning_led = TRIP >=1? alarmsStyles.on2 : alarmsStyles.off;
 
 
-
-
-console.log(psg);
-return psg;
+console.log(tpdu_sec);
+return tpdu_sec;
 };
 
-export default DataPsg;
+export default DataTpdu_sec;

@@ -22,13 +22,13 @@ type Parametros ={
   Vol_CA: number;
   Pot_real: number;
   Pot_appt: number;
-  Ltime_curve: number;
-  Ltime_banda: number;
+  Ltime_curve: string;
+  Ltime_banda: string;
   Ltime_pickup: number;
-  Stime_curve: number;
-  Stime_banda: number;
+  Stime_curve: string;
+  Stime_banda: string;
   Stime_pickup: number;
-  inst_pickup: number;
+  inst_pickup: string;
   Relinst_pickup: number;
 };
 type Estados ={
@@ -202,7 +202,7 @@ export const Variables = ({DatosGenerales, Parametros, Estados, Principal }: Dat
         fontSize="5.6444px"
         strokeWidth={0.26458}
       >
-        C {Parametros.Ltime_banda}
+      {Parametros.Ltime_banda}
       </tspan>
     </text>
     <text
@@ -983,29 +983,6 @@ export const Variables = ({DatosGenerales, Parametros, Estados, Principal }: Dat
       fill="#00990c"
       filter="url(#filter2663)"
       className={Estados.Botón}
-    />
-    //BOTON WARNING
-    <path
-      id="path15781"
-      d="M212.93 170.28a5.861 5.861 0 00-4.066 1.662 5.7 5.7 0 00-1.684 4.01c0 1.484.62 2.96 1.684 4.01a5.86 5.86 0 004.066 1.662 5.861 5.861 0 004.066-1.662 5.7 5.7 0 001.684-4.01 5.7 5.7 0 00-1.684-4.01 5.86 5.86 0 00-4.066-1.662zm0 .835a5.03 5.03 0 013.475 1.42c.904.891 1.435 2.158 1.435 3.417s-.531 2.525-1.435 3.417a5.03 5.03 0 01-3.475 1.42 5.03 5.03 0 01-3.475-1.42c-.904-.892-1.435-2.159-1.435-3.417s.531-2.526 1.435-3.418a5.03 5.03 0 013.475-1.42z"
-      fill="#00990c"
-      className={Estados.warning_boton}
-    />
-    <path
-      id="path2489"
-      transform="translate(123.18 126.62) scale(.14885)"
-      d="M601.87 320.96c.063-1.312 2.784-1.358 2.69.07-.033.121 0 9.401 0 9.401-.347 1.078-2.153 1.292-2.713 0z"
-      fill="#00990c"
-      filter="url(#filter2703)"
-      className={Estados.warning_boton}
-    />
-    <path
-      id="path2649"
-      transform="translate(123.18 126.62) scale(.14885)"
-      d="M597.57 325.63c1.697.335 1.59 1.335 1.404 2.364-1.343 1.49-2.998 2.762-2.868 5.287.434 2.218.972 4.389 3.417 5.673 2.376 1.244 4.814 1.155 6.562.177 1.888-1.079 3.769-3.085 3.728-5.85-.088-2.4-1.275-4.226-3.313-5.607.084-.983-.099-2.122 2.022-1.917 2.273 1.96 4.04 4.21 3.95 7.536 0 3.557-1.8 6.427-5.653 8.51-2.77 1.344-5.445.865-8.09-.167-2.57-1.48-5.569-3.356-5.217-9.529.748-3.306 2.154-5.363 4.058-6.477z"
-      fill="#00990c"
-      filter="url(#filter2663)"
-      className={Estados.warning_boton}
     />
   </g>
             )

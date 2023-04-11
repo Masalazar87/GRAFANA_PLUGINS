@@ -1,7 +1,7 @@
 {
-  "name": "telconet-menu",
+  "name": "telconet-tpdu_sec",
   "version": "1.0.0",
-  "description": "plugin de breakers psg",
+  "description": "plugin de breakers tpdu_sec",
   "scripts": {
     "build": "grafana-toolkit plugin:build",
     "test": "grafana-toolkit plugin:test",
@@ -20,8 +20,5 @@
   },
   "engines": {
     "node": ">=14"
-  },
-  "dependencies": {
-    "sweetalert": "^2.1.2"
   }
 }

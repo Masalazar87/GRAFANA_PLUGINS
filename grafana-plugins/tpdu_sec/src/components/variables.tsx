@@ -43,14 +43,14 @@ type Estados ={
   warning_box: string;
 };
 
-export interface DataTpdu {
+export interface DataTpdu_sec {
 DatosGenerales: DatosGenerales;
 Principal: Principal;
 Parametros: Parametros; 
 Estados: Estados;
 }
 
-export const Variables = ({DatosGenerales, Parametros, Estados, Principal }: DataTpdu) => {
+export const Variables = ({DatosGenerales, Parametros, Estados, Principal }: DataTpdu_sec) => {
   return (   
     <g 
     id="layer2">
@@ -60,9 +60,8 @@ export const Variables = ({DatosGenerales, Parametros, Estados, Principal }: Dat
       fill="#1aea78"
       strokeWidth={0.26219}
       d="M100.25 13.061H158.285V31.112H100.25z"
-      className={Estados.Estado_box}
+      //className={Estados.Estado_box}
     />
-   
     <path
     id="color_st"
     fillRule="evenodd"
@@ -563,7 +562,7 @@ export const Variables = ({DatosGenerales, Parametros, Estados, Principal }: Dat
         fontSize="5.6444px"
         strokeWidth={0.26458}
       >
-        {Parametros.Pot_appt} KVA
+        {Parametros.Pot_real} KW
       </tspan>
     </text>
     <text
@@ -589,7 +588,7 @@ export const Variables = ({DatosGenerales, Parametros, Estados, Principal }: Dat
         fontSize="5.6444px"
         strokeWidth={0.26458}
       >
-        {Parametros.Pot_real} KW
+        {Parametros.Pot_appt} KVA
       </tspan>
     </text>
     <text
