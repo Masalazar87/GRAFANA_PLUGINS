@@ -343,7 +343,7 @@ tpdu.Estados.warning_led = WARNING_ST >=1? alarmsStyles.on2 : alarmsStyles.off,
 
 
 console.log(tpdu);
-return tpdu;
+return tpdu;          
 };
 
 export default DataTpdu;

@@ -6,9 +6,50 @@ import { DataPrincipal } from 'components/variables2';
 import estadosStyles from 'styles/estadosStyles';
 import alarmasStyles from 'styles/alarmasStyles';
 
-const dataPrincipal = (data: PanelData, options: SimpleOptions): DataPrincipal => {  
+import 'modules/stylesPop.css';
+
+const swal = require('sweetalert');
+const imgPopUp=require.context('../img/imgalarmas/',true);
+
+let colorEstado = 'NA';
+let msgEstado = 'NA';
+let audioAlm = 'http://172.30.128.202:1880/uimedia/audio/alarma.mp4';
+let imgEquipo = '';
+let nomEquipo = '';
+//IMAGENES DE EQUIPOS PARA LOS POP_UPS"
+
+let imgGenAlm= imgPopUp('./gen_alm.png');
+let imgGenAdv= imgPopUp('./gen_adv.png');
+
+
+function reproducir(sonido: any) {
+    const audio = new Audio(sonido);
+    audio.play();
+  }
+  
+function PopUp(cookieVar: any, equipo: any, variable: any, nomCookie: any) {
+    if (cookieVar === null) {
+      localStorage.setItem('gyecookie_'+nomCookie, variable);
+    } else {
+        if (cookieVar !== ''+ variable) {
+         reproducir(audioAlm);
+          swal({
+            className: colorEstado,
+            title: equipo,
+            text: 'EQUIPO' + msgEstado,
+            icon: imgEquipo,
+          }).then((value: any) => {
+            localStorage.setItem('gyecookie_'+nomCookie,variable);
+          });
+                //console.log("alarma")
+          localStorage.setItem('gyecookie_'+nomCookie,variable);}}}
+
+
+const dataPrincipal = (data: PanelData, options: SimpleOptions): DataPrincipal => { 
     console.log('data: ', data);
     console.log('options: ', options);
+
+    
 //-------------------------------------------VARIABLES DE ESTADOS--------------------------------------------    
 //ESTADOS
 let st_on = estadosStyles.on;
@@ -17,24 +58,43 @@ let st_off = estadosStyles.sinconexion;
 let alarm_on = alarmasStyles.on;
 let alarm_off = alarmasStyles.sinconexion;
 //WARNINGS
-/*let warning_on = alarmasStyles.on1;
-let warning_off = alarmasStyles.sinconexion;*/
+let warning_on = alarmasStyles.on1;
+let warning_off = alarmasStyles.sinconexion;
 
 //----------------------------------------ESTADOS Y ALARMAS DE UMAS------------------------------------------
 let st_uma = [];
 let al_uma = [];
 for (let i = 1; i <= 12; i++) {
+    nomEquipo = '1/UMA-' + (i);
+    let imgUmaAlm= imgPopUp('./uma_alm.png')
+    let imgUmaAdv= imgPopUp('./uma_adv.png')
+    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+    //let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
 st_uma[i] = data.series.find(({ name }) => name?.includes('ST_UMA' + i))?.fields[1].state?.calcs?.lastNotNull;
 al_uma[i] = data.series.find(({ name }) => name?.includes('AL_UMA' + i))?.fields[1].state?.calcs?.lastNotNull;
 if (st_uma[i] === 1) {
     st_uma[i] = st_on;
+    msgEstado=" ENCENDIDO"
+    imgEquipo=imgUmaAdv;
+    colorEstado='advertencia'
+        PopUp(cookieEstado,nomEquipo,1,nomEquipo)
     }   else {
-    st_uma[i] = st_off;
+        msgEstado=" APAGADO"
+        imgEquipo=imgUmaAlm;
+        colorEstado='alarma'
+        st_uma[i] = st_off;
+            PopUp(cookieEstado,nomEquipo,0,nomEquipo)
     }
     if (al_uma[i] === 1) {
         al_uma[i] = alarm_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgUmaAlm;
+        colorEstado='advertencia'
+            PopUp(cookieAdv, nomEquipo, 1, nomEquipo + 'adv');
         }   else {
-        al_uma[i] = alarm_off;
+            al_uma[i] = alarm_off;
+                localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')
         }
 }
 //---------------------------------------------PARAMETROS DE UMAS--------------------------------------------
@@ -56,53 +116,146 @@ for (let i = 1; i <= 12; i++) {
         } 
     }
 //--------------------------------------ESTADOS Y ALARMAS DE UPS 200KVA--------------------------------------
-
-let st_ups1a = [];
-let st_ups2a = [];
-let al_ups1a = [];
-let al_ups2a = [];
-for (let i = 1; i <= 6; i++) {
-    st_ups1a[i] = data.series.find(({ name }) => name?.includes('ST_UPS1A_' + i))?.fields[1].state?.calcs?.lastNotNull;
-    st_ups2a[i] = data.series.find(({ name }) => name?.includes('ST_UPS2A_' + i))?.fields[1].state?.calcs?.lastNotNull;
-    al_ups1a[i] = data.series.find(({ name }) => name?.includes('AL_UPS1A_' + i))?.fields[1].state?.calcs?.lastNotNull;
-    al_ups2a[i] = data.series.find(({ name }) => name?.includes('AL_UPS2A_' + i))?.fields[1].state?.calcs?.lastNotNull;
-    if (st_ups1a[i] === 1) {
-        st_ups1a[i] = st_on;
+let st_ups_1a = [];
+let al_ups_1a = [];
+let st_ups_2a = [];
+let al_ups_2a = [];
+    
+    for (let i = 1; i <= 6; i++) {
+    let nomEquipo = 'UPS 1-' + (i) + 'A';
+    let imgUpsAlm= imgPopUp('./ups_alm.png')
+    let imgUpsAdv= imgPopUp('./ups_adv.png')
+    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    //let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
+    st_ups_1a[i] = data.series.find(({ name }) => name?.includes('ST_UPS_1A_' + i))?.fields[1].state?.calcs?.lastNotNull;
+    al_ups_1a[i] = data.series.find(({ name }) => name?.includes('AL_UPS_1A_' + i))?.fields[1].state?.calcs?.lastNotNull;
+//UPS SISTEMA 1
+    if (st_ups_1a[i] === 1) {
+        st_ups_1a[i] = st_on;
+        msgEstado=" ENCENDIDO"
+        imgEquipo=imgUpsAdv;
+        colorEstado='advertencia'
+            PopUp(cookieEstado,nomEquipo,1,nomEquipo)
         }   else {
-            st_ups1a[i] = st_off;
-        }
-    if (st_ups2a[i] === 1) {
-        st_ups2a[i] = st_on;
+        msgEstado=" APAGADO"
+            imgEquipo=imgUpsAlm;
+                    colorEstado='alarma'
+                    st_ups_1a[i] = st_off;
+                        PopUp(cookieEstado,nomEquipo,0,nomEquipo)
+                }
+    if (al_ups_1a[i] >=1) {
+        al_ups_1a[i] = alarm_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgUpsAlm;
+        colorEstado='alarma'
+            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
         }   else {
-            st_ups2a[i] = st_off;
-        }
-    if (al_ups1a[i] > 0) {
-        al_ups1a[i] = alarm_on;
+        al_ups_1a[i] = alarm_off;
+            localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
+            }
+    /*if (al_ups_1a[i] >= 2) { //WARNING
+        al_ups_1a[i] = warning_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgUpsAdv;
+        colorEstado='advertencia'
+            PopUp(cookieAdv, nomEquipo, 1, nomEquipo + 'adv');
         }   else {
-            al_ups1a[i] = alarm_off;
-        } 
-    if (al_ups2a[i] > 0) {
-        al_ups2a[i] = alarm_on;
-        }   else {
-            al_ups2a[i] = alarm_off;
-        }    
+            al_ups_1a[i] = warning_off;
+            localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')
+            }*/                       
 }
+for (let i = 1; i <= 6; i++) {
+    let nomEquipo = 'UPS 2-' + (i) + 'A';
+    let imgUpsAlm= imgPopUp('./ups_alm.png')
+    let imgUpsAdv= imgPopUp('./ups_adv.png')
+    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    //let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
+    st_ups_2a[i] = data.series.find(({ name }) => name?.includes('ST_UPS_2A_' + i))?.fields[1].state?.calcs?.lastNotNull;
+    al_ups_2a[i] = data.series.find(({ name }) => name?.includes('AL_UPS_2A_' + i))?.fields[1].state?.calcs?.lastNotNull;
+    //UPS SISTEMA 2
+    if (st_ups_2a[i] === 1) {
+        st_ups_2a[i] = st_on;
+        msgEstado=" ENCENDIDO"
+        imgEquipo=imgUpsAdv;
+        colorEstado='advertencia'
+            PopUp(cookieEstado,nomEquipo,1,nomEquipo)
+        }   else {
+        msgEstado=" APAGADO"
+            imgEquipo=imgUpsAlm;
+                    colorEstado='alarma'
+                    st_ups_2a[i] = st_off;
+                        PopUp(cookieEstado,nomEquipo,0,nomEquipo)
+                }
+    if (al_ups_2a[i] >= 1) {
+        al_ups_2a[i] = alarm_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgUpsAlm;
+        colorEstado='alarma'
+            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
+        }   else {
+        al_ups_2a[i] = alarm_off;
+            localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
+            }
+    /*if (al_ups_2a[i] >= 2) { //WARNING
+        al_ups_2a[i] = alarm_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgUpsAdv;
+        colorEstado='advertencia'
+            PopUp(cookieAdv, nomEquipo, 1, nomEquipo + 'adv');
+        }   else {
+            al_ups_2a[i] = alarm_off;
+            localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')
+            }   */                    
+    }
+
 //---------------------------------------ESTADOS Y ALARMAS DE UPS CHI 200KVA---------------------------------
 let st_upschi = [];
 let al_upschi = [];
 for (let i = 1; i <= 2; i++) {
+    nomEquipo = 'UPS-CHI' + (i) + 'A';
+    let imgUpsAlm= imgPopUp('./ups_alm.png')
+    let imgUpsAdv= imgPopUp('./ups_adv.png')
+    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    //let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
     st_upschi[i] = data.series.find(({ name }) => name?.includes('ST_UPS_CHI_' + i + 'A'))?.fields[1].state?.calcs?.lastNotNull;
     al_upschi[i] = data.series.find(({ name }) => name?.includes('AL_UPS_CHI_' + i + 'A'))?.fields[1].state?.calcs?.lastNotNull;
-    if (st_upschi[i] === 1) {
+    
+    if (st_upschi[i] === 1) { //ESTADO
+        msgEstado=" ENCENDIDO"
+        imgEquipo=imgUpsAdv;
+        colorEstado='advertencia'
         st_upschi[i] = st_on;
-        }   else {
+            PopUp(cookieEstado,nomEquipo,1,nomEquipo)
+         }   else {
+            msgEstado=" APAGADO"
+            imgEquipo=imgUpsAlm;
+            colorEstado='alarma'
             st_upschi[i] = st_off;
+                PopUp(cookieEstado,nomEquipo,0,nomEquipo)
         }
-    if (al_upschi[i] > 0) {
-        al_upschi[i] = alarm_on;
+    if (al_upschi[i] >= 1) { //ALARMA
+        al_upschi[i]=alarm_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgUpsAlm;
+        colorEstado='alarma'
+            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
         }   else {
             al_upschi[i] = alarm_off;
+                localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
         }
+    /*if (al_upschi[i] === 2) { //WARNING
+        al_upschi[i]=warning_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgUpsAdv;
+        colorEstado='advertencia'
+            PopUp(cookieAdv, nomEquipo, 1, nomEquipo + 'adv');
+        }   else {
+            al_upschi[i] = warning_off;
+                localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')
+                }  */          
 }
 //--------------------------------------------PARAMETROS UPS CHI 200KVA--------------------------------------
 let VIN_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('VIN_UPS_CHI_1A'))?.fields[1].state?.calcs
@@ -110,53 +263,109 @@ let VIN_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('VIN_UPS_CHI_
 let VOUT_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('VOUT_UPS_CHI_1A'))?.fields[1].state?.calcs
 ?.lastNotNull;
 let IOUT_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('IOUT_UPS_CHI_1A'))?.fields[1].state?.calcs
-?.lastNotNull/10;
+?.lastNotNull;
 let LOAD_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('LOAD_UPS_CHI_1A'))?.fields[1].state?.calcs
 ?.lastNotNull;
-
 let VIN_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('VIN_UPS_CHI_2A'))?.fields[1].state?.calcs
 ?.lastNotNull;
 let VOUT_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('VOUT_UPS_CHI_2A'))?.fields[1].state?.calcs
 ?.lastNotNull;
 let IOUT_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('IOUT_UPS_CHI_2A'))?.fields[1].state?.calcs
-?.lastNotNull/10;
+?.lastNotNull;
 let LOAD_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('LOAD_UPS_CHI_2A'))?.fields[1].state?.calcs
 ?.lastNotNull;
 //--------------------------------------ESTADOS DE UPS 10KVA Y RECTIFICADORES -------------------------------
 
 let alups10kva = [];
 let stups10kva = [];
-let strec = [];
-for (let i = 1; i <= 4; i++) {
+for (let i = 1; i <= 4; i++) {   
+    nomEquipo = 'UPS_' + (i) + 'A';
+    if (i===1){nomEquipo = 'UPS_OFFICES_1A'; }
+    if (i===2){nomEquipo = 'UPS_SAT_1A'; }
+    if (i===3){nomEquipo = 'UPS_NOC_2A'; }
+    if (i===4){nomEquipo = 'UPS_SAT_2A'; }
+    let imgUpsAlm= imgPopUp('./ups10_alm.png')
+    let imgUpsAdv= imgPopUp('./ups10_adv.png')
+    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    //let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
     alups10kva[i] = data.series.find(({ name }) => name?.includes('AL_UPS10KVA_' + i))?.fields[1].state?.calcs?.lastNotNull;
     stups10kva[i] = data.series.find(({ name }) => name?.includes('ST_UPS10KVA_' + i))?.fields[1].state?.calcs?.lastNotNull;    
-    if (alups10kva[i] > 0 ){
-        alups10kva[i] = alarm_on;
-    } else {alups10kva[i] = alarm_off;
-    }
     if (stups10kva[i] > 190){
+        msgEstado=" ENCENDIDO"
+        imgEquipo=imgUpsAdv;
+        colorEstado='advertencia'
         stups10kva[i] = st_on;
-    } else {stups10kva[i] = st_off;
+        PopUp(cookieEstado,nomEquipo,1,nomEquipo)
+    } else {
+            msgEstado=" APAGADO"
+            imgEquipo=imgUpsAlm;
+            colorEstado='alarma'
+            stups10kva[i] = st_off;
+            PopUp(cookieEstado,nomEquipo,0,nomEquipo)
     }
+    if (alups10kva[i] === 1 ){
+        alups10kva[i] = alarm_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgUpsAlm;
+        colorEstado='alarma'
+            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
+    } else {
+        alups10kva[i] = alarm_off;
+            localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
+    }    
 }
+/////////RECTIFICADORES
+let strec = [];
 for (let i = 1; i <= 2; i++) {
+    nomEquipo = 'REC_' + (i) + 'A';
+    let imgRecAlm= imgPopUp('./rec_alm.png')
+    let imgRecAdv= imgPopUp('./rec_adv.png')
+    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    //let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
     strec[i] = data.series.find(({ name }) => name?.includes('ST_REC_' + i + 'A'))?.fields[1].state?.calcs?.lastNotNull;
     if (strec[i] === 1 ){
         strec[i] = st_on;
+        msgEstado=" ENCENDIDO"
+        imgEquipo=imgRecAdv;
+        colorEstado='advertencia'
+            PopUp(cookieEstado,nomEquipo,1,nomEquipo)
     } else 
         if (strec[i] >= 2 ){
             strec[i] = alarm_on;
+            msgEstado=" ALARMA"
+            imgEquipo=imgRecAlm;
+            colorEstado='alarma'
+                PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
     }else 
         if (strec[i] === 0){
         strec[i] = st_off;
+        msgEstado=" APAGADO"
+        imgEquipo=imgRecAlm;
+        colorEstado='alarma'
+            PopUp(cookieEstado,nomEquipo,0,nomEquipo)
         }
 }
 //-------------------------------------------------------------------------------------------------------------
 //---------------------------------------ESTADOS Y ALARMAS CHILLERS SISTEMA 1&2----------------------------------
-let ST_EA1 = data.series.find(({ name }) => name?.includes('ST_EA1'))?.fields[1].state?.calcs?.lastNotNull;
+let st_chiller = [];
+let al_chiller = [];
+let ms_chiller = [];
+for (let i = 1; i <= 4; i++) {
+    nomEquipo = '1/EA(' + (i) + ')';
+    let imgChiAlm= imgPopUp('./ups_alm.png')
+    let imgChiAdv= imgPopUp('./ups_adv.png')
+    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
+/*let ST_EA1 = data.series.find(({ name }) => name?.includes('ST_EA1'))?.fields[1].state?.calcs?.lastNotNull;
 let ST_EA2 = data.series.find(({ name }) => name?.includes('ST_EA2'))?.fields[1].state?.calcs?.lastNotNull;
 let ST_EA3 = data.series.find(({ name }) => name?.includes('ST_EA3'))?.fields[1].state?.calcs?.lastNotNull;
-let ST_EA4 = data.series.find(({ name }) => name?.includes('ST_EA4'))?.fields[1].state?.calcs?.lastNotNull;
+let ST_EA4 = data.series.find(({ name }) => name?.includes('ST_EA4'))?.fields[1].state?.calcs?.lastNotNull;*/
+st_chiller[i] = data.series.find(({ name }) => name?.includes('ST_EA' + i))?.fields[1].state?.calcs?.lastNotNull; 
+al_chiller[i] = data.series.find(({ name }) => name?.includes('AL_EA' + i))?.fields[1].state?.calcs?.lastNotNull;  
+ms_chiller[i] = data.series.find(({ name }) => name?.includes('MS_EA' + i))?.fields[1].state?.calcs?.lastNotNull;    
 /*let F1_EA_1_S = data.series.find(({ name }) => name?.includes('F1_EA_1_S'))?.fields[1].state?.calcs
 ?.lastNotNull;
 let F1_EA_2_S = data.series.find(({ name }) => name?.includes('F1_EA_2_S'))?.fields[1].state?.calcs
@@ -165,7 +374,7 @@ let F1_EA_3_S = data.series.find(({ name }) => name?.includes('F1_EA_3_S'))?.fie
 ?.lastNotNull;
 let F1_EA_4_S = data.series.find(({ name }) => name?.includes('F1_EA_4_S'))?.fields[1].state?.calcs
 ?.lastNotNull;*/
-let F1_EA_1_MS = data.series.find(({ name }) => name?.includes('F1_EA_1_MS'))?.fields[1].state?.calcs
+/*let F1_EA_1_MS = data.series.find(({ name }) => name?.includes('F1_EA_1_MS'))?.fields[1].state?.calcs
 ?.lastNotNull;
 let F1_EA_2_MS = data.series.find(({ name }) => name?.includes('F1_EA_2_MS'))?.fields[1].state?.calcs
 ?.lastNotNull;
@@ -180,7 +389,44 @@ let EA_2_AL = data.series.find(({ name }) => name?.includes('EA_2_AL'))?.fields[
 let EA_3_AL = data.series.find(({ name }) => name?.includes('EA_3_AL'))?.fields[1].state?.calcs
 ?.lastNotNull;
 let EA_4_AL = data.series.find(({ name }) => name?.includes('EA_4_AL'))?.fields[1].state?.calcs
-?.lastNotNull;
+?.lastNotNull;*/
+if (st_chiller[i] === 1) { //ESTADO
+    msgEstado=" ENCENDIDO"
+    imgEquipo=imgChiAdv;
+    colorEstado='advertencia'
+    st_chiller[i] = st_on;
+        PopUp(cookieEstado,nomEquipo,1,nomEquipo)
+     }   else {
+        msgEstado=" APAGADO"
+        imgEquipo=imgChiAlm;
+        colorEstado='alarma'
+        st_chiller[i] = st_off;
+            PopUp(cookieEstado,nomEquipo,0,nomEquipo)
+    }
+if (al_chiller[i] === 1) { //ALARMA
+    al_chiller[i]=alarm_on;
+    msgEstado=" ALARMA"
+    imgEquipo=imgChiAlm;
+    colorEstado='alarma'
+        PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
+    }   else {
+        al_chiller[i] = alarm_off;
+            localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
+    }
+if (ms_chiller[i] === 2) { //WARNING
+    ms_chiller[i] = warning_on;
+    //ms_chiller[i]= alarmasStyles.mant;
+    msgEstado=" ALARMA"
+    imgEquipo=imgChiAdv;
+    colorEstado='advertencia'
+        PopUp(cookieAdv, nomEquipo, 1, nomEquipo + 'adv');
+    }   else {
+        ms_chiller[i] = warning_off;
+        ms_chiller[i] = alarmasStyles.sinconexion;
+            localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')
+            }            
+}
+
 //-----------------------------------------PARAMETROS CHILLERS SISTEMA 1&2---------------------------------------
 let TSUM_EA_1 = data.series.find(({ name }) => name?.includes('TSUM_EA_1'))?.fields[1].state?.calcs
 ?.lastNotNull;
@@ -204,17 +450,36 @@ let TRET_EA_4 = data.series.find(({ name }) => name?.includes('TRET_EA_4'))?.fie
 let st_1b1 = [];
 let al_1b1 = [];
 for (let i = 1; i <= 6; i++) {
+    nomEquipo = 'Bomba Primaria 1/B1('+(i)+')';
+    let imgVarAlm= imgPopUp('./bomba_alm.png')
+    let imgVarAdv= imgPopUp('./bomba_adv.png')
+    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    //let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
     st_1b1[i] = data.series.find(({ name }) => name?.includes('DATA.F1_B1_' + i + '_S.VALUE'))?.fields[1].state?.calcs?.lastNotNull;   
     al_1b1[i] = data.series.find(({ name }) => name?.includes('DATA.F1_B1_' + i + '_A.VALUE'))?.fields[1].state?.calcs?.lastNotNull;   
     if (st_1b1[i] === 1) {
+        msgEstado=" ENCENDIDO"
+        imgEquipo=imgVarAdv;
+        colorEstado='advertencia'
         st_1b1[i] = st_on;
+            PopUp(cookieEstado,nomEquipo,1,nomEquipo)
         }   else {
+            msgEstado=" APAGADO"
+            imgEquipo=imgVarAlm;
+            colorEstado='alarma'
             st_1b1[i] = st_off;
+                PopUp(cookieEstado,nomEquipo,0,nomEquipo)
         }
     if (al_1b1[i] === 2) {
         al_1b1[i] = alarm_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgVarAlm;
+        colorEstado='alarma'
+            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
         }   else {
             al_1b1[i] = alarm_off;
+            localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
         }
 }
 //BOMBAS SECUNDARIAS
@@ -222,13 +487,26 @@ let st_1b2 = [];
 let load_1b2 = [];
 let al_1b2 = [];
 for (let i = 1; i <= 4; i++) {
+    nomEquipo = 'Bomba Secundaria 1/B2('+(i)+')';
+    let imgVarAlm= imgPopUp('./var_alm.png')
+    let imgVarAdv= imgPopUp('./var_adv.png')
+    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
     st_1b2[i] = data.series.find(({ name }) => name?.includes('DATA.F1_B2_' + i + '_S.VALUE'))?.fields[1].state?.calcs?.lastNotNull;   
     load_1b2[i] = data.series.find(({ name }) => name?.includes('DATA.F1_B2_' + i + '_L.VALUE'))?.fields[1].state?.calcs?.lastNotNull;   
     al_1b2[i] = data.series.find(({ name }) => name?.includes('DATA.F1_B2_' + i + '_A.VALUE'))?.fields[1].state?.calcs?.lastNotNull;   
     if (st_1b2[i] === 1) {
+        msgEstado=" ENCENDIDO"
+        imgEquipo=imgVarAdv;
+        colorEstado='advertencia'
         st_1b2[i] = st_on;
+        PopUp(cookieEstado,nomEquipo,1,nomEquipo)
         }   else {
+            msgEstado=" APAGADO"
+            imgEquipo=imgVarAlm;
+            colorEstado='alarma'
             st_1b2[i] = st_off;
+            PopUp(cookieEstado,nomEquipo,0,nomEquipo)
         }
     if (load_1b2[i] === 0) {
         load_1b2[i] = 0;
@@ -236,11 +514,16 @@ for (let i = 1; i <= 4; i++) {
             load_1b2[i] = parseFloat(load_1b2[i]).toFixed(0);
         } 
     if (al_1b2[i] === 2) {
-        al_1b2[i] = alarm_on;
+        al_1b2[i]=alarm_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgVarAlm;
+        colorEstado='alarma'
+            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
         }   else {
             al_1b2[i] = alarm_off;
+            localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
         }
-}
+    }
 //VALVULAS SIST 1&2
 let ISOV1_S_SIS2 = data.series.find(({ name }) => name?.includes('DATA.ISOV1_S_SIS2.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
@@ -300,17 +583,48 @@ let TEMP_R_SIS2 = data.series.find(({ name }) => name?.includes('DATA.TEMP_R_SIS
 //----------------------------------- ESTADO Y ALARMAS DE GENERADORES -----------------------------------------
 let st_gen = [];
 let e_stop_gen = [];
+let st_level = [];
+
 for (let i = 1; i <= 6; i++) {
+nomEquipo = 'GEN_'+ (i);
+let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
 e_stop_gen[i] = data.series.find(({ name }) => name?.includes('E_STOP_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
 st_gen[i] = data.series.find(({ name }) => name?.includes('VOL_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
-
+st_level[i] = data.series.find(({ name }) => name?.includes('LEVEL_GEN_' + i))?.fields[1].state?.calcs?.lastNotNull;
+if  (st_gen[i] >= 420) {
+    msgEstado = " ENCENDIDO"
+    imgEquipo = imgGenAdv;
+    colorEstado = 'advertencia'
+    st_gen[i] = st_on;
+        PopUp(cookieEstado,nomEquipo,1,nomEquipo)
+    }    else {
+        msgEstado=" APAGADO"
+        imgEquipo = imgGenAdv;
+        colorEstado = 'alarma'
+        st_gen[i] = st_off;
+            PopUp(cookieEstado,nomEquipo,0,nomEquipo)
+    }
 if (e_stop_gen[i] === 2 || e_stop_gen[i] === 3 || e_stop_gen[i] === 4) {
     e_stop_gen[i] = alarm_on;
-    }    else {e_stop_gen[i] = alarm_off;}
-if  (st_gen[i] >= 420) {
-    st_gen[i] = st_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgGenAlm;
+        colorEstado='alarma'
+            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
     }    else {
-    st_gen[i] = st_off;
+        e_stop_gen[i] = alarm_off;}
+        localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
+    
+if  (st_level[i] <= 35 || st_level[i] >= 97 ) {
+    st_level[i] = warning_on;
+        msgEstado = " ALARMA"
+        imgEquipo = imgGenAlm;
+        colorEstado='advertencia'
+            PopUp(cookieAdv, nomEquipo, 1, nomEquipo + 'adv');
+    }    else {
+        st_level[i] = warning_off;
+        localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')
     }
 }
 //------------------------------PARAMETROS PRINCIPALES DE SISTEMA DE GENERADORES ------------------------------
@@ -320,7 +634,7 @@ let pot_genSIS = [];
 for (let i = 1; i <= 6; i++) {
 vll_genSIS[i] = data.series.find(({ name }) => name?.includes('VOL_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
 st_gen_carga[i] = data.series.find(({ name }) => name?.includes('CUR_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
-pot_genSIS[i] = data.series.find(({ name }) => name?.includes('POT_GEN' + i))?.fields[1].state?.calcs?.lastNotNull /10;
+pot_genSIS[i] = data.series.find(({ name }) => name?.includes('POT_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
     if (vll_genSIS[i] === null || vll_genSIS[i] === 0 ){
         vll_genSIS[i] = 0;// &&
         //st_gen[i] === 0;
@@ -432,6 +746,18 @@ let I_RECT_1A = data.series.find(({ name }) => name?.includes('I_RECT_1A'))?.fie
 let V_RECT_2A = data.series.find(({ name }) => name?.includes('V_RECT_2A'))?.fields[1].state?.calcs?.lastNotNull;
 let I_RECT_2A = data.series.find(({ name }) => name?.includes('I_RECT_2A'))?.fields[1].state?.calcs?.lastNotNull;
 
+
+//-------------------------------------------------------------------------------------------------------------
+//----------------------------------PARAMETROS Y ESTADOS DE CORRIENTE DE SATELITAL--------------------------------
+//CORRIENTE SISTEMA 1
+let I_L1_ACC_SAT_SIS1 = data.series.find(({ name }) => name?.includes('DATA.AA_SAT_1A_L1.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
+let I_L2_ACC_SAT_SIS1 = data.series.find(({ name }) => name?.includes('DATA.AA_SAT_1A_L2.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
+let I_L1_ACC_SAT_SIS2 = data.series.find(({ name }) => name?.includes('DATA.AA_SAT_2A_L1.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
+let I_L2_ACC_SAT_SIS2 = data.series.find(({ name }) => name?.includes('DATA.AA_SAT_2A_L2.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 let principal: DataPrincipal = {
     ParametrosElec: {
@@ -463,12 +789,14 @@ let principal: DataPrincipal = {
         T_sumEA4: 0, T_retEA4: 0,
         T_sum_prim: 0, T_sum_sec: 0, T_tanque: 0, T_ret: 0,
         LoadB3: 0, LoadB4: 0,
+        acc_sat_L1: 0, acc_sat_L2: 0,
     },
     ParametrosClima_SIS2: {
         T_sumEA1: 0, T_retEA1: 0,
         T_sumEA2: 0, T_retEA2: 0,
         T_sum_prim: 0, T_sum_sec: 0, T_tanque: 0, T_ret: 0,
         LoadB1: 0, LoadB2: 0,
+        acc_sat_L1: 0, acc_sat_L2: 0,
     },
     ParametrosGEN_SIS1: {
         V_out: 0, I_out: 0, P_out: 0, Load: 0,
@@ -496,6 +824,7 @@ let principal: DataPrincipal = {
         b2_3: '', b2_4: '',
         V1aux: '', V2aux: '',
         upsoffices_1a: '', upssat_1a: '', rec_1a: '',
+        st_acc_sat_L1: '', st_acc_sat_L2: '',
     },
     Estados_SIS2: {
         ups1: '', ups2: '', ups3: '', ups4: '', ups5: '', ups6: '', upschi2: '',
@@ -505,6 +834,7 @@ let principal: DataPrincipal = {
         b2_1: '', b2_2: '',
         V1aux: '', V2aux: '',
         upsnoc_2a: '', upssat_2a: '', rec_2a: '',
+        st_acc_sat_L1: '', st_acc_sat_L2: '',
     },
     Alarmas: {
         uma1: '', uma2: '', uma3: '', uma4: '', uma5: '', uma6: '',
@@ -575,29 +905,41 @@ principal.ParametrosUPS_SIS2.V_outCHI =  Number.parseFloat(VOUT_UPS_CHI_2A?.toFi
 principal.ParametrosUPS_SIS2.I_outCHI =  Number.parseFloat(IOUT_UPS_CHI_2A?.toFixed(2));
 principal.ParametrosUPS_SIS2.LoadCHI =  Number.parseFloat(LOAD_UPS_CHI_2A?.toFixed(2));
 //ESTADOS UPS 200 KVA SIS1
-principal.Estados_SIS1.ups1 = st_ups1a[1];  principal.Estados_SIS1.ups2 = st_ups1a[2];
-principal.Estados_SIS1.ups3 = st_ups1a[3];  principal.Estados_SIS1.ups4 = st_ups1a[4];
-principal.Estados_SIS1.ups5 = st_ups1a[5];  principal.Estados_SIS1.ups6 = st_ups1a[6];
+principal.Estados_SIS1.ups1 = st_ups_1a[1];
+principal.Estados_SIS1.ups2 = st_ups_1a[2];
+principal.Estados_SIS1.ups3 = st_ups_1a[3];  
+principal.Estados_SIS1.ups4 = st_ups_1a[4];
+principal.Estados_SIS1.ups5 = st_ups_1a[5];  
+principal.Estados_SIS1.ups6 = st_ups_1a[6];
 principal.Estados_SIS1.upschi1 = st_upschi[1];
 //ESTADOS UPS 200 KVA SIS2
-principal.Estados_SIS2.ups1 = st_ups2a[1];  principal.Estados_SIS2.ups2 = st_ups2a[2];
-principal.Estados_SIS2.ups3 = st_ups2a[3];  principal.Estados_SIS2.ups4 = st_ups2a[4];
-principal.Estados_SIS2.ups5 = st_ups2a[5];  principal.Estados_SIS2.ups6 = st_ups2a[6];
+principal.Estados_SIS2.ups1 = st_ups_1a[1];  
+principal.Estados_SIS2.ups2 = st_ups_1a[2];
+principal.Estados_SIS2.ups3 = st_ups_1a[3];  
+principal.Estados_SIS2.ups4 = st_ups_1a[4];
+principal.Estados_SIS2.ups5 = st_ups_1a[5];  
+principal.Estados_SIS2.ups6 = st_ups_1a[6];
 principal.Estados_SIS2.upschi2 = st_upschi[2];
 //ALARMAS UPS 200 KVA SIS1
-principal.Alarmas_SIS1.ups1 = al_ups1a[1]; principal.Alarmas_SIS1.ups2 = al_ups1a[2]; 
-principal.Alarmas_SIS1.ups3 = al_ups1a[3]; principal.Alarmas_SIS1.ups4 = al_ups1a[4]; 
-principal.Alarmas_SIS1.ups5 = al_ups1a[5]; principal.Alarmas_SIS1.ups6 = al_ups1a[6]; 
+principal.Alarmas_SIS1.ups1 = al_ups_1a[1];
+principal.Alarmas_SIS1.ups2 = al_ups_1a[2]; 
+principal.Alarmas_SIS1.ups3 = al_ups_1a[3];
+principal.Alarmas_SIS1.ups4 = al_ups_1a[4]; 
+principal.Alarmas_SIS1.ups5 = al_ups_1a[5]; 
+principal.Alarmas_SIS1.ups6 = al_ups_1a[6]; 
 //ALARMAS UPS 200 KVA SIS2
-principal.Alarmas_SIS2.ups1 = al_ups2a[1]; principal.Alarmas_SIS2.ups2 = al_ups2a[2]; 
-principal.Alarmas_SIS2.ups3 = al_ups2a[3]; principal.Alarmas_SIS2.ups4 = al_ups2a[4]; 
-principal.Alarmas_SIS2.ups5 = al_ups2a[5]; principal.Alarmas_SIS2.ups6 = al_ups2a[6]; 
+principal.Alarmas_SIS2.ups1 = al_ups_2a[1];
+principal.Alarmas_SIS2.ups2 = al_ups_2a[2]; 
+principal.Alarmas_SIS2.ups3 = al_ups_2a[3]; 
+principal.Alarmas_SIS2.ups4 = al_ups_2a[4]; 
+principal.Alarmas_SIS2.ups5 = al_ups_2a[5]; 
+principal.Alarmas_SIS2.ups6 = al_ups_2a[6]; 
 // ALARMAS UPS SIS1&2
 principal.Alarmas_SIS1.upschi1 = al_upschi[1];
 principal.Alarmas_SIS2.upschi2 = al_upschi[2];
 //-----------------------------------------ESTADOS DE SISTEMA DE UPS´S-----------------------------------------
-principal.Estados_Principales.ups_SIS1 = st_ups1a[1] === st_on || st_ups1a[2] === st_on || st_ups1a[3] === st_on || st_ups1a[4] === st_on || st_ups1a[5] === st_on || st_ups1a[6] === st_on? estadosStyles.on : estadosStyles.sinconexion;
-principal.Estados_Principales.ups_SIS2 = st_ups2a[1] === st_on || st_ups2a[2] === st_on || st_ups2a[3] === st_on || st_ups2a[4] === st_on || st_ups2a[5] === st_on || st_ups2a[6] === st_on? estadosStyles.on : estadosStyles.sinconexion;
+principal.Estados_Principales.ups_SIS1 = st_ups_1a[1] === st_on || st_ups_1a[2] === st_on || st_ups_1a[3] === st_on || st_ups_1a[4] === st_on || st_ups_1a[5] === st_on || st_ups_1a[6] === st_on? estadosStyles.on : estadosStyles.sinconexion;
+principal.Estados_Principales.ups_SIS2 = st_ups_1a[1] === st_on || st_ups_1a[2] === st_on || st_ups_1a[3] === st_on || st_ups_1a[4] === st_on || st_ups_1a[5] === st_on || st_ups_1a[6] === st_on? estadosStyles.on : estadosStyles.sinconexion;
 //-----------------------------------------ALARMAS DE UPS´S 10kva Y RECTIFICADORES-----------------------------------
 principal.Alarmas_SIS1.upsoffices_1a = alups10kva[1];
 principal.Alarmas_SIS1.upssat_1a = alups10kva[2];
@@ -611,26 +953,42 @@ principal.Estados_SIS1.rec_1a = strec[1];
 principal.Estados_SIS2.rec_2a = strec[2];
 //--------------------------------------------------------------------------------------------------------
 //--------------------------------------------CHILLERS----------------------------------------------------
-//ESTADOS CHILLERS SIS
+/*//ESTADOS CHILLERS SIS
 principal.Estados_SIS2.Ea1 = ST_EA1 === 1? estadosStyles.on : estadosStyles.sinconexion;
 principal.Estados_SIS2.Ea2 = ST_EA2 === 1? estadosStyles.on : estadosStyles.sinconexion;
 principal.Estados_SIS1.Ea3 = ST_EA3 === 1? estadosStyles.on : estadosStyles.sinconexion;
 principal.Estados_SIS1.Ea4 = ST_EA4 === 1? estadosStyles.on : estadosStyles.sinconexion;
+
 //AL. MANTENIMIENTO CHILLER SIS
 principal.Alarmas_SIS2.Ea1mant = F1_EA_1_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
 principal.Alarmas_SIS2.Ea2mant = F1_EA_2_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
 principal.Alarmas_SIS1.Ea3mant = F1_EA_3_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
-principal.Alarmas_SIS1.Ea4mant = F1_EA_4_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
-principal.Alarmas_SIS2.text_mant_Ea1 = F1_EA_1_MS === 2? alarmasStyles.mant : alarmasStyles.sinconexion;
-principal.Alarmas_SIS2.text_mant_Ea2 = F1_EA_2_MS === 2? alarmasStyles.mant : alarmasStyles.sinconexion;
-principal.Alarmas_SIS1.text_mant_Ea3 = F1_EA_3_MS === 2? alarmasStyles.mant : alarmasStyles.sinconexion;
-principal.Alarmas_SIS1.text_mant_Ea4 = F1_EA_4_MS === 2? alarmasStyles.mant : alarmasStyles.sinconexion;
-
+principal.Alarmas_SIS1.Ea4mant = F1_EA_4_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;*/
+principal.Alarmas_SIS2.text_mant_Ea1 = ms_chiller[1]; 
+principal.Alarmas_SIS2.text_mant_Ea2 = ms_chiller[2];
+principal.Alarmas_SIS1.text_mant_Ea3 = ms_chiller[3];
+principal.Alarmas_SIS1.text_mant_Ea4 = ms_chiller[4];
+/*
 //ALARMA DE CHILLER
 principal.Alarmas_SIS2.Ea1 = EA_1_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
 principal.Alarmas_SIS2.Ea2 = EA_2_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
 principal.Alarmas_SIS1.Ea3 = EA_3_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
-principal.Alarmas_SIS1.Ea4 = EA_4_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
+principal.Alarmas_SIS1.Ea4 = EA_4_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;*/
+
+principal.Estados_SIS2.Ea1 = st_chiller[1];
+principal.Estados_SIS2.Ea2 = st_chiller[2];
+principal.Estados_SIS1.Ea3 = st_chiller[3];
+principal.Estados_SIS1.Ea4 = st_chiller[4];
+principal.Alarmas_SIS2.Ea1 = al_chiller[1];
+principal.Alarmas_SIS2.Ea2 = al_chiller[2];
+principal.Alarmas_SIS1.Ea3 = al_chiller[3];
+principal.Alarmas_SIS1.Ea4 = al_chiller[4];
+principal.Alarmas_SIS2.Ea1mant = ms_chiller[1];
+principal.Alarmas_SIS2.Ea2mant = ms_chiller[2];
+principal.Alarmas_SIS1.Ea3mant = ms_chiller[3];
+principal.Alarmas_SIS1.Ea4mant = ms_chiller[4];
+
+
 //PARAMETROS CHILLERS SIS
 principal.ParametrosClima_SIS2.T_sumEA1 = Number.parseFloat(TSUM_EA_1?.toFixed(2));
 principal.ParametrosClima_SIS2.T_retEA1 = Number.parseFloat(TRET_EA_1?.toFixed(2));
@@ -710,12 +1068,12 @@ principal.Estados_SIS2.gen4 = st_gen[4];
 principal.Estados_SIS2.gen5 = st_gen[5];
 principal.Estados_SIS2.gen6 = st_gen[6];
 //ALARMAS
-principal.Alarmas_SIS1.gen1 = e_stop_gen[1];    
-principal.Alarmas_SIS1.gen2 = e_stop_gen[2];
-principal.Alarmas_SIS1.gen3 = e_stop_gen[3];
-principal.Alarmas_SIS2.gen4 = e_stop_gen[4];
-principal.Alarmas_SIS2.gen5 = e_stop_gen[5];
-principal.Alarmas_SIS2.gen6 = e_stop_gen[6];
+principal.Alarmas_SIS1.gen1 = (e_stop_gen[1] && st_level[1]);    
+principal.Alarmas_SIS1.gen2 = (e_stop_gen[2] && st_level[2]);
+principal.Alarmas_SIS1.gen3 = (e_stop_gen[3] && st_level[3]);
+principal.Alarmas_SIS2.gen4 = (e_stop_gen[4] && st_level[4]);
+principal.Alarmas_SIS2.gen5 = (e_stop_gen[5] && st_level[5]);
+principal.Alarmas_SIS2.gen6 = (e_stop_gen[6] && st_level[6]);
 //STATUS Y PARAMETROS DE SISTEMA DE GENERACIÓN SIS1&2
 principal.Estados_Principales.gen_SIS1 = st_gen_carga[1] > 0 || st_gen_carga[2] > 0 || st_gen_carga[3] > 0? estadosStyles.on : estadosStyles.sinconexion;
 principal.Estados_Principales.gen_SIS2 = st_gen_carga[4] > 0 || st_gen_carga[5] > 0 || st_gen_carga[6] > 0? estadosStyles.on : estadosStyles.sinconexion;
@@ -817,13 +1175,13 @@ let cargaSIS1_gen = potenciaSIS1_gen * 100 / 2430;
     principal.ParametrosGEN_SIS1.Load =  Number.parseFloat(cargaSIS1_gen?.toFixed(2));
 let cargaSIS2_gen = potenciaSIS2_gen * 100 / 2430; 
     principal.ParametrosGEN_SIS2.Load =  Number.parseFloat(cargaSIS2_gen?.toFixed(2));
+
 //------------------------------------ESTADOS DE SISTEMA DE CLIMATIZACÓN-----------------------------------
 //---------------------------------------------------------------------------------------------------------
 principal.Estados_Principales.clima_SIS1 = SYS_1_EN === 1? estadosStyles.on : estadosStyles.sinconexion;
 principal.Estados_Principales.clima_SIS2 = SYS_2_EN === 1? estadosStyles.on : estadosStyles.sinconexion;
 principal.Alarmas.clima_SIS1 = SYS_ALARM_SIS1 === 1? alarmasStyles.on : alarmasStyles.sinconexion;
 principal.Alarmas.clima_SIS2 = SYS_ALARM_SIS2 === 1? alarmasStyles.on : alarmasStyles.sinconexion;
-
 
 //-----------------------------------------PARAMETROS TRANSFORMADOR (PQM)-----------------------------------
 principal.ParametrosElec.Vab_Tr01 = Number.parseFloat(VAB_TR01?.toFixed(2));
@@ -915,10 +1273,26 @@ principal.ParametrosElec.DCIE= Number.parseFloat(calculo_dcie?.toFixed(2));
 */
 
 
-console.log(principal);
+//////////////////////////////////DIRECCIONAMIENTO DE VARIABLES PARA CORRIENTES ACC SATELITAL////////////////////////////////////////////
+
+principal.ParametrosClima_SIS1.acc_sat_L1 = Number.parseFloat(I_L1_ACC_SAT_SIS1?.toFixed(2));
+principal.ParametrosClima_SIS1.acc_sat_L2 = Number.parseFloat(I_L2_ACC_SAT_SIS1?.toFixed(2));
+principal.ParametrosClima_SIS2.acc_sat_L1 = Number.parseFloat(I_L1_ACC_SAT_SIS2?.toFixed(2));
+principal.ParametrosClima_SIS2.acc_sat_L2 = Number.parseFloat(I_L2_ACC_SAT_SIS2?.toFixed(2));
+
+if (I_L1_ACC_SAT_SIS1 >= 0.5){
+    principal.Estados_SIS1.st_acc_sat_L1 = st_on;
+}
+    else {
+        principal.Estados_SIS1.st_acc_sat_L1 = st_off;
+    }
+
+
+
+//console.log(principal);
 
 return principal;
 
 };
-
+    
 export default dataPrincipal;

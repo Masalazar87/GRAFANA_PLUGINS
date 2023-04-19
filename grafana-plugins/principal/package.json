@@ -13,12 +13,15 @@
   "author": "Mario",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@grafana/data": "latest",
-    "@grafana/toolkit": "latest",
-    "@grafana/ui": "latest",
+    "@grafana/data": "^7.4.5",
+    "@grafana/toolkit": "^7.4.5",
+    "@grafana/ui": "^7.4.5",
     "emotion": "10.0.27"
   },
   "engines": {
     "node": ">=14"
+  },
+  "dependencies": {
+    "sweetalert": "^2.1.2"
   }
 }

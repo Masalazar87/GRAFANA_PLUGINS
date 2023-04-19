@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 
 type ParametrosElec = {
     Vab_Tr01: number;
@@ -38,12 +38,14 @@ type ParametrosClima_SIS1 = {
     T_sumEA4: number; T_retEA4: number;
     T_sum_prim: number; T_sum_sec: number; T_tanque: number; T_ret: number;
     LoadB3: number; LoadB4: number;
+    acc_sat_L1: number; acc_sat_L2: number;
 }; 
 type ParametrosClima_SIS2 = {
     T_sumEA1: number; T_retEA1: number;
     T_sumEA2: number; T_retEA2: number;
     T_sum_prim: number; T_sum_sec: number; T_tanque: number; T_ret: number;
     LoadB1: number; LoadB2: number;
+    acc_sat_L1: number; acc_sat_L2: number;
 }; 
 type ParametrosGEN_SIS1 = {
     V_out: number;
@@ -74,6 +76,7 @@ type Estados_SIS1 = {
     b2_3: string; b2_4: string;
     V1aux: string; V2aux: string;
     upsoffices_1a: string; upssat_1a: string; rec_1a: string;
+    st_acc_sat_L1: string; st_acc_sat_L2: string;
 };
 type Estados_SIS2 = {
     ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi2: string;
@@ -83,6 +86,7 @@ type Estados_SIS2 = {
     b2_1: string; b2_2: string;
     V1aux: string; V2aux: string;
     upsnoc_2a: string; upssat_2a: string; rec_2a: string;
+    st_acc_sat_L1: string; st_acc_sat_L2: string;
 };
 type Alarmas = {
     uma1: string; uma2: string; uma3: string; uma4:string; uma5: string; uma6: string;
@@ -1216,7 +1220,7 @@ return (
     opacity={0.29}
     paintOrder="markers stroke fill"
   />
-  <circle
+   <circle
     id="st_ups1a-2"
     cx={433.22}
     cy={113.5}
@@ -5753,6 +5757,278 @@ return (
             strokeWidth={0.43331}
           >
             {"MANTENIMIENTO"}
+          </tspan>
+        </text>
+        <circle
+          id="st_acc_L1_sis1"
+          cx={318.42526}
+          cy={175.93126}
+          r={2.3466001}
+          fill="#2fc43b"
+          strokeWidth={1}
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.st_acc_sat_L1}
+        />
+        <ellipse
+          id="st_brilloaccl1"
+          transform="matrix(.34361 0 0 .17992 304.875 142.911)"
+          cx={39.310001}
+          cy={175.59}
+          rx={4.2297001}
+          ry={4.0337}
+          opacity={0.29}
+          fill="#fff"
+          paintOrder="markers stroke fill"
+          filter="url(#filter2091-9-7-7-5-5-8-0-5)"
+        />
+        <circle
+          id="st_acc_L2_sis1"
+          cx={318.42538}
+          cy={182.97067}
+          r={2.3466001}
+          fill="#2fc43b"
+          strokeWidth={1}
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.st_acc_sat_L2}
+        />
+        <ellipse
+          id="st_brilloaccl2"
+          transform="matrix(.34361 0 0 .17992 304.875 149.95)"
+          cx={39.310001}
+          cy={175.59}
+          rx={4.2297001}
+          ry={4.0337}
+          opacity={0.29}
+          fill="#fff"
+          paintOrder="markers stroke fill"
+          filter="url(#filter2091-9-7-7-5-5-8-0-5-7)"
+        />
+         <circle
+          id="st_acc_L1_sis1-8"
+          cx={349.23285}
+          cy={175.93117}
+          r={2.3466001}
+          display="inline"
+          fill="#2fc43b"
+          strokeWidth={1}
+          paintOrder="markers stroke fill"
+          className={Estados_SIS2.st_acc_sat_L2}
+        />
+        <ellipse
+          id="st_brilloaccl1-9"
+          transform="matrix(.34361 0 0 .17992 321.683 142.911)"
+          cx={79.310001}
+          cy={175.59}
+          rx={4.2297001}
+          ry={4.0337}
+          display="inline"
+          opacity={0.29}
+          fill="#fff"
+          paintOrder="markers stroke fill"
+          filter="url(#filter2091-9-7-7-5-5-8-0-5-1)"
+        />
+        <circle
+          id="st_acc_L2_sis1-8"
+          cx={349.23297}
+          cy={182.97058}
+          r={2.3466001}
+          display="inline"
+          fill="#2fc43b"
+          strokeWidth={1}
+          paintOrder="markers stroke fill"
+          className={Estados_SIS2.st_acc_sat_L2}
+        />
+        <ellipse
+          id="st_brilloaccl2-3"
+          transform="matrix(.34361 0 0 .17992 321.683 149.95)"
+          cx={79.310001}
+          cy={175.59}
+          rx={4.2297001}
+          ry={4.0337}
+          display="inline"
+          opacity={0.29}
+          fill="#fff"
+          paintOrder="markers stroke fill"
+          filter="url(#filter2091-9-7-7-5-5-8-0-5-7-4)"
+        />
+        <text
+          id="acc_L1_sis1"
+          transform="matrix(.89752 0 0 1.11418 14.288 0)"
+          x={344.37579}
+          y={159.43468}
+          style={{
+            lineHeight: 1.25,
+            fontVariantLigatures: "normal",
+            fontVariantCaps: "normal",
+            fontVariantNumeric: "normal",
+            fontVariantEastAsian: "normal"
+          }}
+          xmlSpace="preserve"
+          display="inline"
+          fontSize="7.05573px"
+          fontFamily="Franklin Gothic Medium"
+          letterSpacing={0}
+          wordSpacing={0}
+          fill="#fff"
+          strokeWidth={0.433319}
+        >
+          <tspan
+            id="tspan998-68-8-8-5"
+            x={344.37579}
+            y={159.43468}
+            style={{
+              lineHeight: 3.25,
+              InkscapeFontSpecification: "'Franklin Gothic Medium, Normal'",
+              fontVariantLigatures: "normal",
+              fontVariantCaps: "normal",
+              fontVariantNumeric: "normal",
+              fontVariantEastAsian: "normal"
+            }}
+            fontStyle="normal"
+            fontVariant="normal"
+            fontWeight={400}
+            fontStretch="normal"
+            fontSize="4.23339px"
+            fontFamily="Franklin Gothic Medium"
+            fill="#fff"
+            strokeWidth={0.433319}
+          >
+            {ParametrosClima_SIS1.acc_sat_L1}
+          </tspan>
+        </text>
+        <text
+          id="acc_L2_sis1"
+          transform="matrix(.89752 0 0 1.11418 14.288 0)"
+          x={344.37607}
+          y={165.62888}
+          style={{
+            lineHeight: 1.25,
+            fontVariantLigatures: "normal",
+            fontVariantCaps: "normal",
+            fontVariantNumeric: "normal",
+            fontVariantEastAsian: "normal"
+          }}
+          xmlSpace="preserve"
+          display="inline"
+          fontSize="7.05573px"
+          fontFamily="Franklin Gothic Medium"
+          letterSpacing={0}
+          wordSpacing={0}
+          fill="#fff"
+          strokeWidth={0.433319}
+        >
+          <tspan
+            id="tspan998-68-8-8-5-3"
+            x={344.37607}
+            y={165.62888}
+            style={{
+              lineHeight: 3.25,
+              InkscapeFontSpecification: "'Franklin Gothic Medium, Normal'",
+              fontVariantLigatures: "normal",
+              fontVariantCaps: "normal",
+              fontVariantNumeric: "normal",
+              fontVariantEastAsian: "normal"
+            }}
+            fontStyle="normal"
+            fontVariant="normal"
+            fontWeight={400}
+            fontStretch="normal"
+            fontSize="4.23339px"
+            fontFamily="Franklin Gothic Medium"
+            fill="#fff"
+            strokeWidth={0.433319}
+          >
+           {ParametrosClima_SIS1.acc_sat_L2}
+          </tspan>
+        </text>
+        <text
+          id="acc_L1_sis1-1"
+          transform="matrix(.89752 0 0 1.11418 14.288 0)"
+          x={379.02194}
+          y={159.43459}
+          style={{
+            lineHeight: 1.25,
+            fontVariantLigatures: "normal",
+            fontVariantCaps: "normal",
+            fontVariantNumeric: "normal",
+            fontVariantEastAsian: "normal"
+          }}
+          xmlSpace="preserve"
+          display="inline"
+          fontSize="7.05573px"
+          fontFamily="Franklin Gothic Medium"
+          letterSpacing={0}
+          wordSpacing={0}
+          fill="#fff"
+          strokeWidth={0.433319}
+        >
+          <tspan
+            id="tspan998-68-8-8-5-54"
+            x={379.02194}
+            y={159.43459}
+            style={{
+              lineHeight: 3.25,
+              InkscapeFontSpecification: "'Franklin Gothic Medium, Normal'",
+              fontVariantLigatures: "normal",
+              fontVariantCaps: "normal",
+              fontVariantNumeric: "normal",
+              fontVariantEastAsian: "normal"
+            }}
+            fontStyle="normal"
+            fontVariant="normal"
+            fontWeight={400}
+            fontStretch="normal"
+            fontSize="4.23339px"
+            fontFamily="Franklin Gothic Medium"
+            fill="#fff"
+            strokeWidth={0.433319}
+          >
+           {ParametrosClima_SIS2.acc_sat_L1}
+          </tspan>
+        </text>
+        <text
+          id="acc_L2_sis1-0"
+          transform="matrix(.89752 0 0 1.11418 14.288 0)"
+          x={379.02219}
+          y={165.62878}
+          style={{
+            lineHeight: 1.25,
+            fontVariantLigatures: "normal",
+            fontVariantCaps: "normal",
+            fontVariantNumeric: "normal",
+            fontVariantEastAsian: "normal"
+          }}
+          xmlSpace="preserve"
+          display="inline"
+          fontSize="7.05573px"
+          fontFamily="Franklin Gothic Medium"
+          letterSpacing={0}
+          wordSpacing={0}
+          fill="#fff"
+          strokeWidth={0.433319}
+        >
+          <tspan
+            id="tspan998-68-8-8-5-3-9"
+            x={379.02219}
+            y={165.62878}
+            style={{
+              lineHeight: 3.25,
+              InkscapeFontSpecification: "'Franklin Gothic Medium, Normal'",
+              fontVariantLigatures: "normal",
+              fontVariantCaps: "normal",
+              fontVariantNumeric: "normal",
+              fontVariantEastAsian: "normal"
+            }}
+            fontStyle="normal"
+            fontVariant="normal"
+            fontWeight={400}
+            fontStretch="normal"
+            fontSize="4.23339px"
+            fontFamily="Franklin Gothic Medium"
+            fill="#fff"
+            strokeWidth={0.433319}
+          >
+            {ParametrosClima_SIS2.acc_sat_L2}
           </tspan>
         </text>
       </g>
