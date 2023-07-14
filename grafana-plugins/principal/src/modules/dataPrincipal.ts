@@ -16,11 +16,6 @@ let msgEstado = 'NA';
 let audioAlm = 'http://172.30.128.202:1880/uimedia/audio/alarma.mp4';
 let imgEquipo = '';
 let nomEquipo = '';
-//IMAGENES DE EQUIPOS PARA LOS POP_UPS"
-
-let imgGenAlm= imgPopUp('./gen_alm.png');
-let imgGenAdv= imgPopUp('./gen_adv.png');
-
 
 function reproducir(sonido: any) {
     const audio = new Audio(sonido);
@@ -91,7 +86,7 @@ if (st_uma[i] === 1) {
         msgEstado=" ALARMA"
         imgEquipo=imgUmaAlm;
         colorEstado='advertencia'
-            PopUp(cookieAdv, nomEquipo, 1, nomEquipo + 'adv');
+            PopUp(cookieAdv,nomEquipo,1,nomEquipo+'adv');
         }   else {
             al_uma[i] = alarm_off;
                 localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')
@@ -149,7 +144,7 @@ let al_ups_2a = [];
         msgEstado=" ALARMA"
         imgEquipo=imgUpsAlm;
         colorEstado='alarma'
-            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
+            PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
         }   else {
         al_ups_1a[i] = alarm_off;
             localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
@@ -193,7 +188,7 @@ for (let i = 1; i <= 6; i++) {
         msgEstado=" ALARMA"
         imgEquipo=imgUpsAlm;
         colorEstado='alarma'
-            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
+            PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
         }   else {
         al_ups_2a[i] = alarm_off;
             localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
@@ -214,7 +209,7 @@ for (let i = 1; i <= 6; i++) {
 let st_upschi = [];
 let al_upschi = [];
 for (let i = 1; i <= 2; i++) {
-    nomEquipo = 'UPS-CHI' + (i) + 'A';
+    nomEquipo = 'UPS-CHI-0' + (i) + 'A';
     let imgUpsAlm= imgPopUp('./ups_alm.png')
     let imgUpsAdv= imgPopUp('./ups_adv.png')
     let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
@@ -241,7 +236,7 @@ for (let i = 1; i <= 2; i++) {
         msgEstado=" ALARMA"
         imgEquipo=imgUpsAlm;
         colorEstado='alarma'
-            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
+            PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
         }   else {
             al_upschi[i] = alarm_off;
                 localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
@@ -279,11 +274,11 @@ let LOAD_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('LOAD_UPS_CH
 let alups10kva = [];
 let stups10kva = [];
 for (let i = 1; i <= 4; i++) {   
-    nomEquipo = 'UPS_' + (i) + 'A';
-    if (i===1){nomEquipo = 'UPS_OFFICES_1A'; }
-    if (i===2){nomEquipo = 'UPS_SAT_1A'; }
-    if (i===3){nomEquipo = 'UPS_NOC_2A'; }
-    if (i===4){nomEquipo = 'UPS_SAT_2A'; }
+    nomEquipo = 'UPS-' + (i) + 'A';
+    if (i===1){nomEquipo = 'UPS-OFFICES-1'; }
+    if (i===2){nomEquipo = 'UPS-SAT-1'; }
+    if (i===3){nomEquipo = 'UPS-NOC-2'; }
+    if (i===4){nomEquipo = 'UPS-SAT-2A'; }
     let imgUpsAlm= imgPopUp('./ups10_alm.png')
     let imgUpsAdv= imgPopUp('./ups10_adv.png')
     let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
@@ -304,12 +299,12 @@ for (let i = 1; i <= 4; i++) {
             stups10kva[i] = st_off;
             PopUp(cookieEstado,nomEquipo,0,nomEquipo)
     }
-    if (alups10kva[i] === 1 ){
+    if (alups10kva[i] >= 1 ){
         alups10kva[i] = alarm_on;
         msgEstado=" ALARMA"
         imgEquipo=imgUpsAlm;
         colorEstado='alarma'
-            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
+            PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
     } else {
         alups10kva[i] = alarm_off;
             localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
@@ -318,35 +313,46 @@ for (let i = 1; i <= 4; i++) {
 /////////RECTIFICADORES
 let strec = [];
 for (let i = 1; i <= 2; i++) {
-    nomEquipo = 'REC_' + (i) + 'A';
+    nomEquipo = 'RECTIFIER BANK-0' + (i) + 'A';
     let imgRecAlm= imgPopUp('./rec_alm.png')
     let imgRecAdv= imgPopUp('./rec_adv.png')
     let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
     let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
     //let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
     strec[i] = data.series.find(({ name }) => name?.includes('ST_REC_' + i + 'A'))?.fields[1].state?.calcs?.lastNotNull;
-    if (strec[i] === 1 ){
+    if (strec[i] === 1){
         strec[i] = st_on;
         msgEstado=" ENCENDIDO"
         imgEquipo=imgRecAdv;
         colorEstado='advertencia'
             PopUp(cookieEstado,nomEquipo,1,nomEquipo)
-    } else 
-        if (strec[i] >= 2 ){
-            strec[i] = alarm_on;
-            msgEstado=" ALARMA"
-            imgEquipo=imgRecAlm;
-            colorEstado='alarma'
-                PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
-    }else 
+    }
+    else{
         if (strec[i] === 0){
         strec[i] = st_off;
         msgEstado=" APAGADO"
         imgEquipo=imgRecAlm;
         colorEstado='alarma'
-            PopUp(cookieEstado,nomEquipo,0,nomEquipo)
+        PopUp(cookieEstado,nomEquipo,0,nomEquipo)
+        localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
         }
-}
+    }
+    if (strec[i] >= 2 ){
+        strec[i] = alarm_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgRecAlm;
+        colorEstado='alarma'
+        PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
+        } 
+        }      
+       /*if (strec[i] === 0){
+        strec[i] = st_off;
+        msgEstado=" APAGADO"
+        imgEquipo=imgRecAlm;
+        colorEstado='alarma'
+        PopUp(cookieEstado,nomEquipo,0,nomEquipo)
+        }*/
+    
 //-------------------------------------------------------------------------------------------------------------
 //---------------------------------------ESTADOS Y ALARMAS CHILLERS SISTEMA 1&2----------------------------------
 let st_chiller = [];
@@ -354,8 +360,8 @@ let al_chiller = [];
 let ms_chiller = [];
 for (let i = 1; i <= 4; i++) {
     nomEquipo = '1/EA(' + (i) + ')';
-    let imgChiAlm= imgPopUp('./ups_alm.png')
-    let imgChiAdv= imgPopUp('./ups_adv.png')
+    let imgChiAlm= imgPopUp('./chi_alm.png')
+    let imgChiAdv= imgPopUp('./chi_adv.png')
     let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
     let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
     let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
@@ -408,7 +414,7 @@ if (al_chiller[i] === 1) { //ALARMA
     msgEstado=" ALARMA"
     imgEquipo=imgChiAlm;
     colorEstado='alarma'
-        PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
+        PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
     }   else {
         al_chiller[i] = alarm_off;
             localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
@@ -419,7 +425,7 @@ if (ms_chiller[i] === 2) { //WARNING
     msgEstado=" ALARMA"
     imgEquipo=imgChiAdv;
     colorEstado='advertencia'
-        PopUp(cookieAdv, nomEquipo, 1, nomEquipo + 'adv');
+        PopUp(cookieAdv,nomEquipo,1,nomEquipo+'adv');
     }   else {
         ms_chiller[i] = warning_off;
         ms_chiller[i] = alarmasStyles.sinconexion;
@@ -476,7 +482,7 @@ for (let i = 1; i <= 6; i++) {
         msgEstado=" ALARMA"
         imgEquipo=imgVarAlm;
         colorEstado='alarma'
-            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
+            PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
         }   else {
             al_1b1[i] = alarm_off;
             localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
@@ -518,7 +524,7 @@ for (let i = 1; i <= 4; i++) {
         msgEstado=" ALARMA"
         imgEquipo=imgVarAlm;
         colorEstado='alarma'
-            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
+            PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
         }   else {
             al_1b2[i] = alarm_off;
             localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
@@ -586,7 +592,9 @@ let e_stop_gen = [];
 let st_level = [];
 
 for (let i = 1; i <= 6; i++) {
-nomEquipo = 'GEN_'+ (i);
+nomEquipo = 'GEN-'+ (i);
+let imgGenAlm= imgPopUp('./gen_alm.png');
+let imgGenAdv= imgPopUp('./gen_adv.png');
 let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
 let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
 let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
@@ -611,7 +619,7 @@ if (e_stop_gen[i] === 2 || e_stop_gen[i] === 3 || e_stop_gen[i] === 4) {
         msgEstado=" ALARMA"
         imgEquipo=imgGenAlm;
         colorEstado='alarma'
-            PopUp(cookieAlm, nomEquipo, 1, nomEquipo + 'alm');
+            PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
     }    else {
         e_stop_gen[i] = alarm_off;}
         localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
@@ -621,7 +629,7 @@ if  (st_level[i] <= 35 || st_level[i] >= 97 ) {
         msgEstado = " ALARMA"
         imgEquipo = imgGenAlm;
         colorEstado='advertencia'
-            PopUp(cookieAdv, nomEquipo, 1, nomEquipo + 'adv');
+            PopUp(cookieAdv,nomEquipo,1,nomEquipo+'adv');
     }    else {
         st_level[i] = warning_off;
         localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')
@@ -755,9 +763,56 @@ let I_L2_ACC_SAT_SIS1 = data.series.find(({ name }) => name?.includes('DATA.AA_S
 let I_L1_ACC_SAT_SIS2 = data.series.find(({ name }) => name?.includes('DATA.AA_SAT_2A_L1.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
 let I_L2_ACC_SAT_SIS2 = data.series.find(({ name }) => name?.includes('DATA.AA_SAT_2A_L2.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
 
-
-
-
+let st_Led_SIS1_L = [];
+        for (let i = 1; i <= 2; i++) {
+        /*nomEquipo = 'SAT_1A_L'+(i);
+        let imgGenAlm= imgPopUp('./gen_alm.png');
+        let imgGenAdv= imgPopUp('./gen_adv.png');
+        let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+        let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+        let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');*/
+        st_Led_SIS1_L[i] = data.series.find(({ name }) => name?.includes('ST_SIS1_LED_L' + i))?.fields[1].state?.calcs?.lastNotNull;
+        if (st_Led_SIS1_L[i] > 200) {
+            //msgEstado = " BREAKER CERRADO"
+            //imgEquipo = imgGenAdv;
+            //colorEstado = 'advertencia'
+            st_Led_SIS1_L[i] = st_on;
+                //PopUp(cookieEstado,nomEquipo,1,nomEquipo)
+            }    else {
+                if (st_Led_SIS1_L[i] < 12) {
+                //msgEstado=" BREAKER ABIERTO"
+                //imgEquipo = imgGenAlm;
+                //colorEstado = 'alarma'
+                st_Led_SIS1_L[i] = alarm_on;
+                    //PopUp(cookieAlm,nomEquipo,1,nomEquipo)
+            }
+        }
+    }
+    let st_Led_SIS2_L = [];
+        for (let i = 1; i <= 2; i++) {
+       /* nomEquipo = 'SAT_2A_L'+(i);
+        let imgGenAlm= imgPopUp('./gen_alm.png');
+        let imgGenAdv= imgPopUp('./gen_adv.png');
+        let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+        let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+        let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');*/
+        st_Led_SIS2_L[i] = data.series.find(({ name }) => name?.includes('ST_SIS2_LED_L' + i))?.fields[1].state?.calcs?.lastNotNull;
+        if (st_Led_SIS2_L[i] > 200) {
+            msgEstado = " BREAKER CERRADO"
+            //imgEquipo = imgGenAdv;
+            //colorEstado = 'advertencia'
+            st_Led_SIS2_L[i] = st_on;
+                //PopUp(cookieEstado,nomEquipo,1,nomEquipo)
+            }    else {
+                if (st_Led_SIS2_L[i] < 12) {
+                //msgEstado=" BREAKER ABIERTO"
+                //imgEquipo = imgGenAlm;
+                //colorEstado = 'alarma'
+                st_Led_SIS2_L[i] = alarm_on;
+                    //PopUp(cookieAlm,nomEquipo,1,nomEquipo)
+            }
+        }
+    }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 let principal: DataPrincipal = {
     ParametrosElec: {
@@ -913,12 +968,12 @@ principal.Estados_SIS1.ups5 = st_ups_1a[5];
 principal.Estados_SIS1.ups6 = st_ups_1a[6];
 principal.Estados_SIS1.upschi1 = st_upschi[1];
 //ESTADOS UPS 200 KVA SIS2
-principal.Estados_SIS2.ups1 = st_ups_1a[1];  
-principal.Estados_SIS2.ups2 = st_ups_1a[2];
-principal.Estados_SIS2.ups3 = st_ups_1a[3];  
-principal.Estados_SIS2.ups4 = st_ups_1a[4];
-principal.Estados_SIS2.ups5 = st_ups_1a[5];  
-principal.Estados_SIS2.ups6 = st_ups_1a[6];
+principal.Estados_SIS2.ups1 = st_ups_2a[1];  
+principal.Estados_SIS2.ups2 = st_ups_2a[2];
+principal.Estados_SIS2.ups3 = st_ups_2a[3];  
+principal.Estados_SIS2.ups4 = st_ups_2a[4];
+principal.Estados_SIS2.ups5 = st_ups_2a[5];  
+principal.Estados_SIS2.ups6 = st_ups_2a[6];
 principal.Estados_SIS2.upschi2 = st_upschi[2];
 //ALARMAS UPS 200 KVA SIS1
 principal.Alarmas_SIS1.ups1 = al_ups_1a[1];
@@ -1272,24 +1327,18 @@ else {
 principal.ParametrosElec.DCIE= Number.parseFloat(calculo_dcie?.toFixed(2)); 
 */
 
-
 //////////////////////////////////DIRECCIONAMIENTO DE VARIABLES PARA CORRIENTES ACC SATELITAL////////////////////////////////////////////
-
 principal.ParametrosClima_SIS1.acc_sat_L1 = Number.parseFloat(I_L1_ACC_SAT_SIS1?.toFixed(2));
 principal.ParametrosClima_SIS1.acc_sat_L2 = Number.parseFloat(I_L2_ACC_SAT_SIS1?.toFixed(2));
 principal.ParametrosClima_SIS2.acc_sat_L1 = Number.parseFloat(I_L1_ACC_SAT_SIS2?.toFixed(2));
 principal.ParametrosClima_SIS2.acc_sat_L2 = Number.parseFloat(I_L2_ACC_SAT_SIS2?.toFixed(2));
-
-if (I_L1_ACC_SAT_SIS1 >= 0.5){
-    principal.Estados_SIS1.st_acc_sat_L1 = st_on;
-}
-    else {
-        principal.Estados_SIS1.st_acc_sat_L1 = st_off;
-    }
+principal.Estados_SIS1.st_acc_sat_L1 = st_Led_SIS1_L[1];
+principal.Estados_SIS1.st_acc_sat_L2 = st_Led_SIS1_L[2];
+principal.Estados_SIS2.st_acc_sat_L1 = st_Led_SIS2_L[1];
+principal.Estados_SIS2.st_acc_sat_L2 = st_Led_SIS2_L[2];
 
 
-
-//console.log(principal);
+console.log(principal);
 
 return principal;
 

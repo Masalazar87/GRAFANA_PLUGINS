@@ -5764,7 +5764,7 @@ return (
           cx={318.42526}
           cy={175.93126}
           r={2.3466001}
-          fill="#2fc43b"
+          fill="#999"
           strokeWidth={1}
           paintOrder="markers stroke fill"
           className={Estados_SIS1.st_acc_sat_L1}
@@ -5786,7 +5786,7 @@ return (
           cx={318.42538}
           cy={182.97067}
           r={2.3466001}
-          fill="#2fc43b"
+          fill="#999"
           strokeWidth={1}
           paintOrder="markers stroke fill"
           className={Estados_SIS1.st_acc_sat_L2}
@@ -5809,7 +5809,7 @@ return (
           cy={175.93117}
           r={2.3466001}
           display="inline"
-          fill="#2fc43b"
+          fill="#999"
           strokeWidth={1}
           paintOrder="markers stroke fill"
           className={Estados_SIS2.st_acc_sat_L2}
@@ -5833,10 +5833,10 @@ return (
           cy={182.97058}
           r={2.3466001}
           display="inline"
-          fill="#2fc43b"
+          fill="#999"
           strokeWidth={1}
           paintOrder="markers stroke fill"
-          className={Estados_SIS2.st_acc_sat_L2}
+          className={Estados_SIS2.st_acc_sat_L1}
         />
         <ellipse
           id="st_brilloaccl2-3"
@@ -5893,7 +5893,7 @@ return (
             fill="#fff"
             strokeWidth={0.433319}
           >
-            {ParametrosClima_SIS1.acc_sat_L1}
+            {ParametrosClima_SIS1.acc_sat_L1} A
           </tspan>
         </text>
         <text
@@ -5938,7 +5938,7 @@ return (
             fill="#fff"
             strokeWidth={0.433319}
           >
-           {ParametrosClima_SIS1.acc_sat_L2}
+           {ParametrosClima_SIS1.acc_sat_L2} A
           </tspan>
         </text>
         <text
@@ -5983,7 +5983,7 @@ return (
             fill="#fff"
             strokeWidth={0.433319}
           >
-           {ParametrosClima_SIS2.acc_sat_L1}
+           {ParametrosClima_SIS2.acc_sat_L1} A
           </tspan>
         </text>
         <text
@@ -6028,7 +6028,7 @@ return (
             fill="#fff"
             strokeWidth={0.433319}
           >
-            {ParametrosClima_SIS2.acc_sat_L2}
+            {ParametrosClima_SIS2.acc_sat_L2} A
           </tspan>
         </text>
       </g>

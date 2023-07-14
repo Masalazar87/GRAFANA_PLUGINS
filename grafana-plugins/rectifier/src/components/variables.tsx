@@ -102,11 +102,11 @@ export const Variables = ({DatosGenerales, Parametros, Alarmas, Principal }: Dat
   >
     <tspan
       id="tspan6769"
-      x={108.73929}
-      y={27.49506}
+      x={101.73929}
+      y={25.49506}
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="9.8778px"
+      fontSize="5.8778px"
       strokeWidth={0.36412}
     >
       {DatosGenerales.Nombre}

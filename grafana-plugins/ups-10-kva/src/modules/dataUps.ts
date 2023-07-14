@@ -72,6 +72,19 @@ let ups: DataUps ={
 let variableNombre = replaceVariables('$EQUIPO')
 ups.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
 
+if (variableNombre === 'UPS_SAT_1A') {
+    ups.DatosGenerales.Nombre = "   UPS-SAT-1"
+   }
+if (variableNombre === 'UPS_SAT_2A') {
+    ups.DatosGenerales.Nombre = "   UPS-SAT-2"
+   }
+if (variableNombre === 'UPS_OFFICES_1A') {
+    ups.DatosGenerales.Nombre = "UPS-OFFICE-1"
+   }
+if (variableNombre === 'UPS_NOC_2A') {
+    ups.DatosGenerales.Nombre = "  UPS-NOC-2"
+   }
+
 //PARAMETROS
 ups.Principal.InVolt = Number.parseFloat(INPUT_VOLTAGE?.toFixed(2));
 ups.Principal.OutVolt = Number.parseFloat(OUTPUT_VOLTAGE?.toFixed(2));

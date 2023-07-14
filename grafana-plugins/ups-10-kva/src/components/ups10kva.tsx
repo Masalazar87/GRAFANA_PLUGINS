@@ -454,35 +454,9 @@ const Ups = ({DatosGenerales, Parametros, Alarmas, Principal, }: DataUps) => {
                             id="layer1-8"
                             transform="matrix(1 0 0 .67486 -26.86 442.19)"
                           >
-                            <g
-                              id="layer1-7"
-                              transform="matrix(1 0 0 .98732 -5.896 -19.421)"
-                              strokeWidth={0.83933}
-                            >
-                              <rect
-                                id="rect10510"
-                                x={5.0649}
-                                y={19.754}
-                                width={510.27}
-                                height={290.17}
-                                rx={0.21864}
-                                ry={0.15403}
-                                opacity={0.95}
-                              />
-                            </g>
+                            
                           </g>
-                          <g
-                            id="layer2-1"
-                            transform="matrix(1 0 0 .68151 -108.06 237.74)"
-                          >
-                            <path
-                              id="rect818"
-                              fillRule="evenodd"
-                              fill="black"//"url(#linearGradient701)"
-                              paintOrder="markers stroke fill"
-                              d="M80.369 300.08H590.749V584.5H80.369z"
-                            />
-                          </g>
+                          
                         </g>
                       </g>
                     </g>

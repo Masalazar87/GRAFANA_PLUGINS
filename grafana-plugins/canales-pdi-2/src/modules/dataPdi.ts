@@ -949,12 +949,40 @@ pdi.Estado.Status_ON = MODBUS_ST  === 1? estadosStyles.off : estadosStyles.on2;
 
 
 //INTERPOLACION DE VARIABLE
-//let variableNombre1 = replaceVariables('$EQUIPO1');
 let variableNombre2 = replaceVariables('$EQUIPO2');
 pdi.DatosGenerales.Nombre = variableNombre2 !==''? variableNombre2: options.nombre;
-//pdi.DatosGenerales.Nombre = variableNombre2 !==''? variableNombre2: options.nombre;
-    //pdi.DatosGenerales.Nombre1 = variableNombre2 !==''? variableNombre2: options.nombre1;
-    //pdi.DatosGenerales.Nombre1 = variableNombre2 !==''? variableNombre2: options.nombre1;
+
+if (variableNombre2 === 'PDU_2A_F1') {
+    pdi.DatosGenerales.Nombre = "PDU-02A-F1"
+   }
+if (variableNombre2 === 'PDU_2A_F2') {
+    pdi.DatosGenerales.Nombre = "PDU-02A-F2"
+   }
+if (variableNombre2 === 'PDU_2A_F3') {
+    pdi.DatosGenerales.Nombre = "PDU-02A-F3"
+   }
+if (variableNombre2 === 'PDU_2A_F4') {
+    pdi.DatosGenerales.Nombre = "PDU-02A-F4"
+   }
+if (variableNombre2 === 'PDU_2A_F5') {
+    pdi.DatosGenerales.Nombre = "PDU-02A-F5"
+   }
+if (variableNombre2 === 'PDU_2A_F6') {
+    pdi.DatosGenerales.Nombre = "PDU-02A-F6"
+   }
+if (variableNombre2 === 'PDU_2A_F7') {
+    pdi.DatosGenerales.Nombre = "PDU-02A-F7"
+   }
+if (variableNombre2 === 'PDU_2A_F8') {
+    pdi.DatosGenerales.Nombre = "PDU-02A-F8"
+   }
+if (variableNombre2 === 'PDU_2A_F9') {
+    pdi.DatosGenerales.Nombre = "PDU-02A-F9"
+   }
+if (variableNombre2 === 'PDU_2A_F10') {
+    pdi.DatosGenerales.Nombre = "PDU-02A-F10"
+   }
+
 
 
 return pdi;

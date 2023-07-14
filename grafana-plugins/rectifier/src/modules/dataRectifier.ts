@@ -33,7 +33,7 @@ let rectifier: DataRectifier ={
         Fase: 'A',
         Sistema: '1&2',
         Marca: 'GENERAL ELECTRIC',
-        Modelo: 'SG-200KVA',
+        Modelo: 'ECO TOWER',
         Ubicacion: 'C. RECT. SIST. 1&2',
     },
     Principal: {
@@ -65,6 +65,13 @@ let rectifier: DataRectifier ={
 //INTERPOLACION DE VARIABLES
 let variableNombre = replaceVariables('$EQUIPO')
 rectifier.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
+
+if (variableNombre === 'RECT_1A') {
+    rectifier.DatosGenerales.Nombre = "RECTIFIER BANK-01A"
+   }
+if (variableNombre === 'RECT_2A') {
+    rectifier.DatosGenerales.Nombre = "RECTIFIER BANK-02A"
+   }
 
 //PARAMETROS
 rectifier.Principal.In_Voltage = Number.parseFloat(MAIN_VOL_VALU?.toFixed(2));

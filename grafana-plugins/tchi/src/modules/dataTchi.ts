@@ -8,12 +8,12 @@ const DataTchi = (data: PanelData, options:SimpleOptions, replaceVariables:Inter
     console.log('options: ', options);
     console.log(replaceVariables);
 
-    let CUR_FASE_A = data.series.find(({ name }) => name?.includes('DATA.CUR_FASE_A.VALUE'))?.fields[1].state?.calcs
+    /*let CUR_FASE_A = data.series.find(({ name }) => name?.includes('DATA.CUR_FASE_A.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let CUR_FASE_B = data.series.find(({ name }) => name?.includes('DATA.CUR_FASE_B.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let CUR_FASE_C = data.series.find(({ name }) => name?.includes('DATA.CUR_FASE_C.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull;*/
     //let ENERGY_TOTAL = data.series.find(({ name }) => name?.includes('DATA.ENERGY_TOTAL.VALUE'))?.fields[1].state?.calcs
     //?.lastNotNull;
     //let FREC_MEDIDA  = data.series.find(({ name }) => name?.includes('DATA.FREC_MEDIDA.VALUE'))?.fields[1].state?.calcs
@@ -47,6 +47,13 @@ const DataTchi = (data: PanelData, options:SimpleOptions, replaceVariables:Inter
     let INST_TRIP_PICKUP = data.series.find(({ name }) => name?.includes('DATA.INST_TRIP_PICKUP.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let RED_INST_TRIP_PICKUP = data.series.find(({ name }) => name?.includes('DATA.RED_INST_TRIP_PICKUP.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+//VARIABLES CONTROLADOR ABB
+    let CUR_FASE_A = data.series.find(({ name }) => name?.includes('DATA.DATA_CUR_FASE_A.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+    let CUR_FASE_B = data.series.find(({ name }) => name?.includes('DATA.DATA_CUR_FASE_B.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull;
+    let CUR_FASE_C = data.series.find(({ name }) => name?.includes('DATA.DATA_CUR_FASE_C.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
 
     let tchi: DataTchi ={

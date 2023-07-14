@@ -73,14 +73,14 @@ url_scada = 'https://bmscloudgye.i.telconet.net/d/v8PnZBJnk/scada_generadores?or
 url_niveles = 'https://bmscloudgye.i.telconet.net/d/Pe3pt-Fnz/full-lvl-gen?orgId=1&refresh=5s';
 url_grup_uma1 = 'https://bmscloudgye.i.telconet.net/d/YzqGZB1nk/grupal-uma-sistema-1?orgId=1&refresh=5s';
 url_grup_uma2 = 'https://bmscloudgye.i.telconet.net/d/7PV-ZB17k/grupal-uma-sistema-2?orgId=1&refresh=5s';
-url_principal = 'https://bmscloudgye.i.telconet.net/d/uw2mOrTnz/datacenter?orgId=1&refresh=5s';
+url_principal = 'https://bmscloudgye.i.telconet.net/d/k_5Ybtu4k/datacenter?orgId=1&refresh=30s';
 url_clima = 'https://bmscloudgye.i.telconet.net/d/lW6YK9T7z/clima?orgId=1&refresh=5s';
 url_home = 'https://bmscloudgye.i.telconet.net/d/5oEqkED7z/menu-principal?orgId=1';
 url_resumen = 'https://bmscloudgye.i.telconet.net/d/6bUdsYY7k/resumen?orgId=1&refresh=5s';
 url_unifilar = 'http://bmscloudgye.i.telconet.net/d/ItHGf1b4k/unifilar-api?orgId=1&refresh=5s';
 url_sci = 'https://bmscloudgye.i.telconet.net/d/Y3p2mqaVk/sistema-contraincendios?orgId=1&from=now-1h&to=now&refresh=5s';
 url_psg = 'https://bmscloudgye.i.telconet.net/d/SDPtqL-4z/psg?orgId=1&refresh=5s';
-url_tdlow = 'https://bmscloudgye.i.telconet.net/d/b5sJBG-Vk/td_low?orgId=1&refresh=5s';
+url_tdlow = 'https://bmscloudgye.i.telconet.net/d/tTjoTE-4k/tdlow?orgId=1&refresh=5s';
 url_deepsea = 'https://bmscloudgye.i.telconet.net/d/s8yqwN-Vk/dse-7420?orgId=1';
 url_tats = 'https://bmscloudgye.i.telconet.net/d/F9XITnBVk/t-ats-3a?orgId=1&refresh=5s';
 url_tdp = 'https://bmscloudgye.i.telconet.net/d/fqeZdp-Vz/tdp-1a?orgId=1&refresh=5s&var-EQUIPO=TDP_1A_0&from=now-1h&to=now';
@@ -1181,7 +1181,7 @@ return (
               </a>
             {"/ "}
             <a href={url_tdlow} target="_self" style={{ fill: '#00aad4' }}>
-              {"TDLOW "}
+              {"TDA "}
               </a>
             {"/ "} 
             <a href={url_deepsea} target="_self" style={{ fill: '#00aad4' }}>

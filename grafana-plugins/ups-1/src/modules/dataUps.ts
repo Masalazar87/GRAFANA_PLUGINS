@@ -50,8 +50,7 @@ const dataUps = (data: PanelData, options:SimpleOptions, replaceVariables:Interp
     ?.lastNotNull;
     let RECTIFIER_ON_OFF  = data.series.find(({ name }) => name?.includes('DATA.RECTIFIER_ON_OFF'))?.fields[1].state?.calcs
     ?.lastNotNull;
-        
-   
+ 
 let ups: DataUps ={
     DatosGenerales: {
         Nombre: '',
@@ -94,6 +93,56 @@ let ups: DataUps ={
 
 let variableNombre = replaceVariables('$EQUIPO')
 ups.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
+
+//let data_repla: any = data.series.find(({ refId }) => refId === 'B')?.name;
+  //et nombre_on: any = data_repla.replace(/[.*+?^${}()|[\]\\]/g, '');
+  //let nom_on = "";
+
+    if (variableNombre === 'UPS_1_1A') {
+        ups.DatosGenerales.Nombre = "UPS-1-1A"
+       }
+    if (variableNombre === 'UPS_1_2A') {
+        ups.DatosGenerales.Nombre = "UPS-1-2A"
+       }
+    if (variableNombre === 'UPS_1_3A') {
+        ups.DatosGenerales.Nombre = "UPS-1-3A"
+       }
+    if (variableNombre === 'UPS_1_4A') {
+        ups.DatosGenerales.Nombre = "UPS-1-4A"
+       }
+    if (variableNombre === 'UPS_1_5A') {
+        ups.DatosGenerales.Nombre = "UPS-1-5A"
+       }
+    if (variableNombre === 'UPS_1_6A') {
+        ups.DatosGenerales.Nombre = "UPS-1-6A"
+       }
+    if (variableNombre === 'UPS_2_1A') {
+        ups.DatosGenerales.Nombre = "UPS-2-1A"
+       }
+    if (variableNombre === 'UPS_2_2A') {
+        ups.DatosGenerales.Nombre = "UPS-2-2A"
+       }
+    if (variableNombre === 'UPS_2_3A') {
+        ups.DatosGenerales.Nombre = "UPS-2-3A"
+       }
+    if (variableNombre === 'UPS_2_4A') {
+        ups.DatosGenerales.Nombre = "UPS-2-4A"
+       }
+    if (variableNombre === 'UPS_2_5A') {
+        ups.DatosGenerales.Nombre = "UPS-2-5A"
+       }
+    if (variableNombre === 'UPS_2_6A') {
+        ups.DatosGenerales.Nombre = "UPS-2-6A"
+       }
+    if (variableNombre === 'UPS_CHI_1A') {
+        ups.DatosGenerales.Nombre = "UPS-CHI-01A"
+       }
+    if (variableNombre === 'UPS_CHI_2A') {
+        ups.DatosGenerales.Nombre = "UPS-CHI-02A"
+        }
+ 
+
+
 
 //PARAMETROS
 ups.Principal.InVolmax = ups.Parametros.InVoltmax = Number.parseFloat(INPUT_VOLTAGE_MAX?.toFixed(2));
