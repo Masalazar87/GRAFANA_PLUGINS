@@ -106,6 +106,127 @@ const DataTchi = (data: PanelData, options:SimpleOptions, replaceVariables:Inter
 let variableNombre = replaceVariables('$EQUIPO')
 tchi.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
 
+if (variableNombre === 'TCHI_1A_0') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-0"
+   }
+if (variableNombre === 'TCHI_1A_1') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-1"
+   }
+if (variableNombre === 'TCHI_1A_2') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-2"
+   }
+if (variableNombre === 'TCHI_1A_3') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-3"
+   }
+if (variableNombre === 'TCHI_1A_4') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-4"
+   }
+if (variableNombre === 'TCHI_1A_5') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-5"
+   }
+if (variableNombre === 'TCHI_1A_6') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-6"
+   }
+if (variableNombre === 'TCHI_1A_7') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-7"
+   }
+if (variableNombre === 'TCHI_1A_8') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-8"
+   }
+if (variableNombre === 'TCHI_1A_9') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-9"
+   }
+if (variableNombre === 'TCHI_1A_10') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-10"
+   }
+if (variableNombre === 'TCHI_1A_11') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-11"
+   }
+if (variableNombre === 'TCHI_1A_12') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-12"
+   }
+if (variableNombre === 'TCHI_1A_13') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-13"
+   }
+if (variableNombre === 'TCHI_1A_14') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-14"
+   }
+if (variableNombre === 'TCHI_1A_15') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-15"
+   }
+if (variableNombre === 'TCHI_1A_16') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-16"
+   }
+if (variableNombre === 'TCHI_1A_17') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-17"
+   }
+if (variableNombre === 'TCHI_1A_18') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-18"
+   }
+if (variableNombre === 'TCHI_1A_19') {
+    tchi.DatosGenerales.Nombre = "T-CHI-01A-19"
+   }
+if (variableNombre === 'TCHI_2A_0') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-0"
+   }
+if (variableNombre === 'TCHI_2A_1') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-1"
+   }
+if (variableNombre === 'TCHI_2A_2') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-2"
+   }
+if (variableNombre === 'TCHI_2A_3') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-3"
+   }
+if (variableNombre === 'TCHI_2A_4') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-4"
+   }
+if (variableNombre === 'TCHI_2A_5') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-5"
+   }
+if (variableNombre === 'TCHI_2A_6') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-6"
+   }
+if (variableNombre === 'TCHI_2A_7') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-7"
+   }
+if (variableNombre === 'TCHI_2A_8') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-8"
+   }
+if (variableNombre === 'TCHI_2A_9') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-9"
+   }
+if (variableNombre === 'TCHI_2A_10') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-10"
+   }
+if (variableNombre === 'TCHI_2A_11') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-11"
+   }
+if (variableNombre === 'TCHI_2A_12') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-12"
+   }
+if (variableNombre === 'TCHI_2A_13') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-13"
+   }
+if (variableNombre === 'TCHI_2A_14') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-14"
+   }
+if (variableNombre === 'TCHI_2A_15') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-15"
+   }
+if (variableNombre === 'TCHI_2A_16') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-16"
+   }
+if (variableNombre === 'TCHI_2A_17') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-17"
+   }
+if (variableNombre === 'TCHI_2A_18') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-18"
+   }
+if (variableNombre === 'TCHI_2A_19') {
+    tchi.DatosGenerales.Nombre = "T-CHI-02A-19"
+   }
+
 //PRINCIPAL
 tchi.Principal.Voltage_prom = Number.parseFloat(V_FASE_A?.toFixed(2));
 

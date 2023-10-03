@@ -90,6 +90,19 @@ const dataChiller = (data: PanelData, options: SimpleOptions, replaceVariables:I
     let variableNombre = replaceVariables('$EQUIPO')
     chiller.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
 
+    if (variableNombre === '1_EA1') {
+        chiller.DatosGenerales.Nombre = "1/EA(1)"
+       }
+    if (variableNombre === '1_EA2') {
+        chiller.DatosGenerales.Nombre = "1/EA(2)"
+       }
+    if (variableNombre === '1_EA3') {
+        chiller.DatosGenerales.Nombre = "1/EA(3)"
+       }
+    if (variableNombre === '1_EA4') {
+        chiller.DatosGenerales.Nombre = "1/EA(4)"
+       }
+
     chiller.Principal.TemperaturaSuministro = Number.parseFloat(LEAVE_CHILL_TEMP?.toFixed(2));
     chiller.Principal.TemperaturaRetorno = Number.parseFloat(RET_CHILL_TEMP?.toFixed(2));
     chiller.Principal.Corriente = Number.parseFloat(CHI_AMPS?.toFixed(2));

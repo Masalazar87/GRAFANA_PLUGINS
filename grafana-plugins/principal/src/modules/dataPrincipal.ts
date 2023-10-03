@@ -11,23 +11,26 @@ import 'modules/stylesPop.css';
 const swal = require('sweetalert');
 const imgPopUp=require.context('../img/imgalarmas/',true);
 
+var audioAlm = new Audio("data:audio/mpeg;base64,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");
+
 let colorEstado = 'NA';
 let msgEstado = 'NA';
-let audioAlm = 'http://172.30.128.202:1880/uimedia/audio/alarma.mp4';
+
+//let audioAlm = 'http://172.30.128.202:1880/uimedia/audio/alarma.mp4';
 let imgEquipo = '';
 let nomEquipo = '';
 
-function reproducir(sonido: any) {
+/*function reproducir(sonido: any) {
     const audio = new Audio(sonido);
     audio.play();
-  }
+  }*/
   
 function PopUp(cookieVar: any, equipo: any, variable: any, nomCookie: any) {
     if (cookieVar === null) {
       localStorage.setItem('gyecookie_'+nomCookie, variable);
     } else {
         if (cookieVar !== ''+ variable) {
-         reproducir(audioAlm);
+         audioAlm.play();
           swal({
             className: colorEstado,
             title: equipo,
@@ -148,17 +151,7 @@ let al_ups_2a = [];
         }   else {
         al_ups_1a[i] = alarm_off;
             localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
-            }
-    /*if (al_ups_1a[i] >= 2) { //WARNING
-        al_ups_1a[i] = warning_on;
-        msgEstado=" ALARMA"
-        imgEquipo=imgUpsAdv;
-        colorEstado='advertencia'
-            PopUp(cookieAdv, nomEquipo, 1, nomEquipo + 'adv');
-        }   else {
-            al_ups_1a[i] = warning_off;
-            localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')
-            }*/                       
+            }                     
 }
 for (let i = 1; i <= 6; i++) {
     let nomEquipo = 'UPS 2-' + (i) + 'A';
@@ -192,17 +185,7 @@ for (let i = 1; i <= 6; i++) {
         }   else {
         al_ups_2a[i] = alarm_off;
             localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
-            }
-    /*if (al_ups_2a[i] >= 2) { //WARNING
-        al_ups_2a[i] = alarm_on;
-        msgEstado=" ALARMA"
-        imgEquipo=imgUpsAdv;
-        colorEstado='advertencia'
-            PopUp(cookieAdv, nomEquipo, 1, nomEquipo + 'adv');
-        }   else {
-            al_ups_2a[i] = alarm_off;
-            localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')
-            }   */                    
+            }                  
     }
 
 //---------------------------------------ESTADOS Y ALARMAS DE UPS CHI 200KVA---------------------------------
@@ -234,23 +217,14 @@ for (let i = 1; i <= 2; i++) {
     if (al_upschi[i] >= 1) { //ALARMA
         al_upschi[i]=alarm_on;
         msgEstado=" ALARMA"
+        
         imgEquipo=imgUpsAlm;
         colorEstado='alarma'
             PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
         }   else {
             al_upschi[i] = alarm_off;
                 localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
-        }
-    /*if (al_upschi[i] === 2) { //WARNING
-        al_upschi[i]=warning_on;
-        msgEstado=" ALARMA"
-        imgEquipo=imgUpsAdv;
-        colorEstado='advertencia'
-            PopUp(cookieAdv, nomEquipo, 1, nomEquipo + 'adv');
-        }   else {
-            al_upschi[i] = warning_off;
-                localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')
-                }  */          
+        }        
 }
 //--------------------------------------------PARAMETROS UPS CHI 200KVA--------------------------------------
 let VIN_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('VIN_UPS_CHI_1A'))?.fields[1].state?.calcs
@@ -345,19 +319,15 @@ for (let i = 1; i <= 2; i++) {
         PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
         } 
         }      
-       /*if (strec[i] === 0){
-        strec[i] = st_off;
-        msgEstado=" APAGADO"
-        imgEquipo=imgRecAlm;
-        colorEstado='alarma'
-        PopUp(cookieEstado,nomEquipo,0,nomEquipo)
-        }*/
+
     
 //-------------------------------------------------------------------------------------------------------------
 //---------------------------------------ESTADOS Y ALARMAS CHILLERS SISTEMA 1&2----------------------------------
 let st_chiller = [];
 let al_chiller = [];
 let ms_chiller = [];
+let st_comp1_chiller =[];
+let st_comp2_chiller =[];
 for (let i = 1; i <= 4; i++) {
     nomEquipo = '1/EA(' + (i) + ')';
     let imgChiAlm= imgPopUp('./chi_alm.png')
@@ -365,37 +335,12 @@ for (let i = 1; i <= 4; i++) {
     let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
     let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
     let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
-/*let ST_EA1 = data.series.find(({ name }) => name?.includes('ST_EA1'))?.fields[1].state?.calcs?.lastNotNull;
-let ST_EA2 = data.series.find(({ name }) => name?.includes('ST_EA2'))?.fields[1].state?.calcs?.lastNotNull;
-let ST_EA3 = data.series.find(({ name }) => name?.includes('ST_EA3'))?.fields[1].state?.calcs?.lastNotNull;
-let ST_EA4 = data.series.find(({ name }) => name?.includes('ST_EA4'))?.fields[1].state?.calcs?.lastNotNull;*/
+
 st_chiller[i] = data.series.find(({ name }) => name?.includes('ST_EA' + i))?.fields[1].state?.calcs?.lastNotNull; 
 al_chiller[i] = data.series.find(({ name }) => name?.includes('AL_EA' + i))?.fields[1].state?.calcs?.lastNotNull;  
 ms_chiller[i] = data.series.find(({ name }) => name?.includes('MS_EA' + i))?.fields[1].state?.calcs?.lastNotNull;    
-/*let F1_EA_1_S = data.series.find(({ name }) => name?.includes('F1_EA_1_S'))?.fields[1].state?.calcs
-?.lastNotNull;
-let F1_EA_2_S = data.series.find(({ name }) => name?.includes('F1_EA_2_S'))?.fields[1].state?.calcs
-?.lastNotNull;
-let F1_EA_3_S = data.series.find(({ name }) => name?.includes('F1_EA_3_S'))?.fields[1].state?.calcs
-?.lastNotNull;
-let F1_EA_4_S = data.series.find(({ name }) => name?.includes('F1_EA_4_S'))?.fields[1].state?.calcs
-?.lastNotNull;*/
-/*let F1_EA_1_MS = data.series.find(({ name }) => name?.includes('F1_EA_1_MS'))?.fields[1].state?.calcs
-?.lastNotNull;
-let F1_EA_2_MS = data.series.find(({ name }) => name?.includes('F1_EA_2_MS'))?.fields[1].state?.calcs
-?.lastNotNull;
-let F1_EA_3_MS = data.series.find(({ name }) => name?.includes('F1_EA_3_MS'))?.fields[1].state?.calcs
-?.lastNotNull;
-let F1_EA_4_MS = data.series.find(({ name }) => name?.includes('F1_EA_4_MS'))?.fields[1].state?.calcs
-?.lastNotNull;
-let EA_1_AL = data.series.find(({ name }) => name?.includes('EA_1_AL'))?.fields[1].state?.calcs
-?.lastNotNull;
-let EA_2_AL = data.series.find(({ name }) => name?.includes('EA_2_AL'))?.fields[1].state?.calcs
-?.lastNotNull;
-let EA_3_AL = data.series.find(({ name }) => name?.includes('EA_3_AL'))?.fields[1].state?.calcs
-?.lastNotNull;
-let EA_4_AL = data.series.find(({ name }) => name?.includes('EA_4_AL'))?.fields[1].state?.calcs
-?.lastNotNull;*/
+st_comp1_chiller[i] = data.series.find(({ name }) => name?.includes('ST_COMP1_EA' + i))?.fields[1].state?.calcs?.lastNotNull;
+st_comp2_chiller[i] = data.series.find(({ name }) => name?.includes('ST_COMP2_EA' + i))?.fields[1].state?.calcs?.lastNotNull;
 if (st_chiller[i] === 1) { //ESTADO
     msgEstado=" ENCENDIDO"
     imgEquipo=imgChiAdv;
@@ -430,7 +375,33 @@ if (ms_chiller[i] === 2) { //WARNING
         ms_chiller[i] = warning_off;
         ms_chiller[i] = alarmasStyles.sinconexion;
             localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')
-            }            
+    }            
+if (st_comp1_chiller[i] >= 1) { //ESTADO
+    //msgEstado=" COMP SIS1 ENCENDIDO"
+    //imgEquipo=imgChiAdv;
+    //colorEstado='advertencia'
+    st_comp1_chiller[i] = st_on;
+         //PopUp(cookieEstado,nomEquipo,1,nomEquipo)
+        }   else {
+        //msgEstado=" COMP SIS1 APAGADO"
+        //imgEquipo=imgChiAlm;
+        //colorEstado='alarma'
+        st_comp1_chiller[i] = st_off;
+            //PopUp(cookieEstado,nomEquipo,0,nomEquipo)
+    }
+if (st_comp2_chiller[i] >= 1) { //ESTADO
+    //msgEstado=" COMP SIS2 ENCENDIDO"
+    //imgEquipo=imgChiAdv;
+    //colorEstado='advertencia'   
+    st_comp2_chiller[i] = st_on;
+        //PopUp(cookieEstado,nomEquipo,1,nomEquipo)
+        }   else {
+        //msgEstado=" COMP SIS2 APAGADO"
+        //imgEquipo=imgChiAlm;
+        //colorEstado='alarma'
+        st_comp2_chiller[i] = st_off;
+            //PopUp(cookieEstado,nomEquipo,0,nomEquipo)
+    }
 }
 
 //-----------------------------------------PARAMETROS CHILLERS SISTEMA 1&2---------------------------------------
@@ -643,7 +614,8 @@ for (let i = 1; i <= 6; i++) {
 vll_genSIS[i] = data.series.find(({ name }) => name?.includes('VOL_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
 st_gen_carga[i] = data.series.find(({ name }) => name?.includes('CUR_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
 pot_genSIS[i] = data.series.find(({ name }) => name?.includes('POT_GEN' + i))?.fields[1].state?.calcs?.lastNotNull;
-    if (vll_genSIS[i] === null || vll_genSIS[i] === 0 ){
+
+if (vll_genSIS[i] === null || vll_genSIS[i] === 0 ){
         vll_genSIS[i] = 0;// &&
         //st_gen[i] === 0;
     } else { 
@@ -660,7 +632,7 @@ pot_genSIS[i] = data.series.find(({ name }) => name?.includes('POT_GEN' + i))?.f
         pot_genSIS[i] = 0;
     } else { 
         if (pot_genSIS[i] > 0){
-            pot_genSIS[i] =  pot_genSIS[i] * 10
+            pot_genSIS[i] =  pot_genSIS[i]
     }
     }
 }
@@ -813,6 +785,95 @@ let st_Led_SIS1_L = [];
             }
         }
     }
+
+//-------------------------------------------------------------------------------------------------------------
+//---------------------------------- PARAMETROS ESTADOS Y ALARMZAS DE PDIS --------------------------------
+//
+let st_pdi_1A_F = [];
+let al_pdi_1A_F = [];
+let pot_pdi_1A_F = [];
+let vol_pdi_1A_F = [];
+let st_pdi_2A_F = [];
+let al_pdi_2A_F = [];
+let pot_pdi_2A_F = [];
+let vol_pdi_2A_F = [];
+
+for (let i = 1; i <= 10; i++) {
+    nomEquipo = 'PDU-01A-F'+(i);
+    let imgVarAlm= imgPopUp('./pdu_alm.png')
+    let imgVarAdv= imgPopUp('./pdu_adv.png')
+    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    //let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
+    st_pdi_1A_F[i] = data.series.find(({ name }) => name?.includes('PDU1A_F' + i + '_ST'))?.fields[1].state?.calcs?.lastNotNull;   
+    al_pdi_1A_F[i] = data.series.find(({ name }) => name?.includes('PDU1A_F' + i + '_AL'))?.fields[1].state?.calcs?.lastNotNull;   
+    
+    pot_pdi_1A_F[i] = (SIS1_POT_PDI_[i])/10;
+    vol_pdi_1A_F[i] = (st_pdi_1A_F[i])/10;   
+   
+    if (st_pdi_1A_F[i] > 210) {
+        msgEstado=" ENCENDIDO"
+        imgEquipo=imgVarAdv;
+        colorEstado='advertencia'
+        st_pdi_1A_F[i] = st_on;
+            PopUp(cookieEstado,nomEquipo,1,nomEquipo)
+        }   else {
+            msgEstado=" APAGADO"
+            imgEquipo=imgVarAlm;
+            colorEstado='alarma'
+            st_pdi_1A_F[i] = st_off;
+                PopUp(cookieEstado,nomEquipo,0,nomEquipo)
+        }
+    if (al_pdi_1A_F[i] === 1) {
+        al_pdi_1A_F[i] = alarm_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgVarAlm;
+        colorEstado='alarma'
+            PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
+        }   else {
+            al_pdi_1A_F[i] = alarm_off;
+            localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
+        }
+}
+
+for (let i = 1; i <= 10; i++) {
+    nomEquipo = 'PDU-02A-F'+(i);
+    let imgVarAlm= imgPopUp('./pdu_alm.png')
+    let imgVarAdv= imgPopUp('./pdu_adv.png')
+    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    //let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
+    st_pdi_2A_F[i] = data.series.find(({ name }) => name?.includes('PDU2A_F' + i + '_ST'))?.fields[1].state?.calcs?.lastNotNull;   
+    al_pdi_2A_F[i] = data.series.find(({ name }) => name?.includes('PDU2A_F' + i + '_AL'))?.fields[1].state?.calcs?.lastNotNull;   
+    
+    pot_pdi_2A_F[i] = (SIS2_POT_PDI_[i])/10;
+    vol_pdi_2A_F[i] = (st_pdi_2A_F[i])/10;   
+   
+    if (st_pdi_2A_F[i] > 210) {
+        msgEstado=" ENCENDIDO"
+        imgEquipo=imgVarAdv;
+        colorEstado='advertencia'
+        st_pdi_2A_F[i] = st_on;
+            PopUp(cookieEstado,nomEquipo,1,nomEquipo)
+        }   else {
+            msgEstado=" APAGADO"
+            imgEquipo=imgVarAlm;
+            colorEstado='alarma'
+            st_pdi_2A_F[i] = st_off;
+                PopUp(cookieEstado,nomEquipo,0,nomEquipo)
+        }
+    if (al_pdi_2A_F[i] === 1) {
+        al_pdi_2A_F[i] = alarm_on;
+        msgEstado=" ALARMA"
+        imgEquipo=imgVarAlm;
+        colorEstado='alarma'
+            PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
+        }   else {
+            al_pdi_2A_F[i] = alarm_off;
+            localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
+        }
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 let principal: DataPrincipal = {
     ParametrosElec: {
@@ -834,10 +895,19 @@ let principal: DataPrincipal = {
     ParametrosUPS_SIS1: {
         V_in: 0, V_out: 0, I_out: 0, P_out: 0, Load: 0,
         V_inCHI: 0, V_outCHI: 0, I_outCHI: 0, P_outCHI: 0, LoadCHI: 0,
+        V_PDI1A_F1: 0, V_PDI1A_F2: 0, V_PDI1A_F3: 0, V_PDI1A_F4: 0, V_PDI1A_F5: 0, 
+        V_PDI1A_F6: 0, V_PDI1A_F7: 0, V_PDI1A_F8: 0, V_PDI1A_F9: 0, V_PDI1A_F10: 0, 
+        P_PDI1A_F1: 0, P_PDI1A_F2: 0, P_PDI1A_F3: 0, P_PDI1A_F4: 0, P_PDI1A_F5: 0, 
+        P_PDI1A_F6: 0, P_PDI1A_F7: 0, P_PDI1A_F8: 0, P_PDI1A_F9: 0, P_PDI1A_F10: 0, 
+
     }, 
         ParametrosUPS_SIS2: {
             V_in: 0, V_out: 0, I_out: 0, P_out: 0, Load: 0,
             V_inCHI: 0, V_outCHI: 0, I_outCHI: 0, P_outCHI: 0, LoadCHI: 0,
+            V_PDI2A_F1: 0, V_PDI2A_F2: 0, V_PDI2A_F3: 0, V_PDI2A_F4: 0, V_PDI2A_F5: 0, 
+            V_PDI2A_F6: 0, V_PDI2A_F7: 0, V_PDI2A_F8: 0, V_PDI2A_F9: 0, V_PDI2A_F10: 0, 
+            P_PDI2A_F1: 0, P_PDI2A_F2: 0, P_PDI2A_F3: 0, P_PDI2A_F4: 0, P_PDI2A_F5: 0, 
+            P_PDI2A_F6: 0, P_PDI2A_F7: 0, P_PDI2A_F8: 0, P_PDI2A_F9: 0, P_PDI2A_F10: 0, 
     }, 
     ParametrosClima_SIS1: {
         T_sumEA3: 0, T_retEA3: 0,
@@ -855,9 +925,11 @@ let principal: DataPrincipal = {
     },
     ParametrosGEN_SIS1: {
         V_out: 0, I_out: 0, P_out: 0, Load: 0,
+        LoadG1: 0, LoadG2: 0, LoadG3: 0, 
     },
     ParametrosGEN_SIS2: {
         V_out: 0, I_out: 0, P_out: 0, Load: 0,
+        LoadG4: 0, LoadG5: 0, LoadG6: 0, 
     },
     Estados_Principales: {
         ups_SIS1: '', ups_SIS2: '',
@@ -880,6 +952,10 @@ let principal: DataPrincipal = {
         V1aux: '', V2aux: '',
         upsoffices_1a: '', upssat_1a: '', rec_1a: '',
         st_acc_sat_L1: '', st_acc_sat_L2: '',
+        comp1_ea3: '', comp2_ea3: '',
+        comp1_ea4: '', comp2_ea4: '',
+        pdu_F1:'', pdu_F2:'', pdu_F3:'', pdu_F4:'', pdu_F5:'',
+        pdu_F6:'', pdu_F7:'', pdu_F8:'', pdu_F9:'', pdu_F10:'',
     },
     Estados_SIS2: {
         ups1: '', ups2: '', ups3: '', ups4: '', ups5: '', ups6: '', upschi2: '',
@@ -890,6 +966,10 @@ let principal: DataPrincipal = {
         V1aux: '', V2aux: '',
         upsnoc_2a: '', upssat_2a: '', rec_2a: '',
         st_acc_sat_L1: '', st_acc_sat_L2: '',
+        comp1_ea1: '', comp2_ea1: '',
+        comp1_ea2: '', comp2_ea2: '',
+        pdu_F1:'', pdu_F2:'', pdu_F3:'', pdu_F4:'', pdu_F5:'',
+        pdu_F6:'', pdu_F7:'', pdu_F8:'', pdu_F9:'', pdu_F10:'',
     },
     Alarmas: {
         uma1: '', uma2: '', uma3: '', uma4: '', uma5: '', uma6: '',
@@ -904,6 +984,8 @@ let principal: DataPrincipal = {
         b2_3: '', b2_4: '',
         upsoffices_1a: '', upssat_1a: '', //rec_1a: '',
         text_mant_Ea4:'', text_mant_Ea3:'',
+        pdu_F1:'', pdu_F2:'', pdu_F3:'', pdu_F4:'', pdu_F5:'',
+        pdu_F6:'', pdu_F7:'', pdu_F8:'', pdu_F9:'', pdu_F10:'',
     },
     Alarmas_SIS2: {
         ups1: '', ups2: '', ups3: '', ups4: '', ups5: '', ups6: '', upschi2: '',
@@ -914,6 +996,8 @@ let principal: DataPrincipal = {
         V1aux: '', V2aux: '',
         upsnoc_2a: '', upssat_2a: '', //rec_2a: '',
         text_mant_Ea1:'', text_mant_Ea2:'',
+        pdu_F1:'', pdu_F2:'', pdu_F3:'', pdu_F4:'', pdu_F5:'',
+        pdu_F6:'', pdu_F7:'', pdu_F8:'', pdu_F9:'', pdu_F10:'',
     },
 }
 //PRESENTACIÓN DE LA VARIABLE//
@@ -1008,27 +1092,11 @@ principal.Estados_SIS1.rec_1a = strec[1];
 principal.Estados_SIS2.rec_2a = strec[2];
 //--------------------------------------------------------------------------------------------------------
 //--------------------------------------------CHILLERS----------------------------------------------------
-/*//ESTADOS CHILLERS SIS
-principal.Estados_SIS2.Ea1 = ST_EA1 === 1? estadosStyles.on : estadosStyles.sinconexion;
-principal.Estados_SIS2.Ea2 = ST_EA2 === 1? estadosStyles.on : estadosStyles.sinconexion;
-principal.Estados_SIS1.Ea3 = ST_EA3 === 1? estadosStyles.on : estadosStyles.sinconexion;
-principal.Estados_SIS1.Ea4 = ST_EA4 === 1? estadosStyles.on : estadosStyles.sinconexion;
-
-//AL. MANTENIMIENTO CHILLER SIS
-principal.Alarmas_SIS2.Ea1mant = F1_EA_1_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
-principal.Alarmas_SIS2.Ea2mant = F1_EA_2_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
-principal.Alarmas_SIS1.Ea3mant = F1_EA_3_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;
-principal.Alarmas_SIS1.Ea4mant = F1_EA_4_MS === 2? alarmasStyles.on1 : alarmasStyles.sinconexion;*/
+//ESTADOS y ALARMAS CHILLERS SIS 1&2
 principal.Alarmas_SIS2.text_mant_Ea1 = ms_chiller[1]; 
 principal.Alarmas_SIS2.text_mant_Ea2 = ms_chiller[2];
 principal.Alarmas_SIS1.text_mant_Ea3 = ms_chiller[3];
 principal.Alarmas_SIS1.text_mant_Ea4 = ms_chiller[4];
-/*
-//ALARMA DE CHILLER
-principal.Alarmas_SIS2.Ea1 = EA_1_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
-principal.Alarmas_SIS2.Ea2 = EA_2_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
-principal.Alarmas_SIS1.Ea3 = EA_3_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;
-principal.Alarmas_SIS1.Ea4 = EA_4_AL === 1? alarmasStyles.on : alarmasStyles.sinconexion;*/
 
 principal.Estados_SIS2.Ea1 = st_chiller[1];
 principal.Estados_SIS2.Ea2 = st_chiller[2];
@@ -1043,16 +1111,32 @@ principal.Alarmas_SIS2.Ea2mant = ms_chiller[2];
 principal.Alarmas_SIS1.Ea3mant = ms_chiller[3];
 principal.Alarmas_SIS1.Ea4mant = ms_chiller[4];
 
+principal.Estados_SIS1.comp1_ea3 = st_comp1_chiller[3];
+principal.Estados_SIS1.comp2_ea3 = st_comp2_chiller[3];
+principal.Estados_SIS1.comp1_ea4 = st_comp1_chiller[4];
+principal.Estados_SIS1.comp2_ea4 = st_comp2_chiller[4];
+principal.Estados_SIS2.comp1_ea1 = st_comp1_chiller[1];
+principal.Estados_SIS2.comp2_ea1 = st_comp2_chiller[1];
+principal.Estados_SIS2.comp1_ea2 = st_comp1_chiller[2];
+principal.Estados_SIS2.comp2_ea2 = st_comp2_chiller[2];
 
 //PARAMETROS CHILLERS SIS
-principal.ParametrosClima_SIS2.T_sumEA1 = Number.parseFloat(TSUM_EA_1?.toFixed(2));
+/*principal.ParametrosClima_SIS2.T_sumEA1 = Number.parseFloat(TSUM_EA_1?.toFixed(2));
 principal.ParametrosClima_SIS2.T_retEA1 = Number.parseFloat(TRET_EA_1?.toFixed(2));
 principal.ParametrosClima_SIS2.T_sumEA2 = Number.parseFloat(TSUM_EA_2?.toFixed(2));
 principal.ParametrosClima_SIS2.T_retEA2 = Number.parseFloat(TRET_EA_2?.toFixed(2));
 principal.ParametrosClima_SIS1.T_sumEA3 = Number.parseFloat(TSUM_EA_3?.toFixed(2));
 principal.ParametrosClima_SIS1.T_retEA3 = Number.parseFloat(TRET_EA_3?.toFixed(2));
 principal.ParametrosClima_SIS1.T_sumEA4 = Number.parseFloat(TSUM_EA_4?.toFixed(2));
-principal.ParametrosClima_SIS1.T_retEA4 = Number.parseFloat(TRET_EA_4?.toFixed(2));
+principal.ParametrosClima_SIS1.T_retEA4 = Number.parseFloat(TRET_EA_4?.toFixed(2));*/
+principal.ParametrosClima_SIS2.T_retEA1 = Number.parseFloat(TSUM_EA_1?.toFixed(2));
+principal.ParametrosClima_SIS2.T_sumEA1 = Number.parseFloat(TRET_EA_1?.toFixed(2));
+principal.ParametrosClima_SIS2.T_retEA2 = Number.parseFloat(TSUM_EA_2?.toFixed(2));
+principal.ParametrosClima_SIS2.T_sumEA2 = Number.parseFloat(TRET_EA_2?.toFixed(2));
+principal.ParametrosClima_SIS1.T_retEA3 = Number.parseFloat(TSUM_EA_3?.toFixed(2));
+principal.ParametrosClima_SIS1.T_sumEA3 = Number.parseFloat(TRET_EA_3?.toFixed(2));
+principal.ParametrosClima_SIS1.T_retEA4 = Number.parseFloat(TSUM_EA_4?.toFixed(2));
+principal.ParametrosClima_SIS1.T_sumEA4 = Number.parseFloat(TRET_EA_4?.toFixed(2));
 //-----------------------------------------BOMBAS Y VALVULAS----------------------------------------------
 //--------------------------------------------------------------------------------------------------------
 //ESTADOS Y ALARMAS B. PRIMARIAS
@@ -1231,6 +1315,50 @@ let cargaSIS1_gen = potenciaSIS1_gen * 100 / 2430;
 let cargaSIS2_gen = potenciaSIS2_gen * 100 / 2430; 
     principal.ParametrosGEN_SIS2.Load =  Number.parseFloat(cargaSIS2_gen?.toFixed(2));
 
+let Carga_G1;
+if (pot_genSIS[1] < 10){
+    Carga_G1 = 0 }
+    else{
+    Carga_G1 = pot_genSIS[1] * 100 / 810;
+    principal.ParametrosGEN_SIS1.LoadG1 = Number.parseFloat(Carga_G1?.toFixed(0));
+    }
+let Carga_G2;
+if (pot_genSIS[2] < 10){
+    Carga_G2 = 0 }
+    else{
+    Carga_G2 = pot_genSIS[2] * 100 / 810;
+    principal.ParametrosGEN_SIS1.LoadG2 = Number.parseFloat(Carga_G2?.toFixed(0));
+    }
+let Carga_G3;
+if (pot_genSIS[3] < 10){
+    Carga_G3 = 0 }
+    else{
+    Carga_G3 = pot_genSIS[3] * 100 / 810;
+    principal.ParametrosGEN_SIS1.LoadG3 = Number.parseFloat(Carga_G3?.toFixed(0));
+    }
+let Carga_G4;
+if (pot_genSIS[4] < 10){
+    Carga_G4 = 0 }
+    else{
+    Carga_G4 = pot_genSIS[4] * 100 / 810;
+    principal.ParametrosGEN_SIS2.LoadG4 = Number.parseFloat(Carga_G4?.toFixed(0));
+    }
+let Carga_G5;
+if (pot_genSIS[5] < 10){
+    Carga_G5 = 0 }
+    else{
+    Carga_G5 = pot_genSIS[5] * 100 / 810;
+    principal.ParametrosGEN_SIS2.LoadG5 = Number.parseFloat(Carga_G5?.toFixed(0));
+    }
+let Carga_G6;
+if (pot_genSIS[6] < 10){
+    Carga_G6 = 0 }
+    else{
+    Carga_G6 = pot_genSIS[6] * 100 / 810;
+    principal.ParametrosGEN_SIS2.LoadG6 = Number.parseFloat(Carga_G6?.toFixed(0));
+    }
+
+
 //------------------------------------ESTADOS DE SISTEMA DE CLIMATIZACÓN-----------------------------------
 //---------------------------------------------------------------------------------------------------------
 principal.Estados_Principales.clima_SIS1 = SYS_1_EN === 1? estadosStyles.on : estadosStyles.sinconexion;
@@ -1337,6 +1465,95 @@ principal.Estados_SIS1.st_acc_sat_L2 = st_Led_SIS1_L[2];
 principal.Estados_SIS2.st_acc_sat_L1 = st_Led_SIS2_L[1];
 principal.Estados_SIS2.st_acc_sat_L2 = st_Led_SIS2_L[2];
 
+// PDI SISTEMA 1
+principal.Estados_SIS1.pdu_F1 = st_pdi_1A_F[1];
+principal.Estados_SIS1.pdu_F2 = st_pdi_1A_F[2];
+principal.Estados_SIS1.pdu_F3 = st_pdi_1A_F[3];
+principal.Estados_SIS1.pdu_F4 = st_pdi_1A_F[4];
+principal.Estados_SIS1.pdu_F5 = st_pdi_1A_F[5];
+principal.Estados_SIS1.pdu_F6 = st_pdi_1A_F[6];
+principal.Estados_SIS1.pdu_F7 = st_pdi_1A_F[7];
+principal.Estados_SIS1.pdu_F8 = st_pdi_1A_F[8];
+principal.Estados_SIS1.pdu_F9 = st_pdi_1A_F[9];
+principal.Estados_SIS1.pdu_F10 = st_pdi_1A_F[10];
+
+principal.ParametrosUPS_SIS1.P_PDI1A_F1 = pot_pdi_1A_F[1];
+principal.ParametrosUPS_SIS1.P_PDI1A_F2 = pot_pdi_1A_F[2];
+principal.ParametrosUPS_SIS1.P_PDI1A_F3 = pot_pdi_1A_F[3];
+principal.ParametrosUPS_SIS1.P_PDI1A_F4 = pot_pdi_1A_F[4];
+principal.ParametrosUPS_SIS1.P_PDI1A_F5 = pot_pdi_1A_F[5];
+principal.ParametrosUPS_SIS1.P_PDI1A_F6 = pot_pdi_1A_F[6];
+principal.ParametrosUPS_SIS1.P_PDI1A_F7 = pot_pdi_1A_F[7];
+principal.ParametrosUPS_SIS1.P_PDI1A_F8 = pot_pdi_1A_F[8];
+principal.ParametrosUPS_SIS1.P_PDI1A_F9 = pot_pdi_1A_F[9];
+principal.ParametrosUPS_SIS1.P_PDI1A_F10 = pot_pdi_1A_F[10];
+
+principal.ParametrosUPS_SIS1.V_PDI1A_F1 = vol_pdi_1A_F[1];
+principal.ParametrosUPS_SIS1.V_PDI1A_F2 = vol_pdi_1A_F[2];
+principal.ParametrosUPS_SIS1.V_PDI1A_F3 = vol_pdi_1A_F[3];
+principal.ParametrosUPS_SIS1.V_PDI1A_F4 = vol_pdi_1A_F[4];
+principal.ParametrosUPS_SIS1.V_PDI1A_F5 = vol_pdi_1A_F[5];
+principal.ParametrosUPS_SIS1.V_PDI1A_F6 = vol_pdi_1A_F[6];
+principal.ParametrosUPS_SIS1.V_PDI1A_F7 = vol_pdi_1A_F[7];
+principal.ParametrosUPS_SIS1.V_PDI1A_F8 = vol_pdi_1A_F[8];
+principal.ParametrosUPS_SIS1.V_PDI1A_F9 = vol_pdi_1A_F[9];
+principal.ParametrosUPS_SIS1.V_PDI1A_F10 = vol_pdi_1A_F[10];
+
+principal.Alarmas_SIS1.pdu_F1 = al_pdi_1A_F[1];
+principal.Alarmas_SIS1.pdu_F2 = al_pdi_1A_F[2];
+principal.Alarmas_SIS1.pdu_F3 = al_pdi_1A_F[3];
+principal.Alarmas_SIS1.pdu_F4 = al_pdi_1A_F[4];
+principal.Alarmas_SIS1.pdu_F5 = al_pdi_1A_F[5];
+principal.Alarmas_SIS1.pdu_F6 = al_pdi_1A_F[6];
+principal.Alarmas_SIS1.pdu_F7 = al_pdi_1A_F[7];
+principal.Alarmas_SIS1.pdu_F8 = al_pdi_1A_F[8];
+principal.Alarmas_SIS1.pdu_F9 = al_pdi_1A_F[9];
+principal.Alarmas_SIS1.pdu_F10 = al_pdi_1A_F[10];
+
+//PDI SISTEMA 2
+principal.Estados_SIS2.pdu_F1 = st_pdi_2A_F[1];
+principal.Estados_SIS2.pdu_F2 = st_pdi_2A_F[2];
+principal.Estados_SIS2.pdu_F3 = st_pdi_2A_F[3];
+principal.Estados_SIS2.pdu_F4 = st_pdi_2A_F[4];
+principal.Estados_SIS2.pdu_F5 = st_pdi_2A_F[5];
+principal.Estados_SIS2.pdu_F6 = st_pdi_2A_F[6];
+principal.Estados_SIS2.pdu_F7 = st_pdi_2A_F[7];
+principal.Estados_SIS2.pdu_F8 = st_pdi_2A_F[8];
+principal.Estados_SIS2.pdu_F9 = st_pdi_2A_F[9];
+principal.Estados_SIS2.pdu_F10 = st_pdi_2A_F[10];
+
+principal.ParametrosUPS_SIS2.P_PDI2A_F1 = pot_pdi_2A_F[1];
+principal.ParametrosUPS_SIS2.P_PDI2A_F2 = pot_pdi_2A_F[2];
+principal.ParametrosUPS_SIS2.P_PDI2A_F3 = pot_pdi_2A_F[3];
+principal.ParametrosUPS_SIS2.P_PDI2A_F4 = pot_pdi_2A_F[4];
+principal.ParametrosUPS_SIS2.P_PDI2A_F5 = pot_pdi_2A_F[5];
+principal.ParametrosUPS_SIS2.P_PDI2A_F6 = pot_pdi_2A_F[6];
+principal.ParametrosUPS_SIS2.P_PDI2A_F7 = pot_pdi_2A_F[7];
+principal.ParametrosUPS_SIS2.P_PDI2A_F8 = pot_pdi_2A_F[8];
+principal.ParametrosUPS_SIS2.P_PDI2A_F9 = pot_pdi_2A_F[9];
+principal.ParametrosUPS_SIS2.P_PDI2A_F10 = pot_pdi_2A_F[10];
+
+principal.ParametrosUPS_SIS2.V_PDI2A_F1 = vol_pdi_2A_F[1];
+principal.ParametrosUPS_SIS2.V_PDI2A_F2 = vol_pdi_2A_F[2];
+principal.ParametrosUPS_SIS2.V_PDI2A_F3 = vol_pdi_2A_F[3];
+principal.ParametrosUPS_SIS2.V_PDI2A_F4 = vol_pdi_2A_F[4];
+principal.ParametrosUPS_SIS2.V_PDI2A_F5 = vol_pdi_2A_F[5];
+principal.ParametrosUPS_SIS2.V_PDI2A_F6 = vol_pdi_2A_F[6];
+principal.ParametrosUPS_SIS2.V_PDI2A_F7 = vol_pdi_2A_F[7];
+principal.ParametrosUPS_SIS2.V_PDI2A_F8 = vol_pdi_2A_F[8];
+principal.ParametrosUPS_SIS2.V_PDI2A_F9 = vol_pdi_2A_F[9];
+principal.ParametrosUPS_SIS2.V_PDI2A_F10 = vol_pdi_2A_F[10];
+
+principal.Alarmas_SIS2.pdu_F1 = al_pdi_2A_F[1];
+principal.Alarmas_SIS2.pdu_F2 = al_pdi_2A_F[2];
+principal.Alarmas_SIS2.pdu_F3 = al_pdi_2A_F[3];
+principal.Alarmas_SIS2.pdu_F4 = al_pdi_2A_F[4];
+principal.Alarmas_SIS2.pdu_F5 = al_pdi_2A_F[5];
+principal.Alarmas_SIS2.pdu_F6 = al_pdi_2A_F[6];
+principal.Alarmas_SIS2.pdu_F7 = al_pdi_2A_F[7];
+principal.Alarmas_SIS2.pdu_F8 = al_pdi_2A_F[8];
+principal.Alarmas_SIS2.pdu_F9 = al_pdi_2A_F[9];
+principal.Alarmas_SIS2.pdu_F10 = al_pdi_2A_F[10];
 
 console.log(principal);
 

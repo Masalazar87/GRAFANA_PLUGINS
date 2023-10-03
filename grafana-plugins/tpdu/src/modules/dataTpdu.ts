@@ -85,10 +85,10 @@ const DataTpdu = (data: PanelData, options:SimpleOptions, replaceVariables:Inter
             CorrienteC: 0,
             Pot_appt: 0,
             Pot_real: 0,
-            Ltime_curve: '- - -',
+            Ltime_curve: '',
             Ltime_banda: '',
             Ltime_pickup: 0,
-            Stime_curve: '- - -',
+            Stime_curve: '',
             Stime_banda: '',
             Stime_pickup: 0,
             inst_pickup: '',
@@ -99,6 +99,86 @@ const DataTpdu = (data: PanelData, options:SimpleOptions, replaceVariables:Inter
     //INTERPOLACION DE VARIABLES
 let variableNombre = replaceVariables('$EQUIPO')
 tpdu.DatosGenerales.Nombre = variableNombre !==''? variableNombre: options.nombre
+
+if (variableNombre === 'T_PDU_1A_0') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-0"
+ }
+if (variableNombre === 'T_PDU_1A_1') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-1"
+ }
+if (variableNombre === 'T_PDU_1A_2') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-2"
+ }
+if (variableNombre === 'T_PDU_1A_3') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-3"
+ }
+if (variableNombre === 'T_PDU_1A_4') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-4"
+ }
+if (variableNombre === 'T_PDU_1A_5') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-5"
+ }
+if (variableNombre === 'T_PDU_1A_6') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-6"
+ }
+if (variableNombre === 'T_PDU_1A_7') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-7"
+ }
+if (variableNombre === 'T_PDU_1A_8') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-8"
+ }
+if (variableNombre === 'T_PDU_1A_9') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-9"
+ }
+if (variableNombre === 'T_PDU_1A_10') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-10"
+ }
+if (variableNombre === 'T_PDU_1A_11') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-11"
+ }
+if (variableNombre === 'T_PDU_1A_12') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-01A-12"
+ }
+ if (variableNombre === 'T_PDU_2A_0') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-0"
+ }
+if (variableNombre === 'T_PDU_2A_1') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-1"
+ }
+if (variableNombre === 'T_PDU_2A_2') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-2"
+ }
+if (variableNombre === 'T_PDU_2A_3') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-3"
+ }
+if (variableNombre === 'T_PDU_2A_4') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-4"
+ }
+if (variableNombre === 'T_PDU_2A_5') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-5"
+ }
+if (variableNombre === 'T_PDU_2A_6') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-6"
+ }
+if (variableNombre === 'T_PDU_2A_7') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-7"
+ }
+if (variableNombre === 'T_PDU_2A_8') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-8"
+ }
+if (variableNombre === 'T_PDU_2A_9') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-9"
+ }
+if (variableNombre === 'T_PDU_2A_10') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-10"
+ }
+if (variableNombre === 'T_PDU_2A_11') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-11"
+ }
+if (variableNombre === 'T_PDU_2A_12') {
+  tpdu.DatosGenerales.Nombre = "T-PDU-02A-12"
+ }
+
 
 //PRINCIPAL
 tpdu.Principal.Voltage_prom = Number.parseFloat(V_FASE_A?.toFixed(2));

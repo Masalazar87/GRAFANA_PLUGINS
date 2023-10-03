@@ -28,10 +28,18 @@ type ParametrosClima = {
 type ParametrosUPS_SIS1 = {
     V_in: number; V_out: number; I_out: number; P_out: number; Load: number;
     V_inCHI: number; V_outCHI: number; I_outCHI: number; P_outCHI: number; LoadCHI: number;
+    V_PDI1A_F1: number; V_PDI1A_F2: number; V_PDI1A_F3: number; V_PDI1A_F4: number; V_PDI1A_F5: number; 
+    V_PDI1A_F6: number; V_PDI1A_F7: number; V_PDI1A_F8: number; V_PDI1A_F9: number; V_PDI1A_F10: number; 
+    P_PDI1A_F1: number; P_PDI1A_F2: number; P_PDI1A_F3: number; P_PDI1A_F4: number; P_PDI1A_F5: number; 
+    P_PDI1A_F6: number; P_PDI1A_F7: number; P_PDI1A_F8: number; P_PDI1A_F9: number; P_PDI1A_F10: number; 
 };
 type ParametrosUPS_SIS2 = {
     V_in: number; V_out: number; I_out: number; P_out: number; Load: number;
     V_inCHI: number; V_outCHI: number; I_outCHI: number; P_outCHI: number; LoadCHI: number;
+    V_PDI2A_F1: number; V_PDI2A_F2: number; V_PDI2A_F3: number; V_PDI2A_F4: number; V_PDI2A_F5: number; 
+    V_PDI2A_F6: number; V_PDI2A_F7: number; V_PDI2A_F8: number; V_PDI2A_F9: number; V_PDI2A_F10: number; 
+    P_PDI2A_F1: number; P_PDI2A_F2: number; P_PDI2A_F3: number; P_PDI2A_F4: number; P_PDI2A_F5: number; 
+    P_PDI2A_F6: number; P_PDI2A_F7: number; P_PDI2A_F8: number; P_PDI2A_F9: number; P_PDI2A_F10: number; 
 };
 type ParametrosClima_SIS1 = {
     T_sumEA3: number; T_retEA3: number;
@@ -52,12 +60,18 @@ type ParametrosGEN_SIS1 = {
     I_out: number;
     P_out: number;
     Load: number;
+    LoadG1: number;
+    LoadG2: number;
+    LoadG3: number;
 }; 
 type ParametrosGEN_SIS2 = {
     V_out: number;
     I_out: number;
     P_out: number;
     Load: number;
+    LoadG4: number;
+    LoadG5: number;
+    LoadG6: number;
 }; 
 type Estados_Principales = {
     ups_SIS1: string; ups_SIS2: string;
@@ -77,6 +91,10 @@ type Estados_SIS1 = {
     V1aux: string; V2aux: string;
     upsoffices_1a: string; upssat_1a: string; rec_1a: string;
     st_acc_sat_L1: string; st_acc_sat_L2: string;
+    comp1_ea3: string; comp2_ea3: string;
+    comp1_ea4: string; comp2_ea4: string;
+    pdu_F1: string; pdu_F2: string; pdu_F3: string; pdu_F4: string; pdu_F5: string;
+    pdu_F6: string; pdu_F7: string; pdu_F8: string; pdu_F9: string; pdu_F10: string;
 };
 type Estados_SIS2 = {
     ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi2: string;
@@ -87,6 +105,10 @@ type Estados_SIS2 = {
     V1aux: string; V2aux: string;
     upsnoc_2a: string; upssat_2a: string; rec_2a: string;
     st_acc_sat_L1: string; st_acc_sat_L2: string;
+    comp1_ea1: string; comp2_ea1: string;
+    comp1_ea2: string; comp2_ea2: string;
+    pdu_F1: string; pdu_F2: string; pdu_F3: string; pdu_F4: string; pdu_F5: string;
+    pdu_F6: string; pdu_F7: string; pdu_F8: string; pdu_F9: string; pdu_F10: string;
 };
 type Alarmas = {
     uma1: string; uma2: string; uma3: string; uma4:string; uma5: string; uma6: string;
@@ -101,6 +123,8 @@ type Alarmas_SIS1 = {
     b2_3: string; b2_4: string;
     upsoffices_1a: string; upssat_1a: string; //rec_1a: string;
     text_mant_Ea4: string; text_mant_Ea3: string;
+    pdu_F1: string; pdu_F2: string; pdu_F3: string; pdu_F4: string; pdu_F5: string;
+    pdu_F6: string; pdu_F7: string; pdu_F8: string; pdu_F9: string; pdu_F10: string;
 };
 type Alarmas_SIS2 = {
     ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi2: string;
@@ -111,6 +135,8 @@ type Alarmas_SIS2 = {
     V1aux: string; V2aux: string;
     upsnoc_2a: string; upssat_2a: string; //rec_2a: string;
     text_mant_Ea1: string; text_mant_Ea2: string;
+    pdu_F1: string; pdu_F2: string; pdu_F3: string; pdu_F4: string; pdu_F5: string;
+    pdu_F6: string; pdu_F7: string; pdu_F8: string; pdu_F9: string; pdu_F10: string;
 };
 
 export interface DataPrincipal {
@@ -4306,7 +4332,7 @@ return (
       fontSize="4.2334px"
       strokeWidth={0.48961}
     >
-      {ParametrosClima_SIS1.T_sumEA3}°C
+      {ParametrosClima_SIS1.T_retEA3}°C
     </tspan>
   </text>
   <text
@@ -4344,7 +4370,7 @@ return (
       fontSize="4.2334px"
       strokeWidth={0.48961}
     >
-      {ParametrosClima_SIS1.T_retEA3}°C
+      {ParametrosClima_SIS1.T_sumEA3}°C
     </tspan>
   </text>
   <text
@@ -4382,7 +4408,7 @@ return (
       fontSize="4.2334px"
       strokeWidth={0.48961}
     >
-      {ParametrosClima_SIS1.T_sumEA4}°C
+      {ParametrosClima_SIS1.T_retEA4}°C
     </tspan>
   </text>
   <text
@@ -4420,7 +4446,7 @@ return (
       fontSize="4.2334px"
       strokeWidth={0.48961}
     >
-      {ParametrosClima_SIS1.T_retEA4}°C
+      {ParametrosClima_SIS1.T_sumEA4}°C
     </tspan>
   </text>
   <text
@@ -5222,7 +5248,7 @@ return (
       fontSize="4.2334px"
       strokeWidth={0.48961}
     >
-      {ParametrosClima_SIS2.T_sumEA1}°C
+      {ParametrosClima_SIS2.T_retEA1}°C
     </tspan>
   </text>
   <text
@@ -5260,7 +5286,7 @@ return (
       fontSize="4.2334px"
       strokeWidth={0.48961}
     >
-      {ParametrosClima_SIS2.T_retEA1}°C
+      {ParametrosClima_SIS2.T_sumEA1}°C
     </tspan>
   </text>
   <text
@@ -5298,7 +5324,7 @@ return (
       fontSize="4.2334px"
       strokeWidth={0.48961}
     >
-      {ParametrosClima_SIS2.T_sumEA2}°C
+      {ParametrosClima_SIS2.T_retEA2}°C
     </tspan>
   </text>
   <text
@@ -5336,7 +5362,7 @@ return (
       fontSize="4.2334px"
       strokeWidth={0.48961}
     >
-      {ParametrosClima_SIS2.T_retEA2}°C
+      {ParametrosClima_SIS2.T_sumEA2}°C
     </tspan>
   </text>
   <text
@@ -6030,7 +6056,3189 @@ return (
           >
             {ParametrosClima_SIS2.acc_sat_L2} A
           </tspan>
+          </text>
+          <circle
+          id="st_sis1_ea3"
+          cx={33.095}
+          cy={66.473}
+          r={1.25}
+          fill="#999"
+          className={Estados_SIS1.comp1_ea3}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_sis1_ea3_brillo"
+          transform="matrix(.12803 0 0 .0632 28.062 54.511)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-9-0-2-45-7-1-2)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+          strokeWidth={4.2128}
+        />
+        <text
+          id="text_sis1_chiller_ea3"
+          transform="scale(1.0636 .9402)"
+          x={21.048048}
+          y={71.614159}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.4695px"
+          letterSpacing={0}
+          strokeWidth={0.48961}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan4568-3-8-6-1-3-5-2"
+            x={21.048048}
+            y={71.614159}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.4695px"
+            strokeWidth={0.48961}
+          >
+            {"SIST. 1:"}
+          </tspan>
         </text>
+        <circle
+          id="st_sis2_ea3"
+          cx={33.095}
+          cy={69.94}
+          r={1.25}
+          fill="#999"
+          className={Estados_SIS1.comp2_ea3}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_sis2_ea3_brillo"
+          transform="matrix(.12803 0 0 .0632 28.062 57.978)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-9-0-2-45-7-1-5-4)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+          strokeWidth={4.2128}
+        />
+        <text
+          id="text_sis2_chiller_ea3"
+          transform="scale(1.0636 .9402)"
+          x={21.047583}
+          y={75.292824}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.4695px"
+          letterSpacing={0}
+          strokeWidth={0.48961}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan4568-3-8-6-1-3-1-3-0"
+            x={21.047583}
+            y={75.292824}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.4695px"
+            strokeWidth={0.48961}
+          >
+            {"SIST. 2:"}
+          </tspan>
+        </text>
+          <circle
+          id="st_sis1_ea4"
+          cx={33.095}
+          cy={89.653}
+          r={1.25}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.comp1_ea4}
+        />
+        <ellipse
+          id="st_sis1_ea4_brillo"
+          transform="matrix(.12803 0 0 .0632 28.062 77.691)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-9-0-2-45-7-1)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+          strokeWidth={4.2128}
+        />
+        <text
+          id="text_sis1_chiller_ea4"
+          transform="scale(1.0636 .9402)"
+          x={21.048048}
+          y={96.268135}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.4695px"
+          letterSpacing={0}
+          strokeWidth={0.48961}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan4568-3-8-6-1-3-5"
+            x={21.048048}
+            y={96.268135}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.4695px"
+            strokeWidth={0.48961}
+          >
+            {"SIST. 1:"}
+          </tspan>
+        </text>
+        <circle
+          id="st_sis2_ea4"
+          cx={33.095}
+          cy={93.12}
+          r={1.25}
+          fill="#999"
+          className={Estados_SIS1.comp2_ea4}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_sis2_ea4_brillo-2"
+          transform="matrix(.12803 0 0 .0632 28.062 81.158)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-9-0-2-45-7-1-5)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+          strokeWidth={4.2128}
+        />
+        <text
+          id="text_sis2_chiller_ea4"
+          transform="scale(1.0636 .9402)"
+          x={21.047583}
+          y={99.9468}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.4695px"
+          letterSpacing={0}
+          strokeWidth={0.48961}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan4568-3-8-6-1-3-1-3"
+            x={21.047583}
+            y={99.9468}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.4695px"
+            strokeWidth={0.48961}
+          >
+            {"SIST. 2:"}
+          </tspan>
+        </text>
+        <circle
+          id="st_sis1_ea1"
+          transform="translate(14.288)"
+          cx={81.388}
+          cy={66.473}
+          r={1.25}
+          fill="#999"
+          className={Estados_SIS2.comp1_ea1}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_sis1_ea1_brillo"
+          transform="matrix(.12803 0 0 .0632 90.643 54.511)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-9-0-2-45-7-1-2-4)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+          strokeWidth={4.2128}
+        />
+        <text
+          id="text_sis1_chiller_ea1"
+          transform="matrix(1.0636 0 0 .9402 14.288 0)"
+          x={66.453087}
+          y={71.614494}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.4695px"
+          letterSpacing={0}
+          strokeWidth={0.48961}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan4568-3-8-6-1-3-5-2-4"
+            x={66.453087}
+            y={71.614494}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.4695px"
+            strokeWidth={0.48961}
+          >
+            {"SIST. 1:"}
+          </tspan>
+          </text>
+        <circle
+          id="st_sis2_ea1"
+          transform="translate(14.288)"
+          cx={81.388}
+          cy={69.94}
+          r={1.25}
+          fill="#999"
+          className={Estados_SIS2.comp2_ea1}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_sis2_ea1_brillo"
+          transform="matrix(.12803 0 0 .0632 90.643 57.978)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-9-0-2-45-7-1-5-4-1)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+          strokeWidth={4.2128}
+        />
+        <text
+          id="text_sis2_chiller_ea1"
+          transform="matrix(1.0636 0 0 .9402 14.288 0)"
+          x={66.452621}
+          y={75.293159}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.4695px"
+          letterSpacing={0}
+          strokeWidth={0.48961}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan4568-3-8-6-1-3-1-3-0-2"
+            x={66.452621}
+            y={75.293159}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.4695px"
+            strokeWidth={0.48961}
+          >
+            {"SIST. 2:"}
+          </tspan>
+        </text>
+        <circle
+          id="st_sis1_ea2"
+          transform="translate(14.288)"
+          cx={81.388}
+          cy={89.653}
+          r={1.25}
+          fill="#999"
+          className={Estados_SIS2.comp1_ea2}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_sis1_ea2_brillo"
+          transform="matrix(.12803 0 0 .0632 90.643 77.691)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-9-0-2-45-7-1-26)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+          strokeWidth={4.2128}
+        />
+        <text
+          id="text_sis1_chiller_ea2"
+          transform="matrix(1.0636 0 0 .9402 14.288 0)"
+          x={66.453087}
+          y={96.268463}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.4695px"
+          letterSpacing={0}
+          strokeWidth={0.48961}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan4568-3-8-6-1-3-5-5"
+            x={66.453087}
+            y={96.268463}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.4695px"
+            strokeWidth={0.48961}
+          >
+            {"SIST. 1:"}
+          </tspan>
+        </text>
+        <circle
+          id="st_sis2_ea2"
+          transform="translate(14.288)"
+          cx={81.388}
+          cy={93.12}
+          r={1.25}
+          fill="#999"
+          className={Estados_SIS2.comp2_ea2}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_sis2_ea2_brillo"
+          transform="matrix(.12803 0 0 .0632 90.643 81.158)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-9-0-2-45-7-1-5-6)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+          strokeWidth={4.2128}
+        />
+        <text
+          id="text_sis2_chiller_ea2"
+          transform="matrix(1.0636 0 0 .9402 14.288 0)"
+          x={66.452621}
+          y={99.947128}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="2.4695px"
+          letterSpacing={0}
+          strokeWidth={0.48961}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan4568-3-8-6-1-3-1-3-1"
+            x={66.452621}
+            y={99.947128}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal"
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="2.4695px"
+            strokeWidth={0.48961}
+          >
+            {"SIST. 2:"}
+          </tspan>
+        </text>
+        //PDUS
+        <ellipse
+          id="st_pdi_10_sis1"
+          transform="translate(14.288)"
+          cx={191.04}
+          cy={153.28}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.pdu_F10}
+        />
+        <ellipse
+          id="st_brillo_pdi10"
+          transform="matrix(.30428 0 0 .24778 193.36 109.02)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-10-8)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_9_sis1"
+          transform="translate(14.288)"
+          cx={191.04}
+          cy={143.17}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.pdu_F9}
+        />
+        <ellipse
+          id="st_brillo_pdi9"
+          transform="matrix(.30428 0 0 .24778 193.36 98.918)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-8-0)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_8_sis1"
+          transform="translate(14.288)"
+          cx={191.04}
+          cy={133.06}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.pdu_F8}
+        />
+        <ellipse
+          id="st_brillo_pdi8"
+          transform="matrix(.30428 0 0 .24778 193.36 88.805)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-4-9)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_7_sis1"
+          transform="translate(14.288)"
+          cx={191.04}
+          cy={122.95}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.pdu_F7}
+        />
+        <ellipse
+          id="st_brillo_pdi7"
+          transform="matrix(.30428 0 0 .24778 193.36 78.696)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-675-2)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_6_sis1"
+          transform="translate(14.288)"
+          cx={191.04}
+          cy={112.84}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.pdu_F6}
+        />
+        <ellipse
+          id="st_brillo_pdi6"
+          transform="matrix(.30428 0 0 .24778 193.36 68.587)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-9-0)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_5_sis1"
+          transform="translate(14.288)"
+          cx={191.04}
+          cy={102.73}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.pdu_F5}
+        />
+        <ellipse
+          id="st_brillo_pdi5"
+          transform="matrix(.30428 0 0 .24778 193.36 58.478)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-0-6)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_4_sis1"
+          transform="translate(14.288)"
+          cx={191.04}
+          cy={92.627}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.pdu_F4}
+        />
+        <ellipse
+          id="st_brillo_pdi4"
+          transform="matrix(.30428 0 0 .24778 193.36 48.369)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-71-6)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_3_sis1"
+          transform="translate(14.288)"
+          cx={191.04}
+          cy={82.518}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.pdu_F3}
+        />
+        <ellipse
+          id="st_brillo_pdi3"
+          transform="matrix(.30428 0 0 .24778 193.36 38.26)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-7-4)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_2_sis1"
+          transform="translate(14.288)"
+          cx={191.04}
+          cy={72.409}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.pdu_F2}
+        />
+        <ellipse
+          id="st_brillo_pdi2"
+          transform="matrix(.30428 0 0 .24778 193.36 28.151)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-5-3)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_1_sis1"
+          transform="translate(14.288)"
+          cx={191.04}
+          cy={62.3}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          opacity={0.995}
+          paintOrder="markers stroke fill"
+          className={Estados_SIS1.pdu_F1}
+        />
+        <ellipse
+          id="st_brillo_pdi1"
+          transform="matrix(.30428 0 0 .24778 193.36 18.042)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-40)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <text
+          id="pot_pdi_10_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={182.38957}
+          y={166.80309}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-3-6"
+            x={180.38957}
+            y={166.80309}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.P_PDI1A_F10}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_9_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={182.38957}
+          y={156.28552}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-91-3"
+            x={180.38957}
+            y={156.28552}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.P_PDI1A_F9}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_8_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={182.38957}
+          y={145.76796}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-8-4"
+            x={180.38957}
+            y={145.76796}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.P_PDI1A_F8}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_7_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={182.38957}
+          y={135.25038}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-46-0"
+            x={180.38957}
+            y={135.25038}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.P_PDI1A_F7}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_6_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={182.38957}
+          y={124.73283}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-63-3"
+            x={180.38957}
+            y={124.73283}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.P_PDI1A_F6}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_5_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={182.38957}
+          y={114.21526}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-4-5"
+            x={180.38957}
+            y={114.21526}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.P_PDI1A_F5}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_4_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={182.38957}
+          y={103.69769}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-6-7"
+            x={180.38957}
+            y={103.69769}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+             {ParametrosUPS_SIS1.P_PDI1A_F4}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_3_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={182.38957}
+          y={93.180115}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-5-0"
+            x={180.38957}
+            y={93.180115}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+             {ParametrosUPS_SIS1.P_PDI1A_F3}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_2_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={182.38957}
+          y={82.662552}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-9-6"
+            x={180.38957}
+            y={82.662552}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+             {ParametrosUPS_SIS1.P_PDI1A_F2}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_1_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={182.38957}
+          y={72.144981}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-41"
+            x={180.38957}
+            y={72.144981}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+             {ParametrosUPS_SIS1.P_PDI1A_F1}kva
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_10_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={167.90086}
+          y={166.80309}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-9-2"
+            x={163.90086}
+            y={166.80309}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.V_PDI1A_F10}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_9_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={167.90086}
+          y={156.28552}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-0-7"
+            x={163.90086}
+            y={156.28552}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.V_PDI1A_F9}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_8_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={167.90086}
+          y={145.76794}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-87-8"
+            x={163.90086}
+            y={145.76794}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.V_PDI1A_F8}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_7_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={167.90086}
+          y={135.25038}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-5-8"
+            x={163.90086}
+            y={135.25038}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.V_PDI1A_F7}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_6_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={167.90086}
+          y={124.73282}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-8-5"
+            x={163.90086}
+            y={124.73282}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.V_PDI1A_F6}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_5_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={167.90086}
+          y={114.21526}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-6-6"
+            x={163.90086}
+            y={114.21526}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.V_PDI1A_F5}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_4_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={167.90086}
+          y={103.69769}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-10-9"
+            x={163.90086}
+            y={103.69769}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.V_PDI1A_F4}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_3_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={167.90086}
+          y={93.180122}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-2-3"
+            x={163.90086}
+            y={93.180122}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.V_PDI1A_F3}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_2_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={167.90086}
+          y={82.662552}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-1-3"
+            x={163.90086}
+            y={82.662552}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.V_PDI1A_F2}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_1_sis1"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={167.90086}
+          y={72.144981}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-12"
+            x={163.90086}
+            y={72.144981}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.V_PDI1A_F1}V
+          </tspan>
+        </text>
+        <ellipse
+          id="alm_pdi10_sis1"
+          transform="translate(14.288)"
+          cx={199.69}
+          cy={153.28}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS1.pdu_F10}
+        />
+        <ellipse
+          id="alm_brillo_pdi10"
+          transform="matrix(.30428 0 0 .24778 202.02 109.02)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-2-9)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi9_sis1"
+          transform="translate(14.288)"
+          cx={199.69}
+          cy={143.17}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS1.pdu_F9}
+        />
+        <ellipse
+          id="alm_brillo_pdi9"
+          transform="matrix(.30428 0 0 .24778 202.02 98.918)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-4-5)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi8_sis1"
+          transform="translate(14.288)"
+          cx={199.69}
+          cy={133.06}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS1.pdu_F8}
+        />
+        <ellipse
+          id="alm_brillo_pdi8"
+          transform="matrix(.30428 0 0 .24778 202.02 88.805)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-19-5)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi7_sis1"
+          transform="translate(14.288)"
+          cx={199.69}
+          cy={122.95}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS1.pdu_F7}
+        />
+        <ellipse
+          id="alm_brillo_pdi7"
+          transform="matrix(.30428 0 0 .24778 202.02 78.696)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-0-1)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi6_sis1"
+          transform="translate(14.288)"
+          cx={199.69}
+          cy={112.84}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS1.pdu_F6}
+        />
+        <ellipse
+          id="alm_brillo_pdi6"
+          transform="matrix(.30428 0 0 .24778 202.02 68.587)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-13-0)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi5_sis1"
+          transform="translate(14.288)"
+          cx={199.69}
+          cy={102.73}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS1.pdu_F5}
+        />
+        <ellipse
+          id="alm_brillo_pdi5"
+          transform="matrix(.30428 0 0 .24778 202.02 58.478)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-22-3)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi4_sis1"
+          transform="translate(14.288)"
+          cx={199.69}
+          cy={92.627}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS1.pdu_F4}
+        />
+        <ellipse
+          id="alm_brillo_pdi4"
+          transform="matrix(.30428 0 0 .24778 202.02 48.369)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-27-1)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi3_sis1"
+          transform="translate(14.288)"
+          cx={199.69}
+          cy={82.518}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS1.pdu_F3}
+        />
+        <ellipse
+          id="alm_brillo_pdi3"
+          transform="matrix(.30428 0 0 .24778 202.02 38.26)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-1-3)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi2_sis1"
+          transform="translate(14.288)"
+          cx={199.69}
+          cy={72.409}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS1.pdu_F2}
+        />
+        <ellipse
+          id="alm_brillo_pdi2"
+          transform="matrix(.30428 0 0 .24778 202.02 28.151)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-6-8)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi1_sis1"
+          transform="translate(14.288)"
+          cx={199.69}
+          cy={62.3}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS1.pdu_F1}
+        />
+        <ellipse
+          id="alm_brillo_pdi1"
+          transform="matrix(.30428 0 0 .24778 202.02 18.042)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-5)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi10_sis2"
+          transform="translate(14.288)"
+          cx={348.06}
+          cy={153.28}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS2.pdu_F10}
+        />
+        <ellipse
+          id="alm_brillo_pdi10-3"
+          transform="matrix(.30428 0 0 .24778 350.39 109.02)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-2-9-2)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi9_sis2"
+          transform="translate(14.288)"
+          cx={348.06}
+          cy={143.17}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS2.pdu_F9}
+        />
+        <ellipse
+          id="alm_brillo_pdi9-6"
+          transform="matrix(.30428 0 0 .24778 350.39 98.918)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-4-5-7)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi8_sis2"
+          transform="translate(14.288)"
+          cx={348.06}
+          cy={133.06}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS2.pdu_F8}
+        />
+        <ellipse
+          id="alm_brillo_pdi8-8"
+          transform="matrix(.30428 0 0 .24778 350.39 88.805)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-19-5-4)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi7_sis2"
+          transform="translate(14.288)"
+          cx={348.06}
+          cy={122.95}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS2.pdu_F7}
+        />
+        <ellipse
+          id="alm_brillo_pdi7-1"
+          transform="matrix(.30428 0 0 .24778 350.39 78.696)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-0-1-9)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi6_sis2"
+          transform="translate(14.288)"
+          cx={348.06}
+          cy={112.84}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS2.pdu_F6}
+        />
+        <ellipse
+          id="alm_brillo_pdi6-3"
+          transform="matrix(.30428 0 0 .24778 350.39 68.587)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-13-0-1)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi5_sis2"
+          transform="translate(14.288)"
+          cx={348.06}
+          cy={102.73}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS2.pdu_F5}
+        />
+        <ellipse
+          id="alm_brillo_pdi5-3"
+          transform="matrix(.30428 0 0 .24778 350.39 58.478)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-22-3-9)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi4_sis2"
+          transform="translate(14.288)"
+          cx={348.06}
+          cy={92.627}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS2.pdu_F4}
+        />
+        <ellipse
+          id="alm_brillo_pdi4-6"
+          transform="matrix(.30428 0 0 .24778 350.39 48.369)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-27-1-2)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi3_sis2"
+          transform="translate(14.288)"
+          cx={348.06}
+          cy={82.518}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS2.pdu_F3}
+        />
+        <ellipse
+          id="alm_brillo_pdi3-7"
+          transform="matrix(.30428 0 0 .24778 350.39 38.26)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-1-3-9)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi2_sis2"
+          transform="translate(14.288)"
+          cx={348.06}
+          cy={72.409}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS2.pdu_F2}
+        />
+        <ellipse
+          id="alm_brillo_pdi2-5"
+          transform="matrix(.30428 0 0 .24778 350.39 28.151)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-6-8-5)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="alm_pdi1_sis2"
+          transform="translate(14.288)"
+          cx={348.06}
+          cy={62.3}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Alarmas_SIS2.pdu_F1}
+        />
+        <ellipse
+          id="alm_brillo_pdi1-9"
+          transform="matrix(.30428 0 0 .24778 350.39 18.042)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-67-5-6)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_10_sis2"
+          transform="translate(14.288)"
+          cx={339.41}
+          cy={153.28}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS2.pdu_F10}
+        />
+        <ellipse
+          id="st_brillo_pdi10-1"
+          transform="matrix(.30428 0 0 .24778 341.73 109.02)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-10-8-9)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_9_sis2"
+          transform="translate(14.288)"
+          cx={339.41}
+          cy={143.17}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS2.pdu_F9}
+        />
+        <ellipse
+          id="st_brillo_pdi9-2"
+          transform="matrix(.30428 0 0 .24778 341.73 98.918)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-8-0-5)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_8_sis2"
+          transform="translate(14.288)"
+          cx={339.41}
+          cy={133.06}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS2.pdu_F8}
+        />
+        <ellipse
+          id="st_brillo_pdi8-9"
+          transform="matrix(.30428 0 0 .24778 341.73 88.805)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-4-9-7)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_7_sis2"
+          transform="translate(14.288)"
+          cx={339.41}
+          cy={122.95}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS2.pdu_F7}
+        />
+        <ellipse
+          id="st_brillo_pdi7-7"
+          transform="matrix(.30428 0 0 .24778 341.73 78.696)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-675-2-5)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_6_sis2"
+          transform="translate(14.288)"
+          cx={339.41}
+          cy={112.84}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS2.pdu_F6}
+        />
+        <ellipse
+          id="st_brillo_pdi6-8"
+          transform="matrix(.30428 0 0 .24778 341.73 68.587)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-9-0-3)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_5_sis2"
+          transform="translate(14.288)"
+          cx={339.41}
+          cy={102.73}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS2.pdu_F5}
+        />
+        <ellipse
+          id="st_brillo_pdi5-3"
+          transform="matrix(.30428 0 0 .24778 341.73 58.478)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-0-6-3)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_4_sis2"
+          transform="translate(14.288)"
+          cx={339.41}
+          cy={92.627}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS2.pdu_F4}
+        />
+        <ellipse
+          id="st_brillo_pdi4-7"
+          transform="matrix(.30428 0 0 .24778 341.73 48.369)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-71-6-9)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_3_sis2"
+          transform="translate(14.288)"
+          cx={339.41}
+          cy={82.518}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS2.pdu_F3}
+        />
+        <ellipse
+          id="st_brillo_pdi3-7"
+          transform="matrix(.30428 0 0 .24778 341.73 38.26)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-7-4-9)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_2_sis2"
+          transform="translate(14.288)"
+          cx={339.41}
+          cy={72.409}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS2.pdu_F2}
+        />
+        <ellipse
+          id="st_brillo_pdi2-0"
+          transform="matrix(.30428 0 0 .24778 341.73 28.151)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-5-3-5)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <ellipse
+          id="st_pdi_1_sis2"
+          transform="translate(14.288)"
+          cx={339.41}
+          cy={62.3}
+          rx={1.7563}
+          ry={1.8557}
+          fill="#999"
+          paintOrder="markers stroke fill"
+          className={Estados_SIS2.pdu_F1}
+        />
+        <ellipse
+          id="st_brillo_pdi1-4"
+          transform="matrix(.30428 0 0 .24778 341.73 18.042)"
+          cx={39.31}
+          cy={175.59}
+          rx={4.2297}
+          ry={4.0337}
+          fill="#fff"
+          filter="url(#filter2091-91-40-1)"
+          opacity={0.29}
+          paintOrder="markers stroke fill"
+        />
+        <text
+          id="pot_pdi_10_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={324.25024}
+          y={166.80312}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-3-6-6"
+            x={322.25024}
+            y={166.80312}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.P_PDI2A_F10}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_9_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={324.25024}
+          y={156.28554}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-91-3-6"
+            x={322.25024}
+            y={156.28554}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.P_PDI2A_F9}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_8_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={324.25024}
+          y={145.76797}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-8-4-1"
+            x={322.25024}
+            y={145.76797}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.P_PDI2A_F8}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_7_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={324.25024}
+          y={135.2504}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-46-0-3"
+            x={322.25024}
+            y={135.2504}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+           {ParametrosUPS_SIS2.P_PDI2A_F7}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_6_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={324.25024}
+          y={124.73284}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-63-3-0"
+            x={322.25024}
+            y={124.73284}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.P_PDI2A_F6}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_5_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={324.25024}
+          y={114.21528}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-4-5-0"
+            x={322.25024}
+            y={114.21528}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.P_PDI2A_F5}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_4_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={324.25024}
+          y={103.6977}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-6-7-5"
+            x={322.25024}
+            y={103.6977}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+           {ParametrosUPS_SIS2.P_PDI2A_F4}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_3_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={324.25024}
+          y={93.180122}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-5-0-2"
+            x={322.25024}
+            y={93.180122}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.P_PDI2A_F3}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_2_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={324.25024}
+          y={82.66256}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-9-6-3"
+            x={322.25024}
+            y={82.66256}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.P_PDI2A_F2}kva
+          </tspan>
+        </text>
+        <text
+          id="pot_pdi_1_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={324.25024}
+          y={72.144997}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-8-9-41-0"
+            x={322.25024}
+            y={72.144997}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.P_PDI2A_F1}kva
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_10_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={309.76154}
+          y={166.80312}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-9-2-7"
+            x={305.76154}
+            y={166.80312}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.V_PDI2A_F10}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_9_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={309.76154}
+          y={156.28554}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-0-7-5"
+            x={305.76154}
+            y={156.28554}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.V_PDI2A_F9}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_8_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={309.76154}
+          y={145.76797}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-87-8-2"
+            x={305.76154}
+            y={145.76797}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.V_PDI2A_F8}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_7_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={309.76154}
+          y={135.2504}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-5-8-0"
+            x={305.76154}
+            y={135.2504}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.V_PDI2A_F7}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_6_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={309.76154}
+          y={124.73283}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-8-5-0"
+            x={305.76154}
+            y={124.73283}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.V_PDI2A_F6}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_5_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={309.76154}
+          y={114.21528}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-6-6-1"
+            x={305.76154}
+            y={114.21528}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+           {ParametrosUPS_SIS2.V_PDI2A_F5}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_4_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={309.76154}
+          y={103.6977}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-10-9-9"
+            x={305.76154}
+            y={103.6977}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.V_PDI2A_F4}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_3_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={309.76154}
+          y={93.180138}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-2-3-2"
+            x={305.76154}
+            y={93.180138}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.V_PDI2A_F3}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_2_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={309.76154}
+          y={82.66256}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-1-3-2"
+            x={305.76154}
+            y={82.66256}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.V_PDI2A_F2}V
+          </tspan>
+        </text>
+        <text
+          id="vout_prom_pdi_1_sis2"
+          transform="matrix(1.0459 0 0 .95611 14.288 0)"
+          x={309.76154}
+          y={72.144997}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2317px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-3-73-5-6-1-6-12-6"
+            x={305.76154}
+            y={72.144997}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="4.2317px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.V_PDI2A_F1}V
+          </tspan>
+        </text>
+        <text
+              id="potgen1%"
+              transform="scale(1.046 .95601)"
+              x={403.89221}
+              y={62.502041}
+              style={{
+                fontVariantCaps: "normal",
+                fontVariantEastAsian: "normal",
+                fontVariantLigatures: "normal",
+                fontVariantNumeric: "normal",
+                lineHeight: 1.25
+              }}
+              xmlSpace="preserve"
+              fill="#fff"
+              fontSize="3.5278px"
+              strokeWidth={0.4333}
+            >
+              <tspan
+                id="tspan998-6-1-4-2-0-1-7"
+                x={403.89221}
+                y={62.502041}
+                style={{
+                  fontVariantCaps: "normal",
+                  fontVariantEastAsian: "normal",
+                  fontVariantLigatures: "normal",
+                  fontVariantNumeric: "normal",
+                  lineHeight: 3.25
+                }}
+                fill="#fff"
+                fontFamily="Franklin Gothic Medium"
+                fontSize="3.5278px"
+                strokeWidth={0.4333}
+              >
+              {ParametrosGEN_SIS1.LoadG1}%
+              </tspan>
+            </text>
+            <text
+              id="potgen2%"
+              transform="scale(1.046 .95601)"
+              x={403.89221}
+              y={70.502041}
+              style={{
+                fontVariantCaps: "normal",
+                fontVariantEastAsian: "normal",
+                fontVariantLigatures: "normal",
+                fontVariantNumeric: "normal",
+                lineHeight: 1.25
+              }}
+              xmlSpace="preserve"
+              fill="#fff"
+              fontSize="3.5278px"
+              strokeWidth={0.4333}
+            >
+              <tspan
+                id="tspan998-6-1-4-2-0-1-7"
+                x={403.89221}
+                y={70.502041}
+                style={{
+                  fontVariantCaps: "normal",
+                  fontVariantEastAsian: "normal",
+                  fontVariantLigatures: "normal",
+                  fontVariantNumeric: "normal",
+                  lineHeight: 3.25
+                }}
+                fill="#fff"
+                fontFamily="Franklin Gothic Medium"
+                fontSize="3.5278px"
+                strokeWidth={0.4333}
+              >
+              {ParametrosGEN_SIS1.LoadG2}%
+              </tspan>
+            </text>
+            <text
+              id="potgen3%"
+              transform="scale(1.046 .95601)"
+              x={403.89221}
+              y={78.502041}
+              style={{
+                fontVariantCaps: "normal",
+                fontVariantEastAsian: "normal",
+                fontVariantLigatures: "normal",
+                fontVariantNumeric: "normal",
+                lineHeight: 1.25
+              }}
+              xmlSpace="preserve"
+              fill="#fff"
+              fontSize="3.5278px"
+              strokeWidth={0.4333}
+            >
+              <tspan
+                id="tspan998-6-1-4-2-0-1-7"
+                x={403.89221}
+                y={78.502041}
+                style={{
+                  fontVariantCaps: "normal",
+                  fontVariantEastAsian: "normal",
+                  fontVariantLigatures: "normal",
+                  fontVariantNumeric: "normal",
+                  lineHeight: 3.25
+                }}
+                fill="#fff"
+                fontFamily="Franklin Gothic Medium"
+                fontSize="3.5278px"
+                strokeWidth={0.4333}
+              >
+              {ParametrosGEN_SIS1.LoadG3}%
+              </tspan>
+            </text>
+            <text
+              id="potgen4%"
+              transform="scale(1.046 .95601)"
+              x={471.89221}
+              y={62.502041}
+              style={{
+                fontVariantCaps: "normal",
+                fontVariantEastAsian: "normal",
+                fontVariantLigatures: "normal",
+                fontVariantNumeric: "normal",
+                lineHeight: 1.25
+              }}
+              xmlSpace="preserve"
+              fill="#fff"
+              fontSize="3.5278px"
+              strokeWidth={0.4333}
+            >
+              <tspan
+                id="tspan998-6-1-4-2-0-1-7"
+                x={471.89221}
+                y={62.502041}
+                style={{
+                  fontVariantCaps: "normal",
+                  fontVariantEastAsian: "normal",
+                  fontVariantLigatures: "normal",
+                  fontVariantNumeric: "normal",
+                  lineHeight: 3.25
+                }}
+                fill="#fff"
+                fontFamily="Franklin Gothic Medium"
+                fontSize="3.5278px"
+                strokeWidth={0.4333}
+              >
+              {ParametrosGEN_SIS2.LoadG4}%
+              </tspan>
+            </text>
+            <text
+              id="potgen5%"
+              transform="scale(1.046 .95601)"
+              x={471.89221}
+              y={70.502041}
+              style={{
+                fontVariantCaps: "normal",
+                fontVariantEastAsian: "normal",
+                fontVariantLigatures: "normal",
+                fontVariantNumeric: "normal",
+                lineHeight: 1.25
+              }}
+              xmlSpace="preserve"
+              fill="#fff"
+              fontSize="3.5278px"
+              strokeWidth={0.4333}
+            >
+              <tspan
+                id="tspan998-6-1-4-2-0-1-7"
+                x={471.89221}
+                y={70.502041}
+                style={{
+                  fontVariantCaps: "normal",
+                  fontVariantEastAsian: "normal",
+                  fontVariantLigatures: "normal",
+                  fontVariantNumeric: "normal",
+                  lineHeight: 3.25
+                }}
+                fill="#fff"
+                fontFamily="Franklin Gothic Medium"
+                fontSize="3.5278px"
+                strokeWidth={0.4333}
+              >
+              {ParametrosGEN_SIS2.LoadG5}%
+              </tspan>
+            </text>
+            <text
+              id="potgen6%"
+              transform="scale(1.046 .95601)"
+              x={471.89221}
+              y={78.502041}
+              style={{
+                fontVariantCaps: "normal",
+                fontVariantEastAsian: "normal",
+                fontVariantLigatures: "normal",
+                fontVariantNumeric: "normal",
+                lineHeight: 1.25
+              }}
+              xmlSpace="preserve"
+              fill="#fff"
+              fontSize="3.5278px"
+              strokeWidth={0.4333}
+            >
+              <tspan
+                id="tspan998-6-1-4-2-0-1-7"
+                x={471.89221}
+                y={78.502041}
+                style={{
+                  fontVariantCaps: "normal",
+                  fontVariantEastAsian: "normal",
+                  fontVariantLigatures: "normal",
+                  fontVariantNumeric: "normal",
+                  lineHeight: 3.25
+                }}
+                fill="#fff"
+                fontFamily="Franklin Gothic Medium"
+                fontSize="3.5278px"
+                strokeWidth={0.4333}
+              >
+              {ParametrosGEN_SIS2.LoadG6}%
+              </tspan>
+            </text>
       </g>
   )
 }

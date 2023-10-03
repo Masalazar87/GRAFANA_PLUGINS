@@ -692,7 +692,7 @@ export const Variables = ({Estado, Principal, Cargas_kva, Cargas_uso }: DataPue)
         fontSize="9.8777px"
         strokeWidth={0.36411}
       >
-        {"DC - GYE"}
+        {"  ESPOL"}
       </tspan>
     </text>
     <text

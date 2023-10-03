@@ -255,17 +255,7 @@ const Pue = ({Estado, Principal, Cargas_kva, Cargas_uso }: DataPue) => {
         />
       </defs>
       <g id="layer5">
-        <rect
-          id="rect3300"
-          x={-0.28717}
-          y={0.30751}
-          width={335.16}
-          height={164.18}
-          rx={0.14361}
-          ry={0.087152}
-          opacity={0.95}
-          strokeWidth={1.1812}
-        />
+
       </g>
 
       <g id="layer4">

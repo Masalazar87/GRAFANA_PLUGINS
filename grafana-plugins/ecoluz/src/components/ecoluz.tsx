@@ -472,16 +472,7 @@ return (
                         transform="matrix(1 0 0 .98732 -5.896 -19.421)"
                         strokeWidth={0.83933}
                       >
-                        <rect
-                          id="rect10510"
-                          x={5.0649}
-                          y={19.754}
-                          width={510.27}
-                          height={290.17}
-                          rx={0.21864}
-                          ry={0.15403}
-                          opacity={0.95}
-                        />
+
                       </g>
                     </g>
                   </g>
@@ -2032,7 +2023,7 @@ return (
             fontSize="9.8778px"
             strokeWidth={0.33875}
           >
-            {"DC-GYE"}
+            {"ESPOL"}
           </tspan>
         </text>
         <text

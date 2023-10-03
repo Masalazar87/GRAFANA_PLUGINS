@@ -25,7 +25,7 @@ const getStyles = stylesFactory(() => {
     `,
     mant: css`
      fill:gray;
-     animation: ${parpadeo} 3s ease infinite;
+     //animation: ${parpadeo} 3s ease infinite;
     `,
   };
 });

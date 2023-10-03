@@ -98,14 +98,14 @@ return (
 >
   <tspan
     id="tspan6769"
-    x={111.91434}
+    x={109.91434}
     y={27.49506}
     fill="#fff"
     fontFamily="Franklin Gothic Medium"
     fontSize="9.8778px"
     strokeWidth={0.36412}
   >
-    {"ECOLUZ"}
+    {"MEDIDOR"}
   </tspan>
 </text>
 <text
