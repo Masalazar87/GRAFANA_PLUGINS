@@ -31,19 +31,26 @@ const dataGrupalpdi = (data: PanelData, options: SimpleOptions): DataGrupalpdi =
     let OUT1_C_CUR = data.series.find(({ name }) => name?.includes('DATA.OUT1_C_CUR.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull/10;
     let OUT1_A_COS_FI = data.series.find(({ name }) => name?.includes('DATA.OUT1_A_COS_FI.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
     let OUT1_B_COS_FI = data.series.find(({ name }) => name?.includes('DATA.OUT1_B_COS_FI.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
     let OUT1_C_COS_FI = data.series.find(({ name }) => name?.includes('DATA.OUT1_C_COS_FI.VALUE'))?.fields[1].state?.calcs
-    ?.lastNotNull;
+    ?.lastNotNull/10;
     let OUT1_KWH = data.series.find(({ name }) => name?.includes('DATA.OUT1_KWH.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull;
     let OUT1_TOTAL_KVA = data.series.find(({ name }) => name?.includes('DATA.OUT1_TOTAL_KVA.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull/10;
     let NEUT_CUR = data.series.find(({ name }) => name?.includes('DATA.NEUT_CUR.VALUE'))?.fields[1].state?.calcs
     ?.lastNotNull/10; 
-    //let KW = data.series.find(({ name }) => name?.includes('DATA.KW.VALUE'))?.fields[1].state?.calcs
-    //?.lastNotNull;
+    let OUT1_KW = data.series.find(({ name }) => name?.includes('DATA.OUT1_KW.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull/10;
+    let OUT1_A_KW = data.series.find(({ name }) => name?.includes('DATA.OUT1_A_KW.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull/10;
+    let OUT1_B_KW = data.series.find(({ name }) => name?.includes('DATA.OUT1_B_KW.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull/10;
+    let OUT1_C_KW = data.series.find(({ name }) => name?.includes('DATA.OUT1_C_KW.VALUE'))?.fields[1].state?.calcs
+    ?.lastNotNull/10;
+
     //let COMM_ALM = data.series.find(({ name }) => name?.includes('DATA.COMM_ALM.VALUE'))?.fields[1].state?.calcs
     //?.lastNotNull;
     //let DOOR_OPEN_ALM = data.series.find(({ name }) => name?.includes('DATA.DOOR_OPEN_ALMMM_ALM.VALUE'))?.fields[1].state?.calcs
@@ -146,7 +153,10 @@ grupalpdi.ParametrosOut.INEUTRO = Number.parseFloat(NEUT_CUR?.toFixed(2));
 grupalpdi.ParametrosOut.FPR = Number.parseFloat(OUT1_A_COS_FI?.toFixed(2));
 grupalpdi.ParametrosOut.FPS = Number.parseFloat(OUT1_B_COS_FI?.toFixed(2));
 grupalpdi.ParametrosOut.FPT = Number.parseFloat(OUT1_C_COS_FI?.toFixed(2));
-//grupalpdi.ParametrosOut.PotTotal = Number.parseFloat(KW?.toFixed(2));
+grupalpdi.ParametrosOut.PotTotal = Number.parseFloat(OUT1_KW?.toFixed(2));
+grupalpdi.ParametrosOut.PotR = Number.parseFloat(OUT1_A_KW?.toFixed(2));
+grupalpdi.ParametrosOut.PotS = Number.parseFloat(OUT1_B_KW?.toFixed(2));
+grupalpdi.ParametrosOut.PotT = Number.parseFloat(OUT1_C_KW?.toFixed(2));
 grupalpdi.ParametrosOut.KWH = Number.parseFloat(OUT1_KWH?.toFixed(2));
 grupalpdi.ParametrosOut.KVAprom = Number.parseFloat(OUT1_TOTAL_KVA?.toFixed(2));
 
@@ -183,21 +193,22 @@ let VoutTn = (OUT1_CA_VOL) / 1.732;
 if (OUT1_CA_VOL !== undefined) {
    grupalpdi.ParametrosOut.VoutTn = Number.parseFloat(VoutTn?.toFixed(2));
 }
-let PotR = (VoutRn * OUT1_A_CUR * OUT1_A_COS_FI) / 1000
+/*let PotR = (VoutRn * OUT1_A_CUR * OUT1_A_COS_FI)/10000
 if (VoutRn !== undefined && OUT1_A_CUR !== undefined && OUT1_A_COS_FI !== undefined) {
    grupalpdi.ParametrosOut.PotR = Number.parseFloat(PotR?.toFixed(2));
 }
-let PotS = (VoutSn * OUT1_B_CUR * OUT1_B_COS_FI) / 1000
+let PotS = (VoutSn * OUT1_B_CUR * OUT1_B_COS_FI) / 10000
 if (VoutRn !== undefined && OUT1_B_CUR !== undefined && OUT1_B_COS_FI !== undefined) {
    grupalpdi.ParametrosOut.PotS = Number.parseFloat(PotS?.toFixed(2));
 }
-let PotT = (VoutTn * OUT1_C_CUR * OUT1_C_COS_FI) / 1000
+let PotT = (VoutTn * OUT1_C_CUR * OUT1_C_COS_FI) / 10000
 if (VoutTn !== undefined && OUT1_C_CUR !== undefined && OUT1_C_COS_FI !== undefined) {
    grupalpdi.ParametrosOut.PotT = Number.parseFloat(PotT?.toFixed(2));
 }
 
 let PotTotal = (PotR + PotS + PotT)
    grupalpdi.ParametrosOut.PotTotal = Number.parseFloat(PotTotal?.toFixed(2));
+  */
 
 let KvaR = (VoutRn * OUT1_A_CUR) / 1000
 if (VoutRn !== undefined && OUT1_A_CUR !== undefined) {

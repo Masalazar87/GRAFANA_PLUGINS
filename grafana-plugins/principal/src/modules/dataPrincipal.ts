@@ -99,94 +99,44 @@ if (st_uma[i] === 1) {
 //TEMP. SUMINISTRO Y RETORNO UMAS
 let tsum_uma = [];
 let tret_uma = [];
+let status_uma = [];
 for (let i = 1; i <= 12; i++) {
+    nomEquipo = '1/UMA-' + (i);
+    let imgUmaAlm= imgPopUp('./uma_alm.png')
+    //let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
     tsum_uma[i] = data.series.find(({ name }) => name?.includes('TS_UMA' + i))?.fields[1].state?.calcs?.lastNotNull;   
     tret_uma[i] = data.series.find(({ name }) => name?.includes('TR_UMA' + i))?.fields[1].state?.calcs?.lastNotNull;   
+    status_uma[i] = data.series.find(({ name }) => name?.includes('ST_UMA' + i))?.fields[1].state?.calcs?.lastNotNull;
     if (tsum_uma[i] === null || tsum_uma[i] === 0) {
         tsum_uma[i] = 0;
         }   else {
             tsum_uma[i] = parseFloat(tsum_uma[i]).toFixed(1);
-        } 
+        }   
     if (tret_uma[i] === null || tret_uma[i] === 0) {
         tret_uma[i] = 0;
         }   else {
             tret_uma[i] = parseFloat(tret_uma[i]).toFixed(1);
         } 
+    if ((tsum_uma[i] >= 20) && (status_uma[i] === 1)){
+        msgEstado = "\nALTA TEMPERATURA DE\n SUMINISTRO > 20°C"
+        imgEquipo = imgUmaAlm;
+        colorEstado = 'alarma'
+        PopUp(cookieAdv,nomEquipo,1,nomEquipo+'adv');
     }
-//--------------------------------------ESTADOS Y ALARMAS DE UPS 200KVA--------------------------------------
-let st_ups_1a = [];
-let al_ups_1a = [];
-let st_ups_2a = [];
-let al_ups_2a = [];
-    
-    for (let i = 1; i <= 6; i++) {
-    let nomEquipo = 'UPS 1-' + (i) + 'A';
-    let imgUpsAlm= imgPopUp('./ups_alm.png')
-    let imgUpsAdv= imgPopUp('./ups_adv.png')
-    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
-    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
-    //let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
-    st_ups_1a[i] = data.series.find(({ name }) => name?.includes('ST_UPS_1A_' + i))?.fields[1].state?.calcs?.lastNotNull;
-    al_ups_1a[i] = data.series.find(({ name }) => name?.includes('AL_UPS_1A_' + i))?.fields[1].state?.calcs?.lastNotNull;
-//UPS SISTEMA 1
-    if (st_ups_1a[i] === 1) {
-        st_ups_1a[i] = st_on;
-        msgEstado=" ENCENDIDO"
-        imgEquipo=imgUpsAdv;
-        colorEstado='advertencia'
-            PopUp(cookieEstado,nomEquipo,1,nomEquipo)
-        }   else {
-        msgEstado=" APAGADO"
-            imgEquipo=imgUpsAlm;
-                    colorEstado='alarma'
-                    st_ups_1a[i] = st_off;
-                        PopUp(cookieEstado,nomEquipo,0,nomEquipo)
-                }
-    if (al_ups_1a[i] >=1) {
-        al_ups_1a[i] = alarm_on;
-        msgEstado=" ALARMA"
-        imgEquipo=imgUpsAlm;
-        colorEstado='alarma'
-            PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
-        }   else {
-        al_ups_1a[i] = alarm_off;
-            localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
-            }                     
+    else{
+        localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')}
+    if ((tret_uma[i] >= 30.5) && (status_uma[i] === 1)){
+        msgEstado = "\nALTA TEMPERATURA DE\n RETORNO > 30.5°C"
+        imgEquipo = imgUmaAlm;
+        colorEstado = 'alarma'
+        PopUp(cookieAdv,nomEquipo,1,nomEquipo+'adv');
+    }
+    else{
+    localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')}
 }
-for (let i = 1; i <= 6; i++) {
-    let nomEquipo = 'UPS 2-' + (i) + 'A';
-    let imgUpsAlm= imgPopUp('./ups_alm.png')
-    let imgUpsAdv= imgPopUp('./ups_adv.png')
-    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
-    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
-    //let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
-    st_ups_2a[i] = data.series.find(({ name }) => name?.includes('ST_UPS_2A_' + i))?.fields[1].state?.calcs?.lastNotNull;
-    al_ups_2a[i] = data.series.find(({ name }) => name?.includes('AL_UPS_2A_' + i))?.fields[1].state?.calcs?.lastNotNull;
-    //UPS SISTEMA 2
-    if (st_ups_2a[i] === 1) {
-        st_ups_2a[i] = st_on;
-        msgEstado=" ENCENDIDO"
-        imgEquipo=imgUpsAdv;
-        colorEstado='advertencia'
-            PopUp(cookieEstado,nomEquipo,1,nomEquipo)
-        }   else {
-        msgEstado=" APAGADO"
-            imgEquipo=imgUpsAlm;
-                    colorEstado='alarma'
-                    st_ups_2a[i] = st_off;
-                        PopUp(cookieEstado,nomEquipo,0,nomEquipo)
-                }
-    if (al_ups_2a[i] >= 1) {
-        al_ups_2a[i] = alarm_on;
-        msgEstado=" ALARMA"
-        imgEquipo=imgUpsAlm;
-        colorEstado='alarma'
-            PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
-        }   else {
-        al_ups_2a[i] = alarm_off;
-            localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
-            }                  
-    }
+//--------------------------------------ESTADOS Y ALARMAS DE UPS 200KVA--------------------------------------
+
 
 //---------------------------------------ESTADOS Y ALARMAS DE UPS CHI 200KVA---------------------------------
 let st_upschi = [];
@@ -227,22 +177,77 @@ for (let i = 1; i <= 2; i++) {
         }        
 }
 //--------------------------------------------PARAMETROS UPS CHI 200KVA--------------------------------------
-let VIN_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('VIN_UPS_CHI_1A'))?.fields[1].state?.calcs
-?.lastNotNull;
-let VOUT_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('VOUT_UPS_CHI_1A'))?.fields[1].state?.calcs
-?.lastNotNull;
-let IOUT_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('IOUT_UPS_CHI_1A'))?.fields[1].state?.calcs
-?.lastNotNull;
-let LOAD_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('LOAD_UPS_CHI_1A'))?.fields[1].state?.calcs
-?.lastNotNull;
-let VIN_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('VIN_UPS_CHI_2A'))?.fields[1].state?.calcs
-?.lastNotNull;
-let VOUT_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('VOUT_UPS_CHI_2A'))?.fields[1].state?.calcs
-?.lastNotNull;
-let IOUT_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('IOUT_UPS_CHI_2A'))?.fields[1].state?.calcs
-?.lastNotNull;
-let LOAD_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('LOAD_UPS_CHI_2A'))?.fields[1].state?.calcs
-?.lastNotNull;
+let VIN_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('VIN_UPS_CHI_1A'))?.fields[1].state?.calcs?.lastNotNull;
+let VOUT_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('VOUT_UPS_CHI_1A'))?.fields[1].state?.calcs?.lastNotNull;
+let IOUT_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('IOUT_UPS_CHI_1A'))?.fields[1].state?.calcs?.lastNotNull;
+let LOAD_UPS_CHI_1A = data.series.find(({ name }) => name?.includes('LOAD_UPS_CHI_1A'))?.fields[1].state?.calcs?.lastNotNull;
+let VIN_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('VIN_UPS_CHI_2A'))?.fields[1].state?.calcs?.lastNotNull;
+let VOUT_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('VOUT_UPS_CHI_2A'))?.fields[1].state?.calcs?.lastNotNull;
+let IOUT_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('IOUT_UPS_CHI_2A'))?.fields[1].state?.calcs?.lastNotNull;
+let LOAD_UPS_CHI_2A = data.series.find(({ name }) => name?.includes('LOAD_UPS_CHI_2A'))?.fields[1].state?.calcs?.lastNotNull;
+
+////--------------------------------------------PARAMETROS UPS HUAWEI 1600KVA--------------------------------------
+//SISTEMA 1
+let VIN_UPS_SIS1 = data.series.find(({ name }) => name?.includes('VIN_UPS_SIS1'))?.fields[1].state?.calcs?.lastNotNull;
+let VOUT_UPS_SIS1 = data.series.find(({ name }) => name?.includes('VOUT_UPS_SIS1'))?.fields[1].state?.calcs?.lastNotNull;
+let CIN_UPS_SIS1 = data.series.find(({ name }) => name?.includes('CIN_UPS_SIS1'))?.fields[1].state?.calcs?.lastNotNull;
+let COUT_UPS_SIS1 = data.series.find(({ name }) => name?.includes('COUT_UPS_SIS1'))?.fields[1].state?.calcs?.lastNotNull;
+let LOAD_UPS_SIS1 = data.series.find(({ name }) => name?.includes('LOAD_UPS_SIS1'))?.fields[1].state?.calcs?.lastNotNull;
+let VBATT_UPS_SIS1 = data.series.find(({ name }) => name?.includes('VBATT_UPS_SIS1'))?.fields[1].state?.calcs?.lastNotNull;
+let IBATT_UPS_SIS1 = data.series.find(({ name }) => name?.includes('IBATT_UPS_SIS1'))?.fields[1].state?.calcs?.lastNotNull;
+let MIN_UPS_SIS1 = data.series.find(({ name }) => name?.includes('MIN_UPS_SIS1'))?.fields[1].state?.calcs?.lastNotNull;
+let CARGABATT_UPS_SIS1 = data.series.find(({ name }) => name?.includes('CARGABATT_UPS_SIS1'))?.fields[1].state?.calcs?.lastNotNull;
+
+//SISTEMA 2
+let VIN_UPS_SIS2 = data.series.find(({ name }) => name?.includes('VIN_UPS_SIS2'))?.fields[1].state?.calcs?.lastNotNull;
+let VOUT_UPS_SIS2 = data.series.find(({ name }) => name?.includes('VOUT_UPS_SIS2'))?.fields[1].state?.calcs?.lastNotNull;
+let CIN_UPS_SIS2 = data.series.find(({ name }) => name?.includes('CIN_UPS_SIS2'))?.fields[1].state?.calcs?.lastNotNull;
+let COUT_UPS_SIS2 = data.series.find(({ name }) => name?.includes('COUT_UPS_SIS2'))?.fields[1].state?.calcs?.lastNotNull;
+let LOAD_UPS_SIS2 = data.series.find(({ name }) => name?.includes('LOAD_UPS_SIS2'))?.fields[1].state?.calcs?.lastNotNull;
+let VBATT_UPS_SIS2 = data.series.find(({ name }) => name?.includes('VBATT_UPS_SIS2'))?.fields[1].state?.calcs?.lastNotNull;
+let IBATT_UPS_SIS2 = data.series.find(({ name }) => name?.includes('IBATT_UPS_SIS2'))?.fields[1].state?.calcs?.lastNotNull;
+let MIN_UPS_SIS2 = data.series.find(({ name }) => name?.includes('MIN_UPS_SIS2'))?.fields[1].state?.calcs?.lastNotNull;
+let CARGABATT_UPS_SIS2 = data.series.find(({ name }) => name?.includes('CARGABATT_UPS_SIS2'))?.fields[1].state?.calcs?.lastNotNull;
+
+let st_UPS = [];
+let al_UPS = [];
+for (let i = 1; i <= 2; i++) {
+    nomEquipo = 'UPS-'+i+'-7A';
+    let imgUpsAlm= imgPopUp('./upshuawei_alm.png')
+    let imgUpsAdv= imgPopUp('./upshuawei_adv.png')
+    let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
+    let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    //let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
+    st_UPS[i] = data.series.find(({ name }) => name?.includes('ST_UPS_' +i))?.fields[1].state?.calcs?.lastNotNull;
+    al_UPS[i] = data.series.find(({ name }) => name?.includes('AL_UPS_' +i))?.fields[1].state?.calcs?.lastNotNull;
+    
+    if (st_UPS[i] === 1) { //ESTADO
+        msgEstado=" ENCENDIDO"
+        imgEquipo=imgUpsAdv;
+        colorEstado='advertencia'
+        st_UPS[i] = st_on;
+            PopUp(cookieEstado,nomEquipo,1,nomEquipo)
+         }   else {
+            msgEstado=" APAGADO"
+            imgEquipo=imgUpsAlm;
+            colorEstado='alarma'
+            st_UPS[i] = st_off;
+                PopUp(cookieEstado,nomEquipo,0,nomEquipo)
+        }
+    if (al_UPS[i] >= 1) { //ALARMA
+        al_UPS[i] =alarm_on;
+        msgEstado=" ALARMA"
+        
+        imgEquipo=imgUpsAlm;
+        colorEstado='alarma'
+            PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
+        }   else {
+            al_UPS[i] = alarm_off;
+                localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
+        }        
+
+    }
+
 //--------------------------------------ESTADOS DE UPS 10KVA Y RECTIFICADORES -------------------------------
 
 let alups10kva = [];
@@ -282,7 +287,7 @@ for (let i = 1; i <= 4; i++) {
     } else {
         alups10kva[i] = alarm_off;
             localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
-    }    
+    }  
 }
 /////////RECTIFICADORES
 let strec = [];
@@ -318,9 +323,8 @@ for (let i = 1; i <= 2; i++) {
         colorEstado='alarma'
         PopUp(cookieAlm,nomEquipo,1,nomEquipo+'alm');
         } 
-        }      
+    }      
 
-    
 //-------------------------------------------------------------------------------------------------------------
 //---------------------------------------ESTADOS Y ALARMAS CHILLERS SISTEMA 1&2----------------------------------
 let st_chiller = [];
@@ -501,6 +505,7 @@ for (let i = 1; i <= 4; i++) {
             localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')
         }
     }
+ 
 //VALVULAS SIST 1&2
 let ISOV1_S_SIS2 = data.series.find(({ name }) => name?.includes('DATA.ISOV1_S_SIS2.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
@@ -519,44 +524,74 @@ let ISOV2_S_SIS1 = data.series.find(({ name }) => name?.includes('DATA.ISOV2_S_S
 let ISOV2_C_SIS1 = data.series.find(({ name }) => name?.includes('DATA.ISOV2_C_SIS1.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
 //------------------------------------------------------------------------------------------------------------
-//-----------------------------------PARAMETROS BREAKERS TUPS IN & OUT----------------------------------------
-//BREAKERS SIS1
-let V_TUPSIN_1A_0 = data.series.find(({ name }) => name?.includes('V_TUPSIN_1A_0'))?.fields[1].state?.calcs
-?.lastNotNull;
-let V_TUPSOUT_1A_0 = data.series.find(({ name }) => name?.includes('V_TUPSOUT_1A_0'))?.fields[1].state?.calcs
-?.lastNotNull;
-let I_TUPSOUT_1A_0 = data.series.find(({ name }) => name?.includes('I_TUPSOUT_1A_0'))?.fields[1].state?.calcs
-?.lastNotNull;
-let P_TUPSOUT_1A_0 = data.series.find(({ name }) => name?.includes('P_TUPSOUT_1A_0'))?.fields[1].state?.calcs
-?.lastNotNull/10;
-//BREAKERS SIS2
-let V_TUPSIN_2A_0 = data.series.find(({ name }) => name?.includes('V_TUPSIN_2A_0'))?.fields[1].state?.calcs
-?.lastNotNull;
-let V_TUPSOUT_2A_0 = data.series.find(({ name }) => name?.includes('V_TUPSOUT_2A_0'))?.fields[1].state?.calcs
-?.lastNotNull;
-let I_TUPSOUT_2A_0 = data.series.find(({ name }) => name?.includes('I_TUPSOUT_2A_0'))?.fields[1].state?.calcs
-?.lastNotNull;
-let P_TUPSOUT_2A_0 = data.series.find(({ name }) => name?.includes('P_TUPSOUT_2A_0'))?.fields[1].state?.calcs
-?.lastNotNull/10;
 //-------------------------------------------------------------------------------------------------------------
 //--------------------------------SENSORES DE CLIMATIZACIÓN SISTEMA 1&2----------------------------------------
 //SENSORES DE TEMPERATURA SIS 1&2
-let TEMP_S_PRI_SIS1 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_PRI_SIS1.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
-let TEMP_S_SEC_SIS1 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_SEC_SIS1.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+//let TEMP_S_PRI_SIS1 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_PRI_SIS1.VALUE'))?.fields[1].state?.calcs
+//?.lastNotNull;
+//let TEMP_S_SEC_SIS1 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_SEC_SIS1.VALUE'))?.fields[1].state?.calcs
+//?.lastNotNull;
 let TEMP_S_TAN_SIS1 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_TAN_SIS1.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull;
-let TEMP_R_SIS1 = data.series.find(({ name }) => name?.includes('DATA.TEMP_R_SIS1.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
-let TEMP_S_PRI_SIS2 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_PRI_SIS2.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
-let TEMP_S_SEC_SIS2 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_SEC_SIS2.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+//let TEMP_R_SIS1 = data.series.find(({ name }) => name?.includes('DATA.TEMP_R_SIS1.VALUE'))?.fields[1].state?.calcs
+//?.lastNotNull;
+//let TEMP_S_PRI_SIS2 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_PRI_SIS2.VALUE'))?.fields[1].state?.calcs
+//?.lastNotNull;
+//let TEMP_S_SEC_SIS2 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_SEC_SIS2.VALUE'))?.fields[1].state?.calcs
+//?.lastNotNull;
 let TEMP_S_TAN_SIS2 = data.series.find(({ name }) => name?.includes('DATA.TEMP_S_TAN_SIS2.VALUE'))?.fields[1].state?.calcs
 ?.lastNotNull; 
-let TEMP_R_SIS2 = data.series.find(({ name }) => name?.includes('DATA.TEMP_R_SIS2.VALUE'))?.fields[1].state?.calcs
-?.lastNotNull;
+//let TEMP_R_SIS2 = data.series.find(({ name }) => name?.includes('DATA.TEMP_R_SIS2.VALUE'))?.fields[1].state?.calcs
+//?.lastNotNull;
+
+let sensor_temp_sum = []; //TSP_SIS1 = 1, TSS_SIS1 = 2, TSP_SIS2 = 3, TSS_SIS2 = 4
+for (let i = 1; i <= 4; i++) {
+    nomEquipo = 'SENSOR DE TEMPERATURA';
+    if (i===1){nomEquipo = 'TEMP. SUM. PRIM. SIS. 1'; }
+    if (i===2){nomEquipo = 'TEMP. SUM. SEC. SIS. 1'; }
+    if (i===3){nomEquipo = 'TEMP. SUM. PRIM. SIS. 2'; }
+    if (i===4){nomEquipo = 'TEMP. SUM. SEC. SIS. 2'; }
+
+    let imgSensorAlm= imgPopUp('./sensor_alm.png')
+    let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');
+    sensor_temp_sum[i] = data.series.find(({ name }) => name?.includes('SENSOR_TEMP_SUM_' + i))?.fields[1].state?.calcs?.lastNotNull;
+    if (sensor_temp_sum[i] === null || sensor_temp_sum[i] === 0){
+        sensor_temp_sum[i] = 0;
+    }   else {
+        sensor_temp_sum[i] = parseFloat(sensor_temp_sum[i]).toFixed(2);
+        }
+        if (sensor_temp_sum[i] > 15){
+            msgEstado = "\nALTA TEMPERATURA DE SUMINISTRO DE SISTEMA > 15°C";
+            imgEquipo = imgSensorAlm;
+            colorEstado = 'alarma'
+            PopUp(cookieAdv,nomEquipo,1,nomEquipo+'adv');
+            }else{
+                localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')}
+}
+
+let sensor_temp_ret = []; //TR_SIS1 = 1, TR_SIS2 = 2
+for (let i = 1; i <= 2; i++) {
+    nomEquipo = 'SENSOR DE TEMPERATURA';
+    if (i===1){nomEquipo = 'TEMP. RET. SIS. 1'; }
+    if (i===2){nomEquipo = 'TEMP. RET. SIS. 2'; }   
+
+    let imgSensorAlm= imgPopUp('./sensor_alm.png')
+    let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
+    sensor_temp_ret[i] = data.series.find(({ name }) => name?.includes('SENSOR_TEMP_RET_' + i))?.fields[1].state?.calcs?.lastNotNull;
+    if (sensor_temp_ret[i] === null || sensor_temp_ret[i] === 0){
+        sensor_temp_ret[i] = 0;
+    }   else {
+        sensor_temp_ret[i] = parseFloat(sensor_temp_ret[i]).toFixed(2);
+        }
+        if (sensor_temp_ret[i] > 18){
+            msgEstado = "\nALTA TEMPERATURA DE RETORNO DE SISTEMA > 18°C";
+            imgEquipo = imgSensorAlm;
+            colorEstado = 'alarma'
+            PopUp(cookieAdv,nomEquipo,1,nomEquipo+'adv');
+            }else{
+                localStorage.setItem('gyecookie_'+nomEquipo+'adv','0')}
+}
+
 //----------------------------------- ESTADO Y ALARMAS DE GENERADORES -----------------------------------------
 let st_gen = [];
 let e_stop_gen = [];
@@ -597,7 +632,7 @@ if (e_stop_gen[i] === 2 || e_stop_gen[i] === 3 || e_stop_gen[i] === 4) {
     
 if  (st_level[i] <= 35 || st_level[i] >= 97 ) {
     st_level[i] = warning_on;
-        msgEstado = " ALARMA"
+        msgEstado = "\nVERIFICAR NIVEL DE\nCOMBUSTIBLE"
         imgEquipo = imgGenAlm;
         colorEstado='advertencia'
             PopUp(cookieAdv,nomEquipo,1,nomEquipo+'adv');
@@ -744,14 +779,14 @@ let st_Led_SIS1_L = [];
         let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
         let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');*/
         st_Led_SIS1_L[i] = data.series.find(({ name }) => name?.includes('ST_SIS1_LED_L' + i))?.fields[1].state?.calcs?.lastNotNull;
-        if (st_Led_SIS1_L[i] > 200) {
+        if (st_Led_SIS1_L[i] > 0.2) {
             //msgEstado = " BREAKER CERRADO"
             //imgEquipo = imgGenAdv;
             //colorEstado = 'advertencia'
             st_Led_SIS1_L[i] = st_on;
                 //PopUp(cookieEstado,nomEquipo,1,nomEquipo)
             }    else {
-                if (st_Led_SIS1_L[i] < 12) {
+                if ((st_Led_SIS1_L[1] < 0.05) && (st_Led_SIS1_L[2] < 0.05)) {
                 //msgEstado=" BREAKER ABIERTO"
                 //imgEquipo = imgGenAlm;
                 //colorEstado = 'alarma'
@@ -760,23 +795,24 @@ let st_Led_SIS1_L = [];
             }
         }
     }
+
     let st_Led_SIS2_L = [];
         for (let i = 1; i <= 2; i++) {
-       /* nomEquipo = 'SAT_2A_L'+(i);
+        /*nomEquipo = 'SAT_1A_L'+(i);
         let imgGenAlm= imgPopUp('./gen_alm.png');
         let imgGenAdv= imgPopUp('./gen_adv.png');
         let cookieEstado = localStorage.getItem('gyecookie_'+nomEquipo);
         let cookieAlm = localStorage.getItem('gyecookie_'+nomEquipo+'alm');
         let cookieAdv = localStorage.getItem('gyecookie_'+nomEquipo+'adv');*/
         st_Led_SIS2_L[i] = data.series.find(({ name }) => name?.includes('ST_SIS2_LED_L' + i))?.fields[1].state?.calcs?.lastNotNull;
-        if (st_Led_SIS2_L[i] > 200) {
-            msgEstado = " BREAKER CERRADO"
+        if (st_Led_SIS2_L[i] > 0.2) {
+            //msgEstado = " BREAKER CERRADO"
             //imgEquipo = imgGenAdv;
             //colorEstado = 'advertencia'
             st_Led_SIS2_L[i] = st_on;
                 //PopUp(cookieEstado,nomEquipo,1,nomEquipo)
             }    else {
-                if (st_Led_SIS2_L[i] < 12) {
+                if ((st_Led_SIS2_L[1] < 0.05) && (st_Led_SIS2_L[2] < 0.05)) {
                 //msgEstado=" BREAKER ABIERTO"
                 //imgEquipo = imgGenAlm;
                 //colorEstado = 'alarma'
@@ -785,6 +821,7 @@ let st_Led_SIS1_L = [];
             }
         }
     }
+
 
 //-------------------------------------------------------------------------------------------------------------
 //---------------------------------- PARAMETROS ESTADOS Y ALARMZAS DE PDIS --------------------------------
@@ -893,21 +930,22 @@ let principal: DataPrincipal = {
         uma7_TR: 0, uma8_TR: 0, uma9_TR: 0, uma10_TR: 0, uma11_TR: 0, uma12_TR: 0,
     },
     ParametrosUPS_SIS1: {
-        V_in: 0, V_out: 0, I_out: 0, P_out: 0, Load: 0,
         V_inCHI: 0, V_outCHI: 0, I_outCHI: 0, P_outCHI: 0, LoadCHI: 0,
         V_PDI1A_F1: 0, V_PDI1A_F2: 0, V_PDI1A_F3: 0, V_PDI1A_F4: 0, V_PDI1A_F5: 0, 
         V_PDI1A_F6: 0, V_PDI1A_F7: 0, V_PDI1A_F8: 0, V_PDI1A_F9: 0, V_PDI1A_F10: 0, 
         P_PDI1A_F1: 0, P_PDI1A_F2: 0, P_PDI1A_F3: 0, P_PDI1A_F4: 0, P_PDI1A_F5: 0, 
         P_PDI1A_F6: 0, P_PDI1A_F7: 0, P_PDI1A_F8: 0, P_PDI1A_F9: 0, P_PDI1A_F10: 0, 
-
+        VIN_HUAWEI: 0, VOUT_HUAWEI: 0, CIN_HUAWEI: 0, COUT_HUAWEI: 0, CARGA_HUAWEI: 0,
+        VBATT_HUAWEI: 0, IBATT_HUAWEI: 0, CARGABATT_HUAWEI: 0, TIME_HUAWEI: 0
     }, 
         ParametrosUPS_SIS2: {
-            V_in: 0, V_out: 0, I_out: 0, P_out: 0, Load: 0,
-            V_inCHI: 0, V_outCHI: 0, I_outCHI: 0, P_outCHI: 0, LoadCHI: 0,
-            V_PDI2A_F1: 0, V_PDI2A_F2: 0, V_PDI2A_F3: 0, V_PDI2A_F4: 0, V_PDI2A_F5: 0, 
-            V_PDI2A_F6: 0, V_PDI2A_F7: 0, V_PDI2A_F8: 0, V_PDI2A_F9: 0, V_PDI2A_F10: 0, 
-            P_PDI2A_F1: 0, P_PDI2A_F2: 0, P_PDI2A_F3: 0, P_PDI2A_F4: 0, P_PDI2A_F5: 0, 
-            P_PDI2A_F6: 0, P_PDI2A_F7: 0, P_PDI2A_F8: 0, P_PDI2A_F9: 0, P_PDI2A_F10: 0, 
+        V_inCHI: 0, V_outCHI: 0, I_outCHI: 0, P_outCHI: 0, LoadCHI: 0,
+        V_PDI2A_F1: 0, V_PDI2A_F2: 0, V_PDI2A_F3: 0, V_PDI2A_F4: 0, V_PDI2A_F5: 0, 
+        V_PDI2A_F6: 0, V_PDI2A_F7: 0, V_PDI2A_F8: 0, V_PDI2A_F9: 0, V_PDI2A_F10: 0, 
+        P_PDI2A_F1: 0, P_PDI2A_F2: 0, P_PDI2A_F3: 0, P_PDI2A_F4: 0, P_PDI2A_F5: 0, 
+        P_PDI2A_F6: 0, P_PDI2A_F7: 0, P_PDI2A_F8: 0, P_PDI2A_F9: 0, P_PDI2A_F10: 0, 
+        VIN_HUAWEI: 0, VOUT_HUAWEI: 0, CIN_HUAWEI: 0, COUT_HUAWEI: 0, CARGA_HUAWEI: 0,
+        VBATT_HUAWEI: 0, IBATT_HUAWEI: 0, CARGABATT_HUAWEI: 0, TIME_HUAWEI: 0
     }, 
     ParametrosClima_SIS1: {
         T_sumEA3: 0, T_retEA3: 0,
@@ -944,7 +982,7 @@ let principal: DataPrincipal = {
         ST_CMT: '',
     },
     Estados_SIS1: {
-        ups1: '', ups2: '', ups3: '', ups4: '', ups5: '', ups6: '', upschi1: '',
+        upschi1: '',
         gen1: '', gen2: '', gen3: '',
         Ea3: '', Ea4: '',
         b1_4: '', b1_5: '', b1_6: '',
@@ -958,7 +996,7 @@ let principal: DataPrincipal = {
         pdu_F6:'', pdu_F7:'', pdu_F8:'', pdu_F9:'', pdu_F10:'',
     },
     Estados_SIS2: {
-        ups1: '', ups2: '', ups3: '', ups4: '', ups5: '', ups6: '', upschi2: '',
+        upschi2: '',
         gen4: '', gen5: '', gen6: '',
         Ea1: '', Ea2: '',
         b1_1: '', b1_2: '', b1_3: '',
@@ -977,7 +1015,7 @@ let principal: DataPrincipal = {
         clima_SIS1: '', clima_SIS2: '',
     },
     Alarmas_SIS1: {
-        ups1: '', ups2: '', ups3: '', ups4: '', ups5: '', ups6: '', upschi1: '',
+        ups7a: '', upschi1: '',
         gen1: '', gen2: '', gen3: '',
         Ea3: '', Ea4: '', Ea3mant: '', Ea4mant: '',
         b1_4: '', b1_5: '', b1_6: '',
@@ -988,7 +1026,7 @@ let principal: DataPrincipal = {
         pdu_F6:'', pdu_F7:'', pdu_F8:'', pdu_F9:'', pdu_F10:'',
     },
     Alarmas_SIS2: {
-        ups1: '', ups2: '', ups3: '', ups4: '', ups5: '', ups6: '', upschi2: '',
+        ups7a: '', upschi2: '',
         gen4: '', gen5: '', gen6: '',
         Ea1: '', Ea2: '', Ea1mant: '', Ea2mant: '',
         b1_1: '', b1_2: '', b1_3: '',
@@ -1043,42 +1081,41 @@ principal.ParametrosUPS_SIS2.V_inCHI =  Number.parseFloat(VIN_UPS_CHI_2A?.toFixe
 principal.ParametrosUPS_SIS2.V_outCHI =  Number.parseFloat(VOUT_UPS_CHI_2A?.toFixed(2));
 principal.ParametrosUPS_SIS2.I_outCHI =  Number.parseFloat(IOUT_UPS_CHI_2A?.toFixed(2));
 principal.ParametrosUPS_SIS2.LoadCHI =  Number.parseFloat(LOAD_UPS_CHI_2A?.toFixed(2));
-//ESTADOS UPS 200 KVA SIS1
-principal.Estados_SIS1.ups1 = st_ups_1a[1];
-principal.Estados_SIS1.ups2 = st_ups_1a[2];
-principal.Estados_SIS1.ups3 = st_ups_1a[3];  
-principal.Estados_SIS1.ups4 = st_ups_1a[4];
-principal.Estados_SIS1.ups5 = st_ups_1a[5];  
-principal.Estados_SIS1.ups6 = st_ups_1a[6];
+//------------------------------------------UPS 1600KVA SISTEMA 2----------------------------------------
+//PARAMETROS UPS HUAWEI SIS1
+principal.ParametrosUPS_SIS1.VIN_HUAWEI = VIN_UPS_SIS1/10;
+principal.ParametrosUPS_SIS1.VOUT_HUAWEI = VOUT_UPS_SIS1/10;
+principal.ParametrosUPS_SIS1.CIN_HUAWEI = CIN_UPS_SIS1/10;
+principal.ParametrosUPS_SIS1.COUT_HUAWEI = COUT_UPS_SIS1/10;
+principal.ParametrosUPS_SIS1.CARGA_HUAWEI = LOAD_UPS_SIS1/10;
+principal.ParametrosUPS_SIS1.VBATT_HUAWEI = VBATT_UPS_SIS1/10;
+principal.ParametrosUPS_SIS1.IBATT_HUAWEI = IBATT_UPS_SIS1/10;
+principal.ParametrosUPS_SIS1.TIME_HUAWEI = MIN_UPS_SIS1/60;
+principal.ParametrosUPS_SIS1.CARGABATT_HUAWEI =  CARGABATT_UPS_SIS1;
+//PARAMETROS UPS HUAWEI SIS2
+principal.ParametrosUPS_SIS2.VIN_HUAWEI = VIN_UPS_SIS2/10;
+principal.ParametrosUPS_SIS2.VOUT_HUAWEI = VOUT_UPS_SIS2/10;
+principal.ParametrosUPS_SIS2.CIN_HUAWEI = CIN_UPS_SIS2/10;
+principal.ParametrosUPS_SIS2.COUT_HUAWEI = COUT_UPS_SIS2/10;
+principal.ParametrosUPS_SIS2.CARGA_HUAWEI = LOAD_UPS_SIS2/10;
+principal.ParametrosUPS_SIS2.VBATT_HUAWEI = VBATT_UPS_SIS2/10;
+principal.ParametrosUPS_SIS2.IBATT_HUAWEI = IBATT_UPS_SIS2/10;
+principal.ParametrosUPS_SIS2.TIME_HUAWEI = MIN_UPS_SIS2/60;
+principal.ParametrosUPS_SIS2.CARGABATT_HUAWEI =  CARGABATT_UPS_SIS2;
+
+//ESTADOS Y ALARMAS UPSCHI 200 KVA SIS1&2 
 principal.Estados_SIS1.upschi1 = st_upschi[1];
-//ESTADOS UPS 200 KVA SIS2
-principal.Estados_SIS2.ups1 = st_ups_2a[1];  
-principal.Estados_SIS2.ups2 = st_ups_2a[2];
-principal.Estados_SIS2.ups3 = st_ups_2a[3];  
-principal.Estados_SIS2.ups4 = st_ups_2a[4];
-principal.Estados_SIS2.ups5 = st_ups_2a[5];  
-principal.Estados_SIS2.ups6 = st_ups_2a[6];
 principal.Estados_SIS2.upschi2 = st_upschi[2];
-//ALARMAS UPS 200 KVA SIS1
-principal.Alarmas_SIS1.ups1 = al_ups_1a[1];
-principal.Alarmas_SIS1.ups2 = al_ups_1a[2]; 
-principal.Alarmas_SIS1.ups3 = al_ups_1a[3];
-principal.Alarmas_SIS1.ups4 = al_ups_1a[4]; 
-principal.Alarmas_SIS1.ups5 = al_ups_1a[5]; 
-principal.Alarmas_SIS1.ups6 = al_ups_1a[6]; 
-//ALARMAS UPS 200 KVA SIS2
-principal.Alarmas_SIS2.ups1 = al_ups_2a[1];
-principal.Alarmas_SIS2.ups2 = al_ups_2a[2]; 
-principal.Alarmas_SIS2.ups3 = al_ups_2a[3]; 
-principal.Alarmas_SIS2.ups4 = al_ups_2a[4]; 
-principal.Alarmas_SIS2.ups5 = al_ups_2a[5]; 
-principal.Alarmas_SIS2.ups6 = al_ups_2a[6]; 
-// ALARMAS UPS SIS1&2
 principal.Alarmas_SIS1.upschi1 = al_upschi[1];
 principal.Alarmas_SIS2.upschi2 = al_upschi[2];
-//-----------------------------------------ESTADOS DE SISTEMA DE UPS´S-----------------------------------------
-principal.Estados_Principales.ups_SIS1 = st_ups_1a[1] === st_on || st_ups_1a[2] === st_on || st_ups_1a[3] === st_on || st_ups_1a[4] === st_on || st_ups_1a[5] === st_on || st_ups_1a[6] === st_on? estadosStyles.on : estadosStyles.sinconexion;
-principal.Estados_Principales.ups_SIS2 = st_ups_1a[1] === st_on || st_ups_1a[2] === st_on || st_ups_1a[3] === st_on || st_ups_1a[4] === st_on || st_ups_1a[5] === st_on || st_ups_1a[6] === st_on? estadosStyles.on : estadosStyles.sinconexion;
+
+//ESTADOS Y ALARMAS UPS HUAWEI 1600 KVA SIS1&2
+principal.Estados_SIS1.ups7a = st_UPS[1] === st_on? estadosStyles.on : estadosStyles.sinconexion;
+principal.Estados_SIS2.ups7a = st_UPS[2] === st_on? estadosStyles.on : estadosStyles.sinconexion;
+principal.Alarmas_SIS1.ups7a = al_UPS[1];
+principal.Alarmas_SIS2.ups7a = al_UPS[2];
+
+
 //-----------------------------------------ALARMAS DE UPS´S 10kva Y RECTIFICADORES-----------------------------------
 principal.Alarmas_SIS1.upsoffices_1a = alups10kva[1];
 principal.Alarmas_SIS1.upssat_1a = alups10kva[2];
@@ -1121,14 +1158,6 @@ principal.Estados_SIS2.comp1_ea2 = st_comp1_chiller[2];
 principal.Estados_SIS2.comp2_ea2 = st_comp2_chiller[2];
 
 //PARAMETROS CHILLERS SIS
-/*principal.ParametrosClima_SIS2.T_sumEA1 = Number.parseFloat(TSUM_EA_1?.toFixed(2));
-principal.ParametrosClima_SIS2.T_retEA1 = Number.parseFloat(TRET_EA_1?.toFixed(2));
-principal.ParametrosClima_SIS2.T_sumEA2 = Number.parseFloat(TSUM_EA_2?.toFixed(2));
-principal.ParametrosClima_SIS2.T_retEA2 = Number.parseFloat(TRET_EA_2?.toFixed(2));
-principal.ParametrosClima_SIS1.T_sumEA3 = Number.parseFloat(TSUM_EA_3?.toFixed(2));
-principal.ParametrosClima_SIS1.T_retEA3 = Number.parseFloat(TRET_EA_3?.toFixed(2));
-principal.ParametrosClima_SIS1.T_sumEA4 = Number.parseFloat(TSUM_EA_4?.toFixed(2));
-principal.ParametrosClima_SIS1.T_retEA4 = Number.parseFloat(TRET_EA_4?.toFixed(2));*/
 principal.ParametrosClima_SIS2.T_retEA1 = Number.parseFloat(TSUM_EA_1?.toFixed(2));
 principal.ParametrosClima_SIS2.T_sumEA1 = Number.parseFloat(TRET_EA_1?.toFixed(2));
 principal.ParametrosClima_SIS2.T_retEA2 = Number.parseFloat(TSUM_EA_2?.toFixed(2));
@@ -1176,27 +1205,27 @@ principal.Estados_SIS1.V2aux = ISOV2_S_SIS1 === 1 && ISOV2_C_SIS1 === 1? estados
 
 //----------------------------------------BREAKERS TUPS IN OUT---------------------------------------------
 //---------------------------------------------------------------------------------------------------------
-//PARAMETROS DE UPS SIS1
-principal.ParametrosUPS_SIS1.V_in = Number.parseFloat(V_TUPSIN_1A_0?.toFixed(2));
-principal.ParametrosUPS_SIS1.V_out = Number.parseFloat(V_TUPSOUT_1A_0?.toFixed(2));
-principal.ParametrosUPS_SIS1.I_out = Number.parseFloat(I_TUPSOUT_1A_0?.toFixed(2));
-principal.ParametrosUPS_SIS1.P_out = Number.parseFloat(P_TUPSOUT_1A_0?.toFixed(2));
-//PARAMETROS DE UPS SIS2
-principal.ParametrosUPS_SIS2.V_in = Number.parseFloat(V_TUPSIN_2A_0?.toFixed(2));
-principal.ParametrosUPS_SIS2.V_out = Number.parseFloat(V_TUPSOUT_2A_0?.toFixed(2));
-principal.ParametrosUPS_SIS2.I_out = Number.parseFloat(I_TUPSOUT_2A_0?.toFixed(2));
-principal.ParametrosUPS_SIS2.P_out = Number.parseFloat(P_TUPSOUT_2A_0?.toFixed(2));
+
 //----------------------------------------------SENSORES --------------------------------------------------
 //---------------------------------------------------------------------------------------------------------
 //SENSORES DE TUBERIAS SIS1&2
-principal.ParametrosClima_SIS1.T_sum_prim = Number.parseFloat(TEMP_S_PRI_SIS1 ?.toFixed(2));
-principal.ParametrosClima_SIS1.T_sum_sec = Number.parseFloat(TEMP_S_SEC_SIS1 ?.toFixed(2));
+/*/principal.ParametrosClima_SIS1.T_sum_prim = Number.parseFloat(TEMP_S_PRI_SIS1 ?.toFixed(2));
+principal.ParametrosClima_SIS1.T_sum_sec = Number.parseFloat(TEMP_S_SEC_SIS1 ?.toFixed(2));*/
 principal.ParametrosClima_SIS1.T_tanque = Number.parseFloat(TEMP_S_TAN_SIS1 ?.toFixed(2));
-principal.ParametrosClima_SIS1.T_ret = Number.parseFloat(TEMP_R_SIS1 ?.toFixed(2));
+/*principal.ParametrosClima_SIS1.T_ret = Number.parseFloat(TEMP_R_SIS1 ?.toFixed(2));
 principal.ParametrosClima_SIS2.T_sum_prim = Number.parseFloat(TEMP_S_PRI_SIS2 ?.toFixed(2));
-principal.ParametrosClima_SIS2.T_sum_sec = Number.parseFloat(TEMP_S_SEC_SIS2 ?.toFixed(2));
+principal.ParametrosClima_SIS2.T_sum_sec = Number.parseFloat(TEMP_S_SEC_SIS2 ?.toFixed(2));*/
 principal.ParametrosClima_SIS2.T_tanque = Number.parseFloat(TEMP_S_TAN_SIS2 ?.toFixed(2));
-principal.ParametrosClima_SIS2.T_ret = Number.parseFloat(TEMP_R_SIS2 ?.toFixed(2));
+//principal.ParametrosClima_SIS2.T_ret = Number.parseFloat(TEMP_R_SIS2 ?.toFixed(2));
+
+
+principal.ParametrosClima_SIS1.T_sum_prim = sensor_temp_sum[1];
+principal.ParametrosClima_SIS1.T_sum_sec = sensor_temp_sum[2];
+principal.ParametrosClima_SIS1.T_ret = sensor_temp_ret[1];
+principal.ParametrosClima_SIS2.T_sum_prim = sensor_temp_sum[3];
+principal.ParametrosClima_SIS2.T_sum_sec = sensor_temp_sum[4];
+principal.ParametrosClima_SIS2.T_ret = sensor_temp_ret[2];
+
 //-----------------------------------ESTADOS, ALARMAS Y PARÁMETROS DE GENERADORES--------------------------
 //---------------------------------------------------------------------------------------------------------
 //ESTADOS
@@ -1402,13 +1431,17 @@ principal.ParametrosElec.P_SIS2 = Number.parseFloat(pot_tdlow2?.toFixed(2));
 
 //-----------------------------------------PARAMETROS TEMPERATURA PRINCIPALES---------------------------
 if (st_1b2[1] === st_on || st_1b2[2] === st_on){
-    principal.ParametrosClima.T_sumin = Number.parseFloat(TEMP_S_PRI_SIS2?.toFixed(1));
-    principal.ParametrosClima.T_ret = Number.parseFloat(TEMP_R_SIS2?.toFixed(1));
+    //principal.ParametrosClima.T_sumin = Number.parseFloat(TEMP_S_PRI_SIS2?.toFixed(1));
+    //principal.ParametrosClima.T_ret = Number.parseFloat(TEMP_R_SIS2?.toFixed(1));
+    principal.ParametrosClima.T_sumin = sensor_temp_sum[3];
+    principal.ParametrosClima.T_ret = sensor_temp_ret[2];
     }
     else {
 if (st_1b2[3] === st_on || st_1b2[4] === st_on){
-    principal.ParametrosClima.T_sumin = Number.parseFloat(TEMP_S_PRI_SIS1?.toFixed(1));
-    principal.ParametrosClima.T_ret = Number.parseFloat(TEMP_R_SIS1?.toFixed(1));
+    //principal.ParametrosClima.T_sumin = Number.parseFloat(TEMP_S_PRI_SIS1?.toFixed(1));
+    //principal.ParametrosClima.T_ret = Number.parseFloat(TEMP_R_SIS1?.toFixed(1));
+    principal.ParametrosClima.T_sumin = sensor_temp_sum[2];
+    principal.ParametrosClima.T_ret = sensor_temp_ret[1];
     }
 }
     

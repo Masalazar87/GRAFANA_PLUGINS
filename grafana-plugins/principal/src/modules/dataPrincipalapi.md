@@ -839,6 +839,8 @@ let principal: DataPrincipal = {
             V_PDI2A_F6: 0, V_PDI2A_F7: 0, V_PDI2A_F8: 0, V_PDI2A_F9: 0, V_PDI2A_F10: 0, 
             P_PDI2A_F1: 0, P_PDI2A_F2: 0, P_PDI2A_F3: 0, P_PDI2A_F4: 0, P_PDI2A_F5: 0, 
             P_PDI2A_F6: 0, P_PDI2A_F7: 0, P_PDI2A_F8: 0, P_PDI2A_F9: 0, P_PDI2A_F10: 0, 
+            VIN_HUAWEI: 0, VOUT_HUAWEI: 0, CIN_HUAWEI: 0, COUT_HUAWEI: 0, CARGA_HUAWEI: 0,
+            VBATT_HUAWEI: 0, IBATT_HUAWEI: 0, CARGABATT_HUAWEI: 0, TIME_HUAWEI: 0
     }, 
     ParametrosClima_SIS1: {
         T_sumEA3: 0, T_retEA3: 0,

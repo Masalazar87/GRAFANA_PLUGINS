@@ -26,20 +26,22 @@ type ParametrosClima = {
     uma7_TR: number; uma8_TR: number; uma9_TR: number; uma10_TR: number; uma11_TR: number; uma12_TR: number;
 };
 type ParametrosUPS_SIS1 = {
-    V_in: number; V_out: number; I_out: number; P_out: number; Load: number;
     V_inCHI: number; V_outCHI: number; I_outCHI: number; P_outCHI: number; LoadCHI: number;
     V_PDI1A_F1: number; V_PDI1A_F2: number; V_PDI1A_F3: number; V_PDI1A_F4: number; V_PDI1A_F5: number; 
     V_PDI1A_F6: number; V_PDI1A_F7: number; V_PDI1A_F8: number; V_PDI1A_F9: number; V_PDI1A_F10: number; 
     P_PDI1A_F1: number; P_PDI1A_F2: number; P_PDI1A_F3: number; P_PDI1A_F4: number; P_PDI1A_F5: number; 
-    P_PDI1A_F6: number; P_PDI1A_F7: number; P_PDI1A_F8: number; P_PDI1A_F9: number; P_PDI1A_F10: number; 
+    P_PDI1A_F6: number; P_PDI1A_F7: number; P_PDI1A_F8: number; P_PDI1A_F9: number; P_PDI1A_F10: number;
+    VIN_HUAWEI: number; VOUT_HUAWEI: number; CIN_HUAWEI: number; COUT_HUAWEI: number; CARGA_HUAWEI: number;
+    VBATT_HUAWEI: number; IBATT_HUAWEI: number; CARGABATT_HUAWEI: number; TIME_HUAWEI: number; 
 };
 type ParametrosUPS_SIS2 = {
-    V_in: number; V_out: number; I_out: number; P_out: number; Load: number;
     V_inCHI: number; V_outCHI: number; I_outCHI: number; P_outCHI: number; LoadCHI: number;
     V_PDI2A_F1: number; V_PDI2A_F2: number; V_PDI2A_F3: number; V_PDI2A_F4: number; V_PDI2A_F5: number; 
     V_PDI2A_F6: number; V_PDI2A_F7: number; V_PDI2A_F8: number; V_PDI2A_F9: number; V_PDI2A_F10: number; 
     P_PDI2A_F1: number; P_PDI2A_F2: number; P_PDI2A_F3: number; P_PDI2A_F4: number; P_PDI2A_F5: number; 
     P_PDI2A_F6: number; P_PDI2A_F7: number; P_PDI2A_F8: number; P_PDI2A_F9: number; P_PDI2A_F10: number; 
+    VIN_HUAWEI: number; VOUT_HUAWEI: number; CIN_HUAWEI: number; COUT_HUAWEI: number; CARGA_HUAWEI: number;
+    VBATT_HUAWEI: number; IBATT_HUAWEI: number; CARGABATT_HUAWEI: number; TIME_HUAWEI: number;
 };
 type ParametrosClima_SIS1 = {
     T_sumEA3: number; T_retEA3: number;
@@ -74,7 +76,6 @@ type ParametrosGEN_SIS2 = {
     LoadG6: number;
 }; 
 type Estados_Principales = {
-    ups_SIS1: string; ups_SIS2: string;
     gen_SIS1: string; gen_SIS2: string;
     transf_in: string; transf_out: string;
     clima_SIS1: string; clima_SIS2: string;
@@ -83,7 +84,7 @@ type Estados_Principales = {
     VAB_CMT: string; VBC_CMT: string; VCA_CMT: string; ST_CMT: string;
 };
 type Estados_SIS1 = {
-    ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi1: string;
+    ups7a: string; upschi1: string;
     gen1: string; gen2: string; gen3: string;
     Ea3: string; Ea4: string;
     b1_4: string; b1_5: string; b1_6: string;
@@ -97,7 +98,7 @@ type Estados_SIS1 = {
     pdu_F6: string; pdu_F7: string; pdu_F8: string; pdu_F9: string; pdu_F10: string;
 };
 type Estados_SIS2 = {
-    ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi2: string;
+    ups7a: string; upschi2: string;
     gen4: string; gen5: string; gen6: string;
     Ea1: string; Ea2: string;
     b1_1: string; b1_2: string; b1_3: string;
@@ -116,7 +117,7 @@ type Alarmas = {
     clima_SIS1: string; clima_SIS2: string;
 };
 type Alarmas_SIS1 = {
-    ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi1: string;
+    ups7a: string; upschi1: string;
     gen1: string; gen2: string; gen3: string;
     Ea3: string; Ea4: string; Ea3mant: string; Ea4mant: string;
     b1_4: string; b1_5: string; b1_6: string;
@@ -127,7 +128,7 @@ type Alarmas_SIS1 = {
     pdu_F6: string; pdu_F7: string; pdu_F8: string; pdu_F9: string; pdu_F10: string;
 };
 type Alarmas_SIS2 = {
-    ups1: string; ups2: string; ups3: string; ups4: string; ups5: string; ups6: string; upschi2: string;
+    ups7a: string; upschi2: string;
     gen4: string; gen5: string; gen6: string;
     Ea1: string; Ea2: string; Ea1mant: string; Ea2mant: string;
     b1_1: string; b1_2: string; b1_3: string;
@@ -137,6 +138,7 @@ type Alarmas_SIS2 = {
     text_mant_Ea1: string; text_mant_Ea2: string;
     pdu_F1: string; pdu_F2: string; pdu_F3: string; pdu_F4: string; pdu_F5: string;
     pdu_F6: string; pdu_F7: string; pdu_F8: string; pdu_F9: string; pdu_F10: string;
+    
 };
 
 export interface DataPrincipal {
@@ -1203,14 +1205,15 @@ return (
       {ParametrosGEN_SIS2.Load}
     </tspan>
   </text>
-  <circle
+  <ellipse
     id="st_upss1a"
     cx={403.8}
     cy={107.18}
-    r={3.2985}
+    rx={3.2985}
+    ry={3.2987}
     fill="#999"
     paintOrder="markers stroke fill"
-    className={Estados_Principales.ups_SIS1}
+    className={Estados_SIS1.ups7a}
   />
   <ellipse
     id="st_upss1abrillo"
@@ -1224,6 +1227,17 @@ return (
     opacity={0.29}
     paintOrder="markers stroke fill"
   />
+   <ellipse
+    id="al_upss1a"
+    cx={403.8}
+    cy={107.18}
+    rx={3.2985}
+    ry={3.2987}
+    fill="#999"
+    opacity={0}
+    paintOrder="markers stroke fill"
+    className={Alarmas_SIS1.ups7a}
+  />
   <ellipse
     id="st_upss2a"
     cx={473.94}
@@ -1232,7 +1246,7 @@ return (
     ry={3.2987}
     fill="#999"
     paintOrder="markers stroke fill"
-    className={Estados_Principales.ups_SIS2}
+    className={Estados_SIS2.ups7a}
   />
   <ellipse
     id="st_upss2abrillo"
@@ -1246,456 +1260,17 @@ return (
     opacity={0.29}
     paintOrder="markers stroke fill"
   />
-   <circle
-    id="st_ups1a-2"
-    cx={433.22}
-    cy={113.5}
-    r={2.3466}
-    fill="#999"
-    paintOrder="markers stroke fill"
-    className={Estados_SIS1.ups2}
-  />
-  <ellipse
-    id="st_brilloups1a-2"
-    transform="matrix(.34361 0 0 .17992 419.67 80.477)"
-    cx={39.31}
-    cy={175.59}
-    rx={4.2297}
-    ry={4.0337}
-    fill="#fff"
-    filter="url(#filter2091-9-7-7-5-5-2)"
-    opacity={0.29}
-    paintOrder="markers stroke fill"
-  />
-  <circle
-    id="alarma_ups1a-2"
-    cx={433.22}
-    cy={113.5}
-    r={2.3466}
+<ellipse
+    id="al_upss2a"
+    cx={473.94}
+    cy={107.18}
+    rx={3.2985}
+    ry={3.2987}
     fill="#999"
     opacity={0}
     paintOrder="markers stroke fill"
-    className={Alarmas_SIS1.ups2}
+    className={Alarmas_SIS2.ups7a}
   />
-  <circle
-    id="st_ups1a-3"
-    cx={433.22}
-    cy={119.47}
-    r={2.3466}
-    fill="#999"
-    paintOrder="markers stroke fill"
-    className={Estados_SIS1.ups3}
-  />
-  <ellipse
-    id="st_brilloups1a-3"
-    transform="matrix(.34361 0 0 .17992 419.67 86.447)"
-    cx={39.31}
-    cy={175.59}
-    rx={4.2297}
-    ry={4.0337}
-    fill="#fff"
-    filter="url(#filter2091-9-7-7-5-5-5)"
-    opacity={0.29}
-    paintOrder="markers stroke fill"
-  />
-  <circle
-    id="alarma_ups1a-3"
-    cx={433.22}
-    cy={119.47}
-    r={2.3466}
-    fill="#999"
-    opacity={0}
-    paintOrder="markers stroke fill"
-    className={Alarmas_SIS1.ups3}
-  />
-  <circle
-    id="st_ups1a-4"
-    cx={433.22}
-    cy={125.44}
-    r={2.3466}
-    fill="#999"
-    paintOrder="markers stroke fill"
-    className={Estados_SIS1.ups4}
-  />
-  <ellipse
-    id="st_brilloups1a-4"
-    transform="matrix(.34361 0 0 .17992 419.67 92.417)"
-    cx={39.31}
-    cy={175.59}
-    rx={4.2297}
-    ry={4.0337}
-    fill="#fff"
-    filter="url(#filter2091-9-7-7-5-5-52)"
-    opacity={0.29}
-    paintOrder="markers stroke fill"
-  />
-  <circle
-    id="alarma_ups1a-4"
-    cx={433.22}
-    cy={125.44}
-    r={2.3466}
-    fill="#999"
-    opacity={0}
-    paintOrder="markers stroke fill"
-    className={Alarmas_SIS1.ups4}
-  />
-  <circle
-    id="st_ups1a-5"
-    cx={433.22}
-    cy={131.41}
-    r={2.3466}
-    fill="#999"
-    paintOrder="markers stroke fill"
-    className={Estados_SIS1.ups5}
-  />
-  <ellipse
-    id="st_brilloups1a-5"
-    transform="matrix(.34361 0 0 .17992 419.67 98.387)"
-    cx={39.31}
-    cy={175.59}
-    rx={4.2297}
-    ry={4.0337}
-    fill="#fff"
-    filter="url(#filter2091-9-7-7-5-5-8)"
-    opacity={0.29}
-    paintOrder="markers stroke fill"
-  />
-  <circle
-    id="alarma_ups1a-5"
-    cx={433.22}
-    cy={131.41}
-    r={2.3466}
-    fill="#999"
-    opacity={0}
-    paintOrder="markers stroke fill"
-    className={Alarmas_SIS1.ups5}
-  />
-  <circle
-    id="st_ups1a-6"
-    cx={433.22}
-    cy={137.38}
-    r={2.3466}
-    fill="#999"
-    paintOrder="markers stroke fill"
-    className={Estados_SIS1.ups6}
-  />
-  <ellipse
-    id="st_brilloups1a-6"
-    transform="matrix(.34361 0 0 .17992 419.67 104.36)"
-    cx={39.31}
-    cy={175.59}
-    rx={4.2297}
-    ry={4.0337}
-    fill="#fff"
-    filter="url(#filter2091-9-7-7-5-5-8-0)"
-    opacity={0.29}
-    paintOrder="markers stroke fill"
-  />
-  <circle
-    id="alarma_ups1a-6"
-    cx={433.22}
-    cy={137.38}
-    r={2.3466}
-    fill="#999"
-    opacity={0}
-    paintOrder="markers stroke fill"
-    className={Alarmas_SIS1.ups6}
-  />
-  <circle
-    id="st_ups2a-2"
-    cx={504.02}
-    cy={113.5}
-    r={2.3466}
-    fill="#999"
-    paintOrder="markers stroke fill"
-    className={Estados_SIS2.ups2}
-  />
-  <ellipse
-    id="st_brilloups2a-2"
-    transform="matrix(.34361 0 0 .17992 490.47 80.478)"
-    cx={39.31}
-    cy={175.59}
-    rx={4.2297}
-    ry={4.0337}
-    fill="#fff"
-    filter="url(#filter2091-9-7-7-5-5-2-8)"
-    opacity={0.29}
-    paintOrder="markers stroke fill"
-  />
-  <circle
-    id="alarma_ups2a-2"
-    cx={504.02}
-    cy={113.5}
-    r={2.3466}
-    fill="#999"
-    opacity={0}
-    paintOrder="markers stroke fill"
-    className={Alarmas_SIS2.ups2}
-  />
-  <circle
-    id="st_ups2a-3"
-    cx={504.02}
-    cy={119.47}
-    r={2.3466}
-    fill="#999"
-    paintOrder="markers stroke fill"
-    className={Estados_SIS2.ups3}
-  />
-  <ellipse
-    id="st_brilloups2a-3"
-    transform="matrix(.34361 0 0 .17992 490.47 86.447)"
-    cx={39.31}
-    cy={175.59}
-    rx={4.2297}
-    ry={4.0337}
-    fill="#fff"
-    filter="url(#filter2091-9-7-7-5-5-5-7)"
-    opacity={0.29}
-    paintOrder="markers stroke fill"
-  />
-  <circle
-    id="alarma_ups2a-3"
-    cx={504.02}
-    cy={119.47}
-    r={2.3466}
-    fill="#999"
-    opacity={0}
-    paintOrder="markers stroke fill"
-    className={Alarmas_SIS2.ups3}
-  />
-  <circle
-    id="st_ups2a-4"
-    cx={504.02}
-    cy={125.44}
-    r={2.3466}
-    fill="#999"
-    paintOrder="markers stroke fill"
-    className={Estados_SIS2.ups4}
-  />
-  <ellipse
-    id="st_brilloups2a-4"
-    transform="matrix(.34361 0 0 .17992 490.47 92.417)"
-    cx={39.31}
-    cy={175.59}
-    rx={4.2297}
-    ry={4.0337}
-    fill="#fff"
-    filter="url(#filter2091-9-7-7-5-5-52-1)"
-    opacity={0.29}
-    paintOrder="markers stroke fill"
-  />
-  <circle
-    id="alarma_ups2a-4"
-    cx={504.02}
-    cy={125.44}
-    r={2.3466}
-    fill="#999"
-    opacity={0}
-    paintOrder="markers stroke fill"
-    className={Alarmas_SIS2.ups4}
-  />
-  <circle
-    id="st_ups2a-5"
-    cx={504.02}
-    cy={131.41}
-    r={2.3466}
-    fill="#999"
-    paintOrder="markers stroke fill"
-    className={Estados_SIS2.ups5}
-  />
-  <ellipse
-    id="st_brilloups2a-5"
-    transform="matrix(.34361 0 0 .17992 490.47 98.387)"
-    cx={39.31}
-    cy={175.59}
-    rx={4.2297}
-    ry={4.0337}
-    fill="#fff"
-    filter="url(#filter2091-9-7-7-5-5-8-3)"
-    opacity={0.29}
-    paintOrder="markers stroke fill"
-  />
-  <circle
-    id="alarma_ups2a-5"
-    cx={504.02}
-    cy={131.41}
-    r={2.3466}
-    fill="#999"
-    opacity={0}
-    paintOrder="markers stroke fill"
-    className={Alarmas_SIS2.ups5}
-  />
-  <circle
-    id="st_ups2a-6"
-    cx={504.02}
-    cy={137.38}
-    r={2.3466}
-    fill="#999"
-    paintOrder="markers stroke fill"
-    className={Estados_SIS2.ups6}
-  />
-  <ellipse
-    id="st_brilloups2a-6"
-    transform="matrix(.34361 0 0 .17992 490.47 104.36)"
-    cx={39.31}
-    cy={175.59}
-    rx={4.2297}
-    ry={4.0337}
-    fill="#fff"
-    filter="url(#filter2091-9-7-7-5-5-8-0-0)"
-    opacity={0.29}
-    paintOrder="markers stroke fill"
-  />
-  <circle
-    id="alarma_ups2a-6"
-    cx={504.02}
-    cy={137.38}
-    r={2.3466}
-    fill="#999"
-    opacity={0}
-    paintOrder="markers stroke fill"
-    className={Alarmas_SIS2.ups6}
-  />
-  <circle
-    id="st_ups2a-1"
-    cx={504.02}
-    cy={107.53}
-    r={2.3466}
-    fill="#999"
-    paintOrder="markers stroke fill"
-    className={Estados_SIS2.ups1}
-  />
-  <ellipse
-    id="st_brilloups2a-1"
-    transform="matrix(.34361 0 0 .17992 490.47 74.508)"
-    cx={39.31}
-    cy={175.59}
-    rx={4.2297}
-    ry={4.0337}
-    fill="#fff"
-    filter="url(#filter2091-9-7-7-5-5-25)"
-    opacity={0.29}
-    paintOrder="markers stroke fill"
-  />
-  <circle
-    id="alarma_ups2a-1"
-    cx={504.02}
-    cy={107.53}
-    r={2.3466}
-    fill="#999"
-    opacity={0}
-    paintOrder="markers stroke fill"
-    className={Alarmas_SIS2.ups1}
-  />
-  <circle
-    id="st_ups1a-1"
-    cx={433.22}
-    cy={107.53}
-    r={2.3466}
-    fill="#999"
-    paintOrder="markers stroke fill"
-    className={Estados_SIS1.ups1}
-  />
-  <ellipse
-    id="st_brilloups1a-1"
-    transform="matrix(.34361 0 0 .17992 419.67 74.507)"
-    cx={39.31}
-    cy={175.59}
-    rx={4.2297}
-    ry={4.0337}
-    fill="#fff"
-    filter="url(#filter2091-9-7-7-5-5)"
-    opacity={0.29}
-    paintOrder="markers stroke fill"
-  />
-  <circle
-    id="alarma_ups1a-1"
-    cx={433.22}
-    cy={107.53}
-    r={2.3466}
-    fill="#999"
-    opacity={0}
-    paintOrder="markers stroke fill"
-    className={Alarmas_SIS1.ups1}
-  />
-  <text
-    id="i_outupsS1"
-    transform="scale(1.046 .95601)"
-    x={374.27219}
-    y={167.5144}
-    style={{
-      fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal",
-      lineHeight: 1.25
-    }}
-    xmlSpace="preserve"
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="4.2334px"
-    letterSpacing={0}
-    strokeWidth={0.4333}
-    wordSpacing={0}
-  >
-    <tspan
-      id="tspan998-6-3-2-3-6-9"
-      x={374.27219}
-      y={167.5144}
-      style={{
-        fontVariantCaps: "normal",
-        fontVariantEastAsian: "normal",
-        fontVariantLigatures: "normal",
-        fontVariantNumeric: "normal",
-        lineHeight: 3.25
-      }}
-      fill="#fff"
-      fontFamily="Franklin Gothic Medium"
-      fontSize="4.2334px"
-      strokeWidth={0.4333}
-    >
-      {ParametrosUPS_SIS1.I_out} A
-    </tspan>
-  </text>
-  <text
-    id="pot_upsS1"
-    transform="scale(1.046 .95601)"
-    x={374.27219}
-    y={173.39632}
-    style={{
-      fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal",
-      lineHeight: 1.25
-    }}
-    xmlSpace="preserve"
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="4.2334px"
-    letterSpacing={0}
-    strokeWidth={0.4333}
-    wordSpacing={0}
-  >
-    <tspan
-      id="tspan998-6-3-2-3-6-4"
-      x={374.27219}
-      y={173.39632}
-      style={{
-        fontVariantCaps: "normal",
-        fontVariantEastAsian: "normal",
-        fontVariantLigatures: "normal",
-        fontVariantNumeric: "normal",
-        lineHeight: 3.25
-      }}
-      fill="#fff"
-      fontFamily="Franklin Gothic Medium"
-      fontSize="4.2334px"
-      strokeWidth={0.4333}
-    >
-     {ParametrosUPS_SIS1.P_out} KW
-    </tspan>
-  </text>
   <text
     id="i_outupsS2"
     transform="scale(1.046 .95601)"
@@ -1729,10 +1304,10 @@ return (
       }}
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="4.2334px"
+      fontSize="3.2334px"
       strokeWidth={0.4333}
     >
-      {ParametrosUPS_SIS2.I_out} A
+      {ParametrosUPS_SIS2.CARGABATT_HUAWEI} %
     </tspan>
   </text>
   <text
@@ -1768,10 +1343,10 @@ return (
       }}
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="4.2334px"
+      fontSize="3.2334px"
       strokeWidth={0.4333}
     >
-      {ParametrosUPS_SIS2.P_out} KW
+      {ParametrosUPS_SIS2.TIME_HUAWEI} min
     </tspan>
   </text>
   <text
@@ -1807,10 +1382,10 @@ return (
       }}
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="4.2334px"
+      fontSize="3.2334px"
       strokeWidth={0.4333}
     >
-      {ParametrosUPS_SIS2.V_in} V
+      {ParametrosUPS_SIS2.VBATT_HUAWEI} V
     </tspan>
   </text>
   <text
@@ -1846,88 +1421,10 @@ return (
       }}
       fill="#fff"
       fontFamily="Franklin Gothic Medium"
-      fontSize="4.2334px"
+      fontSize="3.2334px"
       strokeWidth={0.4333}
     >
-      {ParametrosUPS_SIS2.V_out} V
-    </tspan>
-  </text>
-  <text
-    id="vin_upsS1"
-    transform="scale(1.046 .95601)"
-    x={374.45139}
-    y={155.75063}
-    style={{
-      fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal",
-      lineHeight: 1.25
-    }}
-    xmlSpace="preserve"
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="4.2334px"
-    letterSpacing={0}
-    strokeWidth={0.4333}
-    wordSpacing={0}
-  >
-    <tspan
-      id="tspan998-6-1-4-2"
-      x={374.45139}
-      y={155.75063}
-      style={{
-        fontVariantCaps: "normal",
-        fontVariantEastAsian: "normal",
-        fontVariantLigatures: "normal",
-        fontVariantNumeric: "normal",
-        lineHeight: 3.25
-      }}
-      fill="#fff"
-      fontFamily="Franklin Gothic Medium"
-      fontSize="4.2334px"
-      strokeWidth={0.4333}
-    >
-     {ParametrosUPS_SIS1.V_in} V
-    </tspan>
-  </text>
-  <text
-    id="vout_upsS1"
-    transform="scale(1.046 .95601)"
-    x={374.45139}
-    y={161.63251}
-    style={{
-      fontVariantCaps: "normal",
-      fontVariantEastAsian: "normal",
-      fontVariantLigatures: "normal",
-      fontVariantNumeric: "normal",
-      lineHeight: 1.25
-    }}
-    xmlSpace="preserve"
-    fill="#fff"
-    fontFamily="Franklin Gothic Medium"
-    fontSize="4.2334px"
-    letterSpacing={0}
-    strokeWidth={0.4333}
-    wordSpacing={0}
-  >
-    <tspan
-      id="tspan998-6-3-2-3-6"
-      x={374.45139}
-      y={161.63251}
-      style={{
-        fontVariantCaps: "normal",
-        fontVariantEastAsian: "normal",
-        fontVariantLigatures: "normal",
-        fontVariantNumeric: "normal",
-        lineHeight: 3.25
-      }}
-      fill="#fff"
-      fontFamily="Franklin Gothic Medium"
-      fontSize="4.2334px"
-      strokeWidth={0.4333}
-    >
-      {ParametrosUPS_SIS1.V_out} V
+      {ParametrosUPS_SIS2.IBATT_HUAWEI} A
     </tspan>
   </text>
   <circle
@@ -5830,7 +5327,7 @@ return (
           filter="url(#filter2091-9-7-7-5-5-8-0-5-7)"
         />
          <circle
-          id="st_acc_L1_sis1-8"
+          id="st_acc_L1_sis2"
           cx={349.23285}
           cy={175.93117}
           r={2.3466001}
@@ -5838,7 +5335,7 @@ return (
           fill="#999"
           strokeWidth={1}
           paintOrder="markers stroke fill"
-          className={Estados_SIS2.st_acc_sat_L2}
+          className={Estados_SIS2.st_acc_sat_L1}
         />
         <ellipse
           id="st_brilloaccl1-9"
@@ -5854,7 +5351,7 @@ return (
           filter="url(#filter2091-9-7-7-5-5-8-0-5-1)"
         />
         <circle
-          id="st_acc_L2_sis1-8"
+          id="st_acc_L2_sis2"
           cx={349.23297}
           cy={182.97058}
           r={2.3466001}
@@ -5862,7 +5359,7 @@ return (
           fill="#999"
           strokeWidth={1}
           paintOrder="markers stroke fill"
-          className={Estados_SIS2.st_acc_sat_L1}
+          className={Estados_SIS2.st_acc_sat_L2}
         />
         <ellipse
           id="st_brilloaccl2-3"
@@ -6809,7 +6306,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS1.P_PDI1A_F10}kva
+            {ParametrosUPS_SIS1.P_PDI1A_F10}kw
           </tspan>
         </text>
         <text
@@ -6848,7 +6345,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS1.P_PDI1A_F9}kva
+            {ParametrosUPS_SIS1.P_PDI1A_F9}kw
           </tspan>
         </text>
         <text
@@ -6887,7 +6384,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS1.P_PDI1A_F8}kva
+            {ParametrosUPS_SIS1.P_PDI1A_F8}kw
           </tspan>
         </text>
         <text
@@ -6926,7 +6423,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS1.P_PDI1A_F7}kva
+            {ParametrosUPS_SIS1.P_PDI1A_F7}kw
           </tspan>
         </text>
         <text
@@ -6965,7 +6462,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS1.P_PDI1A_F6}kva
+            {ParametrosUPS_SIS1.P_PDI1A_F6}kw
           </tspan>
         </text>
         <text
@@ -7004,7 +6501,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS1.P_PDI1A_F5}kva
+            {ParametrosUPS_SIS1.P_PDI1A_F5}kw
           </tspan>
         </text>
         <text
@@ -7043,7 +6540,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-             {ParametrosUPS_SIS1.P_PDI1A_F4}kva
+             {ParametrosUPS_SIS1.P_PDI1A_F4}kw
           </tspan>
         </text>
         <text
@@ -7082,7 +6579,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-             {ParametrosUPS_SIS1.P_PDI1A_F3}kva
+             {ParametrosUPS_SIS1.P_PDI1A_F3}kw
           </tspan>
         </text>
         <text
@@ -7121,7 +6618,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-             {ParametrosUPS_SIS1.P_PDI1A_F2}kva
+             {ParametrosUPS_SIS1.P_PDI1A_F2}kw
           </tspan>
         </text>
         <text
@@ -7160,7 +6657,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-             {ParametrosUPS_SIS1.P_PDI1A_F1}kva
+             {ParametrosUPS_SIS1.P_PDI1A_F1}kw
           </tspan>
         </text>
         <text
@@ -8279,7 +7776,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS2.P_PDI2A_F10}kva
+            {ParametrosUPS_SIS2.P_PDI2A_F10}kw
           </tspan>
         </text>
         <text
@@ -8318,7 +7815,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS2.P_PDI2A_F9}kva
+            {ParametrosUPS_SIS2.P_PDI2A_F9}kw
           </tspan>
         </text>
         <text
@@ -8357,7 +7854,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS2.P_PDI2A_F8}kva
+            {ParametrosUPS_SIS2.P_PDI2A_F8}kw
           </tspan>
         </text>
         <text
@@ -8396,7 +7893,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-           {ParametrosUPS_SIS2.P_PDI2A_F7}kva
+           {ParametrosUPS_SIS2.P_PDI2A_F7}kw
           </tspan>
         </text>
         <text
@@ -8435,7 +7932,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS2.P_PDI2A_F6}kva
+            {ParametrosUPS_SIS2.P_PDI2A_F6}kw
           </tspan>
         </text>
         <text
@@ -8474,7 +7971,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS2.P_PDI2A_F5}kva
+            {ParametrosUPS_SIS2.P_PDI2A_F5}kw
           </tspan>
         </text>
         <text
@@ -8513,7 +8010,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-           {ParametrosUPS_SIS2.P_PDI2A_F4}kva
+           {ParametrosUPS_SIS2.P_PDI2A_F4}kw
           </tspan>
         </text>
         <text
@@ -8552,7 +8049,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS2.P_PDI2A_F3}kva
+            {ParametrosUPS_SIS2.P_PDI2A_F3}kw
           </tspan>
         </text>
         <text
@@ -8591,7 +8088,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS2.P_PDI2A_F2}kva
+            {ParametrosUPS_SIS2.P_PDI2A_F2}kw
           </tspan>
         </text>
         <text
@@ -8630,7 +8127,7 @@ return (
             fontSize="4.2317px"
             strokeWidth={0.4333}
           >
-            {ParametrosUPS_SIS2.P_PDI2A_F1}kva
+            {ParametrosUPS_SIS2.P_PDI2A_F1}kw
           </tspan>
         </text>
         <text
@@ -9239,6 +8736,554 @@ return (
               {ParametrosGEN_SIS2.LoadG6}%
               </tspan>
             </text>
+            <text
+            //Variables nuevas ups sistema 2
+          id="i_outupsS2-1"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={459.57455}
+          y={122.81162}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-3-2-3-6-9-3-7"
+            x={459.57455}
+            y={122.81162}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.VOUT_HUAWEI} V
+          </tspan>
+        </text>
+        <text
+          id="pot_upsS2-6"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={459.57455}
+          y={128.85217}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-3-2-3-6-4-9-3"
+            x={459.57455}
+            y={128.85217}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.COUT_HUAWEI} A
+          </tspan>
+        </text>
+        <text
+          id="vin_upsS2-6"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={459.72131}
+          y={110.73061}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-4-2-4-0"
+            x={459.72131}
+            y={110.73061}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.VIN_HUAWEI} V
+          </tspan>
+        </text>
+        <text
+          id="vout_upsS2-9"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={459.72131}
+          y={116.77113}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-3-2-3-6-49-8"
+            x={459.72131}
+            y={116.77113}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.CIN_HUAWEI} A
+          </tspan>
+        </text>
+        <text
+          id="pot_upsS2-6-5"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={459.79385}
+          y={134.88545}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-3-2-3-6-4-9-3-0"
+            x={459.79385}
+            y={134.88545}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS2.CARGA_HUAWEI} %
+          </tspan>
+        </text>
+        //Variables nuevas ups sistema 1
+        <text
+          id="carga_batt_upsS1"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={361.03751}
+          y={167.51265}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-3-2-3-6-9-3-79"
+            x={361.03751}
+            y={167.51265}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.CARGABATT_HUAWEI} %
+          </tspan>
+        </text>
+        <text
+          id="min_batt_uspsS1"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={361.03751}
+          y={173.40327}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-3-2-3-6-4-9-0"
+            x={361.03751}
+            y={173.40327}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.TIME_HUAWEI} MIN
+          </tspan>
+        </text>
+        <text
+          id="v_batt_upsS1"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={361.21762}
+          y={155.74702}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-4-2-4-6"
+            x={361.21762}
+            y={155.74702}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.VBATT_HUAWEI} V
+          </tspan>
+        </text>
+        <text
+          id="i_batt_upsS1"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={361.21762}
+          y={161.62984}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-3-2-3-6-49-5"
+            x={361.21762}
+            y={161.62984}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.IBATT_HUAWEI} A
+          </tspan>
+        </text>
+        <text
+          id="v_outupsS1"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={392.32321}
+          y={122.80824}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-3-2-3-6-9-3-7-4"
+            x={392.32321}
+            y={122.80824}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.VOUT_HUAWEI} V
+          </tspan>
+        </text>
+        <text
+          id="i_out_upsS1"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={392.32321}
+          y={128.84732}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-3-2-3-6-4-9-3-2"
+            x={392.32321}
+            y={128.84732}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.COUT_HUAWEI} A
+          </tspan>
+        </text>
+        <text
+          id="vin_upsS1"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={392.46997}
+          y={110.72231}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-1-4-2-4-0-5"
+            x={392.46997}
+            y={110.72231}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.VIN_HUAWEI} V
+          </tspan>
+        </text>
+        <text
+          id="i_in_upsS1"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={392.46997}
+          y={116.76917}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-3-2-3-6-49-8-2"
+            x={392.46997}
+            y={116.76917}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.CIN_HUAWEI} A
+          </tspan>
+        </text>
+        <text
+          id="carga_upsS1"
+          transform="matrix(1.046 0 0 .95602 14.288 0)"
+          x={395.54251}
+          y={134.87857}
+          style={{
+            fontVariantCaps: "normal",
+            fontVariantEastAsian: "normal",
+            fontVariantLigatures: "normal",
+            fontVariantNumeric: "normal",
+            lineHeight: 1.25
+          }}
+          xmlSpace="preserve"
+          fill="#fff"
+          fontFamily="Franklin Gothic Medium"
+          fontSize="4.2334px"
+          letterSpacing={0}
+          strokeWidth={0.4333}
+          wordSpacing={0}
+        >
+          <tspan
+            id="tspan998-6-3-2-3-6-4-9-3-0-3"
+            x={392.54251}
+            y={134.87857}
+            style={{
+              fontVariantCaps: "normal",
+              fontVariantEastAsian: "normal",
+              fontVariantLigatures: "normal",
+              fontVariantNumeric: "normal",
+              lineHeight: 3.25
+            }}
+            fill="#fff"
+            fontFamily="Franklin Gothic Medium"
+            fontSize="3.2334px"
+            strokeWidth={0.4333}
+          >
+            {ParametrosUPS_SIS1.CARGA_HUAWEI} %
+          </tspan>
+        </text>
       </g>
   )
 }
