@@ -1,10 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
   "type": "panel",
-  "name": "ups1",
-  "id": "telconet-ups-1",
+  "name": "grupalupshuawei",
+  "id": "telconet-grupalupshuawei",
   "info": {
-    "description": "Monitoreo Ups",
+    "description": "Monitoreo grupal UPS",
     "author": {
       "name": "Mario",
       "url": ""
@@ -25,8 +25,8 @@
       }
     ],
     "screenshots": [],
-    "version": "1.0.0",
-    "updated": "2024-04-16"
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
   },
   "dependencies": {
     "grafanaDependency": ">=7.0.0",

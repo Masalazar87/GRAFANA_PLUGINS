@@ -1,13 +1,13 @@
 {
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
   "type": "panel",
-  "name": "ups1",
-  "id": "telconet-ups-1",
+  "name": "Menu",
+  "id": "telconet-menu",
   "info": {
-    "description": "Monitoreo Ups",
+    "description": "plugin de menus de equipos",
     "author": {
       "name": "Mario",
-      "url": ""
+      "url": "masalazar@telconet.ec"
     },
     "keywords": [],
     "logos": {
@@ -26,7 +26,7 @@
     ],
     "screenshots": [],
     "version": "1.0.0",
-    "updated": "2024-04-16"
+    "updated": "2024-04-15"
   },
   "dependencies": {
     "grafanaDependency": ">=7.0.0",

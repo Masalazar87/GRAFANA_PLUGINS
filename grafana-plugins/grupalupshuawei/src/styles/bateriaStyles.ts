@@ -8,18 +8,18 @@ const parpadeo = keyframes`
 
 const getStyles = stylesFactory(() => {
   return {
-    sinConexion: css`
-      fill: #999;
+    sinconexion: css`
+    fill: url(#filter1671);
     `,
-    alarma: css`
-      fill: red;
-      animation: ${parpadeo} 1s ease infinite;
+    full: css`
+    fill: green;
     `,
-    ok1: css`
-      stroke: url(#linearGradient4474); 
+    on: css`
+    fill: orange;
+    animation: ${parpadeo} 1s ease infinite;
     `,
-    imagen: css`
-      opacity: 1; 
+    on1: css`
+    fill: orange;
     `,
   };
 });
@@ -27,3 +27,4 @@ const getStyles = stylesFactory(() => {
 const styles = getStyles();
 
 export default styles;
+
