@@ -118,16 +118,16 @@ for (let i = 1; i <= 12; i++) {
         }   else {
             tret_uma[i] = parseFloat(tret_uma[i]).toFixed(1);
         } 
-    if ((tsum_uma[i] >= 20) && (status_uma[i] === 1)){
-        msgEstado = "\nALTA TEMPERATURA DE\n SUMINISTRO > 20°C"
+    if ((tsum_uma[i] >= 22) && (status_uma[i] === 1)){
+        msgEstado = "\nALTA TEMPERATURA DE\n SUMINISTRO > 22°C"
         imgEquipo = imgUmaAlm;
         colorEstado = 'alarma'
         PopUp(cookieAdv,nomEquipo,1,nomEquipo+'adv');
     }
     else{
         localStorage.setItem('gyecookie_'+nomEquipo+'alm','0')}
-    if ((tret_uma[i] >= 30.5) && (status_uma[i] === 1)){
-        msgEstado = "\nALTA TEMPERATURA DE\n RETORNO > 30.5°C"
+    if ((tret_uma[i] >= 32) && (status_uma[i] === 1)){
+        msgEstado = "\nALTA TEMPERATURA DE\n RETORNO > 32°C"
         imgEquipo = imgUmaAlm;
         colorEstado = 'alarma'
         PopUp(cookieAdv,nomEquipo,1,nomEquipo+'adv');
