@@ -1265,7 +1265,7 @@ const Pue = ({Estado, Principal, Cargas_kva, Cargas_uso }: DataPue) => {
             fontSize="7.0556px"
             strokeWidth={0.26458}
           >
-            {"KVA"}
+            {"KW"}
           </tspan>
         </text>
         <text
@@ -1393,7 +1393,7 @@ const Pue = ({Estado, Principal, Cargas_kva, Cargas_uso }: DataPue) => {
             fontSize="7.0555px"
             strokeWidth={0.47056}
           >
-            {"PUE (KVA)"}
+            {"PUE"}
           </tspan>
         </text>
         <text

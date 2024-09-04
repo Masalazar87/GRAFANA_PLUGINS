@@ -222,7 +222,7 @@ pue.Principal.ENERGIA = Number.parseFloat(energia_total?.toFixed(2));
 
 
 //CALCULO DE PORCENTAJE DE USO EEE
-let percent_total = carga_total_kva * 100 / carga_total_kva;
+let percent_total = carga_total_kva * 100 / 1500;
 let percent_carga_AC = carga_pdi_kva * 100 / carga_total_kva;
 let percent_carga_DC = pot_total_rec * 100 / carga_total_kva;
 let percent_carga_SAT = pot_total_ups_sat * 100 / carga_total_kva;

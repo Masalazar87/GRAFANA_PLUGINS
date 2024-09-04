@@ -730,7 +730,7 @@ let POT_TDP2A = data.series.find(({ name }) => name?.includes('POT_TDP2A'))?.fie
 //-------------------------------------------------------------------------------------------------------------
 //----------------------------------PARAMETROS DE POTENCIA PARA CALCULO DEL PUE--------------------------------
 //POTENCIA PQM    
-let APPPOW_3PHAS = data.series.find(({ name }) => name?.includes('DATA.APPPOW_3PHAS.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
+let APPPOW_3PHAS = data.series.find(({ name }) => name?.includes('DATA.REALPOW_3PHAS.VALUE'))?.fields[1].state?.calcs?.lastNotNull;
 
 //POTENCIAS KVA DE PDI´S SISTEMA 1&2
 let SIS1_POT_PDI_ = [];

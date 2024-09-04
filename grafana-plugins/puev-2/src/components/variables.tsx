@@ -685,14 +685,14 @@ export const Variables = ({Estado, Principal, Cargas_kva, Cargas_uso }: DataPue)
     >
       <tspan
         id="tspan6769"
-        x={54.517338}
+        x={52.517338}
         y={31.282393}
         fill="#fff"
         fontFamily="Franklin Gothic Medium"
         fontSize="9.8777px"
         strokeWidth={0.36411}
       >
-        {"  ESPOL"}
+        {"TELCONET"}
       </tspan>
     </text>
     <text
